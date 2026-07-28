@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAT &amp; ACT Practice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site">
+        <h1>SAT &amp; ACT Practice</h1>
+        <p>Answer, check, and learn from the explanation. Free to use — good luck!</p>
+      </header>
+
+      <!-- START SCREEN -->
+      <section id="setup" class="card setup">
+        <label for="sectionSelect">Choose what to practice</label>
+        <select id="sectionSelect"></select>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="shuffleCheck" checked />
+          <label for="shuffleCheck" style="margin:0; font-weight:500;">
+            Shuffle the question order
+          </label>
+        </div>
+
+        <button id="startBtn" class="btn-primary">Start practicing</button>
+      </section>
+
+      <!-- QUIZ SCREEN -->
+      <section id="quiz" class="card hidden">
+        <div class="progress">
+          <span id="progressLabel">Question 1</span>
+          <span id="scoreLabel">Score: 0</span>
+        </div>
+        <div class="bar"><span id="barFill" style="width:0%"></span></div>
+
+        <div class="tags" id="tags"></div>
+        <p class="question-text" id="questionText"></p>
+
+        <div class="choices" id="choices"></div>
+
+        <div class="explanation hidden" id="explanation"></div>
+
+        <div class="quiz-actions">
+          <button id="checkBtn" class="btn-primary" disabled>Check answer</button>
+          <button id="nextBtn" class="btn-primary hidden">Next question →</button>
+        </div>
+      </section>
+
+      <!-- RESULTS SCREEN -->
+      <section id="results" class="card results hidden">
+        <p style="margin:0; color:var(--muted); font-weight:600;">Your score</p>
+        <p class="score" id="finalScore">0</p>
+        <p class="msg" id="finalMsg"></p>
+        <button id="restartBtn" class="btn-primary">Practice again</button>
+      </section>
+
+      <footer class="site">
+        All questions are original practice material. Not affiliated with the College Board or ACT.
+      </footer>
+    </div>
+
+    <!-- Load the question bank first, then the app logic. -->
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

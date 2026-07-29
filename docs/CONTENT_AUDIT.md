@@ -197,3 +197,32 @@ six primary domains and verified calculations, distractors, units, rounding,
 and explanations. The bank uses the enhanced ACT's four-choice Math format.
 The items are not calibrated to official scaled scores and all remain subject
 to independent human editorial review.
+
+## ACT Science completion batch — 2026-07-29
+
+Starting accepted records: 5
+
+New records accepted: 495
+
+Section total: 500
+
+Rejected provisional batches: 1 (206 duplicate-stimulus or duplicate-choice findings)
+
+Pending human editorial review: 500
+
+Final manifest:
+
+- Interpretation of Data: 220
+- Scientific Investigation: 130
+- Evaluation of Models, Inferences, and Experimental Results: 150
+- Easy: 150; Medium: 225; Hard: 125
+- Correct answer positions A/B/C/D: 125/125/125/125
+- Records with independent numeric recomputation: 27
+
+The accepted bank passes complete-mode schema, taxonomy, answer, metadata,
+duplicate, verification, and distribution gates. A 12-record sample spanned
+all domains and included tables, experimental methods, models, conclusions, and
+conflicting viewpoints. Sampling found that a decreasing numeric series could
+become negative for quantities such as particle counts. The parameter bounds
+were corrected, the bank regenerated, and an explicit scan confirmed zero
+negative table values. All records remain subject to human editorial review.

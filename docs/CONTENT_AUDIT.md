@@ -135,3 +135,34 @@ strategy. A nine-prompt sample found an ungrammatical risk phrase and a
 sentence-initial capitalization defect in perspective templates. Both were
 fixed before regeneration. Automated checks do not score student prose, and all
 prompts remain subject to independent human editorial review.
+
+## SAT Math completion batch — 2026-07-29
+
+Starting accepted records: 15
+
+New records accepted: 485
+
+Section total: 500
+
+Rejected provisional batches: 2 (structural repetition, then 5 near duplicates)
+
+Pending human editorial review: 500
+
+Final manifest:
+
+- Algebra: 175
+- Advanced Math: 175
+- Problem-Solving and Data Analysis: 75
+- Geometry and Trigonometry: 75
+- Easy: 150; Medium: 225; Hard: 125
+- Multiple choice: 400; student-produced numeric response: 100
+- Multiple-choice answer positions A/B/C/D: 100/100/100/100
+- Records with independent parameter recomputation: 84
+
+The accepted bank passes schema, taxonomy, answer, metadata, exact/structural/
+near-duplicate, and distribution gates. A 12-record sample covered all domains
+and both response formats. Sampling and count review exposed an incorrect
+numeric-response selection cycle (194 instead of 100); the cycle was replaced
+with a coprime deterministic sequence, producing the intended 100 numeric
+items. The questions are not calibrated to official scaled scores and all
+remain subject to independent human editorial review.

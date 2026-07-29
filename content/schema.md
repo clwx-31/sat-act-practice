@@ -32,7 +32,7 @@ validator rejects unknown or missing required values.
 | `provenance` | object | Original-content declaration, generator, seed, and creation date |
 | `contentVersion` | string | Version matching the catalog |
 | `reviewStatus` | string | `pending-editorial`, `automated-verified`, or `editorial-reviewed` |
-| `verification` | object or `null` | Optional deterministic answer-verification data |
+| `verification` | object or `null` | Optional deterministic answer-verification data with `kind`, numeric `inputs`, and recomputed `expected` |
 
 `distractorRationales` contains objects with an `index` and `reason`. It must
 cover every incorrect option exactly once and must not include the correct

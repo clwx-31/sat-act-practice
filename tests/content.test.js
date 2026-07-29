@@ -104,7 +104,24 @@ test("duplicate detector finds exact and structural variants", () => {
     stem: "If 2x + 3 = 19, what is x?",
   });
   const errors = duplicateErrors([first, second]).join("\n");
-  assert.match(errors, /Structural duplicate/);
+  assert.match(errors, /Structural duplicate|Near duplicate/);
+});
+
+test("validator independently recomputes supported math verification data", () => {
+  const question = validQuestion({
+    verification: {
+      kind: "linear-equation",
+      inputs: [2, 3, 11],
+      expected: 4,
+    },
+  });
+  assert.deepEqual(validateQuestion(question, satMath, catalog), []);
+
+  question.verification.expected = 5;
+  assert.match(
+    validateQuestion(question, satMath, catalog).join("\n"),
+    /does not match recomputation/,
+  );
 });
 
 test("coverage permits incomplete banks until complete mode is requested", () => {

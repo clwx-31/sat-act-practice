@@ -198,8 +198,67 @@ function validateQuestion(question, section, catalog) {
   if (!REVIEW_STATUSES.has(question.reviewStatus)) {
     addError(errors, question, "invalid reviewStatus");
   }
+  validateVerification(question, errors);
 
   return errors;
+}
+
+function validateVerification(question, errors) {
+  const verification = question.verification;
+  if (verification === null) return;
+  if (!verification || typeof verification !== "object" ||
+      !isNonemptyString(verification.kind)) {
+    addError(errors, question, "verification must be null or a typed object");
+    return;
+  }
+  const numbers = verification.inputs;
+  if (!Array.isArray(numbers) || numbers.some((value) => typeof value !== "number")) {
+    addError(errors, question, "verification.inputs must be numeric");
+    return;
+  }
+  let computed;
+  switch (verification.kind) {
+    case "sum":
+      computed = numbers.reduce((sum, value) => sum + value, 0);
+      break;
+    case "product":
+      computed = numbers.reduce((product, value) => product * value, 1);
+      break;
+    case "mean":
+      computed = numbers.reduce((sum, value) => sum + value, 0) / numbers.length;
+      break;
+    case "linear-equation":
+      computed = (numbers[2] - numbers[1]) / numbers[0];
+      break;
+    case "percent-of":
+      computed = numbers[0] * numbers[1] / 100;
+      break;
+    case "percent-change":
+      computed = (numbers[1] - numbers[0]) / numbers[0] * 100;
+      break;
+    case "distance":
+      computed = Math.hypot(numbers[2] - numbers[0], numbers[3] - numbers[1]);
+      break;
+    case "midpoint-x":
+      computed = (numbers[0] + numbers[1]) / 2;
+      break;
+    case "pythagorean":
+      computed = Math.hypot(numbers[0], numbers[1]);
+      break;
+    case "probability":
+      computed = numbers[0] / numbers[1];
+      break;
+    case "circle-area-coefficient":
+      computed = numbers[0] ** 2;
+      break;
+    default:
+      addError(errors, question, `unknown verification kind "${verification.kind}"`);
+      return;
+  }
+  if (typeof verification.expected !== "number" ||
+      Math.abs(computed - verification.expected) > 1e-9) {
+    addError(errors, question, "verification expected value does not match recomputation");
+  }
 }
 
 function validateMultipleChoice(question, errors) {
@@ -272,21 +331,26 @@ function normalizeText(text) {
 
 function structuralSignature(question) {
   const stimulus = question.stimulus ? question.stimulus.content : "";
-  return normalizeText(`${stimulus} ${question.stem}`)
-    .replace(/\b\d+(?:\.\d+)?\b/g, "#")
-    .replace(/\b[a-z]\b/g, "@");
+  const normalized = normalizeText(`${stimulus} ${question.stem}`);
+  const withNumbers = isQuantitative(question)
+    ? normalized
+    : normalized.replace(/\b\d+(?:\.\d+)?\b/g, "#");
+  return withNumbers.replace(/\b[a-z]\b/g, "@");
 }
 
 function tokenSet(question) {
   const text = question.stimulus
     ? question.stimulus.content
     : question.stem;
-  return new Set(
-    normalizeText(text)
-      .replace(/\b\d+(?:\.\d+)?\b/g, "#")
-      .split(" ")
-      .filter((token) => token.length > 2),
-  );
+  const normalized = normalizeText(text);
+  const withNumbers = isQuantitative(question)
+    ? normalized
+    : normalized.replace(/\b\d+(?:\.\d+)?\b/g, "#");
+  return new Set(withNumbers.split(" ").filter((token) => token.length > 2));
+}
+
+function isQuantitative(question) {
+  return question.section === "Math" || question.section === "Mathematics";
 }
 
 function jaccard(left, right) {

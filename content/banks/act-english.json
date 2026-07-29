@@ -1,0 +1,307 @@
+[
+  {
+    "id": "act-english-0001",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Sentence Structure and Formation",
+    "subskill": "clause relationships",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "The neighborhood orchestra rehearsed every Thursday, the musicians were preparing for an outdoor concert.\n\nWhich revision best corrects the underlined portion represented by the comma?",
+    "choices": [
+      "Thursday, the",
+      "Thursday; the",
+      "Thursday the",
+      "Thursday, and because the"
+    ],
+    "correctAnswer": 1,
+    "hint": "Read the whole sentence and check clause relationships before comparing choices.",
+    "explanation": "The original joins two independent clauses with only a comma. A semicolon correctly separates the closely related complete thoughts.",
+    "solutionSteps": [
+      "Identify that the question tests clause relationships within Sentence Structure and Formation.",
+      "The original joins two independent clauses with only a comma. A semicolon correctly separates the closely related complete thoughts.",
+      "Confirm that Thursday; the answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Thursday, the” does not satisfy the clause relationships requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 2,
+        "reason": "“Thursday the” does not satisfy the clause relationships requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 3,
+        "reason": "“Thursday, and because the” does not satisfy the clause relationships requirement in this sentence or rhetorical context."
+      }
+    ],
+    "strategy": "Decide the governing grammar or rhetoric rule before looking closely at the answer choices.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Apply the Standard English convention for clause relationships."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-026",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-english-0002",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "conciseness",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "Because the trail was muddy in condition, the hikers moved slowly.\n\nWhich choice most effectively revises the underlined phrase “muddy in condition”?",
+    "choices": [
+      "muddy",
+      "in a muddy state",
+      "characterized by mud",
+      "muddy in its condition"
+    ],
+    "correctAnswer": 0,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "“Muddy” expresses the full idea clearly and concisely. The other choices repeat the meaning without adding useful information.",
+    "solutionSteps": [
+      "Identify that the question tests conciseness within Effective Language Use.",
+      "“Muddy” expresses the full idea clearly and concisely. The other choices repeat the meaning without adding useful information.",
+      "Confirm that muddy answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "“in a muddy state” does not satisfy the conciseness requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 2,
+        "reason": "“characterized by mud” does not satisfy the conciseness requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 3,
+        "reason": "“muddy in its condition” does not satisfy the conciseness requirement in this sentence or rhetorical context."
+      }
+    ],
+    "strategy": "Decide the governing grammar or rhetoric rule before looking closely at the answer choices.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-027",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-english-0003",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "pronouns",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "Neither Elena nor Priya had brought ______ camera to the bird sanctuary.\n\nWhich choice completes the sentence using standard pronoun agreement?",
+    "choices": [
+      "their",
+      "her",
+      "our",
+      "its"
+    ],
+    "correctAnswer": 1,
+    "hint": "Read the whole sentence and check pronouns before comparing choices.",
+    "explanation": "Both Elena and Priya are singular, and “neither...nor” treats them individually. The singular pronoun “her” agrees with the subject.",
+    "solutionSteps": [
+      "Identify that the question tests pronouns within Usage.",
+      "Both Elena and Priya are singular, and “neither...nor” treats them individually. The singular pronoun “her” agrees with the subject.",
+      "Confirm that her answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“their” does not satisfy the pronouns requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 2,
+        "reason": "“our” does not satisfy the pronouns requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 3,
+        "reason": "“its” does not satisfy the pronouns requirement in this sentence or rhetorical context."
+      }
+    ],
+    "strategy": "Decide the governing grammar or rhetoric rule before looking closely at the answer choices.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Apply the Standard English convention for pronouns."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-028",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-english-0004",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "introductions",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A paragraph explains how to care for a new houseplant in this order: choosing a bright location, checking the soil's moisture, watering when the top layer is dry, and emptying excess water from the saucer. Which opening sentence would best introduce the paragraph?",
+    "choices": [
+      "Houseplants have appeared in art for hundreds of years.",
+      "Following a simple routine can help a new houseplant thrive.",
+      "Some ceramic plant pots are painted by hand.",
+      "Many people disagree about which flower has the best scent."
+    ],
+    "correctAnswer": 1,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "The paragraph presents a sequence of basic plant-care steps, so the sentence about following a simple routine best introduces its focus.",
+    "solutionSteps": [
+      "Identify that the question tests introductions within Organization, Unity, and Cohesion.",
+      "The paragraph presents a sequence of basic plant-care steps, so the sentence about following a simple routine best introduces its focus.",
+      "Confirm that Following a simple routine can help a new houseplant thrive. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Houseplants have appeared in art for hundreds of years.” does not satisfy the introductions requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 2,
+        "reason": "“Some ceramic plant pots are painted by hand.” does not satisfy the introductions requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 3,
+        "reason": "“Many people disagree about which flower has the best scent.” does not satisfy the introductions requirement in this sentence or rhetorical context."
+      }
+    ],
+    "strategy": "Decide the governing grammar or rhetoric rule before looking closely at the answer choices.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "standalone",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-029",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-english-0005",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "transitions",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "The first batch of bread had a dense texture. ______, the baker increased the dough's rising time before preparing the second batch.\n\nWhich choice provides the most logical transition?",
+    "choices": [
+      "Consequently",
+      "Similarly",
+      "For instance",
+      "Nevertheless"
+    ],
+    "correctAnswer": 0,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "The baker's change is a response to the first batch's dense texture, so “Consequently” clearly signals cause and effect.",
+    "solutionSteps": [
+      "Identify that the question tests transitions within Organization, Unity, and Cohesion.",
+      "The baker's change is a response to the first batch's dense texture, so “Consequently” clearly signals cause and effect.",
+      "Confirm that Consequently answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "“Similarly” does not satisfy the transitions requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 2,
+        "reason": "“For instance” does not satisfy the transitions requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 3,
+        "reason": "“Nevertheless” does not satisfy the transitions requirement in this sentence or rhetorical context."
+      }
+    ],
+    "strategy": "Decide the governing grammar or rhetoric rule before looking closely at the answer choices.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-030",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  }
+]

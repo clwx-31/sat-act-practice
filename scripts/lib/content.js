@@ -210,7 +210,9 @@ function validateMultipleChoice(question, errors) {
   if (question.choices.some((choice) => !isNonemptyString(choice))) {
     addError(errors, question, "choices must be nonempty strings");
   }
-  const normalized = question.choices.map(normalizeText);
+  const normalized = question.choices.map((choice) =>
+    choice.normalize("NFKC").toLowerCase().trim().replace(/\s+/g, " "),
+  );
   if (new Set(normalized).size !== normalized.length) {
     addError(errors, question, "choices must be distinct");
   }

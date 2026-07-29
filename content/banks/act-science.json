@@ -1,0 +1,307 @@
+[
+  {
+    "id": "act-science-0001",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "tables",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "Four identical cups of water were placed under lamps for 30 minutes. The lamps were 10, 20, 30, and 40 centimeters from the cups. The final water temperatures were 34°C, 30°C, 27°C, and 25°C, respectively.\n\nWhich lamp distance produced the highest final water temperature?",
+    "choices": [
+      "10 cm",
+      "20 cm",
+      "30 cm",
+      "40 cm"
+    ],
+    "correctAnswer": 0,
+    "hint": "Locate the variable or comparison named in the question before evaluating the options.",
+    "explanation": "The highest recorded temperature was 34°C, which corresponded to the lamp placed 10 centimeters from the cup.",
+    "solutionSteps": [
+      "Identify that the question tests tables within Read data displays.",
+      "The highest recorded temperature was 34°C, which corresponded to the lamp placed 10 centimeters from the cup.",
+      "Confirm that 10 cm answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The supplied experiment or data do not support “20 cm”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 2,
+        "reason": "The supplied experiment or data do not support “30 cm”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 3,
+        "reason": "The supplied experiment or data do not support “40 cm”; the relevant comparison leads to the stated correct answer."
+      }
+    ],
+    "strategy": "Go directly to the named data or experimental feature; compare choices only after identifying the evidence.",
+    "trap": "Do not replace the supplied evidence with an assumption based on outside knowledge.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use only the experiment description and supplied data; outside scientific recall is secondary."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-041",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-science-0002",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "controls",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A student tests whether fertilizer affects bean plant height. She gives 5 grams of fertilizer to ten plants and no fertilizer to ten other plants. All plants receive the same soil, light, and water.\n\nWhat is the primary purpose of the plants that receive no fertilizer?",
+    "choices": [
+      "They serve as a control group for comparison.",
+      "They increase the amount of fertilizer tested.",
+      "They ensure that every plant grows to the same height.",
+      "They measure the amount of light in the experiment."
+    ],
+    "correctAnswer": 0,
+    "hint": "Locate the variable or comparison named in the question before evaluating the options.",
+    "explanation": "The unfertilized plants provide a baseline. Comparing them with the fertilized plants helps isolate the effect of fertilizer on height.",
+    "solutionSteps": [
+      "Identify that the question tests controls within Experimental design.",
+      "The unfertilized plants provide a baseline. Comparing them with the fertilized plants helps isolate the effect of fertilizer on height.",
+      "Confirm that They serve as a control group for comparison. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The supplied experiment or data do not support “They increase the amount of fertilizer tested.”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 2,
+        "reason": "The supplied experiment or data do not support “They ensure that every plant grows to the same height.”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 3,
+        "reason": "The supplied experiment or data do not support “They measure the amount of light in the experiment.”; the relevant comparison leads to the stated correct answer."
+      }
+    ],
+    "strategy": "Go directly to the named data or experimental feature; compare choices only after identifying the evidence.",
+    "trap": "Do not replace the supplied evidence with an assumption based on outside knowledge.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use only the experiment description and supplied data; outside scientific recall is secondary."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-042",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-science-0003",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "trends",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A culture contained 200 bacteria at hour 0, 360 at hour 1, 610 at hour 2, and 940 at hour 3.\n\nWhich statement best describes the bacterial population over the measured period?",
+    "choices": [
+      "It decreased at a constant rate.",
+      "It remained unchanged.",
+      "It increased, and the amount of increase grew each hour.",
+      "It increased by exactly 200 bacteria each hour."
+    ],
+    "correctAnswer": 2,
+    "hint": "Locate the variable or comparison named in the question before evaluating the options.",
+    "explanation": "The population rose throughout the experiment. The hourly increases were 160, 250, and 330 bacteria, so the amount of increase also grew each hour.",
+    "solutionSteps": [
+      "Identify that the question tests trends within Analyze data.",
+      "The population rose throughout the experiment. The hourly increases were 160, 250, and 330 bacteria, so the amount of increase also grew each hour.",
+      "Confirm that It increased, and the amount of increase grew each hour. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The supplied experiment or data do not support “It decreased at a constant rate.”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 1,
+        "reason": "The supplied experiment or data do not support “It remained unchanged.”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 3,
+        "reason": "The supplied experiment or data do not support “It increased by exactly 200 bacteria each hour.”; the relevant comparison leads to the stated correct answer."
+      }
+    ],
+    "strategy": "Go directly to the named data or experimental feature; compare choices only after identifying the evidence.",
+    "trap": "Do not replace the supplied evidence with an assumption based on outside knowledge.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use only the experiment description and supplied data; outside scientific recall is secondary."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-043",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-science-0004",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "variables",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A researcher hypothesizes that salt lowers the freezing point of water. Which experiment would best test this hypothesis?",
+    "choices": [
+      "Compare the freezing temperatures of equal volumes of pure water and saltwater.",
+      "Compare the boiling times of different volumes of pure water.",
+      "Measure how quickly salt dissolves in water at room temperature.",
+      "Freeze equal volumes of pure water in containers of different shapes."
+    ],
+    "correctAnswer": 0,
+    "hint": "Locate the variable or comparison named in the question before evaluating the options.",
+    "explanation": "The best test changes the presence of salt while holding water volume constant, then measures the outcome named in the hypothesis: freezing temperature.",
+    "solutionSteps": [
+      "Identify that the question tests variables within Experimental design.",
+      "The best test changes the presence of salt while holding water volume constant, then measures the outcome named in the hypothesis: freezing temperature.",
+      "Confirm that Compare the freezing temperatures of equal volumes of pure water and saltwater. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The supplied experiment or data do not support “Compare the boiling times of different volumes of pure water.”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 2,
+        "reason": "The supplied experiment or data do not support “Measure how quickly salt dissolves in water at room temperature.”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 3,
+        "reason": "The supplied experiment or data do not support “Freeze equal volumes of pure water in containers of different shapes.”; the relevant comparison leads to the stated correct answer."
+      }
+    ],
+    "strategy": "Go directly to the named data or experimental feature; compare choices only after identifying the evidence.",
+    "trap": "Do not replace the supplied evidence with an assumption based on outside knowledge.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use only the experiment description and supplied data; outside scientific recall is secondary."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "standalone",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-044",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-science-0005",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "evidence preference",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "Scientist 1 argues that a lake's declining fish population is mainly caused by warmer water. Scientist 2 argues that the decline is mainly caused by reduced food availability.\n\nWhich observation would most directly support Scientist 2 over Scientist 1?",
+    "choices": [
+      "The lake's water temperature has risen by 2°C in ten years.",
+      "Fish populations declined after insects eaten by the fish became scarce, while water temperature remained stable.",
+      "The fish are found in both shallow and deep parts of the lake.",
+      "Warm years and cool years have occurred throughout the lake's history."
+    ],
+    "correctAnswer": 1,
+    "hint": "Locate the variable or comparison named in the question before evaluating the options.",
+    "explanation": "A decline following reduced food availability while temperature stays stable supports the food-based explanation and weakens the claim that warming is the main cause.",
+    "solutionSteps": [
+      "Identify that the question tests evidence preference within Compare viewpoints.",
+      "A decline following reduced food availability while temperature stays stable supports the food-based explanation and weakens the claim that warming is the main cause.",
+      "Confirm that Fish populations declined after insects eaten by the fish became scarce, while water temperature remained stable. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The supplied experiment or data do not support “The lake's water temperature has risen by 2°C in ten years.”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 2,
+        "reason": "The supplied experiment or data do not support “The fish are found in both shallow and deep parts of the lake.”; the relevant comparison leads to the stated correct answer."
+      },
+      {
+        "index": 3,
+        "reason": "The supplied experiment or data do not support “Warm years and cool years have occurred throughout the lake's history.”; the relevant comparison leads to the stated correct answer."
+      }
+    ],
+    "strategy": "Go directly to the named data or experimental feature; compare choices only after identifying the evidence.",
+    "trap": "Do not replace the supplied evidence with an assumption based on outside knowledge.",
+    "estimatedSeconds": 105,
+    "principles": [
+      "Use only the experiment description and supplied data; outside scientific recall is secondary."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-045",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  }
+]

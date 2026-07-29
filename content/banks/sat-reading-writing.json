@@ -1,0 +1,612 @@
+[
+  {
+    "id": "sat-reading-writing-0001",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Information and Ideas",
+    "skill": "Central Ideas and Details",
+    "subskill": "main idea",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "For years, residents of Bellwether Island bought most of their vegetables from mainland farms. After volunteers converted an unused soccer field into community garden plots, islanders began growing tomatoes, beans, and greens locally. The garden now supplies produce to dozens of households and hosts weekly lessons for new gardeners.\n\nWhich choice best states the main idea of the text?",
+    "choices": [
+      "Mainland farms grow a wider range of vegetables than Bellwether Island does.",
+      "A community garden has helped island residents produce food and learn gardening skills.",
+      "Most island residents would prefer to restore the unused soccer field.",
+      "Gardening lessons are available only to households that buy mainland produce."
+    ],
+    "correctAnswer": 1,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "The text focuses on two results of the community garden: it supplies local produce and offers gardening lessons. The other choices add claims that the text does not make.",
+    "solutionSteps": [
+      "Identify that the question tests main idea within Central Ideas and Details.",
+      "The text focuses on two results of the community garden: it supplies local produce and offers gardening lessons. The other choices add claims that the text does not make.",
+      "Confirm that A community garden has helped island residents produce food and learn gardening skills. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage does not fully support “Mainland farms grow a wider range of vegetables than Bellwether Island does.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 2,
+        "reason": "The passage does not fully support “Most island residents would prefer to restore the unused soccer field.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not fully support “Gardening lessons are available only to households that buy mainland produce.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      }
+    ],
+    "strategy": "Answer from the text first, then select the choice that matches without exaggerating or narrowing the evidence.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-016",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0002",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Craft and Structure",
+    "skill": "Words in Context",
+    "subskill": "meaning in context",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "The first prototype of the water filter was bulky, but the engineers eventually devised a compact version that could fit inside a backpack.\n\nAs used in the text, “devised” most nearly means",
+    "choices": [
+      "invented",
+      "noticed",
+      "measured",
+      "requested"
+    ],
+    "correctAnswer": 0,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "The engineers created a new, compact version of the filter, so “invented” best matches the meaning of “devised” in this context.",
+    "solutionSteps": [
+      "Identify that the question tests meaning in context within Words in Context.",
+      "The engineers created a new, compact version of the filter, so “invented” best matches the meaning of “devised” in this context.",
+      "Confirm that invented answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The passage does not fully support “noticed”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 2,
+        "reason": "The passage does not fully support “measured”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not fully support “requested”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      }
+    ],
+    "strategy": "Answer from the text first, then select the choice that matches without exaggerating or narrowing the evidence.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-017",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0003",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Information and Ideas",
+    "skill": "Command of Evidence",
+    "subskill": "textual evidence",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A student claims that city trees can reduce the amount of energy nearby buildings use for cooling.\n\nWhich finding, if true, would most directly support the student's claim?",
+    "choices": [
+      "Residents of tree-lined streets report seeing more birds than residents of other streets.",
+      "Several tree species grow faster in cities than they do in rural forests.",
+      "Buildings shaded by mature trees use less electricity during summer afternoons than comparable unshaded buildings.",
+      "City crews spend more time pruning mature trees than planting young ones."
+    ],
+    "correctAnswer": 2,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "Lower summer electricity use in otherwise comparable shaded buildings directly connects trees with reduced cooling energy. The other findings do not address building energy use.",
+    "solutionSteps": [
+      "Identify that the question tests textual evidence within Command of Evidence.",
+      "Lower summer electricity use in otherwise comparable shaded buildings directly connects trees with reduced cooling energy. The other findings do not address building energy use.",
+      "Confirm that Buildings shaded by mature trees use less electricity during summer afternoons than comparable unshaded buildings. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage does not fully support “Residents of tree-lined streets report seeing more birds than residents of other streets.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 1,
+        "reason": "The passage does not fully support “Several tree species grow faster in cities than they do in rural forests.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not fully support “City crews spend more time pruning mature trees than planting young ones.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      }
+    ],
+    "strategy": "Answer from the text first, then select the choice that matches without exaggerating or narrowing the evidence.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-018",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0004",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Information and Ideas",
+    "skill": "Inferences",
+    "subskill": "logical inference",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "Biologist Lena Ortiz expected the desert beetles to remain hidden during the hottest hours. Yet cameras recorded several beetles crossing open sand at noon after rare morning rainstorms. Ortiz noted that the beetles moved only when shallow pools had formed between the dunes.\n\nWhich conclusion is best supported by the text?",
+    "choices": [
+      "The beetles cannot survive unless it rains every morning.",
+      "The presence of temporary water may affect when the beetles become active.",
+      "The cameras caused the beetles to leave their hiding places.",
+      "The beetles are more active at noon than at any other time."
+    ],
+    "correctAnswer": 1,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "The unusual noon activity occurred only when rain had created shallow pools, supporting the inference that temporary water may influence the beetles' activity. The text does not establish the stronger claims in the other choices.",
+    "solutionSteps": [
+      "Identify that the question tests logical inference within Inferences.",
+      "The unusual noon activity occurred only when rain had created shallow pools, supporting the inference that temporary water may influence the beetles' activity. The text does not establish the stronger claims in the other choices.",
+      "Confirm that The presence of temporary water may affect when the beetles become active. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage does not fully support “The beetles cannot survive unless it rains every morning.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 2,
+        "reason": "The passage does not fully support “The cameras caused the beetles to leave their hiding places.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not fully support “The beetles are more active at noon than at any other time.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      }
+    ],
+    "strategy": "Answer from the text first, then select the choice that matches without exaggerating or narrowing the evidence.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-019",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0005",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Expression of Ideas",
+    "skill": "Transitions",
+    "subskill": "logical transition",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "The town library extended its weekend hours last spring. ______, the number of Saturday visitors increased by nearly 40 percent over the following three months.\n\nWhich choice completes the text with the most logical transition?",
+    "choices": [
+      "As a result",
+      "For example",
+      "In contrast",
+      "Meanwhile"
+    ],
+    "correctAnswer": 0,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "The increase in visitors is presented as an outcome of the extended hours, so the cause-and-effect transition “As a result” is most logical.",
+    "solutionSteps": [
+      "Identify that the question tests logical transition within Transitions.",
+      "The increase in visitors is presented as an outcome of the extended hours, so the cause-and-effect transition “As a result” is most logical.",
+      "Confirm that As a result answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The passage does not fully support “For example”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 2,
+        "reason": "The passage does not fully support “In contrast”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not fully support “Meanwhile”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      }
+    ],
+    "strategy": "Answer from the text first, then select the choice that matches without exaggerating or narrowing the evidence.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-020",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0006",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Standard English Conventions",
+    "skill": "Boundaries",
+    "subskill": "sentence boundaries",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "The museum's new exhibit features instruments made from recycled materials ______ visitors can play several of the instruments during scheduled demonstrations.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+    "choices": [
+      ", visitors",
+      "; visitors",
+      " visitors",
+      ": and visitors"
+    ],
+    "correctAnswer": 1,
+    "hint": "Read the whole sentence and check sentence boundaries before comparing choices.",
+    "explanation": "The clauses before and after the blank are both independent clauses. A semicolon correctly joins them without a coordinating conjunction.",
+    "solutionSteps": [
+      "Identify that the question tests sentence boundaries within Boundaries.",
+      "The clauses before and after the blank are both independent clauses. A semicolon correctly joins them without a coordinating conjunction.",
+      "Confirm that ; visitors answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“, visitors” does not satisfy the sentence boundaries requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 2,
+        "reason": "“ visitors” does not satisfy the sentence boundaries requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 3,
+        "reason": "“: and visitors” does not satisfy the sentence boundaries requirement in this sentence or rhetorical context."
+      }
+    ],
+    "strategy": "Decide the governing grammar or rhetoric rule before looking closely at the answer choices.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Apply the Standard English convention for sentence boundaries."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-021",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0007",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Standard English Conventions",
+    "skill": "Form, Structure, and Sense",
+    "subskill": "subject-verb agreement",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A collection of handwritten recipes from the 1920s ______ in the town archive.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+    "choices": [
+      "is preserved",
+      "are preserved",
+      "preserve",
+      "have preserved"
+    ],
+    "correctAnswer": 0,
+    "hint": "Read the whole sentence and check subject-verb agreement before comparing choices.",
+    "explanation": "The subject is the singular noun “collection,” not the plural noun “recipes” in the modifying phrase. Therefore, the singular verb phrase “is preserved” is correct.",
+    "solutionSteps": [
+      "Identify that the question tests subject-verb agreement within Form, Structure, and Sense.",
+      "The subject is the singular noun “collection,” not the plural noun “recipes” in the modifying phrase. Therefore, the singular verb phrase “is preserved” is correct.",
+      "Confirm that is preserved answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "“are preserved” does not satisfy the subject-verb agreement requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 2,
+        "reason": "“preserve” does not satisfy the subject-verb agreement requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 3,
+        "reason": "“have preserved” does not satisfy the subject-verb agreement requirement in this sentence or rhetorical context."
+      }
+    ],
+    "strategy": "Decide the governing grammar or rhetoric rule before looking closely at the answer choices.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Apply the Standard English convention for subject-verb agreement."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-022",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0008",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Expression of Ideas",
+    "skill": "Rhetorical Synthesis",
+    "subskill": "rhetorical goal",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A student wants to emphasize a similarity between two sculptures. The student has taken these notes:\n\n• Mira Chen completed River Arch in 2018.\n• River Arch is made of bent steel strips.\n• Tomas Vela completed Wind Frame in 2021.\n• Wind Frame is also made of bent steel strips.\n\nWhich choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "choices": [
+      "Mira Chen completed River Arch three years before Tomas Vela completed Wind Frame.",
+      "Completed in 2021, Tomas Vela's Wind Frame is a sculpture.",
+      "Both Chen's River Arch and Vela's Wind Frame are constructed from bent steel strips.",
+      "River Arch was completed in 2018 and is the work of Mira Chen."
+    ],
+    "correctAnswer": 2,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "The correct choice directly emphasizes the requested similarity: both sculptures use bent steel strips. The other choices discuss dates or only one work.",
+    "solutionSteps": [
+      "Identify that the question tests rhetorical goal within Rhetorical Synthesis.",
+      "The correct choice directly emphasizes the requested similarity: both sculptures use bent steel strips. The other choices discuss dates or only one work.",
+      "Confirm that Both Chen's River Arch and Vela's Wind Frame are constructed from bent steel strips. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage does not fully support “Mira Chen completed River Arch three years before Tomas Vela completed Wind Frame.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 1,
+        "reason": "The passage does not fully support “Completed in 2021, Tomas Vela's Wind Frame is a sculpture.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not fully support “River Arch was completed in 2018 and is the work of Mira Chen.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      }
+    ],
+    "strategy": "Answer from the text first, then select the choice that matches without exaggerating or narrowing the evidence.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-023",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0009",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Standard English Conventions",
+    "skill": "Boundaries",
+    "subskill": "within-sentence punctuation",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "Dr. Nia Harper studies three nocturnal animals ______ bats, moths, and owls.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+    "choices": [
+      ",",
+      ";",
+      ":",
+      "— and"
+    ],
+    "correctAnswer": 2,
+    "hint": "Read the whole sentence and check within-sentence punctuation before comparing choices.",
+    "explanation": "The complete clause before the blank introduces a list of the three animals, so a colon is appropriate.",
+    "solutionSteps": [
+      "Identify that the question tests within-sentence punctuation within Boundaries.",
+      "The complete clause before the blank introduces a list of the three animals, so a colon is appropriate.",
+      "Confirm that : answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“,” does not satisfy the within-sentence punctuation requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 1,
+        "reason": "“;” does not satisfy the within-sentence punctuation requirement in this sentence or rhetorical context."
+      },
+      {
+        "index": 3,
+        "reason": "“— and” does not satisfy the within-sentence punctuation requirement in this sentence or rhetorical context."
+      }
+    ],
+    "strategy": "Decide the governing grammar or rhetoric rule before looking closely at the answer choices.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Apply the Standard English convention for within-sentence punctuation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-024",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "sat-reading-writing-0010",
+    "test": "SAT",
+    "section": "Reading and Writing",
+    "sectionKey": "sat-reading-writing",
+    "domain": "Information and Ideas",
+    "skill": "Command of Evidence",
+    "subskill": "quantitative evidence",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A researcher recorded the average time that four materials took to decompose in a controlled compost bin: paper towel, 5 weeks; cardboard, 8 weeks; cotton cloth, 14 weeks; orange peel, 6 weeks.\n\nWhich statement accurately describes the data?",
+    "choices": [
+      "Cardboard took twice as long to decompose as an orange peel.",
+      "Cotton cloth took the longest to decompose.",
+      "Paper towel and orange peel took the same amount of time to decompose.",
+      "Orange peel took longer to decompose than cardboard."
+    ],
+    "correctAnswer": 1,
+    "hint": "Restate the question in your own words, then eliminate choices that add unsupported claims.",
+    "explanation": "At 14 weeks, cotton cloth had the greatest recorded decomposition time. Each other statement conflicts with the given values.",
+    "solutionSteps": [
+      "Identify that the question tests quantitative evidence within Command of Evidence.",
+      "At 14 weeks, cotton cloth had the greatest recorded decomposition time. Each other statement conflicts with the given values.",
+      "Confirm that Cotton cloth took the longest to decompose. answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage does not fully support “Cardboard took twice as long to decompose as an orange peel.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 2,
+        "reason": "The passage does not fully support “Paper towel and orange peel took the same amount of time to decompose.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not fully support “Orange peel took longer to decompose than cardboard.”; it either adds a claim, misses the requested relationship, or conflicts with a stated detail."
+      }
+    ],
+    "strategy": "Answer from the text first, then select the choice that matches without exaggerating or narrowing the evidence.",
+    "trap": "A choice can sound natural while violating the specific grammar or rhetorical relationship being tested.",
+    "estimatedSeconds": 105,
+    "principles": [
+      "Choose the option that is fully supported by the supplied text and the exact task."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-025",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  }
+]

@@ -1,0 +1,307 @@
+[
+  {
+    "id": "act-mathematics-0001",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "linear equations",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "What is the value of 3a + 2 when a = 4?",
+    "choices": [
+      "9",
+      "12",
+      "14",
+      "20"
+    ],
+    "correctAnswer": 2,
+    "hint": "Identify the linear equations relationship, then work one operation at a time.",
+    "explanation": "Substitute 4 for a: 3(4) + 2 = 12 + 2 = 14.",
+    "solutionSteps": [
+      "Identify that the question tests linear equations within Expressions and equations.",
+      "Substitute 4 for a: 3(4) + 2 = 12 + 2 = 14.",
+      "Confirm that 14 answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "9 does not satisfy the full linear equations calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 1,
+        "reason": "12 does not satisfy the full linear equations calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 3,
+        "reason": "20 does not satisfy the full linear equations calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      }
+    ],
+    "strategy": "Translate the stem into the relevant expressions and equations relationship, solve, and substitute back when possible.",
+    "trap": "A tempting option may reflect one correct intermediate step rather than the requested final value.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use expressions and equations accurately and keep intermediate work organized."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-031",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-mathematics-0002",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Measurement",
+    "subskill": "area",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A rectangular garden is 12 feet long and 7 feet wide. What is its perimeter, in feet?",
+    "choices": [
+      "19",
+      "38",
+      "84",
+      "168"
+    ],
+    "correctAnswer": 1,
+    "hint": "Identify the area relationship, then work one operation at a time.",
+    "explanation": "The perimeter of a rectangle is 2(length + width). Here, 2(12 + 7) = 2(19) = 38 feet.",
+    "solutionSteps": [
+      "Identify that the question tests area within Measurement.",
+      "The perimeter of a rectangle is 2(length + width). Here, 2(12 + 7) = 2(19) = 38 feet.",
+      "Confirm that 38 answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "19 does not satisfy the full area calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 2,
+        "reason": "84 does not satisfy the full area calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 3,
+        "reason": "168 does not satisfy the full area calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      }
+    ],
+    "strategy": "Translate the stem into the relevant measurement relationship, solve, and substitute back when possible.",
+    "trap": "A tempting option may reflect one correct intermediate step rather than the requested final value.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use measurement accurately and keep intermediate work organized."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-032",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-mathematics-0003",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function concepts",
+    "subskill": "domain and range",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "For all x ≠ 1, which expression is equivalent to (x² − 1)/(x − 1)?",
+    "choices": [
+      "x − 1",
+      "x + 1",
+      "x² + 1",
+      "1"
+    ],
+    "correctAnswer": 1,
+    "hint": "Identify the domain and range relationship, then work one operation at a time.",
+    "explanation": "Factor the numerator: x² − 1 = (x − 1)(x + 1). Since x ≠ 1, cancel x − 1 to get x + 1.",
+    "solutionSteps": [
+      "Identify that the question tests domain and range within Function concepts.",
+      "Factor the numerator: x² − 1 = (x − 1)(x + 1). Since x ≠ 1, cancel x − 1 to get x + 1.",
+      "Confirm that x + 1 answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "x − 1 does not satisfy the full domain and range calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 2,
+        "reason": "x² + 1 does not satisfy the full domain and range calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 3,
+        "reason": "1 does not satisfy the full domain and range calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      }
+    ],
+    "strategy": "Translate the stem into the relevant function concepts relationship, solve, and substitute back when possible.",
+    "trap": "A tempting option may reflect one correct intermediate step rather than the requested final value.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use function concepts accurately and keep intermediate work organized."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-033",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-mathematics-0004",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Plane geometry",
+    "subskill": "coordinate geometry",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "What is the midpoint of the line segment with endpoints (−2, 5) and (6, 1)?",
+    "choices": [
+      "(2, 3)",
+      "(4, 6)",
+      "(2, 2)",
+      "(−4, 4)"
+    ],
+    "correctAnswer": 0,
+    "hint": "Identify the coordinate geometry relationship, then work one operation at a time.",
+    "explanation": "Average the x-coordinates and the y-coordinates: ((−2 + 6)/2, (5 + 1)/2) = (2, 3).",
+    "solutionSteps": [
+      "Identify that the question tests coordinate geometry within Plane geometry.",
+      "Average the x-coordinates and the y-coordinates: ((−2 + 6)/2, (5 + 1)/2) = (2, 3).",
+      "Confirm that (2, 3) answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "(4, 6) does not satisfy the full coordinate geometry calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 2,
+        "reason": "(2, 2) does not satisfy the full coordinate geometry calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 3,
+        "reason": "(−4, 4) does not satisfy the full coordinate geometry calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      }
+    ],
+    "strategy": "Translate the stem into the relevant plane geometry relationship, solve, and substitute back when possible.",
+    "trap": "A tempting option may reflect one correct intermediate step rather than the requested final value.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use plane geometry accurately and keep intermediate work organized."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-034",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  },
+  {
+    "id": "act-mathematics-0005",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Probability",
+    "subskill": "compound probability",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "A fair six-sided number cube is rolled twice. What is the probability that both rolls show an even number?",
+    "choices": [
+      "1/6",
+      "1/4",
+      "1/3",
+      "1/2"
+    ],
+    "correctAnswer": 1,
+    "hint": "Identify the compound probability relationship, then work one operation at a time.",
+    "explanation": "Each roll has 3 even outcomes out of 6, so the probability of an even number is 1/2. The rolls are independent, so (1/2)(1/2) = 1/4.",
+    "solutionSteps": [
+      "Identify that the question tests compound probability within Probability.",
+      "Each roll has 3 even outcomes out of 6, so the probability of an even number is 1/2. The rolls are independent, so (1/2)(1/2) = 1/4.",
+      "Confirm that 1/4 answers the exact question asked."
+    ],
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "1/6 does not satisfy the full compound probability calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 2,
+        "reason": "1/3 does not satisfy the full compound probability calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      },
+      {
+        "index": 3,
+        "reason": "1/2 does not satisfy the full compound probability calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
+      }
+    ],
+    "strategy": "Translate the stem into the relevant probability relationship, solve, and substitute back when possible.",
+    "trap": "A tempting option may reflect one correct intermediate step rather than the requested final value.",
+    "estimatedSeconds": 105,
+    "principles": [
+      "Use probability accurately and keep intermediate work organized."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [
+      "legacy-audited"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "legacy-migration",
+      "seed": "legacy-035",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "pending-editorial",
+    "verification": null
+  }
+]

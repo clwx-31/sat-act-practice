@@ -1,69 +1,303 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAT &amp; ACT Practice</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Independent SAT and ACT practice with original questions, detailed answer guides, and private on-device progress."
+    />
+    <title>Summit Prep — SAT &amp; ACT Practice</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="wrap">
-      <header class="site">
-        <h1>SAT &amp; ACT Practice</h1>
-        <p>Answer, check, and learn from the explanation. Free to use — good luck!</p>
-      </header>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-      <!-- START SCREEN -->
-      <section id="setup" class="card setup">
-        <label for="sectionSelect">Choose what to practice</label>
-        <select id="sectionSelect"></select>
+    <header class="topbar">
+      <a id="homeLink" class="brand" href="#setupView" aria-label="Summit Prep home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>
+          <strong>Summit Prep</strong>
+          <small>Independent SAT &amp; ACT practice</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <button class="nav-link active" data-view="setup" type="button">Practice</button>
+        <button class="nav-link" data-view="dashboard" type="button">Progress</button>
+        <button class="nav-link" data-view="review" type="button">Review</button>
+      </nav>
+    </header>
 
-        <div class="checkbox-row">
-          <input type="checkbox" id="shuffleCheck" checked />
-          <label for="shuffleCheck" style="margin:0; font-weight:500;">
-            Shuffle the question order
-          </label>
+    <main id="main">
+      <section id="setupView" class="view">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">3,500 original practice items</p>
+            <h1>Practice with purpose.</h1>
+            <p class="hero-copy">
+              Target an official skill, learn from every option, and keep your
+              progress private on this device.
+            </p>
+          </div>
+          <div class="hero-stat" aria-label="Question bank summary">
+            <strong>500</strong>
+            <span>items in every section</span>
+          </div>
         </div>
 
-        <button id="startBtn" class="btn-primary">Start practicing</button>
-      </section>
+        <div class="layout-grid">
+          <form id="practiceForm" class="panel builder">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Build a session</p>
+                <h2>Choose your focus</h2>
+              </div>
+              <span id="matchCount" class="count-pill" aria-live="polite">Loading…</span>
+            </div>
 
-      <!-- QUIZ SCREEN -->
-      <section id="quiz" class="card hidden">
-        <div class="progress">
-          <span id="progressLabel">Question 1</span>
-          <span id="scoreLabel">Score: 0</span>
+            <div class="field-grid">
+              <div class="field span-2">
+                <label for="sectionSelect">Test section</label>
+                <select id="sectionSelect" required></select>
+                <p id="sectionNote" class="field-note"></p>
+              </div>
+
+              <div class="field">
+                <label for="modeSelect">Practice mode</label>
+                <select id="modeSelect">
+                  <option value="targeted">Targeted practice</option>
+                  <option value="full">Full section mix</option>
+                  <option value="adaptive">Recommended next</option>
+                  <option value="missed">Missed-question review</option>
+                  <option value="bookmarked">Bookmarked questions</option>
+                  <option value="flagged">Flagged questions</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="countSelect">Session length</label>
+                <select id="countSelect">
+                  <option value="10">10 questions</option>
+                  <option value="20" selected>20 questions</option>
+                  <option value="40">40 questions</option>
+                  <option value="all">All matching</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="domainSelect">Domain</label>
+                <select id="domainSelect">
+                  <option value="">All domains</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="skillSelect">Skill</label>
+                <select id="skillSelect">
+                  <option value="">All skills</option>
+                </select>
+              </div>
+
+              <fieldset class="field span-2">
+                <legend>Difficulty</legend>
+                <div class="check-pills">
+                  <label><input type="checkbox" name="difficulty" value="Easy" checked /> Easy</label>
+                  <label><input type="checkbox" name="difficulty" value="Medium" checked /> Medium</label>
+                  <label><input type="checkbox" name="difficulty" value="Hard" checked /> Hard</label>
+                </div>
+              </fieldset>
+
+              <div class="field span-2">
+                <label for="searchInput">Search this section</label>
+                <div class="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Search skills, passages, topics, or question IDs"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div id="bankStatus" class="status-line" role="status" aria-live="polite"></div>
+            <button id="startBtn" class="button primary" type="submit" disabled>
+              Start practice
+            </button>
+          </form>
+
+          <aside class="side-stack">
+            <section class="panel recommendation" aria-labelledby="recommendHeading">
+              <p class="eyebrow">Smart next step</p>
+              <h2 id="recommendHeading">Your recommendation</h2>
+              <p id="recommendText">Complete a few questions and recommendations will adapt to your skill history.</p>
+              <button id="recommendBtn" class="button secondary" type="button" disabled>
+                Practice recommendation
+              </button>
+              <small>Transparent practice guidance—not official adaptive scoring.</small>
+            </section>
+
+            <section class="panel privacy-card">
+              <span class="privacy-icon" aria-hidden="true">✓</span>
+              <div>
+                <h2>Private by design</h2>
+                <p>No account or server. Progress stays in this browser.</p>
+              </div>
+            </section>
+          </aside>
         </div>
-        <div class="bar"><span id="barFill" style="width:0%"></span></div>
+      </section>
 
-        <div class="tags" id="tags"></div>
-        <p class="question-text" id="questionText"></p>
+      <section id="quizView" class="view hidden" aria-labelledby="questionHeading">
+        <div class="quiz-shell">
+          <div class="quiz-topline">
+            <button id="exitBtn" class="text-button" type="button">← Exit session</button>
+            <div class="question-tools">
+              <button id="bookmarkBtn" class="icon-button" type="button" aria-pressed="false">
+                ☆ <span>Bookmark</span>
+              </button>
+              <button id="flagBtn" class="icon-button" type="button" aria-pressed="false">
+                ⚑ <span>Flag</span>
+              </button>
+            </div>
+          </div>
 
-        <div class="choices" id="choices"></div>
+          <div class="progress-row">
+            <div>
+              <span id="progressLabel">Question 1 of 10</span>
+              <small id="questionId"></small>
+            </div>
+            <strong id="scoreLabel">0 correct</strong>
+          </div>
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-label="Session progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
+            <span id="progressFill"></span>
+          </div>
 
-        <div class="explanation hidden" id="explanation"></div>
+          <article class="panel question-card">
+            <div id="tags" class="tags"></div>
+            <div id="stimulus" class="stimulus hidden"></div>
+            <h1 id="questionHeading" class="question-stem" tabindex="-1"></h1>
 
-        <div class="quiz-actions">
-          <button id="checkBtn" class="btn-primary" disabled>Check answer</button>
-          <button id="nextBtn" class="btn-primary hidden">Next question →</button>
+            <button id="hintBtn" class="hint-button" type="button" aria-expanded="false">
+              Need a hint?
+            </button>
+            <div id="hintPanel" class="hint-panel hidden"></div>
+
+            <div id="responseArea"></div>
+            <div id="responseStatus" class="sr-only" aria-live="polite"></div>
+
+            <div id="feedback" class="feedback hidden" aria-live="polite">
+              <div id="verdict" class="verdict"></div>
+              <p id="conciseExplanation"></p>
+
+              <div class="guide-grid">
+                <section>
+                  <h2>Step-by-step</h2>
+                  <ol id="solutionSteps"></ol>
+                </section>
+                <section>
+                  <h2>Fastest reliable approach</h2>
+                  <p id="strategyText"></p>
+                  <h2>Common trap</h2>
+                  <p id="trapText"></p>
+                </section>
+              </div>
+
+              <section id="distractorSection">
+                <h2>Why the other options miss</h2>
+                <ul id="distractorList" class="rationale-list"></ul>
+              </section>
+
+              <section>
+                <h2>Principles to remember</h2>
+                <ul id="principleList"></ul>
+              </section>
+            </div>
+
+            <div class="question-actions">
+              <button id="submitBtn" class="button primary" type="button" disabled>
+                Check answer
+              </button>
+              <button id="nextBtn" class="button primary hidden" type="button">
+                Next question →
+              </button>
+            </div>
+          </article>
         </div>
       </section>
 
-      <!-- RESULTS SCREEN -->
-      <section id="results" class="card results hidden">
-        <p style="margin:0; color:var(--muted); font-weight:600;">Your score</p>
-        <p class="score" id="finalScore">0</p>
-        <p class="msg" id="finalMsg"></p>
-        <button id="restartBtn" class="btn-primary">Practice again</button>
+      <section id="resultsView" class="view hidden" aria-labelledby="resultsHeading">
+        <div class="panel results-panel">
+          <p class="eyebrow">Session complete</p>
+          <h1 id="resultsHeading">Nice work.</h1>
+          <div class="result-score">
+            <strong id="finalScore">0%</strong>
+            <span id="finalScoreLabel">0 of 0 correct</span>
+          </div>
+          <p id="resultsMessage"></p>
+          <div id="resultsBreakdown" class="breakdown"></div>
+          <div class="button-row">
+            <button id="practiceAgainBtn" class="button primary" type="button">Practice again</button>
+            <button id="reviewSessionBtn" class="button secondary" type="button">Review missed</button>
+          </div>
+        </div>
       </section>
 
-      <footer class="site">
-        All questions are original practice material. Not affiliated with the College Board or ACT.
-      </footer>
-    </div>
+      <section id="dashboardView" class="view hidden" aria-labelledby="dashboardHeading">
+        <div class="view-heading">
+          <div>
+            <p class="eyebrow">On-device analytics</p>
+            <h1 id="dashboardHeading">Your progress</h1>
+          </div>
+          <button id="clearProgressBtn" class="button danger" type="button">Clear local progress</button>
+        </div>
+        <div id="dashboardStats" class="stats-grid"></div>
+        <section class="panel">
+          <h2>Skill performance</h2>
+          <div id="skillTableWrap" class="table-wrap"></div>
+        </section>
+      </section>
 
-    <!-- Load the question bank first, then the app logic. -->
-    <script src="questions.js"></script>
+      <section id="reviewView" class="view hidden" aria-labelledby="reviewHeading">
+        <div class="view-heading">
+          <div>
+            <p class="eyebrow">Saved for later</p>
+            <h1 id="reviewHeading">Review library</h1>
+          </div>
+        </div>
+        <div class="review-tabs" role="tablist" aria-label="Review lists">
+          <button id="missedTab" class="review-tab active" data-list="missed" role="tab"
+            aria-controls="reviewList" aria-selected="true" type="button">Missed</button>
+          <button id="bookmarkedTab" class="review-tab" data-list="bookmarked" role="tab"
+            aria-controls="reviewList" aria-selected="false" type="button">Bookmarked</button>
+          <button id="flaggedTab" class="review-tab" data-list="flagged" role="tab"
+            aria-controls="reviewList" aria-selected="false" type="button">Flagged</button>
+        </div>
+        <div id="reviewList" class="review-list" role="tabpanel" aria-labelledby="missedTab"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Independent educational practice. Not affiliated with, endorsed by, or
+        sponsored by College Board or ACT, Inc.
+      </p>
+      <p>
+        SAT® is a registered trademark of College Board. ACT® is a registered
+        trademark of ACT, Inc. All questions and passages here are original.
+      </p>
+    </footer>
+
+    <script src="content/generated/catalog.js"></script>
+    <script src="core.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

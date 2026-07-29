@@ -1,0 +1,13 @@
+{
+  "name": "independent-sat-act-practice",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Dependency-free SAT and ACT practice platform",
+  "scripts": {
+    "build:content": "node scripts/build-content.js",
+    "validate:content": "node scripts/validate-content.js",
+    "report:content": "node scripts/report-content.js",
+    "test": "node --test",
+    "check": "node scripts/check-all.js"
+  }
+}

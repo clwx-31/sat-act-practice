@@ -69,7 +69,7 @@ review status.
 - [x] Migrate and audit the 45-question legacy bank.
 - [x] Complete and validate 500 SAT Reading and Writing records.
 - [x] Complete and validate 500 ACT English records.
-- [ ] Complete and validate 500 ACT Reading records.
+- [x] Complete and validate 500 ACT Reading records.
 - [ ] Complete and validate 500 ACT Writing records.
 - [ ] Complete and validate 500 SAT Math records.
 - [ ] Complete and validate 500 ACT Mathematics records.

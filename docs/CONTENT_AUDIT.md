@@ -88,3 +88,25 @@ manual sample covered all three reporting domains. Sampling found article and
 outcome phrasing defects in the introduction family; the family was corrected,
 the entire bank regenerated, and validation rerun. All records still require
 independent human editorial review.
+
+## ACT Reading completion batch — 2026-07-29
+
+Starting accepted records: 5  
+New records accepted: 495  
+Section total: 500  
+Rejected provisional batches: 2 (132, then 1 near-duplicate findings)  
+Pending human editorial review: 500
+
+Final manifest:
+
+- Key Ideas and Details: 240
+- Craft and Structure: 140
+- Integration of Knowledge and Ideas: 120
+- Easy: 150; Medium: 225; Hard: 125
+- Correct answer positions A/B/C/D: 125/125/125/125
+
+The accepted bank passes all schema, taxonomy, answer, metadata, duplicate, and
+distribution gates. A 12-record sample spanning all reporting domains found
+article handling, outcome-clause, and narrator-explanation defects. Those
+families were repaired and regenerated before acceptance. Every passage is
+invented; the records remain subject to independent human editorial review.

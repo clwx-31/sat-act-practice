@@ -1,6 +1,6 @@
 # SAT/ACT Practice Platform Implementation Plan
 
-Status: active  
+Status: implemented; final audit pending
 Started: 2026-07-29  
 Target: 500 validated original items in each of seven supported sections
 
@@ -74,12 +74,12 @@ review status.
 - [x] Complete and validate 500 SAT Math records.
 - [x] Complete and validate 500 ACT Mathematics records.
 - [x] Complete and validate 500 ACT Science records.
-- [ ] Integrate lazy content loading and robust error/empty states.
-- [ ] Add full, targeted, missed, flagged, and bookmarked practice.
-- [ ] Add hints, instructional answer guides, search, and filters.
-- [ ] Add local progress analytics and transparent recommendations.
-- [ ] Complete responsive, keyboard, semantic, and focus-state polish.
-- [ ] Update authoring, validation, setup, legal, count, and limitation docs.
+- [x] Integrate lazy content loading and robust error/empty states.
+- [x] Add full, targeted, missed, flagged, and bookmarked practice.
+- [x] Add hints, instructional answer guides, search, and filters.
+- [x] Add local progress analytics and transparent recommendations.
+- [x] Complete responsive, keyboard, semantic, and focus-state polish.
+- [x] Update authoring, validation, setup, legal, count, and limitation docs.
 - [ ] Run final content, unit, integration, syntax, and smoke-test audits.
 
 ## Quality gates

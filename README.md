@@ -1,53 +1,112 @@
-# SAT & ACT Practice
+# Summit Prep — SAT & ACT Practice
 
-A free, public practice site for SAT and ACT questions — built to help me and
-my friends get better test scores. Every question is **original** practice
-material (safe to publish; not copied from real, copyrighted exams).
+Summit Prep is a free, independent practice platform with 3,500 original
+questions and writing prompts. It covers every current SAT section and every
+required or optional ACT section:
 
-**Live site:** https://clwx-31.github.io/sat-act-practice/
+| Test section | Items | Status |
+| --- | ---: | --- |
+| SAT Reading and Writing | 500 | Complete; awaiting human editorial review |
+| SAT Math | 500 | Complete; awaiting human editorial review |
+| ACT English | 500 | Complete; awaiting human editorial review |
+| ACT Mathematics | 500 | Complete; awaiting human editorial review |
+| ACT Reading | 500 | Complete; awaiting human editorial review |
+| ACT Science | 500 | Complete; optional on the current ACT |
+| ACT Writing | 500 | Complete; optional, open-ended essay prompts |
 
-It's a plain static web app — HTML, CSS, and vanilla JavaScript, with no build
-step, no framework, and no server. It runs by opening `index.html`, and GitHub
-Pages serves the `main` branch as-is.
+Every item includes a hint, concise explanation, step-by-step guide, reliable
+approach, common trap, relevant principles, timing guidance, provenance, and
+review metadata. Multiple-choice items also explain every incorrect option.
 
-## How it works
+This is a dependency-free static site: plain HTML, CSS, and JavaScript, with no
+server, account, framework, package installation, or production build. Progress
+is stored only in the browser.
 
-Open the site, choose what to practice, and answer one question at a time. After
-each answer you get instant feedback and a full explanation, plus a running
-score. The "Choose what to practice" menu is built automatically from the
-question data, so new sections appear as soon as you add questions.
+## Use it locally
 
-## Adding or editing questions
-
-Everything lives in **`questions.js`** — that's the only file you edit to change
-the question bank. Copy an existing question block, paste it, and edit the
-fields. The comments at the top of that file explain each field.
-
-Currently: **SAT Math** (15 questions). ACT and other sections come next by
-adding questions with a different `test` / `section`.
-
-After editing, check the file still parses before you deploy:
+Open `index.html` directly in a current browser. A local server is optional:
 
 ```sh
-node --check questions.js && node --check app.js
+python3 -m http.server 8000
 ```
 
-Working with an AI coding agent? See **`AGENTS.md`** for a full rundown of the
-architecture, the question data model, and the deploy steps.
+Then visit `http://localhost:8000`.
 
-## Files
+The configured GitHub Pages site is:
+https://clwx-31.github.io/sat-act-practice/
 
-| File           | What it is                                        |
-| -------------- | ------------------------------------------------- |
-| `index.html`   | The page structure                                |
-| `styles.css`   | Appearance (works in light and dark)              |
-| `app.js`       | Quiz logic — you rarely need to touch this        |
-| `questions.js` | **The question bank — edit this to add questions**|
+## Study features
 
-## Viewing it locally
+- Select SAT or ACT section, official domain, skill, and difficulty.
+- Run targeted, full-mix, recommended, missed, bookmarked, or flagged sessions.
+- Search stems, passages, topics, skills, and stable question IDs.
+- Answer multiple-choice and numeric questions or draft ACT essays.
+- Request a hint before answering and read the complete answer guide afterward.
+- Track on-device accuracy and completion by skill.
+- Receive transparent recommendations based on due misses and weak skills.
+- Use keyboard shortcuts `1`–`4` for choices and `Enter` to check a response.
+- Study on mobile or desktop with light/dark color support and visible focus.
 
-Just open `index.html` in a browser (no server needed). On a Mac:
+Recommendations are practice guidance only. They do not reproduce official
+adaptive routing, scaled scoring, or score prediction.
+
+## Architecture
+
+Canonical content lives in `content/banks/*.json`; do not edit the generated
+JavaScript banks directly.
+
+| Path | Purpose |
+| --- | --- |
+| `index.html`, `styles.css` | Accessible single-page interface and responsive design |
+| `app.js` | Browser interaction, lazy loading, sessions, review, and local progress |
+| `core.js` | Pure filtering, scoring, analytics, and recommendation functions |
+| `content/catalog.json` | Section taxonomy and exact coverage manifests |
+| `content/banks/*.json` | Canonical section banks |
+| `content/generated/*.js` | Browser-ready output committed for static hosting |
+| `content/schema.md` | Complete question schema |
+| `scripts/` | Deterministic generators, validators, reports, and browser-content build |
+| `tests/` | Node tests for schema, validation, filters, scoring, sessions, and recommendations |
+| `docs/` | Official structure, authoring workflow, coverage, audit, and limitations |
+
+The browser loads only the selected 500-item bank. Progress uses the versioned
+`summit-prep-progress-v2` local-storage key and never leaves the device.
+
+## Validate and test
+
+Node.js 18 or newer is recommended. No `npm install` is needed.
 
 ```sh
-open -a Dia index.html
+npm run check
 ```
+
+That command checks JavaScript syntax, requires exactly 500 valid items per
+section, verifies the static HTML/content contract, and runs the unit tests.
+Individual commands are also available:
+
+```sh
+npm run validate:content
+node scripts/validate-content.js --complete
+npm run build:content
+npm run test
+npm run report:content
+```
+
+After changing canonical content, run `npm run build:content` and commit both
+the JSON source and regenerated browser bank.
+
+See [Content authoring and review](docs/CONTENT_AUTHORING.md) for the safe
+editing workflow and [Content coverage report](docs/CONTENT_REPORT.md) for
+verified counts.
+
+## Editorial and legal status
+
+All passages, scenarios, questions, distractors, and explanations in this
+repository are original practice material. Automated validation checks
+structure, taxonomy, distributions, answer alignment, duplicates, metadata,
+and declared mathematical verification, but it is not a substitute for
+independent human editorial review. None of the current records is labeled
+`editorial-reviewed`.
+
+SAT® is a registered trademark of College Board. ACT® is a registered trademark
+of ACT, Inc. This independent educational project is not affiliated with,
+endorsed by, or sponsored by College Board or ACT, Inc.

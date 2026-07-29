@@ -1,124 +1,112 @@
-# AGENTS.md — SAT & ACT Practice site
+# AGENTS.md — repository guidance
 
-Guidance for any AI coding agent (Codex, Claude, etc.) working in this repo.
+## Project boundaries
 
-## What this project is
+This repository is a public, dependency-free SAT/ACT practice site deployed as
+static files from the repository root. Preserve plain HTML, CSS, and vanilla
+JavaScript; do not add a framework, runtime server, paid service, or package
+dependency without explicit approval.
 
-A **free, public, static web app** that lets the user and their friends practice
-SAT and ACT questions. You pick a section, answer one multiple-choice question at
-a time, and get **instant feedback plus a full explanation** and a running score.
+Never add personal data, credentials, official test questions, commercial
+question-bank material, or close imitations of copyrighted questions. All
+practice content must be original and self-contained.
 
-- **No build step, no framework, no server, no dependencies.** Plain HTML, CSS,
-  and vanilla JavaScript. It runs by opening `index.html` in a browser and is
-  deployed as-is to GitHub Pages.
-- **Live site:** https://clwx-31.github.io/sat-act-practice/
-  (GitHub Pages serves this repo's `main` branch from the repo root.)
-- **Repo:** https://github.com/clwx-31/sat-act-practice
+GitHub Pages serves `main`. Do not push or deploy unless the user explicitly
+authorizes it. Keep generated caches, local browser profiles, and
+machine-specific files out of Git.
 
-Part of a larger effort — full context and handoff notes live in the user's
-**private** `quad` repo at `~/git/claude/quad/STATUS.md` (not in this repo).
+## Read before changing content
 
-The user is a **CLI/git beginner**: explain plainly, one step at a time, and
-avoid assuming prior tooling knowledge.
+1. `README.md`
+2. `docs/OFFICIAL_STRUCTURE.md`
+3. `content/schema.md`
+4. `docs/CONTENT_AUTHORING.md`
+5. `content/catalog.json`
 
-## How the code fits together
+Canonical questions are JSON arrays in `content/banks/`. The files in
+`content/generated/` are build products needed by the static browser app.
+Never hand-edit generated banks or restore the retired `questions.js` model.
 
-Three scripts load in order (see the bottom of `index.html`):
+The catalog defines stable section keys, official taxonomy, allowed response
+types and calculator policies, difficulty targets, and exact domain targets.
+Keep records within that manifest unless an official-source review justifies a
+documented catalog change.
 
-1. **`questions.js`** — defines a single global `const QUESTIONS = [...]`, an
-   array of question objects. This is pure data. **It is the only file you edit
-   to change the question bank.**
-2. **`app.js`** — an IIFE (`(function () { ... })()`) holding all quiz logic. It
-   reads the global `QUESTIONS` array. No exports, no modules.
-3. `index.html` loads `questions.js` **before** `app.js` so the data exists when
-   the logic runs.
+## Application architecture
 
-`styles.css` is the appearance layer; it is light/dark aware via
-`@media (prefers-color-scheme: dark)` and CSS custom properties (`--bg`,
-`--accent`, `--correct`, `--wrong`, …).
+- `index.html`: semantic views for setup, quiz, results, progress, and review.
+- `styles.css`: responsive light/dark design and visible keyboard focus.
+- `app.js`: lazy section loading, DOM interaction, local progress, and feedback.
+- `core.js`: pure filtering, scoring, session, analytics, and recommendation
+  functions shared with Node tests.
+- `content/catalog.json`: schema/content version and coverage manifest.
+- `content/banks/*.json`: canonical content.
+- `content/generated/*.js`: generated browser globals.
+- `scripts/lib/content.js`: validation, duplicate checks, coverage, and
+  mathematical verification.
+- `scripts/lib/generation.js`: deterministic, atomic generation helpers.
 
-### Three screens, one page
+The browser app has no module loader. It loads the generated catalog, then
+`core.js`, then `app.js`; section banks are added as script tags on demand.
+Content strings must be rendered as text, not trusted HTML.
 
-`index.html` contains three `<section>`s toggled by adding/removing the
-`hidden` class — there is no routing:
+Progress is private, versioned browser-local data. Do not claim that the
+recommendation logic implements official SAT adaptivity, ACT scoring, or score
+prediction.
 
-- `#setup` — start screen. A `<select id="sectionSelect">` dropdown is built
-  **automatically from the data** by `populateSections()` in `app.js`; it groups
-  questions by `"<test> — <section>"` and adds an "All questions" option. You do
-  **not** hand-edit this menu — add questions and it updates itself.
-- `#quiz` — one question at a time: tags, question text, choice buttons, a
-  "Check answer" button, then an explanation and a "Next question →" button.
-- `#results` — final score, a percentage, and an encouraging message.
+## Content workflow
 
-### app.js flow (for reference — rarely needs edits)
+Each accepted question needs every field in `content/schema.md`, a deterministic
+ID, original-content provenance, a content version matching the catalog, and an
+honest review status.
 
-`populateSections()` builds the menu → `startQuiz()` filters/shuffles the pool →
-`renderQuestion()` draws one question → `selectChoice()` marks a pick →
-`checkAnswer()` scores it and shows the explanation → `nextQuestion()` advances
-→ `showResults()`. Answer text is inserted with an `escapeHtml()` helper, so
-question/choice strings are treated as plain text (safe to include `<`, `&`,
-etc.). "Shuffle the question order" uses a Fisher–Yates `shuffle()`.
+For a coherent batch:
 
-## The question data model
+1. Preserve accepted IDs and edit or run the relevant deterministic generator.
+2. Validate the canonical records.
+3. Inspect failures; never weaken a gate merely to reach a count.
+4. Manually sample every affected domain, difficulty, and response format.
+5. Regenerate browser files.
+6. Refresh the coverage report when counts or statuses change.
+7. Commit source, output, tests, documentation, and audit notes together.
 
-Each entry in `QUESTIONS` (in `questions.js`) is an object:
+`automated-verified` means automated checks passed; it does not mean a human
+approved the content. Use `editorial-reviewed` only after a documented,
+independent editorial review.
 
-| Field         | Type          | Notes                                                        |
-| ------------- | ------------- | ------------------------------------------------------------ |
-| `test`        | string        | `"SAT"` or `"ACT"`                                            |
-| `section`     | string        | e.g. `"Math"`, `"Reading & Writing"`, `"English"`, `"Science"` |
-| `topic`       | string        | short label, e.g. `"Algebra"`, `"Geometry"`                  |
-| `difficulty`  | string        | `"Easy"`, `"Medium"`, or `"Hard"`                            |
-| `question`    | string        | the question text                                            |
-| `choices`     | array<string> | answer options; 2–6 supported (letters A–F assigned in order) |
-| `answer`      | number        | **0-based** index of the correct choice (`0` = first)        |
-| `explanation` | string        | why the answer is correct; shown after answering             |
+## Required verification
 
-`test` + `section` together define a menu group, so a new group appears just by
-adding questions with a new pairing.
+Run the smallest relevant checks during development and the full check before a
+content or application checkpoint:
 
-## Adding or changing questions
+```sh
+npm run check
+```
 
-- Edit **`questions.js` only**. Copy an existing `{ ... }` block, paste it, edit
-  the fields, and keep a trailing comma after the closing `}`.
-- **Every question must be ORIGINAL.** Do **not** copy real, copyrighted
-  SAT/ACT questions — this repo is public. Original practice material only.
-- Double-check `answer` is the correct **0-based** index and the `explanation`
-  matches.
-- Current bank: **SAT Math only (15 questions).** Natural next steps: SAT
-  Reading & Writing, and ACT English / Math / Reading / Science. Just add
-  questions with the new `test`/`section` — the UI adapts.
+No installation is required. The full command performs syntax checks, complete
+content validation, a static DOM/generated-bank smoke test, and Node tests.
+When content changes, also run:
 
-## Testing & deploying
+```sh
+npm run build:content
+npm run report:content:write
+git diff --check
+```
 
-- **Test locally:** open `index.html` in a browser — no server needed. On macOS
-  the user prefers Dia: `open -a Dia index.html`.
-- **Validate the JS parses** (catches missing commas/brackets before deploy):
-  ```sh
-  node --check questions.js && node --check app.js
-  ```
-- **Deploy** (GitHub Pages rebuilds `main` automatically within ~1 minute):
-  ```sh
-  git add -A && git commit -m "..." && git push
-  ```
-  Confirm it's live: `curl -sI https://clwx-31.github.io/sat-act-practice/`
+Test major interactions in a current browser when one is available: section
+loading, targeted and full sessions, each response type, hints, answer guides,
+results, recommendations, review lists, progress, clear-progress confirmation,
+keyboard operation, narrow layout, and dark mode. Report unavailable browser or
+accessibility tooling rather than installing it.
 
-## Files
+## Editing and completion rules
 
-| File           | Role                                                          |
-| -------------- | ------------------------------------------------------------ |
-| `index.html`   | Page structure; three toggled sections; loads the two scripts |
-| `styles.css`   | Appearance, light/dark aware                                 |
-| `app.js`       | Quiz logic (IIFE reading `QUESTIONS`) — rarely needs edits   |
-| `questions.js` | **The question bank — edit this to add/change questions**    |
-| `README.md`    | Friendly overview for humans                                 |
-| `AGENTS.md`    | This file — guidance for AI agents                           |
-
-## Rules
-
-- **Zero personal data.** This repo is public. Never add grades, finances, real
-  names, or anything from the private `quad` repo.
-- Keep it **dependency-free and buildless.** Don't introduce npm, a bundler, or
-  a framework — the whole point is that it runs by opening a file.
-- Keep questions **original** and keep the code readable and commented for a
-  beginner.
+- Inspect `git status` and preserve unrelated work.
+- Keep changes small enough to review and use terse imperative commit subjects.
+- Update documentation when behavior, schema, commands, counts, or limitations
+  change.
+- Do not claim that a bank is complete unless `node
+  scripts/validate-content.js --complete` passes.
+- Do not claim editorial approval based on generated content or automated tests.
+- Keep the independent-project and trademark wording visible in the interface
+  and README.

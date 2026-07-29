@@ -77,6 +77,7 @@
   let activeReviewList = "missed";
   let clearArmed = false;
   let bankRequestId = 0;
+  const bankPromises = new Map();
 
   function emptyProgress() {
     return {
@@ -134,7 +135,8 @@
     if (window.PRACTICE_BANKS[sectionKey]) {
       return Promise.resolve(window.PRACTICE_BANKS[sectionKey]);
     }
-    return new Promise((resolve, reject) => {
+    if (bankPromises.has(sectionKey)) return bankPromises.get(sectionKey);
+    const pending = new Promise((resolve, reject) => {
       const script = document.createElement("script");
       script.src = `content/generated/${sectionKey}.js`;
       script.onload = () => {
@@ -142,9 +144,14 @@
         if (!bank) reject(new Error(`The ${sectionKey} bank did not register.`));
         else resolve(bank);
       };
-      script.onerror = () => reject(new Error(`Could not load ${sectionKey}.`));
+      script.onerror = () => {
+        bankPromises.delete(sectionKey);
+        reject(new Error(`Could not load ${sectionKey}.`));
+      };
       document.head.appendChild(script);
     });
+    bankPromises.set(sectionKey, pending);
+    return pending;
   }
 
   async function loadAllBanks() {
@@ -581,6 +588,7 @@
     });
     elements.reviewSession.disabled = !sessionResults.some((result) => result.correct === false);
     elements.progressFill.style.width = "100%";
+    elements.progressBar.setAttribute("aria-valuenow", "100");
   }
 
   function escapeHtml(value) {
@@ -602,7 +610,13 @@
       if (selected) button.setAttribute("aria-current", "page");
       else button.removeAttribute("aria-current");
     });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const reduceMotion = window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    if (name !== "quiz") {
+      const heading = views[name].querySelector("h1");
+      if (heading) requestAnimationFrame(() => heading.focus({ preventScroll: true }));
+    }
   }
 
   function updateSavedButtons(questionId) {
@@ -628,7 +642,14 @@
     showView("dashboard");
     elements.dashboardStats.innerHTML =
       '<div class="panel loading-card">Loading progress across sections…</div>';
-    const questions = await loadAllBanks();
+    let questions;
+    try {
+      questions = await loadAllBanks();
+    } catch (error) {
+      showLoadError(elements.dashboardStats, error);
+      elements.skillTableWrap.innerHTML = "";
+      return;
+    }
     const summary = core.summarizeProgress(progress.attempts, questions);
     const bookmarked = progress.bookmarked.length;
     const missed = latestMissedIds().length;
@@ -689,7 +710,13 @@
     });
     elements.reviewList.innerHTML =
       '<div class="panel loading-card">Loading saved questions…</div>';
-    const questions = await loadAllBanks();
+    let questions;
+    try {
+      questions = await loadAllBanks();
+    } catch (error) {
+      showLoadError(elements.reviewList, error);
+      return;
+    }
     const ids = activeReviewList === "missed"
       ? latestMissedIds()
       : progress[activeReviewList];
@@ -734,6 +761,18 @@
       note.textContent = `Showing the first 100 of ${matches.length}; all are included when you practice.`;
       elements.reviewList.appendChild(note);
     }
+  }
+
+  function showLoadError(container, error) {
+    container.innerHTML = "";
+    const card = document.createElement("div");
+    card.className = "panel empty-state error";
+    const heading = document.createElement("strong");
+    heading.textContent = "Practice content could not be loaded.";
+    const detail = document.createElement("p");
+    detail.textContent = `${error.message} Refresh the page or verify content/generated is present.`;
+    card.append(heading, detail);
+    container.appendChild(card);
   }
 
   function clearProgress() {

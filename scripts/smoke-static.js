@@ -8,6 +8,7 @@ const vm = require("node:vm");
 const root = path.resolve(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const app = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 
 const htmlIds = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 const duplicateIds = htmlIds.filter((id, index) => htmlIds.indexOf(id) !== index);
@@ -21,6 +22,17 @@ const requiredIds = [
 const missingIds = [...new Set(requiredIds)].filter((id) => !htmlIds.includes(id));
 if (missingIds.length) {
   throw new Error(`app.js references missing HTML IDs: ${missingIds.join(", ")}`);
+}
+
+const cssWithoutComments = css.replace(/\/\*[\s\S]*?\*\//g, "");
+const braceBalance = [...cssWithoutComments].reduce(
+  (balance, character) =>
+    character === "{" ? balance + 1 : character === "}" ? balance - 1 : balance,
+  0,
+);
+if (braceBalance !== 0) throw new Error("styles.css has unbalanced braces.");
+for (const selector of [".skip-link", ":focus-visible", "@media", ".hidden"]) {
+  if (!css.includes(selector)) throw new Error(`styles.css is missing ${selector}.`);
 }
 
 for (const asset of [

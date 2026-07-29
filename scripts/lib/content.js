@@ -278,7 +278,15 @@ function structuralSignature(question) {
 }
 
 function tokenSet(question) {
-  return new Set(structuralSignature(question).split(" ").filter((token) => token.length > 2));
+  const text = question.stimulus
+    ? question.stimulus.content
+    : question.stem;
+  return new Set(
+    normalizeText(text)
+      .replace(/\b\d+(?:\.\d+)?\b/g, "#")
+      .split(" ")
+      .filter((token) => token.length > 2),
+  );
 }
 
 function jaccard(left, right) {

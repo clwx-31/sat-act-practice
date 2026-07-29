@@ -68,7 +68,7 @@ review status.
 - [x] Add schema, catalog, validators, generator framework, and tests.
 - [x] Migrate and audit the 45-question legacy bank.
 - [x] Complete and validate 500 SAT Reading and Writing records.
-- [ ] Complete and validate 500 ACT English records.
+- [x] Complete and validate 500 ACT English records.
 - [ ] Complete and validate 500 ACT Reading records.
 - [ ] Complete and validate 500 ACT Writing records.
 - [ ] Complete and validate 500 SAT Math records.

@@ -65,3 +65,26 @@ explanation accuracy. Template-level article and context defects found during
 sampling were fixed before acceptance and the bank was regenerated. The 490 new
 records are `automated-verified`; all 500 remain subject to independent human
 editorial review.
+
+## ACT English completion batch — 2026-07-29
+
+Starting accepted records: 5  
+New records accepted: 495  
+Section total: 500  
+Rejected provisional batches: 1 (23 near-duplicate pairs; not retained)  
+Pending human editorial review: 500
+
+Final manifest:
+
+- Production of Writing: 205
+- Knowledge of Language: 105
+- Conventions of Standard English: 190
+- Easy: 150; Medium: 225; Hard: 125
+- Correct answer positions A/B/C/D: 125/125/125/125
+
+The accepted bank passes schema, taxonomy, answer-key, explanation-metadata,
+exact/structural/near-duplicate, distribution, and choice checks. A 12-record
+manual sample covered all three reporting domains. Sampling found article and
+outcome phrasing defects in the introduction family; the family was corrected,
+the entire bank regenerated, and validation rerun. All records still require
+independent human editorial review.

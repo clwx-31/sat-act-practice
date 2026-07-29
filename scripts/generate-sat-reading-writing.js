@@ -730,6 +730,7 @@ function generate(context) {
 
 const result = generateSection("sat-reading-writing", generate, {
   generatorName: "sat-reading-writing-generator-v1",
+  regenerateGenerated: process.argv.includes("--rebuild"),
 });
 console.log(
   `SAT Reading and Writing: kept ${result.existing}, generated ${result.generated}, total ${result.total}.`,

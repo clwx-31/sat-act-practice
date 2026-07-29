@@ -208,7 +208,12 @@ function generateSection(sectionKey, generator, options = {}) {
   const catalog = loadCatalog();
   const section = catalog.sections.find((item) => item.key === sectionKey);
   if (!section) throw new Error(`Unknown section ${sectionKey}`);
-  const existing = loadBank(sectionKey);
+  const allExisting = loadBank(sectionKey);
+  const existing = options.regenerateGenerated
+    ? allExisting.filter(
+        (question) => question.provenance.generator !== options.generatorName,
+      )
+    : allExisting;
   const tasks = expandTaxonomy(section, existing);
   assignDifficulties(tasks, existing, catalog.difficultyTargets);
 

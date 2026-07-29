@@ -72,7 +72,7 @@ review status.
 - [x] Complete and validate 500 ACT Reading records.
 - [x] Complete and validate 500 ACT Writing records.
 - [x] Complete and validate 500 SAT Math records.
-- [ ] Complete and validate 500 ACT Mathematics records.
+- [x] Complete and validate 500 ACT Mathematics records.
 - [ ] Complete and validate 500 ACT Science records.
 - [ ] Integrate lazy content loading and robust error/empty states.
 - [ ] Add full, targeted, missed, flagged, and bookmarked practice.

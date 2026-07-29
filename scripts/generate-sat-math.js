@@ -705,11 +705,19 @@ function generate(parameters) {
   }
 }
 
-const completed = generateSection("sat-math", generate, {
-  generatorName: "sat-math-generator-v1",
-  regenerateGenerated: process.argv.includes("--rebuild"),
-  finalMultipleChoiceCount: 400,
-});
-console.log(
-  `SAT Math: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,
-);
+if (require.main === module) {
+  const completed = generateSection("sat-math", generate, {
+    generatorName: "sat-math-generator-v1",
+    regenerateGenerated: process.argv.includes("--rebuild"),
+    finalMultipleChoiceCount: 400,
+  });
+  console.log(
+    `SAT Math: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,
+  );
+}
+
+module.exports = {
+  context,
+  formatNumber,
+  mathQuestion,
+};

@@ -166,3 +166,34 @@ numeric-response selection cycle (194 instead of 100); the cycle was replaced
 with a coprime deterministic sequence, producing the intended 100 numeric
 items. The questions are not calibrated to official scaled scores and all
 remain subject to independent human editorial review.
+
+## ACT Mathematics completion batch — 2026-07-29
+
+Starting accepted records: 5
+
+New records accepted: 495
+
+Section total: 500
+
+Rejected provisional batches: 1 (one cross-test structural duplicate)
+
+Pending human editorial review: 500
+
+Final manifest:
+
+- Number and Quantity: 55
+- Algebra: 90
+- Functions: 90
+- Geometry: 90
+- Statistics and Probability: 75
+- Integrating Essential Skills: 100
+- Easy: 150; Medium: 225; Hard: 125
+- Correct answer positions A/B/C/D: 125/125/125/125
+- Records with independent parameter recomputation: 203
+
+The accepted bank passes all schema, taxonomy, answer, metadata, duplicate,
+verification, and distribution gates. A 12-record manual sample spanned all
+six primary domains and verified calculations, distractors, units, rounding,
+and explanations. The bank uses the enhanced ACT's four-choice Math format.
+The items are not calibrated to official scaled scores and all remain subject
+to independent human editorial review.

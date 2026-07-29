@@ -110,3 +110,28 @@ distribution gates. A 12-record sample spanning all reporting domains found
 article handling, outcome-clause, and narrator-explanation defects. Those
 families were repaired and regenerated before acceptance. Every passage is
 invented; the records remain subject to independent human editorial review.
+
+## ACT Writing completion batch — 2026-07-29
+
+Starting accepted records: 0  
+New records accepted: 500  
+Section total: 500  
+Rejected records: 0 (one accepted batch was revised after sample review)  
+Pending human editorial review: 500
+
+Final manifest:
+
+- Ideas and Analysis primary focus: 125
+- Development and Support primary focus: 125
+- Organization primary focus: 125
+- Language Use and Conventions primary focus: 125
+- Easy: 150; Medium: 225; Hard: 125
+- Response format: 500 open-ended essays
+
+Every prompt addresses all four ACT writing domains; the primary domain records
+the instructional emphasis. Each guide includes a qualified sample thesis,
+five-part outline, four-domain review checklist, and a 40-minute pacing
+strategy. A nine-prompt sample found an ungrammatical risk phrase and a
+sentence-initial capitalization defect in perspective templates. Both were
+fixed before regeneration. Automated checks do not score student prose, and all
+prompts remain subject to independent human editorial review.

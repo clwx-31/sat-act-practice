@@ -70,7 +70,7 @@ review status.
 - [x] Complete and validate 500 SAT Reading and Writing records.
 - [x] Complete and validate 500 ACT English records.
 - [x] Complete and validate 500 ACT Reading records.
-- [ ] Complete and validate 500 ACT Writing records.
+- [x] Complete and validate 500 ACT Writing records.
 - [ ] Complete and validate 500 SAT Math records.
 - [ ] Complete and validate 500 ACT Mathematics records.
 - [ ] Complete and validate 500 ACT Science records.

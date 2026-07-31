@@ -3,12 +3,26 @@
 
 const { generateSection } = require("./lib/generation");
 
-const places = [
-  "Alder", "Brookside", "Cedar", "Dunham", "Elmwood", "Fairview", "Glen Park",
+// Composed from two coprime banks (25 x 23 = 575 unique names) so every
+// sequence 1..575 gets a distinct scene, keeping generated items non-duplicate
+// as the per-section target grows.
+const placeFirsts = [
+  "Alder", "Brookside", "Cedar", "Dunham", "Elmwood", "Fairview", "Glen",
   "Harbor", "Ivy", "Juniper", "Kingston", "Lakeside", "Meadow", "Northgate",
-  "Oak Hill", "Pinecrest", "Quarry", "Riverside", "Summit", "Timber",
+  "Oak", "Pinecrest", "Quarry", "Riverside", "Summit", "Timber",
   "Union", "Valley", "Westfield", "York", "Zephyr",
 ];
+
+const placeSeconds = [
+  "Center", "Commons", "District", "Exchange", "Gardens", "Heights", "Junction",
+  "Landing", "Market", "Mills", "Orchard", "Plaza", "Quarter", "Reserve",
+  "Springs", "Station", "Terrace", "Village", "Wharf", "Yards", "Crossing",
+  "Grove", "Hollow",
+];
+
+function composePlace(sequence) {
+  return `${placeFirsts[sequence % placeFirsts.length]} ${placeSeconds[sequence % placeSeconds.length]}`;
+}
 
 const items = [
   "notebooks", "museum tickets", "seed packets", "bus passes", "ceramic tiles",
@@ -28,7 +42,7 @@ const reviewPurposes = [
 
 function context(sequence) {
   return {
-    place: places[sequence % places.length],
+    place: composePlace(sequence),
     item: items[(sequence * 7 + Math.floor(sequence / items.length)) % items.length],
   };
 }
@@ -61,7 +75,10 @@ function mathQuestion(contextValue, data) {
     distractors.push(distractor(value, "This value does not satisfy the final equation or condition."));
   }
   const alreadyContextual = data.stem.includes(contextValue.scene.place);
-  const article = /^[aeiou]/i.test(contextValue.scene.place) ? "an" : "a";
+  // "Union" begins with a vowel letter but a consonant (y) sound, so it takes
+  // "a"; keep "an" for genuine vowel-sound starts.
+  const consonantSound = /^(uni|use|used|euro|one)/i.test(contextValue.scene.place);
+  const article = !consonantSound && /^[aeiou]/i.test(contextValue.scene.place) ? "an" : "a";
   const purpose = reviewPurposes[contextValue.sequence % reviewPurposes.length];
   const stem = alreadyContextual
     ? data.stem
@@ -102,7 +119,7 @@ function generate(parameters) {
       const b = m;
       const c = a * x + b;
       return mathQuestion(ctx, {
-        stem: `At ${scene.place} Center, a supply equation is ${a}x + ${b} = ${c}. What is the value of x?`,
+        stem: `At the ${scene.place} office, a supply equation is ${a}x + ${b} = ${c}. What is the value of x?`,
         correct: x,
         wrong: [[c - b, "This subtracts but does not divide by the coefficient."], [(c + b) / a, "This adds the constant instead of subtracting it."], [c / a, "This divides before accounting for the constant term."]],
         explanation: `Subtract ${b} to get ${a}x = ${c - b}, then divide by ${a}; x = ${x}.`,
@@ -709,7 +726,7 @@ if (require.main === module) {
   const completed = generateSection("sat-math", generate, {
     generatorName: "sat-math-generator-v1",
     regenerateGenerated: process.argv.includes("--rebuild"),
-    finalMultipleChoiceCount: 400,
+    finalMultipleChoiceCount: 458,
   });
   console.log(
     `SAT Math: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,

@@ -82,8 +82,8 @@ metadata, provenance, exact duplicates, structural duplicates, 0.90 Jaccard
 near duplicates, domain/difficulty coverage, answer-position balance, and
 supported mathematical verification records.
 
-Complete mode additionally requires exactly 500 accepted records in every
-section:
+Complete mode additionally requires exactly `targetPerSection` (currently 575)
+accepted records in every section:
 
 ```sh
 node scripts/validate-content.js --complete
@@ -101,5 +101,5 @@ npm run report:content
 The current banks use deterministic families with varied invented settings,
 parameters, passages, tasks, and distractor logic. Duplicate gates prevent exact
 and high-similarity items, but they cannot measure pedagogical novelty,
-psychometric calibration, cultural bias, or prose quality. All 3,500 current
+psychometric calibration, cultural bias, or prose quality. All 4,025 current
 items therefore remain awaiting independent human editorial review.

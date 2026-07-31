@@ -104,19 +104,26 @@ To extend the guide:
 
 ## Expanding question counts
 
-Every bank currently holds exactly `catalog.targetPerSection` (500) items, well
-above any 100-per-section floor. To raise counts:
+Every bank currently holds exactly `catalog.targetPerSection` (575) items —
+175 Easy, 250 Medium, 150 Hard — well above any 100-per-section floor. To raise
+counts:
 
 1. Increase `targetPerSection`, `difficultyTargets`, and each domain `target` in
    `content/catalog.json` so domain targets and difficulty targets each sum to
-   the new total. The unit test `catalog targets total 500 in every section`
-   enforces this and must be updated in lockstep.
-2. Bump `finalMultipleChoiceCount` (and any numeric split) in each
-   `scripts/generate-*.js`, then rerun the generator and `npm run build:content`.
-3. Generators are deterministic and de-duplicated; adding volume may require new
-   templates/subskills so the duplicate gate still passes. Never weaken a gate
-   to hit a count. Update `scripts/smoke-static.js` (`targetPerSection` check),
-   the README table, and the coverage report together.
+   the new total. The unit tests read the catalog dynamically and follow
+   automatically.
+2. Only `sat-math` sets `finalMultipleChoiceCount` (its mixed MC/numeric split);
+   it must equal the final multiple-choice count, or the answer-position gate
+   fails. Recompute it when the target changes. Rerun each generator and
+   `npm run build:content`.
+3. Generators are deterministic and de-duplicated: each repeats its scene and
+   template variety with a fixed period, so pushing a section past that period
+   trips the duplicate gate. Text banks now compose place names from coprime
+   banks (e.g. 25 x 23 = 575 unique) so items stay distinct; extend that pattern
+   (larger or additional coprime banks) before raising the target further, and
+   regenerate the three text-heavy sections with `--rebuild`. Never weaken a
+   gate to hit a count. Update `scripts/smoke-static.js` (which reads
+   `targetPerSection`), the README table, and the coverage report together.
 
 ## Required verification
 

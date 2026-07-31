@@ -1,18 +1,21 @@
 # Summit Prep — SAT & ACT Practice
 
-Summit Prep is a free, independent practice platform with 3,500 original
+Summit Prep is a free, independent practice platform with 4,025 original
 questions and writing prompts. It covers every current SAT section and every
 required or optional ACT section:
 
 | Test section | Items | Status |
 | --- | ---: | --- |
-| SAT Reading and Writing | 500 | Complete; awaiting human editorial review |
-| SAT Math | 500 | Complete; awaiting human editorial review |
-| ACT English | 500 | Complete; awaiting human editorial review |
-| ACT Mathematics | 500 | Complete; awaiting human editorial review |
-| ACT Reading | 500 | Complete; awaiting human editorial review |
-| ACT Science | 500 | Complete; optional on the current ACT |
-| ACT Writing | 500 | Complete; optional, open-ended essay prompts |
+| SAT Reading and Writing | 575 | Complete; awaiting human editorial review |
+| SAT Math | 575 | Complete; awaiting human editorial review |
+| ACT English | 575 | Complete; awaiting human editorial review |
+| ACT Mathematics | 575 | Complete; awaiting human editorial review |
+| ACT Reading | 575 | Complete; awaiting human editorial review |
+| ACT Science | 575 | Complete; optional on the current ACT |
+| ACT Writing | 575 | Complete; optional, open-ended essay prompts |
+
+Each section provides at least 175 Easy, 250 Medium, and 150 Hard items, so
+targeted practice by difficulty always has a deep pool.
 
 Every item includes a hint, concise explanation, step-by-step guide, reliable
 approach, common trap, relevant principles, timing guidance, provenance, and
@@ -72,7 +75,7 @@ JavaScript banks directly.
 | `tests/` | Node tests for schema, validation, filters, scoring, sessions, and recommendations |
 | `docs/` | Official structure, authoring workflow, coverage, audit, and limitations |
 
-The browser loads only the selected 500-item bank. Progress uses the versioned
+The browser loads only the selected 575-item bank. Progress uses the versioned
 `summit-prep-progress-v2` local-storage key and never leaves the device.
 
 ## Validate and test
@@ -83,7 +86,7 @@ Node.js 18 or newer is recommended. No `npm install` is needed.
 npm run check
 ```
 
-That command checks JavaScript syntax, requires exactly 500 valid items per
+That command checks JavaScript syntax, requires exactly 575 valid items per
 section, verifies the static HTML/content contract, and runs the unit tests.
 Individual commands are also available:
 

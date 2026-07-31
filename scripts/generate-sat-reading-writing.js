@@ -3,13 +3,26 @@
 
 const { generateSection } = require("./lib/generation");
 
-const places = [
-  "Alder Harbor", "Briar Glen", "Cedar Point", "Dunlin Bay", "Elm Crossing",
-  "Fox Hollow", "Granite Falls", "Hazel Ridge", "Indigo Lake", "Juniper Mesa",
-  "Kestrel Cove", "Linden Park", "Maple Quay", "Northwind", "Oak Terrace",
-  "Pine Haven", "Quartz Hill", "Riverbend", "Silver Marsh", "Tamarack",
-  "Umber Field", "Valley Forge", "Willow Beach", "Yarrow Creek", "Zephyr Plain",
+// Place names are composed from two coprime banks (25 x 23 = 575 unique
+// combinations) so that every sequence 1..575 yields a distinct place. Because a
+// place name appears in every passage, this guarantees the generated items never
+// collapse to a structural or exact duplicate as the per-section target grows.
+const placeFirsts = [
+  "Alder", "Briar", "Cedar", "Dunlin", "Elm", "Fox", "Granite", "Hazel",
+  "Indigo", "Juniper", "Kestrel", "Linden", "Maple", "Northwind", "Oak",
+  "Pine", "Quartz", "River", "Silver", "Tamarack", "Umber", "Valley",
+  "Willow", "Yarrow", "Zephyr",
 ];
+
+const placeSeconds = [
+  "Harbor", "Glen", "Point", "Bay", "Crossing", "Hollow", "Falls", "Ridge",
+  "Lake", "Mesa", "Cove", "Park", "Quay", "Terrace", "Haven", "Hill", "Bend",
+  "Marsh", "Field", "Forge", "Beach", "Creek", "Plain",
+];
+
+function composePlace(sequence) {
+  return `${placeFirsts[sequence % placeFirsts.length]} ${placeSeconds[sequence % placeSeconds.length]}`;
+}
 
 const projects = [
   ["a seed library", "borrow locally adapted seeds", "returned seeds from successful plants"],
@@ -32,6 +45,7 @@ const projects = [
   ["a student news desk", "report neighborhood events", "a monthly digital bulletin"],
   ["a pollinator corridor", "plant connected flower beds", "more continuous habitat"],
   ["a free concert series", "hear local performers", "larger audiences in the town square"],
+  ["a solar-charging bench", "power small devices outdoors", "steadier access during outages"],
 ];
 
 const researchers = [
@@ -142,6 +156,41 @@ const names = [
   "Rina", "Soren", "Tess", "Uma", "Vik", "Willa", "Xiomara", "Yusuf", "Zara",
 ];
 
+// Coprime-length banks (17 and 13) used to vary the two structures in
+// rhetorical-synthesis notes so the passages remain distinct at higher volume.
+const builtForms = [
+  "pavilion", "canopy", "boardwalk", "footbridge", "overlook", "gateway",
+  "trellis", "band shell", "study nook", "observation deck", "kiosk",
+  "shelter", "colonnade", "viewing platform", "reading porch", "garden arch",
+  "sun shade",
+];
+
+const materials = [
+  "overlapping wooden slats", "woven bamboo panels", "perforated steel sheets",
+  "recycled timber beams", "interlocking clay tiles", "stretched canvas sails",
+  "laminated glass fins", "cast-concrete ribs", "brushed aluminum louvers",
+  "reclaimed brick arches", "carved limestone blocks", "folded copper plates",
+  "tensioned cable netting",
+];
+
+// Program descriptors (coprime lengths 19 and 17) give short passages two
+// strongly varying tokens so they do not collide as volume grows.
+const programAdjs = [
+  "riverside", "downtown", "hillside", "lakefront", "westside", "eastgate",
+  "old-town", "midtown", "uptown", "northshore", "southbank", "parkview",
+  "gateway", "seaside", "meadow", "orchard", "foothill", "canalside", "bayfront",
+];
+
+const programNouns = [
+  "revitalization", "stewardship", "access", "resilience", "literacy",
+  "wellness", "heritage", "mobility", "greening", "recovery", "outreach",
+  "renewal", "exchange", "cooperative", "commons", "collective", "alliance",
+];
+
+function composeProgram(sequence) {
+  return `${programAdjs[sequence % programAdjs.length]} ${programNouns[sequence % programNouns.length]}`;
+}
+
 function common({
   stem,
   correct,
@@ -177,7 +226,7 @@ function common({
 function scenario(sequence) {
   const project = projects[(sequence + Math.floor(sequence / projects.length)) % projects.length];
   return {
-    place: places[sequence % places.length],
+    place: composePlace(sequence),
     name: names[(sequence + Math.floor(sequence / names.length)) % names.length],
     researcher: researchers[
       (sequence + Math.floor(sequence / researchers.length)) % researchers.length
@@ -494,33 +543,42 @@ function rhetoricalSynthesis({ sequence, task }) {
   const value = scenario(sequence);
   const yearA = 2008 + (sequence % 8);
   const yearB = yearA + 5 + (sequence % 4);
+  // Built form (17), material (13), and a second composed place/designer add
+  // several independently varying tokens so notes stay distinct at scale.
+  const formA = builtForms[sequence % builtForms.length];
+  const formB = builtForms[(sequence + 8) % builtForms.length];
+  const material = materials[sequence % materials.length];
+  const placeB = composePlace(sequence + 311);
+  const designerB = researchers[(sequence * 7 + 3) % researchers.length];
+  const structureA = `${value.place} ${formA}`;
+  const structureB = `${placeB} ${formB}`;
   const goal = task.subskill === "student notes"
     ? "introduce the later project and identify who designed it"
     : "emphasize a similarity between the two projects";
   const notes = [
-    `${value.name} designed the ${value.place} shade pavilion in ${yearA}.`,
-    `The pavilion uses overlapping wooden slats.`,
-    `${researchers[sequence % researchers.length]} designed the River Court canopy in ${yearB}.`,
-    `The canopy also uses overlapping wooden slats.`,
+    `${value.name} designed the ${structureA} in ${yearA}.`,
+    `The ${formA} uses ${material}.`,
+    `${designerB} designed the ${structureB} in ${yearB}.`,
+    `The ${formB} also uses ${material}.`,
   ];
   const correct = task.subskill === "student notes"
-    ? `Designed by ${researchers[sequence % researchers.length]}, the River Court canopy was completed in ${yearB}.`
-    : `Both the ${value.place} pavilion and the River Court canopy use overlapping wooden slats.`;
+    ? `Designed by ${designerB}, the ${structureB} was completed in ${yearB}.`
+    : `Both the ${structureA} and the ${structureB} use ${material}.`;
   return common({
     stimulus: { type: "notes", content: notes.map((note) => `• ${note}`).join("\n") },
     stem: `The student wants to ${goal}. Which choice most effectively uses relevant information from the notes to accomplish this goal?`,
     correct,
     distractors: [
       {
-        text: `${value.name} designed a pavilion in ${yearA}.`,
+        text: `${value.name} designed the ${structureA} in ${yearA}.`,
         reason: "This mentions only the earlier project and does not accomplish the stated goal.",
       },
       {
-        text: `The River Court canopy was completed after the ${value.place} pavilion.`,
+        text: `The ${structureB} was completed after the ${structureA}.`,
         reason: "The date relationship is accurate but does not provide the requested designer or material similarity.",
       },
       {
-        text: `Overlapping wooden slats can be used in outdoor structures.`,
+        text: `${material.charAt(0).toUpperCase()}${material.slice(1)} can be used in outdoor structures.`,
         reason: "This generalizes beyond the notes and omits the specific projects required by the goal.",
       },
     ],
@@ -573,8 +631,10 @@ function transitions({ sequence, task }) {
     },
   ];
   const item = examples[relation];
+  const lead = `As part of ${value.place}'s ${composeProgram(sequence)} initiative, `;
+  const content = `${lead}${item.text.charAt(0).toLowerCase()}${item.text.slice(1)}`;
   return common({
-    stimulus: { type: "passage", content: item.text },
+    stimulus: { type: "passage", content },
     stem: "Which choice completes the text with the most logical transition?",
     correct: item.correct,
     distractors: item.wrong.map((choice) => ({

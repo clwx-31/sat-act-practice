@@ -30993,5 +30993,4655 @@
         "reason": "Font preference does not materially support continuation."
       }
     ]
+  },
+  {
+    "id": "act-reading-0501",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "main idea",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Gita initially doubted that a bicycle cargo trial in Bluewater would attract much interest. After helping volunteers lend cargo bicycles to households, however, Gita watched newcomers return with friends and offer ideas of their own. By the final session, participants tested alternatives for short errands. The effort involved multilingual families and was documented through a public photo log."
+    },
+    "stem": "Which choice best states the passage's main idea?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Gita's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0501",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Gita's doubts about a bicycle cargo trial faded after seeing residents participate and contribute.",
+      "Community projects succeed only when nobody questions them.",
+      "Gita completed the entire project without help.",
+      "The main purpose of a bicycle cargo trial was to generate a profit."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 2,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0502",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "theme",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Suki initially doubted that a makers' material exchange in Copperfield would attract much interest. After helping volunteers share fabric, wood, and hardware, however, Suki watched newcomers return with friends and offer ideas of their own. By the final session, unused supplies became new projects. The effort involved small-business owners and was documented through participant reflection cards."
+    },
+    "stem": "Which theme is most strongly conveyed by the passage?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Suki's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0502",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Direct participation can replace skepticism with a sense of shared possibility.",
+      "Suki completed the entire project without help.",
+      "The main purpose of a makers' material exchange was to generate a profit."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 2,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0503",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "summary",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Deepa initially doubted that a dawn concert series in Dovetail would attract much interest. After helping volunteers present music in a riverside park, however, Deepa watched newcomers return with friends and offer ideas of their own. By the final session, performances reached early-shift workers. The effort involved first-time visitors and was documented through monthly attendance summaries."
+    },
+    "stem": "Which choice provides the best summary of the passage?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Deepa's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0503",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Deepa completed the entire project without help.",
+      "Deepa's doubts about a dawn concert series faded after seeing residents participate and contribute.",
+      "The main purpose of a dawn concert series was to generate a profit."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 1,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0504",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "sequence",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In Evergreen, Opal first recruited volunteers for a community astronomy log. The group then learned to record nightly sky conditions. After three practice sessions, the team opened the project to the public, with the result that observers compared visibility across seasons. The effort involved neighborhood gardeners and was documented through a public progress chart."
+    },
+    "stem": "Which event occurred immediately before the project opened to the public?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The passage states that three practice sessions occurred just before the public opening.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0504",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The team completed three practice sessions.",
+      "The project produced its final outcome.",
+      "Volunteers were recruited after the public opening.",
+      "The team closed the project permanently."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "That occurred after the public opening."
+      },
+      {
+        "index": 2,
+        "reason": "Recruitment occurred first."
+      },
+      {
+        "index": 3,
+        "reason": "No permanent closure is described."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0505",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "cause and effect",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The original schedule for Fairhaven's neighborhood film archive overlapped with most bus arrivals. Because few residents could participate, Adisa moved sessions thirty minutes later. Attendance then increased, and families could view shared local history. The effort involved new residents and was documented through short audio diaries."
+    },
+    "stem": "According to the passage, why did the schedule change?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The schedule changed because its overlap with bus arrivals limited participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0505",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The project had already ended.",
+      "The original time made participation difficult for many residents.",
+      "Bus service stopped permanently.",
+      "Organizers wanted attendance to decrease."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The project continued after the change."
+      },
+      {
+        "index": 2,
+        "reason": "The passage says sessions overlapped with arrivals, not that service stopped."
+      },
+      {
+        "index": 3,
+        "reason": "Attendance increased, and the change responded to low participation."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0506",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "comparison",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Luc favored written instructions for a floating classroom, while Jamal preferred live demonstrations. A pilot in Gold Creek found that written steps helped participants review details, whereas demonstrations made it easier to ask immediate questions. The effort involved local artists and was documented through a project newsletter."
+    },
+    "stem": "How does the passage distinguish the two approaches?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The final sentence explicitly assigns a different advantage to each approach.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0506",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Both approaches prevent participants from asking questions.",
+      "Written instructions are described as faster in every situation.",
+      "Written instructions support later review, while demonstrations support immediate questions.",
+      "Demonstrations provide a permanent written record."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage says demonstrations facilitate questions."
+      },
+      {
+        "index": 1,
+        "reason": "No universal speed comparison is given."
+      },
+      {
+        "index": 3,
+        "reason": "That benefit belongs more logically to written instructions and is not stated for demonstrations."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0507",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Inferences and Conclusions",
+    "subskill": "logical inference",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Before Highland offered a public poetry trail, only 25 residents attended related events each month. During the first three months of the project, monthly attendance averaged 54, and many participants returned more than once. Organizers kept the schedule unchanged during that period. The effort involved caregivers and children and was documented through a digital project timeline."
+    },
+    "stem": "It can reasonably be inferred that",
+    "hint": "Compare the before-and-after attendance and note whether participants returned.",
+    "explanation": "Attendance increased and repeat participation occurred after the project began.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "The before-and-after values and repeat visits support a cautious association.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A valid inference stays within the evidence and avoids unsupported causation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0507",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The schedule change caused attendance to rise.",
+      "Every resident attended the project.",
+      "The project reduced monthly attendance.",
+      "The new public poetry trail was associated with greater and repeated participation."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The schedule remained unchanged."
+      },
+      {
+        "index": 1,
+        "reason": "The passage gives limited attendance counts, not universal participation."
+      },
+      {
+        "index": 2,
+        "reason": "The stated average rose after the project began."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0508",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Inferences and Conclusions",
+    "subskill": "conclusion",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Before Ironwood offered a restored train depot, only 26 residents attended related events each month. During the first three months of the project, monthly attendance averaged 55, and many participants returned more than once. Organizers kept the schedule unchanged during that period. The effort involved after-school clubs and was documented through anonymous exit surveys."
+    },
+    "stem": "Which conclusion is best supported by the passage?",
+    "hint": "Compare the before-and-after attendance and note whether participants returned.",
+    "explanation": "Attendance increased and repeat participation occurred after the project began.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "The before-and-after values and repeat visits support a cautious association.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A valid inference stays within the evidence and avoids unsupported causation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0508",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The new restored train depot was associated with greater and repeated participation.",
+      "The schedule change caused attendance to rise.",
+      "Every resident attended the project.",
+      "The project reduced monthly attendance."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The schedule remained unchanged."
+      },
+      {
+        "index": 2,
+        "reason": "The passage gives limited attendance counts, not universal participation."
+      },
+      {
+        "index": 3,
+        "reason": "The stated average rose after the project began."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0509",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Supporting Details",
+    "subskill": "locate detail",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Una brought three supplies to the Jasper Bay night-market map: a notebook, a measuring tape, and a camera. The notebook held written observations, the tape was used for scale, and the camera documented changes over time. The effort involved young musicians and was documented through a materials inventory."
+    },
+    "stem": "According to the passage, which item was used to show scale?",
+    "hint": "Match each named supply with the role assigned to it in the second sentence.",
+    "explanation": "The passage directly says the measuring tape was used for scale.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Locate the object in the list, then confirm its function in the following clause.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Detail answers must match the passage exactly without exchanging the roles of nearby items."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0509",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The notebook",
+      "The measuring tape",
+      "The camera",
+      "A compass"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The notebook held observations."
+      },
+      {
+        "index": 2,
+        "reason": "The camera documented changes rather than scale."
+      },
+      {
+        "index": 3,
+        "reason": "No compass is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0510",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Supporting Details",
+    "subskill": "interpret detail",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Fiona brought three supplies to the Kingsley community bread oven: a notebook, a measuring tape, and a camera. The notebook held written observations, the tape was used for scale, and the camera documented changes over time. The effort involved middle-school volunteers and was documented through recorded interviews."
+    },
+    "stem": "What role did the camera serve?",
+    "hint": "Match each named supply with the role assigned to it in the second sentence.",
+    "explanation": "The passage directly identifies documenting change as the camera's function.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Locate the object in the list, then confirm its function in the following clause.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Detail answers must match the passage exactly without exchanging the roles of nearby items."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0510",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It measured scale.",
+      "It stored written observations.",
+      "It documented changes over time.",
+      "It scheduled volunteer shifts."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The measuring tape served that role."
+      },
+      {
+        "index": 1,
+        "reason": "The notebook stored the written observations."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not mention scheduling."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0511",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "main idea",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Reese initially doubted that a tree-canopy survey in Longmeadow would attract much interest. After helping volunteers measure shade on residential blocks, however, Reese watched newcomers return with friends and offer ideas of their own. By the final session, planners identified the hottest walking routes. The effort involved recreation groups and was documented through a collection of route diagrams."
+    },
+    "stem": "Which choice best states the passage's main idea?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Reese's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0511",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Reese completed the entire project without help.",
+      "The main purpose of a tree-canopy survey was to generate a profit.",
+      "Reese's doubts about a tree-canopy survey faded after seeing residents participate and contribute."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 1,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 2,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0512",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "theme",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Carmen initially doubted that a costume lending room in Moonstone would attract much interest. After helping volunteers share performance clothing, however, Carmen watched newcomers return with friends and offer ideas of their own. By the final session, small theater groups lowered production costs. The effort involved student journalists and was documented through a shared observation board."
+    },
+    "stem": "Which theme is most strongly conveyed by the passage?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Carmen's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0512",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Direct participation can replace skepticism with a sense of shared possibility.",
+      "Community projects succeed only when nobody questions them.",
+      "Carmen completed the entire project without help.",
+      "The main purpose of a costume lending room was to generate a profit."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 2,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0513",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "summary",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Niko initially doubted that an urban bird atlas in Newbridge would attract much interest. After helping volunteers record seasonal sightings, however, Niko watched newcomers return with friends and offer ideas of their own. By the final session, residents noticed migration patterns. The effort involved weekend commuters and was documented through weekly field notes."
+    },
+    "stem": "Which choice provides the best summary of the passage?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Niko's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0513",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Niko's doubts about an urban bird atlas faded after seeing residents participate and contribute.",
+      "Niko completed the entire project without help.",
+      "The main purpose of an urban bird atlas was to generate a profit."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 2,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0514",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "sequence",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In Osprey Point, Zola first recruited volunteers for a tactile museum guide. The group then learned to describe exhibits through raised diagrams. After three practice sessions, the team opened the project to the public, with the result that more visitors explored objects independently. The effort involved museum docents and was documented through facilitator checklists."
+    },
+    "stem": "Which event occurred immediately before the project opened to the public?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The passage states that three practice sessions occurred just before the public opening.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0514",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The project produced its final outcome.",
+      "Volunteers were recruited after the public opening.",
+      "The team completed three practice sessions.",
+      "The team closed the project permanently."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "That occurred after the public opening."
+      },
+      {
+        "index": 1,
+        "reason": "Recruitment occurred first."
+      },
+      {
+        "index": 3,
+        "reason": "No permanent closure is described."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0515",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "cause and effect",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The original schedule for Parkside's schoolyard geology walk overlapped with most bus arrivals. Because few residents could participate, Kira moved sessions thirty minutes later. Attendance then increased, and students practiced observation outside class. The effort involved retired tradespeople and was documented through a volunteer journal."
+    },
+    "stem": "According to the passage, why did the schedule change?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The schedule changed because its overlap with bus arrivals limited participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0515",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The project had already ended.",
+      "Bus service stopped permanently.",
+      "Organizers wanted attendance to decrease.",
+      "The original time made participation difficult for many residents."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The project continued after the change."
+      },
+      {
+        "index": 1,
+        "reason": "The passage says sessions overlapped with arrivals, not that service stopped."
+      },
+      {
+        "index": 2,
+        "reason": "Attendance increased, and the change responded to low participation."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0516",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "comparison",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Will favored written instructions for a mobile recording booth, while Elias preferred live demonstrations. A pilot in Quarry Lake found that written steps helped participants review details, whereas demonstrations made it easier to ask immediate questions. The effort involved public-library patrons and was documented through session transcripts."
+    },
+    "stem": "How does the passage distinguish the two approaches?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The final sentence explicitly assigns a different advantage to each approach.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0516",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Written instructions support later review, while demonstrations support immediate questions.",
+      "Both approaches prevent participants from asking questions.",
+      "Written instructions are described as faster in every situation.",
+      "Demonstrations provide a permanent written record."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The passage says demonstrations facilitate questions."
+      },
+      {
+        "index": 2,
+        "reason": "No universal speed comparison is given."
+      },
+      {
+        "index": 3,
+        "reason": "That benefit belongs more logically to written instructions and is not stated for demonstrations."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0517",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Inferences and Conclusions",
+    "subskill": "logical inference",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Before Redbud offered a repairable-furniture workshop, only 23 residents attended related events each month. During the first three months of the project, monthly attendance averaged 64, and many participants returned more than once. Organizers kept the schedule unchanged during that period. The effort involved community scientists and was documented through a set of annotated maps."
+    },
+    "stem": "It can reasonably be inferred that",
+    "hint": "Compare the before-and-after attendance and note whether participants returned.",
+    "explanation": "Attendance increased and repeat participation occurred after the project began.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "The before-and-after values and repeat visits support a cautious association.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A valid inference stays within the evidence and avoids unsupported causation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0517",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The schedule change caused attendance to rise.",
+      "The new repairable-furniture workshop was associated with greater and repeated participation.",
+      "Every resident attended the project.",
+      "The project reduced monthly attendance."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The schedule remained unchanged."
+      },
+      {
+        "index": 2,
+        "reason": "The passage gives limited attendance counts, not universal participation."
+      },
+      {
+        "index": 3,
+        "reason": "The stated average rose after the project began."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0518",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Inferences and Conclusions",
+    "subskill": "conclusion",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Before Summit Grove offered a rain-barrel cooperative, only 24 residents attended related events each month. During the first three months of the project, monthly attendance averaged 65, and many participants returned more than once. Organizers kept the schedule unchanged during that period. The effort involved multilingual families and was documented through daily count sheets."
+    },
+    "stem": "Which conclusion is best supported by the passage?",
+    "hint": "Compare the before-and-after attendance and note whether participants returned.",
+    "explanation": "Attendance increased and repeat participation occurred after the project began.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "The before-and-after values and repeat visits support a cautious association.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A valid inference stays within the evidence and avoids unsupported causation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0518",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The schedule change caused attendance to rise.",
+      "Every resident attended the project.",
+      "The new rain-barrel cooperative was associated with greater and repeated participation.",
+      "The project reduced monthly attendance."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The schedule remained unchanged."
+      },
+      {
+        "index": 1,
+        "reason": "The passage gives limited attendance counts, not universal participation."
+      },
+      {
+        "index": 3,
+        "reason": "The stated average rose after the project began."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0519",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Supporting Details",
+    "subskill": "locate detail",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Elias brought three supplies to the Thistle Bay local-language theater series: a notebook, a measuring tape, and a camera. The notebook held written observations, the tape was used for scale, and the camera documented changes over time. The effort involved small-business owners and was documented through dated sketches."
+    },
+    "stem": "According to the passage, which item was used to show scale?",
+    "hint": "Match each named supply with the role assigned to it in the second sentence.",
+    "explanation": "The passage directly says the measuring tape was used for scale.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Locate the object in the list, then confirm its function in the following clause.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Detail answers must match the passage exactly without exchanging the roles of nearby items."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0519",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The notebook",
+      "The camera",
+      "A compass",
+      "The measuring tape"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The notebook held observations."
+      },
+      {
+        "index": 1,
+        "reason": "The camera documented changes rather than scale."
+      },
+      {
+        "index": 2,
+        "reason": "No compass is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0520",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Supporting Details",
+    "subskill": "interpret detail",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Pablo brought three supplies to the Upland pedestrian-count project: a notebook, a measuring tape, and a camera. The notebook held written observations, the tape was used for scale, and the camera documented changes over time. The effort involved first-time visitors and was documented through a public photo log."
+    },
+    "stem": "What role did the camera serve?",
+    "hint": "Match each named supply with the role assigned to it in the second sentence.",
+    "explanation": "The passage directly identifies documenting change as the camera's function.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Locate the object in the list, then confirm its function in the following clause.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Detail answers must match the passage exactly without exchanging the roles of nearby items."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0520",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It documented changes over time.",
+      "It measured scale.",
+      "It stored written observations.",
+      "It scheduled volunteer shifts."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The measuring tape served that role."
+      },
+      {
+        "index": 2,
+        "reason": "The notebook stored the written observations."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not mention scheduling."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0521",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "main idea",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Bruno initially doubted that a seedling adoption day in Veridian would attract much interest. After helping volunteers distribute native young trees, however, Bruno watched newcomers return with friends and offer ideas of their own. By the final session, residents expanded habitat across many yards. The effort involved neighborhood gardeners and was documented through participant reflection cards."
+    },
+    "stem": "Which choice best states the passage's main idea?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Bruno's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0521",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Bruno's doubts about a seedling adoption day faded after seeing residents participate and contribute.",
+      "Bruno completed the entire project without help.",
+      "The main purpose of a seedling adoption day was to generate a profit."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 2,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0522",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "theme",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Mina initially doubted that a public microscope lab in Wildrose would attract much interest. After helping volunteers examine prepared slides, however, Mina watched newcomers return with friends and offer ideas of their own. By the final session, visitors compared structures too small to see unaided. The effort involved new residents and was documented through monthly attendance summaries."
+    },
+    "stem": "Which theme is most strongly conveyed by the passage?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Mina's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0522",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Mina completed the entire project without help.",
+      "Direct participation can replace skepticism with a sense of shared possibility.",
+      "The main purpose of a public microscope lab was to generate a profit."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 1,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0523",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "summary",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Yosef initially doubted that a neighborhood recipe podcast in Yew Harbor would attract much interest. After helping volunteers record cooks explaining favorite dishes, however, Yosef watched newcomers return with friends and offer ideas of their own. By the final session, listeners learned both methods and family histories. The effort involved local artists and was documented through a public progress chart."
+    },
+    "stem": "Which choice provides the best summary of the passage?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Yosef's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0523",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Yosef completed the entire project without help.",
+      "The main purpose of a neighborhood recipe podcast was to generate a profit.",
+      "Yosef's doubts about a neighborhood recipe podcast faded after seeing residents participate and contribute."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 1,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 2,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0524",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "sequence",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In Zinc Ridge, Jamal first recruited volunteers for a shoreline sketch club. The group then learned to draw changing coastal views. After three practice sessions, the team opened the project to the public, with the result that members created a visual record of erosion. The effort involved caregivers and children and was documented through short audio diaries."
+    },
+    "stem": "Which event occurred immediately before the project opened to the public?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The passage states that three practice sessions occurred just before the public opening.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0524",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The team completed three practice sessions.",
+      "The project produced its final outcome.",
+      "Volunteers were recruited after the public opening.",
+      "The team closed the project permanently."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "That occurred after the public opening."
+      },
+      {
+        "index": 2,
+        "reason": "Recruitment occurred first."
+      },
+      {
+        "index": 3,
+        "reason": "No permanent closure is described."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0525",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "cause and effect",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The original schedule for Ashford's bicycle cargo trial overlapped with most bus arrivals. Because few residents could participate, Will moved sessions thirty minutes later. Attendance then increased, and participants tested alternatives for short errands. The effort involved after-school clubs and was documented through a project newsletter."
+    },
+    "stem": "According to the passage, why did the schedule change?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The schedule changed because its overlap with bus arrivals limited participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0525",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The project had already ended.",
+      "The original time made participation difficult for many residents.",
+      "Bus service stopped permanently.",
+      "Organizers wanted attendance to decrease."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The project continued after the change."
+      },
+      {
+        "index": 2,
+        "reason": "The passage says sessions overlapped with arrivals, not that service stopped."
+      },
+      {
+        "index": 3,
+        "reason": "Attendance increased, and the change responded to low participation."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0526",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "comparison",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Harlan favored written instructions for a makers' material exchange, while Zola preferred live demonstrations. A pilot in Bluewater found that written steps helped participants review details, whereas demonstrations made it easier to ask immediate questions. The effort involved young musicians and was documented through a digital project timeline."
+    },
+    "stem": "How does the passage distinguish the two approaches?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The final sentence explicitly assigns a different advantage to each approach.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0526",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Both approaches prevent participants from asking questions.",
+      "Written instructions are described as faster in every situation.",
+      "Written instructions support later review, while demonstrations support immediate questions.",
+      "Demonstrations provide a permanent written record."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage says demonstrations facilitate questions."
+      },
+      {
+        "index": 1,
+        "reason": "No universal speed comparison is given."
+      },
+      {
+        "index": 3,
+        "reason": "That benefit belongs more logically to written instructions and is not stated for demonstrations."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0527",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Inferences and Conclusions",
+    "subskill": "logical inference",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Before Copperfield offered a dawn concert series, only 33 residents attended related events each month. During the first three months of the project, monthly attendance averaged 56, and many participants returned more than once. Organizers kept the schedule unchanged during that period. The effort involved middle-school volunteers and was documented through anonymous exit surveys."
+    },
+    "stem": "It can reasonably be inferred that",
+    "hint": "Compare the before-and-after attendance and note whether participants returned.",
+    "explanation": "Attendance increased and repeat participation occurred after the project began.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "The before-and-after values and repeat visits support a cautious association.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A valid inference stays within the evidence and avoids unsupported causation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0527",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The schedule change caused attendance to rise.",
+      "Every resident attended the project.",
+      "The project reduced monthly attendance.",
+      "The new dawn concert series was associated with greater and repeated participation."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The schedule remained unchanged."
+      },
+      {
+        "index": 1,
+        "reason": "The passage gives limited attendance counts, not universal participation."
+      },
+      {
+        "index": 2,
+        "reason": "The stated average rose after the project began."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0528",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Inferences and Conclusions",
+    "subskill": "conclusion",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Before Dovetail offered a community astronomy log, only 22 residents attended related events each month. During the first three months of the project, monthly attendance averaged 57, and many participants returned more than once. Organizers kept the schedule unchanged during that period. The effort involved recreation groups and was documented through a materials inventory."
+    },
+    "stem": "Which conclusion is best supported by the passage?",
+    "hint": "Compare the before-and-after attendance and note whether participants returned.",
+    "explanation": "Attendance increased and repeat participation occurred after the project began.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "The before-and-after values and repeat visits support a cautious association.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A valid inference stays within the evidence and avoids unsupported causation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0528",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The new community astronomy log was associated with greater and repeated participation.",
+      "The schedule change caused attendance to rise.",
+      "Every resident attended the project.",
+      "The project reduced monthly attendance."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The schedule remained unchanged."
+      },
+      {
+        "index": 2,
+        "reason": "The passage gives limited attendance counts, not universal participation."
+      },
+      {
+        "index": 3,
+        "reason": "The stated average rose after the project began."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0529",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Supporting Details",
+    "subskill": "locate detail",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Pablo brought three supplies to the Evergreen neighborhood film archive: a notebook, a measuring tape, and a camera. The notebook held written observations, the tape was used for scale, and the camera documented changes over time. The effort involved student journalists and was documented through recorded interviews."
+    },
+    "stem": "According to the passage, which item was used to show scale?",
+    "hint": "Match each named supply with the role assigned to it in the second sentence.",
+    "explanation": "The passage directly says the measuring tape was used for scale.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Locate the object in the list, then confirm its function in the following clause.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Detail answers must match the passage exactly without exchanging the roles of nearby items."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0529",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The notebook",
+      "The measuring tape",
+      "The camera",
+      "A compass"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The notebook held observations."
+      },
+      {
+        "index": 2,
+        "reason": "The camera documented changes rather than scale."
+      },
+      {
+        "index": 3,
+        "reason": "No compass is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0530",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Supporting Details",
+    "subskill": "interpret detail",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Bruno brought three supplies to the Fairhaven floating classroom: a notebook, a measuring tape, and a camera. The notebook held written observations, the tape was used for scale, and the camera documented changes over time. The effort involved weekend commuters and was documented through a collection of route diagrams."
+    },
+    "stem": "What role did the camera serve?",
+    "hint": "Match each named supply with the role assigned to it in the second sentence.",
+    "explanation": "The passage directly identifies documenting change as the camera's function.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Locate the object in the list, then confirm its function in the following clause.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Detail answers must match the passage exactly without exchanging the roles of nearby items."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0530",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It measured scale.",
+      "It stored written observations.",
+      "It documented changes over time.",
+      "It scheduled volunteer shifts."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The measuring tape served that role."
+      },
+      {
+        "index": 1,
+        "reason": "The notebook stored the written observations."
+      },
+      {
+        "index": 3,
+        "reason": "The passage does not mention scheduling."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0531",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "main idea",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Mina initially doubted that a public poetry trail in Gold Creek would attract much interest. After helping volunteers install short poems along walking paths, however, Mina watched newcomers return with friends and offer ideas of their own. By the final session, readers encountered literature during daily routines. The effort involved museum docents and was documented through a shared observation board."
+    },
+    "stem": "Which choice best states the passage's main idea?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Mina's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0531",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Mina completed the entire project without help.",
+      "The main purpose of a public poetry trail was to generate a profit.",
+      "Mina's doubts about a public poetry trail faded after seeing residents participate and contribute."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 1,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 2,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0532",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "theme",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Yosef initially doubted that a restored train depot in Highland would attract much interest. After helping volunteers convert an unused station into studios, however, Yosef watched newcomers return with friends and offer ideas of their own. By the final session, artists gained affordable workspace. The effort involved retired tradespeople and was documented through weekly field notes."
+    },
+    "stem": "Which theme is most strongly conveyed by the passage?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Yosef's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0532",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Direct participation can replace skepticism with a sense of shared possibility.",
+      "Community projects succeed only when nobody questions them.",
+      "Yosef completed the entire project without help.",
+      "The main purpose of a restored train depot was to generate a profit."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 2,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0533",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Central Ideas, Themes, and Summaries",
+    "subskill": "summary",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Jamal initially doubted that a night-market map in Ironwood would attract much interest. After helping volunteers document stalls and accessible routes, however, Jamal watched newcomers return with friends and offer ideas of their own. By the final session, visitors planned trips more confidently. The effort involved public-library patrons and was documented through facilitator checklists."
+    },
+    "stem": "Which choice provides the best summary of the passage?",
+    "hint": "Track how the character's attitude changes from the first sentence to the last.",
+    "explanation": "The passage centers on Jamal's shift from doubt to confidence after witnessing shared participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the opening doubt with the later evidence of returning and contributing participants.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A main idea or theme must account for the passage's central development."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0533",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Community projects succeed only when nobody questions them.",
+      "Jamal's doubts about a night-market map faded after seeing residents participate and contribute.",
+      "Jamal completed the entire project without help.",
+      "The main purpose of a night-market map was to generate a profit."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage includes initial doubt and does not make an absolute claim."
+      },
+      {
+        "index": 2,
+        "reason": "Volunteers and newcomers clearly participate."
+      },
+      {
+        "index": 3,
+        "reason": "No financial goal is mentioned."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0534",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "sequence",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In Jasper Bay, Vera first recruited volunteers for a community bread oven. The group then learned to teach traditional baking methods. After three practice sessions, the team opened the project to the public, with the result that neighbors exchanged techniques and stories. The effort involved community scientists and was documented through a volunteer journal."
+    },
+    "stem": "Which event occurred immediately before the project opened to the public?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The passage states that three practice sessions occurred just before the public opening.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0534",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The project produced its final outcome.",
+      "Volunteers were recruited after the public opening.",
+      "The team completed three practice sessions.",
+      "The team closed the project permanently."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "That occurred after the public opening."
+      },
+      {
+        "index": 1,
+        "reason": "Recruitment occurred first."
+      },
+      {
+        "index": 3,
+        "reason": "No permanent closure is described."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0535",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Key Ideas and Details",
+    "skill": "Relationships",
+    "subskill": "cause and effect",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The original schedule for Kingsley's tree-canopy survey overlapped with most bus arrivals. Because few residents could participate, Gita moved sessions thirty minutes later. Attendance then increased, and planners identified the hottest walking routes. The effort involved multilingual families and was documented through session transcripts."
+    },
+    "stem": "According to the passage, why did the schedule change?",
+    "hint": "Locate the sentence containing the relevant time, cause, or comparison signal.",
+    "explanation": "The schedule changed because its overlap with bus arrivals limited participation.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use sequence markers or contrast words to map the relationship.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Relationship questions depend on the passage's explicit order, cause, or comparison."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0535",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The project had already ended.",
+      "Bus service stopped permanently.",
+      "Organizers wanted attendance to decrease.",
+      "The original time made participation difficult for many residents."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The project continued after the change."
+      },
+      {
+        "index": 1,
+        "reason": "The passage says sessions overlapped with arrivals, not that service stopped."
+      },
+      {
+        "index": 2,
+        "reason": "Attendance increased, and the change responded to low participation."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0536",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Text Structure",
+    "subskill": "function",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "At first, Longmeadow's costume lending room had no permanent location. Next, Suki arranged temporary sessions in three public buildings. After attendance grew, the town provided a dedicated room where participants could share performance clothing. The passage concludes by noting small theater groups lowered production costs. The effort involved small-business owners and was documented through a set of annotated maps."
+    },
+    "stem": "What is the main function of the third sentence?",
+    "hint": "Label each sentence as problem, temporary response, permanent response, or result.",
+    "explanation": "The passage moves chronologically from no location to temporary sites and then a dedicated room.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Track how the project's location changes across the sentences.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Structure describes how ideas develop; function describes what one part contributes."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0536",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It describes the more permanent response made after participation increased.",
+      "It introduces the project's original lack of space.",
+      "It gives instructions for joining the project.",
+      "It argues that temporary spaces are always preferable."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "That occurs in the first sentence."
+      },
+      {
+        "index": 2,
+        "reason": "The sentence describes a town action, not participant instructions."
+      },
+      {
+        "index": 3,
+        "reason": "The move to a dedicated room suggests no such argument."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0537",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "meaning in context",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Moonstone's urban bird atlas, the author uses “qualify” to mean “limit a claim”: the surrounding sentences emphasize that participants could record seasonal sightings and that the effort led to residents noticed migration patterns. The effort involved first-time visitors and was documented through daily count sheets."
+    },
+    "stem": "As used in the passage, “qualify” most nearly means",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The passage uses “qualify” to mean limit a claim, making “narrow” the closest choice.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0537",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "become eligible",
+      "narrow",
+      "praise",
+      "repeat"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This meaning does not match the explicit contextual clue “limit a claim.”"
+      },
+      {
+        "index": 2,
+        "reason": "This meaning does not match the explicit contextual clue “limit a claim.”"
+      },
+      {
+        "index": 3,
+        "reason": "This meaning does not match the explicit contextual clue “limit a claim.”"
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0538",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "connotation",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Newbridge's tactile museum guide, the author uses “marked” to mean “clearly noticeable”: the surrounding sentences emphasize that participants could describe exhibits through raised diagrams and that the effort led to more visitors explored objects independently. The effort involved neighborhood gardeners and was documented through dated sketches."
+    },
+    "stem": "Which choice best describes the connotation of “marked” in context?",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The context gives “marked” a constructive sense connected with clearly noticeable.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0538",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It expresses intense anger toward the participants.",
+      "It makes the project seem impossible to understand.",
+      "It suggests something clearly noticeable in a generally constructive way.",
+      "It dismisses the outcome as worthless."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The context is descriptive and constructive, not angry."
+      },
+      {
+        "index": 1,
+        "reason": "The definition and results make the idea understandable."
+      },
+      {
+        "index": 3,
+        "reason": "The passage presents a useful result."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0539",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "figurative language",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Osprey Point's schoolyard geology walk, the author uses “account” to mean “explanation”: the surrounding sentences emphasize that participants could label exposed rock samples and that the effort led to students practiced observation outside class. The effort involved new residents and was documented through a public photo log."
+    },
+    "stem": "Which choice best expresses the figurative meaning of “account”?",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The passage uses “account” to mean explanation, making “description” the closest choice.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0539",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "bill",
+      "bank record",
+      "importance",
+      "description"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This meaning does not match the explicit contextual clue “explanation.”"
+      },
+      {
+        "index": 1,
+        "reason": "This meaning does not match the explicit contextual clue “explanation.”"
+      },
+      {
+        "index": 2,
+        "reason": "This meaning does not match the explicit contextual clue “explanation.”"
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0540",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Purpose and Point of View",
+    "subskill": "author's purpose",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Luc describes Parkside's mobile recording booth with cautious approval, praising the reported result—performers contributed to a public audio collection—while noting that long-term funding is not yet guaranteed. The effort involved local artists and was documented through participant reflection cards."
+    },
+    "stem": "What is the author's primary purpose?",
+    "hint": "Notice pronouns and words that signal approval, uncertainty, or purpose.",
+    "explanation": "The correct choice accounts for both the positive observation and the qualification in the passage.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify who speaks and separate the speaker's approval from the stated limitation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Point of view concerns the narrator; perspective and purpose concern attitude and rhetorical aim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0540",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "To present both a benefit of the project and a limitation affecting its future",
+      "Entirely dismissive of the project",
+      "Unqualified certainty that the project will continue forever",
+      "A technical explanation of how to construct the project"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The passage recognizes a benefit or growing confidence."
+      },
+      {
+        "index": 2,
+        "reason": "The passage includes uncertainty or a limited personal experience."
+      },
+      {
+        "index": 3,
+        "reason": "The passage discusses experience or evaluation, not construction steps."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0541",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Purpose and Point of View",
+    "subskill": "perspective",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Xia describes Quarry Lake's repairable-furniture workshop with cautious approval, praising the reported result—participants kept useful chairs and tables in service—while noting that long-term funding is not yet guaranteed. The effort involved caregivers and children and was documented through monthly attendance summaries."
+    },
+    "stem": "Which choice best characterizes Xia's perspective?",
+    "hint": "Notice pronouns and words that signal approval, uncertainty, or purpose.",
+    "explanation": "The correct choice accounts for both the positive observation and the qualification in the passage.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify who speaks and separate the speaker's approval from the stated limitation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Point of view concerns the narrator; perspective and purpose concern attitude and rhetorical aim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0541",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Entirely dismissive of the project",
+      "Supportive of the result but aware of an unresolved concern",
+      "Unqualified certainty that the project will continue forever",
+      "A technical explanation of how to construct the project"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage recognizes a benefit or growing confidence."
+      },
+      {
+        "index": 2,
+        "reason": "The passage includes uncertainty or a limited personal experience."
+      },
+      {
+        "index": 3,
+        "reason": "The passage discusses experience or evaluation, not construction steps."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0542",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Purpose and Point of View",
+    "subskill": "narration",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "I arrived early at Redbud's rain-barrel cooperative, unsure whether I could capture water from household roofs. Ines showed me the first step, and by noon I was helping another newcomer. The effort involved after-school clubs and was documented through a public progress chart."
+    },
+    "stem": "From which point of view is the passage narrated?",
+    "hint": "Notice pronouns and words that signal approval, uncertainty, or purpose.",
+    "explanation": "The first-person pronoun “I” identifies a participant narrator whose confidence grows through experience.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify who speaks and separate the speaker's approval from the stated limitation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Point of view concerns the narrator; perspective and purpose concern attitude and rhetorical aim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0542",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Entirely dismissive of the project",
+      "Unqualified certainty that the project will continue forever",
+      "First person, by a participant whose confidence grows",
+      "A technical explanation of how to construct the project"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage recognizes a benefit or growing confidence."
+      },
+      {
+        "index": 1,
+        "reason": "The passage includes uncertainty or a limited personal experience."
+      },
+      {
+        "index": 3,
+        "reason": "The passage discusses experience or evaluation, not construction steps."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0543",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Text Structure",
+    "subskill": "organization",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "At first, Summit Grove's local-language theater series had no permanent location. Next, Una arranged temporary sessions in three public buildings. After attendance grew, the town provided a dedicated room where participants could stage plays in several languages. The passage concludes by noting audiences heard stories in familiar voices. The effort involved young musicians and was documented through short audio diaries."
+    },
+    "stem": "Which choice best describes the passage's organization?",
+    "hint": "Label each sentence as problem, temporary response, permanent response, or result.",
+    "explanation": "The passage moves chronologically from no location to temporary sites and then a dedicated room.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Track how the project's location changes across the sentences.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Structure describes how ideas develop; function describes what one part contributes."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0543",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It compares two unrelated towns.",
+      "It lists objections without presenting a response.",
+      "It states a theory and then disproves it.",
+      "It traces the project from an initial limitation through a temporary solution to a lasting arrangement."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Only one town and project are discussed."
+      },
+      {
+        "index": 1,
+        "reason": "The passage presents solutions and no list of objections."
+      },
+      {
+        "index": 2,
+        "reason": "No theory-testing structure appears."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0544",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Text Structure",
+    "subskill": "function",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "At first, Thistle Bay's pedestrian-count project had no permanent location. Next, Fiona arranged temporary sessions in three public buildings. After attendance grew, the town provided a dedicated room where participants could track foot traffic at intersections. The passage concludes by noting designers compared possible crosswalk changes. The effort involved middle-school volunteers and was documented through a project newsletter."
+    },
+    "stem": "What is the main function of the third sentence?",
+    "hint": "Label each sentence as problem, temporary response, permanent response, or result.",
+    "explanation": "The passage moves chronologically from no location to temporary sites and then a dedicated room.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Track how the project's location changes across the sentences.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Structure describes how ideas develop; function describes what one part contributes."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0544",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It describes the more permanent response made after participation increased.",
+      "It introduces the project's original lack of space.",
+      "It gives instructions for joining the project.",
+      "It argues that temporary spaces are always preferable."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "That occurs in the first sentence."
+      },
+      {
+        "index": 2,
+        "reason": "The sentence describes a town action, not participant instructions."
+      },
+      {
+        "index": 3,
+        "reason": "The move to a dedicated room suggests no such argument."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0545",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "meaning in context",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Upland's seedling adoption day, the author uses “modest” to mean “limited in size”: the surrounding sentences emphasize that participants could distribute native young trees and that the effort led to residents expanded habitat across many yards. The effort involved recreation groups and was documented through a digital project timeline."
+    },
+    "stem": "As used in the passage, “modest” most nearly means",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The passage uses “modest” to mean limited in size, making “small” the closest choice.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0545",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "proud",
+      "small",
+      "ancient",
+      "exact"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This meaning does not match the explicit contextual clue “limited in size.”"
+      },
+      {
+        "index": 2,
+        "reason": "This meaning does not match the explicit contextual clue “limited in size.”"
+      },
+      {
+        "index": 3,
+        "reason": "This meaning does not match the explicit contextual clue “limited in size.”"
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0546",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "connotation",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Veridian's public microscope lab, the author uses “anchor” to mean “provide a stable basis for”: the surrounding sentences emphasize that participants could examine prepared slides and that the effort led to visitors compared structures too small to see unaided. The effort involved student journalists and was documented through anonymous exit surveys."
+    },
+    "stem": "Which choice best describes the connotation of “anchor” in context?",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The context gives “anchor” a constructive sense connected with provide a stable basis for.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0546",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It expresses intense anger toward the participants.",
+      "It makes the project seem impossible to understand.",
+      "It suggests something provide a stable basis for in a generally constructive way.",
+      "It dismisses the outcome as worthless."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The context is descriptive and constructive, not angry."
+      },
+      {
+        "index": 1,
+        "reason": "The definition and results make the idea understandable."
+      },
+      {
+        "index": 3,
+        "reason": "The passage presents a useful result."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0547",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "figurative language",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Wildrose's neighborhood recipe podcast, the author uses “fluid” to mean “able to change easily”: the surrounding sentences emphasize that participants could record cooks explaining favorite dishes and that the effort led to listeners learned both methods and family histories. The effort involved weekend commuters and was documented through a materials inventory."
+    },
+    "stem": "Which choice best expresses the figurative meaning of “fluid”?",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The passage uses “fluid” to mean able to change easily, making “flexible” the closest choice.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0547",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "watery",
+      "permanent",
+      "formal",
+      "flexible"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This meaning does not match the explicit contextual clue “able to change easily.”"
+      },
+      {
+        "index": 1,
+        "reason": "This meaning does not match the explicit contextual clue “able to change easily.”"
+      },
+      {
+        "index": 2,
+        "reason": "This meaning does not match the explicit contextual clue “able to change easily.”"
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0548",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Purpose and Point of View",
+    "subskill": "author's purpose",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Zola describes Yew Harbor's shoreline sketch club with cautious approval, praising the reported result—members created a visual record of erosion—while noting that long-term funding is not yet guaranteed. The effort involved museum docents and was documented through recorded interviews."
+    },
+    "stem": "What is the author's primary purpose?",
+    "hint": "Notice pronouns and words that signal approval, uncertainty, or purpose.",
+    "explanation": "The correct choice accounts for both the positive observation and the qualification in the passage.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify who speaks and separate the speaker's approval from the stated limitation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Point of view concerns the narrator; perspective and purpose concern attitude and rhetorical aim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0548",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "To present both a benefit of the project and a limitation affecting its future",
+      "Entirely dismissive of the project",
+      "Unqualified certainty that the project will continue forever",
+      "A technical explanation of how to construct the project"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The passage recognizes a benefit or growing confidence."
+      },
+      {
+        "index": 2,
+        "reason": "The passage includes uncertainty or a limited personal experience."
+      },
+      {
+        "index": 3,
+        "reason": "The passage discusses experience or evaluation, not construction steps."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0549",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Purpose and Point of View",
+    "subskill": "perspective",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Kira describes Zinc Ridge's outdoor translation board with cautious approval, praising the reported result—more residents could follow local updates—while noting that long-term funding is not yet guaranteed. The effort involved retired tradespeople and was documented through a collection of route diagrams."
+    },
+    "stem": "Which choice best characterizes Kira's perspective?",
+    "hint": "Notice pronouns and words that signal approval, uncertainty, or purpose.",
+    "explanation": "The correct choice accounts for both the positive observation and the qualification in the passage.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify who speaks and separate the speaker's approval from the stated limitation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Point of view concerns the narrator; perspective and purpose concern attitude and rhetorical aim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0549",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Entirely dismissive of the project",
+      "Supportive of the result but aware of an unresolved concern",
+      "Unqualified certainty that the project will continue forever",
+      "A technical explanation of how to construct the project"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage recognizes a benefit or growing confidence."
+      },
+      {
+        "index": 2,
+        "reason": "The passage includes uncertainty or a limited personal experience."
+      },
+      {
+        "index": 3,
+        "reason": "The passage discusses experience or evaluation, not construction steps."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0550",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Purpose and Point of View",
+    "subskill": "narration",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "I arrived early at Ashford's makers' material exchange, unsure whether I could share fabric, wood, and hardware. Xia showed me the first step, and by noon I was helping another newcomer. The effort involved public-library patrons and was documented through a shared observation board."
+    },
+    "stem": "From which point of view is the passage narrated?",
+    "hint": "Notice pronouns and words that signal approval, uncertainty, or purpose.",
+    "explanation": "The first-person pronoun “I” identifies a participant narrator whose confidence grows through experience.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify who speaks and separate the speaker's approval from the stated limitation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Point of view concerns the narrator; perspective and purpose concern attitude and rhetorical aim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0550",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Entirely dismissive of the project",
+      "Unqualified certainty that the project will continue forever",
+      "First person, by a participant whose confidence grows",
+      "A technical explanation of how to construct the project"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage recognizes a benefit or growing confidence."
+      },
+      {
+        "index": 1,
+        "reason": "The passage includes uncertainty or a limited personal experience."
+      },
+      {
+        "index": 3,
+        "reason": "The passage discusses experience or evaluation, not construction steps."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0551",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Text Structure",
+    "subskill": "organization",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "At first, Bluewater's dawn concert series had no permanent location. Next, Ines arranged temporary sessions in three public buildings. After attendance grew, the town provided a dedicated room where participants could present music in a riverside park. The passage concludes by noting performances reached early-shift workers. The effort involved community scientists and was documented through weekly field notes."
+    },
+    "stem": "Which choice best describes the passage's organization?",
+    "hint": "Label each sentence as problem, temporary response, permanent response, or result.",
+    "explanation": "The passage moves chronologically from no location to temporary sites and then a dedicated room.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Track how the project's location changes across the sentences.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Structure describes how ideas develop; function describes what one part contributes."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0551",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It compares two unrelated towns.",
+      "It lists objections without presenting a response.",
+      "It states a theory and then disproves it.",
+      "It traces the project from an initial limitation through a temporary solution to a lasting arrangement."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Only one town and project are discussed."
+      },
+      {
+        "index": 1,
+        "reason": "The passage presents solutions and no list of objections."
+      },
+      {
+        "index": 2,
+        "reason": "No theory-testing structure appears."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0552",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Text Structure",
+    "subskill": "function",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "At first, Copperfield's community astronomy log had no permanent location. Next, Una arranged temporary sessions in three public buildings. After attendance grew, the town provided a dedicated room where participants could record nightly sky conditions. The passage concludes by noting observers compared visibility across seasons. The effort involved multilingual families and was documented through facilitator checklists."
+    },
+    "stem": "What is the main function of the third sentence?",
+    "hint": "Label each sentence as problem, temporary response, permanent response, or result.",
+    "explanation": "The passage moves chronologically from no location to temporary sites and then a dedicated room.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Track how the project's location changes across the sentences.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Structure describes how ideas develop; function describes what one part contributes."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0552",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It describes the more permanent response made after participation increased.",
+      "It introduces the project's original lack of space.",
+      "It gives instructions for joining the project.",
+      "It argues that temporary spaces are always preferable."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "That occurs in the first sentence."
+      },
+      {
+        "index": 2,
+        "reason": "The sentence describes a town action, not participant instructions."
+      },
+      {
+        "index": 3,
+        "reason": "The move to a dedicated room suggests no such argument."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0553",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "meaning in context",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Dovetail's neighborhood film archive, the author uses “novel” to mean “new and unusual”: the surrounding sentences emphasize that participants could digitize aging home movies and that the effort led to families could view shared local history. The effort involved small-business owners and was documented through a volunteer journal."
+    },
+    "stem": "As used in the passage, “novel” most nearly means",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The passage uses “novel” to mean new and unusual, making “original” the closest choice.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0553",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "fictional",
+      "original",
+      "ordinary",
+      "brief"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This meaning does not match the explicit contextual clue “new and unusual.”"
+      },
+      {
+        "index": 2,
+        "reason": "This meaning does not match the explicit contextual clue “new and unusual.”"
+      },
+      {
+        "index": 3,
+        "reason": "This meaning does not match the explicit contextual clue “new and unusual.”"
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0554",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "connotation",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Evergreen's floating classroom, the author uses “sustain” to mean “continue to support”: the surrounding sentences emphasize that participants could study the harbor from a small research boat and that the effort led to students connected lessons with direct observation. The effort involved first-time visitors and was documented through session transcripts."
+    },
+    "stem": "Which choice best describes the connotation of “sustain” in context?",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The context gives “sustain” a constructive sense connected with continue to support.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0554",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It expresses intense anger toward the participants.",
+      "It makes the project seem impossible to understand.",
+      "It suggests something continue to support in a generally constructive way.",
+      "It dismisses the outcome as worthless."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The context is descriptive and constructive, not angry."
+      },
+      {
+        "index": 1,
+        "reason": "The definition and results make the idea understandable."
+      },
+      {
+        "index": 3,
+        "reason": "The passage presents a useful result."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0555",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Craft and Structure",
+    "skill": "Word Meaning and Word Choice",
+    "subskill": "figurative language",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "In describing Fairhaven's public poetry trail, the author uses “render” to mean “cause to become”: the surrounding sentences emphasize that participants could install short poems along walking paths and that the effort led to readers encountered literature during daily routines. The effort involved neighborhood gardeners and was documented through a set of annotated maps."
+    },
+    "stem": "Which choice best expresses the figurative meaning of “render”?",
+    "hint": "Substitute the stated contextual meaning and check the sentence.",
+    "explanation": "The passage uses “render” to mean cause to become, making “make” the closest choice.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Use the definition and surrounding project result rather than an unrelated common meaning.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Context controls a word's intended meaning and connotation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0555",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "draw",
+      "return",
+      "translate",
+      "make"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This meaning does not match the explicit contextual clue “cause to become.”"
+      },
+      {
+        "index": 1,
+        "reason": "This meaning does not match the explicit contextual clue “cause to become.”"
+      },
+      {
+        "index": 2,
+        "reason": "This meaning does not match the explicit contextual clue “cause to become.”"
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0556",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Arguments",
+    "subskill": "strengthen or weaken",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Niko argues that Gold Creek should continue a restored train depot for another year. The program enabled residents to convert an unused station into studios, and attendance increased each month. The current report, however, does not compare the program's cost with other projects. The effort involved new residents and was documented through daily count sheets."
+    },
+    "stem": "Which finding would most strengthen the argument?",
+    "hint": "Look for evidence addressing both the documented benefit and the missing cost comparison.",
+    "explanation": "The independent finding adds comparative cost evidence while confirming a benefit.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify the argument's gap, then choose evidence that fills it.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "The strongest supporting evidence is relevant, specific, and responsive to the argument's weakness."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0556",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "An independent review found that the a restored train depot produced artists gained affordable workspace at a lower cost per participant than similar programs.",
+      "The project logo uses three colors.",
+      "A nearby building was painted last year.",
+      "Some residents prefer a different font on the schedule."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Logo design does not address benefits or cost."
+      },
+      {
+        "index": 2,
+        "reason": "This fact is unrelated to the project."
+      },
+      {
+        "index": 3,
+        "reason": "Font preference does not materially support continuation."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0557",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Multiple Texts",
+    "subskill": "compare perspectives",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "paired-passages",
+      "content": "Passage A\nZola supports expanding a night-market map because it allows residents to document stalls and accessible routes, but recommends a six-month trial informed by dated sketches.\n\nPassage B\nBruno also values opportunities to document stalls and accessible routes but argues that programs serving local artists should be evaluated before expansion."
+    },
+    "stem": "How do the authors' perspectives differ?",
+    "hint": "Separate what the authors value from the different action each recommends.",
+    "explanation": "The authors share a goal but differ on whether expansion or evaluation should come first.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the verbs attached to each recommendation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiple-text answers must represent each author's position accurately."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "paired-passages",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0557",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Both demand immediate permanent expansion.",
+      "Passage A favors a trial expansion, while Passage B favors evaluating current programs first.",
+      "Passage B opposes all opportunities to participate.",
+      "The authors discuss unrelated projects."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Each author recommends an intermediate evaluative step."
+      },
+      {
+        "index": 2,
+        "reason": "Passage B explicitly values those opportunities."
+      },
+      {
+        "index": 3,
+        "reason": "Both address the same project and activity."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0558",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Multiple Texts",
+    "subskill": "synthesize information",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "paired-passages",
+      "content": "Passage A\nKira supports expanding a community bread oven because it allows residents to teach traditional baking methods, but recommends a six-month trial informed by a public photo log.\n\nPassage B\nTomas also values opportunities to teach traditional baking methods but argues that programs serving caregivers and children should be evaluated before expansion."
+    },
+    "stem": "Which statement best synthesizes the two passages?",
+    "hint": "Separate what the authors value from the different action each recommends.",
+    "explanation": "The authors share a goal but differ on whether expansion or evaluation should come first.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the verbs attached to each recommendation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiple-text answers must represent each author's position accurately."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "paired-passages",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0558",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Both demand immediate permanent expansion.",
+      "Passage B opposes all opportunities to participate.",
+      "Both value the activity, but they recommend different next steps before broader expansion.",
+      "The authors discuss unrelated projects."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Each author recommends an intermediate evaluative step."
+      },
+      {
+        "index": 1,
+        "reason": "Passage B explicitly values those opportunities."
+      },
+      {
+        "index": 3,
+        "reason": "Both address the same project and activity."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0559",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Visual and Quantitative Information",
+    "subskill": "integrate table data",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "A Jasper Bay report compared participation in a tree-canopy survey among after-school clubs.\n\nPeriod | Participants\nFirst month | 53\nThird month | 74\n\nThe text notes that the schedule and location remained unchanged and that counts came from participant reflection cards."
+    },
+    "stem": "Which statement accurately integrates the table with the text?",
+    "hint": "Compare the two numerical values and then incorporate only the stated unchanged conditions.",
+    "explanation": "The table shows an increase of 21, and the text says schedule and location were unchanged.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Read the direction of change and avoid adding a causal claim.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Integrate visual data by reporting exact trends and relevant textual qualifications."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "table",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0559",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation fell by 21.",
+      "The table proves that a schedule change caused the increase.",
+      "Participation remained exactly 53.",
+      "Participation increased from 53 to 74 while the reported schedule and location stayed the same."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The later value is higher, not lower."
+      },
+      {
+        "index": 1,
+        "reason": "The schedule did not change, and the table alone cannot prove causation."
+      },
+      {
+        "index": 2,
+        "reason": "The third-month value differs from the first-month value."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0560",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Visual and Quantitative Information",
+    "subskill": "integrate graph data",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "A Kingsley report compared participation in a costume lending room among young musicians.\n\nPeriod | Participants\nFirst month | 54\nThird month | 76\n\nThe text notes that the schedule and location remained unchanged and that counts came from monthly attendance summaries."
+    },
+    "stem": "Which description best matches the trend shown by the data?",
+    "hint": "Compare the two numerical values and then incorporate only the stated unchanged conditions.",
+    "explanation": "The table shows an increase of 22, and the text says schedule and location were unchanged.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Read the direction of change and avoid adding a causal claim.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Integrate visual data by reporting exact trends and relevant textual qualifications."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "table",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0560",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation increased from 54 to 76 while the reported schedule and location stayed the same.",
+      "Participation fell by 22.",
+      "The table proves that a schedule change caused the increase.",
+      "Participation remained exactly 54."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The later value is higher, not lower."
+      },
+      {
+        "index": 2,
+        "reason": "The schedule did not change, and the table alone cannot prove causation."
+      },
+      {
+        "index": 3,
+        "reason": "The third-month value differs from the first-month value."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0561",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Arguments",
+    "subskill": "claims and evidence",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Tomas argues that Longmeadow should continue an urban bird atlas for another year. The program enabled residents to record seasonal sightings, and attendance increased each month. The current report, however, does not compare the program's cost with other projects. The effort involved middle-school volunteers and was documented through a public progress chart."
+    },
+    "stem": "Which choice identifies the passage's central claim?",
+    "hint": "Find the statement the author wants the reader to accept.",
+    "explanation": "The recommendation to continue the project is the claim; participation and attendance are evidence.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Separate the recommendation from the facts offered in support.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A claim is the arguable conclusion; evidence supplies reasons to accept it."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0561",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Attendance increased each month.",
+      "Longmeadow should continue an urban bird atlas for another year.",
+      "The program offered an activity to residents.",
+      "Cost comparisons are always unnecessary."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is evidence supporting the claim, not the claim itself."
+      },
+      {
+        "index": 2,
+        "reason": "This summarizes a supporting detail rather than the recommendation."
+      },
+      {
+        "index": 3,
+        "reason": "The passage notes the missing comparison rather than dismissing it."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0562",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Arguments",
+    "subskill": "reasoning",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Elias argues that Moonstone should continue a tactile museum guide for another year. The program enabled residents to describe exhibits through raised diagrams, and attendance increased each month. The current report, however, does not compare the program's cost with other projects. The effort involved recreation groups and was documented through short audio diaries."
+    },
+    "stem": "Which choice best describes a limitation in the argument's reasoning?",
+    "hint": "Focus on the concern introduced by “however.”",
+    "explanation": "The missing cost comparison limits the case for continuing the project.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Connect the final sentence's missing information to the recommendation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Strong reasoning considers relevant costs, alternatives, and limitations."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0562",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It provides no evidence that residents participated.",
+      "It claims the project has already operated for a century.",
+      "It does not consider whether the project's benefits justify its cost relative to alternatives.",
+      "It proves that every alternative project would fail."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage mentions both participation and rising attendance."
+      },
+      {
+        "index": 1,
+        "reason": "No such claim appears."
+      },
+      {
+        "index": 3,
+        "reason": "The passage neither makes nor proves this claim."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0563",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Arguments",
+    "subskill": "strengthen or weaken",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Pablo argues that Newbridge should continue a schoolyard geology walk for another year. The program enabled residents to label exposed rock samples, and attendance increased each month. The current report, however, does not compare the program's cost with other projects. The effort involved student journalists and was documented through a project newsletter."
+    },
+    "stem": "Which finding would most strengthen the argument?",
+    "hint": "Look for evidence addressing both the documented benefit and the missing cost comparison.",
+    "explanation": "The independent finding adds comparative cost evidence while confirming a benefit.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify the argument's gap, then choose evidence that fills it.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "The strongest supporting evidence is relevant, specific, and responsive to the argument's weakness."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0563",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The project logo uses three colors.",
+      "A nearby building was painted last year.",
+      "Some residents prefer a different font on the schedule.",
+      "An independent review found that the a schoolyard geology walk produced students practiced observation outside class at a lower cost per participant than similar programs."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Logo design does not address benefits or cost."
+      },
+      {
+        "index": 1,
+        "reason": "This fact is unrelated to the project."
+      },
+      {
+        "index": 2,
+        "reason": "Font preference does not materially support continuation."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0564",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Multiple Texts",
+    "subskill": "compare perspectives",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "paired-passages",
+      "content": "Passage A\nBruno supports expanding a mobile recording booth because it allows residents to collect songs and spoken memories, but recommends a six-month trial informed by a digital project timeline.\n\nPassage B\nVera also values opportunities to collect songs and spoken memories but argues that programs serving weekend commuters should be evaluated before expansion."
+    },
+    "stem": "How do the authors' perspectives differ?",
+    "hint": "Separate what the authors value from the different action each recommends.",
+    "explanation": "The authors share a goal but differ on whether expansion or evaluation should come first.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the verbs attached to each recommendation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiple-text answers must represent each author's position accurately."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "paired-passages",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0564",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Passage A favors a trial expansion, while Passage B favors evaluating current programs first.",
+      "Both demand immediate permanent expansion.",
+      "Passage B opposes all opportunities to participate.",
+      "The authors discuss unrelated projects."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Each author recommends an intermediate evaluative step."
+      },
+      {
+        "index": 2,
+        "reason": "Passage B explicitly values those opportunities."
+      },
+      {
+        "index": 3,
+        "reason": "Both address the same project and activity."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0565",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Multiple Texts",
+    "subskill": "synthesize information",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "paired-passages",
+      "content": "Passage A\nMina supports expanding a repairable-furniture workshop because it allows residents to teach joinery and fabric repair, but recommends a six-month trial informed by anonymous exit surveys.\n\nPassage B\nMina also values opportunities to teach joinery and fabric repair but argues that programs serving museum docents should be evaluated before expansion."
+    },
+    "stem": "Which statement best synthesizes the two passages?",
+    "hint": "Separate what the authors value from the different action each recommends.",
+    "explanation": "The authors share a goal but differ on whether expansion or evaluation should come first.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the verbs attached to each recommendation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiple-text answers must represent each author's position accurately."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "paired-passages",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0565",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Both demand immediate permanent expansion.",
+      "Both value the activity, but they recommend different next steps before broader expansion.",
+      "Passage B opposes all opportunities to participate.",
+      "The authors discuss unrelated projects."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Each author recommends an intermediate evaluative step."
+      },
+      {
+        "index": 2,
+        "reason": "Passage B explicitly values those opportunities."
+      },
+      {
+        "index": 3,
+        "reason": "Both address the same project and activity."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0566",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Visual and Quantitative Information",
+    "subskill": "integrate table data",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "A Quarry Lake report compared participation in a rain-barrel cooperative among retired tradespeople.\n\nPeriod | Participants\nFirst month | 43\nThird month | 59\n\nThe text notes that the schedule and location remained unchanged and that counts came from a materials inventory."
+    },
+    "stem": "Which statement accurately integrates the table with the text?",
+    "hint": "Compare the two numerical values and then incorporate only the stated unchanged conditions.",
+    "explanation": "The table shows an increase of 16, and the text says schedule and location were unchanged.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Read the direction of change and avoid adding a causal claim.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Integrate visual data by reporting exact trends and relevant textual qualifications."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "table",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0566",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation fell by 16.",
+      "The table proves that a schedule change caused the increase.",
+      "Participation increased from 43 to 59 while the reported schedule and location stayed the same.",
+      "Participation remained exactly 43."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The later value is higher, not lower."
+      },
+      {
+        "index": 1,
+        "reason": "The schedule did not change, and the table alone cannot prove causation."
+      },
+      {
+        "index": 3,
+        "reason": "The third-month value differs from the first-month value."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0567",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Visual and Quantitative Information",
+    "subskill": "integrate graph data",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "A Redbud report compared participation in a local-language theater series among public-library patrons.\n\nPeriod | Participants\nFirst month | 44\nThird month | 61\n\nThe text notes that the schedule and location remained unchanged and that counts came from recorded interviews."
+    },
+    "stem": "Which description best matches the trend shown by the data?",
+    "hint": "Compare the two numerical values and then incorporate only the stated unchanged conditions.",
+    "explanation": "The table shows an increase of 17, and the text says schedule and location were unchanged.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Read the direction of change and avoid adding a causal claim.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Integrate visual data by reporting exact trends and relevant textual qualifications."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "table",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0567",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation fell by 17.",
+      "The table proves that a schedule change caused the increase.",
+      "Participation remained exactly 44.",
+      "Participation increased from 44 to 61 while the reported schedule and location stayed the same."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The later value is higher, not lower."
+      },
+      {
+        "index": 1,
+        "reason": "The schedule did not change, and the table alone cannot prove causation."
+      },
+      {
+        "index": 2,
+        "reason": "The third-month value differs from the first-month value."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0568",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Arguments",
+    "subskill": "claims and evidence",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Vera argues that Summit Grove should continue a pedestrian-count project for another year. The program enabled residents to track foot traffic at intersections, and attendance increased each month. The current report, however, does not compare the program's cost with other projects. The effort involved community scientists and was documented through a collection of route diagrams."
+    },
+    "stem": "Which choice identifies the passage's central claim?",
+    "hint": "Find the statement the author wants the reader to accept.",
+    "explanation": "The recommendation to continue the project is the claim; participation and attendance are evidence.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Separate the recommendation from the facts offered in support.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "A claim is the arguable conclusion; evidence supplies reasons to accept it."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0568",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Summit Grove should continue a pedestrian-count project for another year.",
+      "Attendance increased each month.",
+      "The program offered an activity to residents.",
+      "Cost comparisons are always unnecessary."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is evidence supporting the claim, not the claim itself."
+      },
+      {
+        "index": 2,
+        "reason": "This summarizes a supporting detail rather than the recommendation."
+      },
+      {
+        "index": 3,
+        "reason": "The passage notes the missing comparison rather than dismissing it."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0569",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Arguments",
+    "subskill": "reasoning",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Gita argues that Thistle Bay should continue a seedling adoption day for another year. The program enabled residents to distribute native young trees, and attendance increased each month. The current report, however, does not compare the program's cost with other projects. The effort involved multilingual families and was documented through a shared observation board."
+    },
+    "stem": "Which choice best describes a limitation in the argument's reasoning?",
+    "hint": "Focus on the concern introduced by “however.”",
+    "explanation": "The missing cost comparison limits the case for continuing the project.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Connect the final sentence's missing information to the recommendation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Strong reasoning considers relevant costs, alternatives, and limitations."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0569",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It provides no evidence that residents participated.",
+      "It does not consider whether the project's benefits justify its cost relative to alternatives.",
+      "It claims the project has already operated for a century.",
+      "It proves that every alternative project would fail."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The passage mentions both participation and rising attendance."
+      },
+      {
+        "index": 2,
+        "reason": "No such claim appears."
+      },
+      {
+        "index": 3,
+        "reason": "The passage neither makes nor proves this claim."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0570",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Arguments",
+    "subskill": "strengthen or weaken",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Suki argues that Upland should continue a public microscope lab for another year. The program enabled residents to examine prepared slides, and attendance increased each month. The current report, however, does not compare the program's cost with other projects. The effort involved small-business owners and was documented through weekly field notes."
+    },
+    "stem": "Which finding would most strengthen the argument?",
+    "hint": "Look for evidence addressing both the documented benefit and the missing cost comparison.",
+    "explanation": "The independent finding adds comparative cost evidence while confirming a benefit.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Identify the argument's gap, then choose evidence that fills it.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "The strongest supporting evidence is relevant, specific, and responsive to the argument's weakness."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0570",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The project logo uses three colors.",
+      "A nearby building was painted last year.",
+      "An independent review found that the a public microscope lab produced visitors compared structures too small to see unaided at a lower cost per participant than similar programs.",
+      "Some residents prefer a different font on the schedule."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Logo design does not address benefits or cost."
+      },
+      {
+        "index": 1,
+        "reason": "This fact is unrelated to the project."
+      },
+      {
+        "index": 3,
+        "reason": "Font preference does not materially support continuation."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0571",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Multiple Texts",
+    "subskill": "compare perspectives",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "paired-passages",
+      "content": "Passage A\nDeepa supports expanding a neighborhood recipe podcast because it allows residents to record cooks explaining favorite dishes, but recommends a six-month trial informed by facilitator checklists.\n\nPassage B\nOpal also values opportunities to record cooks explaining favorite dishes but argues that programs serving first-time visitors should be evaluated before expansion."
+    },
+    "stem": "How do the authors' perspectives differ?",
+    "hint": "Separate what the authors value from the different action each recommends.",
+    "explanation": "The authors share a goal but differ on whether expansion or evaluation should come first.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the verbs attached to each recommendation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiple-text answers must represent each author's position accurately."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "paired-passages",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0571",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Both demand immediate permanent expansion.",
+      "Passage B opposes all opportunities to participate.",
+      "The authors discuss unrelated projects.",
+      "Passage A favors a trial expansion, while Passage B favors evaluating current programs first."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Each author recommends an intermediate evaluative step."
+      },
+      {
+        "index": 1,
+        "reason": "Passage B explicitly values those opportunities."
+      },
+      {
+        "index": 2,
+        "reason": "Both address the same project and activity."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0572",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Multiple Texts",
+    "subskill": "synthesize information",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "paired-passages",
+      "content": "Passage A\nOpal supports expanding a shoreline sketch club because it allows residents to draw changing coastal views, but recommends a six-month trial informed by a volunteer journal.\n\nPassage B\nGita also values opportunities to draw changing coastal views but argues that programs serving neighborhood gardeners should be evaluated before expansion."
+    },
+    "stem": "Which statement best synthesizes the two passages?",
+    "hint": "Separate what the authors value from the different action each recommends.",
+    "explanation": "The authors share a goal but differ on whether expansion or evaluation should come first.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Compare the verbs attached to each recommendation.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 95,
+    "principles": [
+      "Multiple-text answers must represent each author's position accurately."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "paired-passages",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0572",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Both value the activity, but they recommend different next steps before broader expansion.",
+      "Both demand immediate permanent expansion.",
+      "Passage B opposes all opportunities to participate.",
+      "The authors discuss unrelated projects."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Each author recommends an intermediate evaluative step."
+      },
+      {
+        "index": 2,
+        "reason": "Passage B explicitly values those opportunities."
+      },
+      {
+        "index": 3,
+        "reason": "Both address the same project and activity."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0573",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Visual and Quantitative Information",
+    "subskill": "integrate table data",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "A Yew Harbor report compared participation in an outdoor translation board among new residents.\n\nPeriod | Participants\nFirst month | 50\nThird month | 73\n\nThe text notes that the schedule and location remained unchanged and that counts came from session transcripts."
+    },
+    "stem": "Which statement accurately integrates the table with the text?",
+    "hint": "Compare the two numerical values and then incorporate only the stated unchanged conditions.",
+    "explanation": "The table shows an increase of 23, and the text says schedule and location were unchanged.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Read the direction of change and avoid adding a causal claim.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Integrate visual data by reporting exact trends and relevant textual qualifications."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "table",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0573",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation fell by 23.",
+      "Participation increased from 50 to 73 while the reported schedule and location stayed the same.",
+      "The table proves that a schedule change caused the increase.",
+      "Participation remained exactly 50."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The later value is higher, not lower."
+      },
+      {
+        "index": 2,
+        "reason": "The schedule did not change, and the table alone cannot prove causation."
+      },
+      {
+        "index": 3,
+        "reason": "The third-month value differs from the first-month value."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0574",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Visual and Quantitative Information",
+    "subskill": "integrate graph data",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "A Zinc Ridge report compared participation in a bicycle cargo trial among local artists.\n\nPeriod | Participants\nFirst month | 51\nThird month | 75\n\nThe text notes that the schedule and location remained unchanged and that counts came from a set of annotated maps."
+    },
+    "stem": "Which description best matches the trend shown by the data?",
+    "hint": "Compare the two numerical values and then incorporate only the stated unchanged conditions.",
+    "explanation": "The table shows an increase of 24, and the text says schedule and location were unchanged.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Read the direction of change and avoid adding a causal claim.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Integrate visual data by reporting exact trends and relevant textual qualifications."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "table",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0574",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation fell by 24.",
+      "The table proves that a schedule change caused the increase.",
+      "Participation increased from 51 to 75 while the reported schedule and location stayed the same.",
+      "Participation remained exactly 51."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The later value is higher, not lower."
+      },
+      {
+        "index": 1,
+        "reason": "The schedule did not change, and the table alone cannot prove causation."
+      },
+      {
+        "index": 3,
+        "reason": "The third-month value differs from the first-month value."
+      }
+    ]
+  },
+  {
+    "id": "act-reading-0575",
+    "test": "ACT",
+    "section": "Reading",
+    "sectionKey": "act-reading",
+    "domain": "Integration of Knowledge and Ideas",
+    "skill": "Arguments",
+    "subskill": "claims and evidence",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Yosef argues that Ashford should continue a dawn concert series for another year. The program enabled residents to present music in a riverside park, and attendance increased each month. The current report, however, does not compare the program's cost with other projects. The effort involved caregivers and children and was documented through daily count sheets."
+    },
+    "stem": "Which choice identifies the passage's central claim?",
+    "hint": "Find the statement the author wants the reader to accept.",
+    "explanation": "The recommendation to continue the project is the claim; participation and attendance are evidence.",
+    "solutionSteps": [
+      "Identify exactly what the question asks about the passage.",
+      "Separate the recommendation from the facts offered in support.",
+      "Eliminate choices that contradict, exaggerate, or omit the relevant evidence."
+    ],
+    "strategy": "Return to the relevant lines and paraphrase them before comparing choices.",
+    "trap": "A plausible statement is not correct unless the passage supports it.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A claim is the arguable conclusion; evidence supplies reasons to accept it."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-reading-generator-v1",
+      "seed": "act-reading-0575",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Attendance increased each month.",
+      "The program offered an activity to residents.",
+      "Cost comparisons are always unnecessary.",
+      "Ashford should continue a dawn concert series for another year."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is evidence supporting the claim, not the claim itself."
+      },
+      {
+        "index": 1,
+        "reason": "This summarizes a supporting detail rather than the recommendation."
+      },
+      {
+        "index": 2,
+        "reason": "The passage notes the missing comparison rather than dismissing it."
+      }
+    ]
   }
 ]

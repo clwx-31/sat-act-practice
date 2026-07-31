@@ -56,14 +56,14 @@ function validQuestion(overrides = {}) {
   };
 }
 
-test("catalog targets total 500 in every section", () => {
+test("catalog domain targets total targetPerSection in every section", () => {
   catalog.sections.forEach((section) => {
     const total = section.domains.reduce((sum, domain) => sum + domain.target, 0);
     assert.equal(total, catalog.targetPerSection, section.key);
   });
 });
 
-test("difficulty targets total 500", () => {
+test("difficulty targets total targetPerSection", () => {
   const total = Object.values(catalog.difficultyTargets).reduce(
     (sum, count) => sum + count,
     0,

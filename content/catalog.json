@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
   "contentVersion": "2026.1",
-  "targetPerSection": 500,
+  "targetPerSection": 575,
   "difficultyTargets": {
-    "Easy": 150,
-    "Medium": 225,
-    "Hard": 125
+    "Easy": 175,
+    "Medium": 250,
+    "Hard": 150
   },
   "sections": [
     {
@@ -19,7 +19,7 @@
       "domains": [
         {
           "name": "Information and Ideas",
-          "target": 130,
+          "target": 150,
           "skills": {
             "Central Ideas and Details": ["main idea", "supporting detail"],
             "Inferences": ["logical inference", "text completion"],
@@ -28,7 +28,7 @@
         },
         {
           "name": "Craft and Structure",
-          "target": 140,
+          "target": 160,
           "skills": {
             "Words in Context": ["meaning in context", "precision"],
             "Text Structure and Purpose": ["author's purpose", "function of a sentence"],
@@ -37,7 +37,7 @@
         },
         {
           "name": "Expression of Ideas",
-          "target": 100,
+          "target": 115,
           "skills": {
             "Rhetorical Synthesis": ["student notes", "rhetorical goal"],
             "Transitions": ["logical transition", "sentence connection"]
@@ -45,7 +45,7 @@
         },
         {
           "name": "Standard English Conventions",
-          "target": 130,
+          "target": 150,
           "skills": {
             "Boundaries": ["sentence boundaries", "within-sentence punctuation"],
             "Form, Structure, and Sense": ["subject-verb agreement", "pronoun agreement", "verb form", "modifier placement", "parallel structure"]
@@ -64,7 +64,7 @@
       "domains": [
         {
           "name": "Algebra",
-          "target": 175,
+          "target": 195,
           "skills": {
             "Linear equations in one variable": ["solve", "interpret constants", "no or infinite solutions"],
             "Linear functions": ["slope", "intercepts", "function notation"],
@@ -75,7 +75,7 @@
         },
         {
           "name": "Advanced Math",
-          "target": 175,
+          "target": 195,
           "skills": {
             "Equivalent expressions": ["factoring", "exponent rules", "rational expressions"],
             "Nonlinear equations": ["quadratic equations", "radical equations", "absolute value"],
@@ -85,7 +85,7 @@
         },
         {
           "name": "Problem-Solving and Data Analysis",
-          "target": 75,
+          "target": 93,
           "skills": {
             "Ratios, rates, and units": ["unit rates", "proportions", "unit conversion"],
             "Percentages": ["percent change", "percent applications"],
@@ -97,7 +97,7 @@
         },
         {
           "name": "Geometry and Trigonometry",
-          "target": 75,
+          "target": 92,
           "skills": {
             "Area and volume": ["area", "surface area", "volume"],
             "Lines, angles, and triangles": ["angle relationships", "similarity", "triangle geometry"],
@@ -118,7 +118,7 @@
       "domains": [
         {
           "name": "Production of Writing",
-          "target": 205,
+          "target": 235,
           "skills": {
             "Topic Development": ["purpose", "relevance", "support"],
             "Organization, Unity, and Cohesion": ["organization", "introductions", "conclusions", "transitions"]
@@ -126,14 +126,14 @@
         },
         {
           "name": "Knowledge of Language",
-          "target": 105,
+          "target": 120,
           "skills": {
             "Effective Language Use": ["precision", "conciseness", "style and tone", "consistency"]
           }
         },
         {
           "name": "Conventions of Standard English",
-          "target": 190,
+          "target": 220,
           "skills": {
             "Sentence Structure and Formation": ["clause relationships", "modifiers", "parallelism"],
             "Usage": ["subject-verb agreement", "pronouns", "verb forms", "comparisons"],
@@ -153,7 +153,7 @@
       "domains": [
         {
           "name": "Number and Quantity",
-          "target": 55,
+          "target": 65,
           "skills": {
             "Real and complex numbers": ["number properties", "complex numbers", "exponents"],
             "Quantities and units": ["unit conversion", "dimensional reasoning"]
@@ -161,7 +161,7 @@
         },
         {
           "name": "Algebra",
-          "target": 90,
+          "target": 103,
           "skills": {
             "Expressions and equations": ["linear equations", "inequalities", "systems"],
             "Polynomial and rational expressions": ["factoring", "rational expressions"]
@@ -169,7 +169,7 @@
         },
         {
           "name": "Functions",
-          "target": 90,
+          "target": 103,
           "skills": {
             "Function concepts": ["notation", "domain and range", "transformations"],
             "Function models": ["linear", "quadratic", "exponential"]
@@ -177,7 +177,7 @@
         },
         {
           "name": "Geometry",
-          "target": 90,
+          "target": 103,
           "skills": {
             "Plane geometry": ["angles", "triangles", "circles", "coordinate geometry"],
             "Measurement": ["area", "surface area", "volume"],
@@ -186,7 +186,7 @@
         },
         {
           "name": "Statistics and Probability",
-          "target": 75,
+          "target": 86,
           "skills": {
             "Data analysis": ["center and spread", "data displays", "regression"],
             "Probability": ["counting", "compound probability"]
@@ -194,7 +194,7 @@
         },
         {
           "name": "Integrating Essential Skills",
-          "target": 100,
+          "target": 115,
           "skills": {
             "Rates and proportional reasoning": ["rates", "proportions", "percentages"],
             "Applied measurement": ["perimeter and area", "measurement conversion"],
@@ -214,7 +214,7 @@
       "domains": [
         {
           "name": "Key Ideas and Details",
-          "target": 240,
+          "target": 275,
           "skills": {
             "Central Ideas, Themes, and Summaries": ["main idea", "theme", "summary"],
             "Relationships": ["sequence", "cause and effect", "comparison"],
@@ -224,7 +224,7 @@
         },
         {
           "name": "Craft and Structure",
-          "target": 140,
+          "target": 160,
           "skills": {
             "Text Structure": ["organization", "function"],
             "Word Meaning and Word Choice": ["meaning in context", "connotation", "figurative language"],
@@ -233,7 +233,7 @@
         },
         {
           "name": "Integration of Knowledge and Ideas",
-          "target": 120,
+          "target": 140,
           "skills": {
             "Arguments": ["claims and evidence", "reasoning", "strengthen or weaken"],
             "Multiple Texts": ["compare perspectives", "synthesize information"],
@@ -253,7 +253,7 @@
       "domains": [
         {
           "name": "Interpretation of Data",
-          "target": 220,
+          "target": 253,
           "skills": {
             "Read data displays": ["tables", "graphs", "diagrams"],
             "Analyze data": ["trends", "interpolation", "comparison"],
@@ -262,7 +262,7 @@
         },
         {
           "name": "Scientific Investigation",
-          "target": 130,
+          "target": 150,
           "skills": {
             "Experimental design": ["variables", "controls", "procedures"],
             "Extend an investigation": ["prediction", "follow-up study"],
@@ -271,7 +271,7 @@
         },
         {
           "name": "Evaluation of Models, Inferences, and Experimental Results",
-          "target": 150,
+          "target": 172,
           "skills": {
             "Evaluate explanations": ["claims and evidence", "model evaluation"],
             "Draw conclusions": ["inference", "generalization"],
@@ -291,7 +291,7 @@
       "domains": [
         {
           "name": "Ideas and Analysis",
-          "target": 125,
+          "target": 144,
           "skills": {
             "Engage perspectives": ["analyze perspectives", "establish a position"],
             "Critical reasoning": ["assumptions", "implications", "complexity"]
@@ -299,7 +299,7 @@
         },
         {
           "name": "Development and Support",
-          "target": 125,
+          "target": 144,
           "skills": {
             "Develop reasoning": ["examples", "explanation", "counterargument"],
             "Support claims": ["relevant evidence", "specific illustration"]
@@ -307,7 +307,7 @@
         },
         {
           "name": "Organization",
-          "target": 125,
+          "target": 143,
           "skills": {
             "Organize an argument": ["thesis and progression", "paragraph structure"],
             "Connect ideas": ["transitions", "logical sequencing"]
@@ -315,7 +315,7 @@
         },
         {
           "name": "Language Use and Conventions",
-          "target": 125,
+          "target": 144,
           "skills": {
             "Clarity and style": ["precision", "sentence variety", "tone"],
             "Standard written English": ["grammar", "usage", "mechanics"]

@@ -54,6 +54,9 @@ const issues = [
   ["cities publishing street-repair schedules", "make maintenance plans visible", "help residents plan around disruptions", "create frustration when schedules change", "residents and public-works crews"],
   ["community gardens reserving plots for shared harvests", "grow food for collective use", "support local food programs", "reduce space for individual gardeners", "gardeners and food-pantries"],
   ["schools offering quiet alternatives to large assemblies", "provide another way to receive event content", "improve access for students with sensory needs", "reduce the sense of a shared school event", "students and organizers"],
+  ["schools offering bilingual tutoring after class", "provide language support outside lessons", "help multilingual students master content", "strain limited tutoring budgets", "students and language teachers"],
+  ["cities converting former rail lines into walking trails", "reuse unused transit corridors", "add safe recreation routes", "require ongoing trail upkeep", "walkers and city planners"],
+  ["libraries lending musical instruments to patrons", "expand access to instruments", "let residents explore music affordably", "add repair and replacement costs", "musicians and library staff"],
 ];
 
 const contexts = [
@@ -67,7 +70,27 @@ const contexts = [
   ["a school-year experiment", "conflicting schedule needs", "student, family, and staff feedback"],
   ["a seasonal trial", "weather and demand changes", "weekly counts and maintenance reports"],
   ["a grant-funded launch", "future funding uncertainty", "independent evaluation and budget data"],
+  ["a two-site comparison", "differing community readiness", "cost, usage, and equity reviews"],
 ];
+
+// Composed community names (25 x 23 = 575 unique) give every prompt a distinct
+// named setting so essay prompts stay non-duplicate as the target grows.
+const placeFirsts = [
+  "Alder", "Briar", "Cedar", "Dunlin", "Elm", "Fox", "Granite", "Hazel",
+  "Indigo", "Juniper", "Kestrel", "Linden", "Maple", "Northwind", "Oak",
+  "Pine", "Quartz", "River", "Silver", "Tamarack", "Umber", "Valley",
+  "Willow", "Yarrow", "Zephyr",
+];
+
+const placeSeconds = [
+  "Harbor", "Glen", "Point", "Bay", "Crossing", "Hollow", "Falls", "Ridge",
+  "Lake", "Mesa", "Cove", "Park", "Quay", "Terrace", "Haven", "Hill", "Bend",
+  "Marsh", "Field", "Forge", "Beach", "Creek", "Plain",
+];
+
+function composePlace(sequence) {
+  return `${placeFirsts[sequence % placeFirsts.length]} ${placeSeconds[sequence % placeSeconds.length]}`;
+}
 
 function capitalize(value) {
   return value.charAt(0).toUpperCase() + value.slice(1);
@@ -104,8 +127,9 @@ const perspectiveFrames = [
 function generate(context) {
   const { sequence, task } = context;
   const issue = issues[sequence % issues.length];
-  const setting = contexts[Math.floor(sequence / issues.length) % contexts.length];
+  const setting = contexts[sequence % contexts.length];
   const frames = perspectiveFrames[sequence % perspectiveFrames.length];
+  const community = composePlace(sequence);
   const perspectives = frames.map((frame) => frame(issue));
   const domainFocus = {
     "Ideas and Analysis": "analyzing the assumptions and implications of the three perspectives",
@@ -116,7 +140,7 @@ function generate(context) {
   const prompt = [
     `Issue: ${issue[0]}`,
     "",
-    `A community is considering whether to ${issue[1]}. Supporters believe the change could ${issue[2]}; critics warn that it could ${issue[3]}. The proposal would begin as ${setting[0]}, with ${setting[1]}, and would be reviewed using ${setting[2]}.`,
+    `The community of ${community} is considering whether to ${issue[1]}. Supporters believe the change could ${issue[2]}; critics warn that it could ${issue[3]}. The proposal would begin as ${setting[0]}, with ${setting[1]}, and would be reviewed using ${setting[2]}.`,
     "",
     `Perspective 1: ${perspectives[0]}`,
     `Perspective 2: ${perspectives[1]}`,

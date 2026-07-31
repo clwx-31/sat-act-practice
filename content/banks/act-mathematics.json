@@ -31031,5 +31031,4655 @@
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
+  },
+  {
+    "id": "act-mathematics-0501",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Real and complex numbers",
+    "subskill": "number properties",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Brookside Academy accessibility review involving seed packets, what is the greatest common factor of 60 and 66?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "60 = 6·10 and 66 = 6·11; consecutive integers 10 and 11 share no larger factor, so the GCF is 6.",
+    "solutionSteps": [
+      "Factor out the visible common factor.",
+      "Compare the remaining consecutive factors.",
+      "Identify the greatest shared factor."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "The GCF is the largest positive integer dividing both values."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0501",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "6",
+      "10",
+      "60",
+      "1"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This factor does not necessarily divide both numbers."
+      },
+      {
+        "index": 2,
+        "reason": "The smaller number does not divide the larger one."
+      },
+      {
+        "index": 3,
+        "reason": "Both numbers share the factor shown in their construction."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0502",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Real and complex numbers",
+    "subskill": "complex numbers",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Cedar Academy safety inspection involving music folders, if i² = −1, what is the real value of 8i² + 5?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "8i² + 5 = 8(−1) + 5 = -3.",
+    "solutionSteps": [
+      "Replace i² with −1.",
+      "Multiply the coefficient.",
+      "Combine the real terms."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "The imaginary unit satisfies i² = −1."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0502",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "13",
+      "-3",
+      "40",
+      "5"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This treats i² as +1."
+      },
+      {
+        "index": 2,
+        "reason": "The terms are added after replacing i²; they are not multiplied."
+      },
+      {
+        "index": 3,
+        "reason": "This omits the complex-unit term."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0503",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Real and complex numbers",
+    "subskill": "exponents",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Dunham Academy summer schedule involving kayak rentals, if x^5 · x^8 = x^k, what is k?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Add exponents: k = 5 + 8 = 13.",
+    "solutionSteps": [
+      "Confirm the bases match.",
+      "Apply the product rule.",
+      "Add the exponents."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "x^m · x^n = x^(m+n)."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0503",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "40",
+      "3",
+      "13",
+      "14"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Exponents are added for a product of like bases."
+      },
+      {
+        "index": 1,
+        "reason": "Subtract exponents only when dividing like bases."
+      },
+      {
+        "index": 3,
+        "reason": "No additional factor of x appears."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0504",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Quantities and units",
+    "subskill": "unit conversion",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Elmwood Academy grant proposal involving stage lights, a board is 3 feet long. How many inches long is it?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "3 feet × 12 inches per foot = 36 inches.",
+    "solutionSteps": [
+      "Use 12 inches per foot.",
+      "Multiply so feet cancel.",
+      "Report inches."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiply by a unit conversion factor equal to 1."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0504",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        3,
+        12
+      ],
+      "expected": 36
+    },
+    "choices": [
+      "36",
+      "15",
+      "0.25",
+      "9"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Conversion requires multiplication, not addition."
+      },
+      {
+        "index": 2,
+        "reason": "This converts inches to feet, the opposite direction."
+      },
+      {
+        "index": 3,
+        "reason": "A foot contains 12, not 3, inches."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0505",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Quantities and units",
+    "subskill": "dimensional reasoning",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Fairview Academy equipment survey involving trail markers, a cart moves at 5 meters per hour for 2 hours. How many meters does it travel?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "5 m/h × 2 h = 10 m.",
+    "solutionSteps": [
+      "Write the rate with units.",
+      "Multiply by time.",
+      "Cancel hours and retain meters."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Distance = rate × time; units provide a check."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0505",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        5,
+        2
+      ],
+      "expected": 10
+    },
+    "choices": [
+      "7",
+      "10",
+      "2.5",
+      "0.4"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Distance is rate multiplied by time."
+      },
+      {
+        "index": 2,
+        "reason": "This divides rather than canceling hours."
+      },
+      {
+        "index": 3,
+        "reason": "This reverses the dimensional relationship."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0506",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Real and complex numbers",
+    "subskill": "number properties",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Glen Park Academy volunteer plan involving lamp posts, what is the greatest common factor of 36 and 40?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "36 = 4·9 and 40 = 4·10; consecutive integers 9 and 10 share no larger factor, so the GCF is 4.",
+    "solutionSteps": [
+      "Factor out the visible common factor.",
+      "Compare the remaining consecutive factors.",
+      "Identify the greatest shared factor."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "The GCF is the largest positive integer dividing both values."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0506",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "9",
+      "36",
+      "4",
+      "1"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This factor does not necessarily divide both numbers."
+      },
+      {
+        "index": 1,
+        "reason": "The smaller number does not divide the larger one."
+      },
+      {
+        "index": 3,
+        "reason": "Both numbers share the factor shown in their construction."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0507",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Real and complex numbers",
+    "subskill": "complex numbers",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Harbor Academy maintenance estimate involving meal vouchers, if i² = −1, what is the real value of 5i² + 4?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "5i² + 4 = 5(−1) + 4 = -1.",
+    "solutionSteps": [
+      "Replace i² with −1.",
+      "Multiply the coefficient.",
+      "Combine the real terms."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "The imaginary unit satisfies i² = −1."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0507",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "9",
+      "20",
+      "4",
+      "-1"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This treats i² as +1."
+      },
+      {
+        "index": 1,
+        "reason": "The terms are added after replacing i²; they are not multiplied."
+      },
+      {
+        "index": 2,
+        "reason": "This omits the complex-unit term."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0508",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Real and complex numbers",
+    "subskill": "exponents",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Ivy Academy event forecast involving museum tickets, if x^5 · x^7 = x^k, what is k?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Add exponents: k = 5 + 7 = 12.",
+    "solutionSteps": [
+      "Confirm the bases match.",
+      "Apply the product rule.",
+      "Add the exponents."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "x^m · x^n = x^(m+n)."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0508",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "12",
+      "35",
+      "2",
+      "13"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Exponents are added for a product of like bases."
+      },
+      {
+        "index": 2,
+        "reason": "Subtract exponents only when dividing like bases."
+      },
+      {
+        "index": 3,
+        "reason": "No additional factor of x appears."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0509",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Quantities and units",
+    "subskill": "unit conversion",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Juniper Academy resource-allocation meeting involving tool kits, a board is 8 feet long. How many inches long is it?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "8 feet × 12 inches per foot = 96 inches.",
+    "solutionSteps": [
+      "Use 12 inches per foot.",
+      "Multiply so feet cancel.",
+      "Report inches."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiply by a unit conversion factor equal to 1."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0509",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        8,
+        12
+      ],
+      "expected": 96
+    },
+    "choices": [
+      "20",
+      "96",
+      "0.667",
+      "24"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Conversion requires multiplication, not addition."
+      },
+      {
+        "index": 2,
+        "reason": "This converts inches to feet, the opposite direction."
+      },
+      {
+        "index": 3,
+        "reason": "A foot contains 12, not 3, inches."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0510",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Number and Quantity",
+    "skill": "Quantities and units",
+    "subskill": "dimensional reasoning",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Kingston Academy annual budget check involving field guides, a cart moves at 10 meters per hour for 2 hours. How many meters does it travel?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "10 m/h × 2 h = 20 m.",
+    "solutionSteps": [
+      "Write the rate with units.",
+      "Multiply by time.",
+      "Cancel hours and retain meters."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Distance = rate × time; units provide a check."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0510",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        10,
+        2
+      ],
+      "expected": 20
+    },
+    "choices": [
+      "12",
+      "5",
+      "20",
+      "0.2"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Distance is rate multiplied by time."
+      },
+      {
+        "index": 1,
+        "reason": "This divides rather than canceling hours."
+      },
+      {
+        "index": 3,
+        "reason": "This reverses the dimensional relationship."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0511",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "inequalities",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Lakeside Academy spring inventory involving paint cans, which value is the least integer satisfying 2x > 6?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Divide by 2: x > 3; the least integer is 4.",
+    "solutionSteps": [
+      "Divide by the positive coefficient.",
+      "Keep the strict inequality.",
+      "Choose the next integer above the boundary."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Strict inequalities exclude equality."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0511",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "3",
+      "6",
+      "2",
+      "4"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The strict inequality excludes the boundary."
+      },
+      {
+        "index": 1,
+        "reason": "This is the original right side, not a solution boundary."
+      },
+      {
+        "index": 2,
+        "reason": "This is below the required boundary."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0512",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "systems",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Meadow Academy capacity study involving ceramic tiles, if x + y = 9 and x − y = -1, what is y?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Subtract the second equation from the first: 2y = 10, so y = 5.",
+    "solutionSteps": [
+      "Subtract equations to eliminate x.",
+      "Solve for y.",
+      "Check in both original equations."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Combine equations to eliminate one variable."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0512",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "5",
+      "4",
+      "10",
+      "9"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is x, not y."
+      },
+      {
+        "index": 2,
+        "reason": "Subtracting the equations yields twice y before division."
+      },
+      {
+        "index": 3,
+        "reason": "This is the given sum."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0513",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Polynomial and rational expressions",
+    "subskill": "factoring",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Northgate Academy delivery audit involving recycling bins, what is the larger zero of x² − 12x + 35?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Factor as (x − 5)(x − 7); the larger zero is 7.",
+    "solutionSteps": [
+      "Find two numbers with the needed sum and product.",
+      "Factor the trinomial.",
+      "Set each factor to zero."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Factored form exposes polynomial zeros."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0513",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "5",
+      "7",
+      "12",
+      "35"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the smaller zero."
+      },
+      {
+        "index": 2,
+        "reason": "This is the sum of the zeros."
+      },
+      {
+        "index": 3,
+        "reason": "This is the product of the zeros."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0514",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Polynomial and rational expressions",
+    "subskill": "rational expressions",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Oak Hill Academy weekend staffing plan involving event badges, for x ≠ 4, simplify (x² − 16)/(x − 4). What constant is added to x in the result?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Factor the numerator as (x − 4)(x + 4) and cancel, leaving x + 4.",
+    "solutionSteps": [
+      "Use the difference-of-squares pattern.",
+      "Cancel the common factor under the restriction.",
+      "Read the remaining constant."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "a² − b² = (a − b)(a + b)."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0514",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "-4",
+      "16",
+      "4",
+      "8"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This uses the wrong sign in the remaining factor."
+      },
+      {
+        "index": 1,
+        "reason": "This is the square in the numerator, not the simplified constant."
+      },
+      {
+        "index": 3,
+        "reason": "The factorization does not double the constant."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0515",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "linear equations",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Pinecrest Academy storage redesign involving notebooks, solve 2x + 8 = 20.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Subtract 8, then divide by 2: x = 6.",
+    "solutionSteps": [
+      "Subtract the constant.",
+      "Divide by the coefficient.",
+      "Substitute back to verify."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use inverse operations equally on both sides."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0515",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "linear-equation",
+      "inputs": [
+        2,
+        8,
+        20
+      ],
+      "expected": 6
+    },
+    "choices": [
+      "12",
+      "10",
+      "14",
+      "6"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This does not divide by the coefficient."
+      },
+      {
+        "index": 1,
+        "reason": "This ignores the constant term."
+      },
+      {
+        "index": 2,
+        "reason": "This adds instead of subtracting the constant."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0516",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "inequalities",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Quarry Academy cost comparison involving art prints, which value is the least integer satisfying 2x > 16?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Divide by 2: x > 8; the least integer is 9.",
+    "solutionSteps": [
+      "Divide by the positive coefficient.",
+      "Keep the strict inequality.",
+      "Choose the next integer above the boundary."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Strict inequalities exclude equality."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0516",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "9",
+      "8",
+      "16",
+      "7"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The strict inequality excludes the boundary."
+      },
+      {
+        "index": 2,
+        "reason": "This is the original right side, not a solution boundary."
+      },
+      {
+        "index": 3,
+        "reason": "This is below the required boundary."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0517",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "systems",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Riverside Academy usage forecast involving storage boxes, if x + y = 8 and x − y = -2, what is y?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Subtract the second equation from the first: 2y = 10, so y = 5.",
+    "solutionSteps": [
+      "Subtract equations to eliminate x.",
+      "Solve for y.",
+      "Check in both original equations."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Combine equations to eliminate one variable."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0517",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "3",
+      "5",
+      "10",
+      "8"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is x, not y."
+      },
+      {
+        "index": 2,
+        "reason": "Subtracting the equations yields twice y before division."
+      },
+      {
+        "index": 3,
+        "reason": "This is the given sum."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0518",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Polynomial and rational expressions",
+    "subskill": "factoring",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Summit Academy accessibility review involving survey forms, what is the larger zero of x² − 10x + 24?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Factor as (x − 4)(x − 6); the larger zero is 6.",
+    "solutionSteps": [
+      "Find two numbers with the needed sum and product.",
+      "Factor the trinomial.",
+      "Set each factor to zero."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Factored form exposes polynomial zeros."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0518",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "4",
+      "10",
+      "6",
+      "24"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the smaller zero."
+      },
+      {
+        "index": 1,
+        "reason": "This is the sum of the zeros."
+      },
+      {
+        "index": 3,
+        "reason": "This is the product of the zeros."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0519",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Polynomial and rational expressions",
+    "subskill": "rational expressions",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Timber Academy safety inspection involving bus passes, for x ≠ 9, simplify (x² − 81)/(x − 9). What constant is added to x in the result?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Factor the numerator as (x − 9)(x + 9) and cancel, leaving x + 9.",
+    "solutionSteps": [
+      "Use the difference-of-squares pattern.",
+      "Cancel the common factor under the restriction.",
+      "Read the remaining constant."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "a² − b² = (a − b)(a + b)."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0519",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "-9",
+      "81",
+      "18",
+      "9"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This uses the wrong sign in the remaining factor."
+      },
+      {
+        "index": 1,
+        "reason": "This is the square in the numerator, not the simplified constant."
+      },
+      {
+        "index": 2,
+        "reason": "The factorization does not double the constant."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0520",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "linear equations",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Union Academy summer schedule involving garden plots, solve 2x + 6 = 12.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Subtract 6, then divide by 2: x = 3.",
+    "solutionSteps": [
+      "Subtract the constant.",
+      "Divide by the coefficient.",
+      "Substitute back to verify."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use inverse operations equally on both sides."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0520",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "linear-equation",
+      "inputs": [
+        2,
+        6,
+        12
+      ],
+      "expected": 3
+    },
+    "choices": [
+      "3",
+      "6",
+      "9",
+      "4"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This does not divide by the coefficient."
+      },
+      {
+        "index": 2,
+        "reason": "This adds instead of subtracting the constant."
+      },
+      {
+        "index": 3,
+        "reason": "This value does not satisfy the final equation or condition."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0521",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "inequalities",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Valley Academy grant proposal involving photo frames, which value is the least integer satisfying 2x > 12?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Divide by 2: x > 6; the least integer is 7.",
+    "solutionSteps": [
+      "Divide by the positive coefficient.",
+      "Keep the strict inequality.",
+      "Choose the next integer above the boundary."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Strict inequalities exclude equality."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0521",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "6",
+      "7",
+      "12",
+      "5"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The strict inequality excludes the boundary."
+      },
+      {
+        "index": 2,
+        "reason": "This is the original right side, not a solution boundary."
+      },
+      {
+        "index": 3,
+        "reason": "This is below the required boundary."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0522",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Expressions and equations",
+    "subskill": "systems",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Westfield Academy equipment survey involving library cards, if x + y = 7 and x − y = -3, what is y?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Subtract the second equation from the first: 2y = 10, so y = 5.",
+    "solutionSteps": [
+      "Subtract equations to eliminate x.",
+      "Solve for y.",
+      "Check in both original equations."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Combine equations to eliminate one variable."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0522",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "2",
+      "10",
+      "5",
+      "7"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is x, not y."
+      },
+      {
+        "index": 1,
+        "reason": "Subtracting the equations yields twice y before division."
+      },
+      {
+        "index": 3,
+        "reason": "This is the given sum."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0523",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Algebra",
+    "skill": "Polynomial and rational expressions",
+    "subskill": "factoring",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a York Academy volunteer plan involving water bottles, what is the larger zero of x² − 8x + 15?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Factor as (x − 3)(x − 5); the larger zero is 5.",
+    "solutionSteps": [
+      "Find two numbers with the needed sum and product.",
+      "Factor the trinomial.",
+      "Set each factor to zero."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Factored form exposes polynomial zeros."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0523",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "3",
+      "8",
+      "15",
+      "5"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the smaller zero."
+      },
+      {
+        "index": 1,
+        "reason": "This is the sum of the zeros."
+      },
+      {
+        "index": 2,
+        "reason": "This is the product of the zeros."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0524",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function concepts",
+    "subskill": "transformations",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Zephyr Academy maintenance estimate involving fabric rolls, the graph of y = f(x − 8) is the graph of y = f(x) shifted how many units to the right?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Replacing x with x − 8 shifts the graph 8 units right.",
+    "solutionSteps": [
+      "Inspect the input of f.",
+      "Use the opposite-sign horizontal shift rule.",
+      "Report the shift magnitude."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "f(x − h) shifts f right by h."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0524",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "8",
+      "-8",
+      "16",
+      "0"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The question asks for a positive number of units to the right."
+      },
+      {
+        "index": 2,
+        "reason": "Horizontal shift magnitude equals the constant."
+      },
+      {
+        "index": 3,
+        "reason": "The input replacement creates a horizontal shift."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0525",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function models",
+    "subskill": "linear",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Alder Academy event forecast involving survey forms, for y = 5x + 9, what is y when x = 3?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "y = 5(3) + 9 = 24.",
+    "solutionSteps": [
+      "Substitute x = 3.",
+      "Multiply by slope.",
+      "Add the intercept."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Linear function y = mx + b."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0525",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "17",
+      "24",
+      "15",
+      "32"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds instead of multiplying slope by x."
+      },
+      {
+        "index": 2,
+        "reason": "This omits the intercept."
+      },
+      {
+        "index": 3,
+        "reason": "This multiplies the wrong constant."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0526",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function models",
+    "subskill": "quadratic",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Brookside Academy resource-allocation meeting involving bus passes, what is the minimum value of y = (x − 6)² + 4?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "The vertex is (6, 4) and the parabola opens upward, so its minimum is 4.",
+    "solutionSteps": [
+      "Recognize vertex form.",
+      "Identify the vertex.",
+      "Use the positive squared coefficient."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "y = a(x − h)² + k has vertex (h, k)."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0526",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "6",
+      "-4",
+      "4",
+      "10"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the vertex's x-coordinate."
+      },
+      {
+        "index": 1,
+        "reason": "The vertical shift is upward."
+      },
+      {
+        "index": 3,
+        "reason": "Vertex coordinates are not added."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0527",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function models",
+    "subskill": "exponential",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Cedar Academy annual budget check involving garden plots, a quantity starts at 5 and triples twice. What is its final value?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "5 · 3² = 45.",
+    "solutionSteps": [
+      "Identify the initial amount.",
+      "Use a factor of 3 for each period.",
+      "Multiply by 9."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Repeated percent or factor change is exponential."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0527",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "11",
+      "30",
+      "9",
+      "45"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This treats repeated multiplication as addition."
+      },
+      {
+        "index": 1,
+        "reason": "Two factors of 3 give 3², not 3·2."
+      },
+      {
+        "index": 2,
+        "reason": "This omits the starting amount."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0528",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function concepts",
+    "subskill": "notation",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Dunham Academy spring inventory involving photo frames, if f(x) = 5x + 3, find f(2).",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "f(2) = 5(2) + 3 = 13.",
+    "solutionSteps": [
+      "Substitute the input.",
+      "Multiply.",
+      "Add the constant."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Function notation asks for the output at a given input."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0528",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "13",
+      "10",
+      "25",
+      "14"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This adds instead of multiplying the input."
+      },
+      {
+        "index": 2,
+        "reason": "This incorrectly includes the constant in the product."
+      },
+      {
+        "index": 3,
+        "reason": "This value does not satisfy the final equation or condition."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0529",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function concepts",
+    "subskill": "domain and range",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Elmwood Academy capacity study involving library cards, a function is defined only for integer inputs from 6 through 12, inclusive. How many values are in its domain?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "12 − 6 + 1 = 7 integer inputs.",
+    "solutionSteps": [
+      "Subtract endpoints.",
+      "Add 1 because both are included.",
+      "Check by listing if needed."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Inclusive integer count = upper − lower + 1."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0529",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "6",
+      "7",
+      "12",
+      "18"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Inclusive counting requires one more than the endpoint difference."
+      },
+      {
+        "index": 2,
+        "reason": "This is the upper endpoint."
+      },
+      {
+        "index": 3,
+        "reason": "Endpoints are not added to count integers."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0530",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function concepts",
+    "subskill": "transformations",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Fairview Academy delivery audit involving water bottles, the graph of y = f(x − 7) is the graph of y = f(x) shifted how many units to the right?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Replacing x with x − 7 shifts the graph 7 units right.",
+    "solutionSteps": [
+      "Inspect the input of f.",
+      "Use the opposite-sign horizontal shift rule.",
+      "Report the shift magnitude."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "f(x − h) shifts f right by h."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0530",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "-7",
+      "14",
+      "7",
+      "0"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The question asks for a positive number of units to the right."
+      },
+      {
+        "index": 1,
+        "reason": "Horizontal shift magnitude equals the constant."
+      },
+      {
+        "index": 3,
+        "reason": "The input replacement creates a horizontal shift."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0531",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function models",
+    "subskill": "linear",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Glen Park Academy weekend staffing plan involving fabric rolls, for y = 5x + 7, what is y when x = 3?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "y = 5(3) + 7 = 22.",
+    "solutionSteps": [
+      "Substitute x = 3.",
+      "Multiply by slope.",
+      "Add the intercept."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Linear function y = mx + b."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0531",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "15",
+      "26",
+      "23",
+      "22"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds instead of multiplying slope by x."
+      },
+      {
+        "index": 1,
+        "reason": "This multiplies the wrong constant."
+      },
+      {
+        "index": 2,
+        "reason": "This value does not satisfy the final equation or condition."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0532",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function models",
+    "subskill": "quadratic",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Harbor Academy storage redesign involving bike helmets, what is the minimum value of y = (x − 6)² + 3?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "The vertex is (6, 3) and the parabola opens upward, so its minimum is 3.",
+    "solutionSteps": [
+      "Recognize vertex form.",
+      "Identify the vertex.",
+      "Use the positive squared coefficient."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "y = a(x − h)² + k has vertex (h, k)."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0532",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "3",
+      "6",
+      "-3",
+      "9"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is the vertex's x-coordinate."
+      },
+      {
+        "index": 2,
+        "reason": "The vertical shift is upward."
+      },
+      {
+        "index": 3,
+        "reason": "Vertex coordinates are not added."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0533",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function models",
+    "subskill": "exponential",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Ivy Academy cost comparison involving seed packets, a quantity starts at 6 and triples twice. What is its final value?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "6 · 3² = 54.",
+    "solutionSteps": [
+      "Identify the initial amount.",
+      "Use a factor of 3 for each period.",
+      "Multiply by 9."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Repeated percent or factor change is exponential."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0533",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "12",
+      "54",
+      "36",
+      "9"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This treats repeated multiplication as addition."
+      },
+      {
+        "index": 2,
+        "reason": "Two factors of 3 give 3², not 3·2."
+      },
+      {
+        "index": 3,
+        "reason": "This omits the starting amount."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0534",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function concepts",
+    "subskill": "notation",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Juniper Academy usage forecast involving music folders, if f(x) = 6x + 3, find f(4).",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "f(4) = 6(4) + 3 = 27.",
+    "solutionSteps": [
+      "Substitute the input.",
+      "Multiply.",
+      "Add the constant."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Function notation asks for the output at a given input."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0534",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "13",
+      "42",
+      "27",
+      "24"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds instead of multiplying the input."
+      },
+      {
+        "index": 1,
+        "reason": "This incorrectly includes the constant in the product."
+      },
+      {
+        "index": 3,
+        "reason": "This omits the constant."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0535",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function concepts",
+    "subskill": "domain and range",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Kingston Academy accessibility review involving kayak rentals, a function is defined only for integer inputs from 2 through 8, inclusive. How many values are in its domain?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "8 − 2 + 1 = 7 integer inputs.",
+    "solutionSteps": [
+      "Subtract endpoints.",
+      "Add 1 because both are included.",
+      "Check by listing if needed."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Inclusive integer count = upper − lower + 1."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0535",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "6",
+      "8",
+      "10",
+      "7"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Inclusive counting requires one more than the endpoint difference."
+      },
+      {
+        "index": 1,
+        "reason": "This is the upper endpoint."
+      },
+      {
+        "index": 2,
+        "reason": "Endpoints are not added to count integers."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0536",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Functions",
+    "skill": "Function concepts",
+    "subskill": "transformations",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Lakeside Academy safety inspection involving stage lights, the graph of y = f(x − 6) is the graph of y = f(x) shifted how many units to the right?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Replacing x with x − 6 shifts the graph 6 units right.",
+    "solutionSteps": [
+      "Inspect the input of f.",
+      "Use the opposite-sign horizontal shift rule.",
+      "Report the shift magnitude."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "f(x − h) shifts f right by h."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0536",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "6",
+      "-6",
+      "12",
+      "0"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The question asks for a positive number of units to the right."
+      },
+      {
+        "index": 2,
+        "reason": "Horizontal shift magnitude equals the constant."
+      },
+      {
+        "index": 3,
+        "reason": "The input replacement creates a horizontal shift."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0537",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Plane geometry",
+    "subskill": "coordinate geometry",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Meadow Academy summer schedule involving trail markers, what is the x-coordinate of the midpoint between (3, 6) and (11, 10)?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Average the x-coordinates: (3 + 11)/2 = 7.",
+    "solutionSteps": [
+      "Take the two x-coordinates.",
+      "Add them.",
+      "Divide by 2."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Midpoint coordinates are coordinate-wise averages."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0537",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "midpoint-x",
+      "inputs": [
+        3,
+        11
+      ],
+      "expected": 7
+    },
+    "choices": [
+      "8",
+      "7",
+      "14",
+      "9"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the horizontal distance."
+      },
+      {
+        "index": 2,
+        "reason": "This omits division by 2."
+      },
+      {
+        "index": 3,
+        "reason": "This value does not satisfy the final equation or condition."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0538",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Measurement",
+    "subskill": "area",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Northgate Academy grant proposal involving lamp posts, a rectangle measures 8 by 7. What is its area?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "8 · 7 = 56.",
+    "solutionSteps": [
+      "Identify length and width.",
+      "Multiply.",
+      "Use square units."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Rectangle area A = lw."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0538",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        8,
+        7
+      ],
+      "expected": 56
+    },
+    "choices": [
+      "30",
+      "15",
+      "56",
+      "112"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is perimeter."
+      },
+      {
+        "index": 1,
+        "reason": "Area requires multiplication."
+      },
+      {
+        "index": 3,
+        "reason": "The rectangle is counted twice."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0539",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Measurement",
+    "subskill": "surface area",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Oak Hill Academy equipment survey involving meal vouchers, a cube has side length 8. Find its surface area.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "6s² = 6(8²) = 384.",
+    "solutionSteps": [
+      "Find one square face's area.",
+      "Multiply by six faces.",
+      "Use square units."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Cube surface area = 6s²."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0539",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "512",
+      "48",
+      "256",
+      "384"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is volume."
+      },
+      {
+        "index": 1,
+        "reason": "Each face area is side squared."
+      },
+      {
+        "index": 2,
+        "reason": "A cube has six faces, not four."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0540",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Measurement",
+    "subskill": "volume",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Pinecrest Academy volunteer plan involving museum tickets, a rectangular prism measures 3 by 4 by 2. Find its volume.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "3·4·2 = 24.",
+    "solutionSteps": [
+      "Identify three dimensions.",
+      "Multiply all three.",
+      "Use cubic units."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Rectangular prism volume V = lwh."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0540",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        3,
+        4,
+        2
+      ],
+      "expected": 24
+    },
+    "choices": [
+      "24",
+      "12",
+      "9",
+      "18"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is only base area."
+      },
+      {
+        "index": 2,
+        "reason": "Volume requires multiplication."
+      },
+      {
+        "index": 3,
+        "reason": "This is not a volume formula."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0541",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Trigonometry",
+    "subskill": "right-triangle trigonometry",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Quarry Academy maintenance estimate involving tool kits, for angle θ, opposite = 4 and hypotenuse = 9. Find sin θ to three decimals if needed.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "sin θ = 4/9 = 0.444.",
+    "solutionSteps": [
+      "Identify opposite and hypotenuse.",
+      "Divide.",
+      "Round at the end."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "sin θ = opposite/hypotenuse."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0541",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "probability",
+      "inputs": [
+        4,
+        9
+      ],
+      "expected": 0.4444444444444444
+    },
+    "choices": [
+      "2.25",
+      "0.444",
+      "0.556",
+      "0.8"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This reverses sine."
+      },
+      {
+        "index": 2,
+        "reason": "The adjacent side cannot be found by simple subtraction here."
+      },
+      {
+        "index": 3,
+        "reason": "This is not the sine ratio."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0542",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Trigonometry",
+    "subskill": "identities",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Riverside Academy event forecast involving field guides, for an acute angle θ, sin θ = 0.6 and cos θ = 0.8. What is sin²θ + cos²θ?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "0.6² + 0.8² = 0.36 + 0.64 = 1.",
+    "solutionSteps": [
+      "Square sine.",
+      "Square cosine.",
+      "Add."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "sin²θ + cos²θ = 1."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0542",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "1.4",
+      "0.48",
+      "1",
+      "0.04"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds sine and cosine without squaring."
+      },
+      {
+        "index": 1,
+        "reason": "This multiplies sine and cosine."
+      },
+      {
+        "index": 3,
+        "reason": "This subtracts the squared values."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0543",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Plane geometry",
+    "subskill": "angles",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Summit Academy resource-allocation meeting involving paint cans, one angle in a linear pair measures 78°. What is the other angle?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "180 − 78 = 102°.",
+    "solutionSteps": [
+      "Use the supplementary-angle relationship.",
+      "Subtract the known angle.",
+      "Verify a sum of 180°."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "A linear pair is supplementary."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0543",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "258",
+      "12",
+      "78",
+      "102"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Linear pairs sum to 180°."
+      },
+      {
+        "index": 1,
+        "reason": "This treats them as complementary."
+      },
+      {
+        "index": 2,
+        "reason": "The angles are not stated to be equal."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0544",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Plane geometry",
+    "subskill": "triangles",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Timber Academy annual budget check involving ceramic tiles, a right triangle has legs 3 and 4. Find the hypotenuse.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "√((3)² + (4)²) = 5.",
+    "solutionSteps": [
+      "Square the legs.",
+      "Add.",
+      "Take the square root."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "a² + b² = c²."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0544",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "pythagorean",
+      "inputs": [
+        3,
+        4
+      ],
+      "expected": 5
+    },
+    "choices": [
+      "5",
+      "7",
+      "12",
+      "2.646"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This adds the legs."
+      },
+      {
+        "index": 2,
+        "reason": "This multiplies the legs."
+      },
+      {
+        "index": 3,
+        "reason": "The Pythagorean theorem adds squares, not lengths."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0545",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Plane geometry",
+    "subskill": "circles",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Union Academy spring inventory involving recycling bins, a circle has radius 4. What is the coefficient of π in its area?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "A = πr² = 16π.",
+    "solutionSteps": [
+      "Use circle area.",
+      "Square the radius.",
+      "Read the coefficient."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Circle area A = πr²."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0545",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "circle-area-coefficient",
+      "inputs": [
+        4
+      ],
+      "expected": 16
+    },
+    "choices": [
+      "8",
+      "16",
+      "4",
+      "64"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the circumference coefficient."
+      },
+      {
+        "index": 2,
+        "reason": "Area squares the radius."
+      },
+      {
+        "index": 3,
+        "reason": "This squares the diameter."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0546",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Plane geometry",
+    "subskill": "coordinate geometry",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Valley Academy capacity study involving event badges, what is the x-coordinate of the midpoint between (0, 9) and (8, 13)?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Average the x-coordinates: (0 + 8)/2 = 4.",
+    "solutionSteps": [
+      "Take the two x-coordinates.",
+      "Add them.",
+      "Divide by 2."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Midpoint coordinates are coordinate-wise averages."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0546",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "midpoint-x",
+      "inputs": [
+        0,
+        8
+      ],
+      "expected": 4
+    },
+    "choices": [
+      "8",
+      "11",
+      "4",
+      "5"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the horizontal distance."
+      },
+      {
+        "index": 1,
+        "reason": "This is the midpoint's y-coordinate."
+      },
+      {
+        "index": 3,
+        "reason": "This value does not satisfy the final equation or condition."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0547",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Measurement",
+    "subskill": "area",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Westfield Academy delivery audit involving notebooks, a rectangle measures 9 by 4. What is its area?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "9 · 4 = 36.",
+    "solutionSteps": [
+      "Identify length and width.",
+      "Multiply.",
+      "Use square units."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Rectangle area A = lw."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0547",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        9,
+        4
+      ],
+      "expected": 36
+    },
+    "choices": [
+      "26",
+      "13",
+      "72",
+      "36"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is perimeter."
+      },
+      {
+        "index": 1,
+        "reason": "Area requires multiplication."
+      },
+      {
+        "index": 2,
+        "reason": "The rectangle is counted twice."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0548",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Measurement",
+    "subskill": "surface area",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a York Academy weekend staffing plan involving art prints, a cube has side length 5. Find its surface area.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "6s² = 6(5²) = 150.",
+    "solutionSteps": [
+      "Find one square face's area.",
+      "Multiply by six faces.",
+      "Use square units."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Cube surface area = 6s²."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0548",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "150",
+      "125",
+      "30",
+      "100"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is volume."
+      },
+      {
+        "index": 2,
+        "reason": "Each face area is side squared."
+      },
+      {
+        "index": 3,
+        "reason": "A cube has six faces, not four."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0549",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Geometry",
+    "skill": "Measurement",
+    "subskill": "volume",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Zephyr Academy storage redesign involving storage boxes, a rectangular prism measures 7 by 5 by 5. Find its volume.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "7·5·5 = 175.",
+    "solutionSteps": [
+      "Identify three dimensions.",
+      "Multiply all three.",
+      "Use cubic units."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Rectangular prism volume V = lwh."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0549",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        7,
+        5,
+        5
+      ],
+      "expected": 175
+    },
+    "choices": [
+      "35",
+      "175",
+      "17",
+      "34"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is only base area."
+      },
+      {
+        "index": 2,
+        "reason": "Volume requires multiplication."
+      },
+      {
+        "index": 3,
+        "reason": "This is not a volume formula."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0550",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Probability",
+    "subskill": "compound probability",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Alder Academy cost comparison involving paint cans, a fair six-sided number cube is rolled twice. What is the probability both results are even?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "(3/6)² = (1/2)² = 1/4 = 0.25.",
+    "solutionSteps": [
+      "Find one-roll probability.",
+      "Use independence.",
+      "Multiply."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiply probabilities of independent events."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0550",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "0.5",
+      "0.333",
+      "0.25",
+      "0.75"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the probability for one roll."
+      },
+      {
+        "index": 1,
+        "reason": "This does not multiply independent event probabilities."
+      },
+      {
+        "index": 3,
+        "reason": "This is not the probability of two successes."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0551",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Data analysis",
+    "subskill": "center and spread",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Brookside Academy usage forecast involving ceramic tiles, find the mean of 7, 9, 11, 13, 15.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "The symmetric list has mean 11.",
+    "solutionSteps": [
+      "Add the values or identify the center.",
+      "Divide by five.",
+      "Check against the range."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Mean = sum/count."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0551",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "mean",
+      "inputs": [
+        7,
+        9,
+        11,
+        13,
+        15
+      ],
+      "expected": 11
+    },
+    "choices": [
+      "55",
+      "13",
+      "5",
+      "11"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the sum."
+      },
+      {
+        "index": 1,
+        "reason": "This is above the center of the symmetric list."
+      },
+      {
+        "index": 2,
+        "reason": "This is the count of values."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0552",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Data analysis",
+    "subskill": "data displays",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Cedar Academy accessibility review involving recycling bins, a bar chart shows 12 of 42 responses in one category. What fraction of responses is in that category, as a decimal to three places if needed?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "12/42 = 0.286.",
+    "solutionSteps": [
+      "Identify category count.",
+      "Use total as denominator.",
+      "Divide."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Proportion = part/whole."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0552",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "probability",
+      "inputs": [
+        12,
+        42
+      ],
+      "expected": 0.2857142857142857
+    },
+    "choices": [
+      "0.286",
+      "0.714",
+      "0.4",
+      "3.5"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is the complement."
+      },
+      {
+        "index": 2,
+        "reason": "This uses the other category as denominator."
+      },
+      {
+        "index": 3,
+        "reason": "This reverses part and whole."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0553",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Data analysis",
+    "subskill": "regression",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Dunham Academy safety inspection involving event badges, a regression model predicts 2 more units for each additional hour. What is its slope?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "The predicted rate is 2 units per hour, so slope = 2.",
+    "solutionSteps": [
+      "Identify output change.",
+      "Identify one unit of input.",
+      "Write output per input."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Regression slope is predicted change in y per unit x."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0553",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "0.5",
+      "2",
+      "3",
+      "0"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This reverses output per input."
+      },
+      {
+        "index": 2,
+        "reason": "No additional unit is added."
+      },
+      {
+        "index": 3,
+        "reason": "The prediction changes, so slope is not zero."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0554",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Probability",
+    "subskill": "counting",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Elmwood Academy summer schedule involving notebooks, a uniform can use any of 5 shirts and 4 pairs of pants. How many combinations are possible?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "5·4 = 20 combinations.",
+    "solutionSteps": [
+      "Count first choices.",
+      "Count second choices.",
+      "Multiply independent options."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Fundamental counting principle: multiply stage counts."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0554",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        5,
+        4
+      ],
+      "expected": 20
+    },
+    "choices": [
+      "9",
+      "19",
+      "20",
+      "625"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Use multiplication for independent choices."
+      },
+      {
+        "index": 1,
+        "reason": "All pairings are allowed."
+      },
+      {
+        "index": 3,
+        "reason": "The multiplication principle, not exponentiation, applies."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0555",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Probability",
+    "subskill": "compound probability",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Fairview Academy grant proposal involving art prints, a fair six-sided number cube is rolled twice. What is the probability both results are even?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "(3/6)² = (1/2)² = 1/4 = 0.25.",
+    "solutionSteps": [
+      "Find one-roll probability.",
+      "Use independence.",
+      "Multiply."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiply probabilities of independent events."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0555",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "0.5",
+      "0.333",
+      "0.75",
+      "0.25"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the probability for one roll."
+      },
+      {
+        "index": 1,
+        "reason": "This does not multiply independent event probabilities."
+      },
+      {
+        "index": 2,
+        "reason": "This is not the probability of two successes."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0556",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Data analysis",
+    "subskill": "center and spread",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Glen Park Academy equipment survey involving storage boxes, find the mean of 5, 7, 9, 11, 13.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "The symmetric list has mean 9.",
+    "solutionSteps": [
+      "Add the values or identify the center.",
+      "Divide by five.",
+      "Check against the range."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Mean = sum/count."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0556",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "mean",
+      "inputs": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "expected": 9
+    },
+    "choices": [
+      "9",
+      "45",
+      "11",
+      "5"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is the sum."
+      },
+      {
+        "index": 2,
+        "reason": "This is above the center of the symmetric list."
+      },
+      {
+        "index": 3,
+        "reason": "This is the count of values."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0557",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Data analysis",
+    "subskill": "data displays",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Harbor Academy volunteer plan involving survey forms, a bar chart shows 17 of 47 responses in one category. What fraction of responses is in that category, as a decimal to three places if needed?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "17/47 = 0.362.",
+    "solutionSteps": [
+      "Identify category count.",
+      "Use total as denominator.",
+      "Divide."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Proportion = part/whole."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0557",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "probability",
+      "inputs": [
+        17,
+        47
+      ],
+      "expected": 0.3617021276595745
+    },
+    "choices": [
+      "0.638",
+      "0.362",
+      "0.567",
+      "2.765"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the complement."
+      },
+      {
+        "index": 2,
+        "reason": "This uses the other category as denominator."
+      },
+      {
+        "index": 3,
+        "reason": "This reverses part and whole."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0558",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Data analysis",
+    "subskill": "regression",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Ivy Academy maintenance estimate involving bus passes, a regression model predicts 7 more units for each additional hour. What is its slope?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "The predicted rate is 7 units per hour, so slope = 7.",
+    "solutionSteps": [
+      "Identify output change.",
+      "Identify one unit of input.",
+      "Write output per input."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Regression slope is predicted change in y per unit x."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0558",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "0.143",
+      "8",
+      "7",
+      "0"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This reverses output per input."
+      },
+      {
+        "index": 1,
+        "reason": "No additional unit is added."
+      },
+      {
+        "index": 3,
+        "reason": "The prediction changes, so slope is not zero."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0559",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Probability",
+    "subskill": "counting",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Juniper Academy event forecast involving garden plots, a uniform can use any of 6 shirts and 3 pairs of pants. How many combinations are possible?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "6·3 = 18 combinations.",
+    "solutionSteps": [
+      "Count first choices.",
+      "Count second choices.",
+      "Multiply independent options."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Fundamental counting principle: multiply stage counts."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0559",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        6,
+        3
+      ],
+      "expected": 18
+    },
+    "choices": [
+      "9",
+      "17",
+      "216",
+      "18"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Use multiplication for independent choices."
+      },
+      {
+        "index": 1,
+        "reason": "All pairings are allowed."
+      },
+      {
+        "index": 2,
+        "reason": "The multiplication principle, not exponentiation, applies."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0560",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Statistics and Probability",
+    "skill": "Probability",
+    "subskill": "compound probability",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Kingston Academy resource-allocation meeting involving photo frames, a fair six-sided number cube is rolled twice. What is the probability both results are even?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "(3/6)² = (1/2)² = 1/4 = 0.25.",
+    "solutionSteps": [
+      "Find one-roll probability.",
+      "Use independence.",
+      "Multiply."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiply probabilities of independent events."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0560",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "0.25",
+      "0.5",
+      "0.333",
+      "0.75"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is the probability for one roll."
+      },
+      {
+        "index": 2,
+        "reason": "This does not multiply independent event probabilities."
+      },
+      {
+        "index": 3,
+        "reason": "This is not the probability of two successes."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0561",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Multi-step applications",
+    "subskill": "averages",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Lakeside Academy annual budget check involving library cards, find the mean of 3, 5, 7, 9, 11.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "The symmetric list has mean 7.",
+    "solutionSteps": [
+      "Add the values or identify the center.",
+      "Divide by five.",
+      "Check against the range."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Mean = sum/count."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0561",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "mean",
+      "inputs": [
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "expected": 7
+    },
+    "choices": [
+      "35",
+      "7",
+      "9",
+      "5"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the sum."
+      },
+      {
+        "index": 2,
+        "reason": "This is above the center of the symmetric list."
+      },
+      {
+        "index": 3,
+        "reason": "This is the count of values."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0562",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Multi-step applications",
+    "subskill": "financial contexts",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Meadow Academy spring inventory involving water bottles, $140 earns 5% simple interest for one year. How many dollars of interest are earned?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Interest = 140·0.05 = $7.",
+    "solutionSteps": [
+      "Convert rate to decimal.",
+      "Multiply by principal and one year.",
+      "Answer interest, not balance."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Simple interest I = Prt."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0562",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "percent-of",
+      "inputs": [
+        140,
+        5
+      ],
+      "expected": 7
+    },
+    "choices": [
+      "147",
+      "5",
+      "7",
+      "133"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the ending balance, not interest."
+      },
+      {
+        "index": 1,
+        "reason": "This repeats the percent as dollars."
+      },
+      {
+        "index": 3,
+        "reason": "Interest is added, not subtracted."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0563",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Multi-step applications",
+    "subskill": "combined concepts",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Northgate Academy capacity study involving fabric rolls, a container starts with 28 liters, gains 9 liters, then the total is split equally among 2 tanks. How many liters go in each tank?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "(28 + 9)/2 = 18.5.",
+    "solutionSteps": [
+      "Combine the amounts.",
+      "Divide the total by two.",
+      "Check that two shares reconstruct the total."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use parentheses to preserve multi-step order."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0563",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "37",
+      "23",
+      "32.5",
+      "18.5"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the total before splitting."
+      },
+      {
+        "index": 1,
+        "reason": "The added amount must also be split."
+      },
+      {
+        "index": 2,
+        "reason": "Order of operations leaves the starting amount unsplit."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0564",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Rates and proportional reasoning",
+    "subskill": "rates",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Oak Hill Academy delivery audit involving bike helmets, 4 bike helmets cost $28. At the same rate, what do 7 cost?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Unit cost is $7; 7 cost $49.",
+    "solutionSteps": [
+      "Find unit rate.",
+      "Multiply by target quantity.",
+      "Check proportionality."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Equivalent ratios share a constant unit rate."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0564",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "49",
+      "35",
+      "7",
+      "28"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This adds quantity instead of using unit rate."
+      },
+      {
+        "index": 2,
+        "reason": "This is cost per item only."
+      },
+      {
+        "index": 3,
+        "reason": "This uses initial quantity as a rate."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0565",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Rates and proportional reasoning",
+    "subskill": "proportions",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Pinecrest Academy weekend staffing plan involving seed packets, 5 seed packets cost $40. At the same rate, what do 8 cost?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Unit cost is $8; 8 cost $64.",
+    "solutionSteps": [
+      "Find unit rate.",
+      "Multiply by target quantity.",
+      "Check proportionality."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Equivalent ratios share a constant unit rate."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0565",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "48",
+      "64",
+      "8",
+      "40"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds quantity instead of using unit rate."
+      },
+      {
+        "index": 2,
+        "reason": "This is cost per item only."
+      },
+      {
+        "index": 3,
+        "reason": "This uses initial quantity as a rate."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0566",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Rates and proportional reasoning",
+    "subskill": "percentages",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Quarry Academy storage redesign involving music folders, what is 25% of 60?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "0.25·60 = 15.",
+    "solutionSteps": [
+      "Convert percent to decimal.",
+      "Multiply by the whole.",
+      "Check magnitude."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Part = percent × whole."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0566",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "percent-of",
+      "inputs": [
+        60,
+        25
+      ],
+      "expected": 15
+    },
+    "choices": [
+      "45",
+      "25",
+      "15",
+      "75"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the amount remaining after a discount."
+      },
+      {
+        "index": 1,
+        "reason": "This treats a percent as the result."
+      },
+      {
+        "index": 3,
+        "reason": "This adds the percentage amount."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0567",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Applied measurement",
+    "subskill": "perimeter and area",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Riverside Academy cost comparison involving kayak rentals, a rectangle measures 13 by 6. What is its area?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "13 · 6 = 78.",
+    "solutionSteps": [
+      "Identify length and width.",
+      "Multiply.",
+      "Use square units."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Rectangle area A = lw."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0567",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        13,
+        6
+      ],
+      "expected": 78
+    },
+    "choices": [
+      "38",
+      "19",
+      "156",
+      "78"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is perimeter."
+      },
+      {
+        "index": 1,
+        "reason": "Area requires multiplication."
+      },
+      {
+        "index": 2,
+        "reason": "The rectangle is counted twice."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0568",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Applied measurement",
+    "subskill": "measurement conversion",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Summit Academy usage forecast involving stage lights, a board is 3 feet long. How many inches long is it?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "3 feet × 12 inches per foot = 36 inches.",
+    "solutionSteps": [
+      "Use 12 inches per foot.",
+      "Multiply so feet cancel.",
+      "Report inches."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Multiply by a unit conversion factor equal to 1."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0568",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        3,
+        12
+      ],
+      "expected": 36
+    },
+    "choices": [
+      "36",
+      "15",
+      "0.25",
+      "9"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Conversion requires multiplication, not addition."
+      },
+      {
+        "index": 2,
+        "reason": "This converts inches to feet, the opposite direction."
+      },
+      {
+        "index": 3,
+        "reason": "A foot contains 12, not 3, inches."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0569",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Multi-step applications",
+    "subskill": "averages",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Timber Academy accessibility review involving trail markers, find the mean of 4, 6, 8, 10, 12.",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "The symmetric list has mean 8.",
+    "solutionSteps": [
+      "Add the values or identify the center.",
+      "Divide by five.",
+      "Check against the range."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Mean = sum/count."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0569",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "mean",
+      "inputs": [
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "expected": 8
+    },
+    "choices": [
+      "40",
+      "8",
+      "10",
+      "5"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the sum."
+      },
+      {
+        "index": 2,
+        "reason": "This is above the center of the symmetric list."
+      },
+      {
+        "index": 3,
+        "reason": "This is the count of values."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0570",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Multi-step applications",
+    "subskill": "financial contexts",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Union Academy safety inspection involving lamp posts, $140 earns 5% simple interest for one year. How many dollars of interest are earned?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Interest = 140·0.05 = $7.",
+    "solutionSteps": [
+      "Convert rate to decimal.",
+      "Multiply by principal and one year.",
+      "Answer interest, not balance."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Simple interest I = Prt."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0570",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "percent-of",
+      "inputs": [
+        140,
+        5
+      ],
+      "expected": 7
+    },
+    "choices": [
+      "147",
+      "5",
+      "7",
+      "133"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the ending balance, not interest."
+      },
+      {
+        "index": 1,
+        "reason": "This repeats the percent as dollars."
+      },
+      {
+        "index": 3,
+        "reason": "Interest is added, not subtracted."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0571",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Multi-step applications",
+    "subskill": "combined concepts",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Valley Academy summer schedule involving meal vouchers, a container starts with 21 liters, gains 9 liters, then the total is split equally among 2 tanks. How many liters go in each tank?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "(21 + 9)/2 = 15.",
+    "solutionSteps": [
+      "Combine the amounts.",
+      "Divide the total by two.",
+      "Check that two shares reconstruct the total."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Use parentheses to preserve multi-step order."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0571",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "30",
+      "19.5",
+      "25.5",
+      "15"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the total before splitting."
+      },
+      {
+        "index": 1,
+        "reason": "The added amount must also be split."
+      },
+      {
+        "index": 2,
+        "reason": "Order of operations leaves the starting amount unsplit."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0572",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Rates and proportional reasoning",
+    "subskill": "rates",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Westfield Academy grant proposal involving museum tickets, 6 museum tickets cost $48. At the same rate, what do 9 cost?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Unit cost is $8; 9 cost $72.",
+    "solutionSteps": [
+      "Find unit rate.",
+      "Multiply by target quantity.",
+      "Check proportionality."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Equivalent ratios share a constant unit rate."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0572",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "72",
+      "57",
+      "8",
+      "54"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This adds quantity instead of using unit rate."
+      },
+      {
+        "index": 2,
+        "reason": "This is cost per item only."
+      },
+      {
+        "index": 3,
+        "reason": "This uses initial quantity as a rate."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0573",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Rates and proportional reasoning",
+    "subskill": "proportions",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a York Academy equipment survey involving tool kits, 7 tool kits cost $63. At the same rate, what do 10 cost?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "Unit cost is $9; 10 cost $90.",
+    "solutionSteps": [
+      "Find unit rate.",
+      "Multiply by target quantity.",
+      "Check proportionality."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Equivalent ratios share a constant unit rate."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0573",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "73",
+      "90",
+      "9",
+      "70"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds quantity instead of using unit rate."
+      },
+      {
+        "index": 2,
+        "reason": "This is cost per item only."
+      },
+      {
+        "index": 3,
+        "reason": "This uses initial quantity as a rate."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0574",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Rates and proportional reasoning",
+    "subskill": "percentages",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During a Zephyr Academy volunteer plan involving field guides, what is 20% of 80?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "0.2·80 = 16.",
+    "solutionSteps": [
+      "Convert percent to decimal.",
+      "Multiply by the whole.",
+      "Check magnitude."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Part = percent × whole."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0574",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "percent-of",
+      "inputs": [
+        80,
+        20
+      ],
+      "expected": 16
+    },
+    "choices": [
+      "64",
+      "20",
+      "16",
+      "96"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the amount remaining after a discount."
+      },
+      {
+        "index": 1,
+        "reason": "This treats a percent as the result."
+      },
+      {
+        "index": 3,
+        "reason": "This adds the percentage amount."
+      }
+    ]
+  },
+  {
+    "id": "act-mathematics-0575",
+    "test": "ACT",
+    "section": "Mathematics",
+    "sectionKey": "act-mathematics",
+    "domain": "Integrating Essential Skills",
+    "skill": "Applied measurement",
+    "subskill": "perimeter and area",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": null,
+    "stem": "During an Alder Academy maintenance estimate involving stage lights, a rectangle measures 13 by 8. What is its area?",
+    "hint": "Translate the given information into an equation before calculating.",
+    "explanation": "13 · 8 = 104.",
+    "solutionSteps": [
+      "Identify length and width.",
+      "Multiply.",
+      "Use square units."
+    ],
+    "strategy": "Write the governing relationship, solve cleanly, and check the result against the question.",
+    "trap": "Do not stop at an intermediate value or answer a related quantity that was not requested.",
+    "estimatedSeconds": 75,
+    "principles": [
+      "Rectangle area A = lw."
+    ],
+    "calculatorPolicy": "allowed-approved-only",
+    "format": "standalone",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-mathematics-generator-v1",
+      "seed": "act-mathematics-0575",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "product",
+      "inputs": [
+        13,
+        8
+      ],
+      "expected": 104
+    },
+    "choices": [
+      "42",
+      "21",
+      "208",
+      "104"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is perimeter."
+      },
+      {
+        "index": 1,
+        "reason": "Area requires multiplication."
+      },
+      {
+        "index": 2,
+        "reason": "The rectangle is counted twice."
+      }
+    ]
   }
 ]

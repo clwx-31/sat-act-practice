@@ -32172,5 +32172,4833 @@
         "reason": "The input was deliberately varied first."
       }
     ]
+  },
+  {
+    "id": "act-science-0501",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "tables",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Bayside School tested miniature wind turbines while room temperature stayed constant. The table shows the results.\n\nwind speed (m/s) | power output (mW)\n5 | 13\n10 | 22\n15 | 31\n20 | 40"
+    },
+    "stem": "What power output was recorded when wind speed was 10 m/s?",
+    "hint": "Find the row with the specified independent-variable value, then read across.",
+    "explanation": "The row for 10 lists 22 mW.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Match the requested row and read the dependent-variable column.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Read a table by matching row conditions before reading the requested column."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0501",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "22",
+      "13",
+      "10",
+      "31"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is the outcome in the first row."
+      },
+      {
+        "index": 2,
+        "reason": "This is the independent-variable value, not the measured outcome."
+      },
+      {
+        "index": 3,
+        "reason": "This outcome comes from a neighboring row."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0502",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "graphs",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "graph",
+      "content": "Cedar Center tested leaf disks with results averaged across five samples. The table shows the results.\n\ncarbon dioxide level (mg/L) | floating time (minutes)\n6 | 32\n9 | 25\n12 | 18\n15 | 11\n\nImagine these points plotted with carbon dioxide level on the horizontal axis."
+    },
+    "stem": "At which tested carbon dioxide level would the graph show the greatest floating time?",
+    "hint": "Identify the greatest value in the outcome column, then trace to its input.",
+    "explanation": "The greatest floating time, 32, occurs at 6 mg/L.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Find the maximum dependent value and its corresponding horizontal coordinate.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A graph and its source table encode the same ordered pairs."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "graph",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0502",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "9",
+      "6",
+      "12",
+      "15"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The table shows a smaller outcome at this level."
+      },
+      {
+        "index": 2,
+        "reason": "The table shows a smaller outcome at this level."
+      },
+      {
+        "index": 3,
+        "reason": "The table shows a smaller outcome at this level."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0503",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "diagrams",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "diagram",
+      "content": "Delta Academy arranged four samples from lowest to highest acid exposure: Sample A, Sample B, Sample C, Sample D. with sample order concealed from the recorder, Sample A had 33 g and Sample D had 18 g."
+    },
+    "stem": "Which sample had the highest tested acid exposure?",
+    "hint": "Use the stated ordering from lowest to highest.",
+    "explanation": "The diagram description orders the samples A through D from lowest to highest, so D is highest.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Translate the verbal ordering into sample positions.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Diagram labels must be interpreted using the key or ordering provided."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "diagram",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0503",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Sample A",
+      "Sample B",
+      "Sample D",
+      "Sample C"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Sample A was assigned the lowest level."
+      },
+      {
+        "index": 1,
+        "reason": "Sample B was below Samples C and D."
+      },
+      {
+        "index": 3,
+        "reason": "Sample D was explicitly the highest."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0504",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "trends",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Elm Institute tested sealed terrariums with samples assigned at random. The table shows the results.\n\nplant count (plants) | oxygen level (%)\n2 | 16\n6 | 19\n10 | 22\n14 | 25"
+    },
+    "stem": "As plant count increased across the tested levels, how did oxygen level change?",
+    "hint": "Compare the first and last rows, then check whether the middle rows follow the same direction.",
+    "explanation": "The outcome values move from 16 to 25, showing a consistent increase.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Read the outcome column from top to bottom as the input rises.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A trend describes the direction and consistency of change across ordered data."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0504",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It increased consistently.",
+      "It stayed constant.",
+      "It decreased consistently.",
+      "It changed direction twice."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The outcome values change in every row."
+      },
+      {
+        "index": 2,
+        "reason": "This reverses the direction shown."
+      },
+      {
+        "index": 3,
+        "reason": "The values move in one direction throughout."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0505",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "interpolation",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Foxglove Lab tested bean seedlings using equal starting masses. The table shows the results.\n\ndaily light (hours) | mean height (cm)\n3 | 17\n5 | 25\n7 | 33\n9 | 41"
+    },
+    "stem": "Assuming a linear relationship between the middle two rows, what mean height is predicted at 6 hours?",
+    "hint": "The requested input is halfway between the middle inputs.",
+    "explanation": "A halfway input gives the average outcome: (25 + 33)/2 = 29.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Average the two neighboring outcomes for a linear midpoint estimate.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Linear interpolation estimates between measured points."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0505",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "mean",
+      "inputs": [
+        25,
+        33
+      ],
+      "expected": 29
+    },
+    "choices": [
+      "25",
+      "29",
+      "33",
+      "17"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This uses the lower measured outcome without moving halfway."
+      },
+      {
+        "index": 2,
+        "reason": "This uses the upper measured outcome."
+      },
+      {
+        "index": 3,
+        "reason": "This uses the first row, outside the specified interval."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0506",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "comparison",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Granite School tested yeast cultures by two independent observers. The table shows the results.\n\nwater temperature (°C) | gas volume (mL)\n4 | 18\n9 | 24\n14 | 30\n19 | 36"
+    },
+    "stem": "What is the absolute difference between the first and last gas volume values?",
+    "hint": "Use the dependent-variable column and subtract endpoint values.",
+    "explanation": "|36 − 18| = 18 mL.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Read the first and last outcomes and take their absolute difference.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Comparisons must use the requested variable and consistent units."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0506",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "54",
+      "15",
+      "18",
+      "Cannot be determined from the data"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds rather than subtracts the endpoint values."
+      },
+      {
+        "index": 1,
+        "reason": "This compares input levels instead of outcomes."
+      },
+      {
+        "index": 3,
+        "reason": "The supplied data are sufficient to determine the requested result."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0507",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Translate data",
+    "subskill": "graph to text",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "graph",
+      "content": "Harbor Center tested model solar panels during four repeated trials. The table shows the results.\n\nlamp angle (degrees) | electric current (mA)\n5 | 37\n8 | 33\n11 | 29\n14 | 25\n\nThe points are plotted and connected in order."
+    },
+    "stem": "Which sentence best translates the graph's pattern into words?",
+    "hint": "Describe what happens to the vertical variable as the horizontal variable increases.",
+    "explanation": "The plotted points show that electric current falls as lamp angle rises.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Translate horizontal movement into the corresponding vertical direction.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "A verbal graph description must name both variables and the direction of association."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "graph",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0507",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "electric current remains constant.",
+      "lamp angle was not varied.",
+      "The graph contains no ordered relationship.",
+      "electric current falls as lamp angle rises."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The plotted values change."
+      },
+      {
+        "index": 1,
+        "reason": "Four distinct input levels were tested."
+      },
+      {
+        "index": 2,
+        "reason": "The points follow a consistent direction."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0508",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Translate data",
+    "subskill": "table to graph",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Indigo Academy reports that drainage time falls as sand content rises for soil samples while humidity was held stable."
+    },
+    "stem": "Which two-row table is consistent with the report?",
+    "hint": "As input moves from 2 to 4, make the output move in the stated direction.",
+    "explanation": "Only the correct table shows the reported decrease.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Compare outputs at the lower and higher inputs.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A table-to-text translation must preserve variable direction."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0508",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Input 2 → Output 18; Input 4 → Output 10",
+      "Input 2 → Output 10; Input 4 → Output 18",
+      "Input 2 → Output 10; Input 4 → Output 10",
+      "Input 4 → Output 18; Input 2 → Output 10"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This shows an increase."
+      },
+      {
+        "index": 2,
+        "reason": "This shows no change."
+      },
+      {
+        "index": 3,
+        "reason": "Ordered by input, this shows an increase."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0509",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "tables",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Juniper Lab tested paper helicopters with measurements recorded every minute. The table shows the results.\n\nwing length (cm) | fall time (seconds)\n7 | 21\n11 | 28\n15 | 35\n19 | 42"
+    },
+    "stem": "What fall time was recorded when wing length was 19 cm?",
+    "hint": "Find the row with the specified independent-variable value, then read across.",
+    "explanation": "The row for 19 lists 42 seconds.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Match the requested row and read the dependent-variable column.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Read a table by matching row conditions before reading the requested column."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0509",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "21",
+      "42",
+      "19",
+      "35"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the outcome in the first row."
+      },
+      {
+        "index": 2,
+        "reason": "This is the independent-variable value, not the measured outcome."
+      },
+      {
+        "index": 3,
+        "reason": "This outcome comes from a neighboring row."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0510",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "graphs",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "graph",
+      "content": "Kestrel Institute tested salt solutions using calibrated digital sensors. The table shows the results.\n\nsalt concentration (%) | freezing point (°C)\n2 | 40\n4 | 35\n6 | 30\n8 | 25\n\nImagine these points plotted with salt concentration on the horizontal axis."
+    },
+    "stem": "At which tested salt concentration would the graph show the greatest freezing point?",
+    "hint": "Identify the greatest value in the outcome column, then trace to its input.",
+    "explanation": "The greatest freezing point, 40, occurs at 2 %.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Find the maximum dependent value and its corresponding horizontal coordinate.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A graph and its source table encode the same ordered pairs."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "graph",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0510",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "4",
+      "6",
+      "2",
+      "8"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The table shows a smaller outcome at this level."
+      },
+      {
+        "index": 1,
+        "reason": "The table shows a smaller outcome at this level."
+      },
+      {
+        "index": 3,
+        "reason": "The table shows a smaller outcome at this level."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0511",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "diagrams",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "diagram",
+      "content": "Lakeshore School arranged four samples from lowest to highest air temperature: Sample A, Sample B, Sample C, Sample D. with equipment cleaned between trials, Sample A had 23 chirps and Sample D had 32 chirps."
+    },
+    "stem": "Which sample had the highest tested air temperature?",
+    "hint": "Use the stated ordering from lowest to highest.",
+    "explanation": "The diagram description orders the samples A through D from lowest to highest, so D is highest.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Translate the verbal ordering into sample positions.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Diagram labels must be interpreted using the key or ordering provided."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "diagram",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0511",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Sample A",
+      "Sample B",
+      "Sample C",
+      "Sample D"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Sample A was assigned the lowest level."
+      },
+      {
+        "index": 1,
+        "reason": "Sample B was below Samples C and D."
+      },
+      {
+        "index": 2,
+        "reason": "Sample D was explicitly the highest."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0512",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "trends",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Meadow Center tested foam insulation panels after instruments were zeroed. The table shows the results.\n\npanel thickness (mm) | heat loss (joules)\n4 | 42\n7 | 34\n10 | 26\n13 | 18"
+    },
+    "stem": "As panel thickness increased across the tested levels, how did heat loss change?",
+    "hint": "Compare the first and last rows, then check whether the middle rows follow the same direction.",
+    "explanation": "The outcome values move from 42 to 18, showing a consistent decrease.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Read the outcome column from top to bottom as the input rises.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A trend describes the direction and consistency of change across ordered data."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0512",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It decreased consistently.",
+      "It stayed constant.",
+      "It increased consistently.",
+      "It changed direction twice."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The outcome values change in every row."
+      },
+      {
+        "index": 2,
+        "reason": "This reverses the direction shown."
+      },
+      {
+        "index": 3,
+        "reason": "The values move in one direction throughout."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0513",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "interpolation",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Northfield Lab tested algae cultures with uncertainty recorded for each reading. The table shows the results.\n\nnutrient level (mg/L) | cell density (cells/mL)\n5 | 25\n11 | 31\n17 | 37\n23 | 43"
+    },
+    "stem": "Assuming a linear relationship between the middle two rows, what cell density is predicted at 14 mg/L?",
+    "hint": "The requested input is halfway between the middle inputs.",
+    "explanation": "A halfway input gives the average outcome: (31 + 37)/2 = 34.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Average the two neighboring outcomes for a linear midpoint estimate.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Linear interpolation estimates between measured points."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0513",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "mean",
+      "inputs": [
+        31,
+        37
+      ],
+      "expected": 34
+    },
+    "choices": [
+      "31",
+      "34",
+      "37",
+      "25"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This uses the lower measured outcome without moving halfway."
+      },
+      {
+        "index": 2,
+        "reason": "This uses the upper measured outcome."
+      },
+      {
+        "index": 3,
+        "reason": "This uses the first row, outside the specified interval."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0514",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "comparison",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Oak Academy tested toy cars using freshly prepared materials. The table shows the results.\n\nramp height (cm) | travel distance (cm)\n6 | 26\n10 | 30\n14 | 34\n18 | 38"
+    },
+    "stem": "What is the absolute difference between the first and last travel distance values?",
+    "hint": "Use the dependent-variable column and subtract endpoint values.",
+    "explanation": "|38 − 26| = 12 cm.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Read the first and last outcomes and take their absolute difference.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Comparisons must use the requested variable and consistent units."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0514",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "64",
+      "26",
+      "12",
+      "Cannot be determined from the data"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds rather than subtracts the endpoint values."
+      },
+      {
+        "index": 1,
+        "reason": "This is only the first outcome."
+      },
+      {
+        "index": 3,
+        "reason": "The supplied data are sufficient to determine the requested result."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0515",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Translate data",
+    "subskill": "graph to text",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "graph",
+      "content": "Pine Institute tested metal rods using identical containers. The table shows the results.\n\nheating time (minutes) | length change (mm)\n7 | 27\n9 | 36\n11 | 45\n13 | 54\n\nThe points are plotted and connected in order."
+    },
+    "stem": "Which sentence best translates the graph's pattern into words?",
+    "hint": "Describe what happens to the vertical variable as the horizontal variable increases.",
+    "explanation": "The plotted points show that length change rises as heating time rises.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Translate horizontal movement into the corresponding vertical direction.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "A verbal graph description must name both variables and the direction of association."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "graph",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0515",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "length change remains constant.",
+      "heating time was not varied.",
+      "The graph contains no ordered relationship.",
+      "length change rises as heating time rises."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The plotted values change."
+      },
+      {
+        "index": 1,
+        "reason": "Four distinct input levels were tested."
+      },
+      {
+        "index": 2,
+        "reason": "The points follow a consistent direction."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0516",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Translate data",
+    "subskill": "table to graph",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Quartz School reports that flow rate falls as gravel depth rises for water filters during morning laboratory periods."
+    },
+    "stem": "Which two-row table is consistent with the report?",
+    "hint": "As input moves from 2 to 4, make the output move in the stated direction.",
+    "explanation": "Only the correct table shows the reported decrease.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Compare outputs at the lower and higher inputs.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A table-to-text translation must preserve variable direction."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0516",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Input 2 → Output 18; Input 4 → Output 10",
+      "Input 2 → Output 10; Input 4 → Output 18",
+      "Input 2 → Output 10; Input 4 → Output 10",
+      "Input 4 → Output 18; Input 2 → Output 10"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This shows an increase."
+      },
+      {
+        "index": 2,
+        "reason": "This shows no change."
+      },
+      {
+        "index": 3,
+        "reason": "Ordered by input, this shows an increase."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0517",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "tables",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "River Center tested moss patches after a preliminary pilot. The table shows the results.\n\nsoil moisture (%) | covered area (cm²)\n3 | 29\n6 | 34\n9 | 39\n12 | 44"
+    },
+    "stem": "What covered area was recorded when soil moisture was 9 %?",
+    "hint": "Find the row with the specified independent-variable value, then read across.",
+    "explanation": "The row for 9 lists 39 cm².",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Match the requested row and read the dependent-variable column.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Read a table by matching row conditions before reading the requested column."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0517",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "29",
+      "39",
+      "9",
+      "44"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the outcome in the first row."
+      },
+      {
+        "index": 2,
+        "reason": "This is the independent-variable value, not the measured outcome."
+      },
+      {
+        "index": 3,
+        "reason": "This outcome comes from a neighboring row."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0518",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "graphs",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "graph",
+      "content": "Summit Lab tested pendulums while room temperature stayed constant. The table shows the results.\n\nstring length (cm) | swing period (seconds)\n4 | 30\n10 | 33\n16 | 36\n22 | 39\n\nImagine these points plotted with string length on the horizontal axis."
+    },
+    "stem": "At which tested string length would the graph show the greatest swing period?",
+    "hint": "Identify the greatest value in the outcome column, then trace to its input.",
+    "explanation": "The greatest swing period, 39, occurs at 22 cm.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Find the maximum dependent value and its corresponding horizontal coordinate.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A graph and its source table encode the same ordered pairs."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "graph",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0518",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "4",
+      "10",
+      "22",
+      "16"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The table shows a smaller outcome at this level."
+      },
+      {
+        "index": 1,
+        "reason": "The table shows a smaller outcome at this level."
+      },
+      {
+        "index": 3,
+        "reason": "The table shows a smaller outcome at this level."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0519",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "diagrams",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "diagram",
+      "content": "Timber Academy arranged four samples from lowest to highest number of cells: Sample A, Sample B, Sample C, Sample D. with results averaged across five samples, Sample A had 31 lux and Sample D had 55 lux."
+    },
+    "stem": "Which sample had the highest tested number of cells?",
+    "hint": "Use the stated ordering from lowest to highest.",
+    "explanation": "The diagram description orders the samples A through D from lowest to highest, so D is highest.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Translate the verbal ordering into sample positions.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Diagram labels must be interpreted using the key or ordering provided."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "diagram",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0519",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Sample A",
+      "Sample B",
+      "Sample C",
+      "Sample D"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Sample A was assigned the lowest level."
+      },
+      {
+        "index": 1,
+        "reason": "Sample B was below Samples C and D."
+      },
+      {
+        "index": 2,
+        "reason": "Sample D was explicitly the highest."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0520",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "trends",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Union Institute tested ice cubes with sample order concealed from the recorder. The table shows the results.\n\nsurface area (cm²) | melting time (minutes)\n6 | 30\n8 | 24\n10 | 18\n12 | 12"
+    },
+    "stem": "As surface area increased across the tested levels, how did melting time change?",
+    "hint": "Compare the first and last rows, then check whether the middle rows follow the same direction.",
+    "explanation": "The outcome values move from 30 to 12, showing a consistent decrease.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Read the outcome column from top to bottom as the input rises.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A trend describes the direction and consistency of change across ordered data."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0520",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It decreased consistently.",
+      "It stayed constant.",
+      "It increased consistently.",
+      "It changed direction twice."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The outcome values change in every row."
+      },
+      {
+        "index": 2,
+        "reason": "This reverses the direction shown."
+      },
+      {
+        "index": 3,
+        "reason": "The values move in one direction throughout."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0521",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "interpolation",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Valley School tested compost jars with samples assigned at random. The table shows the results.\n\nturning frequency (turns/week) | decomposition rate (g/day)\n7 | 13\n12 | 17\n17 | 21\n22 | 25"
+    },
+    "stem": "Assuming a linear relationship between the middle two rows, what decomposition rate is predicted at 14.5 turns/week?",
+    "hint": "The requested input is halfway between the middle inputs.",
+    "explanation": "A halfway input gives the average outcome: (17 + 21)/2 = 19.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Average the two neighboring outcomes for a linear midpoint estimate.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Linear interpolation estimates between measured points."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0521",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "mean",
+      "inputs": [
+        17,
+        21
+      ],
+      "expected": 19
+    },
+    "choices": [
+      "17",
+      "19",
+      "21",
+      "13"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This uses the lower measured outcome without moving halfway."
+      },
+      {
+        "index": 2,
+        "reason": "This uses the upper measured outcome."
+      },
+      {
+        "index": 3,
+        "reason": "This uses the first row, outside the specified interval."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0522",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "comparison",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Willow Center tested sound tubes using equal starting masses. The table shows the results.\n\ntube length (cm) | resonant frequency (Hz)\n2 | 32\n5 | 23\n8 | 14\n11 | 5"
+    },
+    "stem": "What is the absolute difference between the first and last resonant frequency values?",
+    "hint": "Use the dependent-variable column and subtract endpoint values.",
+    "explanation": "|5 − 32| = 27 Hz.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Read the first and last outcomes and take their absolute difference.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Comparisons must use the requested variable and consistent units."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0522",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "37",
+      "9",
+      "27",
+      "32"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds rather than subtracts the endpoint values."
+      },
+      {
+        "index": 1,
+        "reason": "This compares input levels instead of outcomes."
+      },
+      {
+        "index": 3,
+        "reason": "This is only the first outcome."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0523",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Translate data",
+    "subskill": "graph to text",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "graph",
+      "content": "York Lab tested radish seeds by two independent observers. The table shows the results.\n\nsalt level (g/L) | germination rate (%)\n3 | 33\n9 | 26\n15 | 19\n21 | 12\n\nThe points are plotted and connected in order."
+    },
+    "stem": "Which sentence best translates the graph's pattern into words?",
+    "hint": "Describe what happens to the vertical variable as the horizontal variable increases.",
+    "explanation": "The plotted points show that germination rate falls as salt level rises.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Translate horizontal movement into the corresponding vertical direction.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A verbal graph description must name both variables and the direction of association."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "graph",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0523",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "germination rate remains constant.",
+      "salt level was not varied.",
+      "The graph contains no ordered relationship.",
+      "germination rate falls as salt level rises."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The plotted values change."
+      },
+      {
+        "index": 1,
+        "reason": "Four distinct input levels were tested."
+      },
+      {
+        "index": 2,
+        "reason": "The points follow a consistent direction."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0524",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Translate data",
+    "subskill": "table to graph",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Zephyr Academy reports that particle count falls as filter passes rises for water samples during four repeated trials."
+    },
+    "stem": "Which two-row table is consistent with the report?",
+    "hint": "As input moves from 2 to 4, make the output move in the stated direction.",
+    "explanation": "Only the correct table shows the reported decrease.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Compare outputs at the lower and higher inputs.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A table-to-text translation must preserve variable direction."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0524",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Input 2 → Output 18; Input 4 → Output 10",
+      "Input 2 → Output 10; Input 4 → Output 18",
+      "Input 2 → Output 10; Input 4 → Output 10",
+      "Input 4 → Output 18; Input 2 → Output 10"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This shows an increase."
+      },
+      {
+        "index": 2,
+        "reason": "This shows no change."
+      },
+      {
+        "index": 3,
+        "reason": "Ordered by input, this shows an increase."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0525",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "tables",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Alder Lab tested miniature wind turbines while humidity was held stable. The table shows the results.\n\nwind speed (m/s) | power output (mW)\n5 | 17\n7 | 20\n9 | 23\n11 | 26"
+    },
+    "stem": "What power output was recorded when wind speed was 7 m/s?",
+    "hint": "Find the row with the specified independent-variable value, then read across.",
+    "explanation": "The row for 7 lists 20 mW.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Match the requested row and read the dependent-variable column.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Read a table by matching row conditions before reading the requested column."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0525",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "17",
+      "20",
+      "7",
+      "23"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the outcome in the first row."
+      },
+      {
+        "index": 2,
+        "reason": "This is the independent-variable value, not the measured outcome."
+      },
+      {
+        "index": 3,
+        "reason": "This outcome comes from a neighboring row."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0526",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "graphs",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "graph",
+      "content": "Bayside School tested leaf disks with measurements recorded every minute. The table shows the results.\n\ncarbon dioxide level (mg/L) | floating time (minutes)\n6 | 36\n11 | 28\n16 | 20\n21 | 12\n\nImagine these points plotted with carbon dioxide level on the horizontal axis."
+    },
+    "stem": "At which tested carbon dioxide level would the graph show the greatest floating time?",
+    "hint": "Identify the greatest value in the outcome column, then trace to its input.",
+    "explanation": "The greatest floating time, 36, occurs at 6 mg/L.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Find the maximum dependent value and its corresponding horizontal coordinate.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "A graph and its source table encode the same ordered pairs."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "graph",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0526",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "11",
+      "16",
+      "6",
+      "21"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The table shows a smaller outcome at this level."
+      },
+      {
+        "index": 1,
+        "reason": "The table shows a smaller outcome at this level."
+      },
+      {
+        "index": 3,
+        "reason": "The table shows a smaller outcome at this level."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0527",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "diagrams",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "diagram",
+      "content": "Cedar Center arranged four samples from lowest to highest acid exposure: Sample A, Sample B, Sample C, Sample D. using calibrated digital sensors, Sample A had 37 g and Sample D had 19 g."
+    },
+    "stem": "Which sample had the highest tested acid exposure?",
+    "hint": "Use the stated ordering from lowest to highest.",
+    "explanation": "The diagram description orders the samples A through D from lowest to highest, so D is highest.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Translate the verbal ordering into sample positions.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Diagram labels must be interpreted using the key or ordering provided."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "diagram",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0527",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Sample A",
+      "Sample B",
+      "Sample C",
+      "Sample D"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Sample A was assigned the lowest level."
+      },
+      {
+        "index": 1,
+        "reason": "Sample B was below Samples C and D."
+      },
+      {
+        "index": 2,
+        "reason": "Sample D was explicitly the highest."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0528",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "trends",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Delta Academy tested sealed terrariums with equipment cleaned between trials. The table shows the results.\n\nplant count (plants) | oxygen level (%)\n2 | 20\n8 | 24\n14 | 28\n20 | 32"
+    },
+    "stem": "As plant count increased across the tested levels, how did oxygen level change?",
+    "hint": "Compare the first and last rows, then check whether the middle rows follow the same direction.",
+    "explanation": "The outcome values move from 20 to 32, showing a consistent increase.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Read the outcome column from top to bottom as the input rises.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A trend describes the direction and consistency of change across ordered data."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0528",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "It increased consistently.",
+      "It stayed constant.",
+      "It decreased consistently.",
+      "It changed direction twice."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The outcome values change in every row."
+      },
+      {
+        "index": 2,
+        "reason": "This reverses the direction shown."
+      },
+      {
+        "index": 3,
+        "reason": "The values move in one direction throughout."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0529",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "interpolation",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Elm Institute tested bean seedlings after instruments were zeroed. The table shows the results.\n\ndaily light (hours) | mean height (cm)\n3 | 21\n7 | 30\n11 | 39\n15 | 48"
+    },
+    "stem": "Assuming a linear relationship between the middle two rows, what mean height is predicted at 9 hours?",
+    "hint": "The requested input is halfway between the middle inputs.",
+    "explanation": "A halfway input gives the average outcome: (30 + 39)/2 = 34.5.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Average the two neighboring outcomes for a linear midpoint estimate.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Linear interpolation estimates between measured points."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0529",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": {
+      "kind": "mean",
+      "inputs": [
+        30,
+        39
+      ],
+      "expected": 34.5
+    },
+    "choices": [
+      "30",
+      "34.5",
+      "39",
+      "21"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This uses the lower measured outcome without moving halfway."
+      },
+      {
+        "index": 2,
+        "reason": "This uses the upper measured outcome."
+      },
+      {
+        "index": 3,
+        "reason": "This uses the first row, outside the specified interval."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0530",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Analyze data",
+    "subskill": "comparison",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Foxglove Lab tested yeast cultures with uncertainty recorded for each reading. The table shows the results.\n\nwater temperature (°C) | gas volume (mL)\n4 | 22\n6 | 29\n8 | 36\n10 | 43"
+    },
+    "stem": "What is the absolute difference between the first and last gas volume values?",
+    "hint": "Use the dependent-variable column and subtract endpoint values.",
+    "explanation": "|43 − 22| = 21 mL.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Read the first and last outcomes and take their absolute difference.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Comparisons must use the requested variable and consistent units."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0530",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "65",
+      "6",
+      "21",
+      "22"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This adds rather than subtracts the endpoint values."
+      },
+      {
+        "index": 1,
+        "reason": "This compares input levels instead of outcomes."
+      },
+      {
+        "index": 3,
+        "reason": "This is only the first outcome."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0531",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Translate data",
+    "subskill": "graph to text",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "graph",
+      "content": "Granite School tested model solar panels using freshly prepared materials. The table shows the results.\n\nlamp angle (degrees) | electric current (mA)\n5 | 41\n10 | 36\n15 | 31\n20 | 26\n\nThe points are plotted and connected in order."
+    },
+    "stem": "Which sentence best translates the graph's pattern into words?",
+    "hint": "Describe what happens to the vertical variable as the horizontal variable increases.",
+    "explanation": "The plotted points show that electric current falls as lamp angle rises.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Translate horizontal movement into the corresponding vertical direction.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A verbal graph description must name both variables and the direction of association."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "graph",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0531",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "electric current remains constant.",
+      "lamp angle was not varied.",
+      "The graph contains no ordered relationship.",
+      "electric current falls as lamp angle rises."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The plotted values change."
+      },
+      {
+        "index": 1,
+        "reason": "Four distinct input levels were tested."
+      },
+      {
+        "index": 2,
+        "reason": "The points follow a consistent direction."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0532",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Translate data",
+    "subskill": "table to graph",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Harbor Center reports that drainage time falls as sand content rises for soil samples using identical containers."
+    },
+    "stem": "Which two-row table is consistent with the report?",
+    "hint": "As input moves from 2 to 4, make the output move in the stated direction.",
+    "explanation": "Only the correct table shows the reported decrease.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Compare outputs at the lower and higher inputs.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A table-to-text translation must preserve variable direction."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0532",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Input 2 → Output 18; Input 4 → Output 10",
+      "Input 2 → Output 10; Input 4 → Output 18",
+      "Input 2 → Output 10; Input 4 → Output 10",
+      "Input 4 → Output 18; Input 2 → Output 10"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This shows an increase."
+      },
+      {
+        "index": 2,
+        "reason": "This shows no change."
+      },
+      {
+        "index": 3,
+        "reason": "Ordered by input, this shows an increase."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0533",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Interpretation of Data",
+    "skill": "Read data displays",
+    "subskill": "tables",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "table",
+      "content": "Indigo Academy tested paper helicopters during morning laboratory periods. The table shows the results.\n\nwing length (cm) | fall time (seconds)\n7 | 25\n13 | 33\n19 | 41\n25 | 49"
+    },
+    "stem": "What fall time was recorded when wing length was 25 cm?",
+    "hint": "Find the row with the specified independent-variable value, then read across.",
+    "explanation": "The row for 25 lists 49 seconds.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Match the requested row and read the dependent-variable column.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Read a table by matching row conditions before reading the requested column."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "table",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0533",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "25",
+      "49",
+      "41",
+      "Cannot be determined from the data"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is the outcome in the first row."
+      },
+      {
+        "index": 2,
+        "reason": "This outcome comes from a neighboring row."
+      },
+      {
+        "index": 3,
+        "reason": "The supplied data are sufficient to determine the requested result."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0534",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "controls",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Juniper Lab placed salt solutions into four groups with different salt concentration levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured freezing point. The work was conducted after a preliminary pilot."
+    },
+    "stem": "Which method feature most directly controls potential confounding variables?",
+    "hint": "Separate what researchers changed, what they measured, and what they held constant.",
+    "explanation": "A fair comparison changes only the intended factor and measures groups on the same schedule.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Classify each method detail as independent, dependent, or controlled.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "A controlled experiment varies one primary factor while keeping other relevant conditions consistent."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0534",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Varying salt concentration",
+      "Measuring freezing point",
+      "Using equal starting samples and identical containers",
+      "Using four groups"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 1,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 3,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0535",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "procedures",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Kestrel Institute placed cricket groups into four groups with different air temperature levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured chirps per minute. The work was conducted while room temperature stayed constant."
+    },
+    "stem": "Which procedure is most appropriate for a fair comparison?",
+    "hint": "Separate what researchers changed, what they measured, and what they held constant.",
+    "explanation": "A fair comparison changes only the intended factor and measures groups on the same schedule.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Classify each method detail as independent, dependent, or controlled.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A controlled experiment varies one primary factor while keeping other relevant conditions consistent."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0535",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Measure each group after a different duration.",
+      "Change both air temperature and container type.",
+      "Use no recorded outcome.",
+      "Measure chirps per minute after the same duration for every group."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 1,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 2,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0536",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Extend an investigation",
+    "subskill": "prediction",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Lakeshore School placed foam insulation panels into four groups with different panel thickness levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured heat loss. The work was conducted with results averaged across five samples.\nThe table showed a consistent decrease in heat loss across the tested range."
+    },
+    "stem": "If the trend continues just beyond the tested range, what is the most reasonable prediction?",
+    "hint": "Extend cautiously: preserve the original design and avoid claims far beyond measured conditions.",
+    "explanation": "The correct choice extends the observed pattern or method by one controlled, testable step.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Use the measured direction and preserve comparability in the next test.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Predictions should stay near the data range; follow-ups should isolate the same relationship with broader evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0536",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "heat loss will likely continue to decrease over the next small increase in panel thickness.",
+      "The outcome must reverse immediately.",
+      "The outcome will remain exactly constant.",
+      "The experiment proves the trend continues without limit."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The observed trend gives no basis for an immediate reversal."
+      },
+      {
+        "index": 2,
+        "reason": "The tested range shows consistent change."
+      },
+      {
+        "index": 3,
+        "reason": "A short measured range cannot justify unlimited extrapolation."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0537",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Extend an investigation",
+    "subskill": "follow-up study",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Meadow Center placed algae cultures into four groups with different nutrient level levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured cell density. The work was conducted with sample order concealed from the recorder.\nThe table showed a consistent increase in cell density across the tested range."
+    },
+    "stem": "Which follow-up study best tests whether the pattern applies more broadly?",
+    "hint": "Extend cautiously: preserve the original design and avoid claims far beyond measured conditions.",
+    "explanation": "The correct choice extends the observed pattern or method by one controlled, testable step.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Use the measured direction and preserve comparability in the next test.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Predictions should stay near the data range; follow-ups should isolate the same relationship with broader evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0537",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Change every condition at once.",
+      "Repeat the procedure with additional nutrient level levels and independently prepared algae cultures.",
+      "Repeat only the same measurement without new samples or levels.",
+      "Remove the dependent-variable measurement."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Multiple simultaneous changes prevent clear interpretation."
+      },
+      {
+        "index": 2,
+        "reason": "This does not test broader applicability."
+      },
+      {
+        "index": 3,
+        "reason": "Without the outcome, the pattern cannot be tested."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0538",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Evaluate methods",
+    "subskill": "precision",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Northfield Lab placed toy cars into four groups with different ramp height levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured travel distance. The work was conducted with samples assigned at random."
+    },
+    "stem": "Which change would most directly improve measurement precision?",
+    "hint": "Match the proposed change to precision, scope, or independent repetition.",
+    "explanation": "Finer measurement increments reduce rounding uncertainty.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Identify whether the question concerns instrument resolution, scope of inference, or repeated evidence.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Precision concerns resolution; limitations bound conclusions; replication requires repeating a documented method."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0538",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Use fewer recorded digits than the instrument provides.",
+      "Estimate every value without a scale.",
+      "Use an instrument with finer measurement increments.",
+      "Change instruments for every group without calibration."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 1,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 3,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0539",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Evaluate methods",
+    "subskill": "limitations",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Oak Academy placed metal rods into four groups with different heating time levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured length change. The work was conducted using equal starting masses."
+    },
+    "stem": "Which is a reasonable limitation of the study?",
+    "hint": "Match the proposed change to precision, scope, or independent repetition.",
+    "explanation": "Conclusions should not automatically extend beyond the tested input range.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Identify whether the question concerns instrument resolution, scope of inference, or repeated evidence.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Precision concerns resolution; limitations bound conclusions; replication requires repeating a documented method."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0539",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The experiment has no independent variable.",
+      "The measured outcome was never recorded.",
+      "Identical containers make comparison impossible.",
+      "The tested heating time range may not represent values outside that range."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 1,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 2,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0540",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Evaluate methods",
+    "subskill": "replication",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Pine Institute placed water filters into four groups with different gravel depth levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured flow rate. The work was conducted by two independent observers."
+    },
+    "stem": "Which action best tests whether the result is replicable?",
+    "hint": "Match the proposed change to precision, scope, or independent repetition.",
+    "explanation": "Independent repetition with new samples directly tests replicability.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Identify whether the question concerns instrument resolution, scope of inference, or repeated evidence.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Precision concerns resolution; limitations bound conclusions; replication requires repeating a documented method."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0540",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Have another team repeat the same procedure with new samples.",
+      "Have the original team rewrite its conclusion without new data.",
+      "Combine all groups before measuring.",
+      "Discard the method description."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 2,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 3,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0541",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "variables",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Quartz School placed moss patches into four groups with different soil moisture levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured covered area. The work was conducted during four repeated trials."
+    },
+    "stem": "Which factor is the independent variable?",
+    "hint": "Separate what researchers changed, what they measured, and what they held constant.",
+    "explanation": "soil moisture is deliberately varied among groups.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Classify each method detail as independent, dependent, or controlled.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A controlled experiment varies one primary factor while keeping other relevant conditions consistent."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0541",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "covered area",
+      "soil moisture",
+      "container type",
+      "starting sample size"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is an outcome or controlled condition, not the deliberately varied factor."
+      },
+      {
+        "index": 2,
+        "reason": "This is an outcome or controlled condition, not the deliberately varied factor."
+      },
+      {
+        "index": 3,
+        "reason": "This is an outcome or controlled condition, not the deliberately varied factor."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0542",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "controls",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "River Center placed pendulums into four groups with different string length levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured swing period. The work was conducted while humidity was held stable."
+    },
+    "stem": "Which method feature most directly controls potential confounding variables?",
+    "hint": "Separate what researchers changed, what they measured, and what they held constant.",
+    "explanation": "A fair comparison changes only the intended factor and measures groups on the same schedule.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Classify each method detail as independent, dependent, or controlled.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "A controlled experiment varies one primary factor while keeping other relevant conditions consistent."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0542",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Varying string length",
+      "Measuring swing period",
+      "Using equal starting samples and identical containers",
+      "Using four groups"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 1,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 3,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0543",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "procedures",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Summit Lab placed battery circuits into four groups with different number of cells levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured bulb brightness. The work was conducted with measurements recorded every minute."
+    },
+    "stem": "Which procedure is most appropriate for a fair comparison?",
+    "hint": "Separate what researchers changed, what they measured, and what they held constant.",
+    "explanation": "A fair comparison changes only the intended factor and measures groups on the same schedule.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Classify each method detail as independent, dependent, or controlled.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A controlled experiment varies one primary factor while keeping other relevant conditions consistent."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0543",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Measure each group after a different duration.",
+      "Change both number of cells and container type.",
+      "Use no recorded outcome.",
+      "Measure bulb brightness after the same duration for every group."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 1,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 2,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0544",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Extend an investigation",
+    "subskill": "prediction",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Timber Academy placed ice cubes into four groups with different surface area levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured melting time. The work was conducted using calibrated digital sensors.\nThe table showed a consistent decrease in melting time across the tested range."
+    },
+    "stem": "If the trend continues just beyond the tested range, what is the most reasonable prediction?",
+    "hint": "Extend cautiously: preserve the original design and avoid claims far beyond measured conditions.",
+    "explanation": "The correct choice extends the observed pattern or method by one controlled, testable step.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Use the measured direction and preserve comparability in the next test.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Predictions should stay near the data range; follow-ups should isolate the same relationship with broader evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0544",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "melting time will likely continue to decrease over the next small increase in surface area.",
+      "The outcome must reverse immediately.",
+      "The outcome will remain exactly constant.",
+      "The experiment proves the trend continues without limit."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The observed trend gives no basis for an immediate reversal."
+      },
+      {
+        "index": 2,
+        "reason": "The tested range shows consistent change."
+      },
+      {
+        "index": 3,
+        "reason": "A short measured range cannot justify unlimited extrapolation."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0545",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Extend an investigation",
+    "subskill": "follow-up study",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Union Institute placed compost jars into four groups with different turning frequency levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured decomposition rate. The work was conducted with equipment cleaned between trials.\nThe table showed a consistent increase in decomposition rate across the tested range."
+    },
+    "stem": "Which follow-up study best tests whether the pattern applies more broadly?",
+    "hint": "Extend cautiously: preserve the original design and avoid claims far beyond measured conditions.",
+    "explanation": "The correct choice extends the observed pattern or method by one controlled, testable step.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Use the measured direction and preserve comparability in the next test.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Predictions should stay near the data range; follow-ups should isolate the same relationship with broader evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0545",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Change every condition at once.",
+      "Repeat the procedure with additional turning frequency levels and independently prepared compost jars.",
+      "Repeat only the same measurement without new samples or levels.",
+      "Remove the dependent-variable measurement."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Multiple simultaneous changes prevent clear interpretation."
+      },
+      {
+        "index": 2,
+        "reason": "This does not test broader applicability."
+      },
+      {
+        "index": 3,
+        "reason": "Without the outcome, the pattern cannot be tested."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0546",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Evaluate methods",
+    "subskill": "precision",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Valley School placed sound tubes into four groups with different tube length levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured resonant frequency. The work was conducted after instruments were zeroed."
+    },
+    "stem": "Which change would most directly improve measurement precision?",
+    "hint": "Match the proposed change to precision, scope, or independent repetition.",
+    "explanation": "Finer measurement increments reduce rounding uncertainty.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Identify whether the question concerns instrument resolution, scope of inference, or repeated evidence.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Precision concerns resolution; limitations bound conclusions; replication requires repeating a documented method."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0546",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Use fewer recorded digits than the instrument provides.",
+      "Estimate every value without a scale.",
+      "Use an instrument with finer measurement increments.",
+      "Change instruments for every group without calibration."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 1,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 3,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0547",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Evaluate methods",
+    "subskill": "limitations",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Willow Center placed radish seeds into four groups with different salt level levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured germination rate. The work was conducted with uncertainty recorded for each reading."
+    },
+    "stem": "Which is a reasonable limitation of the study?",
+    "hint": "Match the proposed change to precision, scope, or independent repetition.",
+    "explanation": "Conclusions should not automatically extend beyond the tested input range.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Identify whether the question concerns instrument resolution, scope of inference, or repeated evidence.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Precision concerns resolution; limitations bound conclusions; replication requires repeating a documented method."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0547",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The experiment has no independent variable.",
+      "The measured outcome was never recorded.",
+      "Identical containers make comparison impossible.",
+      "The tested salt level range may not represent values outside that range."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 1,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 2,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0548",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Evaluate methods",
+    "subskill": "replication",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "York Lab placed water samples into four groups with different filter passes levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured particle count. The work was conducted using freshly prepared materials."
+    },
+    "stem": "Which action best tests whether the result is replicable?",
+    "hint": "Match the proposed change to precision, scope, or independent repetition.",
+    "explanation": "Independent repetition with new samples directly tests replicability.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Identify whether the question concerns instrument resolution, scope of inference, or repeated evidence.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Precision concerns resolution; limitations bound conclusions; replication requires repeating a documented method."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0548",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Have another team repeat the same procedure with new samples.",
+      "Have the original team rewrite its conclusion without new data.",
+      "Combine all groups before measuring.",
+      "Discard the method description."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 2,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      },
+      {
+        "index": 3,
+        "reason": "This would not address the requested issue and may reduce the study's reliability."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0549",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "variables",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Zephyr Academy placed rubber bands into four groups with different added mass levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured stretch length. The work was conducted using identical containers."
+    },
+    "stem": "Which factor is the independent variable?",
+    "hint": "Separate what researchers changed, what they measured, and what they held constant.",
+    "explanation": "added mass is deliberately varied among groups.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Classify each method detail as independent, dependent, or controlled.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A controlled experiment varies one primary factor while keeping other relevant conditions consistent."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0549",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "stretch length",
+      "added mass",
+      "container type",
+      "starting sample size"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is an outcome or controlled condition, not the deliberately varied factor."
+      },
+      {
+        "index": 2,
+        "reason": "This is an outcome or controlled condition, not the deliberately varied factor."
+      },
+      {
+        "index": 3,
+        "reason": "This is an outcome or controlled condition, not the deliberately varied factor."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0550",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "controls",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Alder Lab placed leaf disks into four groups with different carbon dioxide level levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured floating time. The work was conducted during morning laboratory periods."
+    },
+    "stem": "Which method feature most directly controls potential confounding variables?",
+    "hint": "Separate what researchers changed, what they measured, and what they held constant.",
+    "explanation": "A fair comparison changes only the intended factor and measures groups on the same schedule.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Classify each method detail as independent, dependent, or controlled.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A controlled experiment varies one primary factor while keeping other relevant conditions consistent."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0550",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Varying carbon dioxide level",
+      "Measuring floating time",
+      "Using equal starting samples and identical containers",
+      "Using four groups"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 1,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 3,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0551",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Experimental design",
+    "subskill": "procedures",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Bayside School placed rock samples into four groups with different acid exposure levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured mass remaining. The work was conducted after a preliminary pilot."
+    },
+    "stem": "Which procedure is most appropriate for a fair comparison?",
+    "hint": "Separate what researchers changed, what they measured, and what they held constant.",
+    "explanation": "A fair comparison changes only the intended factor and measures groups on the same schedule.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Classify each method detail as independent, dependent, or controlled.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "A controlled experiment varies one primary factor while keeping other relevant conditions consistent."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0551",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Measure each group after a different duration.",
+      "Change both acid exposure and container type.",
+      "Use no recorded outcome.",
+      "Measure mass remaining after the same duration for every group."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 1,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      },
+      {
+        "index": 2,
+        "reason": "This does not hold comparison conditions constant as directly as the correct procedure."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0552",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Extend an investigation",
+    "subskill": "prediction",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Cedar Center placed sealed terrariums into four groups with different plant count levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured oxygen level. The work was conducted while room temperature stayed constant.\nThe table showed a consistent increase in oxygen level across the tested range."
+    },
+    "stem": "If the trend continues just beyond the tested range, what is the most reasonable prediction?",
+    "hint": "Extend cautiously: preserve the original design and avoid claims far beyond measured conditions.",
+    "explanation": "The correct choice extends the observed pattern or method by one controlled, testable step.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Use the measured direction and preserve comparability in the next test.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Predictions should stay near the data range; follow-ups should isolate the same relationship with broader evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0552",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "oxygen level will likely continue to increase over the next small increase in plant count.",
+      "The outcome must reverse immediately.",
+      "The outcome will remain exactly constant.",
+      "The experiment proves the trend continues without limit."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The observed trend gives no basis for an immediate reversal."
+      },
+      {
+        "index": 2,
+        "reason": "The tested range shows consistent change."
+      },
+      {
+        "index": 3,
+        "reason": "A short measured range cannot justify unlimited extrapolation."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0553",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Scientific Investigation",
+    "skill": "Extend an investigation",
+    "subskill": "follow-up study",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Delta Academy placed bean seedlings into four groups with different daily light levels. All groups used equal starting samples and identical containers. After the same amount of time, researchers measured mean height. The work was conducted with results averaged across five samples.\nThe table showed a consistent increase in mean height across the tested range."
+    },
+    "stem": "Which follow-up study best tests whether the pattern applies more broadly?",
+    "hint": "Extend cautiously: preserve the original design and avoid claims far beyond measured conditions.",
+    "explanation": "The correct choice extends the observed pattern or method by one controlled, testable step.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Use the measured direction and preserve comparability in the next test.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Predictions should stay near the data range; follow-ups should isolate the same relationship with broader evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0553",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Change every condition at once.",
+      "Repeat the procedure with additional daily light levels and independently prepared bean seedlings.",
+      "Repeat only the same measurement without new samples or levels.",
+      "Remove the dependent-variable measurement."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Multiple simultaneous changes prevent clear interpretation."
+      },
+      {
+        "index": 2,
+        "reason": "This does not test broader applicability."
+      },
+      {
+        "index": 3,
+        "reason": "Without the outcome, the pattern cannot be tested."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0554",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Draw conclusions",
+    "subskill": "inference",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Elm Institute measured yeast cultures with sample order concealed from the recorder. Across four increasing water temperature levels, gas volume showed a consistent increase."
+    },
+    "stem": "Which inference is most reasonable?",
+    "hint": "Choose the conclusion with scope matching the tested subject, range, and conditions.",
+    "explanation": "The correct conclusion is cautious and limited to what the experiment measured.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Distinguish a supported association from an exclusive cause or universal law.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Scientific conclusions should match the population, range, and design represented by the evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0554",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The factor is the only possible influence on the outcome.",
+      "The pattern has been proven for every organism and material.",
+      "The tested factor may help explain variation in gas volume under these conditions.",
+      "The measurements show no trend."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Other factors may also matter."
+      },
+      {
+        "index": 1,
+        "reason": "The study tested one defined subject."
+      },
+      {
+        "index": 3,
+        "reason": "The evidence explicitly reports a consistent trend."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0555",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Draw conclusions",
+    "subskill": "generalization",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Foxglove Lab measured model solar panels with samples assigned at random. Across four increasing lamp angle levels, electric current showed a consistent decrease."
+    },
+    "stem": "Which conclusion can be generalized most safely?",
+    "hint": "Choose the conclusion with scope matching the tested subject, range, and conditions.",
+    "explanation": "The correct conclusion is cautious and limited to what the experiment measured.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Distinguish a supported association from an exclusive cause or universal law.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Scientific conclusions should match the population, range, and design represented by the evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0555",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The factor is the only possible influence on the outcome.",
+      "The pattern has been proven for every organism and material.",
+      "The measurements show no trend.",
+      "The relationship is supported for model solar panels over the tested lamp angle range."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Other factors may also matter."
+      },
+      {
+        "index": 1,
+        "reason": "The study tested one defined subject."
+      },
+      {
+        "index": 2,
+        "reason": "The evidence explicitly reports a consistent trend."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0556",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "agreement and disagreement",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "conflicting-viewpoints",
+      "content": "Granite School studied soil samples using equal starting masses.\nScientist A says changing sand content explains the observed decrease in drainage time.\nScientist B says an uncontrolled condition, not sand content, produced the pattern.\nBoth scientists agree that the measurements show a consistent decrease."
+    },
+    "stem": "On which point do the scientists agree?",
+    "hint": "Separate the shared observation from competing explanations.",
+    "explanation": "Both accept the measured trend but disagree about its cause.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Mark the statement explicitly attributed to both scientists.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Conflicting viewpoints may share evidence while interpreting it differently."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "conflicting-viewpoints",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0556",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The measurements show a consistent decrease.",
+      "sand content is definitely the cause.",
+      "An uncontrolled condition definitely caused the pattern.",
+      "No pattern appears in the measurements."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Scientist B rejects this claim."
+      },
+      {
+        "index": 2,
+        "reason": "Scientist A rejects this claim."
+      },
+      {
+        "index": 3,
+        "reason": "Both explicitly recognize a pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0557",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "evidence preference",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "conflicting-viewpoints",
+      "content": "Harbor Center studied paper helicopters by two independent observers.\nScientist A says changing wing length explains the observed increase in fall time.\nScientist B says an uncontrolled condition, not wing length, produced the pattern.\nBoth scientists agree that the measurements show a consistent increase."
+    },
+    "stem": "Which additional evidence would most strongly favor Scientist A over Scientist B?",
+    "hint": "Look for a controlled test that separates the two proposed causes.",
+    "explanation": "Reproducing the pattern while isolating wing length supports Scientist A's explanation and weakens the uncontrolled-condition account.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Choose evidence that changes one proposed cause while controlling the rival cause.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Discriminating evidence favors one explanation by testing a prediction on which alternatives differ."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "conflicting-viewpoints",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0557",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The original measurements were printed in a larger font.",
+      "The pattern appeared again when other conditions were controlled and only wing length was varied.",
+      "A different outcome was measured without recording the input.",
+      "Both scientists repeated their opinions."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Presentation does not distinguish causal explanations."
+      },
+      {
+        "index": 2,
+        "reason": "This does not test either explanation."
+      },
+      {
+        "index": 3,
+        "reason": "Repeated claims are not new evidence."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0558",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Evaluate explanations",
+    "subskill": "claims and evidence",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Indigo Academy measured salt solutions during four repeated trials. Across four increasing salt concentration levels, freezing point showed a consistent decrease."
+    },
+    "stem": "Which claim is most directly supported?",
+    "hint": "Use a qualified claim restricted to the tested range.",
+    "explanation": "The correct claim matches the observed direction without extending beyond the data.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Connect the varied factor and measured response while preserving scope.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Evidence supports claims only within the conditions and range actually tested."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0558",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The tested factor has no relationship with the outcome.",
+      "The pattern must hold under every possible condition.",
+      "Within the tested range, higher salt concentration was associated with lower freezing point.",
+      "The outcome caused researchers to change the input."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The outcome changed consistently across levels."
+      },
+      {
+        "index": 1,
+        "reason": "The evidence covers only the tested conditions."
+      },
+      {
+        "index": 3,
+        "reason": "The input was deliberately varied first."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0559",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Evaluate explanations",
+    "subskill": "model evaluation",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Juniper Lab measured cricket groups while humidity was held stable. Across four increasing air temperature levels, chirps per minute showed a consistent increase.\nModel A predicts the observed increase. Model B predicts no change."
+    },
+    "stem": "Which model is better supported by the reported evidence?",
+    "hint": "Compare each model's prediction with the direction in the evidence.",
+    "explanation": "Model A predicts the observed increase, whereas Model B does not.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Match predicted and measured outcome patterns.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "A model gains support when its predictions match observed evidence better than alternatives."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0559",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Model B",
+      "Both models equally",
+      "Neither model can be compared with data",
+      "Model A"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Model B predicts no change, contrary to the observed trend."
+      },
+      {
+        "index": 1,
+        "reason": "The predictions differ, and only one matches the evidence."
+      },
+      {
+        "index": 2,
+        "reason": "Both models make testable predictions about the measured outcome."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0560",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Draw conclusions",
+    "subskill": "inference",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Kestrel Institute measured foam insulation panels with measurements recorded every minute. Across four increasing panel thickness levels, heat loss showed a consistent decrease."
+    },
+    "stem": "Which inference is most reasonable?",
+    "hint": "Choose the conclusion with scope matching the tested subject, range, and conditions.",
+    "explanation": "The correct conclusion is cautious and limited to what the experiment measured.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Distinguish a supported association from an exclusive cause or universal law.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Scientific conclusions should match the population, range, and design represented by the evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0560",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The tested factor may help explain variation in heat loss under these conditions.",
+      "The factor is the only possible influence on the outcome.",
+      "The pattern has been proven for every organism and material.",
+      "The measurements show no trend."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Other factors may also matter."
+      },
+      {
+        "index": 2,
+        "reason": "The study tested one defined subject."
+      },
+      {
+        "index": 3,
+        "reason": "The evidence explicitly reports a consistent trend."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0561",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Draw conclusions",
+    "subskill": "generalization",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Lakeshore School measured algae cultures using calibrated digital sensors. Across four increasing nutrient level levels, cell density showed a consistent increase."
+    },
+    "stem": "Which conclusion can be generalized most safely?",
+    "hint": "Choose the conclusion with scope matching the tested subject, range, and conditions.",
+    "explanation": "The correct conclusion is cautious and limited to what the experiment measured.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Distinguish a supported association from an exclusive cause or universal law.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Scientific conclusions should match the population, range, and design represented by the evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0561",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The factor is the only possible influence on the outcome.",
+      "The relationship is supported for algae cultures over the tested nutrient level range.",
+      "The pattern has been proven for every organism and material.",
+      "The measurements show no trend."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Other factors may also matter."
+      },
+      {
+        "index": 2,
+        "reason": "The study tested one defined subject."
+      },
+      {
+        "index": 3,
+        "reason": "The evidence explicitly reports a consistent trend."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0562",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "agreement and disagreement",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "conflicting-viewpoints",
+      "content": "Meadow Center studied toy cars with equipment cleaned between trials.\nScientist A says changing ramp height explains the observed increase in travel distance.\nScientist B says an uncontrolled condition, not ramp height, produced the pattern.\nBoth scientists agree that the measurements show a consistent increase."
+    },
+    "stem": "On which point do the scientists agree?",
+    "hint": "Separate the shared observation from competing explanations.",
+    "explanation": "Both accept the measured trend but disagree about its cause.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Mark the statement explicitly attributed to both scientists.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Conflicting viewpoints may share evidence while interpreting it differently."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "conflicting-viewpoints",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0562",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "ramp height is definitely the cause.",
+      "An uncontrolled condition definitely caused the pattern.",
+      "The measurements show a consistent increase.",
+      "No pattern appears in the measurements."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Scientist B rejects this claim."
+      },
+      {
+        "index": 1,
+        "reason": "Scientist A rejects this claim."
+      },
+      {
+        "index": 3,
+        "reason": "Both explicitly recognize a pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0563",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "evidence preference",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "conflicting-viewpoints",
+      "content": "Northfield Lab studied metal rods after instruments were zeroed.\nScientist A says changing heating time explains the observed increase in length change.\nScientist B says an uncontrolled condition, not heating time, produced the pattern.\nBoth scientists agree that the measurements show a consistent increase."
+    },
+    "stem": "Which additional evidence would most strongly favor Scientist A over Scientist B?",
+    "hint": "Look for a controlled test that separates the two proposed causes.",
+    "explanation": "Reproducing the pattern while isolating heating time supports Scientist A's explanation and weakens the uncontrolled-condition account.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Choose evidence that changes one proposed cause while controlling the rival cause.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Discriminating evidence favors one explanation by testing a prediction on which alternatives differ."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "conflicting-viewpoints",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0563",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The original measurements were printed in a larger font.",
+      "A different outcome was measured without recording the input.",
+      "Both scientists repeated their opinions.",
+      "The pattern appeared again when other conditions were controlled and only heating time was varied."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Presentation does not distinguish causal explanations."
+      },
+      {
+        "index": 1,
+        "reason": "This does not test either explanation."
+      },
+      {
+        "index": 2,
+        "reason": "Repeated claims are not new evidence."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0564",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Evaluate explanations",
+    "subskill": "claims and evidence",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Oak Academy measured water filters with uncertainty recorded for each reading. Across four increasing gravel depth levels, flow rate showed a consistent decrease."
+    },
+    "stem": "Which claim is most directly supported?",
+    "hint": "Use a qualified claim restricted to the tested range.",
+    "explanation": "The correct claim matches the observed direction without extending beyond the data.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Connect the varied factor and measured response while preserving scope.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Evidence supports claims only within the conditions and range actually tested."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0564",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Within the tested range, higher gravel depth was associated with lower flow rate.",
+      "The tested factor has no relationship with the outcome.",
+      "The pattern must hold under every possible condition.",
+      "The outcome caused researchers to change the input."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The outcome changed consistently across levels."
+      },
+      {
+        "index": 2,
+        "reason": "The evidence covers only the tested conditions."
+      },
+      {
+        "index": 3,
+        "reason": "The input was deliberately varied first."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0565",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Evaluate explanations",
+    "subskill": "model evaluation",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Pine Institute measured moss patches using freshly prepared materials. Across four increasing soil moisture levels, covered area showed a consistent increase.\nModel A predicts the observed increase. Model B predicts no change."
+    },
+    "stem": "Which model is better supported by the reported evidence?",
+    "hint": "Compare each model's prediction with the direction in the evidence.",
+    "explanation": "Model A predicts the observed increase, whereas Model B does not.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Match predicted and measured outcome patterns.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A model gains support when its predictions match observed evidence better than alternatives."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0565",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Model B",
+      "Model A",
+      "Both models equally",
+      "Neither model can be compared with data"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Model B predicts no change, contrary to the observed trend."
+      },
+      {
+        "index": 2,
+        "reason": "The predictions differ, and only one matches the evidence."
+      },
+      {
+        "index": 3,
+        "reason": "Both models make testable predictions about the measured outcome."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0566",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Draw conclusions",
+    "subskill": "inference",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Quartz School measured pendulums using identical containers. Across four increasing string length levels, swing period showed a consistent increase."
+    },
+    "stem": "Which inference is most reasonable?",
+    "hint": "Choose the conclusion with scope matching the tested subject, range, and conditions.",
+    "explanation": "The correct conclusion is cautious and limited to what the experiment measured.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Distinguish a supported association from an exclusive cause or universal law.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Scientific conclusions should match the population, range, and design represented by the evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0566",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The factor is the only possible influence on the outcome.",
+      "The pattern has been proven for every organism and material.",
+      "The tested factor may help explain variation in swing period under these conditions.",
+      "The measurements show no trend."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Other factors may also matter."
+      },
+      {
+        "index": 1,
+        "reason": "The study tested one defined subject."
+      },
+      {
+        "index": 3,
+        "reason": "The evidence explicitly reports a consistent trend."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0567",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Draw conclusions",
+    "subskill": "generalization",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "River Center measured battery circuits during morning laboratory periods. Across four increasing number of cells levels, bulb brightness showed a consistent increase."
+    },
+    "stem": "Which conclusion can be generalized most safely?",
+    "hint": "Choose the conclusion with scope matching the tested subject, range, and conditions.",
+    "explanation": "The correct conclusion is cautious and limited to what the experiment measured.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Distinguish a supported association from an exclusive cause or universal law.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Scientific conclusions should match the population, range, and design represented by the evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0567",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The factor is the only possible influence on the outcome.",
+      "The pattern has been proven for every organism and material.",
+      "The measurements show no trend.",
+      "The relationship is supported for battery circuits over the tested number of cells range."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Other factors may also matter."
+      },
+      {
+        "index": 1,
+        "reason": "The study tested one defined subject."
+      },
+      {
+        "index": 2,
+        "reason": "The evidence explicitly reports a consistent trend."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0568",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "agreement and disagreement",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "conflicting-viewpoints",
+      "content": "Summit Lab studied ice cubes after a preliminary pilot.\nScientist A says changing surface area explains the observed decrease in melting time.\nScientist B says an uncontrolled condition, not surface area, produced the pattern.\nBoth scientists agree that the measurements show a consistent decrease."
+    },
+    "stem": "On which point do the scientists agree?",
+    "hint": "Separate the shared observation from competing explanations.",
+    "explanation": "Both accept the measured trend but disagree about its cause.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Mark the statement explicitly attributed to both scientists.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Conflicting viewpoints may share evidence while interpreting it differently."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "conflicting-viewpoints",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0568",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The measurements show a consistent decrease.",
+      "surface area is definitely the cause.",
+      "An uncontrolled condition definitely caused the pattern.",
+      "No pattern appears in the measurements."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Scientist B rejects this claim."
+      },
+      {
+        "index": 2,
+        "reason": "Scientist A rejects this claim."
+      },
+      {
+        "index": 3,
+        "reason": "Both explicitly recognize a pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0569",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "evidence preference",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "conflicting-viewpoints",
+      "content": "Timber Academy studied compost jars while room temperature stayed constant.\nScientist A says changing turning frequency explains the observed increase in decomposition rate.\nScientist B says an uncontrolled condition, not turning frequency, produced the pattern.\nBoth scientists agree that the measurements show a consistent increase."
+    },
+    "stem": "Which additional evidence would most strongly favor Scientist A over Scientist B?",
+    "hint": "Look for a controlled test that separates the two proposed causes.",
+    "explanation": "Reproducing the pattern while isolating turning frequency supports Scientist A's explanation and weakens the uncontrolled-condition account.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Choose evidence that changes one proposed cause while controlling the rival cause.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Discriminating evidence favors one explanation by testing a prediction on which alternatives differ."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "conflicting-viewpoints",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0569",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The original measurements were printed in a larger font.",
+      "The pattern appeared again when other conditions were controlled and only turning frequency was varied.",
+      "A different outcome was measured without recording the input.",
+      "Both scientists repeated their opinions."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Presentation does not distinguish causal explanations."
+      },
+      {
+        "index": 2,
+        "reason": "This does not test either explanation."
+      },
+      {
+        "index": 3,
+        "reason": "Repeated claims are not new evidence."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0570",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Evaluate explanations",
+    "subskill": "claims and evidence",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Union Institute measured sound tubes with results averaged across five samples. Across four increasing tube length levels, resonant frequency showed a consistent decrease."
+    },
+    "stem": "Which claim is most directly supported?",
+    "hint": "Use a qualified claim restricted to the tested range.",
+    "explanation": "The correct claim matches the observed direction without extending beyond the data.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Connect the varied factor and measured response while preserving scope.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Evidence supports claims only within the conditions and range actually tested."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0570",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The tested factor has no relationship with the outcome.",
+      "The pattern must hold under every possible condition.",
+      "Within the tested range, higher tube length was associated with lower resonant frequency.",
+      "The outcome caused researchers to change the input."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The outcome changed consistently across levels."
+      },
+      {
+        "index": 1,
+        "reason": "The evidence covers only the tested conditions."
+      },
+      {
+        "index": 3,
+        "reason": "The input was deliberately varied first."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0571",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Evaluate explanations",
+    "subskill": "model evaluation",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Valley School measured radish seeds with sample order concealed from the recorder. Across four increasing salt level levels, germination rate showed a consistent decrease.\nModel A predicts the observed decrease. Model B predicts no change."
+    },
+    "stem": "Which model is better supported by the reported evidence?",
+    "hint": "Compare each model's prediction with the direction in the evidence.",
+    "explanation": "Model A predicts the observed decrease, whereas Model B does not.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Match predicted and measured outcome patterns.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "A model gains support when its predictions match observed evidence better than alternatives."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0571",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Model B",
+      "Both models equally",
+      "Neither model can be compared with data",
+      "Model A"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Model B predicts no change, contrary to the observed trend."
+      },
+      {
+        "index": 1,
+        "reason": "The predictions differ, and only one matches the evidence."
+      },
+      {
+        "index": 2,
+        "reason": "Both models make testable predictions about the measured outcome."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0572",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Draw conclusions",
+    "subskill": "inference",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "Willow Center measured water samples with samples assigned at random. Across four increasing filter passes levels, particle count showed a consistent decrease."
+    },
+    "stem": "Which inference is most reasonable?",
+    "hint": "Choose the conclusion with scope matching the tested subject, range, and conditions.",
+    "explanation": "The correct conclusion is cautious and limited to what the experiment measured.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Distinguish a supported association from an exclusive cause or universal law.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 90,
+    "principles": [
+      "Scientific conclusions should match the population, range, and design represented by the evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0572",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The tested factor may help explain variation in particle count under these conditions.",
+      "The factor is the only possible influence on the outcome.",
+      "The pattern has been proven for every organism and material.",
+      "The measurements show no trend."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Other factors may also matter."
+      },
+      {
+        "index": 2,
+        "reason": "The study tested one defined subject."
+      },
+      {
+        "index": 3,
+        "reason": "The evidence explicitly reports a consistent trend."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0573",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Draw conclusions",
+    "subskill": "generalization",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "experiment",
+      "content": "York Lab measured rubber bands using equal starting masses. Across four increasing added mass levels, stretch length showed a consistent increase."
+    },
+    "stem": "Which conclusion can be generalized most safely?",
+    "hint": "Choose the conclusion with scope matching the tested subject, range, and conditions.",
+    "explanation": "The correct conclusion is cautious and limited to what the experiment measured.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Distinguish a supported association from an exclusive cause or universal law.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Scientific conclusions should match the population, range, and design represented by the evidence."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "experiment",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0573",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The factor is the only possible influence on the outcome.",
+      "The relationship is supported for rubber bands over the tested added mass range.",
+      "The pattern has been proven for every organism and material.",
+      "The measurements show no trend."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Other factors may also matter."
+      },
+      {
+        "index": 2,
+        "reason": "The study tested one defined subject."
+      },
+      {
+        "index": 3,
+        "reason": "The evidence explicitly reports a consistent trend."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0574",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "agreement and disagreement",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "conflicting-viewpoints",
+      "content": "Zephyr Academy studied miniature wind turbines by two independent observers.\nScientist A says changing wind speed explains the observed increase in power output.\nScientist B says an uncontrolled condition, not wind speed, produced the pattern.\nBoth scientists agree that the measurements show a consistent increase."
+    },
+    "stem": "On which point do the scientists agree?",
+    "hint": "Separate the shared observation from competing explanations.",
+    "explanation": "Both accept the measured trend but disagree about its cause.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Mark the statement explicitly attributed to both scientists.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Conflicting viewpoints may share evidence while interpreting it differently."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "conflicting-viewpoints",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0574",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "wind speed is definitely the cause.",
+      "An uncontrolled condition definitely caused the pattern.",
+      "The measurements show a consistent increase.",
+      "No pattern appears in the measurements."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Scientist B rejects this claim."
+      },
+      {
+        "index": 1,
+        "reason": "Scientist A rejects this claim."
+      },
+      {
+        "index": 3,
+        "reason": "Both explicitly recognize a pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-science-0575",
+    "test": "ACT",
+    "section": "Science",
+    "sectionKey": "act-science",
+    "domain": "Evaluation of Models, Inferences, and Experimental Results",
+    "skill": "Compare viewpoints",
+    "subskill": "evidence preference",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "conflicting-viewpoints",
+      "content": "Alder Lab studied rock samples during four repeated trials.\nScientist A says changing acid exposure explains the observed decrease in mass remaining.\nScientist B says an uncontrolled condition, not acid exposure, produced the pattern.\nBoth scientists agree that the measurements show a consistent decrease."
+    },
+    "stem": "Which additional evidence would most strongly favor Scientist A over Scientist B?",
+    "hint": "Look for a controlled test that separates the two proposed causes.",
+    "explanation": "Reproducing the pattern while isolating acid exposure supports Scientist A's explanation and weakens the uncontrolled-condition account.",
+    "solutionSteps": [
+      "Locate the exact variable, comparison, or claim named in the question.",
+      "Choose evidence that changes one proposed cause while controlling the rival cause.",
+      "Choose the option that matches the supplied evidence without adding outside assumptions."
+    ],
+    "strategy": "Go directly to the relevant table row or method statement before reading every option.",
+    "trap": "Do not substitute outside scientific knowledge for the information supplied in the experiment.",
+    "estimatedSeconds": 65,
+    "principles": [
+      "Discriminating evidence favors one explanation by testing a prediction on which alternatives differ."
+    ],
+    "calculatorPolicy": "not-permitted",
+    "format": "conflicting-viewpoints",
+    "tags": [
+      "cross-disciplinary"
+    ],
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-generator-v1",
+      "seed": "act-science-0575",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The original measurements were printed in a larger font.",
+      "A different outcome was measured without recording the input.",
+      "Both scientists repeated their opinions.",
+      "The pattern appeared again when other conditions were controlled and only acid exposure was varied."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Presentation does not distinguish causal explanations."
+      },
+      {
+        "index": 1,
+        "reason": "This does not test either explanation."
+      },
+      {
+        "index": 2,
+        "reason": "Repeated claims are not new evidence."
+      }
+    ]
   }
 ]

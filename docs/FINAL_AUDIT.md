@@ -1,5 +1,10 @@
 # Final Implementation Audit
 
+> **Superseded 2026-07-31:** the banks were later expanded to 575 records per
+> section (4,025 total; 175 Easy / 250 Medium / 150 Hard each), and an Answer
+> Signs study guide was added. The figures below describe the 2026-07-29
+> checkpoint. See `docs/CONTENT_REPORT.md` for current counts.
+
 Audit date: 2026-07-29  
 Branch: `main`  
 Baseline: `e5e3432`  

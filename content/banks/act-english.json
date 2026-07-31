@@ -30993,5 +30993,4655 @@
         "reason": "The noun phrase breaks the parallel verb pattern."
       }
     ]
+  },
+  {
+    "id": "act-english-0501",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "purpose",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Chen helped create the Birch Square pop-up dance studio so residents could attend free lessons. During its first month, organizers surveyed users after each session. By spring, the project had produced monthly performances."
+    },
+    "stem": "The writer's main purpose in this paragraph is to",
+    "hint": "Summarize the first and last sentences together.",
+    "explanation": "The paragraph introduces why the pop-up dance studio was created and reports its result: monthly performances.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Identify the paragraph's central rhetorical purpose, not a single detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Reduce the paragraph to a verb phrase such as “describe a project and its result.”",
+    "trap": "A choice can mention the topic while overstating the writer's aim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Identify the paragraph's central rhetorical purpose, not a single detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0501",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "describe the goal and early result of the pop-up dance studio",
+      "argue that every town must create a pop-up dance studio",
+      "explain every step required to run a public project",
+      "criticize the volunteers who helped residents attend free lessons"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The paragraph describes one program without making a universal demand."
+      },
+      {
+        "index": 2,
+        "reason": "The paragraph gives a goal and result, not complete instructions."
+      },
+      {
+        "index": 3,
+        "reason": "The text presents the volunteers neutrally and offers no criticism."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0502",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "relevance",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Jo helped create the Cobalt Ridge creek-restoration team so residents could plant streamside grasses. During its first month, the team posted a public schedule at the library. By spring, the project had produced more stable creek banks. The official bird of a distant state was selected in 1931."
+    },
+    "stem": "Which sentence should be deleted because it is least relevant to the paragraph's focus?",
+    "hint": "Identify the paragraph's repeated topic, then find the sentence that does not contribute to it.",
+    "explanation": "The sentence about a distant state's bird has no logical connection to the local project.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Every sentence in a unified paragraph should develop its controlling idea.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "State the paragraph topic in five words and test every sentence against it.",
+    "trap": "An interesting fact is not automatically a relevant fact.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Every sentence in a unified paragraph should develop its controlling idea."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0502",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The Cobalt Ridge creek-restoration team was created so residents could plant streamside grasses.",
+      "The official bird of a distant state was selected in 1931.",
+      "During its first month, the team posted a public schedule at the library.",
+      "By spring, the project had produced more stable creek banks."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This states the project's purpose."
+      },
+      {
+        "index": 2,
+        "reason": "This is relevant information about the project's early operation."
+      },
+      {
+        "index": 3,
+        "reason": "This reports the result that completes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0503",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "support",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Quentin helped create the Driftwood bicycle skills course so residents could practice safe riding. During its first month, participants worked in pairs during the first week. By spring, the project had produced more confident commuters."
+    },
+    "stem": "Which choice would provide the most relevant and specific support for the claim that residents used the bicycle skills course?",
+    "hint": "Look for measurable evidence of actual participation.",
+    "explanation": "Sign-in records directly document repeated resident participation.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Effective support must be specific, relevant, and directly connected to the claim.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Match the noun and action in the claim to the evidence.",
+    "trap": "Background details about a project may be true without supporting the stated claim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Effective support must be specific, relevant, and directly connected to the claim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0503",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The bicycle skills course has a blue storage cabinet.",
+      "Several towns have public buildings.",
+      "Sign-in records show that 68 residents participated in at least two sessions.",
+      "The organizers considered changing the project's logo."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The cabinet's color does not demonstrate resident use."
+      },
+      {
+        "index": 1,
+        "reason": "This broad fact does not provide evidence about this project."
+      },
+      {
+        "index": 3,
+        "reason": "A possible logo change does not show participation."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0504",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "organization",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "1. Xavier and other organizers first identified a Eastmere space for the community data lab. 2. Next, they invited residents to analyze public information. 3. After several sessions, they evaluated attendance and feedback. 4. Finally, they published a report describing clear neighborhood reports."
+    },
+    "stem": "Which ordering of the four numbered sentences makes the paragraph most logical?",
+    "hint": "Find the preparation step and the final outcome first.",
+    "explanation": "The correct order follows the project's chronology from preparation through final reporting.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Arrange process details in a clear chronological or logical progression.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Use sequence words such as “first,” “next,” and “finally” as anchors.",
+    "trap": "Do not choose an order that sounds varied but breaks cause-and-effect chronology.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Arrange process details in a clear chronological or logical progression."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0504",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "1, 2, 3, 4",
+      "4, 2, 1, 3",
+      "2, 4, 3, 1",
+      "3, 1, 4, 2"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This begins with the final report before the project has been organized."
+      },
+      {
+        "index": 2,
+        "reason": "This places participation and reporting before the space is identified."
+      },
+      {
+        "index": 3,
+        "reason": "This evaluates sessions before they occur."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0505",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "introductions",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The paragraph will explain how Fatima helped Fern Hollow create an oral-history archive, invited residents to record interviews, and eventually helped produce preserved neighborhood memories."
+    },
+    "stem": "Which opening sentence most effectively introduces the paragraph?",
+    "hint": "Choose a sentence broad enough to cover all listed details but specific to this project.",
+    "explanation": "The correct choice previews both the project and its development into a community resource.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: An effective introduction establishes the paragraph's specific topic and direction.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Preview, do not summarize every detail.",
+    "trap": "Avoid introductions that are either universal and vague or narrowly unrelated.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "An effective introduction establishes the paragraph's specific topic and direction."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0505",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Communities have existed throughout history.",
+      "Fern Hollow's oral-history archive grew from a simple plan into a useful community resource.",
+      "The paint used in Fern Hollow's meeting room is pale green.",
+      "Some residents prefer to work alone rather than record interviews."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is far too broad to introduce the specific project."
+      },
+      {
+        "index": 2,
+        "reason": "This detail is unrelated to the paragraph's focus."
+      },
+      {
+        "index": 3,
+        "reason": "This introduces an unsupported contrast instead of the project's development."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0506",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "conclusions",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "According to Mateo's report, residents in Garnet Point used street-tree inventory to measure young trees, and the project produced a map of canopy growth."
+    },
+    "stem": "Which concluding sentence most effectively follows from the information given?",
+    "hint": "Look for a choice connecting resident participation with the stated result.",
+    "explanation": "The correct sentence synthesizes participation and outcome without introducing a new unsupported claim.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A conclusion should synthesize the paragraph's main point rather than add an unrelated detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Prefer synthesis over repetition or a sudden new claim.",
+    "trap": "A dramatic recommendation is not an effective conclusion unless the paragraph supports it.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A conclusion should synthesize the paragraph's main point rather than add an unrelated detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0506",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "No community project ever encounters a problem.",
+      "The project should immediately expand to every city in the country.",
+      "Together, these results show how the street-tree inventory turned participation into a lasting local benefit.",
+      "The organizers bought pencils on a Tuesday."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This absolute claim is unsupported and implausible."
+      },
+      {
+        "index": 1,
+        "reason": "The local evidence does not justify a nationwide prescription."
+      },
+      {
+        "index": 3,
+        "reason": "This detail neither synthesizes nor concludes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0507",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "transitions",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The student radio hour allowed residents to produce short reports. ______, it provided training for new volunteers. Theo coordinated the program in Harbor Glen."
+    },
+    "stem": "Which choice provides the most logical transition?",
+    "hint": "Describe the relationship between the sentences before considering the choices.",
+    "explanation": "“In addition” correctly signals addition.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Choose a transition that expresses the exact addition relationship.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Name the relationship first, then match it to a transition.",
+    "trap": "Formal-sounding transitions are not interchangeable.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose a transition that expresses the exact addition relationship."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0507",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "In contrast",
+      "As a result",
+      "Specifically",
+      "In addition"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“In contrast” does not signal the required addition relationship."
+      },
+      {
+        "index": 1,
+        "reason": "“As a result” does not signal the required addition relationship."
+      },
+      {
+        "index": 2,
+        "reason": "“Specifically” does not signal the required addition relationship."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0508",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "purpose",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Bianca helped create the Ivory Creek community kiln so residents could fire ceramic work. During its first month, volunteers completed training before meeting participants. By spring, the project had produced shared exhibitions."
+    },
+    "stem": "The writer's main purpose in this paragraph is to",
+    "hint": "Summarize the first and last sentences together.",
+    "explanation": "The paragraph introduces why the community kiln was created and reports its result: shared exhibitions.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Identify the paragraph's central rhetorical purpose, not a single detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Reduce the paragraph to a verb phrase such as “describe a project and its result.”",
+    "trap": "A choice can mention the topic while overstating the writer's aim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Identify the paragraph's central rhetorical purpose, not a single detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0508",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "describe the goal and early result of the community kiln",
+      "argue that every town must create a community kiln",
+      "explain every step required to run a public project",
+      "criticize the volunteers who helped residents fire ceramic work"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The paragraph describes one program without making a universal demand."
+      },
+      {
+        "index": 2,
+        "reason": "The paragraph gives a goal and result, not complete instructions."
+      },
+      {
+        "index": 3,
+        "reason": "The text presents the volunteers neutrally and offers no criticism."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0509",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "relevance",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Isaac helped create the Juniper Hill walking-school-bus program so residents could travel in supervised groups. During its first month, organizers surveyed users after each session. By spring, the project had produced safer morning routes. The official bird of a distant state was selected in 1931."
+    },
+    "stem": "Which sentence should be deleted because it is least relevant to the paragraph's focus?",
+    "hint": "Identify the paragraph's repeated topic, then find the sentence that does not contribute to it.",
+    "explanation": "The sentence about a distant state's bird has no logical connection to the local project.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Every sentence in a unified paragraph should develop its controlling idea.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "State the paragraph topic in five words and test every sentence against it.",
+    "trap": "An interesting fact is not automatically a relevant fact.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Every sentence in a unified paragraph should develop its controlling idea."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0509",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The Juniper Hill walking-school-bus program was created so residents could travel in supervised groups.",
+      "The official bird of a distant state was selected in 1931.",
+      "During its first month, organizers surveyed users after each session.",
+      "By spring, the project had produced safer morning routes."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This states the project's purpose."
+      },
+      {
+        "index": 2,
+        "reason": "This is relevant information about the project's early operation."
+      },
+      {
+        "index": 3,
+        "reason": "This reports the result that completes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0510",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "support",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Pia helped create the Kingfisher wetland boardwalk so residents could observe marsh wildlife. During its first month, the team posted a public schedule at the library. By spring, the project had produced accessible viewing platforms."
+    },
+    "stem": "Which choice would provide the most relevant and specific support for the claim that residents used the wetland boardwalk?",
+    "hint": "Look for measurable evidence of actual participation.",
+    "explanation": "Sign-in records directly document repeated resident participation.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Effective support must be specific, relevant, and directly connected to the claim.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Match the noun and action in the claim to the evidence.",
+    "trap": "Background details about a project may be true without supporting the stated claim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Effective support must be specific, relevant, and directly connected to the claim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0510",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The wetland boardwalk has a blue storage cabinet.",
+      "Several towns have public buildings.",
+      "Sign-in records show that 75 residents participated in at least two sessions.",
+      "The organizers considered changing the project's logo."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The cabinet's color does not demonstrate resident use."
+      },
+      {
+        "index": 1,
+        "reason": "This broad fact does not provide evidence about this project."
+      },
+      {
+        "index": 3,
+        "reason": "A possible logo change does not show participation."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0511",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "organization",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "1. Wen and other organizers first identified a Lake Briar space for the instrument library. 2. Next, they invited residents to borrow musical instruments. 3. After several sessions, they evaluated attendance and feedback. 4. Finally, they published a report describing new youth ensembles."
+    },
+    "stem": "Which ordering of the four numbered sentences makes the paragraph most logical?",
+    "hint": "Find the preparation step and the final outcome first.",
+    "explanation": "The correct order follows the project's chronology from preparation through final reporting.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Arrange process details in a clear chronological or logical progression.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Use sequence words such as “first,” “next,” and “finally” as anchors.",
+    "trap": "Do not choose an order that sounds varied but breaks cause-and-effect chronology.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Arrange process details in a clear chronological or logical progression."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0511",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "4, 2, 1, 3",
+      "2, 4, 3, 1",
+      "3, 1, 4, 2",
+      "1, 2, 3, 4"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This begins with the final report before the project has been organized."
+      },
+      {
+        "index": 1,
+        "reason": "This places participation and reporting before the space is identified."
+      },
+      {
+        "index": 2,
+        "reason": "This evaluates sessions before they occur."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0512",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "introductions",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The paragraph will explain how Evelyn helped Meadowgate create a solar-lantern workshop, invited residents to assemble portable lights, and eventually helped produce evening study kits."
+    },
+    "stem": "Which opening sentence most effectively introduces the paragraph?",
+    "hint": "Choose a sentence broad enough to cover all listed details but specific to this project.",
+    "explanation": "The correct choice previews both the project and its development into a community resource.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: An effective introduction establishes the paragraph's specific topic and direction.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Preview, do not summarize every detail.",
+    "trap": "Avoid introductions that are either universal and vague or narrowly unrelated.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "An effective introduction establishes the paragraph's specific topic and direction."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0512",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Meadowgate's solar-lantern workshop grew from a simple plan into a useful community resource.",
+      "Communities have existed throughout history.",
+      "The paint used in Meadowgate's meeting room is pale green.",
+      "Some residents prefer to work alone rather than assemble portable lights."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This is far too broad to introduce the specific project."
+      },
+      {
+        "index": 2,
+        "reason": "This detail is unrelated to the paragraph's focus."
+      },
+      {
+        "index": 3,
+        "reason": "This introduces an unsupported contrast instead of the project's development."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0513",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "conclusions",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "According to Leila's report, residents in North Cedar used recipe archive to document family dishes, and the project produced an illustrated community cookbook."
+    },
+    "stem": "Which concluding sentence most effectively follows from the information given?",
+    "hint": "Look for a choice connecting resident participation with the stated result.",
+    "explanation": "The correct sentence synthesizes participation and outcome without introducing a new unsupported claim.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A conclusion should synthesize the paragraph's main point rather than add an unrelated detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Prefer synthesis over repetition or a sudden new claim.",
+    "trap": "A dramatic recommendation is not an effective conclusion unless the paragraph supports it.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A conclusion should synthesize the paragraph's main point rather than add an unrelated detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0513",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "No community project ever encounters a problem.",
+      "Together, these results show how the recipe archive turned participation into a lasting local benefit.",
+      "The project should immediately expand to every city in the country.",
+      "The organizers bought pencils on a Tuesday."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This absolute claim is unsupported and implausible."
+      },
+      {
+        "index": 2,
+        "reason": "The local evidence does not justify a nationwide prescription."
+      },
+      {
+        "index": 3,
+        "reason": "This detail neither synthesizes nor concludes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0514",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "transitions",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The project produced several benefits. ______, it led to weekend tournaments. Sana coordinated the program in Orchard Bend."
+    },
+    "stem": "Which choice provides the most logical transition?",
+    "hint": "Describe the relationship between the sentences before considering the choices.",
+    "explanation": "“For example” correctly signals example.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Choose a transition that expresses the exact example relationship.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Name the relationship first, then match it to a transition.",
+    "trap": "Formal-sounding transitions are not interchangeable.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose a transition that expresses the exact example relationship."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0514",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Instead",
+      "Nevertheless",
+      "For example",
+      "Meanwhile"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Instead” does not signal the required example relationship."
+      },
+      {
+        "index": 1,
+        "reason": "“Nevertheless” does not signal the required example relationship."
+      },
+      {
+        "index": 3,
+        "reason": "“Meanwhile” does not signal the required example relationship."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0515",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "purpose",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Ari helped create the Prairie View costume-repair room so residents could mend stage clothing. During its first month, participants worked in pairs during the first week. By spring, the project had produced fewer discarded garments."
+    },
+    "stem": "The writer's main purpose in this paragraph is to",
+    "hint": "Summarize the first and last sentences together.",
+    "explanation": "The paragraph introduces why the costume-repair room was created and reports its result: fewer discarded garments.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Identify the paragraph's central rhetorical purpose, not a single detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Reduce the paragraph to a verb phrase such as “describe a project and its result.”",
+    "trap": "A choice can mention the topic while overstating the writer's aim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Identify the paragraph's central rhetorical purpose, not a single detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0515",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "argue that every town must create a costume-repair room",
+      "explain every step required to run a public project",
+      "criticize the volunteers who helped residents mend stage clothing",
+      "describe the goal and early result of the costume-repair room"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The paragraph describes one program without making a universal demand."
+      },
+      {
+        "index": 1,
+        "reason": "The paragraph gives a goal and result, not complete instructions."
+      },
+      {
+        "index": 2,
+        "reason": "The text presents the volunteers neutrally and offers no criticism."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0516",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "relevance",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Hyejin helped create the Quartz Harbor neighborhood weather station so residents could record daily conditions. During its first month, volunteers completed training before meeting participants. By spring, the project had produced a public climate log. The official bird of a distant state was selected in 1931."
+    },
+    "stem": "Which sentence should be deleted because it is least relevant to the paragraph's focus?",
+    "hint": "Identify the paragraph's repeated topic, then find the sentence that does not contribute to it.",
+    "explanation": "The sentence about a distant state's bird has no logical connection to the local project.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Every sentence in a unified paragraph should develop its controlling idea.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "State the paragraph topic in five words and test every sentence against it.",
+    "trap": "An interesting fact is not automatically a relevant fact.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Every sentence in a unified paragraph should develop its controlling idea."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0516",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The official bird of a distant state was selected in 1931.",
+      "The Quartz Harbor neighborhood weather station was created so residents could record daily conditions.",
+      "During its first month, volunteers completed training before meeting participants.",
+      "By spring, the project had produced a public climate log."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This states the project's purpose."
+      },
+      {
+        "index": 2,
+        "reason": "This is relevant information about the project's early operation."
+      },
+      {
+        "index": 3,
+        "reason": "This reports the result that completes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0517",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "support",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Omar helped create the Rosefield accessible trail guide so residents could compare route features. During its first month, organizers surveyed users after each session. By spring, the project had produced clear mobility information."
+    },
+    "stem": "Which choice would provide the most relevant and specific support for the claim that residents used the accessible trail guide?",
+    "hint": "Look for measurable evidence of actual participation.",
+    "explanation": "Sign-in records directly document repeated resident participation.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Effective support must be specific, relevant, and directly connected to the claim.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Match the noun and action in the claim to the evidence.",
+    "trap": "Background details about a project may be true without supporting the stated claim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Effective support must be specific, relevant, and directly connected to the claim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0517",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The accessible trail guide has a blue storage cabinet.",
+      "Sign-in records show that 82 residents participated in at least two sessions.",
+      "Several towns have public buildings.",
+      "The organizers considered changing the project's logo."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The cabinet's color does not demonstrate resident use."
+      },
+      {
+        "index": 2,
+        "reason": "This broad fact does not provide evidence about this project."
+      },
+      {
+        "index": 3,
+        "reason": "A possible logo change does not show participation."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0518",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "organization",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "1. Val and other organizers first identified a Stonebridge space for the rooftop herb garden. 2. Next, they invited residents to grow cooking herbs. 3. After several sessions, they evaluated attendance and feedback. 4. Finally, they published a report describing produce for a teaching kitchen."
+    },
+    "stem": "Which ordering of the four numbered sentences makes the paragraph most logical?",
+    "hint": "Find the preparation step and the final outcome first.",
+    "explanation": "The correct order follows the project's chronology from preparation through final reporting.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Arrange process details in a clear chronological or logical progression.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Use sequence words such as “first,” “next,” and “finally” as anchors.",
+    "trap": "Do not choose an order that sounds varied but breaks cause-and-effect chronology.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Arrange process details in a clear chronological or logical progression."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0518",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "4, 2, 1, 3",
+      "2, 4, 3, 1",
+      "1, 2, 3, 4",
+      "3, 1, 4, 2"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This begins with the final report before the project has been organized."
+      },
+      {
+        "index": 1,
+        "reason": "This places participation and reporting before the space is identified."
+      },
+      {
+        "index": 3,
+        "reason": "This evaluates sessions before they occur."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0519",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "introductions",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The paragraph will explain how Dante helped Timber Cove create a youth translation desk, invited residents to translate public notices, and eventually helped produce more accessible announcements."
+    },
+    "stem": "Which opening sentence most effectively introduces the paragraph?",
+    "hint": "Choose a sentence broad enough to cover all listed details but specific to this project.",
+    "explanation": "The correct choice previews both the project and its development into a community resource.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: An effective introduction establishes the paragraph's specific topic and direction.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Preview, do not summarize every detail.",
+    "trap": "Avoid introductions that are either universal and vague or narrowly unrelated.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "An effective introduction establishes the paragraph's specific topic and direction."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0519",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Communities have existed throughout history.",
+      "The paint used in Timber Cove's meeting room is pale green.",
+      "Some residents prefer to work alone rather than translate public notices.",
+      "Timber Cove's youth translation desk grew from a simple plan into a useful community resource."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is far too broad to introduce the specific project."
+      },
+      {
+        "index": 1,
+        "reason": "This detail is unrelated to the paragraph's focus."
+      },
+      {
+        "index": 2,
+        "reason": "This introduces an unsupported contrast instead of the project's development."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0520",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "conclusions",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "According to Kofi's report, residents in Union Marsh used river-sound project to record natural soundscapes, and the project produced a seasonal audio collection."
+    },
+    "stem": "Which concluding sentence most effectively follows from the information given?",
+    "hint": "Look for a choice connecting resident participation with the stated result.",
+    "explanation": "The correct sentence synthesizes participation and outcome without introducing a new unsupported claim.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A conclusion should synthesize the paragraph's main point rather than add an unrelated detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Prefer synthesis over repetition or a sudden new claim.",
+    "trap": "A dramatic recommendation is not an effective conclusion unless the paragraph supports it.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A conclusion should synthesize the paragraph's main point rather than add an unrelated detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0520",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Together, these results show how the river-sound project turned participation into a lasting local benefit.",
+      "No community project ever encounters a problem.",
+      "The project should immediately expand to every city in the country.",
+      "The organizers bought pencils on a Tuesday."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This absolute claim is unsupported and implausible."
+      },
+      {
+        "index": 2,
+        "reason": "The local evidence does not justify a nationwide prescription."
+      },
+      {
+        "index": 3,
+        "reason": "This detail neither synthesizes nor concludes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0521",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "transitions",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Most residents supported the mobile makerspace. ______, a few worried about its weekend schedule. Ruth coordinated the program in Violet Lake."
+    },
+    "stem": "Which choice provides the most logical transition?",
+    "hint": "Describe the relationship between the sentences before considering the choices.",
+    "explanation": "“However” correctly signals contrast.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Choose a transition that expresses the exact contrast relationship.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Name the relationship first, then match it to a transition.",
+    "trap": "Formal-sounding transitions are not interchangeable.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose a transition that expresses the exact contrast relationship."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0521",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Consequently",
+      "However",
+      "For example",
+      "Likewise"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Consequently” does not signal the required contrast relationship."
+      },
+      {
+        "index": 2,
+        "reason": "“For example” does not signal the required contrast relationship."
+      },
+      {
+        "index": 3,
+        "reason": "“Likewise” does not signal the required contrast relationship."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0522",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "purpose",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Yara helped create the Westhaven community telescope night so residents could observe the night sky. During its first month, the team posted a public schedule at the library. By spring, the project had produced shared astronomy journals."
+    },
+    "stem": "The writer's main purpose in this paragraph is to",
+    "hint": "Summarize the first and last sentences together.",
+    "explanation": "The paragraph introduces why the community telescope night was created and reports its result: shared astronomy journals.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Identify the paragraph's central rhetorical purpose, not a single detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Reduce the paragraph to a verb phrase such as “describe a project and its result.”",
+    "trap": "A choice can mention the topic while overstating the writer's aim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Identify the paragraph's central rhetorical purpose, not a single detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0522",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "argue that every town must create a community telescope night",
+      "explain every step required to run a public project",
+      "describe the goal and early result of the community telescope night",
+      "criticize the volunteers who helped residents observe the night sky"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The paragraph describes one program without making a universal demand."
+      },
+      {
+        "index": 1,
+        "reason": "The paragraph gives a goal and result, not complete instructions."
+      },
+      {
+        "index": 3,
+        "reason": "The text presents the volunteers neutrally and offers no criticism."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0523",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "relevance",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Gus helped create the Yellow Pine local-history mural so residents could paint scenes from interviews. During its first month, participants worked in pairs during the first week. By spring, the project had produced a collaborative public artwork. The official bird of a distant state was selected in 1931."
+    },
+    "stem": "Which sentence should be deleted because it is least relevant to the paragraph's focus?",
+    "hint": "Identify the paragraph's repeated topic, then find the sentence that does not contribute to it.",
+    "explanation": "The sentence about a distant state's bird has no logical connection to the local project.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Every sentence in a unified paragraph should develop its controlling idea.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "State the paragraph topic in five words and test every sentence against it.",
+    "trap": "An interesting fact is not automatically a relevant fact.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Every sentence in a unified paragraph should develop its controlling idea."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0523",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The Yellow Pine local-history mural was created so residents could paint scenes from interviews.",
+      "During its first month, participants worked in pairs during the first week.",
+      "By spring, the project had produced a collaborative public artwork.",
+      "The official bird of a distant state was selected in 1931."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This states the project's purpose."
+      },
+      {
+        "index": 1,
+        "reason": "This is relevant information about the project's early operation."
+      },
+      {
+        "index": 2,
+        "reason": "This reports the result that completes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0524",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "support",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Nadia helped create the Zephyr Grove lending shelf for tools so residents could borrow household tools. During its first month, volunteers completed training before meeting participants. By spring, the project had produced more completed home repairs."
+    },
+    "stem": "Which choice would provide the most relevant and specific support for the claim that residents used the lending shelf for tools?",
+    "hint": "Look for measurable evidence of actual participation.",
+    "explanation": "Sign-in records directly document repeated resident participation.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Effective support must be specific, relevant, and directly connected to the claim.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Match the noun and action in the claim to the evidence.",
+    "trap": "Background details about a project may be true without supporting the stated claim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Effective support must be specific, relevant, and directly connected to the claim."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0524",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Sign-in records show that 49 residents participated in at least two sessions.",
+      "The lending shelf for tools has a blue storage cabinet.",
+      "Several towns have public buildings.",
+      "The organizers considered changing the project's logo."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The cabinet's color does not demonstrate resident use."
+      },
+      {
+        "index": 2,
+        "reason": "This broad fact does not provide evidence about this project."
+      },
+      {
+        "index": 3,
+        "reason": "A possible logo change does not show participation."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0525",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "organization",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "1. Val and other organizers first identified a Alder Bay space for the pop-up dance studio. 2. Next, they invited residents to attend free lessons. 3. After several sessions, they evaluated attendance and feedback. 4. Finally, they published a report describing monthly performances."
+    },
+    "stem": "Which ordering of the four numbered sentences makes the paragraph most logical?",
+    "hint": "Find the preparation step and the final outcome first.",
+    "explanation": "The correct order follows the project's chronology from preparation through final reporting.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Arrange process details in a clear chronological or logical progression.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Use sequence words such as “first,” “next,” and “finally” as anchors.",
+    "trap": "Do not choose an order that sounds varied but breaks cause-and-effect chronology.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Arrange process details in a clear chronological or logical progression."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0525",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "4, 2, 1, 3",
+      "1, 2, 3, 4",
+      "2, 4, 3, 1",
+      "3, 1, 4, 2"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This begins with the final report before the project has been organized."
+      },
+      {
+        "index": 2,
+        "reason": "This places participation and reporting before the space is identified."
+      },
+      {
+        "index": 3,
+        "reason": "This evaluates sessions before they occur."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0526",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "introductions",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "The paragraph will explain how Dante helped Birch Square create a creek-restoration team, invited residents to plant streamside grasses, and eventually helped produce more stable creek banks."
+    },
+    "stem": "Which opening sentence most effectively introduces the paragraph?",
+    "hint": "Choose a sentence broad enough to cover all listed details but specific to this project.",
+    "explanation": "The correct choice previews both the project and its development into a community resource.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: An effective introduction establishes the paragraph's specific topic and direction.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Preview, do not summarize every detail.",
+    "trap": "Avoid introductions that are either universal and vague or narrowly unrelated.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "An effective introduction establishes the paragraph's specific topic and direction."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0526",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Communities have existed throughout history.",
+      "The paint used in Birch Square's meeting room is pale green.",
+      "Birch Square's creek-restoration team grew from a simple plan into a useful community resource.",
+      "Some residents prefer to work alone rather than plant streamside grasses."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This is far too broad to introduce the specific project."
+      },
+      {
+        "index": 1,
+        "reason": "This detail is unrelated to the paragraph's focus."
+      },
+      {
+        "index": 3,
+        "reason": "This introduces an unsupported contrast instead of the project's development."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0527",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "conclusions",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "According to Kofi's report, residents in Cobalt Ridge used bicycle skills course to practice safe riding, and the project produced more confident commuters."
+    },
+    "stem": "Which concluding sentence most effectively follows from the information given?",
+    "hint": "Look for a choice connecting resident participation with the stated result.",
+    "explanation": "The correct sentence synthesizes participation and outcome without introducing a new unsupported claim.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A conclusion should synthesize the paragraph's main point rather than add an unrelated detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Prefer synthesis over repetition or a sudden new claim.",
+    "trap": "A dramatic recommendation is not an effective conclusion unless the paragraph supports it.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A conclusion should synthesize the paragraph's main point rather than add an unrelated detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0527",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "No community project ever encounters a problem.",
+      "The project should immediately expand to every city in the country.",
+      "The organizers bought pencils on a Tuesday.",
+      "Together, these results show how the bicycle skills course turned participation into a lasting local benefit."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This absolute claim is unsupported and implausible."
+      },
+      {
+        "index": 1,
+        "reason": "The local evidence does not justify a nationwide prescription."
+      },
+      {
+        "index": 2,
+        "reason": "This detail neither synthesizes nor concludes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0528",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Organization, Unity, and Cohesion",
+    "subskill": "transitions",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Early sessions drew few participants. ______, organizers extended evening hours so more residents could analyze public information. Ruth coordinated the program in Driftwood."
+    },
+    "stem": "Which choice provides the most logical transition?",
+    "hint": "Describe the relationship between the sentences before considering the choices.",
+    "explanation": "“Therefore” correctly signals cause and effect.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Choose a transition that expresses the exact cause and effect relationship.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Name the relationship first, then match it to a transition.",
+    "trap": "Formal-sounding transitions are not interchangeable.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose a transition that expresses the exact cause and effect relationship."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0528",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Therefore",
+      "Similarly",
+      "For example",
+      "Nevertheless"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "“Similarly” does not signal the required cause and effect relationship."
+      },
+      {
+        "index": 2,
+        "reason": "“For example” does not signal the required cause and effect relationship."
+      },
+      {
+        "index": 3,
+        "reason": "“Nevertheless” does not signal the required cause and effect relationship."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0529",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "purpose",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Yara helped create the Eastmere oral-history archive so residents could record interviews. During its first month, organizers surveyed users after each session. By spring, the project had produced preserved neighborhood memories."
+    },
+    "stem": "The writer's main purpose in this paragraph is to",
+    "hint": "Summarize the first and last sentences together.",
+    "explanation": "The paragraph introduces why the oral-history archive was created and reports its result: preserved neighborhood memories.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Identify the paragraph's central rhetorical purpose, not a single detail.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Reduce the paragraph to a verb phrase such as “describe a project and its result.”",
+    "trap": "A choice can mention the topic while overstating the writer's aim.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Identify the paragraph's central rhetorical purpose, not a single detail."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0529",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "argue that every town must create a oral-history archive",
+      "describe the goal and early result of the oral-history archive",
+      "explain every step required to run a public project",
+      "criticize the volunteers who helped residents record interviews"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The paragraph describes one program without making a universal demand."
+      },
+      {
+        "index": 2,
+        "reason": "The paragraph gives a goal and result, not complete instructions."
+      },
+      {
+        "index": 3,
+        "reason": "The text presents the volunteers neutrally and offers no criticism."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0530",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Production of Writing",
+    "skill": "Topic Development",
+    "subskill": "relevance",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Coordinator Gus helped create the Fern Hollow street-tree inventory so residents could measure young trees. During its first month, the team posted a public schedule at the library. By spring, the project had produced a map of canopy growth. The official bird of a distant state was selected in 1931."
+    },
+    "stem": "Which sentence should be deleted because it is least relevant to the paragraph's focus?",
+    "hint": "Identify the paragraph's repeated topic, then find the sentence that does not contribute to it.",
+    "explanation": "The sentence about a distant state's bird has no logical connection to the local project.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Every sentence in a unified paragraph should develop its controlling idea.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "State the paragraph topic in five words and test every sentence against it.",
+    "trap": "An interesting fact is not automatically a relevant fact.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Every sentence in a unified paragraph should develop its controlling idea."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0530",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "The Fern Hollow street-tree inventory was created so residents could measure young trees.",
+      "During its first month, the team posted a public schedule at the library.",
+      "The official bird of a distant state was selected in 1931.",
+      "By spring, the project had produced a map of canopy growth."
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This states the project's purpose."
+      },
+      {
+        "index": 1,
+        "reason": "This is relevant information about the project's early operation."
+      },
+      {
+        "index": 3,
+        "reason": "This reports the result that completes the paragraph."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0531",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "conciseness",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Nadia and other residents in Garnet Point collaborated together to plan the student radio hour."
+    },
+    "stem": "Which revision is clearest and most concise?",
+    "hint": "Look for two words that express the same idea.",
+    "explanation": "“Collaborated” already means worked together, so “together” is redundant.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Remove redundancy while preserving all meaningful information.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Prefer the shortest grammatically complete choice that keeps the meaning.",
+    "trap": "Longer phrasing is not automatically more formal or precise.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Remove redundancy while preserving all meaningful information."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0531",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Nadia and other residents in Garnet Point collaborated together jointly to plan the student radio hour.",
+      "The student radio hour was planned in a collaborative manner by Nadia and other residents in Garnet Point.",
+      "Planning of the student radio hour was something Nadia and other residents in Garnet Point did collaboratively together.",
+      "Nadia and other residents in Garnet Point collaborated to plan the student radio hour."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Together jointly” adds more redundancy."
+      },
+      {
+        "index": 1,
+        "reason": "This wordy passive construction weakens the sentence."
+      },
+      {
+        "index": 2,
+        "reason": "This is unnecessarily wordy and repeats the idea of collaboration."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0532",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "style and tone",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "A formal Harbor Glen report by Usha states that the community kiln enabled residents to fire ceramic work."
+    },
+    "stem": "Which sentence best maintains the report's formal tone?",
+    "hint": "Look for objective language rather than slang or direct address.",
+    "explanation": "The correct choice uses precise, evidence-oriented language appropriate to a formal report.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Maintain a consistent level of formality suited to purpose and audience.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Check pronouns, slang, and unsupported intensifiers.",
+    "trap": "Enthusiasm does not substitute for appropriate tone.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Maintain a consistent level of formality suited to purpose and audience."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0532",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation data indicate that the program expanded access.",
+      "The program was totally amazing for everybody.",
+      "You would have loved how cool the whole thing was.",
+      "Honestly, the project kind of worked out okay."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The slang and absolute claim are inappropriate for a formal report."
+      },
+      {
+        "index": 2,
+        "reason": "Second person and casual wording disrupt the formal tone."
+      },
+      {
+        "index": 3,
+        "reason": "Conversational qualifiers make the statement vague and informal."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0533",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "consistency",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Chen's Ivory Creek guide to the walking-school-bus program first addresses readers directly: “You can travel in supervised groups during weekend sessions.” It then states, “______.”"
+    },
+    "stem": "Which choice most effectively maintains the guide's point of view?",
+    "hint": "Identify the pronoun perspective in the quoted first sentence.",
+    "explanation": "Using “you” maintains the second-person point of view established in the first sentence.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Keep person, number, tense, and tone consistent unless a clear reason requires a shift.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Circle the controlling pronoun and match it.",
+    "trap": "A grammatically complete choice may still create an unjustified shift.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Keep person, number, tense, and tone consistent unless a clear reason requires a shift."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0533",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Residents should register before Friday.",
+      "You should register before Friday.",
+      "I should register before Friday.",
+      "Registration before Friday was recommended by them."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This shifts from second person to third person."
+      },
+      {
+        "index": 2,
+        "reason": "This shifts from second person to first person."
+      },
+      {
+        "index": 3,
+        "reason": "This shifts perspective and introduces an unclear pronoun."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0534",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "precision",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Jo, the Juniper Hill coordinator, wanted to describe attendance at the wetland boardwalk accurately: the increase was steady across six weeks, not sudden. Attendance ______ during the trial."
+    },
+    "stem": "Which choice most precisely completes the sentence?",
+    "hint": "Use both clues: the direction is upward and the pace is steady.",
+    "explanation": "“Rose gradually” precisely conveys a steady increase over time.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Choose language that matches the exact meaning, degree, and tone established by context.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Translate the context into two required features before selecting a word.",
+    "trap": "An energetic word can be less accurate than a restrained one.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose language that matches the exact meaning, degree, and tone established by context."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0534",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "exploded",
+      "changed somehow",
+      "rose gradually",
+      "was awesome"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This suggests a sudden dramatic increase, contrary to the context."
+      },
+      {
+        "index": 1,
+        "reason": "This is too vague to express the direction and pace."
+      },
+      {
+        "index": 3,
+        "reason": "This informal evaluation is imprecise and does not describe the pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0535",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "conciseness",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Quentin and other residents in Kingfisher collaborated together to plan the instrument library."
+    },
+    "stem": "Which revision is clearest and most concise?",
+    "hint": "Look for two words that express the same idea.",
+    "explanation": "“Collaborated” already means worked together, so “together” is redundant.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Remove redundancy while preserving all meaningful information.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Prefer the shortest grammatically complete choice that keeps the meaning.",
+    "trap": "Longer phrasing is not automatically more formal or precise.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Remove redundancy while preserving all meaningful information."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0535",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Quentin and other residents in Kingfisher collaborated together jointly to plan the instrument library.",
+      "The instrument library was planned in a collaborative manner by Quentin and other residents in Kingfisher.",
+      "Planning of the instrument library was something Quentin and other residents in Kingfisher did collaboratively together.",
+      "Quentin and other residents in Kingfisher collaborated to plan the instrument library."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Together jointly” adds more redundancy."
+      },
+      {
+        "index": 1,
+        "reason": "This wordy passive construction weakens the sentence."
+      },
+      {
+        "index": 2,
+        "reason": "This is unnecessarily wordy and repeats the idea of collaboration."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0536",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "style and tone",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "A formal Lake Briar report by Xavier states that the solar-lantern workshop enabled residents to assemble portable lights."
+    },
+    "stem": "Which sentence best maintains the report's formal tone?",
+    "hint": "Look for objective language rather than slang or direct address.",
+    "explanation": "The correct choice uses precise, evidence-oriented language appropriate to a formal report.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Maintain a consistent level of formality suited to purpose and audience.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Check pronouns, slang, and unsupported intensifiers.",
+    "trap": "Enthusiasm does not substitute for appropriate tone.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Maintain a consistent level of formality suited to purpose and audience."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0536",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation data indicate that the program expanded access.",
+      "The program was totally amazing for everybody.",
+      "You would have loved how cool the whole thing was.",
+      "Honestly, the project kind of worked out okay."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The slang and absolute claim are inappropriate for a formal report."
+      },
+      {
+        "index": 2,
+        "reason": "Second person and casual wording disrupt the formal tone."
+      },
+      {
+        "index": 3,
+        "reason": "Conversational qualifiers make the statement vague and informal."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0537",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "consistency",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Fatima's Meadowgate guide to the recipe archive first addresses readers directly: “You can document family dishes during weekend sessions.” It then states, “______.”"
+    },
+    "stem": "Which choice most effectively maintains the guide's point of view?",
+    "hint": "Identify the pronoun perspective in the quoted first sentence.",
+    "explanation": "Using “you” maintains the second-person point of view established in the first sentence.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Keep person, number, tense, and tone consistent unless a clear reason requires a shift.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Circle the controlling pronoun and match it.",
+    "trap": "A grammatically complete choice may still create an unjustified shift.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Keep person, number, tense, and tone consistent unless a clear reason requires a shift."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0537",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Residents should register before Friday.",
+      "You should register before Friday.",
+      "I should register before Friday.",
+      "Registration before Friday was recommended by them."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This shifts from second person to third person."
+      },
+      {
+        "index": 2,
+        "reason": "This shifts from second person to first person."
+      },
+      {
+        "index": 3,
+        "reason": "This shifts perspective and introduces an unclear pronoun."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0538",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "precision",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Mateo, the North Cedar coordinator, wanted to describe attendance at the public chess club accurately: the increase was steady across six weeks, not sudden. Attendance ______ during the trial."
+    },
+    "stem": "Which choice most precisely completes the sentence?",
+    "hint": "Use both clues: the direction is upward and the pace is steady.",
+    "explanation": "“Rose gradually” precisely conveys a steady increase over time.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Choose language that matches the exact meaning, degree, and tone established by context.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Translate the context into two required features before selecting a word.",
+    "trap": "An energetic word can be less accurate than a restrained one.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose language that matches the exact meaning, degree, and tone established by context."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0538",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "exploded",
+      "changed somehow",
+      "rose gradually",
+      "was awesome"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This suggests a sudden dramatic increase, contrary to the context."
+      },
+      {
+        "index": 1,
+        "reason": "This is too vague to express the direction and pace."
+      },
+      {
+        "index": 3,
+        "reason": "This informal evaluation is imprecise and does not describe the pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0539",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "conciseness",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Theo and other residents in Orchard Bend collaborated together to plan the costume-repair room."
+    },
+    "stem": "Which revision is clearest and most concise?",
+    "hint": "Look for two words that express the same idea.",
+    "explanation": "“Collaborated” already means worked together, so “together” is redundant.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Remove redundancy while preserving all meaningful information.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Prefer the shortest grammatically complete choice that keeps the meaning.",
+    "trap": "Longer phrasing is not automatically more formal or precise.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Remove redundancy while preserving all meaningful information."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0539",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Theo and other residents in Orchard Bend collaborated together jointly to plan the costume-repair room.",
+      "The costume-repair room was planned in a collaborative manner by Theo and other residents in Orchard Bend.",
+      "Planning of the costume-repair room was something Theo and other residents in Orchard Bend did collaboratively together.",
+      "Theo and other residents in Orchard Bend collaborated to plan the costume-repair room."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Together jointly” adds more redundancy."
+      },
+      {
+        "index": 1,
+        "reason": "This wordy passive construction weakens the sentence."
+      },
+      {
+        "index": 2,
+        "reason": "This is unnecessarily wordy and repeats the idea of collaboration."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0540",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "style and tone",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "A formal Prairie View report by Bianca states that the neighborhood weather station enabled residents to record daily conditions."
+    },
+    "stem": "Which sentence best maintains the report's formal tone?",
+    "hint": "Look for objective language rather than slang or direct address.",
+    "explanation": "The correct choice uses precise, evidence-oriented language appropriate to a formal report.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Maintain a consistent level of formality suited to purpose and audience.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Check pronouns, slang, and unsupported intensifiers.",
+    "trap": "Enthusiasm does not substitute for appropriate tone.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Maintain a consistent level of formality suited to purpose and audience."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0540",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation data indicate that the program expanded access.",
+      "The program was totally amazing for everybody.",
+      "You would have loved how cool the whole thing was.",
+      "Honestly, the project kind of worked out okay."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The slang and absolute claim are inappropriate for a formal report."
+      },
+      {
+        "index": 2,
+        "reason": "Second person and casual wording disrupt the formal tone."
+      },
+      {
+        "index": 3,
+        "reason": "Conversational qualifiers make the statement vague and informal."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0541",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "consistency",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Isaac's Quartz Harbor guide to the accessible trail guide first addresses readers directly: “You can compare route features during weekend sessions.” It then states, “______.”"
+    },
+    "stem": "Which choice most effectively maintains the guide's point of view?",
+    "hint": "Identify the pronoun perspective in the quoted first sentence.",
+    "explanation": "Using “you” maintains the second-person point of view established in the first sentence.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Keep person, number, tense, and tone consistent unless a clear reason requires a shift.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Circle the controlling pronoun and match it.",
+    "trap": "A grammatically complete choice may still create an unjustified shift.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Keep person, number, tense, and tone consistent unless a clear reason requires a shift."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0541",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Residents should register before Friday.",
+      "You should register before Friday.",
+      "I should register before Friday.",
+      "Registration before Friday was recommended by them."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This shifts from second person to third person."
+      },
+      {
+        "index": 2,
+        "reason": "This shifts from second person to first person."
+      },
+      {
+        "index": 3,
+        "reason": "This shifts perspective and introduces an unclear pronoun."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0542",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "precision",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Pia, the Rosefield coordinator, wanted to describe attendance at the rooftop herb garden accurately: the increase was steady across six weeks, not sudden. Attendance ______ during the trial."
+    },
+    "stem": "Which choice most precisely completes the sentence?",
+    "hint": "Use both clues: the direction is upward and the pace is steady.",
+    "explanation": "“Rose gradually” precisely conveys a steady increase over time.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Choose language that matches the exact meaning, degree, and tone established by context.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Translate the context into two required features before selecting a word.",
+    "trap": "An energetic word can be less accurate than a restrained one.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Choose language that matches the exact meaning, degree, and tone established by context."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0542",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "exploded",
+      "changed somehow",
+      "rose gradually",
+      "was awesome"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This suggests a sudden dramatic increase, contrary to the context."
+      },
+      {
+        "index": 1,
+        "reason": "This is too vague to express the direction and pace."
+      },
+      {
+        "index": 3,
+        "reason": "This informal evaluation is imprecise and does not describe the pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0543",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "conciseness",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Wen and other residents in Stonebridge collaborated together to plan the youth translation desk."
+    },
+    "stem": "Which revision is clearest and most concise?",
+    "hint": "Look for two words that express the same idea.",
+    "explanation": "“Collaborated” already means worked together, so “together” is redundant.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Remove redundancy while preserving all meaningful information.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Prefer the shortest grammatically complete choice that keeps the meaning.",
+    "trap": "Longer phrasing is not automatically more formal or precise.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Remove redundancy while preserving all meaningful information."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0543",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Wen and other residents in Stonebridge collaborated together jointly to plan the youth translation desk.",
+      "The youth translation desk was planned in a collaborative manner by Wen and other residents in Stonebridge.",
+      "Planning of the youth translation desk was something Wen and other residents in Stonebridge did collaboratively together.",
+      "Wen and other residents in Stonebridge collaborated to plan the youth translation desk."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Together jointly” adds more redundancy."
+      },
+      {
+        "index": 1,
+        "reason": "This wordy passive construction weakens the sentence."
+      },
+      {
+        "index": 2,
+        "reason": "This is unnecessarily wordy and repeats the idea of collaboration."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0544",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "style and tone",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "A formal Timber Cove report by Evelyn states that the river-sound project enabled residents to record natural soundscapes."
+    },
+    "stem": "Which sentence best maintains the report's formal tone?",
+    "hint": "Look for objective language rather than slang or direct address.",
+    "explanation": "The correct choice uses precise, evidence-oriented language appropriate to a formal report.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Maintain a consistent level of formality suited to purpose and audience.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Check pronouns, slang, and unsupported intensifiers.",
+    "trap": "Enthusiasm does not substitute for appropriate tone.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Maintain a consistent level of formality suited to purpose and audience."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0544",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Participation data indicate that the program expanded access.",
+      "The program was totally amazing for everybody.",
+      "You would have loved how cool the whole thing was.",
+      "Honestly, the project kind of worked out okay."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The slang and absolute claim are inappropriate for a formal report."
+      },
+      {
+        "index": 2,
+        "reason": "Second person and casual wording disrupt the formal tone."
+      },
+      {
+        "index": 3,
+        "reason": "Conversational qualifiers make the statement vague and informal."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0545",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Knowledge of Language",
+    "skill": "Effective Language Use",
+    "subskill": "consistency",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "passage",
+      "content": "Leila's Union Marsh guide to the mobile makerspace first addresses readers directly: “You can use fabrication tools during weekend sessions.” It then states, “______.”"
+    },
+    "stem": "Which choice most effectively maintains the guide's point of view?",
+    "hint": "Identify the pronoun perspective in the quoted first sentence.",
+    "explanation": "Using “you” maintains the second-person point of view established in the first sentence.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Keep person, number, tense, and tone consistent unless a clear reason requires a shift.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Circle the controlling pronoun and match it.",
+    "trap": "A grammatically complete choice may still create an unjustified shift.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Keep person, number, tense, and tone consistent unless a clear reason requires a shift."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "passage-editing",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0545",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Residents should register before Friday.",
+      "You should register before Friday.",
+      "I should register before Friday.",
+      "Registration before Friday was recommended by them."
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This shifts from second person to third person."
+      },
+      {
+        "index": 2,
+        "reason": "This shifts from second person to first person."
+      },
+      {
+        "index": 3,
+        "reason": "This shifts perspective and introduces an unclear pronoun."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0546",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Sentence Structure and Formation",
+    "subskill": "parallelism",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "At the Violet Lake community telescope night, the volunteer learned to greet visitors, organize supplies, and ______."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing parallelism before comparing choices.",
+    "explanation": "“Explain” matches the base-form verbs “greet” and “organize” governed by “to.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Coordinate items should use parallel grammatical forms.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Coordinate items should use parallel grammatical forms."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0546",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "the schedule was explained",
+      "explaining the schedule",
+      "explain the schedule",
+      "an explanation of the schedule"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This passive clause is not parallel with the two infinitive phrases."
+      },
+      {
+        "index": 1,
+        "reason": "The gerund does not match “to greet” and “organize.”"
+      },
+      {
+        "index": 3,
+        "reason": "The noun phrase breaks the parallel verb pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0547",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "subject-verb agreement",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "A collection of photographs documenting a collaborative public artwork ______ in the Westhaven archive."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing subject-verb agreement before comparing choices.",
+    "explanation": "The singular subject “collection” requires the singular verb phrase “is stored.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A verb agrees with the head noun of its subject, not a nearby noun in a prepositional phrase.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A verb agrees with the head noun of its subject, not a nearby noun in a prepositional phrase."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0547",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "are stored",
+      "store",
+      "have stored",
+      "is stored"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The plural noun in the modifying phrase is not the subject."
+      },
+      {
+        "index": 1,
+        "reason": "This plural/base verb does not agree with “collection.”"
+      },
+      {
+        "index": 2,
+        "reason": "This verb form is both intransitive here and disagrees with the subject."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0548",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "pronouns",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "At the Yellow Pine lending shelf for tools, neither Hyejin nor the other coordinator had brought ______ identification badge."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing pronouns before comparing choices.",
+    "explanation": "Singular “their” clearly and inclusively refers to either coordinator.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A pronoun must agree clearly with its antecedent in person and number.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A pronoun must agree clearly with its antecedent in person and number."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0548",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "their",
+      "its",
+      "our",
+      "your"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "“Its” refers to a nonhuman singular noun."
+      },
+      {
+        "index": 2,
+        "reason": "“Our” incorrectly includes the speaker."
+      },
+      {
+        "index": 3,
+        "reason": "“Your” incorrectly addresses the reader."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0549",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "verb forms",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "By the time the first Zephyr Grove native-seed exchange session began, the organizers ______ every supply cabinet."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing verb forms before comparing choices.",
+    "explanation": "Past perfect “had labeled” marks an action completed before another past action.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use past perfect for an action completed before another past event.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use past perfect for an action completed before another past event."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0549",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "label",
+      "had labeled",
+      "will label",
+      "are labeling"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Present tense does not show completion before the past event."
+      },
+      {
+        "index": 2,
+        "reason": "Future tense conflicts with the past sequence."
+      },
+      {
+        "index": 3,
+        "reason": "Present progressive does not fit the completed past action."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0550",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "comparisons",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "For the Alder Bay creek-restoration team, the revised guide was clearer than ______."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing comparisons before comparing choices.",
+    "explanation": "The sentence logically compares one guide with another guide.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Comparisons must place logically comparable items in parallel structures.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Comparisons must place logically comparable items in parallel structures."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0550",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "the original guide's pages",
+      "the writers had expected",
+      "the original guide",
+      "any guide"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This compares a guide with pages rather than with another guide."
+      },
+      {
+        "index": 1,
+        "reason": "This creates an illogical comparison of a guide and an expectation."
+      },
+      {
+        "index": 3,
+        "reason": "This illogically includes the revised guide in the group it exceeds."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0551",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "commas",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "After the final Birch Square bicycle skills course session ______ the team published its report."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing commas before comparing choices.",
+    "explanation": "A comma follows the introductory phrase.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use a comma after an introductory dependent phrase or clause.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use a comma after an introductory dependent phrase or clause."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0551",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      ";",
+      ":",
+      "NO PUNCTUATION",
+      ","
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "A semicolon cannot separate an introductory dependent phrase from the main clause."
+      },
+      {
+        "index": 1,
+        "reason": "A colon is not used after an introductory phrase."
+      },
+      {
+        "index": 2,
+        "reason": "A comma should mark the end of the introductory phrase."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0552",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "semicolons and colons",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "The Cobalt Ridge workshop for the community data lab required three items ______ gloves, a ruler, and a notebook."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing semicolons and colons before comparing choices.",
+    "explanation": "A colon correctly introduces the list after a complete clause.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use a colon after a complete clause to introduce a list or explanation.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use a colon after a complete clause to introduce a list or explanation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0552",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      ":",
+      ",",
+      ";",
+      "— and"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "A comma alone does not appropriately introduce this list after a complete clause."
+      },
+      {
+        "index": 2,
+        "reason": "A semicolon is not used to introduce a list of sentence elements."
+      },
+      {
+        "index": 3,
+        "reason": "The dash plus conjunction is unnecessary and ungrammatical here."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0553",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "apostrophes",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "After the Driftwood oral-history archive session, the two coordinators compared the ______ notes."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing apostrophes before comparing choices.",
+    "explanation": "The notes belong to multiple volunteers, so the plural possessive is “volunteers'.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Form the possessive of a regular plural ending in s by adding an apostrophe after the s.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Form the possessive of a regular plural ending in s by adding an apostrophe after the s."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0553",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "volunteer's",
+      "volunteers'",
+      "volunteers",
+      "volunteer'es"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This form is singular possessive, but the sentence refers to multiple volunteers."
+      },
+      {
+        "index": 2,
+        "reason": "This plural lacks the apostrophe needed to show possession."
+      },
+      {
+        "index": 3,
+        "reason": "This is not a valid plural possessive form."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0554",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "dashes and parentheses",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "The final Eastmere street-tree inventory session ______ originally planned for Tuesday ______ moved to Thursday."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing dashes and parentheses before comparing choices.",
+    "explanation": "Matching parentheses correctly set off the nonessential information.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use matching punctuation marks to enclose a nonessential interruption.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use matching punctuation marks to enclose a nonessential interruption."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0554",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "originally planned for Tuesday",
+      "— originally planned for Tuesday)",
+      "(originally planned for Tuesday)",
+      ", originally planned for Tuesday—"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Without punctuation, the nonessential interruption is not clearly set off."
+      },
+      {
+        "index": 1,
+        "reason": "The punctuation marks do not form a matching pair."
+      },
+      {
+        "index": 3,
+        "reason": "A comma and dash cannot serve as a matched pair here."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0555",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Sentence Structure and Formation",
+    "subskill": "clause relationships",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "The Fern Hollow student radio hour opened on Saturday ______ residents began to produce short reports that afternoon."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing clause relationships before comparing choices.",
+    "explanation": "A semicolon correctly joins the two related independent clauses.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Join related independent clauses with a semicolon or a comma plus a coordinating conjunction.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Join related independent clauses with a semicolon or a comma plus a coordinating conjunction."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0555",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      ",",
+      "NO PUNCTUATION",
+      ": and",
+      ";"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "A comma alone cannot join two independent clauses."
+      },
+      {
+        "index": 1,
+        "reason": "No punctuation creates a run-on sentence."
+      },
+      {
+        "index": 2,
+        "reason": "A colon followed by “and” is not appropriate between these clauses."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0556",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Sentence Structure and Formation",
+    "subskill": "modifiers",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "Which revision clearly indicates that Omar, not the display, was walking through Garnet Point?"
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing modifiers before comparing choices.",
+    "explanation": "Placing the person's name immediately after the modifier makes the intended meaning clear.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Place a modifying phrase next to the word it logically describes.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Place a modifying phrase next to the word it logically describes."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0556",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Walking through Garnet Point, Omar examined the display.",
+      "Walking through Garnet Point, the display was examined by Omar.",
+      "The display walking through Garnet Point was examined by Omar.",
+      "Omar examined, walking through Garnet Point, the display."
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "The opening modifier illogically describes the display."
+      },
+      {
+        "index": 2,
+        "reason": "This wording says the display was walking."
+      },
+      {
+        "index": 3,
+        "reason": "The interrupting modifier creates avoidable ambiguity."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0557",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Sentence Structure and Formation",
+    "subskill": "parallelism",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "At the Harbor Glen walking-school-bus program, the volunteer learned to greet visitors, organize supplies, and ______."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing parallelism before comparing choices.",
+    "explanation": "“Explain” matches the base-form verbs “greet” and “organize” governed by “to.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Coordinate items should use parallel grammatical forms.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Coordinate items should use parallel grammatical forms."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0557",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "the schedule was explained",
+      "explain the schedule",
+      "explaining the schedule",
+      "an explanation of the schedule"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This passive clause is not parallel with the two infinitive phrases."
+      },
+      {
+        "index": 2,
+        "reason": "The gerund does not match “to greet” and “organize.”"
+      },
+      {
+        "index": 3,
+        "reason": "The noun phrase breaks the parallel verb pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0558",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "subject-verb agreement",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "A collection of photographs documenting accessible viewing platforms ______ in the Ivory Creek archive."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing subject-verb agreement before comparing choices.",
+    "explanation": "The singular subject “collection” requires the singular verb phrase “is stored.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A verb agrees with the head noun of its subject, not a nearby noun in a prepositional phrase.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A verb agrees with the head noun of its subject, not a nearby noun in a prepositional phrase."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0558",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "are stored",
+      "store",
+      "is stored",
+      "have stored"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The plural noun in the modifying phrase is not the subject."
+      },
+      {
+        "index": 1,
+        "reason": "This plural/base verb does not agree with “collection.”"
+      },
+      {
+        "index": 3,
+        "reason": "This verb form is both intransitive here and disagrees with the subject."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0559",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "pronouns",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "At the Juniper Hill instrument library, neither Kofi nor the other coordinator had brought ______ identification badge."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing pronouns before comparing choices.",
+    "explanation": "Singular “their” clearly and inclusively refers to either coordinator.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A pronoun must agree clearly with its antecedent in person and number.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A pronoun must agree clearly with its antecedent in person and number."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0559",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "its",
+      "our",
+      "your",
+      "their"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Its” refers to a nonhuman singular noun."
+      },
+      {
+        "index": 1,
+        "reason": "“Our” incorrectly includes the speaker."
+      },
+      {
+        "index": 2,
+        "reason": "“Your” incorrectly addresses the reader."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0560",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "verb forms",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "By the time the first Kingfisher solar-lantern workshop session began, the organizers ______ every supply cabinet."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing verb forms before comparing choices.",
+    "explanation": "Past perfect “had labeled” marks an action completed before another past action.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use past perfect for an action completed before another past event.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use past perfect for an action completed before another past event."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0560",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "had labeled",
+      "label",
+      "will label",
+      "are labeling"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "Present tense does not show completion before the past event."
+      },
+      {
+        "index": 2,
+        "reason": "Future tense conflicts with the past sequence."
+      },
+      {
+        "index": 3,
+        "reason": "Present progressive does not fit the completed past action."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0561",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "comparisons",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "For the Lake Briar recipe archive, the revised guide was clearer than ______."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing comparisons before comparing choices.",
+    "explanation": "The sentence logically compares one guide with another guide.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Comparisons must place logically comparable items in parallel structures.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Comparisons must place logically comparable items in parallel structures."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0561",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "the original guide's pages",
+      "the original guide",
+      "the writers had expected",
+      "any guide"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This compares a guide with pages rather than with another guide."
+      },
+      {
+        "index": 2,
+        "reason": "This creates an illogical comparison of a guide and an expectation."
+      },
+      {
+        "index": 3,
+        "reason": "This illogically includes the revised guide in the group it exceeds."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0562",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "commas",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "After the final Meadowgate public chess club session ______ the team published its report."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing commas before comparing choices.",
+    "explanation": "A comma follows the introductory phrase.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use a comma after an introductory dependent phrase or clause.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use a comma after an introductory dependent phrase or clause."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0562",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      ";",
+      ":",
+      ",",
+      "NO PUNCTUATION"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "A semicolon cannot separate an introductory dependent phrase from the main clause."
+      },
+      {
+        "index": 1,
+        "reason": "A colon is not used after an introductory phrase."
+      },
+      {
+        "index": 3,
+        "reason": "A comma should mark the end of the introductory phrase."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0563",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "semicolons and colons",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "The North Cedar workshop for the costume-repair room required three items ______ gloves, a ruler, and a notebook."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing semicolons and colons before comparing choices.",
+    "explanation": "A colon correctly introduces the list after a complete clause.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use a colon after a complete clause to introduce a list or explanation.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use a colon after a complete clause to introduce a list or explanation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0563",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      ",",
+      ";",
+      "— and",
+      ":"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "A comma alone does not appropriately introduce this list after a complete clause."
+      },
+      {
+        "index": 1,
+        "reason": "A semicolon is not used to introduce a list of sentence elements."
+      },
+      {
+        "index": 2,
+        "reason": "The dash plus conjunction is unnecessary and ungrammatical here."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0564",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "apostrophes",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "After the Orchard Bend neighborhood weather station session, the two coordinators compared the ______ notes."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing apostrophes before comparing choices.",
+    "explanation": "The notes belong to multiple volunteers, so the plural possessive is “volunteers'.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Form the possessive of a regular plural ending in s by adding an apostrophe after the s.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Form the possessive of a regular plural ending in s by adding an apostrophe after the s."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0564",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "volunteers'",
+      "volunteer's",
+      "volunteers",
+      "volunteer'es"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This form is singular possessive, but the sentence refers to multiple volunteers."
+      },
+      {
+        "index": 2,
+        "reason": "This plural lacks the apostrophe needed to show possession."
+      },
+      {
+        "index": 3,
+        "reason": "This is not a valid plural possessive form."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0565",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "dashes and parentheses",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "The final Prairie View accessible trail guide session ______ originally planned for Tuesday ______ moved to Thursday."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing dashes and parentheses before comparing choices.",
+    "explanation": "Matching parentheses correctly set off the nonessential information.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use matching punctuation marks to enclose a nonessential interruption.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use matching punctuation marks to enclose a nonessential interruption."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0565",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "originally planned for Tuesday",
+      "(originally planned for Tuesday)",
+      "— originally planned for Tuesday)",
+      ", originally planned for Tuesday—"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Without punctuation, the nonessential interruption is not clearly set off."
+      },
+      {
+        "index": 2,
+        "reason": "The punctuation marks do not form a matching pair."
+      },
+      {
+        "index": 3,
+        "reason": "A comma and dash cannot serve as a matched pair here."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0566",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Sentence Structure and Formation",
+    "subskill": "clause relationships",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "The Quartz Harbor rooftop herb garden opened on Saturday ______ residents began to grow cooking herbs that afternoon."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing clause relationships before comparing choices.",
+    "explanation": "A semicolon correctly joins the two related independent clauses.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Join related independent clauses with a semicolon or a comma plus a coordinating conjunction.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Join related independent clauses with a semicolon or a comma plus a coordinating conjunction."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0566",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      ",",
+      "NO PUNCTUATION",
+      ";",
+      ": and"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "A comma alone cannot join two independent clauses."
+      },
+      {
+        "index": 1,
+        "reason": "No punctuation creates a run-on sentence."
+      },
+      {
+        "index": 3,
+        "reason": "A colon followed by “and” is not appropriate between these clauses."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0567",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Sentence Structure and Formation",
+    "subskill": "modifiers",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "Which revision clearly indicates that Quentin, not the display, was walking through Rosefield?"
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing modifiers before comparing choices.",
+    "explanation": "Placing the person's name immediately after the modifier makes the intended meaning clear.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Place a modifying phrase next to the word it logically describes.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Place a modifying phrase next to the word it logically describes."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0567",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "Walking through Rosefield, the display was examined by Quentin.",
+      "The display walking through Rosefield was examined by Quentin.",
+      "Quentin examined, walking through Rosefield, the display.",
+      "Walking through Rosefield, Quentin examined the display."
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The opening modifier illogically describes the display."
+      },
+      {
+        "index": 1,
+        "reason": "This wording says the display was walking."
+      },
+      {
+        "index": 2,
+        "reason": "The interrupting modifier creates avoidable ambiguity."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0568",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Sentence Structure and Formation",
+    "subskill": "parallelism",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "At the Stonebridge river-sound project, the volunteer learned to greet visitors, organize supplies, and ______."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing parallelism before comparing choices.",
+    "explanation": "“Explain” matches the base-form verbs “greet” and “organize” governed by “to.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Coordinate items should use parallel grammatical forms.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Coordinate items should use parallel grammatical forms."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0568",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "explain the schedule",
+      "the schedule was explained",
+      "explaining the schedule",
+      "an explanation of the schedule"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This passive clause is not parallel with the two infinitive phrases."
+      },
+      {
+        "index": 2,
+        "reason": "The gerund does not match “to greet” and “organize.”"
+      },
+      {
+        "index": 3,
+        "reason": "The noun phrase breaks the parallel verb pattern."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0569",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "subject-verb agreement",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "A collection of photographs documenting student-designed prototypes ______ in the Timber Cove archive."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing subject-verb agreement before comparing choices.",
+    "explanation": "The singular subject “collection” requires the singular verb phrase “is stored.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A verb agrees with the head noun of its subject, not a nearby noun in a prepositional phrase.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A verb agrees with the head noun of its subject, not a nearby noun in a prepositional phrase."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0569",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "are stored",
+      "is stored",
+      "store",
+      "have stored"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "The plural noun in the modifying phrase is not the subject."
+      },
+      {
+        "index": 2,
+        "reason": "This plural/base verb does not agree with “collection.”"
+      },
+      {
+        "index": 3,
+        "reason": "This verb form is both intransitive here and disagrees with the subject."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0570",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "pronouns",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "At the Union Marsh community telescope night, neither Mateo nor the other coordinator had brought ______ identification badge."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing pronouns before comparing choices.",
+    "explanation": "Singular “their” clearly and inclusively refers to either coordinator.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: A pronoun must agree clearly with its antecedent in person and number.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "A pronoun must agree clearly with its antecedent in person and number."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0570",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "its",
+      "our",
+      "their",
+      "your"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "“Its” refers to a nonhuman singular noun."
+      },
+      {
+        "index": 1,
+        "reason": "“Our” incorrectly includes the speaker."
+      },
+      {
+        "index": 3,
+        "reason": "“Your” incorrectly addresses the reader."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0571",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "verb forms",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "By the time the first Violet Lake local-history mural session began, the organizers ______ every supply cabinet."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing verb forms before comparing choices.",
+    "explanation": "Past perfect “had labeled” marks an action completed before another past action.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use past perfect for an action completed before another past event.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use past perfect for an action completed before another past event."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0571",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "label",
+      "will label",
+      "are labeling",
+      "had labeled"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "Present tense does not show completion before the past event."
+      },
+      {
+        "index": 1,
+        "reason": "Future tense conflicts with the past sequence."
+      },
+      {
+        "index": 2,
+        "reason": "Present progressive does not fit the completed past action."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0572",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Usage",
+    "subskill": "comparisons",
+    "difficulty": "Hard",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "For the Westhaven lending shelf for tools, the revised guide was clearer than ______."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing comparisons before comparing choices.",
+    "explanation": "The sentence logically compares one guide with another guide.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Comparisons must place logically comparable items in parallel structures.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Comparisons must place logically comparable items in parallel structures."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0572",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "the original guide",
+      "the original guide's pages",
+      "the writers had expected",
+      "any guide"
+    ],
+    "correctAnswer": 0,
+    "distractorRationales": [
+      {
+        "index": 1,
+        "reason": "This compares a guide with pages rather than with another guide."
+      },
+      {
+        "index": 2,
+        "reason": "This creates an illogical comparison of a guide and an expectation."
+      },
+      {
+        "index": 3,
+        "reason": "This illogically includes the revised guide in the group it exceeds."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0573",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "commas",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "After the final Yellow Pine native-seed exchange session ______ the team published its report."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing commas before comparing choices.",
+    "explanation": "A comma follows the introductory phrase.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use a comma after an introductory dependent phrase or clause.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use a comma after an introductory dependent phrase or clause."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0573",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      ";",
+      ",",
+      ":",
+      "NO PUNCTUATION"
+    ],
+    "correctAnswer": 1,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "A semicolon cannot separate an introductory dependent phrase from the main clause."
+      },
+      {
+        "index": 2,
+        "reason": "A colon is not used after an introductory phrase."
+      },
+      {
+        "index": 3,
+        "reason": "A comma should mark the end of the introductory phrase."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0574",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "semicolons and colons",
+    "difficulty": "Medium",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "The Zephyr Grove workshop for the pop-up dance studio required three items ______ gloves, a ruler, and a notebook."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing semicolons and colons before comparing choices.",
+    "explanation": "A colon correctly introduces the list after a complete clause.",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Use a colon after a complete clause to introduce a list or explanation.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Use a colon after a complete clause to introduce a list or explanation."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0574",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      ",",
+      ";",
+      ":",
+      "— and"
+    ],
+    "correctAnswer": 2,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "A comma alone does not appropriately introduce this list after a complete clause."
+      },
+      {
+        "index": 1,
+        "reason": "A semicolon is not used to introduce a list of sentence elements."
+      },
+      {
+        "index": 3,
+        "reason": "The dash plus conjunction is unnecessary and ungrammatical here."
+      }
+    ]
+  },
+  {
+    "id": "act-english-0575",
+    "test": "ACT",
+    "section": "English",
+    "sectionKey": "act-english",
+    "domain": "Conventions of Standard English",
+    "skill": "Punctuation",
+    "subskill": "apostrophes",
+    "difficulty": "Easy",
+    "responseType": "multiple-choice",
+    "stimulus": {
+      "type": "sentence",
+      "content": "After the Alder Bay bicycle skills course session, the two coordinators compared the ______ notes."
+    },
+    "stem": "Which choice produces the clearest sentence that conforms to Standard English?",
+    "hint": "Identify the rule governing apostrophes before comparing choices.",
+    "explanation": "The notes belong to multiple volunteers, so the plural possessive is “volunteers'.”",
+    "solutionSteps": [
+      "Read the full sentence or paragraph to identify its intended meaning.",
+      "Apply the rule or rhetorical goal: Form the possessive of a regular plural ending in s by adding an apostrophe after the s.",
+      "Test each option in context and select the only choice that is correct, clear, and relevant."
+    ],
+    "strategy": "Analyze the sentence structure first; do not rely only on how punctuation or wording sounds.",
+    "trap": "A nearby noun or natural pause may distract from the controlling grammatical structure.",
+    "estimatedSeconds": 45,
+    "principles": [
+      "Form the possessive of a regular plural ending in s by adding an apostrophe after the s."
+    ],
+    "calculatorPolicy": "not-applicable",
+    "format": "sentence",
+    "tags": [],
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-generator-v1",
+      "seed": "act-english-0575",
+      "created": "2026-07-29"
+    },
+    "contentVersion": "2026.1",
+    "reviewStatus": "automated-verified",
+    "verification": null,
+    "choices": [
+      "volunteer's",
+      "volunteers",
+      "volunteer'es",
+      "volunteers'"
+    ],
+    "correctAnswer": 3,
+    "distractorRationales": [
+      {
+        "index": 0,
+        "reason": "This form is singular possessive, but the sentence refers to multiple volunteers."
+      },
+      {
+        "index": 1,
+        "reason": "This plural lacks the apostrophe needed to show possession."
+      },
+      {
+        "index": 2,
+        "reason": "This is not a valid plural possessive form."
+      }
+    ]
   }
 ]

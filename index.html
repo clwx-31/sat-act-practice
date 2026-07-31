@@ -23,6 +23,7 @@
       </a>
       <nav aria-label="Primary navigation">
         <button class="nav-link active" data-view="setup" type="button">Practice</button>
+        <button class="nav-link" data-view="signs" type="button">Answer Signs</button>
         <button class="nav-link" data-view="dashboard" type="button">Progress</button>
         <button class="nav-link" data-view="review" type="button">Review</button>
       </nav>
@@ -283,6 +284,27 @@
         </div>
         <div id="reviewList" class="review-list" role="tabpanel" aria-labelledby="missedTab"></div>
       </section>
+
+      <section id="signsView" class="view hidden" aria-labelledby="signsHeading">
+        <div class="view-heading">
+          <div>
+            <p class="eyebrow">Learn the tells</p>
+            <h1 id="signsHeading" tabindex="-1">Answer signs &amp; test tells</h1>
+            <p class="hero-copy">
+              Both the SAT and ACT are written to patterns. Learn the honest,
+              legal "tells" that hint at the credited answer in math, reading,
+              writing, and science—then practice spotting them.
+            </p>
+          </div>
+        </div>
+        <p id="signsDisclaimer" class="signs-disclaimer" role="note"></p>
+        <section class="panel signs-principles" aria-labelledby="signsPrinciplesHeading">
+          <h2 id="signsPrinciplesHeading">Universal principles</h2>
+          <div id="signsPrinciples" class="signs-principle-grid"></div>
+        </section>
+        <div id="signsFilter" class="signs-filter" role="group" aria-label="Filter tells by section"></div>
+        <div id="signsGroups" class="signs-groups"></div>
+      </section>
     </main>
 
     <footer>
@@ -297,6 +319,7 @@
     </footer>
 
     <script src="content/generated/catalog.js"></script>
+    <script src="content/guides/answer-signs.js"></script>
     <script src="core.js"></script>
     <script src="app.js"></script>
   </body>

@@ -37,6 +37,9 @@ https://clwx-31.github.io/sat-act-practice/
 
 ## Study features
 
+- Learn the honest, legal answer "tells" for every section in the **Answer
+  Signs** guide: universal elimination principles plus section-specific
+  heuristics for SAT and ACT math, reading, writing/English, and science.
 - Select SAT or ACT section, official domain, skill, and difficulty.
 - Run targeted, full-mix, recommended, missed, bookmarked, or flagged sessions.
 - Search stems, passages, topics, skills, and stable question IDs.
@@ -63,6 +66,7 @@ JavaScript banks directly.
 | `content/catalog.json` | Section taxonomy and exact coverage manifests |
 | `content/banks/*.json` | Canonical section banks |
 | `content/generated/*.js` | Browser-ready output committed for static hosting |
+| `content/guides/answer-signs.js` | Answer Signs study guide (test-taking tells); not part of the question-bank pipeline |
 | `content/schema.md` | Complete question schema |
 | `scripts/` | Deterministic generators, validators, reports, and browser-content build |
 | `tests/` | Node tests for schema, validation, filters, scoring, sessions, and recommendations |

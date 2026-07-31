@@ -11,6 +11,7 @@
     results: document.getElementById("resultsView"),
     dashboard: document.getElementById("dashboardView"),
     review: document.getElementById("reviewView"),
+    signs: document.getElementById("signsView"),
   };
 
   const elements = {
@@ -64,6 +65,10 @@
     clearProgress: document.getElementById("clearProgressBtn"),
     reviewList: document.getElementById("reviewList"),
     home: document.getElementById("homeLink"),
+    signsDisclaimer: document.getElementById("signsDisclaimer"),
+    signsPrinciples: document.getElementById("signsPrinciples"),
+    signsFilter: document.getElementById("signsFilter"),
+    signsGroups: document.getElementById("signsGroups"),
   };
 
   let progress = loadProgress();
@@ -602,10 +607,7 @@
       view.classList.toggle("hidden", key !== name);
     });
     document.querySelectorAll(".nav-link").forEach((button) => {
-      const selected =
-        (name === "setup" && button.dataset.view === "setup") ||
-        (name === "dashboard" && button.dataset.view === "dashboard") ||
-        (name === "review" && button.dataset.view === "review");
+      const selected = button.dataset.view === name;
       button.classList.toggle("active", selected);
       if (selected) button.setAttribute("aria-current", "page");
       else button.removeAttribute("aria-current");
@@ -793,6 +795,125 @@
     updateRecommendation();
   }
 
+  let signsRendered = false;
+  let activeSignsFilter = "all";
+
+  function renderSigns() {
+    showView("signs");
+    const data = window.PRACTICE_ANSWER_SIGNS;
+    if (!data) {
+      elements.signsGroups.innerHTML =
+        '<div class="panel empty-state"><strong>The answer-signs guide could not load.</strong>' +
+        "<p>Confirm content/guides/answer-signs.js is present.</p></div>";
+      return;
+    }
+    if (signsRendered) return;
+
+    elements.signsDisclaimer.textContent = data.disclaimer;
+
+    elements.signsPrinciples.innerHTML = "";
+    (data.principles || []).forEach((principle) => {
+      const card = document.createElement("div");
+      card.className = "signs-principle";
+      const title = document.createElement("h3");
+      title.textContent = principle.title;
+      const body = document.createElement("p");
+      body.textContent = principle.body;
+      card.append(title, body);
+      elements.signsPrinciples.appendChild(card);
+    });
+
+    buildSignsFilter(data.groups);
+    buildSignsGroups(data.groups);
+    applySignsFilter();
+    signsRendered = true;
+  }
+
+  function buildSignsFilter(groups) {
+    elements.signsFilter.innerHTML = "";
+    const options = [{ id: "all", label: "All sections" }].concat(
+      groups.map((group) => ({ id: group.id, label: `${group.test} ${group.category}` })),
+    );
+    options.forEach((option) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "signs-filter-btn";
+      button.dataset.filter = option.id;
+      button.textContent = option.label;
+      button.setAttribute("aria-pressed", String(option.id === activeSignsFilter));
+      button.addEventListener("click", () => {
+        activeSignsFilter = option.id;
+        applySignsFilter();
+      });
+      elements.signsFilter.appendChild(button);
+    });
+  }
+
+  function applySignsFilter() {
+    elements.signsFilter.querySelectorAll(".signs-filter-btn").forEach((button) => {
+      const selected = button.dataset.filter === activeSignsFilter;
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-pressed", String(selected));
+    });
+    elements.signsGroups.querySelectorAll(".signs-group").forEach((group) => {
+      const show = activeSignsFilter === "all" || group.dataset.group === activeSignsFilter;
+      group.classList.toggle("hidden", !show);
+    });
+  }
+
+  function buildSignsGroups(groups) {
+    elements.signsGroups.innerHTML = "";
+    groups.forEach((group) => {
+      const section = document.createElement("section");
+      section.className = "panel signs-group";
+      section.dataset.group = group.id;
+
+      const head = document.createElement("div");
+      head.className = "signs-group-head";
+      const badge = document.createElement("span");
+      badge.className = `signs-badge signs-badge-${group.test.toLowerCase()}`;
+      badge.textContent = group.test;
+      const title = document.createElement("h2");
+      title.textContent = group.title;
+      head.append(badge, title);
+
+      const intro = document.createElement("p");
+      intro.className = "signs-group-intro";
+      intro.textContent = group.intro;
+
+      section.append(head, intro);
+
+      group.tells.forEach((tell) => {
+        section.appendChild(buildTellCard(tell));
+      });
+      elements.signsGroups.appendChild(section);
+    });
+  }
+
+  function buildTellCard(tell) {
+    const card = document.createElement("article");
+    card.className = "signs-tell";
+    const name = document.createElement("h3");
+    name.textContent = tell.name;
+    card.appendChild(name);
+    const rows = [
+      ["Look for", tell.sign, "sign"],
+      ["Why it works", tell.why, "why"],
+      ["Example", tell.example, "example"],
+      ["Caution", tell.caution, "caution"],
+    ];
+    rows.forEach(([label, value, kind]) => {
+      if (!value) return;
+      const row = document.createElement("p");
+      row.className = `signs-row signs-row-${kind}`;
+      const strong = document.createElement("strong");
+      strong.textContent = `${label}: `;
+      row.append(strong, document.createTextNode(value));
+      card.appendChild(row);
+    });
+    return card;
+  }
+
   function wireEvents() {
     elements.section.addEventListener("change", changeSection);
     elements.domain.addEventListener("change", () => {
@@ -831,6 +952,7 @@
       button.addEventListener("click", () => {
         if (button.dataset.view === "dashboard") renderDashboard();
         else if (button.dataset.view === "review") renderReview();
+        else if (button.dataset.view === "signs") renderSigns();
         else showView("setup");
       });
     });

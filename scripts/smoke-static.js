@@ -73,7 +73,26 @@ for (const section of catalog.sections) {
   }
 }
 
+const guidePath = path.join(root, "content/guides/answer-signs.js");
+if (!fs.existsSync(guidePath)) {
+  throw new Error("Answer-signs guide is missing: content/guides/answer-signs.js");
+}
+if (!html.includes('"content/guides/answer-signs.js"')) {
+  throw new Error("index.html does not load the answer-signs guide.");
+}
+vm.runInContext(fs.readFileSync(guidePath, "utf8"), context, { filename: guidePath });
+const signs = context.window.PRACTICE_ANSWER_SIGNS;
+if (!signs || !Array.isArray(signs.groups) || signs.groups.length === 0) {
+  throw new Error("Answer-signs guide did not register any groups.");
+}
+for (const group of signs.groups) {
+  if (!group.id || !group.test || !group.category || !Array.isArray(group.tells) || !group.tells.length) {
+    throw new Error(`Answer-signs group is malformed: ${group.id || "(missing id)"}`);
+  }
+}
+
 console.log(
-  `Static smoke passed: ${requiredIds.length} DOM references and ` +
-  `${catalog.sections.length} generated banks are present.`,
+  `Static smoke passed: ${requiredIds.length} DOM references, ` +
+  `${catalog.sections.length} generated banks, and ` +
+  `${signs.groups.length} answer-sign groups are present.`,
 );

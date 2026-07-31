@@ -74,6 +74,50 @@ For a coherent batch:
 approved the content. Use `editorial-reviewed` only after a documented,
 independent editorial review.
 
+## Answer Signs guide (test-taking tells)
+
+`content/guides/answer-signs.js` is a standalone browser global
+(`window.PRACTICE_ANSWER_SIGNS`) that powers the "Answer Signs" view. It is a
+study guide of legitimate answer "tells," **not** a question bank: it is not in
+`content/catalog.json`, not validated by `scripts/validate-content.js`, and must
+never be run through the bank generators.
+
+Structure:
+
+- `disclaimer` (string), `principles` (array of `{title, body}`), and `groups`.
+- Each group: `{ id, test: "SAT"|"ACT"|"Both", category, title, intro, tells }`.
+- Each tell: `{ name, sign, why, example, caution }` — all required, all
+  plain-text strings. The renderer (`renderSigns` in `app.js`) labels them
+  Look for / Why it works / Example / Caution and renders them as text.
+
+To extend the guide:
+
+1. Add tells or groups to `content/guides/answer-signs.js`, keeping every field
+   present and honest. Tells are probabilistic heuristics; never present them as
+   guarantees, and keep the disclaimer prominent. Content must stay original and
+   free of copyrighted or official material.
+2. Give each new group a unique `id`; the filter buttons and smoke test rely on
+   it. Use `test` values `SAT`, `ACT`, or `Both` (badge styling keys off the
+   lowercased value; add a `.signs-badge-both` rule if you use `Both`).
+3. `node scripts/smoke-static.js` validates that the guide loads and that every
+   group has an id, test, category, and non-empty `tells`. Run `npm run check`.
+
+## Expanding question counts
+
+Every bank currently holds exactly `catalog.targetPerSection` (500) items, well
+above any 100-per-section floor. To raise counts:
+
+1. Increase `targetPerSection`, `difficultyTargets`, and each domain `target` in
+   `content/catalog.json` so domain targets and difficulty targets each sum to
+   the new total. The unit test `catalog targets total 500 in every section`
+   enforces this and must be updated in lockstep.
+2. Bump `finalMultipleChoiceCount` (and any numeric split) in each
+   `scripts/generate-*.js`, then rerun the generator and `npm run build:content`.
+3. Generators are deterministic and de-duplicated; adding volume may require new
+   templates/subskills so the duplicate gate still passes. Never weaken a gate
+   to hit a count. Update `scripts/smoke-static.js` (`targetPerSection` check),
+   the README table, and the coverage report together.
+
 ## Required verification
 
 Run the smallest relevant checks during development and the full check before a

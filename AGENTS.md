@@ -102,6 +102,32 @@ To extend the guide:
 3. `node scripts/smoke-static.js` validates that the guide loads and that every
    group has an id, test, category, and non-empty `tells`. Run `npm run check`.
 
+## Mini tests
+
+`core.MINI_TEST_BLUEPRINTS` defines the 20-question timed check-ins. Each
+blueprint lists per-section counts that mirror the real weighting (SAT 54/44;
+ACT 50/45/36 Composite) and a minute budget derived from official per-question
+pacing.
+
+- `buildMiniTest` draws from the generated banks across a fixed difficulty mix,
+  excludes essay prompts, backfills when a difficulty tier is short, and keeps
+  sections grouped in blueprint order. It is deterministic per seed.
+- `summarizeMiniTest` reports accuracy overall, by section, and by domain. It
+  must never estimate a scaled SAT total or an ACT Composite; a 20-item sample
+  cannot support one and the app does not model scaling or adaptive routing.
+  Keep that caveat visible in the report UI.
+- Blank answers count as incorrect and are surfaced as such, because neither
+  test penalizes a wrong answer.
+- Changing a blueprint's counts requires the section to hold that many
+  scoreable items. `scripts/smoke-static.js` builds every blueprint against the
+  real generated banks and fails if a section is short, a key is unknown, or a
+  question repeats. Unit tests additionally assert every blueprint totals 20 and
+  references a real catalog section.
+
+In `app.js`, `sessionKind` switches the quiz view between `practice` (check as
+you go), `test` (no feedback, timer, free navigation), and `review` (answer
+guide already open). Adding a control to the quiz view means handling all three.
+
 ## Markdown study library (`guides/`)
 
 `guides/` is a Markdown study library: test formats, registration logistics,

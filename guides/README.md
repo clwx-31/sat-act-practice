@@ -44,6 +44,7 @@ Read these regardless of which test you are taking.
 | [06 — Timing and pacing](06-timing-and-pacing.md) | Per-section budgets, the two-pass method, triage rules, guessing strategy |
 | [07 — Error log and review method](07-error-log-and-review-method.md) | The four error types, how to run a review session that actually works |
 | [08 — Cheat sheets](08-cheat-sheets.md) | Condensed one-page references per test. **Reread this the day before.** |
+| [09 — Mini tests](09-mini-tests.md) | The 20-question timed check-in: how to take one and how to read the report |
 
 ---
 

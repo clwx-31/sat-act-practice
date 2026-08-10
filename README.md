@@ -61,6 +61,9 @@ resolves and every file is reachable from the index.
 - Learn the honest, legal answer "tells" for every section in the **Answer
   Signs** guide: universal elimination principles plus section-specific
   heuristics for SAT and ACT math, reading, writing/English, and science.
+- Take a **20-question mini test** for either test — weighted like the real
+  section split, timed, answered without feedback, then reviewed in full with a
+  by-section and by-domain accuracy report.
 - Select SAT or ACT section, official domain, skill, and difficulty.
 - Run targeted, full-mix, recommended, missed, bookmarked, or flagged sessions.
 - Search stems, passages, topics, skills, and stable question IDs.
@@ -71,8 +74,9 @@ resolves and every file is reachable from the index.
 - Use keyboard shortcuts `1`–`4` for choices and `Enter` to check a response.
 - Study on mobile or desktop with light/dark color support and visible focus.
 
-Recommendations are practice guidance only. They do not reproduce official
-adaptive routing, scaled scoring, or score prediction.
+Recommendations and mini-test reports are practice guidance only. They do not
+reproduce official adaptive routing, scaled scoring, or score prediction; a
+mini test reports accuracy, never an estimated SAT total or ACT Composite.
 
 ## Architecture
 

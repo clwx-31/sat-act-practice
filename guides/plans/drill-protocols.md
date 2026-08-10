@@ -75,7 +75,18 @@ identification.
 
 **Volume:** 25-40 items.
 
-### 4. Missed-items drill
+### 4. Mini test
+
+**When:** every one to two weeks, as a check-in between full practice tests.
+
+**How:** 20 questions, real clock, no feedback until the end, then review all
+20. See [Mini tests](../09-mini-tests.md).
+
+**Why it is its own mode:** every other drill gives you feedback as you go,
+which is right for learning and wrong for measuring. A mini test is the only
+short format that tells you what you can do unaided.
+
+### 5. Missed-items drill
 
 **When:** every session, in the first 15 minutes.
 

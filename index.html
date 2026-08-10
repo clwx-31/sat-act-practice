@@ -129,6 +129,26 @@
           </form>
 
           <aside class="side-stack">
+            <section class="panel mini-test-card" aria-labelledby="miniTestHeading">
+              <p class="eyebrow">Timed check-in</p>
+              <h2 id="miniTestHeading">Mini test</h2>
+              <p>
+                Twenty questions weighted like the real section split, answered
+                without feedback and reviewed in full afterwards.
+              </p>
+              <div id="miniTestOptions" class="mini-test-options" role="group"
+                aria-labelledby="miniTestHeading"></div>
+              <p id="miniTestSummary" class="field-note"></p>
+              <button id="miniTestStartBtn" class="button primary" type="button" disabled>
+                Start mini test
+              </button>
+              <div id="miniTestStatus" class="status-line" role="status" aria-live="polite"></div>
+              <small>
+                Reports accuracy by section and domain. It does not estimate a
+                scaled SAT total or ACT Composite.
+              </small>
+            </section>
+
             <section class="panel recommendation" aria-labelledby="recommendHeading">
               <p class="eyebrow">Smart next step</p>
               <h2 id="recommendHeading">Your recommendation</h2>
@@ -170,6 +190,8 @@
               <small id="questionId"></small>
             </div>
             <strong id="scoreLabel">0 correct</strong>
+            <strong id="miniTestClock" class="mini-test-clock hidden"
+              role="timer" aria-live="off">28:00</strong>
           </div>
           <div
             class="progress-bar"
@@ -181,6 +203,8 @@
           >
             <span id="progressFill"></span>
           </div>
+
+          <nav id="miniTestNav" class="mini-test-nav hidden" aria-label="Mini test questions"></nav>
 
           <article class="panel question-card">
             <div id="tags" class="tags"></div>
@@ -224,11 +248,17 @@
             </div>
 
             <div class="question-actions">
+              <button id="prevBtn" class="button secondary hidden" type="button">
+                ← Previous
+              </button>
               <button id="submitBtn" class="button primary" type="button" disabled>
                 Check answer
               </button>
               <button id="nextBtn" class="button primary hidden" type="button">
                 Next question →
+              </button>
+              <button id="finishTestBtn" class="button secondary hidden" type="button">
+                Finish and review
               </button>
             </div>
           </article>
@@ -244,8 +274,12 @@
             <span id="finalScoreLabel">0 of 0 correct</span>
           </div>
           <p id="resultsMessage"></p>
+          <div id="miniTestReport" class="mini-test-report hidden"></div>
           <div id="resultsBreakdown" class="breakdown"></div>
           <div class="button-row">
+            <button id="reviewAllBtn" class="button primary hidden" type="button">
+              Review all questions
+            </button>
             <button id="practiceAgainBtn" class="button primary" type="button">Practice again</button>
             <button id="reviewSessionBtn" class="button secondary" type="button">Review missed</button>
           </div>

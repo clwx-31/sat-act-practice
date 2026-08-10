@@ -51,7 +51,17 @@
     principleList: document.getElementById("principleList"),
     submit: document.getElementById("submitBtn"),
     next: document.getElementById("nextBtn"),
+    prev: document.getElementById("prevBtn"),
+    finishTest: document.getElementById("finishTestBtn"),
     exit: document.getElementById("exitBtn"),
+    miniTestOptions: document.getElementById("miniTestOptions"),
+    miniTestSummary: document.getElementById("miniTestSummary"),
+    miniTestStart: document.getElementById("miniTestStartBtn"),
+    miniTestStatus: document.getElementById("miniTestStatus"),
+    miniTestClock: document.getElementById("miniTestClock"),
+    miniTestNav: document.getElementById("miniTestNav"),
+    miniTestReport: document.getElementById("miniTestReport"),
+    reviewAll: document.getElementById("reviewAllBtn"),
     bookmark: document.getElementById("bookmarkBtn"),
     flag: document.getElementById("flagBtn"),
     finalScore: document.getElementById("finalScore"),
@@ -83,6 +93,14 @@
   let clearArmed = false;
   let bankRequestId = 0;
   const bankPromises = new Map();
+
+  // "practice" is the original check-as-you-go flow. "test" withholds feedback
+  // until the whole mini test is submitted. "review" walks a finished mini test
+  // with every answer guide already open.
+  let sessionKind = "practice";
+  let miniTest = null;
+  let miniTestSummary = null;
+  let selectedBlueprintId = "sat";
 
   function emptyProgress() {
     return {
@@ -293,8 +311,309 @@
     elements.recommendBtn.disabled = false;
   }
 
+  /* ---------------------------------------------------------------- mini test */
+
+  function renderMiniTestOptions() {
+    elements.miniTestOptions.innerHTML = "";
+    core.MINI_TEST_BLUEPRINTS.forEach((blueprint) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "mini-test-option";
+      button.dataset.blueprint = blueprint.id;
+      button.setAttribute("aria-pressed", String(blueprint.id === selectedBlueprintId));
+      if (blueprint.id === selectedBlueprintId) button.classList.add("active");
+      const name = document.createElement("strong");
+      name.textContent = blueprint.label;
+      const meta = document.createElement("span");
+      meta.textContent =
+        `${core.blueprintTotal(blueprint)} questions · ${blueprint.minutes} min`;
+      button.append(name, meta);
+      button.addEventListener("click", () => {
+        selectedBlueprintId = blueprint.id;
+        renderMiniTestOptions();
+      });
+      elements.miniTestOptions.appendChild(button);
+    });
+    const active = core.blueprintById(selectedBlueprintId);
+    elements.miniTestSummary.textContent = active ? active.summary : "";
+    elements.miniTestStart.disabled = !active;
+  }
+
+  async function startMiniTest() {
+    const blueprint = core.blueprintById(selectedBlueprintId);
+    if (!blueprint) return;
+    elements.miniTestStart.disabled = true;
+    elements.miniTestStatus.className = "status-line loading";
+    elements.miniTestStatus.textContent = `Preparing the ${blueprint.label}…`;
+
+    let bankBySection;
+    try {
+      const banks = await Promise.all(
+        blueprint.sections.map((entry) => loadBank(entry.sectionKey)),
+      );
+      bankBySection = Object.fromEntries(
+        blueprint.sections.map((entry, index) => [entry.sectionKey, banks[index]]),
+      );
+    } catch (error) {
+      elements.miniTestStatus.className = "status-line error";
+      elements.miniTestStatus.textContent =
+        `${error.message} Confirm the content/generated folder is present.`;
+      elements.miniTestStart.disabled = false;
+      return;
+    }
+
+    const questions = core.buildMiniTest(bankBySection, blueprint, `${Date.now()}-${blueprint.id}`);
+    if (questions.length < core.blueprintTotal(blueprint)) {
+      elements.miniTestStatus.className = "status-line error";
+      elements.miniTestStatus.textContent =
+        "Not enough items are available to build this mini test.";
+      elements.miniTestStart.disabled = false;
+      return;
+    }
+
+    miniTest = {
+      blueprint,
+      responses: new Map(),
+      startedAt: Date.now(),
+      budgetMs: blueprint.minutes * 60 * 1000,
+      elapsedMs: 0,
+      timerId: null,
+      finished: false,
+    };
+    miniTestSummary = null;
+    sessionKind = "test";
+    session = questions;
+    sessionIndex = 0;
+    sessionResults = [];
+    elements.miniTestStatus.className = "status-line";
+    elements.miniTestStatus.textContent = "";
+    elements.miniTestStart.disabled = false;
+    startMiniTestClock();
+    showView("quiz");
+    renderQuestion();
+  }
+
+  function startMiniTestClock() {
+    stopMiniTestClock();
+    elements.miniTestClock.classList.remove("hidden");
+    updateMiniTestClock();
+    miniTest.timerId = window.setInterval(updateMiniTestClock, 1000);
+  }
+
+  function stopMiniTestClock() {
+    if (miniTest && miniTest.timerId) {
+      window.clearInterval(miniTest.timerId);
+      miniTest.timerId = null;
+    }
+  }
+
+  function formatDuration(ms) {
+    const totalSeconds = Math.max(0, Math.round(ms / 1000));
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${String(seconds).padStart(2, "0")}`;
+  }
+
+  // The clock runs past zero into overtime rather than force-submitting, so a
+  // slow run still finishes and the report can show the overage honestly.
+  function updateMiniTestClock() {
+    if (!miniTest) return;
+    miniTest.elapsedMs = Date.now() - miniTest.startedAt;
+    const remaining = miniTest.budgetMs - miniTest.elapsedMs;
+    const overtime = remaining < 0;
+    elements.miniTestClock.textContent = overtime
+      ? `+${formatDuration(-remaining)} over`
+      : formatDuration(remaining);
+    elements.miniTestClock.classList.toggle("overtime", overtime);
+    elements.miniTestClock.classList.toggle(
+      "warning",
+      !overtime && remaining <= 5 * 60 * 1000,
+    );
+  }
+
+  function renderMiniTestNav() {
+    if (sessionKind !== "test") {
+      elements.miniTestNav.classList.add("hidden");
+      elements.miniTestNav.innerHTML = "";
+      return;
+    }
+    elements.miniTestNav.classList.remove("hidden");
+    elements.miniTestNav.innerHTML = "";
+    session.forEach((question, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "mini-test-dot";
+      button.textContent = String(index + 1);
+      const answered = miniTest.responses.has(question.id);
+      if (answered) button.classList.add("answered");
+      if (progress.flagged.includes(question.id)) button.classList.add("flagged");
+      if (index === sessionIndex) button.classList.add("current");
+      button.setAttribute(
+        "aria-label",
+        `Question ${index + 1}${answered ? ", answered" : ", not answered"}` +
+        `${index === sessionIndex ? ", current" : ""}`,
+      );
+      button.setAttribute("aria-current", index === sessionIndex ? "true" : "false");
+      button.addEventListener("click", () => {
+        sessionIndex = index;
+        renderQuestion();
+      });
+      elements.miniTestNav.appendChild(button);
+    });
+  }
+
+  function finishMiniTest() {
+    if (!miniTest || miniTest.finished) return;
+    const unanswered = session.filter(
+      (question) => !miniTest.responses.has(question.id),
+    ).length;
+    if (unanswered > 0 && !miniTest.confirmFinish) {
+      miniTest.confirmFinish = true;
+      elements.responseStatus.textContent =
+        `${unanswered} question${unanswered === 1 ? "" : "s"} unanswered.`;
+      elements.finishTest.textContent =
+        `Finish anyway (${unanswered} blank) →`;
+      elements.finishTest.classList.add("danger-outline");
+      return;
+    }
+    stopMiniTestClock();
+    miniTest.elapsedMs = Date.now() - miniTest.startedAt;
+    miniTest.finished = true;
+    miniTestSummary = core.summarizeMiniTest(session, miniTest.responses);
+
+    // Record the attempt history the same way practice sessions do, so the
+    // Progress and Review views stay consistent.
+    sessionResults = miniTestSummary.items.map((item) => ({
+      question: item.question,
+      correct: item.answered ? item.correct : false,
+    }));
+    miniTestSummary.items.forEach((item) => {
+      recordAttempt(
+        item.question,
+        item.answered ? item.correct : false,
+        item.answered ? item.response : null,
+      );
+    });
+    saveProgress();
+    showResults();
+  }
+
+  function miniTestPaceNote() {
+    const budget = miniTest.budgetMs;
+    const used = miniTest.elapsedMs;
+    if (used <= budget * 0.85) {
+      return `You finished in ${formatDuration(used)} of a ${miniTest.blueprint.minutes}-minute ` +
+        "budget. Comfortable pace—check whether the spare time went into accuracy.";
+    }
+    if (used <= budget) {
+      return `You finished in ${formatDuration(used)}, just inside the ` +
+        `${miniTest.blueprint.minutes}-minute budget. That is realistic test pace.`;
+    }
+    return `You used ${formatDuration(used)} against a ${miniTest.blueprint.minutes}-minute ` +
+      "budget. Pacing is the constraint to work on before content.";
+  }
+
+  function renderMiniTestReport() {
+    const report = elements.miniTestReport;
+    report.innerHTML = "";
+    if (!miniTestSummary || !miniTest) {
+      report.classList.add("hidden");
+      return;
+    }
+    report.classList.remove("hidden");
+
+    const pace = document.createElement("p");
+    pace.className = "mini-test-pace";
+    pace.textContent = miniTestPaceNote();
+    report.appendChild(pace);
+
+    if (miniTestSummary.unanswered > 0) {
+      const blanks = document.createElement("p");
+      blanks.className = "mini-test-pace warning-note";
+      blanks.textContent =
+        `${miniTestSummary.unanswered} question${miniTestSummary.unanswered === 1 ? " was" : "s were"} ` +
+        "left blank and scored as incorrect. Neither test penalizes a wrong answer, so always guess.";
+      report.appendChild(blanks);
+    }
+
+    report.appendChild(
+      breakdownTable(
+        "By section",
+        miniTestSummary.bySection.map((row) => [
+          row.section,
+          `${row.correct}/${row.total}`,
+          `${Math.round(row.accuracy * 100)}%`,
+        ]),
+      ),
+    );
+    report.appendChild(
+      breakdownTable(
+        "By domain — weakest first",
+        miniTestSummary.byDomain.map((row) => [
+          `${row.section} — ${row.domain}`,
+          `${row.correct}/${row.total}`,
+          `${Math.round(row.accuracy * 100)}%`,
+        ]),
+      ),
+    );
+
+    const caveat = document.createElement("small");
+    caveat.className = "mini-test-caveat";
+    caveat.textContent =
+      "Accuracy on a 20-item sample is a rough signal, not a score. This report " +
+      "does not reproduce official adaptive routing, scaled scoring, or a Composite.";
+    report.appendChild(caveat);
+  }
+
+  function breakdownTable(caption, rows) {
+    const wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    const table = document.createElement("table");
+    const captionEl = document.createElement("caption");
+    captionEl.textContent = caption;
+    table.appendChild(captionEl);
+    const thead = document.createElement("thead");
+    const headRow = document.createElement("tr");
+    ["Area", "Correct", "Accuracy"].forEach((label) => {
+      const th = document.createElement("th");
+      th.scope = "col";
+      th.textContent = label;
+      headRow.appendChild(th);
+    });
+    thead.appendChild(headRow);
+    const tbody = document.createElement("tbody");
+    rows.forEach((cells) => {
+      const tr = document.createElement("tr");
+      cells.forEach((cell, index) => {
+        const el = document.createElement(index === 0 ? "th" : "td");
+        if (index === 0) el.scope = "row";
+        el.textContent = cell;
+        tr.appendChild(el);
+      });
+      tbody.appendChild(tr);
+    });
+    table.append(thead, tbody);
+    wrap.appendChild(table);
+    return wrap;
+  }
+
+  function startMiniTestReview() {
+    if (!miniTestSummary) return;
+    sessionKind = "review";
+    session = miniTestSummary.items.map((item) => item.question);
+    sessionIndex = 0;
+    showView("quiz");
+    renderQuestion();
+  }
+
+  /* ------------------------------------------------------------ practice flow */
+
   function startSession(event) {
     if (event) event.preventDefault();
+    sessionKind = "practice";
+    miniTest = null;
+    miniTestSummary = null;
+    elements.miniTestClock.classList.add("hidden");
     const mode = elements.mode.value;
     let pool = matchingQuestions();
     if (mode === "adaptive" && recommendation) {
@@ -365,7 +684,85 @@
       sessionIndex + 1 < session.length ? "Next question →" : "See session results →";
     updateSavedButtons(question.id);
     renderResponse(question);
+
+    if (sessionKind === "test") applyTestModeControls(question);
+    else if (sessionKind === "review") applyReviewModeControls(question);
+    else applyPracticeModeControls();
+
+    renderMiniTestNav();
     requestAnimationFrame(() => elements.heading.focus({ preventScroll: true }));
+  }
+
+  function applyPracticeModeControls() {
+    elements.hintBtn.classList.remove("hidden");
+    elements.prev.classList.add("hidden");
+    elements.finishTest.classList.add("hidden");
+    elements.finishTest.classList.remove("danger-outline");
+    elements.scoreLabel.classList.remove("hidden");
+    elements.miniTestClock.classList.add("hidden");
+    elements.next.disabled = false;
+  }
+
+  // Test mode: no verdict, no hint, free navigation, and a persistent finish
+  // control so an early finish is always one click away.
+  function applyTestModeControls(question) {
+    elements.hintBtn.classList.add("hidden");
+    elements.hintPanel.classList.add("hidden");
+    elements.scoreLabel.classList.add("hidden");
+    elements.miniTestClock.classList.remove("hidden");
+    elements.submit.classList.add("hidden");
+    elements.next.classList.remove("hidden");
+    elements.next.textContent =
+      sessionIndex + 1 < session.length ? "Next question →" : "Last question";
+    elements.next.disabled = sessionIndex + 1 >= session.length;
+    elements.prev.classList.toggle("hidden", sessionIndex === 0);
+    elements.finishTest.classList.remove("hidden");
+    if (!miniTest.confirmFinish) {
+      elements.finishTest.textContent = "Finish and review";
+      elements.finishTest.classList.remove("danger-outline");
+    }
+    elements.progressLabel.textContent =
+      `${question.test} ${question.section} · Question ${sessionIndex + 1} of ${session.length}`;
+
+    const saved = miniTest.responses.get(question.id);
+    if (saved === undefined || saved === null) return;
+    response = saved;
+    if (question.responseType === "multiple-choice") {
+      elements.responseArea.querySelectorAll(".choice").forEach((button) => {
+        const selected = Number(button.dataset.index) === saved;
+        button.classList.toggle("selected", selected);
+        button.setAttribute("aria-pressed", String(selected));
+      });
+    } else {
+      const input = elements.responseArea.querySelector("input, textarea");
+      if (input) input.value = saved;
+    }
+  }
+
+  // Review mode: the guide is already open and navigation is free.
+  function applyReviewModeControls(question) {
+    const item = miniTestSummary.items.find((entry) => entry.question.id === question.id);
+    elements.hintBtn.classList.add("hidden");
+    elements.scoreLabel.classList.remove("hidden");
+    elements.scoreLabel.textContent = item && item.correct
+      ? "You answered correctly"
+      : item && item.answered
+        ? "You answered incorrectly"
+        : "You left this blank";
+    elements.miniTestClock.classList.add("hidden");
+    elements.submit.classList.add("hidden");
+    elements.prev.classList.toggle("hidden", sessionIndex === 0);
+    elements.finishTest.classList.add("hidden");
+    elements.next.classList.remove("hidden");
+    elements.next.disabled = false;
+    elements.next.textContent =
+      sessionIndex + 1 < session.length ? "Next question →" : "Back to report →";
+    elements.progressLabel.textContent =
+      `Review · ${question.test} ${question.section} · ${sessionIndex + 1} of ${session.length}`;
+
+    response = item && item.answered ? item.response : null;
+    answered = true;
+    revealAnswer(question, item ? item.correct : false);
   }
 
   function tagElement(text) {
@@ -412,6 +809,7 @@
       input.addEventListener("input", () => {
         response = input.value;
         elements.submit.disabled = input.value.trim() === "";
+        if (sessionKind === "test") stashTestResponse(input.value);
       });
       label.appendChild(input);
       elements.responseArea.appendChild(label);
@@ -449,6 +847,41 @@
     });
     elements.submit.disabled = false;
     elements.responseStatus.textContent = `Selected answer ${LETTERS[index]}.`;
+    if (sessionKind === "test") stashTestResponse(index);
+  }
+
+  // In test mode an answer is banked immediately so the navigator and the
+  // finish guard stay accurate, and so revisiting a question restores it.
+  function stashTestResponse(value) {
+    if (!miniTest) return;
+    const question = currentQuestion();
+    if (value === null || String(value).trim() === "") {
+      miniTest.responses.delete(question.id);
+    } else {
+      miniTest.responses.set(question.id, value);
+    }
+    if (miniTest.confirmFinish) {
+      miniTest.confirmFinish = false;
+      elements.finishTest.textContent = "Finish and review";
+      elements.finishTest.classList.remove("danger-outline");
+    }
+    renderMiniTestNav();
+  }
+
+  function recordAttempt(question, correct, rawResponse) {
+    progress.attempts.push({
+      questionId: question.id,
+      sectionKey: question.sectionKey,
+      correct,
+      response: question.responseType === "essay" ? "[local essay draft]" : rawResponse,
+      timestamp: Date.now(),
+      reviewAt: correct === false
+        ? Date.now() + 24 * 60 * 60 * 1000
+        : correct === true
+          ? Date.now() + 7 * 24 * 60 * 60 * 1000
+          : null,
+    });
+    progress.recentIds.push(question.id);
   }
 
   function submitResponse() {
@@ -456,20 +889,7 @@
     const question = currentQuestion();
     answered = true;
     const correct = core.scoreResponse(question, response);
-    const attempt = {
-      questionId: question.id,
-      sectionKey: question.sectionKey,
-      correct,
-      response: question.responseType === "essay" ? "[local essay draft]" : response,
-      timestamp: Date.now(),
-      reviewAt: correct === false
-        ? Date.now() + 24 * 60 * 60 * 1000
-        : correct === true
-          ? Date.now() + 7 * 24 * 60 * 60 * 1000
-          : null,
-    };
-    progress.attempts.push(attempt);
-    progress.recentIds.push(question.id);
+    recordAttempt(question, correct, response);
     saveProgress();
     sessionResults.push({ question, correct, response });
     revealAnswer(question, correct);
@@ -542,7 +962,7 @@
     }
     elements.submit.classList.add("hidden");
     elements.next.classList.remove("hidden");
-    elements.next.focus();
+    if (sessionKind !== "review") elements.next.focus();
   }
 
   function fillList(list, values) {
@@ -555,13 +975,28 @@
   }
 
   function nextQuestion() {
+    if (sessionKind === "review" && sessionIndex + 1 >= session.length) {
+      sessionKind = "practice";
+      showResults();
+      return;
+    }
     sessionIndex += 1;
     if (sessionIndex < session.length) renderQuestion();
+    else if (sessionKind === "test") finishMiniTest();
     else showResults();
+  }
+
+  function previousQuestion() {
+    if (sessionIndex === 0) return;
+    sessionIndex -= 1;
+    renderQuestion();
   }
 
   function showResults() {
     showView("results");
+    renderMiniTestReport();
+    elements.reviewAll.classList.toggle("hidden", !miniTestSummary);
+    elements.miniTestClock.classList.add("hidden");
     const scored = sessionResults.filter((result) => result.correct !== null);
     const correct = scored.filter((result) => result.correct).length;
     const percent = scored.length ? Math.round(correct / scored.length * 100) : null;
@@ -569,13 +1004,15 @@
     elements.finalScoreLabel.textContent = percent === null
       ? `${sessionResults.length} writing prompt${sessionResults.length === 1 ? "" : "s"} reviewed`
       : `${correct} of ${scored.length} correct`;
-    elements.resultsMessage.textContent = percent === null
-      ? "Use the rubric and sample outlines to revise one claim at a time."
-      : percent >= 80
-        ? "Strong session. Keep spacing your review so these skills stay durable."
-        : percent >= 60
-          ? "Good foundation. Review the missed skills below, then try a shorter targeted set."
-          : "This session found useful gaps. Focus on one weak skill and work back up gradually.";
+    elements.resultsMessage.textContent = miniTestSummary
+      ? "Review every question below—including the ones you got right but were unsure about."
+      : percent === null
+        ? "Use the rubric and sample outlines to revise one claim at a time."
+        : percent >= 80
+          ? "Strong session. Keep spacing your review so these skills stay durable."
+          : percent >= 60
+            ? "Good foundation. Review the missed skills below, then try a shorter targeted set."
+            : "This session found useful gaps. Focus on one weak skill and work back up gradually.";
 
     const groups = {};
     sessionResults.forEach((result) => {
@@ -942,9 +1379,16 @@
     });
     elements.submit.addEventListener("click", submitResponse);
     elements.next.addEventListener("click", nextQuestion);
-    elements.exit.addEventListener("click", () => showView("setup"));
+    elements.prev.addEventListener("click", previousQuestion);
+    elements.finishTest.addEventListener("click", finishMiniTest);
+    elements.miniTestStart.addEventListener("click", startMiniTest);
+    elements.reviewAll.addEventListener("click", startMiniTestReview);
+    elements.exit.addEventListener("click", exitSession);
     elements.bookmark.addEventListener("click", () => toggleSaved("bookmarked"));
-    elements.flag.addEventListener("click", () => toggleSaved("flagged"));
+    elements.flag.addEventListener("click", () => {
+      toggleSaved("flagged");
+      renderMiniTestNav();
+    });
     elements.practiceAgain.addEventListener("click", () => showView("setup"));
     elements.reviewSession.addEventListener("click", () => renderReview("missed"));
     elements.clearProgress.addEventListener("click", clearProgress);
@@ -960,10 +1404,30 @@
       button.addEventListener("click", () => renderReview(button.dataset.list));
     });
     document.addEventListener("keydown", (event) => {
-      if (views.quiz.classList.contains("hidden") || answered) return;
+      if (views.quiz.classList.contains("hidden")) return;
+      const inField = event.target.closest && event.target.closest("textarea, input");
+      if (sessionKind === "review") {
+        if (event.key === "ArrowRight" && !inField) nextQuestion();
+        if (event.key === "ArrowLeft" && !inField) previousQuestion();
+        return;
+      }
+      if (answered) return;
       const question = currentQuestion();
       if (question.responseType === "multiple-choice" && /^[1-4]$/.test(event.key)) {
         selectChoice(Number(event.key) - 1);
+      }
+      if (sessionKind === "test") {
+        if (event.key === "ArrowRight" && !inField && !elements.next.disabled) nextQuestion();
+        if (event.key === "ArrowLeft" && !inField) previousQuestion();
+        if (
+          event.key === "Enter" &&
+          !(event.target.closest && event.target.closest("textarea, button"))
+        ) {
+          event.preventDefault();
+          if (sessionIndex + 1 < session.length) nextQuestion();
+          else finishMiniTest();
+        }
+        return;
       }
       if (
         event.key === "Enter" &&
@@ -976,7 +1440,20 @@
     });
   }
 
+  function exitSession() {
+    if (sessionKind === "test" && miniTest && !miniTest.finished) {
+      stopMiniTestClock();
+      miniTest = null;
+      miniTestSummary = null;
+    }
+    sessionKind = "practice";
+    elements.miniTestClock.classList.add("hidden");
+    elements.miniTestNav.classList.add("hidden");
+    showView("setup");
+  }
+
   populateSections();
+  renderMiniTestOptions();
   wireEvents();
   changeSection();
 })();

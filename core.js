@@ -7,6 +7,208 @@
 
   const DIFFICULTY_ORDER = ["Easy", "Medium", "Hard"];
 
+  // Mini tests mirror each test's real section weighting inside 20 questions.
+  // Minute budgets come from official per-question pacing, rounded up:
+  // SAT 71s reading/writing and 95s math; ACT 42s English, 67s math and
+  // reading, 60s science. These are practice benchmarks, not scaled scores.
+  const MINI_TEST_DIFFICULTY_MIX = [
+    { difficulty: "Easy", weight: 0.3 },
+    { difficulty: "Medium", weight: 0.45 },
+    { difficulty: "Hard", weight: 0.25 },
+  ];
+
+  const MINI_TEST_BLUEPRINTS = [
+    {
+      id: "sat",
+      test: "SAT",
+      label: "SAT mini test",
+      minutes: 28,
+      summary:
+        "Eleven Reading and Writing items and nine Math items, weighted like " +
+        "the digital SAT's 54/44 split.",
+      sections: [
+        { sectionKey: "sat-reading-writing", count: 11 },
+        { sectionKey: "sat-math", count: 9 },
+      ],
+    },
+    {
+      id: "act",
+      test: "ACT",
+      label: "ACT mini test",
+      minutes: 20,
+      summary:
+        "Eight English, seven Mathematics, and five Reading items, weighted " +
+        "like the enhanced ACT's 50/45/36 Composite split.",
+      sections: [
+        { sectionKey: "act-english", count: 8 },
+        { sectionKey: "act-mathematics", count: 7 },
+        { sectionKey: "act-reading", count: 5 },
+      ],
+    },
+    {
+      id: "act-science",
+      test: "ACT",
+      label: "ACT mini test with Science",
+      minutes: 20,
+      summary:
+        "Six English, five Mathematics, four Reading, and five Science items. " +
+        "Science is optional on the ACT and sits outside the Composite.",
+      sections: [
+        { sectionKey: "act-english", count: 6 },
+        { sectionKey: "act-mathematics", count: 5 },
+        { sectionKey: "act-reading", count: 4 },
+        { sectionKey: "act-science", count: 5 },
+      ],
+    },
+  ];
+
+  function blueprintById(id) {
+    return MINI_TEST_BLUEPRINTS.find((blueprint) => blueprint.id === id) || null;
+  }
+
+  function blueprintTotal(blueprint) {
+    return blueprint.sections.reduce((total, entry) => total + entry.count, 0);
+  }
+
+  // Largest-remainder allocation so weighted counts always sum to the total.
+  function allocateByWeight(total, weights) {
+    const raw = weights.map((weight) => weight * total);
+    const counts = raw.map((value) => Math.floor(value));
+    let remaining = total - counts.reduce((sum, value) => sum + value, 0);
+    const order = raw
+      .map((value, index) => ({ index, remainder: value - Math.floor(value) }))
+      .sort((left, right) => right.remainder - left.remainder);
+    let cursor = 0;
+    while (remaining > 0 && order.length) {
+      counts[order[cursor % order.length].index] += 1;
+      cursor += 1;
+      remaining -= 1;
+    }
+    return counts;
+  }
+
+  // Draws `count` scoreable items from one section, spread across difficulty
+  // tiers and backfilled when a tier is short.
+  function drawSectionItems(bank, count, seed) {
+    const scoreable = bank.filter((question) => question.responseType !== "essay");
+    const targets = allocateByWeight(
+      count,
+      MINI_TEST_DIFFICULTY_MIX.map((entry) => entry.weight),
+    );
+    const chosen = [];
+    const used = new Set();
+    MINI_TEST_DIFFICULTY_MIX.forEach((entry, index) => {
+      const pool = deterministicShuffle(
+        scoreable.filter((question) => question.difficulty === entry.difficulty),
+        `${seed}-${entry.difficulty}`,
+      );
+      pool.slice(0, targets[index]).forEach((question) => {
+        chosen.push(question);
+        used.add(question.id);
+      });
+    });
+    if (chosen.length < count) {
+      deterministicShuffle(scoreable, `${seed}-backfill`)
+        .filter((question) => !used.has(question.id))
+        .slice(0, count - chosen.length)
+        .forEach((question) => {
+          chosen.push(question);
+          used.add(question.id);
+        });
+    }
+    return deterministicShuffle(chosen, `${seed}-order`).slice(0, count);
+  }
+
+  // Returns blueprint questions in section order, so the test reads like the
+  // real thing rather than jumping between sections.
+  function buildMiniTest(bankBySection, blueprint, seed) {
+    if (!blueprint) return [];
+    const questions = [];
+    blueprint.sections.forEach((entry) => {
+      const bank = bankBySection[entry.sectionKey] || [];
+      questions.push(
+        ...drawSectionItems(bank, entry.count, `${seed}-${entry.sectionKey}`),
+      );
+    });
+    return questions;
+  }
+
+  // Accuracy only. This never estimates a scaled SAT total or ACT composite.
+  function summarizeMiniTest(questions, responses) {
+    const answers = responses instanceof Map ? responses : new Map(responses || []);
+    const summary = {
+      total: questions.length,
+      answered: 0,
+      correct: 0,
+      unanswered: 0,
+      accuracy: null,
+      bySection: [],
+      byDomain: [],
+      items: [],
+    };
+    const sections = new Map();
+    const domains = new Map();
+
+    questions.forEach((question) => {
+      const hasResponse = answers.has(question.id) &&
+        answers.get(question.id) !== null &&
+        answers.get(question.id) !== "";
+      const correct = hasResponse
+        ? scoreResponse(question, answers.get(question.id)) === true
+        : false;
+      if (hasResponse) summary.answered += 1;
+      else summary.unanswered += 1;
+      if (correct) summary.correct += 1;
+
+      const sectionKey = question.sectionKey;
+      if (!sections.has(sectionKey)) {
+        sections.set(sectionKey, {
+          sectionKey,
+          test: question.test,
+          section: question.section,
+          total: 0,
+          correct: 0,
+          accuracy: 0,
+        });
+      }
+      const sectionRow = sections.get(sectionKey);
+      sectionRow.total += 1;
+      if (correct) sectionRow.correct += 1;
+
+      const domainKey = `${sectionKey}|${question.domain}`;
+      if (!domains.has(domainKey)) {
+        domains.set(domainKey, {
+          sectionKey,
+          section: question.section,
+          domain: question.domain,
+          total: 0,
+          correct: 0,
+          accuracy: 0,
+        });
+      }
+      const domainRow = domains.get(domainKey);
+      domainRow.total += 1;
+      if (correct) domainRow.correct += 1;
+
+      summary.items.push({
+        question,
+        response: hasResponse ? answers.get(question.id) : null,
+        answered: hasResponse,
+        correct,
+      });
+    });
+
+    summary.accuracy = summary.total ? summary.correct / summary.total : null;
+    summary.bySection = [...sections.values()].map((row) => ({
+      ...row,
+      accuracy: row.total ? row.correct / row.total : 0,
+    }));
+    summary.byDomain = [...domains.values()]
+      .map((row) => ({ ...row, accuracy: row.total ? row.correct / row.total : 0 }))
+      .sort((left, right) => left.accuracy - right.accuracy);
+    return summary;
+  }
+
   function normalize(value) {
     return String(value || "")
       .normalize("NFKD")
@@ -219,6 +421,12 @@
 
   return {
     DIFFICULTY_ORDER,
+    MINI_TEST_BLUEPRINTS,
+    MINI_TEST_DIFFICULTY_MIX,
+    allocateByWeight,
+    blueprintById,
+    blueprintTotal,
+    buildMiniTest,
     buildSession,
     chooseDifficulty,
     deterministicShuffle,
@@ -227,6 +435,7 @@
     numericEqual,
     recommendQuestion,
     scoreResponse,
+    summarizeMiniTest,
     summarizeProgress,
   };
 });

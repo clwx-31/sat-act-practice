@@ -73,6 +73,51 @@ for (const section of catalog.sections) {
   }
 }
 
+// Mini tests draw straight from the generated banks, so every blueprint must
+// name a real section and that section must hold enough scoreable items.
+const corePath = path.join(root, "core.js");
+const coreModule = { exports: {} };
+vm.runInContext(
+  `(function (module, exports) {\n${fs.readFileSync(corePath, "utf8")}\n})`,
+  context,
+  { filename: corePath },
+)(coreModule, coreModule.exports);
+const practiceCore = coreModule.exports;
+
+if (!Array.isArray(practiceCore.MINI_TEST_BLUEPRINTS) ||
+  practiceCore.MINI_TEST_BLUEPRINTS.length === 0) {
+  throw new Error("core.js did not export any mini test blueprints.");
+}
+for (const blueprint of practiceCore.MINI_TEST_BLUEPRINTS) {
+  const bankBySection = {};
+  for (const entry of blueprint.sections) {
+    const bank = context.window.PRACTICE_BANKS[entry.sectionKey];
+    if (!Array.isArray(bank)) {
+      throw new Error(
+        `Mini test "${blueprint.id}" references unknown section ${entry.sectionKey}.`,
+      );
+    }
+    const scoreable = bank.filter((item) => item.responseType !== "essay");
+    if (scoreable.length < entry.count) {
+      throw new Error(
+        `Mini test "${blueprint.id}" needs ${entry.count} scoreable ` +
+        `${entry.sectionKey} items but only ${scoreable.length} exist.`,
+      );
+    }
+    bankBySection[entry.sectionKey] = bank;
+  }
+  const built = practiceCore.buildMiniTest(bankBySection, blueprint, "smoke");
+  const expected = practiceCore.blueprintTotal(blueprint);
+  if (built.length !== expected) {
+    throw new Error(
+      `Mini test "${blueprint.id}" built ${built.length} items; expected ${expected}.`,
+    );
+  }
+  if (new Set(built.map((item) => item.id)).size !== built.length) {
+    throw new Error(`Mini test "${blueprint.id}" repeated a question.`);
+  }
+}
+
 const guidePath = path.join(root, "content/guides/answer-signs.js");
 if (!fs.existsSync(guidePath)) {
   throw new Error("Answer-signs guide is missing: content/guides/answer-signs.js");
@@ -93,6 +138,7 @@ for (const group of signs.groups) {
 
 console.log(
   `Static smoke passed: ${requiredIds.length} DOM references, ` +
-  `${catalog.sections.length} generated banks, and ` +
+  `${catalog.sections.length} generated banks, ` +
+  `${practiceCore.MINI_TEST_BLUEPRINTS.length} mini test blueprints, and ` +
   `${signs.groups.length} answer-sign groups are present.`,
 );

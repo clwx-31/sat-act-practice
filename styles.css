@@ -1479,7 +1479,7 @@ footer p {
   .nav-link {
     min-width: 0;
     padding: 9px 3px 11px;
-    font-size: 0.58rem;
+    font-size: 0.64rem;
     letter-spacing: 0.018em;
   }
 
@@ -1560,6 +1560,12 @@ footer p {
     min-height: 38px;
     padding: 7px 10px;
     font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-link {
+    font-size: 0.56rem;
   }
 }
 

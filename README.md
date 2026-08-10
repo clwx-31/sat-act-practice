@@ -64,6 +64,9 @@ resolves and every file is reachable from the index.
 - Take a **20-question mini test** for either test — weighted like the real
   section split, timed, answered without feedback, then reviewed in full with a
   by-section and by-domain accuracy report.
+- Sit a **full-length paper form** — 98-question SAT or 131-question ACT (171
+  with Science) — as a printable two-column booklet with a bubble answer sheet
+  and a separate answer key. See [Printable booklets](#printable-booklets).
 - Select SAT or ACT section, official domain, skill, and difficulty.
 - Run targeted, full-mix, recommended, missed, bookmarked, or flagged sessions.
 - Search stems, passages, topics, skills, and stable question IDs.
@@ -78,6 +81,52 @@ Recommendations and mini-test reports are practice guidance only. They do not
 reproduce official adaptive routing, scaled scoring, or score prediction; a
 mini test reports accuracy, never an estimated SAT total or ACT Composite.
 
+## Printable booklets
+
+Every blueprint — the three mini tests and the three full-length forms — can be
+rendered as a printed test booklet: a cover page with directions and the
+section schedule, two-column question pages, and a bubble answer sheet. The
+answer key and explanations render as a second, separate document so a form can
+be sat honestly.
+
+### From the browser
+
+Open `print.html` — the **Booklets** link in the header. Pick a form, then
+either open it and print to PDF, or download it as a self-contained HTML file
+that prints from any browser. This needs no toolchain and works on a phone.
+
+Each form is drawn from a short seed shown on the page and carried in the URL:
+
+```
+print.html?form=sat-full&seed=c4trsc
+```
+
+Anyone who opens that link builds a byte-identical booklet, so a form can be
+shared and the results compared. The link carries the form and seed only — no
+answers, scores, or progress. The seed is also printed on the booklet cover as
+a form code, so a paper copy can be rebuilt later.
+
+### From the command line
+
+```sh
+npm run build:booklet -- --list
+npm run build:booklet -- --form sat-full --seed spring-1 --pdf
+```
+
+| Flag | Effect |
+| --- | --- |
+| `--form <id>` | `sat`, `act`, `act-science`, `sat-full`, `act-full`, `act-full-science` |
+| `--seed <str>` | Controls which questions are drawn; the same seed rebuilds the same form |
+| `--out <dir>` | Output directory, `build/` by default |
+| `--pdf` | Also render PDFs using an installed Chrome, Chromium, or Edge |
+| `--tex` | Also emit LaTeX source that compiles with plain `pdflatex` |
+
+Output is named after the blueprint and a short form code derived from the seed,
+so a printed booklet can be matched back to the form that produced it. PDF
+rendering shells out to a browser already on the machine; without one, the HTML
+booklets still print. The `--tex` output maps every non-ASCII character in the
+banks to a macro, so it needs no XeLaTeX and no Unicode-aware font setup.
+
 ## Architecture
 
 Canonical content lives in `content/banks/*.json`; do not edit the generated
@@ -86,8 +135,10 @@ JavaScript banks directly.
 | Path | Purpose |
 | --- | --- |
 | `index.html`, `styles.css` | Accessible single-page interface and responsive design |
+| `print.html`, `print.js` | Booklet page: form picker, download, and shareable seed links |
 | `app.js` | Browser interaction, lazy loading, sessions, review, and local progress |
-| `core.js` | Pure filtering, scoring, analytics, and recommendation functions |
+| `core.js` | Pure blueprints, filtering, scoring, analytics, and recommendation functions |
+| `booklet.js` | Printable booklet, answer key, and LaTeX rendering; shared by the page and the build script |
 | `content/catalog.json` | Section taxonomy and exact coverage manifests |
 | `content/banks/*.json` | Canonical section banks |
 | `content/generated/*.js` | Browser-ready output committed for static hosting |

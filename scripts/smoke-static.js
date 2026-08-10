@@ -118,6 +118,71 @@ for (const blueprint of practiceCore.MINI_TEST_BLUEPRINTS) {
   }
 }
 
+// The booklet page is a second entry point with its own DOM contract, and it
+// builds full-length forms rather than mini tests.
+const printHtml = fs.readFileSync(path.join(root, "print.html"), "utf8");
+const printJs = fs.readFileSync(path.join(root, "print.js"), "utf8");
+const printIds = [...printHtml.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
+const printDuplicates = printIds.filter((id, index) => printIds.indexOf(id) !== index);
+if (printDuplicates.length) {
+  throw new Error(`Duplicate print.html IDs: ${[...new Set(printDuplicates)].join(", ")}`);
+}
+const printRequired = [
+  ...printJs.matchAll(/document\.getElementById\("([^"]+)"\)/g),
+].map((match) => match[1]);
+const printMissing = [...new Set(printRequired)].filter((id) => !printIds.includes(id));
+if (printMissing.length) {
+  throw new Error(`print.js references missing print.html IDs: ${printMissing.join(", ")}`);
+}
+for (const asset of ["styles.css", "core.js", "booklet.js", "print.js"]) {
+  if (!printHtml.includes(`"${asset}"`)) {
+    throw new Error(`print.html does not load ${asset}`);
+  }
+  if (!fs.existsSync(path.join(root, asset))) {
+    throw new Error(`Referenced asset is missing: ${asset}`);
+  }
+}
+if (!html.includes('href="print.html"')) {
+  throw new Error("index.html does not link to the booklet page.");
+}
+
+const bookletPath = path.join(root, "booklet.js");
+const bookletModule = { exports: {} };
+vm.runInContext(
+  `(function (module, exports, require) {\n${fs.readFileSync(bookletPath, "utf8")}\n})`,
+  context,
+  { filename: bookletPath },
+)(bookletModule, bookletModule.exports, () => practiceCore);
+const practiceBooklet = bookletModule.exports;
+
+for (const blueprint of practiceCore.FULL_TEST_BLUEPRINTS) {
+  const bankBySection = {};
+  for (const entry of blueprint.sections) {
+    bankBySection[entry.sectionKey] = context.window.PRACTICE_BANKS[entry.sectionKey];
+  }
+  const form = practiceCore.buildTestForm(bankBySection, blueprint, "smoke");
+  const drawn = form.flatMap((group) => group.questions);
+  const expected = practiceCore.blueprintTotal(blueprint);
+  if (drawn.length !== expected) {
+    throw new Error(
+      `Form "${blueprint.id}" built ${drawn.length} items; expected ${expected}.`,
+    );
+  }
+  if (new Set(drawn.map((item) => item.id)).size !== drawn.length) {
+    throw new Error(`Form "${blueprint.id}" repeated a question across sections.`);
+  }
+  const model = practiceBooklet.buildModel(form, blueprint, "smoke");
+  const rendered = practiceBooklet.renderBookletHtml(model);
+  if ((rendered.match(/class="q"/g) || []).length !== expected) {
+    throw new Error(`Form "${blueprint.id}" did not render every question.`);
+  }
+  practiceBooklet.renderKeyHtml(model);
+  const texSource = practiceBooklet.renderTex(model);
+  if (/[^\x00-\x7F]/.test(texSource)) {
+    throw new Error(`Form "${blueprint.id}" emitted non-ASCII LaTeX source.`);
+  }
+}
+
 const guidePath = path.join(root, "content/guides/answer-signs.js");
 if (!fs.existsSync(guidePath)) {
   throw new Error("Answer-signs guide is missing: content/guides/answer-signs.js");
@@ -139,6 +204,7 @@ for (const group of signs.groups) {
 console.log(
   `Static smoke passed: ${requiredIds.length} DOM references, ` +
   `${catalog.sections.length} generated banks, ` +
-  `${practiceCore.MINI_TEST_BLUEPRINTS.length} mini test blueprints, and ` +
+  `${practiceCore.MINI_TEST_BLUEPRINTS.length} mini test blueprints, ` +
+  `${practiceCore.FULL_TEST_BLUEPRINTS.length} printable full-length forms, and ` +
   `${signs.groups.length} answer-sign groups are present.`,
 );

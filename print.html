@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Build and download printable two-column SAT and ACT practice booklets with a bubble answer sheet and a separate answer key."
+    />
+    <title>Printable booklets — Summit Prep</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Summit Prep home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>
+          <strong>Summit Prep</strong>
+          <small>Independent SAT &amp; ACT practice</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Practice</a>
+        <a class="nav-link active" href="print.html" aria-current="page">Booklets</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="view active">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Paper practice</p>
+            <h1 tabindex="-1">Print a test booklet.</h1>
+            <p class="hero-copy">
+              A two-column booklet with directions, a section schedule, and a
+              bubble answer sheet — plus a separate answer key, so a form can be
+              sat honestly. Download it, print it, or save it as a PDF.
+            </p>
+          </div>
+        </div>
+
+        <div class="booklet-layout">
+          <section class="panel" aria-labelledby="formHeading">
+            <p class="eyebrow">Step one</p>
+            <h2 id="formHeading">Choose a form</h2>
+            <div id="formGrid" class="form-grid" role="radiogroup"
+              aria-labelledby="formHeading"></div>
+          </section>
+
+          <aside class="side-stack">
+            <section class="panel" aria-labelledby="buildHeading">
+              <p class="eyebrow">Step two</p>
+              <h2 id="buildHeading">Build and download</h2>
+              <p id="formSummary" class="field-note"></p>
+
+              <label class="print-label" for="seedInput">Form seed</label>
+              <input id="seedInput" type="text" autocomplete="off" spellcheck="false" />
+              <p class="field-note">
+                The seed decides which questions are drawn. Keep it to rebuild the
+                identical test; change it for a fresh one.
+              </p>
+              <button id="rerollBtn" class="button" type="button">New seed</button>
+
+              <h3 class="print-subhead">Test booklet</h3>
+              <div class="print-actions">
+                <button id="openTestBtn" class="button primary" type="button">
+                  Open to print
+                </button>
+                <button id="downloadTestBtn" class="button" type="button">
+                  Download
+                </button>
+              </div>
+
+              <h3 class="print-subhead">Answer key and explanations</h3>
+              <div class="print-actions">
+                <button id="openKeyBtn" class="button" type="button">
+                  Open to print
+                </button>
+                <button id="downloadKeyBtn" class="button" type="button">
+                  Download
+                </button>
+              </div>
+
+              <div id="printStatus" class="status-line" role="status" aria-live="polite"></div>
+              <small>
+                Downloads are self-contained web pages. Open one in any browser
+                and print it to get a PDF — nothing else to install.
+              </small>
+            </section>
+
+            <section class="panel" aria-labelledby="shareHeading">
+              <p class="eyebrow">Step three</p>
+              <h2 id="shareHeading">Share this form</h2>
+              <p>
+                Send this link and anyone who opens it builds the same test from
+                the same seed, so your scores are comparable.
+              </p>
+              <label class="print-label" for="shareLink">Link to this form</label>
+              <input id="shareLink" type="text" readonly />
+              <button id="copyLinkBtn" class="button" type="button">Copy link</button>
+              <small>
+                The link carries the form and seed only. No answers, no scores,
+                and nothing about your progress.
+              </small>
+            </section>
+          </aside>
+        </div>
+
+        <section class="panel notice" aria-labelledby="honestHeading">
+          <h2 id="honestHeading">What these booklets are worth</h2>
+          <p>
+            Use them for pacing, endurance, and answer-sheet practice. The
+            question banks are generated from a limited set of templates, so
+            accuracy on a form runs well above what the same student would score
+            on an official test. Time yourself honestly; treat the percentage as
+            practice feedback, not a score prediction. These forms are original
+            content and are not affiliated with, endorsed by, or published by the
+            College Board or ACT, Inc.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Original practice content. Independent of the College Board and ACT, Inc.
+      </p>
+    </footer>
+
+    <script src="content/generated/catalog.js"></script>
+    <script src="core.js"></script>
+    <script src="booklet.js"></script>
+    <script src="print.js"></script>
+  </body>
+</html>

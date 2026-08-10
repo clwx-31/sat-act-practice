@@ -666,12 +666,148 @@ input:disabled {
   width: 100%;
 }
 
-.mini-test-card small {
+.mini-test-card small,
+.print-card small {
   display: block;
   margin-top: 13px;
   color: var(--subtle);
   font-size: 0.68rem;
   line-height: 1.55;
+}
+
+.print-card {
+  padding: 26px;
+  border-color: rgba(216, 182, 109, 0.28);
+}
+
+.print-card p:not(.eyebrow):not(.field-note) {
+  margin: 12px 0 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.print-card .button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.print-label {
+  display: block;
+  margin: 20px 0 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--subtle);
+}
+
+.print-subhead {
+  margin: 22px 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--subtle);
+}
+
+.print-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.print-actions .button {
+  flex: 1;
+}
+
+.booklet-layout small {
+  display: block;
+  margin-top: 14px;
+  color: var(--subtle);
+  font-size: 0.68rem;
+  line-height: 1.55;
+}
+
+.booklet-layout p:not(.eyebrow):not(.field-note) {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+#rerollBtn,
+#copyLinkBtn {
+  width: 100%;
+}
+
+.booklet-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.form-card {
+  display: grid;
+  gap: 4px;
+  padding: 16px 18px;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.form-card:hover {
+  border-color: rgba(216, 182, 109, 0.45);
+}
+
+.form-card.active {
+  border-color: rgba(216, 182, 109, 0.65);
+  background: rgba(216, 182, 109, 0.09);
+}
+
+.form-card strong {
+  font-size: 1.02rem;
+}
+
+.form-card .form-meta {
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  color: var(--gold, #d8b66d);
+}
+
+.form-card .form-summary {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+#seedInput,
+#shareLink {
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.86rem;
+}
+
+/* The booklet rail is already narrow, so its panels always stack, overriding
+   the two-column side-stack breakpoint used on the practice page. */
+.booklet-layout .side-stack {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 900px) {
+  .booklet-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .mini-test-options {

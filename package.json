@@ -9,6 +9,7 @@
     "report:content": "node scripts/report-content.js",
     "report:content:write": "node scripts/report-content.js --write",
     "check:guides": "node scripts/check-guides.js",
+    "build:booklet": "node scripts/build-booklet.js",
     "test": "node --test",
     "check": "node scripts/check-all.js"
   }

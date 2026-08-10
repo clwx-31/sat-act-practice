@@ -17,6 +17,49 @@
     { difficulty: "Hard", weight: 0.25 },
   ];
 
+  // Printed booklets need a label, a time box, and directions for every
+  // section, so both the mini and full blueprints draw from one source.
+  const SECTION_LABELS = {
+    "sat-reading-writing": "Reading and Writing",
+    "sat-math": "Math",
+    "act-english": "English",
+    "act-mathematics": "Mathematics",
+    "act-reading": "Reading",
+    "act-science": "Science",
+  };
+
+  const SECTION_DIRECTIONS = {
+    "sat-reading-writing":
+      "Each question refers to the passage or passages that precede it. " +
+      "Choose the best answer to each question.",
+    "sat-math":
+      "A calculator is permitted throughout. Unless stated otherwise, all " +
+      "figures lie in a plane and all numbers used are real numbers.",
+    "act-english":
+      "Choose the alternative that best expresses the idea, makes the " +
+      "statement acceptable in standard written English, or is worded most " +
+      "consistently with the style and tone of the passage.",
+    "act-mathematics":
+      "Solve each problem and choose the correct answer. A calculator is " +
+      "permitted. Illustrative figures are not necessarily drawn to scale.",
+    "act-reading":
+      "Each question refers to the passage that precedes it. Choose the best " +
+      "answer on the basis of what is stated or implied.",
+    "act-science":
+      "Each set of data is followed by questions. Refer to the data as often " +
+      "as necessary. A calculator is not permitted on this section.",
+  };
+
+  function section(sectionKey, count, minutes, label) {
+    return {
+      sectionKey,
+      count,
+      minutes,
+      label: label || SECTION_LABELS[sectionKey] || sectionKey,
+      directions: SECTION_DIRECTIONS[sectionKey] || "",
+    };
+  }
+
   const MINI_TEST_BLUEPRINTS = [
     {
       id: "sat",
@@ -27,8 +70,8 @@
         "Eleven Reading and Writing items and nine Math items, weighted like " +
         "the digital SAT's 54/44 split.",
       sections: [
-        { sectionKey: "sat-reading-writing", count: 11 },
-        { sectionKey: "sat-math", count: 9 },
+        section("sat-reading-writing", 11, 13),
+        section("sat-math", 9, 15),
       ],
     },
     {
@@ -40,9 +83,9 @@
         "Eight English, seven Mathematics, and five Reading items, weighted " +
         "like the enhanced ACT's 50/45/36 Composite split.",
       sections: [
-        { sectionKey: "act-english", count: 8 },
-        { sectionKey: "act-mathematics", count: 7 },
-        { sectionKey: "act-reading", count: 5 },
+        section("act-english", 8, 6),
+        section("act-mathematics", 7, 8),
+        section("act-reading", 5, 6),
       ],
     },
     {
@@ -54,16 +97,73 @@
         "Six English, five Mathematics, four Reading, and five Science items. " +
         "Science is optional on the ACT and sits outside the Composite.",
       sections: [
-        { sectionKey: "act-english", count: 6 },
-        { sectionKey: "act-mathematics", count: 5 },
-        { sectionKey: "act-reading", count: 4 },
-        { sectionKey: "act-science", count: 5 },
+        section("act-english", 6, 4),
+        section("act-mathematics", 5, 6),
+        section("act-reading", 4, 5),
+        section("act-science", 5, 5),
       ],
     },
   ];
 
+  // Full-length forms mirror the official section counts and time limits:
+  // digital SAT 54 Reading and Writing across two 32-minute modules plus 44
+  // Math across two 35-minute modules; enhanced ACT 50 English, 45
+  // Mathematics, and 36 Reading, with the optional 40-item Science section
+  // sitting outside the Composite.
+  const FULL_TEST_BLUEPRINTS = [
+    {
+      id: "sat-full",
+      test: "SAT",
+      label: "SAT full-length practice test",
+      minutes: 134,
+      breakAfter: 1,
+      summary:
+        "Ninety-eight questions in four modules, matching the digital SAT's " +
+        "54 Reading and Writing and 44 Math structure.",
+      sections: [
+        section("sat-reading-writing", 27, 32, "Reading and Writing — Module 1"),
+        section("sat-reading-writing", 27, 32, "Reading and Writing — Module 2"),
+        section("sat-math", 22, 35, "Math — Module 1"),
+        section("sat-math", 22, 35, "Math — Module 2"),
+      ],
+    },
+    {
+      id: "act-full",
+      test: "ACT",
+      label: "ACT full-length practice test",
+      minutes: 125,
+      breakAfter: 1,
+      summary:
+        "One hundred thirty-one questions across English, Mathematics, and " +
+        "Reading, matching the enhanced ACT's Composite sections.",
+      sections: [
+        section("act-english", 50, 35),
+        section("act-mathematics", 45, 50),
+        section("act-reading", 36, 40),
+      ],
+    },
+    {
+      id: "act-full-science",
+      test: "ACT",
+      label: "ACT full-length practice test with Science",
+      minutes: 165,
+      breakAfter: 1,
+      summary:
+        "The three Composite sections plus the optional 40-question Science " +
+        "section, which is reported separately.",
+      sections: [
+        section("act-english", 50, 35),
+        section("act-mathematics", 45, 50),
+        section("act-reading", 36, 40),
+        section("act-science", 40, 40),
+      ],
+    },
+  ];
+
+  const ALL_BLUEPRINTS = MINI_TEST_BLUEPRINTS.concat(FULL_TEST_BLUEPRINTS);
+
   function blueprintById(id) {
-    return MINI_TEST_BLUEPRINTS.find((blueprint) => blueprint.id === id) || null;
+    return ALL_BLUEPRINTS.find((blueprint) => blueprint.id === id) || null;
   }
 
   function blueprintTotal(blueprint) {
@@ -89,8 +189,11 @@
 
   // Draws `count` scoreable items from one section, spread across difficulty
   // tiers and backfilled when a tier is short.
-  function drawSectionItems(bank, count, seed) {
-    const scoreable = bank.filter((question) => question.responseType !== "essay");
+  function drawSectionItems(bank, count, seed, excludeIds) {
+    const blocked = excludeIds || new Set();
+    const scoreable = bank.filter(
+      (question) => question.responseType !== "essay" && !blocked.has(question.id),
+    );
     const targets = allocateByWeight(
       count,
       MINI_TEST_DIFFICULTY_MIX.map((entry) => entry.weight),
@@ -131,6 +234,43 @@
       );
     });
     return questions;
+  }
+
+  // Builds a printable form as grouped sections rather than one flat list.
+  // Unlike buildMiniTest, each entry is seeded by position and excludes items
+  // already drawn, so two modules that share a bank never repeat a question.
+  function buildTestForm(bankBySection, blueprint, seed) {
+    if (!blueprint) return [];
+    const used = new Set();
+    return blueprint.sections.map((entry, index) => {
+      const bank = bankBySection[entry.sectionKey] || [];
+      const questions = drawSectionItems(
+        bank,
+        entry.count,
+        `${seed}-${index}-${entry.sectionKey}`,
+        used,
+      );
+      questions.forEach((question) => used.add(question.id));
+      return {
+        entry,
+        label: entry.label || entry.sectionKey,
+        minutes: entry.minutes || null,
+        directions: entry.directions || "",
+        questions,
+      };
+    });
+  }
+
+  // The ACT alternates answer labels between odd and even questions so a
+  // misread row on the answer sheet is obvious. The SAT uses A-D throughout.
+  const ANSWER_LETTERS = {
+    SAT: [["A", "B", "C", "D"]],
+    ACT: [["A", "B", "C", "D"], ["F", "G", "H", "J"]],
+  };
+
+  function answerLetters(test, questionNumber) {
+    const sets = ANSWER_LETTERS[test] || ANSWER_LETTERS.SAT;
+    return sets[(questionNumber - 1) % sets.length];
   }
 
   // Accuracy only. This never estimates a scaled SAT total or ACT composite.
@@ -420,14 +560,20 @@
   }
 
   return {
+    ALL_BLUEPRINTS,
+    ANSWER_LETTERS,
     DIFFICULTY_ORDER,
+    FULL_TEST_BLUEPRINTS,
     MINI_TEST_BLUEPRINTS,
     MINI_TEST_DIFFICULTY_MIX,
     allocateByWeight,
+    answerLetters,
     blueprintById,
     blueprintTotal,
     buildMiniTest,
     buildSession,
+    buildTestForm,
+    drawSectionItems,
     chooseDifficulty,
     deterministicShuffle,
     filterQuestions,

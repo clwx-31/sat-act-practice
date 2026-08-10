@@ -195,7 +195,7 @@ ceiling, not speed. Speed comes in Phase IV.
 | 1 | Final test review. At most two changes. | 2 h |
 | 2 | Light mixed drilling, 30 items, mostly strong skills | 1 h |
 | 3 | Reread your rules list. 20 items in your weakest skill. | 1 h |
-| 4 | Reread [Universal answer patterns](../05-universal-answer-patterns.md) and your formula reference. 20 easy items. | 1 h |
+| 4 | Reread the [cheat sheets](../08-cheat-sheets.md) and your formula reference. 20 easy items. | 1 h |
 | 5 | 20 warm-up items. **Logistics check.** | 0.5 h |
 | 6 | **Rest.** Lay everything out. Sleep early. | — |
 | 7 | **Test day** | — |

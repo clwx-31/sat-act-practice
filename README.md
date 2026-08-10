@@ -40,11 +40,12 @@ https://clwx-31.github.io/sat-act-practice/
 
 ## Study guides
 
-[`guides/`](guides/README.md) is a 50-file Markdown study library covering both
-tests end to end: test formats and scoring, registration and test-day logistics,
-how standardized items are constructed, answer patterns, pacing, an error-log
+[`guides/`](guides/README.md) is a Markdown study library covering both tests end
+to end: test formats and scoring, registration and test-day logistics, how
+standardized items are constructed, answer patterns, pacing, an error-log
 method, one guide per catalog domain for all seven sections, formula references
-for both tests, a Desmos playbook, and 4-, 8-, and 12-week study plans.
+for both tests, a Desmos playbook, condensed final-week cheat sheets, and 4-,
+8-, and 12-week study plans.
 
 Each domain guide names the exact `content/catalog.json` domain and skills it
 covers, so you can read a guide and then filter the app to precisely that

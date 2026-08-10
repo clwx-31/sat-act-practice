@@ -43,6 +43,7 @@ Read these regardless of which test you are taking.
 | [05 — Universal answer patterns](05-universal-answer-patterns.md) | Elimination discipline, extreme language, opposite pairs, scope errors |
 | [06 — Timing and pacing](06-timing-and-pacing.md) | Per-section budgets, the two-pass method, triage rules, guessing strategy |
 | [07 — Error log and review method](07-error-log-and-review-method.md) | The four error types, how to run a review session that actually works |
+| [08 — Cheat sheets](08-cheat-sheets.md) | Condensed one-page references per test. **Reread this the day before.** |
 
 ---
 

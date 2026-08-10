@@ -105,7 +105,7 @@ how to start, mark, guess, move. It feels terrible and it's correct.
 | 2 | Review it. Extract at most two changes. | 2 h |
 | 3 | Light mixed drilling, 30 items, mostly in strong skills | 1 h |
 | 4 | Reread your rules list. 20 items in your weakest skill. | 1 h |
-| 5 | Reread [Universal answer patterns](../05-universal-answer-patterns.md) and your formula reference. 20 easy items. | 1 h |
+| 5 | Reread the [cheat sheets](../08-cheat-sheets.md) and your formula reference. 20 easy items. | 1 h |
 | 6 | **Rest.** Logistics check: ID, calculator batteries, route, Bluebook setup. | 0.5 h |
 | 7 | **Test day** | — |
 

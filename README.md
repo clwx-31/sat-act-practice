@@ -38,6 +38,23 @@ Then visit `http://localhost:8000`.
 The configured GitHub Pages site is:
 https://clwx-31.github.io/sat-act-practice/
 
+## Study guides
+
+[`guides/`](guides/README.md) is a 50-file Markdown study library covering both
+tests end to end: test formats and scoring, registration and test-day logistics,
+how standardized items are constructed, answer patterns, pacing, an error-log
+method, one guide per catalog domain for all seven sections, formula references
+for both tests, a Desmos playbook, and 4-, 8-, and 12-week study plans.
+
+Each domain guide names the exact `content/catalog.json` domain and skills it
+covers, so you can read a guide and then filter the app to precisely that
+material. Start at [`guides/README.md`](guides/README.md).
+
+The guides are documentation, not question-bank content: they are not in the
+catalog, not validated by `scripts/validate-content.js`, and never run through
+the generators. `npm run check:guides` verifies that every relative link
+resolves and every file is reachable from the index.
+
 ## Study features
 
 - Learn the honest, legal answer "tells" for every section in the **Answer
@@ -70,6 +87,7 @@ JavaScript banks directly.
 | `content/banks/*.json` | Canonical section banks |
 | `content/generated/*.js` | Browser-ready output committed for static hosting |
 | `content/guides/answer-signs.js` | Answer Signs study guide (test-taking tells); not part of the question-bank pipeline |
+| `guides/` | Markdown study library: foundations, per-domain guides, formula references, study plans |
 | `content/schema.md` | Complete question schema |
 | `scripts/` | Deterministic generators, validators, reports, and browser-content build |
 | `tests/` | Node tests for schema, validation, filters, scoring, sessions, and recommendations |
@@ -87,13 +105,15 @@ npm run check
 ```
 
 That command checks JavaScript syntax, requires exactly 575 valid items per
-section, verifies the static HTML/content contract, and runs the unit tests.
+section, verifies the static HTML/content contract, checks the guides library's
+links and reachability, and runs the unit tests.
 Individual commands are also available:
 
 ```sh
 npm run validate:content
 node scripts/validate-content.js --complete
 npm run build:content
+npm run check:guides
 npm run test
 npm run report:content
 ```

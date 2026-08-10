@@ -9,6 +9,7 @@ const checks = [
   ["node", ["--check", "scripts/lib/content.js"]],
   ["node", ["scripts/validate-content.js", "--complete"]],
   ["node", ["scripts/smoke-static.js"]],
+  ["node", ["scripts/check-guides.js"]],
   ["node", ["--test"]],
 ];
 

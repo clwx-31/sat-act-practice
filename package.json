@@ -8,6 +8,7 @@
     "validate:content": "node scripts/validate-content.js",
     "report:content": "node scripts/report-content.js",
     "report:content:write": "node scripts/report-content.js --write",
+    "check:guides": "node scripts/check-guides.js",
     "test": "node --test",
     "check": "node scripts/check-all.js"
   }

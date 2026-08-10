@@ -102,6 +102,36 @@ To extend the guide:
 3. `node scripts/smoke-static.js` validates that the guide loads and that every
    group has an id, test, category, and non-empty `tells`. Run `npm run check`.
 
+## Markdown study library (`guides/`)
+
+`guides/` is a Markdown study library: test formats, registration logistics,
+item architecture and answer patterns, one guide per catalog domain across all
+seven sections, formula references, a Desmos playbook, and study plans.
+
+It is **documentation, not question-bank content**. It is not in
+`content/catalog.json`, not validated by `scripts/validate-content.js`, and must
+never be run through the bank generators. It is also distinct from
+`content/guides/answer-signs.js`, which is a browser global powering an in-app
+view; `guides/` is not loaded by the browser app at all.
+
+Conventions:
+
+- `guides/README.md` is the index. **Every guide must be reachable from it**,
+  directly or transitively — `scripts/check-guides.js` enforces this.
+- Domain guides name the exact `content/catalog.json` domain and skills they
+  cover in a header block, so readers can filter the app to matching practice.
+  When the catalog taxonomy changes, update the affected guides.
+- Every heuristic must be stated with the conditions under which it fails.
+  These are probabilistic tells, not rules; never present them as guarantees.
+- Content must stay original and free of official or copyrighted material.
+- Time-sensitive facts (test dates, fees, policies) carry a verify-before-you-
+  rely-on-this note. Update `guides/02-registration-and-test-day.md` when a new
+  testing year is published.
+
+`node scripts/check-guides.js` verifies that every relative Markdown link
+resolves, every file has a top-level heading, and every file is reachable from
+the index. It runs as part of `npm run check`.
+
 ## Expanding question counts
 
 Every bank currently holds exactly `catalog.targetPerSection` (575) items —

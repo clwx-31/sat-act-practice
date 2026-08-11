@@ -313,7 +313,27 @@
         </div>
         <div id="dashboardStats" class="stats-grid"></div>
         <section class="panel">
-          <h2>Skill performance</h2>
+          <div class="mastery-head">
+            <h2>Skill performance</h2>
+            <div class="mastery-controls">
+              <span class="control">
+                <label for="masterySection">Section</label>
+                <select id="masterySection"></select>
+              </span>
+              <span class="control">
+                <label for="masterySort">Sort by</label>
+                <select id="masterySort">
+                  <option value="focus">What to work on</option>
+                  <option value="accuracy-asc">Lowest accuracy</option>
+                  <option value="accuracy-desc">Highest accuracy</option>
+                  <option value="attempted">Most attempted</option>
+                  <option value="section">Test and section</option>
+                  <option value="skill">Skill name</option>
+                </select>
+              </span>
+            </div>
+          </div>
+          <p id="masteryNote" class="field-note"></p>
           <div id="skillTableWrap" class="table-wrap"></div>
         </section>
       </section>

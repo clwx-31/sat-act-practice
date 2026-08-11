@@ -719,6 +719,47 @@ input:disabled {
   flex: 1;
 }
 
+.mastery-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.mastery-head h2 {
+  margin: 0;
+}
+
+.mastery-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mastery-controls .control {
+  display: grid;
+  gap: 4px;
+}
+
+.mastery-controls label {
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--subtle);
+}
+
+.mastery-controls select {
+  min-width: 11rem;
+}
+
+.mastery-section-cell {
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .booklet-layout small {
   display: block;
   margin-top: 14px;

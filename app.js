@@ -72,6 +72,9 @@
     reviewSession: document.getElementById("reviewSessionBtn"),
     dashboardStats: document.getElementById("dashboardStats"),
     skillTableWrap: document.getElementById("skillTableWrap"),
+    masterySection: document.getElementById("masterySection"),
+    masterySort: document.getElementById("masterySort"),
+    masteryNote: document.getElementById("masteryNote"),
     clearProgress: document.getElementById("clearProgressBtn"),
     reviewList: document.getElementById("reviewList"),
     home: document.getElementById("homeLink"),
@@ -90,6 +93,7 @@
   let answered = false;
   let recommendation = null;
   let activeReviewList = "missed";
+  let masteryRows = [];
   let clearArmed = false;
   let bankRequestId = 0;
   const bankPromises = new Map();
@@ -1109,26 +1113,95 @@
       card.append(strong, span);
       elements.dashboardStats.appendChild(card);
     });
-    const skills = Object.values(summary.bySkill).sort(
-      (left, right) => left.accuracy - right.accuracy || right.attempted - left.attempted,
+    masteryRows = Object.values(summary.bySkill);
+    populateMasterySections();
+    renderMastery();
+  }
+
+  /* ------------------------------------------------------------- mastery table */
+
+  // Weakness alone puts a single missed question above a skill missed ten
+  // times, so the default order weights low accuracy by how much evidence
+  // there is for it.
+  function focusScore(row) {
+    return (1 - row.accuracy) * Math.sqrt(row.attempted);
+  }
+
+  const MASTERY_SORTS = {
+    focus: (left, right) => focusScore(right) - focusScore(left),
+    "accuracy-asc": (left, right) =>
+      left.accuracy - right.accuracy || right.attempted - left.attempted,
+    "accuracy-desc": (left, right) =>
+      right.accuracy - left.accuracy || right.attempted - left.attempted,
+    attempted: (left, right) => right.attempted - left.attempted,
+    section: (left, right) =>
+      sectionLabel(left.sectionKey).localeCompare(sectionLabel(right.sectionKey)) ||
+      left.skill.localeCompare(right.skill),
+    skill: (left, right) => left.skill.localeCompare(right.skill),
+  };
+
+  function sectionLabel(sectionKey) {
+    const section = sectionByKey(sectionKey);
+    return section ? `${section.test} — ${section.shortLabel}` : sectionKey;
+  }
+
+  // Only sections the student has actually attempted are offered, so the
+  // filter never leads to an empty table.
+  function populateMasterySections() {
+    const present = [...new Set(masteryRows.map((row) => row.sectionKey))].sort(
+      (left, right) => sectionLabel(left).localeCompare(sectionLabel(right)),
     );
-    if (!skills.length) {
+    const previous = elements.masterySection.value;
+    elements.masterySection.innerHTML = "";
+    const all = document.createElement("option");
+    all.value = "all";
+    all.textContent = `All sections (${masteryRows.length} skills)`;
+    elements.masterySection.appendChild(all);
+    present.forEach((sectionKey) => {
+      const option = document.createElement("option");
+      option.value = sectionKey;
+      const count = masteryRows.filter((row) => row.sectionKey === sectionKey).length;
+      option.textContent = `${sectionLabel(sectionKey)} (${count})`;
+      elements.masterySection.appendChild(option);
+    });
+    if (previous && present.includes(previous)) elements.masterySection.value = previous;
+  }
+
+  function renderMastery() {
+    if (!masteryRows.length) {
+      elements.masteryNote.textContent = "";
       elements.skillTableWrap.innerHTML =
-        '<div class="empty-state"><strong>No scored attempts yet.</strong><p>Complete a practice session to see skill-level accuracy.</p></div>';
+        '<div class="empty-state"><strong>No scored attempts yet.</strong>' +
+        "<p>Complete a practice session to see skill-level accuracy.</p></div>";
       return;
     }
+
+    const sectionFilter = elements.masterySection.value || "all";
+    const sortKey = elements.masterySort.value || "focus";
+    const rows = masteryRows
+      .filter((row) => sectionFilter === "all" || row.sectionKey === sectionFilter)
+      .sort(MASTERY_SORTS[sortKey] || MASTERY_SORTS.focus);
+
+    elements.masteryNote.textContent = sortKey === "focus"
+      ? `${rows.length} skills, weakest first — accuracy weighted by how many ` +
+        "questions you have answered in each skill."
+      : `${rows.length} skills.`;
+
     const table = document.createElement("table");
     table.innerHTML =
-      "<thead><tr><th>Skill</th><th>Attempts</th><th>Accuracy</th><th>Next step</th></tr></thead>";
+      "<thead><tr><th>Skill</th><th>Section</th><th>Attempts</th>" +
+      "<th>Accuracy</th><th>Next step</th></tr></thead>";
     const body = document.createElement("tbody");
-    skills.forEach((skill) => {
-      const row = document.createElement("tr");
-      const accuracy = Math.round(skill.accuracy * 100);
-      row.innerHTML =
-        `<td>${escapeHtml(skill.skill)}</td><td>${skill.attempted}</td>` +
+    rows.forEach((row) => {
+      const accuracy = Math.round(row.accuracy * 100);
+      const tr = document.createElement("tr");
+      tr.innerHTML =
+        `<td>${escapeHtml(row.skill)}</td>` +
+        `<td class="mastery-section-cell">${escapeHtml(sectionLabel(row.sectionKey))}</td>` +
+        `<td>${row.attempted}</td>` +
         `<td><span class="meter"><i style="width:${accuracy}%"></i></span> ${accuracy}%</td>` +
         `<td>${accuracy < 50 ? "Rebuild with Easy" : accuracy < 80 ? "Continue at Medium" : "Try Hard"}</td>`;
-      body.appendChild(row);
+      body.appendChild(tr);
     });
     table.appendChild(body);
     elements.skillTableWrap.innerHTML = "";
@@ -1382,6 +1455,8 @@
     elements.prev.addEventListener("click", previousQuestion);
     elements.finishTest.addEventListener("click", finishMiniTest);
     elements.miniTestStart.addEventListener("click", startMiniTest);
+    elements.masterySection.addEventListener("change", renderMastery);
+    elements.masterySort.addEventListener("change", renderMastery);
     elements.reviewAll.addEventListener("click", startMiniTestReview);
     elements.exit.addEventListener("click", exitSession);
     elements.bookmark.addEventListener("click", () => toggleSaved("bookmarked"));

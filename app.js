@@ -113,6 +113,7 @@
       bookmarked: [],
       flagged: [],
       recentIds: [],
+      servedIds: [],
     };
   }
 
@@ -124,6 +125,7 @@
         parsed.bookmarked = Array.isArray(parsed.bookmarked) ? parsed.bookmarked : [];
         parsed.flagged = Array.isArray(parsed.flagged) ? parsed.flagged : [];
         parsed.recentIds = Array.isArray(parsed.recentIds) ? parsed.recentIds : [];
+        parsed.servedIds = Array.isArray(parsed.servedIds) ? parsed.servedIds : [];
         return parsed;
       }
     } catch (error) {
@@ -135,6 +137,9 @@
   function saveProgress() {
     progress.attempts = progress.attempts.slice(-5000);
     progress.recentIds = progress.recentIds.slice(-30);
+    // Deep enough that a section's rotation is felt, shallow enough that a
+    // filtered pool is never starved.
+    progress.servedIds = progress.servedIds.slice(-400);
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
     } catch (error) {
@@ -633,13 +638,30 @@
       return;
     }
     const count = elements.count.value;
+    // Review modes exist precisely to serve questions again, so history is
+    // only avoided when the student asked for new practice.
+    const revisiting = mode === "missed" || mode === "bookmarked" || mode === "flagged";
     session = mode === "adaptive"
       ? pool.slice(0, count === "all" ? pool.length : Number(count))
-      : core.buildSession(pool, count, `${Date.now()}-${elements.section.value}`);
+      : core.buildSession(pool, count, `${Date.now()}-${elements.section.value}`, {
+          avoidIds: revisiting ? [] : progress.servedIds,
+          spreadFamilies: !revisiting,
+        });
+    rememberServed(session);
     sessionIndex = 0;
     sessionResults = [];
     showView("quiz");
     renderQuestion();
+  }
+
+  // Recorded when a session is built, not when a question is answered, so
+  // abandoning a session still rotates its questions out.
+  function rememberServed(questions) {
+    const seen = new Set(progress.servedIds);
+    questions.forEach((question) => {
+      if (!seen.has(question.id)) progress.servedIds.push(question.id);
+    });
+    saveProgress();
   }
 
   function currentQuestion() {

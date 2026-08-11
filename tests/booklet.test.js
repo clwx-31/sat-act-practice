@@ -198,3 +198,91 @@ test("rendered booklet and key cover every question", () => {
   assert.equal((texOut.match(/\\question\{/g) || []).length, 98);
   assert.ok(!/[^\x00-\x7F]/.test(texOut), "LaTeX source must stay ASCII");
 });
+
+/* ------------------------------------------------- repetition prevention */
+
+function familyBank(count) {
+  return Array.from({ length: count }, (unused, index) => ({
+    id: `fam-${String(index).padStart(3, "0")}`,
+    sectionKey: "sat-math",
+    skill: "Linear equations",
+    subskill: "solve",
+    difficulty: "Medium",
+    responseType: "multiple-choice",
+    // Ten items per family, so a naive shuffle would clump.
+    tags: [`family:shape-${Math.floor(index / 10)}`],
+  }));
+}
+
+test("questionFamily prefers the generator tag over the taxonomy", () => {
+  assert.equal(
+    core.questionFamily({ tags: ["family:sat-math/quadratic/hard"], sectionKey: "x" }),
+    "sat-math/quadratic/hard",
+  );
+  assert.equal(
+    core.questionFamily({ tags: [], sectionKey: "sat-math", skill: "S", subskill: "u" }),
+    "sat-math|S|u",
+  );
+});
+
+test("a session avoids recently served questions", () => {
+  const bank = familyBank(100);
+  const first = core.buildSession(bank, 10, "seed-1");
+  const second = core.buildSession(bank, 10, "seed-1", {
+    avoidIds: first.map((question) => question.id),
+  });
+  const overlap = second.filter((question) =>
+    first.some((earlier) => earlier.id === question.id),
+  );
+  assert.equal(overlap.length, 0, "a rebuilt session must not recycle served items");
+  assert.equal(second.length, 10);
+});
+
+test("history relaxes rather than starving a small pool", () => {
+  const bank = familyBank(12);
+  const served = bank.slice(0, 10).map((question) => question.id);
+  const session = core.buildSession(bank, 10, "seed-2", { avoidIds: served });
+  assert.equal(session.length, 10, "must still fill the requested length");
+  assert.equal(new Set(session.map((q) => q.id)).size, 10, "and stay distinct");
+});
+
+test("a session spreads across template families", () => {
+  const bank = familyBank(100);
+  const session = core.buildSession(bank, 10, "seed-3");
+  const families = session.map((question) => core.questionFamily(question));
+  assert.equal(
+    new Set(families).size,
+    10,
+    `expected one item per family, got ${JSON.stringify(families)}`,
+  );
+});
+
+test("no single family dominates even when the pool is skewed", () => {
+  // 40 items of one family, 6 of another: the session must not be all of one.
+  const skewed = [
+    ...Array.from({ length: 40 }, (unused, index) => ({
+      id: `big-${index}`, tags: ["family:big"], sectionKey: "s", skill: "k", subskill: "u",
+    })),
+    ...Array.from({ length: 6 }, (unused, index) => ({
+      id: `small-${index}`, tags: ["family:small"], sectionKey: "s", skill: "k", subskill: "u",
+    })),
+  ];
+  const session = core.buildSession(skewed, 10, "seed-4");
+  const big = session.filter((q) => q.id.startsWith("big")).length;
+  assert.ok(big <= 6, `one family took ${big} of 10 slots`);
+});
+
+test("review sessions can opt out of both constraints", () => {
+  const bank = familyBank(30);
+  const session = core.buildSession(bank, 5, "seed-5", { spreadFamilies: false });
+  assert.equal(session.length, 5);
+});
+
+test("buildSession still honours its original contract", () => {
+  const bank = familyBank(30);
+  assert.equal(core.buildSession(bank, "all", "s").length, 30);
+  assert.equal(core.buildSession(bank, 7, "s").length, 7);
+  const a = core.buildSession(bank, 7, "same");
+  const b = core.buildSession(bank, 7, "same");
+  assert.deepEqual(a.map((q) => q.id), b.map((q) => q.id), "must stay deterministic");
+});

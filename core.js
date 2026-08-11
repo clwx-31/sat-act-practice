@@ -553,10 +553,59 @@
     return result;
   }
 
-  function buildSession(questions, count, seed) {
+  // A question's template family. Generators tag items with `family:<name>`;
+  // without that tag the taxonomy is the best available proxy. Two items in
+  // the same family are the same underlying question wearing different
+  // numbers or names, so a session should rarely take two from one family.
+  function questionFamily(question) {
+    const tagged = (question.tags || []).find((tag) => tag.indexOf("family:") === 0);
+    if (tagged) return tagged.slice("family:".length);
+    return `${question.sectionKey}|${question.skill}|${question.subskill}`;
+  }
+
+  // Builds a session that avoids recently served questions and spreads across
+  // template families, so refreshing the page does not recycle the same items
+  // and one family cannot dominate. Both constraints relax rather than fail
+  // when the filtered pool is too small to honour them.
+  function buildSession(questions, count, seed, options) {
+    const settings = options || {};
+    const avoid = new Set(settings.avoidIds || []);
+    const target = count === "all"
+      ? questions.length
+      : Math.max(1, Number(count) || 10);
+
     const shuffled = deterministicShuffle(questions, seed);
-    if (count === "all") return shuffled;
-    return shuffled.slice(0, Math.max(1, Number(count) || 10));
+    const fresh = shuffled.filter((question) => !avoid.has(question.id));
+    // Recently served items go to the back rather than being dropped, so a
+    // small pool still fills the requested length.
+    const ordered = fresh.length >= target
+      ? fresh
+      : fresh.concat(shuffled.filter((question) => avoid.has(question.id)));
+
+    if (settings.spreadFamilies === false) return ordered.slice(0, target);
+
+    const families = new Map();
+    ordered.forEach((question) => {
+      const key = questionFamily(question);
+      if (!families.has(key)) families.set(key, []);
+      families.get(key).push(question);
+    });
+
+    // Round-robin across families: every family contributes its first item
+    // before any family contributes a second.
+    const queues = [...families.values()];
+    const picked = [];
+    let progressed = true;
+    while (picked.length < target && progressed) {
+      progressed = false;
+      for (const queue of queues) {
+        if (picked.length >= target) break;
+        if (!queue.length) continue;
+        picked.push(queue.shift());
+        progressed = true;
+      }
+    }
+    return picked;
   }
 
   return {
@@ -579,6 +628,7 @@
     filterQuestions,
     normalize,
     numericEqual,
+    questionFamily,
     recommendQuestion,
     scoreResponse,
     summarizeMiniTest,

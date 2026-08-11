@@ -10,6 +10,8 @@
     "report:content:write": "node scripts/report-content.js --write",
     "check:guides": "node scripts/check-guides.js",
     "build:booklet": "node scripts/build-booklet.js",
+    "audit:questions": "node scripts/audit-questions.js",
+    "audit:questions:strict": "node scripts/audit-questions.js --strict",
     "test": "node --test",
     "check": "node scripts/check-all.js"
   }

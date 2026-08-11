@@ -66,6 +66,13 @@ function expandTaxonomy(section, existing) {
   return tasks;
 }
 
+const DIFFICULTY_TIERS = ["Easy", "Medium", "Hard"];
+
+// Difficulty still fills the catalog's per-tier targets, but the tasks are
+// visited in hash order rather than taxonomy order. Walking them in order made
+// the tier sequence alias with the answer-position sequence, which is how the
+// old banks ended up keying 67% of Hard ACT items to choice A. Generators are
+// expected to branch on the assigned tier so the label describes the question.
 function assignDifficulties(tasks, existing, targets) {
   const current = countBy(existing, "difficulty");
   const remaining = Object.fromEntries(
@@ -78,19 +85,24 @@ function assignDifficulties(tasks, existing, targets) {
     if (count < 0) throw new Error(`${difficulty} already exceeds its target`);
   });
 
-  const order = ["Medium", "Easy", "Hard"];
-  tasks.forEach((task, index) => {
-    const available = order.filter((difficulty) => remaining[difficulty] > 0);
+  const visitOrder = tasks
+    .map((task, index) => ({
+      index,
+      key: hashString(`${task.domain}|${task.skill}|${task.subskill}|${index}`),
+    }))
+    .sort((left, right) => left.key - right.key || left.index - right.index);
+
+  visitOrder.forEach(({ index }) => {
+    const available = DIFFICULTY_TIERS.filter((tier) => remaining[tier] > 0);
     if (available.length === 0) throw new Error("Difficulty targets exhausted early");
     available.sort((left, right) => {
-      const leftRatio = remaining[left] / targets[left];
-      const rightRatio = remaining[right] / targets[right];
-      if (rightRatio !== leftRatio) return rightRatio - leftRatio;
-      return order.indexOf(left) - order.indexOf(right);
+      const leftShare = remaining[left] / targets[left];
+      const rightShare = remaining[right] / targets[right];
+      if (rightShare !== leftShare) return rightShare - leftShare;
+      return DIFFICULTY_TIERS.indexOf(left) - DIFFICULTY_TIERS.indexOf(right);
     });
-    const difficulty = available[index % Math.min(2, available.length)] || available[0];
-    task.difficulty = difficulty;
-    remaining[difficulty] -= 1;
+    tasks[index].difficulty = available[0];
+    remaining[available[0]] -= 1;
   });
 
   if (Object.values(remaining).some((count) => count !== 0)) {
@@ -98,28 +110,29 @@ function assignDifficulties(tasks, existing, targets) {
   }
 }
 
-function answerPositionPlanner(existing, finalMultipleChoiceCount = 500) {
-  const targetBase = Math.floor(finalMultipleChoiceCount / 4);
-  const extras = finalMultipleChoiceCount % 4;
-  const targets = [0, 1, 2, 3].map((index) => targetBase + (index < extras ? 1 : 0));
-  const counts = [0, 0, 0, 0];
+// Answer positions are balanced *within each difficulty tier*, not just
+// overall. A globally balanced bank can still key almost every Hard item to
+// the same letter, which is a free point for anyone who notices. Ties are
+// broken by an item hash so the choice never follows generation order.
+function answerPositionPlanner(existing) {
+  const counts = {};
+  DIFFICULTY_TIERS.forEach((tier) => {
+    counts[tier] = [0, 0, 0, 0];
+  });
   existing
     .filter((question) => question.responseType === "multiple-choice")
     .forEach((question) => {
-      counts[question.correctAnswer] += 1;
+      const tier = counts[question.difficulty] || counts.Medium;
+      tier[question.correctAnswer] += 1;
     });
 
-  return function nextPosition() {
-    const deficits = targets.map((target, index) => ({
-      index,
-      deficit: target - counts[index],
-    }));
-    deficits.sort((left, right) =>
-      right.deficit - left.deficit || left.index - right.index,
-    );
-    if (deficits[0].deficit <= 0) throw new Error("Answer-position targets exhausted");
-    counts[deficits[0].index] += 1;
-    return deficits[0].index;
+  return function nextPosition(difficulty, seedKey) {
+    const tier = counts[difficulty] || counts.Medium;
+    const fewest = Math.min(...tier);
+    const candidates = [0, 1, 2, 3].filter((index) => tier[index] === fewest);
+    const choice = candidates[hashString(String(seedKey)) % candidates.length];
+    tier[choice] += 1;
+    return choice;
   };
 }
 
@@ -217,12 +230,7 @@ function generateSection(sectionKey, generator, options = {}) {
   const tasks = expandTaxonomy(section, existing);
   assignDifficulties(tasks, existing, catalog.difficultyTargets);
 
-  const finalMultipleChoiceCount = options.finalMultipleChoiceCount === undefined
-    ? catalog.targetPerSection
-    : options.finalMultipleChoiceCount;
-  const nextAnswerPosition = finalMultipleChoiceCount > 0
-    ? answerPositionPlanner(existing, finalMultipleChoiceCount)
-    : null;
+  const nextAnswerPosition = answerPositionPlanner(existing);
 
   const generatedQuestions = tasks.map((task, taskIndex) => {
     const sequence = existing.length + taskIndex + 1;
@@ -243,7 +251,9 @@ function generateSection(sectionKey, generator, options = {}) {
       sequence,
       responseType,
       generated,
-      answerPosition: responseType === "multiple-choice" ? nextAnswerPosition() : null,
+      answerPosition: responseType === "multiple-choice"
+        ? nextAnswerPosition(task.difficulty, seed)
+        : null,
       generator: options.generatorName || `${sectionKey}-generator-v1`,
     });
   });

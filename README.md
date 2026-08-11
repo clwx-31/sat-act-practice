@@ -177,7 +177,9 @@ npm run report:content
 After changing canonical content, run `npm run build:content` and commit both
 the JSON source and regenerated browser bank.
 
-See [Content authoring and review](docs/CONTENT_AUTHORING.md) for the safe
+See [Question quality handoff](docs/QUESTION_QUALITY_HANDOFF.md) for the
+current state of the question-quality work, the audit baseline, and what
+remains. See [Content authoring and review](docs/CONTENT_AUTHORING.md) for the safe
 editing workflow and [Content coverage report](docs/CONTENT_REPORT.md) for
 verified counts.
 

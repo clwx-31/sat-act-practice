@@ -62,9 +62,15 @@ score < 40%.
 
 ## What remains
 
-1. **SAT Math and ACT Mathematics generators** — in progress at time of
-   writing; check `git diff scripts/generate-sat-math.js
-   scripts/generate-act-mathematics.js`. Goal: three genuinely different
+1. **SAT Math and ACT Mathematics generators** — partly rewritten and committed
+   unfinished in `09dd729`. The single template-per-subskill switch has been
+   replaced with difficulty-aware builders carrying `family:` tags (159 in SAT
+   Math, 60 in ACT Mathematics), but the rewrite stopped partway through the
+   Advanced Math and Functions domains. **Both files parse and the committed
+   banks are still the previous content — the generators have never been run.**
+   Finish converting the remaining subskills, then run `--rebuild` and verify
+   every answer by independent recomputation before trusting the output. Goal:
+   three genuinely different
    variants per subskill keyed off `task.difficulty`, several structurally
    distinct shapes per tier, and real Hard content. **None of these topics
    exist anywhere in the bank today**: logarithms, trig identities beyond

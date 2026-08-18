@@ -13,6 +13,8 @@
     "audit:questions": "node scripts/audit-questions.js",
     "audit:questions:strict": "node scripts/audit-questions.js --strict",
     "test": "node --test",
-    "check": "node scripts/check-all.js"
+    "check": "node scripts/check-all.js",
+    "check:difficulty": "node scripts/check-difficulty.js",
+    "check:shapes": "node scripts/check-shapes.js"
   }
 }

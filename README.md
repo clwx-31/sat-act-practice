@@ -177,11 +177,17 @@ npm run report:content
 After changing canonical content, run `npm run build:content` and commit both
 the JSON source and regenerated browser bank.
 
-See [Question quality handoff](docs/QUESTION_QUALITY_HANDOFF.md) for the
-current state of the question-quality work, the audit baseline, and what
-remains. See [Content authoring and review](docs/CONTENT_AUTHORING.md) for the safe
-editing workflow and [Content coverage report](docs/CONTENT_REPORT.md) for
-verified counts.
+**Start here for content work:** [Rebuild handoff](docs/QUESTION_QUALITY_HANDOFF.md)
+is the live working document — the two rules that govern every generator, where
+each of the seven sections stands, the order of work, and how to author a
+question shape. See [Content authoring and review](docs/CONTENT_AUTHORING.md)
+for the safe editing workflow and
+[Content coverage report](docs/CONTENT_REPORT.md) for verified counts.
+
+Two commands matter most. `npm run check` must pass before any commit.
+`node scripts/check-shapes.js` exercises every math shape over 1,200 sequences
+and applies the validator's own near-duplicate rule to eight simulated reuses,
+so a shape that cannot fill a bank fails there rather than during a rebuild.
 
 ## Editorial and legal status
 

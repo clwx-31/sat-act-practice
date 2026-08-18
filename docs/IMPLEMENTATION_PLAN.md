@@ -1,6 +1,13 @@
 # SAT/ACT Practice Platform Implementation Plan
 
-Status: complete
+> **Historical, superseded 2026-08-18.** This records how the platform was
+> first built and is kept for that history. It is not the current plan: the
+> question banks it declares complete were later found to be far less varied
+> and far easier than they appear, and every generator is being rewritten. For
+> current state and the order of work see
+> [Rebuild handoff](QUESTION_QUALITY_HANDOFF.md).
+
+Status: complete (2026-07-29 scope)
 Started: 2026-07-29  
 Target: 500 validated original items in each of seven supported sections
 

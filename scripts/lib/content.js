@@ -84,13 +84,29 @@ function loadPassages(sectionKey) {
 // The stimulus a passage presents to a renderer. Kept in one place so the
 // browser bundle in build-content.js and the Node-side booklet builder show a
 // student exactly the same text.
+// Passage sources are hard-wrapped so they stay readable as files, but the app
+// renders a stimulus with `white-space: pre-wrap`, which would show every one of
+// those wraps as a line break. Soft wraps inside a paragraph are joined here;
+// blank lines keep their meaning, and table rows and bullets keep their own
+// line structure because the booklet parses them by line.
+function unwrapParagraphs(text) {
+  return String(text)
+    .split(/\n\s*\n/)
+    .map((block) => {
+      const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+      const structured = lines.some((line) => line.includes("|") || line.startsWith("•"));
+      return structured ? lines.join("\n") : lines.join(" ");
+    })
+    .filter(Boolean)
+    .join("\n\n");
+}
+
 function passageStimulus(passage) {
   return {
     type: passage.type,
-    content:
-      (passage.title ? `${passage.title}\n\n` : "") +
-      (passage.intro ? `${passage.intro}\n\n` : "") +
-      passage.content,
+    content: [passage.title, passage.intro, unwrapParagraphs(passage.content)]
+      .filter(Boolean)
+      .join("\n\n"),
   };
 }
 
@@ -731,6 +747,7 @@ module.exports = {
   loadAllPassages,
   hydrateBank,
   passageStimulus,
+  unwrapParagraphs,
   passagePath,
   passageErrors,
   PASSAGE_RULES,

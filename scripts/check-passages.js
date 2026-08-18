@@ -196,8 +196,37 @@ function main() {
       `(${byTier.Easy} Easy / ${byTier.Medium} Medium / ${byTier.Hard} Hard): ` +
       `${problems.length ? `${problems.length} problems` : "clean"}.`,
   );
-  Object.entries(byDomain).forEach(([domain, count]) => {
-    console.log(`   ${String(count).padStart(4)}  ${domain}`);
+
+  // Authoring 55 passages by hand drifts. The bank has to land on the
+  // catalog's exact domain and difficulty targets, so every run reports how far
+  // the material written so far is from the share it should hold by now — the
+  // remaining passages are what has to absorb the gap.
+  keys.forEach((key) => {
+    const catalog = loadCatalog();
+    const section = catalog.sections.find((entry) => entry.key === key);
+    if (!section || questions === 0) return;
+    const share = questions / catalog.targetPerSection;
+    console.log(`\n   on pace for ${catalog.targetPerSection} ${key} questions (${(share * 100).toFixed(0)}% authored)`);
+    console.log("   domain                                            now   due    gap");
+    section.domains.forEach((domain) => {
+      const now = byDomain[domain.name] || 0;
+      const due = Math.round(domain.target * share);
+      const gap = now - due;
+      console.log(
+        `   ${domain.name.padEnd(48)}${String(now).padStart(5)}${String(due).padStart(6)}` +
+          `${(gap > 0 ? `+${gap}` : String(gap)).padStart(7)}`,
+      );
+    });
+    console.log("   difficulty                                        now   due    gap");
+    TIERS.forEach((tier) => {
+      const now = byTier[tier];
+      const due = Math.round(catalog.difficultyTargets[tier] * share);
+      const gap = now - due;
+      console.log(
+        `   ${tier.padEnd(48)}${String(now).padStart(5)}${String(due).padStart(6)}` +
+          `${(gap > 0 ? `+${gap}` : String(gap)).padStart(7)}`,
+      );
+    });
   });
 
   if (problems.length) process.exit(1);

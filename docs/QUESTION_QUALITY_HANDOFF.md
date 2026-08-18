@@ -2,7 +2,10 @@
 
 Live working document. Whoever picks this up (human, Claude, or Codex) should
 read it end to end before touching a generator, a bank, or the app shell.
-Last updated 2026-08-18.
+Last updated 2026-08-18, after `cec80d6`. **Numbers below were re-measured
+against the working tree at that commit** — re-run the commands in
+[Commands](#commands) before trusting any figure here; they drift every time a
+generator or a gate changes.
 
 ## The goal
 
@@ -30,7 +33,13 @@ item this means the numbers are invisible to the rule: `3x + 5 = 26` and
 wording and setting distinguish two uses of a shape. For items carrying a
 `stimulus`, only the stimulus is compared — the stem is ignored.
 
-**2. Difficulty must be a property of the question.** `assignDifficulties` fills
+**2. Difficulty must be a property of the question.** The criteria are written
+down in `docs/DIFFICULTY_CALIBRATION.md` and measured by
+`npm run check:difficulty`, which currently reports **1 of 7 sections has
+meaningful difficulty labels** — for most sections the Hard tier is *more*
+guessable without reading than the Easy tier, which means the label is
+decorative.
+ `assignDifficulties` fills
 the catalog's per-tier targets in hash order and every generator branches on
 `task.difficulty`. A tier label is a lie unless the shape behind it is really
 one-step (Easy), two or three steps (Medium), or governed by a structure the
@@ -88,10 +97,20 @@ A test rebuild measured: distinct shapes 72 → 423, answerable-without-reading
 compound versus simple interest, inverse-square variation, similar-figure area
 scaling, chained ratios, matrix entries, complex numbers, logarithms.
 
-**The blocker: 54 of the 232 shapes fail rule 1.** They rotate through four
-phrasings, so a fifth reuse repeats the first, and because small numbers are
-invisible to the validator the repeat is a rejection. `check-shapes` reports
-each one as `reuses N and M overlap 100%`. The fix per shape is one of:
+**The blocker: the harness now reports 206 problems across the 232 shapes**,
+concentrated in 9 shape families. They rotate through too few phrasings, so a
+later reuse repeats an earlier one, and because small numbers are invisible to
+the validator the repeat is a rejection. `check-shapes` reports each one as
+`reuses N and M overlap 100%`.
+
+> ⚠️ **This number was 54 when the harness was looser.** `45454f7` made the
+> harness apply the validator's *actual* near-duplicate rule, and `cacb869`
+> then converted 34 algebra shapes to the shared phrasing layer. 206 is the
+> honest current count — the work is roughly four times what the old figure
+> implied. Re-run `npm run check:shapes -- act-mathematics` for the live list
+> and the exact families; do not plan against the number printed here.
+
+The fix per shape is one of:
 
 - **Algebra shapes** (no real-world setting): extend the `choose(variant, [...])`
   stem array from four phrasings to **eight**, each carrying a word the others
@@ -113,13 +132,17 @@ systems, unit conversion. Run the harness for the current list.
 2. **SAT Math** — 48 subskills, none converted. `scripts/generate-sat-math.js`
    holds an unfinished rewrite from `09dd729`; it exports `context`,
    `formatNumber`, `mathQuestion` but **no `SHAPES`**, so `check-shapes.js`
-   throws on it today. Same structure as ACT Mathematics, roughly twice the
+   throws on it today. (It throws on every section except `act-mathematics` for
+   the same reason — that is expected, not a bug to chase.) Same structure as ACT Mathematics, roughly twice the
    size.
 3. **ACT Reading** — the worst section. 97.4% answerable without reading,
    because the key is always the hedged, qualified, longest option and the
    distractors are short absolutes. Fix by length-matching and equally
-   qualifying every distractor. Also: median passage is 52 words against a real
-   ~750, and no stimulus is shared by two items, so there are no passage sets.
+   qualifying every distractor. Also: median passage in the *committed bank* is 52 words against a real ~750.
+   **Passage sets now exist as a first-class entity** (`830f57c`) — a stimulus
+   can be shared across items — and `scripts/data/act-reading/` holds the
+   authoring spec and one file per passage. That directory's `README.md` is the
+   contract for writing passages; read it before authoring any.
 4. **SAT Reading & Writing and ACT English** — 25 items whose keyed answer is
    ungrammatical (`sat-reading-writing-0011` and every 6th id through 0155); 29
    whose explanation describes a different question (`0316`, `0320`, `0324`, …);
@@ -196,8 +219,10 @@ Rules the harness enforces:
 
 ```sh
 npm run check                 # syntax, validation, static smoke, tests — must pass before commit
-node scripts/check-shapes.js  # every math shape, 1200 sequences (not yet in `check`)
+npm run check:shapes -- act-mathematics   # every shape, 1200 sequences (not yet in `check`)
+npm run check:difficulty      # are the tier labels real? (not yet in `check`)
 npm run audit:questions       # quality report per section
+npm run audit:questions:strict
 npm run validate:content      # read-only, safe while other work runs
 npm run build:content         # banks -> content/generated/*.js
 node scripts/generate-act-mathematics.js --rebuild

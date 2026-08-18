@@ -6,6 +6,7 @@ const path = require("node:path");
 const ROOT = path.resolve(__dirname, "..", "..");
 const CATALOG_PATH = path.join(ROOT, "content", "catalog.json");
 const BANKS_DIR = path.join(ROOT, "content", "banks");
+const PASSAGES_DIR = path.join(ROOT, "content", "passages");
 const GENERATED_DIR = path.join(ROOT, "content", "generated");
 
 const ALLOWED_FIELDS = new Set([
@@ -19,6 +20,7 @@ const ALLOWED_FIELDS = new Set([
   "difficulty",
   "responseType",
   "stimulus",
+  "passageId",
   "stem",
   "choices",
   "correctAnswer",
@@ -64,6 +66,50 @@ function bankPath(sectionKey) {
 function loadBank(sectionKey) {
   const filePath = bankPath(sectionKey);
   return fs.existsSync(filePath) ? readJson(filePath) : [];
+}
+
+function passagePath(sectionKey) {
+  return path.join(PASSAGES_DIR, `${sectionKey}.json`);
+}
+
+// Passages are stored once and referenced by id rather than copied onto every
+// question that uses them. A real ACT Reading passage runs about 750 words and
+// carries ten questions; inlining it would multiply each bank by an order of
+// magnitude, and the browser loads a whole section's bank in one request.
+function loadPassages(sectionKey) {
+  const filePath = passagePath(sectionKey);
+  return fs.existsSync(filePath) ? readJson(filePath) : [];
+}
+
+// The stimulus a passage presents to a renderer. Kept in one place so the
+// browser bundle in build-content.js and the Node-side booklet builder show a
+// student exactly the same text.
+function passageStimulus(passage) {
+  return {
+    type: passage.type,
+    content:
+      (passage.title ? `${passage.title}\n\n` : "") +
+      (passage.intro ? `${passage.intro}\n\n` : "") +
+      passage.content,
+  };
+}
+
+// Canonical banks keep questions and passages apart, which is what validation
+// runs against. Renderers want them joined, so this is the join — questions in
+// one set share a single stimulus object rather than a copy each.
+function hydrateBank(sectionKey) {
+  const passages = new Map(
+    loadPassages(sectionKey).map((passage) => [passage.id, passageStimulus(passage)]),
+  );
+  return loadBank(sectionKey).map((question) =>
+    question.passageId && passages.has(question.passageId)
+      ? { ...question, stimulus: passages.get(question.passageId) }
+      : question,
+  );
+}
+
+function loadAllPassages(catalog = loadCatalog()) {
+  return catalog.sections.flatMap((section) => loadPassages(section.key));
 }
 
 function loadAllBanks(catalog = loadCatalog()) {
@@ -139,6 +185,17 @@ function validateQuestion(question, section, catalog) {
     !isNonemptyString(question.stimulus.content)
   )) {
     addError(errors, question, "stimulus must be null or an object with type and content");
+  }
+
+  // A question either carries its own stimulus or belongs to a shared passage,
+  // never both: two sources of context would render one above the other and the
+  // student would not know which the stem refers to.
+  if (question.passageId !== undefined && question.passageId !== null) {
+    if (!isNonemptyString(question.passageId)) {
+      addError(errors, question, "passageId must be null or a non-empty string");
+    } else if (question.stimulus !== null) {
+      addError(errors, question, "a question in a passage set must not also carry its own stimulus");
+    }
   }
 
   [
@@ -331,17 +388,31 @@ function normalizeText(text) {
 
 function structuralSignature(question) {
   const stimulus = question.stimulus ? question.stimulus.content : "";
-  const normalized = normalizeText(`${stimulus} ${question.stem}`);
+  const anchor = question.passageId ? `${question.passageId} ` : "";
+  const normalized = normalizeText(`${anchor}${stimulus} ${question.stem}`);
   const withNumbers = isQuantitative(question)
     ? normalized
     : normalized.replace(/\b\d+(?:\.\d+)?\b/g, "#");
   return withNumbers.replace(/\b[a-z]\b/g, "@");
 }
 
+// What makes two questions "the same" depends on where their context lives.
+//
+// A standalone question carries its own stimulus, and two items sharing one are
+// the same question asked twice. A question in a passage set shares its passage
+// with nine others *by design*, so comparing passages would condemn every set;
+// what distinguishes those items is the stem together with the choices, which
+// is where an ACT English item's underlined alternatives live.
+function comparableText(question) {
+  if (question.passageId) {
+    const choices = Array.isArray(question.choices) ? question.choices.join(" ") : "";
+    return `${question.stem} ${choices}`;
+  }
+  return question.stimulus ? question.stimulus.content : question.stem;
+}
+
 function tokenSet(question) {
-  const text = question.stimulus
-    ? question.stimulus.content
-    : question.stem;
+  const text = comparableText(question);
   const normalized = normalizeText(text);
   const withNumbers = isQuantitative(question)
     ? normalized
@@ -486,6 +557,135 @@ function coverageErrors(questions, catalog = loadCatalog(), requireComplete = fa
   return errors;
 }
 
+// What each real exam's passages look like. These are the numbers the sections
+// are actually built to, and the validator holds the banks to them: a 52-word
+// "passage" carrying one question is the defect this table exists to catch.
+//
+//   types        the passage kinds that section is allowed to use
+//   words        acceptable passage length, in words
+//   perSet       how many questions one passage must carry
+const PASSAGE_RULES = {
+  "act-reading": {
+    types: ["literary-narrative", "social-science", "humanities", "natural-science"],
+    words: [600, 950],
+    perSet: [8, 12],
+  },
+  "act-english": {
+    types: ["personal-essay", "informative-essay", "historical-account", "process-narrative"],
+    words: [250, 450],
+    perSet: [12, 18],
+  },
+  "act-science": {
+    types: ["data-representation", "research-summaries", "conflicting-viewpoints"],
+    words: [80, 600],
+    perSet: [5, 8],
+  },
+};
+
+const PASSAGE_FIELDS = new Set([
+  "id",
+  "sectionKey",
+  "type",
+  "title",
+  "intro",
+  "content",
+  "wordCount",
+  "provenance",
+]);
+
+function countWords(text) {
+  return String(text).trim().split(/\s+/).filter(Boolean).length;
+}
+
+function passageErrors(catalog = loadCatalog()) {
+  const errors = [];
+
+  catalog.sections.forEach((section) => {
+    const rules = PASSAGE_RULES[section.key];
+    const passages = loadPassages(section.key);
+    const bank = loadBank(section.key);
+    const referenced = new Map();
+
+    bank.forEach((question) => {
+      if (!question.passageId) return;
+      if (!referenced.has(question.passageId)) referenced.set(question.passageId, []);
+      referenced.get(question.passageId).push(question.id);
+    });
+
+    if (!rules) {
+      if (passages.length > 0) {
+        errors.push(`${section.key}: has passages but no structural rules are defined for it`);
+      }
+      if (referenced.size > 0) {
+        errors.push(`${section.key}: questions reference passages but the section defines none`);
+      }
+      return;
+    }
+
+    const byId = new Map();
+    passages.forEach((passage) => {
+      const where = passage && passage.id ? passage.id : "(passage with no id)";
+      if (!passage || typeof passage !== "object" || Array.isArray(passage)) {
+        errors.push(`${section.key}: passage entries must be objects`);
+        return;
+      }
+      Object.keys(passage).forEach((field) => {
+        if (!PASSAGE_FIELDS.has(field)) errors.push(`${where}: unknown passage field "${field}"`);
+      });
+      if (!isNonemptyString(passage.id) || !new RegExp(`^${section.key}-p\\d{3}$`).test(passage.id)) {
+        errors.push(`${where}: passage id must match ${section.key}-pNNN`);
+      }
+      if (byId.has(passage.id)) errors.push(`${where}: duplicate passage id`);
+      byId.set(passage.id, passage);
+
+      if (passage.sectionKey !== section.key) {
+        errors.push(`${where}: sectionKey does not match the passage file`);
+      }
+      if (!rules.types.includes(passage.type)) {
+        errors.push(`${where}: type "${passage.type}" is not one of ${rules.types.join(", ")}`);
+      }
+      ["title", "content"].forEach((field) => {
+        if (!isNonemptyString(passage[field])) errors.push(`${where}: ${field} is required`);
+      });
+      if (isNonemptyString(passage.content)) {
+        const words = countWords(passage.content);
+        if (words < rules.words[0] || words > rules.words[1]) {
+          errors.push(
+            `${where}: ${words} words, outside the ${rules.words[0]}-${rules.words[1]} range for ${section.key}`,
+          );
+        }
+        if (passage.wordCount !== words) {
+          errors.push(`${where}: wordCount says ${passage.wordCount} but the content has ${words}`);
+        }
+      }
+      if (!passage.provenance || passage.provenance.type !== "original") {
+        errors.push(`${where}: provenance must declare original content`);
+      }
+    });
+
+    referenced.forEach((questionIds, passageId) => {
+      if (!byId.has(passageId)) {
+        errors.push(`${passageId}: referenced by ${questionIds[0]} but no such passage exists`);
+        return;
+      }
+      const size = questionIds.length;
+      if (size < rules.perSet[0] || size > rules.perSet[1]) {
+        errors.push(
+          `${passageId}: carries ${size} questions, outside the ${rules.perSet[0]}-${rules.perSet[1]} range for ${section.key}`,
+        );
+      }
+    });
+
+    byId.forEach((passage, passageId) => {
+      if (!referenced.has(passageId)) {
+        errors.push(`${passageId}: no question references this passage`);
+      }
+    });
+  });
+
+  return errors;
+}
+
 function validateAll({ requireComplete = false } = {}) {
   const catalog = loadCatalog();
   const sections = sectionMap(catalog);
@@ -505,10 +705,12 @@ function validateAll({ requireComplete = false } = {}) {
   });
   errors.push(...duplicateErrors(questions));
   errors.push(...coverageErrors(questions, catalog, requireComplete));
+  errors.push(...passageErrors(catalog));
 
   return {
     catalog,
     questions,
+    passages: loadAllPassages(catalog),
     report: coverageReport(questions, catalog),
     errors,
   };
@@ -523,7 +725,15 @@ function writeJsonAtomic(filePath, value) {
 
 module.exports = {
   BANKS_DIR,
+  PASSAGES_DIR,
   jaccard,
+  loadPassages,
+  loadAllPassages,
+  hydrateBank,
+  passageStimulus,
+  passagePath,
+  passageErrors,
+  PASSAGE_RULES,
   CATALOG_PATH,
   GENERATED_DIR,
   ROOT,

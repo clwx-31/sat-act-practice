@@ -145,10 +145,18 @@ function blocksToHtml(text) {
     .join("");
 }
 
-function questionHtml(item) {
+function questionHtml(item, previous) {
   const { question, number, letters } = item;
   const parts = [`<article class="q" id="q${number}">`];
-  if (question.stimulus && question.stimulus.content) {
+  // A passage set shares one stimulus across every question in it. Printing it
+  // above each question would repeat 750 words ten times; the real booklet
+  // prints the passage once and then the questions that go with it.
+  const repeated =
+    previous &&
+    previous.question.stimulus &&
+    question.stimulus &&
+    previous.question.stimulus.content === question.stimulus.content;
+  if (question.stimulus && question.stimulus.content && !repeated) {
     parts.push(
       `<div class="stimulus ${escapeHtml(question.stimulus.type)}">` +
         blocksToHtml(question.stimulus.content) +
@@ -327,7 +335,7 @@ function renderBookletHtml(model) {
       questions ${section.firstNumber}–${section.lastNumber}</p>
     <p class="dirs">${escapeHtml(section.directions)}</p>
   </div>
-  <div class="questions">${section.questions.map(questionHtml).join("")}
+  <div class="questions">${section.questions.map((item, index) => questionHtml(item, section.questions[index - 1])).join("")}
     <p class="stop">End of ${escapeHtml(section.label)}</p>
   </div>`,
     )
@@ -496,10 +504,16 @@ function renderTex(model) {
   const body = model.sections
     .map((section) => {
       const questions = section.questions
-        .map((item) => {
+        .map((item, index) => {
           const q = item.question;
+          const before = section.questions[index - 1];
+          const repeated =
+            before &&
+            before.question.stimulus &&
+            q.stimulus &&
+            before.question.stimulus.content === q.stimulus.content;
           const parts = ["\\begin{samepage}"];
-          if (q.stimulus && q.stimulus.content) {
+          if (q.stimulus && q.stimulus.content && !repeated) {
             parts.push(
               `\\begin{stimulus}\n${blocksToTex(q.stimulus.content)}\n\\end{stimulus}`,
             );

@@ -19,7 +19,7 @@ const { spawn } = require("child_process");
 
 const core = require("../core.js");
 const booklet = require("../booklet.js");
-const { ROOT, loadCatalog, loadBank } = require("./lib/content.js");
+const { ROOT, loadCatalog, hydrateBank } = require("./lib/content.js");
 
 const CHROME_CANDIDATES = [
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -166,7 +166,7 @@ function main() {
   const catalog = loadCatalog();
   const bankBySection = {};
   catalog.sections.forEach((section) => {
-    bankBySection[section.key] = loadBank(section.key);
+    bankBySection[section.key] = hydrateBank(section.key);
   });
 
   const form = core.buildTestForm(bankBySection, blueprint, options.seed);

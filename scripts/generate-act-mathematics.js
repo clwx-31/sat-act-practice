@@ -3,6 +3,7 @@
 
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
+const { pose } = require("./lib/phrasing");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -310,12 +311,9 @@ SHAPES["number properties"] = {
       const larger = shared * (cofactor + 1);
       return {
         family: "gcf-of-two-multiples",
-        stem: choose(variant, [
-          `What is the greatest common factor of ${smaller} and ${larger}?`,
-          `Which number is the largest integer that divides both ${smaller} and ${larger} exactly?`,
-          `${smaller} and ${larger} share a greatest common factor equal to what?`,
-          `The greatest common divisor of ${smaller} and ${larger} is which value?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the greatest common factor of ${smaller} and ${larger}`,
+        }),
         answer: shared,
         wrong: [
           [1, "This treats the two numbers as relatively prime, but both are even and share a much larger factor."],
@@ -331,14 +329,16 @@ SHAPES["number properties"] = {
         hint: "Divide both numbers by the largest factor you can see, then check whether the results still share one.",
       };
     },
-    (s) => {
+    (s, variant) => {
       const divisor = 4 + (s % 6);
       const quotient = 25 + ((s * 3) % 9);
       const remainder = 1 + ((s * 5) % (divisor - 1));
       const total = divisor * quotient + remainder;
       return {
         family: "remainder-of-division",
-        stem: `What is the remainder when ${total} is divided by ${divisor}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the remainder when ${total} is divided by ${divisor}`,
+        }),
         answer: remainder,
         wrong: [
           [0, `${divisor} does not divide ${total} evenly, so the remainder is not 0.`],
@@ -356,7 +356,7 @@ SHAPES["number properties"] = {
     },
   ],
   Medium: [
-    (s) => {
+    (s, variant) => {
       const pairs = [[9, 12], [10, 15], [12, 18], [8, 12], [6, 9], [14, 21], [15, 20]];
       const [first, second] = pairs[s % pairs.length];
       const together = lcm(first, second);
@@ -379,7 +379,7 @@ SHAPES["number properties"] = {
         verification: { kind: "product", inputs: [first, together / first], expected: together },
       };
     },
-    (s) => {
+    (s, variant) => {
       const middle = 2 * (17 + (s % 12));
       const total = 3 * middle;
       return {
@@ -502,12 +502,9 @@ SHAPES["complex numbers"] = {
       const d = b + 1 + (s % 5);
       return {
         family: "complex-difference",
-        stem: choose(variant, [
-          `What is (${a} + ${b}i) ${MINUS} (${c} + ${d}i)?`,
-          `Which expression equals the difference (${a} + ${b}i) ${MINUS} (${c} + ${d}i)?`,
-          `Written in a + bi form, (${a} + ${b}i) ${MINUS} (${c} + ${d}i) equals what?`,
-          `Subtracting (${c} + ${d}i) from (${a} + ${b}i) leaves which complex number?`,
-        ]),
+        stem: pose(variant, "value", {
+          expression: `(${a} + ${b}i) ${MINUS} (${c} + ${d}i)`,
+        }),
         answer: cplx(a - c, b - d),
         wrong: [
           [cplx(a + c, b + d), "This adds the two complex numbers instead of subtracting the second one."],
@@ -531,12 +528,9 @@ SHAPES["complex numbers"] = {
       const d = 2 + (s % 7);
       return {
         family: "complex-product",
-        stem: choose(variant, [
-          `What is (${a} + ${b}i)(${c} + ${d}i)?`,
-          `Which expression equals the product (${a} + ${b}i)(${c} + ${d}i)?`,
-          `Written in a + bi form, (${a} + ${b}i)(${c} + ${d}i) equals what?`,
-          `Multiplying (${a} + ${b}i) by (${c} + ${d}i) gives which complex number?`,
-        ]),
+        stem: pose(variant, "value", {
+          expression: `(${a} + ${b}i)(${c} + ${d}i)`,
+        }),
         answer: cplx(a * c - b * d, a * d + b * c),
         wrong: [
           [cplx(a * c + b * d, a * d + b * c), "This treats i² as +1 instead of −1, so the last term keeps its sign."],
@@ -555,12 +549,11 @@ SHAPES["complex numbers"] = {
       const b = 2 + (s % 3);
       return {
         family: "complex-square-real-part",
-        stem: choose(variant, [
-          `If (${a} + ${b}i)² is written in the form x + yi, what is the value of x?`,
-          `Squaring ${a} + ${b}i gives a complex number x + yi. Which number is x?`,
-          `In the standard form of (${a} + ${b}i)², the real part equals what?`,
-          `The expression (${a} + ${b}i)² has a real part of which value?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `(${a} + ${b}i)²`,
+          form: "x + yi",
+          target: "x",
+        }),
         answer: a * a - b * b,
         wrong: [
           [b * b - a * a, "This reverses the subtraction; the square of the real part comes first."],
@@ -578,7 +571,7 @@ SHAPES["complex numbers"] = {
     },
   ],
   Hard: [
-    (s) => {
+    (s, variant) => {
       const exponent = 103 + ((s * 7) % 97);
       const remainder = exponent % 4;
       const powers = ["1", "i", `${MINUS}1`, `${MINUS}i`];
@@ -1132,12 +1125,10 @@ SHAPES["linear equations"] = {
       const total = coefficient * root + constant;
       return {
         family: "solve-two-step-linear",
-        stem: choose(variant, [
-          `If ${coefficient}x + ${constant} = ${total}, ${ask(0, "x")}`,
-          `Solve ${coefficient}x + ${constant} = ${total} for x. ${ask(1, "x").replace(/^w/, "W")}`,
-          `The equation ${coefficient}x + ${constant} = ${total} has one solution. ${ask(2, "x").replace(/^x/, "X")}`,
-          `For which number x is ${coefficient}x + ${constant} equal to ${total}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `${coefficient}x + ${constant} = ${total}`,
+          target: "x",
+        }),
         answer: root,
         wrong: [
           [round3(total / coefficient) - constant, "This divides before removing the constant term."],
@@ -1160,12 +1151,10 @@ SHAPES["linear equations"] = {
       const total = root / divisor + constant;
       return {
         family: "solve-linear-with-division",
-        stem: choose(variant, [
-          `If x/${divisor} + ${constant} = ${total}, what is the value of x?`,
-          `Solve the equation x/${divisor} + ${constant} = ${total}. Which number is x?`,
-          `The equation x/${divisor} + ${constant} = ${total} is true for exactly one x. What does x equal?`,
-          `For which x does x/${divisor} + ${constant} equal ${total}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `x/${divisor} + ${constant} = ${total}`,
+          target: "x",
+        }),
         answer: root,
         wrong: [
           [round3((total - constant) / divisor), `This divides by ${divisor} again instead of multiplying to undo the division.`],
@@ -1196,12 +1185,10 @@ SHAPES["linear equations"] = {
         : `${other}x + ${rightConstant}`;
       return {
         family: "linear-variable-both-sides",
-        stem: choose(variant, [
-          `If ${outer}(x + ${inside}) = ${rightSide}, what is the value of x?`,
-          `Solve ${outer}(x + ${inside}) = ${rightSide}. Which number is x?`,
-          `For which x is ${outer}(x + ${inside}) equal to ${rightSide}?`,
-          `The equation ${outer}(x + ${inside}) = ${rightSide} has one solution. What does x equal?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `${outer}(x + ${inside}) = ${rightSide}`,
+          target: "x",
+        }),
         answer: root,
         wrong: [
           [round3((outer * inside - rightConstant) / (other - outer)) - 1, "This solves correctly and then subtracts an extra 1."],
@@ -1311,12 +1298,11 @@ SHAPES.inequalities = {
       const coefficient = 2 + (s % 4);
       return {
         family: "least-integer-strict-inequality",
-        stem: choose(variant, [
-          `What is the least integer x for which ${coefficient}x > ${coefficient * boundary}?`,
-          `The inequality ${coefficient}x > ${coefficient * boundary} is satisfied by which smallest integer x?`,
-          `Which is the smallest whole number x making ${coefficient}x greater than ${coefficient * boundary}?`,
-          `For ${coefficient}x > ${coefficient * boundary}, the least integer solution equals what?`,
-        ]),
+        stem: pose(variant, "extremeInteger", {
+          condition: `${coefficient}x > ${coefficient * boundary}`,
+          symbol: "x",
+          extreme: "least",
+        }),
         answer: boundary + 1,
         wrong: [
           [boundary - 1, "This is below the boundary, so it fails the inequality."],
@@ -1340,12 +1326,11 @@ SHAPES.inequalities = {
       const rightSide = coefficient * boundary + constant;
       return {
         family: "greatest-integer-inequality",
-        stem: choose(variant, [
-          `What is the greatest integer x satisfying ${coefficient}x + ${constant} ≤ ${rightSide}?`,
-          `The largest integer x with ${coefficient}x + ${constant} ≤ ${rightSide} equals what?`,
-          `Which is the biggest whole number x for which ${coefficient}x + ${constant} is at most ${rightSide}?`,
-          `For ${coefficient}x + ${constant} ≤ ${rightSide}, the maximum integer value of x is which number?`,
-        ]),
+        stem: pose(variant, "extremeInteger", {
+          condition: `${coefficient}x + ${constant} ≤ ${rightSide}`,
+          symbol: "x",
+          extreme: "greatest",
+        }),
         answer: boundary,
         wrong: [
           [boundary - 1, "The inequality allows equality, so the boundary value itself is permitted."],
@@ -1377,11 +1362,10 @@ SHAPES.inequalities = {
       }
       return {
         family: "compound-inequality-integer-count",
-        stem: choose(variant, [
-          `How many integers x satisfy ${MINUS}${Math.abs(lowBound)} < ${coefficient}x + ${shift} ≤ ${highBound}?`,
-          `The compound inequality ${MINUS}${Math.abs(lowBound)} < ${coefficient}x + ${shift} ≤ ${highBound} is satisfied by how many integer values of x?`,
-          `Count the integer solutions of ${MINUS}${Math.abs(lowBound)} < ${coefficient}x + ${shift} ≤ ${highBound}.`,
-        ]),
+        stem: pose(variant, "countIntegers", {
+          condition: `${MINUS}${Math.abs(lowBound)} < ${coefficient}x + ${shift} ≤ ${highBound}`,
+          symbol: "x",
+        }),
         answer: integers.length,
         wrong: [
           [integers.length - 1, "This drops one endpoint that the ≤ sign actually allows."],
@@ -1439,11 +1423,10 @@ SHAPES.inequalities = {
       for (let value = Math.ceil(low); value <= Math.floor(high); value += 1) integers.push(value);
       return {
         family: "absolute-value-inequality-count",
-        stem: choose(variant, [
-          `How many integer values of x satisfy |${coefficient}x ${MINUS} ${centre}| ≤ ${radius}?`,
-          `The inequality |${coefficient}x ${MINUS} ${centre}| ≤ ${radius} holds for how many integers x?`,
-          `Count the integers x with |${coefficient}x ${MINUS} ${centre}| ≤ ${radius}.`,
-        ]),
+        stem: pose(variant, "countIntegers", {
+          condition: `|${coefficient}x ${MINUS} ${centre}| ≤ ${radius}`,
+          symbol: "x",
+        }),
         answer: integers.length,
         wrong: [
           [Math.floor(high) + 1, "This counts only the non-negative part of the interval, ignoring solutions below zero."],
@@ -1503,12 +1486,10 @@ SHAPES.systems = {
       const x = y + 2 + (s % 5);
       return {
         family: "system-sum-and-difference",
-        stem: choose(variant, [
-          `If x + y = ${x + y} and x ${MINUS} y = ${x - y}, what is the value of y?`,
-          `Two numbers have sum ${x + y} and difference ${x - y}. What is the smaller number, y?`,
-          `Given x + y = ${x + y} together with x ${MINUS} y = ${x - y}, y equals which number?`,
-          `Solve the system x + y = ${x + y}, x ${MINUS} y = ${x - y}. What does y equal?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `x + y = ${x + y} and x ${MINUS} y = ${x - y}`,
+          target: "y",
+        }),
         answer: y,
         wrong: [
           [round3(y / 2), "This divides by 2 one extra time."],
@@ -1530,12 +1511,10 @@ SHAPES.systems = {
       const y = multiplier * x;
       return {
         family: "system-substitution-one-step",
-        stem: choose(variant, [
-          `If y = ${multiplier}x and x + y = ${x + y}, what is the value of x?`,
-          `Given that y is ${multiplier} times x and that x + y = ${x + y}, x equals which number?`,
-          `The system y = ${multiplier}x, x + y = ${x + y} has one solution. What is x?`,
-          `Solve for x: y = ${multiplier}x and x + y = ${x + y}.`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `y = ${multiplier}x and x + y = ${x + y}`,
+          target: "x",
+        }),
         answer: x,
         wrong: [
           [round3(x / multiplier), "This divides by the multiplier one more time than the substitution requires."],
@@ -1563,11 +1542,10 @@ SHAPES.systems = {
       const secondTotal = secondX * x - yCoefficient * y;
       return {
         family: "system-elimination-with-coefficients",
-        stem: choose(variant, [
-          `If ${firstX}x + ${yCoefficient}y = ${firstTotal} and ${secondX}x ${MINUS} ${yCoefficient}y = ${num(secondTotal)}, what is the value of x?`,
-          `Solve the system ${firstX}x + ${yCoefficient}y = ${firstTotal}, ${secondX}x ${MINUS} ${yCoefficient}y = ${num(secondTotal)}. Which number is x?`,
-          `For the system ${firstX}x + ${yCoefficient}y = ${firstTotal} and ${secondX}x ${MINUS} ${yCoefficient}y = ${num(secondTotal)}, x equals what?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `${firstX}x + ${yCoefficient}y = ${firstTotal} and ${secondX}x ${MINUS} ${yCoefficient}y = ${num(secondTotal)}`,
+          target: "x",
+        }),
         answer: x,
         wrong: [
           [round3(firstTotal / firstX), "This solves the first equation as if y were zero."],
@@ -1724,12 +1702,11 @@ SHAPES.factoring = {
       const root = 4 + (s % 9);
       return {
         family: "difference-of-squares-factor",
-        stem: choose(variant, [
-          `The expression x² ${MINUS} ${root * root} factors as (x + ${root})(x ${MINUS} k). What is the value of k?`,
-          `If x² ${MINUS} ${root * root} = (x + ${root})(x ${MINUS} k), which number must k equal?`,
-          `Factoring x² ${MINUS} ${root * root} gives (x + ${root})(x ${MINUS} k), where k represents what quantity?`,
-          `Write x² ${MINUS} ${root * root} as (x + ${root})(x ${MINUS} k). What does k equal?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `x² ${MINUS} ${root * root}`,
+          form: `(x + ${root})(x ${MINUS} k)`,
+          target: "k",
+        }),
         answer: root,
         wrong: [
           [round3(root / 2), "This halves the square root of the constant term."],
@@ -1756,11 +1733,10 @@ SHAPES.factoring = {
       const constant = numerator * wholeRoot;
       return {
         family: "quadratic-with-leading-coefficient",
-        stem: choose(variant, [
-          `What is the greater solution of ${lead}x² ${MINUS} ${Math.abs(middle)}x + ${constant} = 0?`,
-          `The equation ${lead}x² ${MINUS} ${Math.abs(middle)}x + ${constant} = 0 has two roots. Which is larger?`,
-          `Solve ${lead}x² ${MINUS} ${Math.abs(middle)}x + ${constant} = 0 and give the bigger value of x.`,
-        ]),
+        stem: pose(variant, "extremeSolution", {
+          equation: `${lead}x² ${MINUS} ${Math.abs(middle)}x + ${constant} = 0`,
+          extreme: "greater",
+        }),
         answer: wholeRoot,
         wrong: [
           [round3(numerator / lead), `This is the other root, ${numerator}/${lead}, which is the smaller one.`],
@@ -1841,11 +1817,10 @@ SHAPES.factoring = {
       const greatest = Math.max(group, square);
       return {
         family: "cubic-factor-by-grouping",
-        stem: choose(variant, [
-          `What is the greatest solution of x³ ${MINUS} ${group}x² ${MINUS} ${square * square}x + ${group * square * square} = 0?`,
-          `The equation x³ ${MINUS} ${group}x² ${MINUS} ${square * square}x + ${group * square * square} = 0 has three real solutions. Which is largest?`,
-          `Solve x³ ${MINUS} ${group}x² ${MINUS} ${square * square}x + ${group * square * square} = 0 and report the greatest root.`,
-        ]),
+        stem: pose(variant, "extremeSolution", {
+          equation: `x³ ${MINUS} ${group}x² ${MINUS} ${square * square}x + ${group * square * square} = 0`,
+          extreme: "greatest",
+        }),
         answer: greatest,
         wrong: [
           [-square, `${MINUS}${square} is the smallest of the three roots, not the greatest.`],
@@ -1870,12 +1845,11 @@ SHAPES["rational expressions"] = {
       const constant = 3 + (s % 8);
       return {
         family: "simplify-difference-of-squares-quotient",
-        stem: choose(variant, [
-          `For x ≠ ${constant}, the expression (x² ${MINUS} ${constant * constant})/(x ${MINUS} ${constant}) equals x + k. What is the value of k?`,
-          `If (x² ${MINUS} ${constant * constant})/(x ${MINUS} ${constant}) is simplified to x + k for x ≠ ${constant}, which number is k?`,
-          `Simplifying (x² ${MINUS} ${constant * constant})/(x ${MINUS} ${constant}) gives x + k, where k represents what quantity?`,
-          `For all x other than ${constant}, (x² ${MINUS} ${constant * constant})/(x ${MINUS} ${constant}) = x + k. What does k equal?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `(x² ${MINUS} ${constant * constant})/(x ${MINUS} ${constant}), for x ≠ ${constant},`,
+          form: "x + k",
+          target: "k",
+        }),
         answer: constant,
         wrong: [
           [-constant, "This keeps the sign of the cancelled factor rather than the sign of the remaining one."],
@@ -1897,12 +1871,9 @@ SHAPES["rational expressions"] = {
       const numeratorConstant = 2 + (s % 7);
       return {
         family: "undefined-value-of-rational-expression",
-        stem: choose(variant, [
-          `For which value of x is (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) undefined?`,
-          `The expression (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) fails to be defined at which value of x?`,
-          `At what number x does (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) have no value?`,
-          `Which value of x must be excluded from the domain of (x + ${numeratorConstant})/(x ${MINUS} ${excluded})?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the value of x at which (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) is undefined`,
+        }),
         answer: excluded,
         wrong: [
           [-excluded, "This solves x + " + excluded + " = 0 instead of x − " + excluded + " = 0."],
@@ -1926,11 +1897,10 @@ SHAPES["rational expressions"] = {
       const usable = Number.isInteger(answer) ? answer : round3(answer);
       return {
         family: "reciprocal-equation",
-        stem: choose(variant, [
-          `If 1/x + 1/${other} = 1/${combined}, what is the value of x?`,
-          `Solve 1/x + 1/${other} = 1/${combined} for x. Which number is x?`,
-          `The equation 1/x + 1/${other} = 1/${combined} has one solution. What does x equal?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `1/x + 1/${other} = 1/${combined}`,
+          target: "x",
+        }),
         answer: usable,
         wrong: [
           [round3(combined - other), "This subtracts the denominators as if the reciprocals could be dropped."],
@@ -1950,11 +1920,11 @@ SHAPES["rational expressions"] = {
       const second = first + 1 + (s % 4);
       return {
         family: "simplify-trinomial-quotient",
-        stem: choose(variant, [
-          `For x ≠ ${MINUS}${first}, the expression (x² + ${first + second}x + ${first * second})/(x + ${first}) is equivalent to x + k. What is k?`,
-          `Simplify (x² + ${first + second}x + ${first * second})/(x + ${first}) for x ≠ ${MINUS}${first}. The result is x + k, where k equals what?`,
-          `If (x² + ${first + second}x + ${first * second})/(x + ${first}) = x + k, which number is k?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `(x² + ${first + second}x + ${first * second})/(x + ${first}), for x ≠ ${MINUS}${first},`,
+          form: "x + k",
+          target: "k",
+        }),
         answer: second,
         wrong: [
           [-second, "This flips the sign; both factors of the numerator have plus signs here."],
@@ -2042,12 +2012,10 @@ SHAPES["exponents"] = {
       const n = a * b + c;
       return {
         family: "power-of-a-power-times-power",
-        stem: choose(variant, [
-          `If (x^${a})^${b} · x^${c} = x^n for every positive x, ${ask(variant, "n")}`,
-          `For all x > 0, (x^${a})^${b} · x^${c} equals x raised to which power?`,
-          `The expression (x^${a})^${b} · x^${c} is equivalent to x^n for x > 0. What is n?`,
-          `Written as a single power of x, (x^${a})^${b} · x^${c} = x^n. Which value is n?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `(x^${a})^${b} · x^${c} = x^n for every positive x`,
+          target: "n",
+        }),
         answer: n,
         wrong: [
           [a + b, "This adds only the two exponents inside the parentheses and ignores the second factor."],
@@ -2075,12 +2043,7 @@ SHAPES["exponents"] = {
       const answer = base ** (p - q);
       return {
         family: "quotient-of-like-bases-value",
-        stem: choose(variant, [
-          `What is the value of ${base}^${p}/${base}^${q}?`,
-          `The quotient ${base}^${p} ÷ ${base}^${q} equals which number?`,
-          `Simplify ${base}^${p}/${base}^${q} to a single integer. What is it?`,
-          `Which integer is equal to ${base}^${p}/${base}^${q}?`,
-        ]),
+        stem: pose(variant, "value", { expression: `${base}^${p}/${base}^${q}` }),
         answer,
         wrong: [
           [base ** (p + q), "This adds the exponents; dividing like bases subtracts them."],
@@ -2108,12 +2071,11 @@ SHAPES["exponents"] = {
       const answer = coefficient ** q;
       return {
         family: "coefficient-raised-to-outer-power",
-        stem: choose(variant, [
-          `For x > 0, (${coefficient}x^${p})^${q} = cx^d, where c and d are constants. What is the value of c?`,
-          `The expression (${coefficient}x^${p})^${q} equals cx^d for all positive x. Which number is c?`,
-          `Expanding (${coefficient}x^${p})^${q} gives cx^d. What does c equal?`,
-          `If (${coefficient}x^${p})^${q} is written as cx^d, the constant c has which value?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `(${coefficient}x^${p})^${q}, for x > 0,`,
+          form: "cx^d with c and d constant",
+          target: "c",
+        }),
         answer,
         wrong: [
           [coefficient, "The outer exponent applies to the coefficient too, not only to the variable."],
@@ -2144,12 +2106,7 @@ SHAPES["exponents"] = {
       const answer = base ** power;
       return {
         family: "fractional-exponent-evaluation",
-        stem: choose(variant, [
-          `What is the value of ${radicand}^(${power}/${root})?`,
-          `Evaluate ${radicand}^(${power}/${root}).`,
-          `The expression ${radicand}^(${power}/${root}) equals which integer?`,
-          `Which number is equal to ${radicand}^(${power}/${root})?`,
-        ]),
+        stem: pose(variant, "value", { expression: `${radicand}^(${power}/${root})` }),
         answer,
         wrong: [
           [radicand * power / root, "This multiplies by the fraction instead of using it as an exponent."],
@@ -2178,12 +2135,7 @@ SHAPES["exponents"] = {
       const answer = frac(bottom ** power, top ** power);
       return {
         family: "negative-exponent-on-a-fraction",
-        stem: choose(variant, [
-          `What is the value of (${top}/${bottom})^${MINUS}${power}?`,
-          `Evaluate (${top}/${bottom})^${MINUS}${power}.`,
-          `The expression (${top}/${bottom})^${MINUS}${power} is equal to which fraction?`,
-          `Which value equals (${top}/${bottom})^${MINUS}${power}?`,
-        ]),
+        stem: pose(variant, "value", { expression: `(${top}/${bottom})^${MINUS}${power}` }),
         answer,
         wrong: [
           [frac(top ** power, bottom ** power), "This squares the fraction but never inverts it; the negative exponent reciprocates."],
@@ -2251,12 +2203,10 @@ SHAPES["exponents"] = {
       const answer = round3(x);
       return {
         family: "same-base-exponential-equation",
-        stem: choose(variant, [
-          `If ${base ** inner}^(x + ${shift}) = ${base ** outer}^(x ${MINUS} ${shift}), ${ask(variant, "x")}`,
-          `Solve ${base ** inner}^(x + ${shift}) = ${base ** outer}^(x ${MINUS} ${shift}) for x.`,
-          `The equation ${base ** inner}^(x + ${shift}) = ${base ** outer}^(x ${MINUS} ${shift}) has which solution?`,
-          `What value of x satisfies ${base ** inner}^(x + ${shift}) = ${base ** outer}^(x ${MINUS} ${shift})?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `${base ** inner}^(x + ${shift}) = ${base ** outer}^(x ${MINUS} ${shift})`,
+          target: "x",
+        }),
         answer,
         wrong: [
           [round3(shift), "This solves as if the two bases were already equal, dropping the exponent conversion."],
@@ -2286,12 +2236,10 @@ SHAPES["exponents"] = {
       const answer = known ** multiple * base ** extra;
       return {
         family: "substituted-power-expression",
-        stem: choose(variant, [
-          `If ${base}^a = ${known}, what is the value of ${base}^(${multiple}a + ${extra})?`,
-          `Given ${base}^a = ${known}, evaluate ${base}^(${multiple}a + ${extra}).`,
-          `Suppose ${base}^a = ${known}. The expression ${base}^(${multiple}a + ${extra}) equals which number?`,
-          `When ${base}^a = ${known}, ${base}^(${multiple}a + ${extra}) has which value?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `${base}^a = ${known}`,
+          target: `${base}^(${multiple}a + ${extra})`,
+        }),
         answer,
         wrong: [
           [known * multiple + base ** extra, "This multiplies rather than raises: b^(ma) is (b^a)^m, not m·b^a."],
@@ -2360,12 +2308,10 @@ SHAPES["notation"] = {
       const answer = a * input + b;
       return {
         family: "evaluate-linear-function",
-        stem: choose(variant, [
-          `If f(x) = ${a}x + ${b}, what is the value of f(${input})?`,
-          `The function f is defined by f(x) = ${a}x + ${b}. What does f(${input}) equal?`,
-          `For f(x) = ${a}x + ${b}, evaluate f(${input}).`,
-          `Given f(x) = ${a}x + ${b}, which number is f(${input})?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(x) = ${a}x + ${b}`,
+          target: `f(${input})`,
+        }),
         answer,
         wrong: [
           [a + b + input, "This adds all three numbers instead of multiplying the coefficient by the input."],
@@ -2393,12 +2339,10 @@ SHAPES["notation"] = {
       const answer = a * input * input + b;
       return {
         family: "evaluate-quadratic-function",
-        stem: choose(variant, [
-          `If g(x) = ${a}x² + ${b}, what is the value of g(${input})?`,
-          `The function g is defined by g(x) = ${a}x² + ${b}. What does g(${input}) equal?`,
-          `For g(x) = ${a}x² + ${b}, evaluate g(${input}).`,
-          `Given g(x) = ${a}x² + ${b}, which number is g(${input})?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `g(x) = ${a}x² + ${b}`,
+          target: `g(${input})`,
+        }),
         answer,
         wrong: [
           [a * input * 2 + b, "This doubles the input instead of squaring it."],
@@ -2431,12 +2375,10 @@ SHAPES["notation"] = {
       const answer = a * inner + b;
       return {
         family: "composition-at-a-point",
-        stem: choose(variant, [
-          `If f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, what is the value of f(g(${input}))?`,
-          `For f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, evaluate f(g(${input})).`,
-          `Given f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, which number is f(g(${input}))?`,
-          `Let f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}. What does f(g(${input})) equal?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}`,
+          target: `f(g(${input}))`,
+        }),
         answer,
         wrong: [
           [c * (a * input + b) + d, "This computes g(f(x)); the inner function is applied first, and here that is g."],
@@ -2465,12 +2407,10 @@ SHAPES["notation"] = {
       const output = a * answer + b;
       return {
         family: "solve-for-the-input",
-        stem: choose(variant, [
-          `If f(x) = ${a}x + ${b} and f(k) = ${output}, ${ask(variant, "k")}`,
-          `The function f is defined by f(x) = ${a}x + ${b}. For which value of k does f(k) = ${output}?`,
-          `Given f(x) = ${a}x + ${b}, find the number k for which f(k) equals ${output}.`,
-          `For f(x) = ${a}x + ${b}, the equation f(k) = ${output} holds for which k?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(x) = ${a}x + ${b} and f(k) = ${output}`,
+          target: "k",
+        }),
         answer,
         wrong: [
           [output, "This is the output value, not the input that produced it."],
@@ -2501,12 +2441,10 @@ SHAPES["notation"] = {
       const answer = (target - b) / a;
       return {
         family: "inverse-function-value",
-        stem: choose(variant, [
-          `If f(x) = ${a}x + ${b}, what is the value of f⁻¹(${target})?`,
-          `The function f is defined by f(x) = ${a}x + ${b}. Evaluate f⁻¹(${target}).`,
-          `For f(x) = ${a}x + ${b}, the inverse function f⁻¹ satisfies f⁻¹(${target}) = which number?`,
-          `Given f(x) = ${a}x + ${b}, which value equals f⁻¹(${target})?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(x) = ${a}x + ${b}`,
+          target: `f⁻¹(${target})`,
+        }),
         answer,
         wrong: [
           [a * target + b, `This applies f to ${target} instead of undoing it.`],

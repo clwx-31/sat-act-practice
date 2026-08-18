@@ -1587,7 +1587,10 @@ SHAPES.systems = {
       const adultPrice = 8 + (s % 7);
       const childPrice = 3 + (s % 4);
       const adults = 20 + (s % 30);
-      const children = 15 + (s % 25);
+      // Held strictly above the adult count: where the two coincided the
+      // "that is the child count" distractor and the equal-numbers quotient
+      // both landed on the key.
+      const children = adults + 5 + (s % 17);
       const total = adults + children;
       const revenue = adultPrice * adults + childPrice * children;
       const venue = choose(variant, ["planetarium", "ferry", "aquarium", "heritage railway"]);
@@ -1601,6 +1604,7 @@ SHAPES.systems = {
           [round3(revenue / adultPrice), "This prices every ticket sold as an adult ticket."],
           [total, "This is the total number of tickets, not the adult count."],
           [revenue - total * childPrice, "This is the extra revenue above an all-child sale, in dollars, before dividing by the price difference."],
+          [round3((revenue - total * childPrice) / adultPrice), "This divides the extra revenue by the adult price rather than by the gap between the two prices."],
         ],
         why: `If a is the number of adult tickets, a + c = ${total} and ${adultPrice}a + ${childPrice}c = ${revenue}. Substituting c = ${total} − a gives ${adultPrice - childPrice}a = ${revenue - childPrice * total}, so a = ${adults}.`,
         steps: ["Write one equation for the ticket count and one for the money.", "Substitute to eliminate the child-ticket count.", "Solve for the adult count and check both equations."],
@@ -1649,14 +1653,17 @@ SHAPES.systems = {
       };
     },
     (s, variant) => {
+      // Staggered offsets: stepping every entry off the same s made whole
+      // rows of the two matrices coincide, and four of the five distractors
+      // then evaluated to the same number.
       const a = 2 + (s % 5);
-      const b = 1 + (s % 6);
-      const c = 3 + (s % 4);
-      const d = 2 + (s % 7);
-      const e = 1 + (s % 4);
-      const f = 2 + (s % 5);
-      const g = 3 + (s % 6);
-      const h = 1 + (s % 3);
+      const b = 1 + ((s + 1) % 6);
+      const c = 3 + ((s + 2) % 4);
+      const d = 2 + ((s + 3) % 7);
+      const e = 1 + ((s + 4) % 4);
+      const f = 2 + ((s + 5) % 5);
+      const g = 3 + ((s + 6) % 6);
+      const h = 1 + ((s + 7) % 3);
       const answer = a * f + b * h;
       return {
         family: "matrix-product-entry",
@@ -1672,6 +1679,8 @@ SHAPES.systems = {
           [a * f + c * h, "This mixes row 1 of A with column 1 of A; the second factor must come from row 2 of B."],
           [c * f + d * h, "This is the row 2, column 2 entry, using row 2 of A."],
           [a * f * b * h, "This multiplies the two products instead of adding them."],
+          [a * f + b * g, "This pairs row 1 of A with column 2 of B for the first product and column 1 for the second; both factors must come from the same column."],
+          [a * f, "This uses only the first of the two products the dot product requires."],
         ],
         why: `The row 1, column 2 entry pairs row 1 of A with column 2 of B: (${a})(${f}) + (${b})(${h}) = ${a * f} + ${b * h} = ${answer}.`,
         steps: ["Take row 1 of A and column 2 of B.", "Multiply corresponding entries.", "Add the products."],
@@ -4148,7 +4157,10 @@ SHAPES["circles"] = {
       // Stepped off a different modulus than centerY: sharing s % 6 made the
       // radius equal the centre's y-coordinate for every sequence, so the
       // "that is the centre" distractor collapsed onto the key.
-      const radius = 3 + ((s + 2) % 5);
+      // Held clear of the centre coordinates and their sum as well: at
+      // sequences where the radius collided with any of them the "that is the
+      // centre" distractors folded onto the key and the item lost its choices.
+      const radius = 15 + ((s + 2) % 5);
       const constant = radius * radius - centerX * centerX - centerY * centerY;
       const rightSide = radius * radius;
       return {
@@ -5684,10 +5696,13 @@ SHAPES["data displays"] = {
   ],
   Hard: [
     (s, variant) => {
+      // Disjoint ranges for the four cells: where two of them coincided the
+      // wrong-denominator and wrong-numerator distractors printed the same
+      // fraction as the key.
       const bothYes = 12 + (s % 6);
-      const yesNo = 8 + (s % 5);
-      const noYes = 10 + (s % 4);
-      const bothNo = 15 + (s % 7);
+      const yesNo = 4 + (s % 5);
+      const noYes = 20 + (s % 4);
+      const bothNo = 30 + (s % 7);
       const rowTotal = bothYes + yesNo;
       const answer = frac(bothYes, rowTotal);
       return {
@@ -6293,12 +6308,13 @@ SHAPES["compound probability"] = {
       };
     },
     (s, variant) => {
+      // All four cells are kept in disjoint ranges: when any two coincided the
+      // "conditioned on the wrong variable" distractor collapsed onto the key,
+      // and the marginal probability matched it in value.
       const bothYes = 6 + (s % 5);
-      // yesNo and noYes are kept in disjoint ranges: when they coincide the
-      // "conditioned on the wrong variable" distractor collapses onto the key.
       const yesNo = 4 + (s % 4);
-      const noYes = 9 + (s % 3);
-      const bothNo = 10 + (s % 6);
+      const noYes = 14 + (s % 3);
+      const bothNo = 20 + (s % 6);
       const columnTotal = bothYes + noYes;
       const answer = frac(bothYes, columnTotal);
       return {
@@ -6336,6 +6352,1539 @@ SHAPES["compound probability"] = {
   ],
 };
 
+/* ------------------------------------------------------------------ *
+ * Integrating Essential Skills                                        *
+ *                                                                     *
+ * The ACT's own label for the 40-45% of the test that reuses pre-      *
+ * algebra content under time pressure. Easy items apply one           *
+ * relationship; Medium items chain two; Hard items either invert the  *
+ * relationship (find the input from the result) or compose two        *
+ * different relationships whose order matters.                        *
+ * ------------------------------------------------------------------ */
+
+SHAPES["rates"] = {
+  Easy: [
+    (s, variant) => {
+      const rate = span(s, 12, 8, 3);
+      const hours = span(s, 3, 5);
+      const total = rate * hours;
+      return {
+        family: "unit-rate-from-a-total",
+        stem: choose(variant, [
+          `A press prints ${total} flyers in ${hours} hours at a constant rate. How many flyers does it print per hour?`,
+          `A constant-speed press finishes ${total} flyers over ${hours} hours. What is its hourly output?`,
+          `Over ${hours} hours a machine produces ${total} flyers at a steady rate. How many flyers per hour is that?`,
+          `${total} flyers are printed in ${hours} hours at an unchanging rate. Find the number of flyers per hour.`,
+        ]),
+        answer: rate,
+        wrong: [
+          [total, "This is the whole job, not the amount finished in one hour."],
+          [rate + hours, "This adds the two given numbers instead of dividing."],
+          [total - hours, "This subtracts the time from the total; a rate is a quotient."],
+          [rate * 2, "This is two hours' output rather than one hour's."],
+          [round3(total / (hours + 1)), "This divides by one hour too many."],
+        ],
+        why: `A constant rate is the total divided by the time: ${total} ÷ ${hours} = ${rate} flyers per hour.`,
+        steps: [
+          "Identify the total produced and the time taken.",
+          `Divide: ${total} ÷ ${hours}.`,
+          "Check the units — flyers per hour, not flyers.",
+        ],
+        principles: ["A constant rate equals total amount divided by total time."],
+        hint: "Per hour means divide by the number of hours.",
+        verification: quotientCheck(total, hours, rate),
+      };
+    },
+    (s, variant) => {
+      const speed = span(s, 25, 8, 5);
+      const hours = span(s, 2, 4);
+      const distance = speed * hours;
+      return {
+        family: "average-speed-single-leg",
+        stem: choose(variant, [
+          `A van covers ${distance} miles in ${hours} hours. What is its average speed, in miles per hour?`,
+          `A driver travels ${distance} miles over ${hours} hours. Find the average speed in miles per hour.`,
+          `A bus needs ${hours} hours to travel ${distance} miles. What is its average speed, in miles per hour?`,
+          `In ${hours} hours a truck goes ${distance} miles. What average speed, in miles per hour, is that?`,
+        ]),
+        answer: speed,
+        wrong: [
+          [distance, "This is the distance, not the speed."],
+          [distance + hours, "This combines the numbers without dividing distance by time."],
+          [speed + hours, "This adds the hours to the speed."],
+          [round3(distance / (hours + 1)), "This uses one hour too many."],
+          [speed * hours * 2, "This doubles the distance instead of finding a rate."],
+        ],
+        why: `Average speed is distance ÷ time: ${distance} ÷ ${hours} = ${speed} miles per hour.`,
+        steps: [
+          "Write the definition: average speed = distance ÷ time.",
+          `Substitute: ${distance} ÷ ${hours}.`,
+          "Report the quotient in miles per hour.",
+        ],
+        principles: ["Average speed is total distance divided by total time."],
+        hint: "Divide the miles by the hours.",
+        verification: quotientCheck(distance, hours, speed),
+      };
+    },
+  ],
+  Medium: [
+    (s, variant) => {
+      const first = span(s, 40, 5, 10);
+      const second = first + span(s, 10, 4, 10);
+      const t1 = span(s, 2, 3);
+      const t2 = t1 + 1 + (s % 2);
+      const distance = first * t1 + second * t2;
+      const time = t1 + t2;
+      const answer = round3(distance / time);
+      return {
+        family: "average-speed-two-legs",
+        stem: `A driver travels for ${t1} hours at ${first} miles per hour and then for ${t2} hours at ${second} miles per hour. What is the average speed for the entire trip, in miles per hour?`,
+        answer,
+        wrong: [
+          [round3((first + second) / 2), "This averages the two speeds, which is only correct when the two times are equal."],
+          [distance, "This is the total distance rather than a speed."],
+          [first + second, "This adds the two speeds."],
+          [round3(distance / t2), "This divides the whole distance by only the second leg's time."],
+          [round3(distance / t1), "This divides the whole distance by only the first leg's time."],
+          [second, "This is the faster leg's speed, not the trip average."],
+        ],
+        why: `The legs cover ${first} · ${t1} = ${first * t1} and ${second} · ${t2} = ${second * t2} miles, so the trip is ${distance} miles in ${time} hours: ${distance} ÷ ${time} = ${num(answer)} miles per hour.`,
+        steps: [
+          "Find each leg's distance as speed × time.",
+          `Add them: ${distance} miles in total.`,
+          `Divide by the total time ${time}, not by 2.`,
+        ],
+        principles: [
+          "Average speed weights each leg by its time, so it equals total distance over total time.",
+        ],
+        hint: "The trip spends longer at one of the speeds.",
+        trap: "Averaging the two speeds as if the driver spent equal time at each.",
+      };
+    },
+    (s, variant) => {
+      const a = span(s, 4, 5, 2);
+      const b = a + span(s, 2, 4, 2);
+      const answer = round3((a * b) / (a + b));
+      return {
+        family: "combined-work-rate",
+        stem: choose(variant, [
+          `Pump A alone fills a tank in ${a} hours and pump B alone fills the same tank in ${b} hours. Working together at those rates, how many hours do they take to fill the tank?`,
+          `One hose fills a pool in ${a} hours; a second fills it in ${b} hours. Running both at once, how many hours does filling the pool take?`,
+          `Working alone, printer A finishes a run in ${a} hours and printer B finishes it in ${b} hours. Running together, how many hours does the run take?`,
+          `Machine A completes a job in ${a} hours and machine B completes it in ${b} hours. How many hours does the job take with both machines running?`,
+        ]),
+        answer,
+        wrong: [
+          [a + b, "This adds the times; two workers together are faster than either alone."],
+          [round3((a + b) / 2), "This averages the times, which would be right only if rates added like times."],
+          [b - a, "This subtracts the times, which has no meaning here."],
+          [b, "This is the slower machine's time alone."],
+          [round3((a * b) / 2), "This multiplies the times and halves, ignoring the rate sum."],
+        ],
+        why: `Rates add: 1/${a} + 1/${b} = ${a + b}/${a * b} of the tank per hour, so the time is the reciprocal, ${a * b}/${a + b} = ${num(answer)} hours.`,
+        steps: [
+          "Convert each time to a rate: 1 job per a hours means 1/a of the job per hour.",
+          `Add the rates: 1/${a} + 1/${b} = ${a + b}/${a * b}.`,
+          "Invert the combined rate to get the combined time.",
+        ],
+        principles: ["Rates add; times do not."],
+        hint: "Work with jobs per hour, then flip at the end.",
+        trap: "Adding or averaging the two times instead of adding the rates.",
+      };
+    },
+  ],
+  Hard: [
+    (s, variant) => {
+      const table = [
+        [30, 20, 24],
+        [60, 30, 40],
+        [12, 24, 16],
+        [40, 10, 16],
+        [15, 10, 12],
+        [45, 30, 36],
+        [20, 80, 32],
+        [36, 18, 24],
+      ];
+      const [out, back, answer] = choose(s, table);
+      const distance = lcm(out, back);
+      return {
+        family: "round-trip-harmonic-average-speed",
+        stem: `A cyclist rides ${distance} miles to a lake at ${out} miles per hour and returns along the same road at ${back} miles per hour. What is the average speed for the round trip, in miles per hour?`,
+        answer,
+        wrong: [
+          [round3((out + back) / 2), "This averages the two speeds. Averaging speeds is only valid when equal time is spent at each, and here the slower leg takes longer."],
+          [out + back, "This adds the speeds."],
+          [Math.max(out, back), "This reports the faster leg's speed."],
+          [Math.min(out, back), "This reports the slower leg's speed."],
+          [round3((2 * distance) / (distance / out)), "This divides the round-trip distance by only the outbound time."],
+          [round3(distance / (distance / out + distance / back)), "This uses one-way distance over round-trip time."],
+        ],
+        why: `The trip is ${2 * distance} miles. Outbound takes ${num(distance / out)} hours and the return takes ${num(distance / back)} hours, a total of ${num(distance / out + distance / back)} hours, so the average is ${2 * distance} ÷ ${num(distance / out + distance / back)} = ${answer} miles per hour. Equivalently 2 · ${out} · ${back} ÷ (${out} + ${back}).`,
+        steps: [
+          "Average speed is total distance over total time, never the mean of two speeds.",
+          `Compute each leg's time: ${distance}/${out} and ${distance}/${back} hours.`,
+          `Divide ${2 * distance} miles by the total time.`,
+        ],
+        principles: [
+          "Equal distances at two speeds give the harmonic mean 2uv/(u+v), which is always below the arithmetic mean.",
+        ],
+        hint: "More of the trip's time is spent at the slower speed.",
+        trap: "Taking the arithmetic mean of the two speeds.",
+        verification: quotientCheck(2 * out * back, out + back, answer),
+      };
+    },
+    (s, variant) => {
+      const divisors = [2, 3, 4, 5, 6];
+      const m = choose(s, divisors);
+      const p = choose(s + 2, divisors);
+      const a = span(s, 3, 5);
+      const b = span(s, 4, 4);
+      const hours = span(s, 2, 3);
+      const minutes = hours * 60;
+      const answer = (a * minutes) / m + (b * minutes) / p;
+      return {
+        family: "two-machine-rate-with-time-conversion",
+        stem: `Machine A seals ${a} cartons every ${m} minutes and machine B seals ${b} cartons every ${p} minutes. If both run continuously for ${hours} hours, how many cartons do they seal in all?`,
+        answer,
+        wrong: [
+          [round3((a * hours) / m + (b * hours) / p), "This uses hours where the rates are stated per minute; the running time has to be converted first."],
+          [(a + b) * hours, "This adds the carton counts and multiplies by hours, ignoring the stated intervals."],
+          [round3((a * minutes) / m), "This counts only machine A."],
+          [round3((b * minutes) / p), "This counts only machine B."],
+          [round3(((a + b) * minutes) / (m + p)), "This adds the counts and the intervals separately, which is not how rates combine."],
+          [answer + a, "This adds one extra interval of machine A's output."],
+        ],
+        why: `${hours} hours is ${minutes} minutes. Machine A seals ${a}/${m} = ${num(a / m)} cartons per minute and machine B seals ${b}/${p} = ${num(b / p)}, so together they seal ${num(a / m + b / p)} per minute, and ${num(a / m + b / p)} · ${minutes} = ${answer} cartons.`,
+        steps: [
+          `Convert the running time to the rates' unit: ${hours} hours = ${minutes} minutes.`,
+          "Turn each statement into cartons per minute.",
+          "Add the two rates, then multiply by the total minutes.",
+        ],
+        principles: [
+          "Rates only add once they share a unit; converting time before combining avoids mixing minutes with hours.",
+        ],
+        hint: "The rates are per minute but the time is in hours.",
+        trap: "Combining a per-minute rate with a time measured in hours.",
+      };
+    },
+  ],
+};
+
+SHAPES["proportions"] = {
+  Easy: [
+    (s, variant) => {
+      const serves = span(s, 4, 4, 2);
+      const cups = span(s, 2, 4);
+      const factor = span(s, 2, 4);
+      const target = serves * factor;
+      const answer = cups * factor;
+      return {
+        family: "direct-proportion-scale-up",
+        stem: choose(variant, [
+          `A recipe that serves ${serves} people uses ${cups} cups of flour. How many cups of flour are needed to serve ${target} people, keeping the same proportions?`,
+          `${cups} cups of flour serve ${serves} people. At the same ratio, how many cups serve ${target} people?`,
+          `A batch for ${serves} people takes ${cups} cups of flour. Scaled to ${target} people, how many cups are required?`,
+          `Flour is used at ${cups} cups per ${serves} servings. How many cups are needed for ${target} servings?`,
+        ]),
+        answer,
+        wrong: [
+          [cups + factor, "This adds the scale factor instead of multiplying by it."],
+          [cups, "This is the original amount, unscaled."],
+          [target, "This is the number of servings, not cups."],
+          [cups * (factor + 1), "This scales by one factor too many."],
+          [round3(cups / factor), "This divides by the scale factor; more servings need more flour."],
+        ],
+        why: `${target} ÷ ${serves} = ${factor}, so every ingredient is multiplied by ${factor}: ${cups} · ${factor} = ${answer} cups.`,
+        steps: [
+          `Find the scale factor: ${target} ÷ ${serves} = ${factor}.`,
+          `Apply it to the flour: ${cups} · ${factor}.`,
+          "Check that the answer is larger, since more people are being served.",
+        ],
+        principles: ["In a direct proportion, both quantities are multiplied by the same factor."],
+        hint: "How many times bigger is the new serving count?",
+        verification: { kind: "product", inputs: [cups, factor], expected: answer },
+      };
+    },
+    (s, variant) => {
+      const count = span(s, 3, 5);
+      const price = span(s, 2, 5);
+      const cost = count * price;
+      const wanted = count + span(s, 2, 4);
+      const answer = money(wanted * price);
+      return {
+        family: "unit-price-proportion",
+        stem: `${count} identical notebooks cost ${cost}. At the same price per notebook, what is the cost of ${wanted} notebooks?`,
+        answer,
+        wrong: [
+          [money(cost + (wanted - count)), "This adds the extra notebooks as dollars rather than pricing them."],
+          [money(cost), "This is the cost of the smaller group, not the larger one."],
+          [money(wanted), "This treats each notebook as costing one dollar."],
+          [money(cost * wanted), "This multiplies the whole cost by the new count instead of the unit price."],
+          [money(price), "This is the price of a single notebook."],
+        ],
+        why: `Each notebook costs ${cost} ÷ ${count} = ${price}, so ${wanted} notebooks cost ${wanted} · ${price} = ${wanted * price}.`,
+        steps: [
+          `Divide to get the unit price: ${cost} ÷ ${count} = ${price}.`,
+          `Multiply by the new count: ${price} · ${wanted}.`,
+          "Confirm the total grew in proportion to the count.",
+        ],
+        principles: ["A constant unit price makes cost directly proportional to quantity."],
+        hint: "Find the price of one first.",
+        verification: { kind: "product", inputs: [price, wanted], expected: wanted * price },
+      };
+    },
+  ],
+  Medium: [
+    (s, variant) => {
+      const red = span(s, 2, 4);
+      const blue = red + 1 + (s % 3);
+      const groups = span(s, 6, 5, 2);
+      const total = (red + blue) * groups;
+      const answer = red * groups;
+      return {
+        family: "part-to-whole-ratio",
+        stem: `In a mosaic the ratio of red tiles to blue tiles is ${red} to ${blue}. The mosaic uses ${total} tiles in all. How many of them are red?`,
+        answer,
+        wrong: [
+          [blue * groups, "This is the number of blue tiles."],
+          [round3(total / (red + blue)), "This is the size of one share, not the red part."],
+          [round3((total * red) / blue), "This uses the part-to-part ratio as if it were part-to-whole."],
+          [round3(total / red), "This divides the total by the red term alone."],
+          [red, "This is the ratio term, not a tile count."],
+          [round3(total / 2), "This splits the tiles evenly, ignoring the ratio."],
+        ],
+        why: `The ratio makes ${red + blue} shares in all, so one share is ${total} ÷ ${red + blue} = ${groups} tiles, and red takes ${red} shares: ${red} · ${groups} = ${answer}.`,
+        steps: [
+          `Add the ratio terms to count the shares: ${red} + ${blue} = ${red + blue}.`,
+          `Divide the total by the shares: ${total} ÷ ${red + blue} = ${groups}.`,
+          `Multiply by the red term: ${red} · ${groups}.`,
+        ],
+        principles: [
+          "A part-to-part ratio becomes a part-to-whole fraction only after the terms are summed.",
+        ],
+        hint: "How many equal shares does the ratio divide the tiles into?",
+        trap: "Treating the ratio's first term as a fraction of the whole.",
+        verification: { kind: "product", inputs: [red, groups], expected: answer },
+      };
+    },
+    (s, variant) => {
+      const cm = span(s, 2, 4);
+      const meters = span(s, 3, 5);
+      const wall = meters * span(s, 2, 5);
+      const answer = round3((wall / meters) * cm);
+      return {
+        family: "scale-drawing-inverse-direction",
+        stem: `On a scale drawing, ${cm} centimeters represents ${meters} meters. A wall is ${wall} meters long. How many centimeters long is that wall in the drawing?`,
+        answer,
+        wrong: [
+          [round3((wall / cm) * meters), "This applies the scale upside down, converting drawing units into real ones."],
+          [wall, "This copies the real length without applying the scale."],
+          [round3(wall * cm), "This multiplies by the drawing length without dividing by the real length it stands for."],
+          [round3(wall / cm), "This divides by the wrong term of the scale."],
+          [cm, "This is the scale's drawing length, not the wall's."],
+        ],
+        why: `The scale is ${cm} cm per ${meters} m, so each meter is ${num(cm / meters)} cm on the drawing: ${wall} · ${num(cm / meters)} = ${num(answer)} centimeters.`,
+        steps: [
+          `Reduce the scale to centimeters per meter: ${cm} ÷ ${meters}.`,
+          `Multiply by the real length ${wall} meters.`,
+          "Check the direction — a drawing of a wall should be far smaller than the wall.",
+        ],
+        principles: ["A scale is a rate; using it backwards inverts the answer."],
+        hint: "Set up centimeters over meters and keep the units aligned.",
+        trap: "Running the scale in the wrong direction.",
+      };
+    },
+  ],
+  Hard: [
+    (s, variant) => {
+      const x1 = span(s, 2, 4);
+      const x2 = x1 * span(s, 2, 3);
+      const y1 = span(s, 12, 5, 12) * x2 * x2;
+      const answer = round3((y1 * x1 * x1) / (x2 * x2));
+      return {
+        family: "inverse-square-variation",
+        stem: `The quantity y varies inversely as the square of x. When x = ${x1}, y = ${y1}. What is y when x = ${x2}?`,
+        answer,
+        wrong: [
+          [round3((y1 * x1) / x2), "This varies inversely as x rather than as the square of x."],
+          [round3((y1 * x2 * x2) / (x1 * x1)), "This varies directly as the square, so y grows when x grows."],
+          [round3(y1 / (x2 * x2)), "This divides by the new x squared without restoring the constant from the first pair."],
+          [y1, "This leaves y unchanged."],
+          [round3(y1 / 2), "This halves y regardless of how x changed."],
+        ],
+        why: `Inverse square variation means y·x² is constant: ${y1} · ${x1}² = ${y1 * x1 * x1}. At x = ${x2}, y = ${y1 * x1 * x1} ÷ ${x2 * x2} = ${num(answer)}.`,
+        steps: [
+          "Write the relationship as y = k/x², so k = y·x².",
+          `Find k from the given pair: ${y1} · ${x1 * x1} = ${y1 * x1 * x1}.`,
+          `Divide k by ${x2}² to get the new y.`,
+        ],
+        principles: [
+          "Inverse variation fixes the product; inverse square variation fixes y·x². Squaring before dividing is what separates this from ordinary inverse variation.",
+        ],
+        hint: "Find the constant that x and y must always produce together.",
+        trap: "Scaling by the ratio of the x values instead of by its square.",
+        verification: quotientCheck(y1 * x1 * x1, x2 * x2, answer),
+      };
+    },
+    (s, variant) => {
+      const table = [
+        [2, 3, 4, 5],
+        [3, 4, 2, 3],
+        [5, 2, 3, 4],
+        [4, 5, 3, 2],
+        [2, 5, 4, 3],
+        [3, 2, 5, 4],
+        [4, 3, 2, 5],
+        [5, 4, 3, 2],
+      ];
+      const [a, b, c, d] = choose(s, table);
+      const managers = a * c;
+      const engineers = b * c;
+      const technicians = b * d;
+      const scale = span(s, 2, 4);
+      const total = technicians * scale;
+      const answer = managers * scale;
+      return {
+        family: "chained-three-term-ratio",
+        stem: `At a firm the ratio of managers to engineers is ${a} to ${b}, and the ratio of engineers to technicians is ${c} to ${d}. If the firm has ${total} technicians, how many managers does it have?`,
+        answer,
+        wrong: [
+          [round3((total * a) / b), "This uses the manager-to-engineer ratio directly against the technician count, skipping the link through engineers."],
+          [engineers * scale, "This is the number of engineers."],
+          [round3((total * a) / d), "This pairs the first ratio's numerator with the second ratio's denominator without matching the shared term."],
+          [round3((total * c) / d), "This converts technicians to engineers and stops there."],
+          [total, "This repeats the technician count."],
+          [round3((total * b) / a), "This inverts the manager-to-engineer ratio."],
+        ],
+        why: `The shared term is engineers. Scaling the first ratio by ${c} and the second by ${b} makes managers : engineers : technicians = ${managers} : ${engineers} : ${technicians}. With ${total} technicians the common multiplier is ${total} ÷ ${technicians} = ${scale}, so managers = ${managers} · ${scale} = ${answer}.`,
+        steps: [
+          "Identify the term the two ratios share — engineers.",
+          `Rescale both ratios so the engineer term matches: ${managers} : ${engineers} : ${technicians}.`,
+          `Divide the given technician count by ${technicians} and multiply the manager term by that multiplier.`,
+        ],
+        principles: [
+          "Two ratios chain only after the shared quantity is written with the same number in both.",
+        ],
+        hint: "Make the engineer count agree in both ratios before combining them.",
+        trap: "Applying one ratio to a quantity it does not directly relate.",
+        verification: { kind: "product", inputs: [managers, scale], expected: answer },
+      };
+    },
+  ],
+};
+
+SHAPES["percentages"] = {
+  Easy: [
+    (s, variant) => {
+      const percent = span(s, 10, 8, 5);
+      const base = span(s, 40, 6, 20);
+      const answer = round3((base * percent) / 100);
+      return {
+        family: "percent-of-a-number",
+        stem: choose(variant, [
+          `What is ${percent}% of ${base}?`,
+          `Find ${percent} percent of ${base}.`,
+          `A survey covers ${base} households, and ${percent}% of them recycle. How many households recycle?`,
+          `${percent}% of a ${base}-page manuscript has been edited. How many pages is that?`,
+        ]),
+        answer,
+        wrong: [
+          [percent, "This repeats the percent instead of applying it."],
+          [base - percent, "This subtracts the percent as if it were a count."],
+          [round3(base / percent), "This divides by the percent rather than multiplying by percent ÷ 100."],
+          [round3((base * percent) / 10), "This moves the decimal one place too few."],
+          [base, "This is the whole amount."],
+        ],
+        why: `${percent}% means ${percent}/100, so the answer is ${base} · ${percent}/100 = ${num(answer)}.`,
+        steps: [
+          `Rewrite the percent as a decimal: ${percent}% = ${num(percent / 100)}.`,
+          `Multiply by the base: ${base} · ${num(percent / 100)}.`,
+          "Sanity-check the size against the whole.",
+        ],
+        principles: ["A percent of a quantity is that quantity times the percent over 100."],
+        hint: "Of means multiply.",
+        verification: { kind: "percent-of", inputs: [base, percent], expected: answer },
+      };
+    },
+    (s, variant) => {
+      const before = span(s, 40, 6, 20);
+      const after = before + (before * choose(s, [5, 10, 20, 25])) / 100;
+      const answer = round3(((after - before) / before) * 100);
+      return {
+        family: "percent-increase",
+        stem: `A club's membership grew from ${before} to ${after}. By what percent did it increase?`,
+        answer,
+        wrong: [
+          [after - before, "This is the raw increase, not a percent."],
+          [round3(((after - before) / after) * 100), "This divides the change by the new value; percent change always compares to the original."],
+          [round3((after / before) * 100), "This gives the new value as a percent of the old, which is 100 more than the increase."],
+          [before, "This is the starting membership."],
+          [round3(((after - before) / before) * 10), "This is off by a factor of ten."],
+        ],
+        why: `The increase is ${after} − ${before} = ${after - before}, and ${after - before} ÷ ${before} = ${num((after - before) / before)}, so the growth is ${num(answer)}%.`,
+        steps: [
+          `Subtract to find the change: ${after} − ${before} = ${after - before}.`,
+          `Divide by the original value ${before}.`,
+          "Multiply by 100 to express it as a percent.",
+        ],
+        principles: ["Percent change divides the change by the original amount."],
+        hint: "The denominator is where the change started.",
+        verification: { kind: "percent-change", inputs: [before, after], expected: answer },
+      };
+    },
+  ],
+  Medium: [
+    (s, variant) => {
+      const price = span(s, 60, 6, 20);
+      const first = span(s, 10, 4, 10);
+      const second = span(s, 5, 4, 5);
+      const answer = money(round3(price * (1 - first / 100) * (1 - second / 100)));
+      const naive = money(round3(price * (1 - (first + second) / 100)));
+      return {
+        family: "successive-discounts",
+        stem: `A coat priced at ${price} is marked down ${first}%, and the sale price is then reduced by a further ${second}%. What is the final price?`,
+        answer,
+        wrong: [
+          [naive, `This subtracts ${first + second}% from the original price. The second discount applies to the already-reduced price, so the total reduction is smaller than the sum of the two percents.`],
+          [money(round3(price * (1 - first / 100))), "This applies only the first markdown."],
+          [money(round3(price * (1 - second / 100))), "This applies only the second markdown."],
+          [money(round3(price * ((first + second) / 100))), "This computes the discount rather than the price left after it."],
+          [money(price), "This is the original price."],
+        ],
+        why: `The first markdown leaves ${100 - first}% of ${price}, or ${num(round3((price * (100 - first)) / 100))}. The second leaves ${100 - second}% of that: ${num(round3((price * (100 - first) * (100 - second)) / 10000))}.`,
+        steps: [
+          `Multiply by ${num((100 - first) / 100)} for the first markdown.`,
+          `Multiply that result by ${num((100 - second) / 100)} for the second.`,
+          "Do not add the percents — the second one is taken from a smaller base.",
+        ],
+        principles: [
+          "Successive percent changes multiply their factors; they do not add their percents.",
+        ],
+        hint: "Two markdowns act on different starting prices.",
+        trap: "Adding the two discount percents.",
+      };
+    },
+    (s, variant) => {
+      const original = span(s, 200, 6, 100);
+      const rate = span(s, 5, 4, 5);
+      const now = round3((original * (100 + rate)) / 100);
+      return {
+        family: "reverse-percent-find-the-original",
+        stem: `After a ${rate}% increase, a monthly rent is ${num(now)}. What was the rent before the increase?`,
+        answer: money(original),
+        wrong: [
+          [money(round3((now * (100 - rate)) / 100)), `This takes ${rate}% off the new rent. Removing ${rate}% of the larger number does not undo adding ${rate}% of the smaller one.`],
+          [money(round3(now - rate)), "This subtracts the percent as if it were dollars."],
+          [money(round3((now * 100) / (100 - rate))), "This divides by the wrong factor, making the original larger than the new rent."],
+          [money(now), "This is the rent after the increase."],
+          [money(round3((now * rate) / 100)), "This is the size of the increase, not the original rent."],
+        ],
+        why: `The new rent is ${num(1 + rate / 100)} times the old one, so the old rent is ${num(now)} ÷ ${num(1 + rate / 100)} = ${original}. Checking: ${original} · ${num(1 + rate / 100)} = ${num(now)}.`,
+        steps: [
+          `Write the relationship: original · ${num(1 + rate / 100)} = ${num(now)}.`,
+          `Divide both sides by ${num(1 + rate / 100)}.`,
+          "Verify by re-applying the increase to your answer.",
+        ],
+        principles: [
+          "Undoing a percent increase divides by the growth factor; it does not subtract the same percent.",
+        ],
+        hint: "The percent was taken from the number you are looking for.",
+        trap: "Subtracting the same percent from the new value.",
+        verification: quotientCheck(now * 100, 100 + rate, original),
+      };
+    },
+  ],
+  Hard: [
+    (s, variant) => {
+      const table = [
+        [40, 10, 20],
+        [60, 20, 40],
+        [50, 30, 40],
+        [80, 25, 50],
+        [30, 10, 40],
+        [90, 40, 60],
+        [45, 20, 40],
+        [70, 30, 50],
+      ];
+      const [volume, weak, target] = choose(s, table);
+      const answer = round3((volume * (target - weak)) / (100 - target));
+      return {
+        family: "acid-mixture-add-pure-solute",
+        stem: `A chemist has ${volume} liters of a solution that is ${weak}% acid. How many liters of pure acid must be added so that the resulting solution is ${target}% acid?`,
+        answer,
+        wrong: [
+          [round3((volume * (target - weak)) / 100), "This takes the percent difference of the original volume, treating the added acid as if it did not also enlarge the total."],
+          [target - weak, "This is the difference of the percents, not a volume."],
+          [round3((volume * target) / 100), "This is the acid the final mixture contains, not the amount added."],
+          [round3((volume * weak) / 100), "This is the acid already present."],
+          [volume, "This repeats the starting volume."],
+          [round3((volume * (target - weak)) / (100 - weak)), "This divides by the wrong complement; the added liquid is pure acid, so it is the target percent that limits the dilution."],
+        ],
+        why: `Start with ${num((volume * weak) / 100)} liters of acid in ${volume} liters. Adding x liters of pure acid gives ${num((volume * weak) / 100)} + x acid in ${volume} + x liters, and setting that equal to ${target}% gives x = ${volume}(${target} − ${weak}) ÷ (100 − ${target}) = ${num(answer)} liters.`,
+        steps: [
+          "Track the acid and the total separately; adding pure acid increases both.",
+          `Write the equation (${num((volume * weak) / 100)} + x) ÷ (${volume} + x) = ${num(target / 100)}.`,
+          "Clear the denominator and solve the resulting linear equation for x.",
+        ],
+        principles: [
+          "In a mixture problem the added substance changes the numerator and the denominator, so the concentration equation is not a simple percent of the original volume.",
+        ],
+        hint: "The total volume does not stay at the starting number.",
+        trap: "Holding the total volume fixed while the acid amount grows.",
+      };
+    },
+    (s, variant) => {
+      const up = span(s, 10, 5, 10);
+      const down = span(s, 10, 4, 5);
+      const answer = round3((100 + up) * (100 - down) / 100);
+      return {
+        family: "compounded-percent-change-net-effect",
+        stem: `A retailer raises the price of an item by ${up}% and later reduces the new price by ${down}%. The final price is what percent of the original price?`,
+        answer,
+        wrong: [
+          [100 + up - down, `This adds and subtracts the percents. The ${down}% reduction is taken from the raised price, not from the original, so the two percents apply to different bases.`],
+          [100 + up, "This applies only the increase."],
+          [100 - down, "This applies only the reduction."],
+          [round3(answer - 100), "This is the net change, not the final price as a percent of the original."],
+          [100, "This claims the two changes cancel exactly, which happens only if both percents are zero."],
+          [up * down, "This multiplies the percents themselves."],
+        ],
+        why: `The increase multiplies by ${num(1 + up / 100)} and the reduction multiplies by ${num(1 - down / 100)}, so the final price is ${num(1 + up / 100)} · ${num(1 - down / 100)} = ${num(answer / 100)} times the original, or ${num(answer)}%.`,
+        steps: [
+          "Convert each change into a multiplying factor rather than an amount.",
+          `Multiply the factors: ${num(1 + up / 100)} · ${num(1 - down / 100)}.`,
+          "Express the product as a percent of the original.",
+        ],
+        principles: [
+          "Percent changes compose multiplicatively, so a rise of p% followed by a fall of p% leaves less than the original.",
+        ],
+        hint: "The second percent is taken from a different number than the first.",
+        trap: "Adding the two percents as though they shared a base.",
+      };
+    },
+  ],
+};
+
+SHAPES["perimeter and area"] = {
+  Easy: [
+    (s, variant) => {
+      const length = span(s, 7, 6, 2);
+      const width = span(s, 3, 5, 2);
+      const answer = 2 * (length + width);
+      return {
+        family: "rectangle-perimeter",
+        stem: choose(variant, [
+          `A rectangular patio measures ${length} feet by ${width} feet. What is its perimeter, in feet?`,
+          `What is the perimeter, in feet, of a rectangle ${length} feet long and ${width} feet wide?`,
+          `A rectangular sign is ${length} feet long and ${width} feet high. How many feet of trim go around its edge?`,
+          `A ${length}-foot by ${width}-foot rectangular plot is fenced on all four sides. How many feet of fence are used?`,
+        ]),
+        answer,
+        wrong: [
+          [length * width, "This is the area, in square feet, not the distance around."],
+          [length + width, "This adds one length and one width; the rectangle has two of each."],
+          [2 * length + width, "This counts the width only once."],
+          [length + 2 * width, "This counts the length only once."],
+          [4 * length, "This treats the rectangle as a square with the longer side."],
+        ],
+        why: `Perimeter counts each side once: ${length} + ${width} + ${length} + ${width} = 2(${length} + ${width}) = ${answer} feet.`,
+        steps: [
+          "Add the length and the width.",
+          "Double the sum, because the rectangle has two of each side.",
+          "Keep the units linear, not square.",
+        ],
+        principles: ["A rectangle's perimeter is 2(length + width)."],
+        hint: "Walk all the way around the edge.",
+        verification: { kind: "sum", inputs: [length, width, length, width], expected: answer },
+      };
+    },
+    (s, variant) => {
+      const width = span(s, 4, 5, 2);
+      const length = span(s, 9, 6, 3);
+      const area = length * width;
+      return {
+        family: "rectangle-missing-side-from-area",
+        stem: `A rectangular rug has an area of ${area} square feet and a width of ${width} feet. What is its length, in feet?`,
+        answer: length,
+        wrong: [
+          [area - width, "This subtracts the width from the area; area is a product, so recovering a side needs division."],
+          [round3(area / (width + 1)), "This divides by the wrong width."],
+          [area, "This is the area, in square feet."],
+          [width, "This repeats the width."],
+          [round3(area / 2), "This halves the area rather than dividing by the width."],
+        ],
+        why: `Area is length · width, so length = ${area} ÷ ${width} = ${length} feet.`,
+        steps: [
+          "Write area = length × width.",
+          `Divide the area by the known side: ${area} ÷ ${width}.`,
+          "Check by multiplying back.",
+        ],
+        principles: ["Dividing an area by one dimension returns the other."],
+        hint: "Undo the multiplication.",
+        verification: quotientCheck(area, width, length),
+      };
+    },
+  ],
+  Medium: [
+    (s, variant) => {
+      const outerW = span(s, 10, 5, 2);
+      const outerH = span(s, 8, 5, 2);
+      const cutW = span(s, 3, 4);
+      const cutH = span(s, 2, 4);
+      const answer = outerW * outerH - cutW * cutH;
+      return {
+        family: "composite-l-shaped-area",
+        stem: `An L-shaped floor is formed by removing a ${cutW}-foot by ${cutH}-foot rectangular corner from a ${outerW}-foot by ${outerH}-foot rectangle. What is the area of the floor, in square feet?`,
+        answer,
+        wrong: [
+          [outerW * outerH, "This is the full rectangle before the corner is removed."],
+          [cutW * cutH, "This is the removed corner alone."],
+          [outerW * outerH + cutW * cutH, "This adds the corner rather than removing it."],
+          [round3((outerW - cutW) * (outerH - cutH)), "This shrinks both dimensions, which cuts away far more than one corner."],
+          [2 * (outerW + outerH), "This is a perimeter, not an area."],
+        ],
+        why: `The whole rectangle is ${outerW} · ${outerH} = ${outerW * outerH} square feet and the removed corner is ${cutW} · ${cutH} = ${cutW * cutH}, so the floor is ${outerW * outerH} − ${cutW * cutH} = ${answer} square feet.`,
+        steps: [
+          "Find the area of the complete rectangle.",
+          "Find the area of the piece taken away.",
+          "Subtract; do not shorten both dimensions at once.",
+        ],
+        principles: [
+          "A composite region's area is a sum or difference of simple regions, chosen so that no part is counted twice.",
+        ],
+        hint: "Complete the rectangle, then take the notch out.",
+        trap: "Reducing both side lengths instead of subtracting one rectangle.",
+      };
+    },
+    (s, variant) => {
+      const length = span(s, 12, 6, 4);
+      const width = span(s, 5, 5, 3);
+      const perimeter = 2 * (length + width);
+      const answer = length * width;
+      return {
+        family: "area-from-perimeter-and-one-side",
+        stem: `A rectangular garden has a perimeter of ${perimeter} feet and a length of ${length} feet. What is its area, in square feet?`,
+        answer,
+        wrong: [
+          [round3(length * (perimeter / 2)), "This uses half the perimeter as the width; half the perimeter is the length plus the width."],
+          [round3(length * (perimeter - 2 * length)), "This forgets to halve after removing the two lengths."],
+          [perimeter, "This is the perimeter, in feet."],
+          [round3(length * (perimeter / 4)), "This treats the garden as a square."],
+          [width, "This is the width alone."],
+        ],
+        why: `Half the perimeter is ${perimeter / 2} = length + width, so the width is ${perimeter / 2} − ${length} = ${width}, and the area is ${length} · ${width} = ${answer} square feet.`,
+        steps: [
+          `Halve the perimeter: ${perimeter} ÷ 2 = ${perimeter / 2}.`,
+          `Subtract the length to get the width: ${perimeter / 2} − ${length} = ${width}.`,
+          "Multiply the two dimensions.",
+        ],
+        principles: ["Half a rectangle's perimeter equals the sum of its two different sides."],
+        hint: "Halving the perimeter gives one length plus one width.",
+        trap: "Using half the perimeter as the missing side.",
+        verification: { kind: "product", inputs: [length, width], expected: answer },
+      };
+    },
+  ],
+  Hard: [
+    (s, variant) => {
+      const radius = span(s, 3, 6);
+      const square = 4 * radius * radius;
+      const coefficient = radius * radius;
+      return {
+        family: "shaded-region-circle-in-square",
+        stem: `A circle of radius ${radius} is inscribed in a square, touching all four sides. What is the area of the region inside the square but outside the circle?`,
+        answer: val(`${square} ${MINUS} ${coefficient}π`, square - Math.PI * coefficient),
+        wrong: [
+          [val(`${coefficient}π`, Math.PI * coefficient), "This is the circle's area alone."],
+          [val(`${square}`, square), "This is the square's area alone."],
+          [val(`${square} ${MINUS} ${2 * radius}π`, square - Math.PI * 2 * radius), "This subtracts the circle's circumference rather than its area."],
+          [val(`${radius * radius} ${MINUS} ${coefficient}π`, radius * radius - Math.PI * coefficient), "This uses the radius, not the diameter, as the square's side."],
+          [val(`${square} + ${coefficient}π`, square + Math.PI * coefficient), "This adds the two areas instead of subtracting."],
+          [val(`${4 * radius} ${MINUS} ${coefficient}π`, 4 * radius - Math.PI * coefficient), "This uses the square's perimeter in place of its area."],
+        ],
+        why: `An inscribed circle has diameter equal to the square's side, so the side is ${2 * radius} and the square's area is ${square}. The circle covers π · ${radius}² = ${coefficient}π, leaving ${square} ${MINUS} ${coefficient}π.`,
+        steps: [
+          `Translate "inscribed" into a length: the side equals the diameter, ${2 * radius}.`,
+          `Square it for the square's area: ${square}.`,
+          `Subtract the circle's area π·${radius}² = ${coefficient}π.`,
+        ],
+        principles: [
+          "An inscribed circle's diameter equals the containing square's side, which is the step that converts the radius into the outer figure's dimension.",
+        ],
+        hint: "The side of the square is not the radius.",
+        trap: "Using the radius as the side of the square.",
+      };
+    },
+    (s, variant) => {
+      const small = span(s, 2, 4);
+      const large = small + 1 + (s % 3);
+      const area = span(s, 3, 5) * small * small;
+      const answer = round3((area * large * large) / (small * small));
+      return {
+        family: "similar-figure-area-ratio",
+        stem: `Two similar hexagons have corresponding side lengths in the ratio ${small} to ${large}. The smaller hexagon has an area of ${area} square centimeters. What is the area of the larger hexagon, in square centimeters?`,
+        answer,
+        wrong: [
+          [round3((area * large) / small), "This scales the area by the ratio of the sides. Areas scale by the square of that ratio, because both dimensions stretch."],
+          [round3(area + (large - small)), "This adds the difference of the ratio terms to the area."],
+          [round3((area * small * small) / (large * large)), "This scales down instead of up."],
+          [area, "This repeats the smaller area."],
+          [round3(area * large * large), "This multiplies by the larger term squared without dividing by the smaller."],
+        ],
+        why: `Corresponding lengths are in ratio ${small}:${large}, so corresponding areas are in ratio ${small * small}:${large * large}. Then the larger area is ${area} · ${large * large}/${small * small} = ${num(answer)} square centimeters.`,
+        steps: [
+          "Square the linear ratio to get the area ratio.",
+          `Form the factor ${large * large}/${small * small}.`,
+          "Multiply the known area by that factor.",
+        ],
+        principles: [
+          "In similar figures, areas scale as the square of the scale factor and volumes as its cube.",
+        ],
+        hint: "Both dimensions of the figure stretch, not just one.",
+        trap: "Scaling area by the linear ratio.",
+        verification: quotientCheck(area * large * large, small * small, answer),
+      };
+    },
+  ],
+};
+
+SHAPES["measurement conversion"] = {
+  Easy: [
+    (s, variant) => {
+      const unit = choose(s, UNITS);
+      const count = span(s, 3, 6);
+      const answer = count * unit.factor;
+      return {
+        family: "single-step-unit-conversion",
+        stem: `There are ${unit.factor} ${unit.to} in one ${unit.from.replace(/s$/, "")}. How many ${unit.to} are in ${count} ${unit.from}?`,
+        answer,
+        wrong: [
+          [round3(count / unit.factor), "This divides when converting to a smaller unit; a smaller unit needs more of them."],
+          [count + unit.factor, "This adds the conversion factor instead of multiplying by it."],
+          [count, "This repeats the original measurement."],
+          [unit.factor, "This is the conversion factor by itself."],
+          [answer + unit.factor, "This converts one unit too many."],
+        ],
+        why: `Each ${unit.from.replace(/s$/, "")} is ${unit.factor} ${unit.to}, so ${count} · ${unit.factor} = ${answer} ${unit.to}.`,
+        steps: [
+          "Decide whether the new unit is smaller or larger.",
+          `Smaller unit means more of them, so multiply: ${count} · ${unit.factor}.`,
+          "Check that the number grew.",
+        ],
+        principles: ["Converting to a smaller unit multiplies; converting to a larger unit divides."],
+        hint: "Which unit is smaller?",
+        verification: { kind: "product", inputs: [count, unit.factor], expected: answer },
+      };
+    },
+    (s, variant) => {
+      const yards = span(s, 2, 6);
+      const answer = yards * 36;
+      return {
+        family: "two-step-length-conversion",
+        stem: `A rope is ${yards} yards long. Given that 1 yard is 3 feet and 1 foot is 12 inches, how many inches long is the rope?`,
+        answer,
+        wrong: [
+          [yards * 12, "This converts yards to feet and stops, or converts as if a yard were 12 inches."],
+          [yards * 3, "This converts to feet only."],
+          [yards * 15, "This adds the two factors instead of multiplying them."],
+          [round3(answer / 3), "This applies only one of the two conversions."],
+          [yards, "This repeats the length in yards."],
+        ],
+        why: `${yards} yards is ${yards} · 3 = ${yards * 3} feet, and ${yards * 3} · 12 = ${answer} inches.`,
+        steps: [
+          "Convert yards to feet by multiplying by 3.",
+          "Convert feet to inches by multiplying by 12.",
+          "Equivalently, multiply by 36 in one step.",
+        ],
+        principles: ["Chained conversions multiply their factors."],
+        hint: "Two conversions, one after the other.",
+        verification: { kind: "product", inputs: [yards, 3, 12], expected: answer },
+      };
+    },
+  ],
+  Medium: [
+    (s, variant) => {
+      const feetPerSecond = span(s, 22, 6, 22);
+      const answer = round3((feetPerSecond * 3600) / 5280);
+      return {
+        family: "rate-unit-conversion-fps-to-mph",
+        stem: `An object moves at ${feetPerSecond} feet per second. Given that 1 mile is 5280 feet, what is its speed in miles per hour?`,
+        answer,
+        wrong: [
+          [round3((feetPerSecond * 60) / 5280), "This converts seconds to minutes rather than to hours."],
+          [round3((feetPerSecond * 5280) / 3600), "This multiplies by the feet-per-mile factor instead of dividing by it."],
+          [feetPerSecond, "This leaves the rate in feet per second."],
+          [round3(feetPerSecond * 3600), "This converts the time unit but never the distance unit."],
+          [round3(feetPerSecond / 5280), "This converts feet to miles but leaves the time in seconds."],
+        ],
+        why: `${feetPerSecond} ft/s · 3600 s/h = ${feetPerSecond * 3600} ft/h, and ${feetPerSecond * 3600} ÷ 5280 = ${num(answer)} miles per hour.`,
+        steps: [
+          "Convert the time unit: multiply by 3600 seconds per hour.",
+          "Convert the distance unit: divide by 5280 feet per mile.",
+          "Confirm both units in the rate have changed.",
+        ],
+        principles: [
+          "A rate carries two units, and both have to be converted before the answer is in the requested form.",
+        ],
+        hint: "Handle the numerator and the denominator separately.",
+        trap: "Converting only one of the two units in the rate.",
+        verification: quotientCheck(feetPerSecond * 3600, 5280, answer),
+      };
+    },
+    (s, variant) => {
+      const quarts = span(s, 3, 6);
+      const answer = quarts * 32;
+      return {
+        family: "capacity-conversion-chain",
+        stem: `A recipe calls for ${quarts} quarts of stock. Given that 1 quart is 2 pints and 1 pint is 16 fluid ounces, how many fluid ounces of stock are needed?`,
+        answer,
+        wrong: [
+          [quarts * 2, "This converts quarts to pints and stops."],
+          [quarts * 16, "This skips the quart-to-pint step."],
+          [quarts * 18, "This adds the two factors rather than multiplying them."],
+          [round3(answer / 2), "This applies only one of the two conversions."],
+          [quarts, "This repeats the quantity in quarts."],
+        ],
+        why: `${quarts} quarts is ${quarts * 2} pints, and ${quarts * 2} · 16 = ${answer} fluid ounces.`,
+        steps: [
+          "Multiply by 2 to reach pints.",
+          "Multiply by 16 to reach fluid ounces.",
+          "Or combine the factors and multiply by 32 once.",
+        ],
+        principles: ["Successive conversions compose into a single multiplier."],
+        hint: "Take it one unit at a time.",
+        verification: { kind: "product", inputs: [quarts, 2, 16], expected: answer },
+      };
+    },
+  ],
+  Hard: [
+    (s, variant) => {
+      const width = span(s, 9, 5, 3);
+      const length = span(s, 12, 5, 3);
+      const answer = round3((width * length) / 9);
+      return {
+        family: "square-unit-conversion",
+        stem: `A room measures ${width} feet by ${length} feet. Carpet is sold by the square yard. How many square yards of carpet cover the room exactly?`,
+        answer,
+        wrong: [
+          [round3((width * length) / 3), "This divides by 3, the linear conversion. A square yard is 3 feet by 3 feet, so it holds 9 square feet, not 3."],
+          [width * length, "This is the area in square feet."],
+          [round3((width / 3) * length), "This converts only one of the two dimensions to yards."],
+          [round3((width * length) / 27), "This uses the cubic conversion, 27 cubic feet per cubic yard."],
+          [round3((width + length) / 3), "This converts a perimeter-like sum rather than an area."],
+        ],
+        why: `The room is ${width * length} square feet. One square yard is 3 ft · 3 ft = 9 square feet, so ${width * length} ÷ 9 = ${num(answer)} square yards. Checking the other way: ${num(width / 3)} yd · ${num(length / 3)} yd = ${num(answer)}.`,
+        steps: [
+          "Find the area in square feet first.",
+          "Recognize that the area conversion factor is the linear factor squared: 3² = 9.",
+          `Divide by 9, or convert both dimensions to yards and multiply.`,
+        ],
+        principles: [
+          "Area conversions square the linear factor and volume conversions cube it.",
+        ],
+        hint: "How many square feet fit inside one square yard?",
+        trap: "Dividing an area by the linear conversion factor.",
+        verification: quotientCheck(width * length, 9, answer),
+      };
+    },
+    (s, variant) => {
+      const table = [288, 144, 432, 576, 720, 864];
+      const perSecond = choose(s, table);
+      const answer = round3((perSecond * 60) / 1728);
+      return {
+        family: "cubic-rate-conversion",
+        stem: `A nozzle delivers ${perSecond} cubic inches of water per second. Given that 1 foot is 12 inches, how many cubic feet per minute is that?`,
+        answer,
+        wrong: [
+          [round3((perSecond * 60) / 12), "This divides by the linear factor. A cubic foot is 12 inches cubed, or 1728 cubic inches."],
+          [round3((perSecond * 60) / 144), "This uses the square conversion, 144 square inches per square foot."],
+          [round3(perSecond / 1728), "This converts the volume unit but leaves the rate per second."],
+          [round3(perSecond * 60), "This converts the time unit only."],
+          [perSecond, "This repeats the given rate."],
+        ],
+        why: `Per minute the nozzle delivers ${perSecond} · 60 = ${perSecond * 60} cubic inches. One cubic foot is 12³ = 1728 cubic inches, so ${perSecond * 60} ÷ 1728 = ${num(answer)} cubic feet per minute.`,
+        steps: [
+          "Scale the rate from seconds to minutes by multiplying by 60.",
+          "Cube the linear factor to convert volume: 12³ = 1728.",
+          "Divide the cubic inches per minute by 1728.",
+        ],
+        principles: [
+          "Converting a rate means converting both its units, and a volume unit changes by the cube of the linear factor.",
+        ],
+        hint: "1728, not 12, is the number of cubic inches in a cubic foot.",
+        trap: "Applying the linear or square factor to a volume.",
+        verification: quotientCheck(perSecond * 60, 1728, answer),
+      };
+    },
+  ],
+};
+
+SHAPES["averages"] = {
+  Easy: [
+    (s, variant) => {
+      const base = span(s, 6, 6, 2);
+      const values = [base, base + 4, base + 2, base + 8, base + 6];
+      const answer = values.reduce((sum, value) => sum + value, 0) / values.length;
+      return {
+        family: "mean-of-a-list",
+        stem: choose(variant, [
+          `What is the average (arithmetic mean) of ${values.join(", ")}?`,
+          `Find the mean of the five numbers ${values.join(", ")}.`,
+          `A tally records ${values.join(", ")}. What is the average of these five values?`,
+          `The five readings ${values.join(", ")} were taken. What is their arithmetic mean?`,
+        ]),
+        answer,
+        wrong: [
+          [values.reduce((sum, value) => sum + value, 0), "This is the sum; the mean also divides by how many values there are."],
+          [values[2], "This is one of the listed values, not their mean."],
+          [round3(values.reduce((sum, value) => sum + value, 0) / (values.length - 1)), "This divides by one value too few."],
+          [round3(values.reduce((sum, value) => sum + value, 0) / (values.length + 1)), "This divides by one value too many."],
+          [Math.max(...values), "This is the largest value."],
+        ],
+        why: `The five values add to ${values.reduce((sum, value) => sum + value, 0)}, and ${values.reduce((sum, value) => sum + value, 0)} ÷ 5 = ${num(answer)}.`,
+        steps: ["Add all five values.", "Divide the sum by 5.", "Check the result lies between the smallest and largest."],
+        principles: ["The arithmetic mean is the sum divided by the count."],
+        hint: "Add first, then divide by how many there are.",
+        verification: { kind: "mean", inputs: values, expected: answer },
+      };
+    },
+    (s, variant) => {
+      const scores = [span(s, 72, 6, 2), span(s, 80, 5, 3), span(s, 88, 4, 2), span(s, 91, 4, 2)];
+      const total = scores.reduce((sum, value) => sum + value, 0);
+      const answer = round3(total / scores.length);
+      return {
+        family: "mean-of-test-scores",
+        stem: `A student's four test scores are ${scores.join(", ")}. What is the student's average score?`,
+        answer,
+        wrong: [
+          [total, "This is the total of the scores, not their average."],
+          [round3(total / 3), "This divides by three tests instead of four."],
+          [Math.max(...scores), "This is the highest score."],
+          [Math.min(...scores), "This is the lowest score."],
+          [round3((Math.max(...scores) + Math.min(...scores)) / 2), "This averages only the extreme scores."],
+        ],
+        why: `The four scores add to ${total}, so the average is ${total} ÷ 4 = ${num(answer)}.`,
+        steps: ["Add the four scores.", "Divide by 4.", "Confirm the average sits inside the range of scores."],
+        principles: ["An average distributes the total equally across the count."],
+        hint: "Every score counts once.",
+        verification: { kind: "mean", inputs: scores, expected: answer },
+      };
+    },
+  ],
+  Medium: [
+    (s, variant) => {
+      const known = [span(s, 74, 5, 3), span(s, 81, 5, 2), span(s, 88, 4, 2)];
+      const target = span(s, 84, 5, 2);
+      const answer = 4 * target - known.reduce((sum, value) => sum + value, 0);
+      return {
+        family: "missing-score-for-target-mean",
+        stem: `A student has scored ${known.join(", ")} on three tests. What score on a fourth test would make the average of all four tests exactly ${target}?`,
+        answer,
+        wrong: [
+          [target, "This is the target average, which the fourth score only equals when the first three already average to it."],
+          [round3(4 * target - known.reduce((sum, value) => sum + value, 0) - target), "This subtracts the target one extra time."],
+          [round3(3 * target - known.reduce((sum, value) => sum + value, 0)), "This uses three tests in the total instead of four."],
+          [known.reduce((sum, value) => sum + value, 0), "This is the total of the first three scores."],
+          [round3(target - known.reduce((sum, value) => sum + value, 0) / 3), "This compares the target to the current average without accounting for the fourth test's weight."],
+        ],
+        why: `Four tests averaging ${target} need a total of 4 · ${target} = ${4 * target}. The first three total ${known.reduce((sum, value) => sum + value, 0)}, so the fourth must be ${4 * target} − ${known.reduce((sum, value) => sum + value, 0)} = ${answer}.`,
+        steps: [
+          `Turn the target average into a required total: 4 · ${target} = ${4 * target}.`,
+          "Add the scores already earned.",
+          "Subtract to find what is still needed.",
+        ],
+        principles: ["Work with totals, not averages, when a new value is being added."],
+        hint: "What total do four tests need?",
+        trap: "Answering with the target average itself.",
+        verification: {
+          kind: "linear-equation",
+          inputs: [1, known.reduce((sum, value) => sum + value, 0), 4 * target],
+          expected: answer,
+        },
+      };
+    },
+    (s, variant) => {
+      const n1 = span(s, 10, 5, 2);
+      const n2 = span(s, 15, 5, 3);
+      const m1 = span(s, 70, 5, 2);
+      const m2 = m1 + span(s, 6, 4, 3);
+      const answer = round3((n1 * m1 + n2 * m2) / (n1 + n2));
+      return {
+        family: "weighted-average-of-two-groups",
+        stem: `One class of ${n1} students averaged ${m1} on a test and another class of ${n2} students averaged ${m2}. What is the average score of all ${n1 + n2} students combined?`,
+        answer,
+        wrong: [
+          [round3((m1 + m2) / 2), "This averages the two class averages, which is correct only when the classes are the same size."],
+          [m2, "This is the larger class average."],
+          [m1, "This is the smaller class average."],
+          [round3((n1 * m1 + n2 * m2) / 2), "This divides the combined total by 2 rather than by the number of students."],
+          [n1 * m1 + n2 * m2, "This is the combined point total, not an average."],
+        ],
+        why: `The two classes score ${n1 * m1} and ${n2 * m2} points, a total of ${n1 * m1 + n2 * m2} across ${n1 + n2} students: ${n1 * m1 + n2 * m2} ÷ ${n1 + n2} = ${num(answer)}.`,
+        steps: [
+          "Convert each average back into a total by multiplying by the group size.",
+          "Add the totals and add the group sizes.",
+          "Divide the combined total by the combined count.",
+        ],
+        principles: [
+          "A combined average weights each group by its size, so it lies nearer the average of the larger group.",
+        ],
+        hint: "The larger class pulls the combined average toward itself.",
+        trap: "Averaging the two averages.",
+      };
+    },
+  ],
+  Hard: [
+    (s, variant) => {
+      const count = span(s, 5, 4);
+      const mean = span(s, 20, 5, 4);
+      const restMean = mean + 1 + (s % 2);
+      const answer = count * mean - (count - 1) * restMean;
+      return {
+        family: "value-removed-changes-the-mean",
+        stem: `The average of ${count} numbers is ${mean}. When one of the numbers is removed, the average of the remaining ${count - 1} numbers is ${restMean}. What was the number that was removed?`,
+        answer,
+        wrong: [
+          [round3(count * restMean - (count - 1) * mean), "This pairs each average with the other's count, reversing the roles of the two totals."],
+          [mean, "This is the original average, not the value removed."],
+          [restMean, "This is the new average."],
+          [round3(count * mean - count * restMean), `This keeps ${count} numbers in the second total, but only ${count - 1} remain after the removal.`],
+          [count * mean, "This is the original sum of all the numbers."],
+          [(count - 1) * restMean, "This is the sum of the numbers that stayed."],
+        ],
+        why: `The original total is ${count} · ${mean} = ${count * mean} and the remaining total is ${count - 1} · ${restMean} = ${(count - 1) * restMean}. The removed number is the difference, ${count * mean} − ${(count - 1) * restMean} = ${num(answer)}. Removing a number below the mean raises the average, which matches ${restMean} being larger than ${mean}.`,
+        steps: [
+          `Reconstruct the first total: ${count} · ${mean} = ${count * mean}.`,
+          `Reconstruct the second total with one fewer value: ${count - 1} · ${restMean} = ${(count - 1) * restMean}.`,
+          "Subtract the totals, not the averages.",
+        ],
+        principles: [
+          "An average only combines with another after both are converted back into totals with their own counts.",
+        ],
+        hint: "Each average hides a different count.",
+        trap: "Subtracting the two averages directly.",
+        verification: {
+          kind: "linear-equation",
+          inputs: [1, (count - 1) * restMean, count * mean],
+          expected: answer,
+        },
+      };
+    },
+    (s, variant) => {
+      const taken = span(s, 4, 4);
+      const current = span(s, 76, 5, 2);
+      const extra = span(s, 2, 3);
+      const target = current + span(s, 2, 4);
+      const answer = round3(((taken + extra) * target - taken * current) / extra);
+      return {
+        family: "scores-needed-to-raise-a-mean",
+        stem: `A student has taken ${taken} tests and has an average of ${current}. The student will take ${extra} more tests and wants an average of ${target} over all ${taken + extra} tests. What score, the same on each remaining test, is required?`,
+        answer,
+        wrong: [
+          [target, "This is the desired overall average; because the existing scores sit below it, the remaining tests have to score higher to pull the mean up."],
+          [round3(target + (target - current)), "This adds the gap once, which would work only if there were exactly as many new tests as old ones."],
+          [round3(((taken + extra) * target - taken * current) / taken), "This divides by the tests already taken instead of the ones remaining."],
+          [round3((taken + extra) * target - taken * current), "This is the total still needed across all remaining tests, not the score on each."],
+          [current, "This is the current average."],
+        ],
+        why: `All ${taken + extra} tests must total ${taken + extra} · ${target} = ${(taken + extra) * target}. The ${taken} tests so far total ${taken * current}, leaving ${(taken + extra) * target - taken * current} points across ${extra} test${extra === 1 ? "" : "s"}: ${num(answer)} each.`,
+        steps: [
+          "Find the total the target average requires over every test.",
+          "Subtract the points already earned.",
+          `Divide the shortfall by the ${extra} remaining test${extra === 1 ? "" : "s"}.`,
+        ],
+        principles: [
+          "Raising an average requires the new values to exceed the target by enough to offset every value already below it.",
+        ],
+        hint: "The remaining tests must beat the target, not match it.",
+        trap: "Assuming each remaining test only has to score the target.",
+      };
+    },
+  ],
+};
+
+SHAPES["financial contexts"] = {
+  Easy: [
+    (s, variant) => {
+      const price = span(s, 20, 6, 10);
+      const rate = choose(s, [5, 6, 8, 10]);
+      const answer = money(round3(price * (1 + rate / 100)));
+      return {
+        family: "price-plus-sales-tax",
+        stem: `A jacket costs ${price} before tax. With a sales tax of ${rate}%, what is the total cost?`,
+        answer,
+        wrong: [
+          [money(round3((price * rate) / 100)), "This is the tax alone, not the total."],
+          [money(price), "This is the price before tax."],
+          [money(price + rate), "This adds the percent as dollars."],
+          [money(round3(price * (1 - rate / 100))), "This subtracts the tax instead of adding it."],
+          [money(round3(price * rate)), "This multiplies by the percent without dividing by 100."],
+        ],
+        why: `The tax is ${rate}% of ${price} = ${num(round3((price * rate) / 100))}, so the total is ${price} + ${num(round3((price * rate) / 100))} = ${num(round3(price * (1 + rate / 100)))}.`,
+        steps: [
+          `Compute the tax: ${rate}% of ${price}.`,
+          "Add the tax to the price.",
+          "Equivalently multiply the price by 1 plus the rate.",
+        ],
+        principles: ["Adding a percent multiplies by 1 plus that percent."],
+        hint: "The total is more than the ticket price.",
+        verification: { kind: "percent-of", inputs: [price, 100 + rate], expected: round3((price * (100 + rate)) / 100) },
+      };
+    },
+    (s, variant) => {
+      const price = span(s, 40, 6, 20);
+      const rate = choose(s, [10, 15, 20, 25]);
+      const answer = money(round3(price * (1 - rate / 100)));
+      return {
+        family: "sale-price-after-discount",
+        stem: `A lamp regularly priced at ${price} is on sale for ${rate}% off. What is the sale price?`,
+        answer,
+        wrong: [
+          [money(round3((price * rate) / 100)), "This is the amount saved, not the price paid."],
+          [money(price), "This is the regular price."],
+          [money(price - rate), "This subtracts the percent as dollars."],
+          [money(round3(price * (1 + rate / 100))), "This adds the percent instead of removing it."],
+          [money(round3(price / (1 - rate / 100))), "This divides by the discount factor, undoing a discount rather than applying one."],
+        ],
+        why: `Paying is what is left after the discount: ${100 - rate}% of ${price} = ${num(round3((price * (100 - rate)) / 100))}.`,
+        steps: [
+          `The customer pays ${100 - rate}% of the price.`,
+          `Multiply: ${price} · ${num((100 - rate) / 100)}.`,
+          "Check the result is below the regular price.",
+        ],
+        principles: ["A p% discount leaves (100 − p)% of the original price."],
+        hint: "Compute what is paid, not what is saved.",
+        verification: { kind: "percent-of", inputs: [price, 100 - rate], expected: round3((price * (100 - rate)) / 100) },
+      };
+    },
+  ],
+  Medium: [
+    (s, variant) => {
+      const principal = span(s, 400, 6, 200);
+      const rate = choose(s, [3, 4, 5, 6]);
+      const years = span(s, 2, 4);
+      const interest = round3((principal * rate * years) / 100);
+      return {
+        family: "simple-interest",
+        stem: `${principal} is deposited in an account paying ${rate}% simple annual interest. How much interest does the account earn in ${years} years?`,
+        answer: money(interest),
+        wrong: [
+          [money(round3((principal * rate) / 100)), "This is one year's interest."],
+          [money(round3(principal + interest)), "This is the balance, not the interest earned."],
+          [money(round3(principal * rate * years)), "This never divides the percent by 100."],
+          [money(round3((principal * years) / 100)), "This drops the interest rate."],
+          [money(principal), "This is the original deposit."],
+        ],
+        why: `Simple interest is principal · rate · time: ${principal} · ${num(rate / 100)} · ${years} = ${num(interest)}.`,
+        steps: [
+          `Find one year's interest: ${rate}% of ${principal} = ${num((principal * rate) / 100)}.`,
+          `Multiply by ${years} years, since simple interest does not compound.`,
+          "Answer the question asked — interest, not balance.",
+        ],
+        principles: ["Simple interest earns the same amount each year, on the original principal only."],
+        hint: "Each year earns the same interest.",
+        trap: "Reporting the account balance instead of the interest.",
+        verification: { kind: "product", inputs: [principal, rate / 100, years], expected: interest },
+      };
+    },
+    (s, variant) => {
+      const base = span(s, 300, 5, 100);
+      const rate = choose(s, [4, 5, 8, 10]);
+      const target = base + span(s, 200, 5, 100);
+      const answer = round3(((target - base) * 100) / rate);
+      return {
+        family: "commission-to-reach-a-target",
+        stem: `A salesperson earns ${base} per week plus a ${rate}% commission on sales. What must the week's sales total be for the weekly earnings to reach ${target}?`,
+        answer: money(answer),
+        wrong: [
+          [money(target - base), "This is the commission that must be earned, not the sales that generate it."],
+          [money(round3(target / (rate / 100))), "This ignores the base pay and converts the entire target into commission."],
+          [money(round3(((target - base) * rate) / 100)), "This multiplies by the rate instead of dividing by it."],
+          [money(target), "This is the earnings target, not the sales figure."],
+          [money(base), "This is the base pay."],
+        ],
+        why: `Commission must supply ${target} − ${base} = ${target - base}. Since commission is ${rate}% of sales, sales = ${target - base} ÷ ${num(rate / 100)} = ${num(answer)}.`,
+        steps: [
+          "Subtract the base pay to find the commission required.",
+          `Divide by the commission rate ${num(rate / 100)}, because the sales figure is the larger number.`,
+          "Check by taking the commission of your answer and adding the base.",
+        ],
+        principles: [
+          "Recovering the base of a percent divides by the rate; multiplying goes the wrong direction.",
+        ],
+        hint: "Sales are much larger than the commission they produce.",
+        trap: "Multiplying by the commission rate instead of dividing.",
+        verification: quotientCheck((target - base) * 100, rate, answer),
+      };
+    },
+  ],
+  Hard: [
+    (s, variant) => {
+      const principal = span(s, 1000, 6, 500);
+      const rate = choose(s, [5, 10, 20, 4]);
+      const years = span(s, 2, 3);
+      const compound = round3(principal * (1 + rate / 100) ** years);
+      const simple = round3(principal * (1 + (rate * years) / 100));
+      return {
+        family: "compound-interest-balance",
+        stem: `${principal} is invested at ${rate}% annual interest compounded once per year. What is the balance after ${years} years, to the nearest cent?`,
+        answer: money(compound),
+        wrong: [
+          [money(simple), `This applies ${rate * years}% once, which is simple interest. Compounding pays interest on the interest already credited, so the balance is higher.`],
+          [money(round3(compound - principal)), "This is the interest earned, not the balance."],
+          [money(round3(principal * (1 + rate / 100))), "This compounds for one year only."],
+          [money(principal), "This is the amount originally invested."],
+          [money(round3(principal * (rate / 100) ** years)), "This raises the rate to a power instead of the growth factor."],
+        ],
+        why: `Each year multiplies the balance by ${num(1 + rate / 100)}, so after ${years} years the balance is ${principal} · ${num(1 + rate / 100)}^${years} = ${num(compound)}. Simple interest would give only ${num(simple)}.`,
+        steps: [
+          `Write the growth factor: 1 + ${rate}/100 = ${num(1 + rate / 100)}.`,
+          `Raise it to the number of compounding periods: ${years}.`,
+          "Multiply by the principal and round to cents.",
+        ],
+        principles: [
+          "Compound growth is repeated multiplication by the same factor, so it always exceeds simple interest over more than one period.",
+        ],
+        hint: "The second year's interest is computed on a larger balance.",
+        trap: "Multiplying the annual rate by the number of years.",
+      };
+    },
+    (s, variant) => {
+      const table = [
+        [40, 12, 10, 15],
+        [60, 8, 20, 12],
+        [30, 15, 12, 20],
+        [50, 10, 25, 15],
+        [80, 6, 20, 12],
+        [45, 20, 15, 25],
+      ];
+      const [feeA, rateA, feeB, rateB] = choose(s, table);
+      const answer = round3((feeA - feeB) / (rateB - rateA));
+      const totalAtCross = round3(feeA + rateA * answer);
+      return {
+        family: "two-plan-break-even",
+        stem: `Plan A charges a ${feeA} membership fee plus ${rateA} per class. Plan B charges a ${feeB} fee plus ${rateB} per class. For how many classes do the two plans cost the same amount?`,
+        answer,
+        wrong: [
+          [round3(feeA - feeB), "This is the difference of the fees; it still has to be spread across the difference in the per-class rates."],
+          [round3(rateB - rateA), "This is the difference of the per-class rates."],
+          [totalAtCross, "This is the cost at the break-even point, not the number of classes."],
+          [round3((feeA + feeB) / (rateA + rateB)), "This adds the fees and the rates rather than comparing them."],
+          [round3((feeA - feeB) / rateB), "This divides by one rate instead of by the gap between the rates."],
+        ],
+        why: `Setting ${feeA} + ${rateA}n = ${feeB} + ${rateB}n gives ${feeA - feeB} = (${rateB} − ${rateA})n, so n = ${feeA - feeB} ÷ ${rateB - rateA} = ${num(answer)} classes. Both plans then cost ${num(totalAtCross)}.`,
+        steps: [
+          "Write a cost expression for each plan in terms of the number of classes.",
+          "Set the two expressions equal to each other.",
+          "Collect the class terms on one side and divide by their coefficient.",
+        ],
+        principles: [
+          "Two linear cost models meet where the difference in fixed cost is exactly repaid by the difference in per-unit cost.",
+        ],
+        hint: "The plan with the bigger fee has the smaller per-class charge.",
+        trap: "Answering with the shared cost rather than the number of classes.",
+        verification: quotientCheck(feeA - feeB, rateB - rateA, answer),
+      };
+    },
+  ],
+};
+
+SHAPES["combined concepts"] = {
+  Easy: [
+    (s, variant) => {
+      const percent = choose(s, [10, 20, 25, 40]);
+      const perBox = choose(s, [6, 8, 10, 12]);
+      const answer = span(s, 5, 6);
+      const sold = perBox * answer;
+      const total = (sold * 100) / percent;
+      return {
+        family: "percent-then-rate-two-step",
+        stem: `A warehouse holds ${total} mugs, and ${percent}% of them are shipped out. The shipped mugs are packed ${perBox} to a box. How many boxes are used?`,
+        answer,
+        wrong: [
+          [sold, "This is the number of mugs shipped, not the number of boxes."],
+          [round3(total / perBox), "This packs every mug in the warehouse, not just the shipped ones."],
+          [percent, "This repeats the percent."],
+          [round3(sold * perBox), "This multiplies by the box size instead of dividing by it."],
+          [total, "This is the whole inventory."],
+        ],
+        why: `${percent}% of ${total} is ${num(sold)} mugs, and ${num(sold)} ÷ ${perBox} = ${num(answer)} boxes.`,
+        steps: [
+          `Take the percent first: ${percent}% of ${total} = ${num(sold)}.`,
+          `Divide by ${perBox} mugs per box.`,
+          "Check that the final unit is boxes.",
+        ],
+        principles: ["Multi-step problems finish in the unit the question names."],
+        hint: "Two steps: a percent, then a division.",
+        verification: quotientCheck(sold, perBox, answer),
+      };
+    },
+    (s, variant) => {
+      const feet = span(s, 6, 6, 3);
+      const costPerInch = span(s, 2, 4);
+      const inches = feet * 12;
+      const answer = money(inches * costPerInch);
+      return {
+        family: "convert-then-price",
+        stem: `Ribbon costs ${costPerInch} per inch. How much does ${feet} feet of ribbon cost, given that 1 foot is 12 inches?`,
+        answer,
+        wrong: [
+          [money(feet * costPerInch), "This prices the ribbon by the foot at the per-inch rate."],
+          [money(inches), "This treats each inch as costing one dollar."],
+          [money(round3((feet * costPerInch) / 12)), "This divides by 12 when converting feet to inches; there are more inches than feet."],
+          [money(costPerInch), "This is the price of a single inch."],
+          [money(inches + costPerInch), "This adds the rate to the length."],
+        ],
+        why: `${feet} feet is ${feet} · 12 = ${inches} inches, and ${inches} · ${costPerInch} = ${inches * costPerInch}.`,
+        steps: [
+          "Convert the length into the unit the price uses.",
+          `Multiply the inches by the per-inch cost: ${inches} · ${costPerInch}.`,
+          "Confirm the price matches the stated unit.",
+        ],
+        principles: ["A rate can only be applied once the quantity is in the rate's unit."],
+        hint: "The price is per inch, but the length is in feet.",
+        verification: { kind: "product", inputs: [inches, costPerInch], expected: inches * costPerInch },
+      };
+    },
+  ],
+  Medium: [
+    (s, variant) => {
+      const length = span(s, 12, 5, 4);
+      const height = span(s, 8, 4, 2);
+      const coverage = choose(s, [40, 50, 60, 80]);
+      const area = length * height;
+      const answer = Math.ceil(area / coverage);
+      return {
+        family: "area-then-coverage-rate",
+        stem: `A wall is ${length} feet long and ${height} feet high. One can of paint covers ${coverage} square feet, and paint is sold only in whole cans. How many cans are needed to cover the wall?`,
+        answer,
+        wrong: [
+          [area, "This is the wall's area in square feet, not a number of cans."],
+          [Math.floor(area / coverage) === answer ? answer + 2 : Math.floor(area / coverage), "This rounds the number of cans down, leaving part of the wall unpainted."],
+          [round3(area / coverage) === answer ? answer + 3 : round3(area / coverage), "This reports a fractional number of cans, but paint is sold in whole cans."],
+          [coverage, "This is one can's coverage."],
+          [round3((length + height) / coverage) === answer ? answer + 4 : Math.ceil((2 * (length + height)) / coverage), "This uses the wall's perimeter instead of its area."],
+        ],
+        why: `The wall is ${length} · ${height} = ${area} square feet. Each can covers ${coverage}, so ${area} ÷ ${coverage} = ${num(round3(area / coverage))} cans are needed, and buying whole cans means ${answer}.`,
+        steps: [
+          "Find the area to be covered.",
+          "Divide by the coverage of one can.",
+          "Round up, since a partial can still has to be bought.",
+        ],
+        principles: [
+          "When a quantity must be bought whole, the division is followed by rounding up, not to the nearest.",
+        ],
+        hint: "A leftover fraction of a wall still needs a full can.",
+        trap: "Rounding the number of cans down or leaving it fractional.",
+      };
+    },
+    (s, variant) => {
+      const parts1 = span(s, 2, 4);
+      const parts2 = parts1 + 1 + (s % 3);
+      const scale = span(s, 8, 5, 4);
+      const total = (parts1 + parts2) * scale;
+      const percent = choose(s, [25, 50, 20, 75]);
+      const larger = parts2 * scale;
+      const answer = round3((larger * percent) / 100);
+      return {
+        family: "ratio-then-percent",
+        stem: `A collection of ${total} stamps is split between two albums in the ratio ${parts1} to ${parts2}. Of the stamps in the larger album, ${percent}% are foreign. How many foreign stamps are in the larger album?`,
+        answer,
+        wrong: [
+          [larger, "This is the number of stamps in the larger album, before the percent is applied."],
+          [round3((total * percent) / 100), `This takes ${percent}% of the whole collection instead of the larger album only.`],
+          [round3((parts1 * scale * percent) / 100), "This applies the percent to the smaller album."],
+          [total, "This is the size of the whole collection."],
+          [percent, "This repeats the percent."],
+        ],
+        why: `The ratio makes ${parts1 + parts2} shares of ${scale} stamps, so the larger album holds ${parts2} · ${scale} = ${larger}. Then ${percent}% of ${larger} is ${num(answer)}.`,
+        steps: [
+          `Divide the collection into ${parts1 + parts2} shares of ${scale} stamps.`,
+          `Multiply the larger term by the share size: ${parts2} · ${scale} = ${larger}.`,
+          "Apply the percent to that album, not to the whole collection.",
+        ],
+        principles: ["Each step of a chain applies to the quantity produced by the previous step."],
+        hint: "The percent belongs to one album only.",
+        trap: "Applying the percent to the full collection.",
+        verification: { kind: "percent-of", inputs: [larger, percent], expected: answer },
+      };
+    },
+  ],
+  Hard: [
+    (s, variant) => {
+      const table = [
+        [6, 12, 4, 9, 8],
+        [4, 10, 5, 12, 6],
+        [8, 16, 6, 12, 12],
+        [5, 15, 6, 20, 10],
+        [10, 20, 8, 16, 16],
+        [3, 9, 6, 12, 6],
+      ];
+      const [workers, miles, days, newMiles, newWorkers] = choose(s, table);
+      const answer = round3((days * newMiles * workers) / (miles * newWorkers));
+      return {
+        family: "combined-direct-and-inverse-variation",
+        stem: `A crew of ${workers} workers paves ${miles} miles of road in ${days} days. Working at the same rate per worker, how many days would ${newWorkers} workers need to pave ${newMiles} miles?`,
+        answer,
+        wrong: [
+          [round3((days * newMiles) / miles), "This scales for the change in distance but ignores the change in crew size."],
+          [round3((days * workers) / newWorkers), "This scales for the crew size but ignores the change in distance."],
+          [round3((days * newMiles * newWorkers) / (miles * workers)), "This treats more workers as needing more days; extra workers cut the time."],
+          [days, "This repeats the original number of days."],
+          [round3(days + newMiles - miles), "This adjusts the days by the difference in miles rather than by their ratio."],
+        ],
+        why: `One worker paves ${num(miles / (workers * days))} miles per day. Then ${newWorkers} workers pave ${num((newWorkers * miles) / (workers * days))} miles per day, so ${newMiles} miles take ${newMiles} ÷ ${num((newWorkers * miles) / (workers * days))} = ${num(answer)} days. Equivalently, days scale directly with the miles (× ${num(newMiles / miles)}) and inversely with the crew (× ${num(workers / newWorkers)}).`,
+        steps: [
+          "Reduce the given data to a per-worker, per-day rate.",
+          "Scale the rate up to the new crew size.",
+          "Divide the new distance by that rate.",
+        ],
+        principles: [
+          "Time varies directly with the amount of work and inversely with the number of workers, so both factors have to be applied and in opposite directions.",
+        ],
+        hint: "More workers means fewer days; more miles means more days.",
+        trap: "Applying only one of the two changes, or applying both in the same direction.",
+        verification: quotientCheck(days * newMiles * workers, miles * newWorkers, answer),
+      };
+    },
+    (s, variant) => {
+      const table = [
+        [10, 20, 60, 30],
+        [12, 30, 70, 50],
+        [8, 25, 65, 45],
+        [20, 10, 50, 40],
+        [15, 40, 80, 60],
+        [6, 30, 90, 50],
+      ];
+      const [volumeA, percentA, percentB, target] = choose(s, table);
+      const answer = round3((volumeA * (target - percentA)) / (percentB - target));
+      return {
+        family: "two-solution-mixture-alligation",
+        stem: `A ${volumeA}-liter solution is ${percentA}% salt. How many liters of a ${percentB}% salt solution must be mixed with it to produce a solution that is ${target}% salt?`,
+        answer,
+        wrong: [
+          [round3((volumeA * (target - percentA)) / percentB), "This divides by the stronger solution's concentration rather than by how far it exceeds the target."],
+          [volumeA, "This assumes equal volumes, which only reaches the target when the target is midway between the two concentrations."],
+          [round3(target - percentA), "This is a difference of percents, not a volume."],
+          [round3((volumeA * (percentB - target)) / (target - percentA)), "This inverts the ratio, adding less of the stronger solution than is needed."],
+          [round3((volumeA * target) / 100), "This is a percent of the starting volume."],
+        ],
+        why: `Let x be the liters added. Salt balances as ${num(percentA / 100)}·${volumeA} + ${num(percentB / 100)}·x = ${num(target / 100)}·(${volumeA} + x). Solving gives x = ${volumeA}(${target} − ${percentA}) ÷ (${percentB} − ${target}) = ${num(answer)} liters. In alligation terms, the volumes are in inverse ratio to the distances from the target: ${target - percentA} against ${percentB - target}.`,
+        steps: [
+          "Write the total salt on each side of the mix as a percent of a volume.",
+          "Set the salt before mixing equal to the salt after mixing.",
+          "Solve the linear equation, keeping x in both the salt and the volume terms.",
+        ],
+        principles: [
+          "In a mixture, the two volumes are inversely proportional to their distances from the target concentration.",
+        ],
+        hint: "The target lies between the two concentrations; the closer one contributes more volume.",
+        trap: "Treating the mix as an unweighted average of the two concentrations.",
+      };
+    },
+  ],
+};
+
 /* @@SHAPES@@ */
 
 const nextAnswerPosition = mirrorAnswerPlanner();
@@ -6347,6 +7896,15 @@ const nextAnswerPosition = mirrorAnswerPlanner();
 // they have already been accepted and use it to rotate wording, which also
 // stops the bank from shipping the same sentence five times over.
 const shapeUses = new Map();
+
+// Every stem the section has already emitted. A shape's parameters cycle, so
+// two uses that land on congruent sequences would otherwise print the same
+// sentence twice — that is where the previous rebuild's 63 exact duplicates
+// came from. A stem that has been seen is not rejected outright; the variant
+// is advanced first, which is what the wording rotations exist for, and only
+// then does the search move on to the next shape.
+const emittedStems = new Set();
+const VARIANT_ATTEMPTS = 12;
 
 function generate({ sequence, task }) {
   const tier = task.difficulty;
@@ -6360,20 +7918,38 @@ function generate({ sequence, task }) {
   }
   const index = nextAnswerPosition(tier, `${SECTION_KEY}-${sequence}`);
   const offset = hashString(`${SECTION_KEY}-${sequence}-shape`) % shapes.length;
-  let fallback = null;
+  let unordered = null;
+  let duplicate = null;
+
   for (let step = 0; step < shapes.length; step += 1) {
     const position = (offset + step) % shapes.length;
     const key = `${task.subskill}|${tier}|${position}`;
-    const variant = shapeUses.get(key) || 0;
-    const built = assemble(shapes[position](sequence, variant), tier, index);
-    if (built.ordered) {
-      shapeUses.set(key, variant + 1);
-      return built.question;
+    const base = shapeUses.get(key) || 0;
+    for (let attempt = 0; attempt < VARIANT_ATTEMPTS; attempt += 1) {
+      const variant = base + attempt;
+      const spec = shapes[position](sequence, variant);
+      const fresh = !emittedStems.has(spec.stem);
+      const built = assemble(spec, tier, index);
+      const candidate = { question: built.question, stem: spec.stem, key, variant };
+      if (fresh && built.ordered) return accept(candidate);
+      if (fresh && !unordered) unordered = candidate;
+      if (!fresh && !duplicate) duplicate = candidate;
+      if (!fresh) break;
     }
-    if (!fallback) fallback = { question: built.question, key, variant };
   }
-  shapeUses.set(fallback.key, fallback.variant + 1);
-  return fallback.question;
+
+  // A fresh stem whose choices could not be ordered around the planned answer
+  // position beats a repeated one; ascending choices are cosmetic, a duplicate
+  // question is not.
+  const chosen = unordered || duplicate;
+  if (!chosen) throw new Error(`No usable ${tier} shape for ${task.subskill}`);
+  return accept(chosen);
+}
+
+function accept({ question, stem, key, variant }) {
+  emittedStems.add(stem);
+  shapeUses.set(key, variant + 1);
+  return question;
 }
 
 if (require.main === module) {

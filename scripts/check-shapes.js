@@ -22,7 +22,11 @@ const SECTIONS = {
 };
 
 const TIERS = ["Easy", "Medium", "Hard"];
-const SEQUENCES = 24;
+// The banks draw sequence numbers across the whole section, so a shape that
+// only misbehaves at, say, sequence 187 has to fail here rather than during a
+// rebuild. This sweeps past the largest per-section target in the catalog.
+const SEQUENCES = 1200;
+const DISTINCT_STEM_FLOOR = 24;
 
 // Mirrors validateVerification in lib/content.js. Duplicated deliberately: this
 // runs before any bank exists, and a shape whose stated check disagrees with its
@@ -169,8 +173,17 @@ function checkShape(sectionKey, subskill, tier, shapeIndex, shape, problems) {
   }
   // A shape reused across the bank that always emits the same sentence is a
   // duplicate in every way the audit measures.
-  if (stems.size < 4) {
-    problems.push(`${where} produces only ${stems.size} distinct stems across ${SEQUENCES} sequences`);
+  // A shape is reused a handful of times in each bank, drawn from sequences
+  // spread across the whole section. If its parameters and phrasings cycle
+  // through only a few sentences, those reuses collide and the bank ships the
+  // same question twice. The generator refuses to emit a repeated stem, so a
+  // shape with too few outputs starves it rather than duplicating; this floor
+  // is what keeps that from happening.
+  if (stems.size < DISTINCT_STEM_FLOOR) {
+    problems.push(
+      `${where} produces only ${stems.size} distinct stems across ${SEQUENCES} sequences ` +
+        `(needs ${DISTINCT_STEM_FLOOR}); vary more parameters or rotate the wording on \`variant\``,
+    );
   }
 }
 

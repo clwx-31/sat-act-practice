@@ -16,6 +16,11 @@
 // an answer that disagrees with its own stated check fails before it reaches a
 // bank.
 
+// Imported rather than reimplemented: this is the rule that decides whether a
+// rebuilt bank is accepted, so the harness has to apply exactly the validator's
+// comparison, not a lookalike that could drift away from it.
+const { jaccard, tokenSet } = require("./lib/content");
+
 const SECTIONS = {
   "act-mathematics": () => require("./generate-act-mathematics").SHAPES,
   "sat-math": () => require("./generate-sat-math").SHAPES,
@@ -26,7 +31,14 @@ const TIERS = ["Easy", "Medium", "Hard"];
 // only misbehaves at, say, sequence 187 has to fail here rather than during a
 // rebuild. This sweeps past the largest per-section target in the catalog.
 const SEQUENCES = 1200;
-const DISTINCT_STEM_FLOOR = 24;
+
+// How many times one shape may be reused inside a single bank, with margin: a
+// 1050-item section spread over roughly 230 shapes averages under five.
+const REUSES = 8;
+
+// The validator's threshold. Two stems at or above this overlap are rejected as
+// near duplicates, so a shape whose reuses cross it cannot fill a bank.
+const NEAR_DUPLICATE = 0.9;
 
 // Mirrors validateVerification in lib/content.js. Duplicated deliberately: this
 // runs before any bank exists, and a shape whose stated check disagrees with its
@@ -173,18 +185,48 @@ function checkShape(sectionKey, subskill, tier, shapeIndex, shape, problems) {
   }
   // A shape reused across the bank that always emits the same sentence is a
   // duplicate in every way the audit measures.
-  // A shape is reused a handful of times in each bank, drawn from sequences
-  // spread across the whole section. If its parameters and phrasings cycle
-  // through only a few sentences, those reuses collide and the bank ships the
-  // same question twice. The generator refuses to emit a repeated stem, so a
-  // shape with too few outputs starves it rather than duplicating; this floor
-  // is what keeps that from happening.
-  if (stems.size < DISTINCT_STEM_FLOOR) {
-    problems.push(
-      `${where} produces only ${stems.size} distinct stems across ${SEQUENCES} sequences ` +
-        `(needs ${DISTINCT_STEM_FLOOR}); vary more parameters or rotate the wording on \`variant\``,
-    );
+  if (stems.size < 4) {
+    problems.push(`${where} produces only ${stems.size} distinct stems across ${SEQUENCES} sequences`);
   }
+  checkReuses(sectionKey, where, shape, problems);
+}
+
+// Changing the numbers is not enough to make a second use of a shape a second
+// question. The validator compares stems word by word — and for the maths
+// sections it keeps the numbers in that comparison — so reuses have to differ
+// in their wording or their setting. This rebuilds a shape the way a bank would
+// reuse it, at variants 0..7 over spread-out sequences, and applies the
+// validator's own rule to every pair. A shape that fails here cannot fill a
+// bank: the rebuild would be rejected, or the generator would starve looking
+// for a stem it is allowed to emit.
+function checkReuses(sectionKey, where, shape, problems) {
+  [0, 311, 704].forEach((base) => {
+    const uses = [];
+    for (let use = 0; use < REUSES; use += 1) {
+      const spec = shape(base + use * 53, use);
+      uses.push({
+        variant: use,
+        tokens: tokenSet({
+          section: sectionKey === "sat-math" ? "Math" : "Mathematics",
+          stem: spec.stem,
+          stimulus: spec.stimulus || null,
+        }),
+      });
+    }
+    for (let left = 0; left < uses.length; left += 1) {
+      for (let right = left + 1; right < uses.length; right += 1) {
+        const overlap = jaccard(uses[left].tokens, uses[right].tokens);
+        if (overlap >= NEAR_DUPLICATE) {
+          problems.push(
+            `${where} reuses ${uses[left].variant} and ${uses[right].variant} overlap ` +
+              `${Math.round(overlap * 100)}%, which the validator rejects as a near duplicate; ` +
+              "rotate the wording or the setting on `variant`",
+          );
+          return;
+        }
+      }
+    }
+  });
 }
 
 function checkSection(sectionKey, problems) {

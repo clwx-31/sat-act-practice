@@ -523,6 +523,7 @@ function writeJsonAtomic(filePath, value) {
 
 module.exports = {
   BANKS_DIR,
+  jaccard,
   CATALOG_PATH,
   GENERATED_DIR,
   ROOT,
@@ -537,6 +538,7 @@ module.exports = {
   readJson,
   sectionMap,
   structuralSignature,
+  tokenSet,
   validateAll,
   validateQuestion,
   writeJsonAtomic,

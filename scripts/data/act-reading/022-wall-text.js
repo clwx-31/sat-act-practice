@@ -43,7 +43,10 @@ The approaches that work do something else. They attribute. A label that says "t
 excavator recorded finding forty of these stacked in one room" gives the visitor a fact and
 its source, and the inference is left visible and undone. Labels written in the first person
 by a named curator do the same by another route: the reader can locate the claim in a
-person. Both methods keep the sentence short, which the hedging method does not.
+person. Both methods keep the sentence short, which the hedging method does not. They also change
+what a disagreement costs. Two attributed labels beside one another let a visitor see two
+excavators reporting different things, which is a disagreement a person can hold in eleven
+seconds, because it is a disagreement about what was found rather than about what it means.
 
 None of this makes the choice of what to say any easier, and the choice is where the
 argument actually lives. A label mentioning that a bowl was made in a workshop of a dozen

@@ -51,7 +51,9 @@ asking, what they seem to think, and what the speaker takes the recording to be 
 those are not noise to be filtered out because there is no version of the conversation
 without them. What can be done is to record the conditions, name the interviewer, and leave
 the tape. What cannot be done is to obtain the account the person would have given to
-nobody.`,
+nobody. There is no such account. A memory that has never been asked for is not a purer
+version of the same thing; it is a different thing, and it is not available to a historian
+or to anyone else, including the person who is carrying it.`,
   questions: [
     {
       subskill: "main idea",

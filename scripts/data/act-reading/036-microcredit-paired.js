@@ -27,6 +27,12 @@ off as untouchable. That number is not in dispute and it did something no argume
 have done: it demonstrated that the poor were not a bad credit risk, and that the problem
 had been in the instrument. By 2010 well over a hundred million households held such a loan.
 
+The design has been copied, adapted, and in places abandoned in favour of individual
+lending, which the same institutions now offer to borrowers with a repayment history behind
+them. That progression is worth noticing. A woman who has repaid eight group loans has
+built something a bank does recognise, and she built it out of nothing but her own conduct,
+recorded by an institution that was willing to write it down.
+
 PASSAGE B
 
 Everything in the account above is true, and the conclusion usually drawn from it is not.

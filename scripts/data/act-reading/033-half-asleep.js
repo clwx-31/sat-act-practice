@@ -205,11 +205,11 @@ is difficult in ways that have nothing to do with sleep.`,
       family: "function-of-a-detail",
       difficulty: "Medium",
       stem: "The observation that subordinate birds occupy the ends of a row serves mainly to:",
-      key: "connect sleep quality to social rank.",
+      key: "link the quality of a bird's sleep to its rank.",
       wrong: [
         ["explain why flocks arrange themselves in rows.", "The passage does not account for why rows form at all."],
         ["show that dominant birds sleep less than others.", "Dominant birds occupy the middle, where full sleep is possible."],
-        ["establish that the behaviour is learned rather than innate.", "Nothing in the passage addresses whether the behaviour is learned."],
+        ["establish that the behaviour is learned.", "Nothing in the passage addresses whether the behaviour is learned."],
       ],
       why: "The passage says \"the sleep architecture of a flock is therefore a map of its social structure, and a bird's sleep quality depends on its position in a hierarchy it did not choose.\"",
       steps: [

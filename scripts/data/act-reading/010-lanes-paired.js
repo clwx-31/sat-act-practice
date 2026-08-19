@@ -5,7 +5,7 @@ module.exports = {
   type: "social-science",
   title: "Room to Move",
   intro: "Passage A is adapted from an article on urban highway expansion. Passage B is adapted from a transport economist's response to that article.",
-  content: `**Passage A**
+  content: `PASSAGE A
 
 The intuition is almost impossible to argue with. A road is congested because too
 many cars are trying to use too little pavement; widen the pavement and the cars

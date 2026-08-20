@@ -35,9 +35,14 @@ const SCENE_PREAMBLE =
 // items that differ only by town, object, or coefficient collide here.
 function shapeSignature(question) {
   const stimulus = question.stimulus ? question.stimulus.content : "";
+  // A passage-set item has no stimulus of its own, so its passage anchors the
+  // signature. Without that, two sets both asking "the passage is best
+  // described as" collide, and that stem is one the real ACT reuses on every
+  // form; the question is which passage it is asked about.
+  const anchor = question.passageId ? `${question.passageId} ` : "";
   // Trim first: items with no stimulus would otherwise start with a space and
   // the anchored preamble pattern would never match.
-  let text = `${stimulus} ${question.stem}`.trim();
+  let text = `${anchor}${stimulus} ${question.stem}`.trim();
   text = text.replace(SCENE_PREAMBLE, "");
   text = text.replace(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*/g, " ");
   text = text.replace(/\b\d+(?:\.\d+)?\b/g, "#");
@@ -47,7 +52,8 @@ function shapeSignature(question) {
 
 function exactSignature(question) {
   const stimulus = question.stimulus ? question.stimulus.content : "";
-  return normalizeText(`${stimulus} ${question.stem}`);
+  const anchor = question.passageId ? `${question.passageId} ` : "";
+  return normalizeText(`${anchor}${stimulus} ${question.stem}`);
 }
 
 function templateFamily(question) {

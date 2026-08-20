@@ -29,8 +29,17 @@ const TIERS = ["Easy", "Medium", "Hard"];
 // and what is left is the question being asked.
 function shapeSignature(question) {
   const stimulus = question.stimulus ? question.stimulus.content : "";
-  const passage = question.passageId ? "" : stimulus;
-  let text = `${passage} ${question.stem}`.trim();
+  // A passage-set item shares its passage with nine others by design, so the
+  // passage itself cannot be part of the shape. What distinguishes two such
+  // items is the stem together with the choices, which is where a reading
+  // question actually lives: "the author’s purpose in the final paragraph is
+  // to" is a stem the real ACT reuses on every form, and asking it of two
+  // different passages produces two questions that may honestly differ in
+  // difficulty.
+  const context = question.passageId
+    ? (Array.isArray(question.choices) ? question.choices.join(" ") : "")
+    : stimulus;
+  let text = `${context} ${question.stem}`.trim();
   text = text.replace(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*/g, " ");
   text = text.replace(/\b\d+(?:\.\d+)?\b/g, "#");
   return `${question.subskill}|${normalizeText(text).replace(/\s+/g, " ").trim()}`;

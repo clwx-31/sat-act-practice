@@ -158,7 +158,7 @@ function buildRecord({ passage, question, sequence, section, index, position }) 
     ],
     calculatorPolicy: section.calculatorPolicy,
     format: passageFormat(passage),
-    tags: ["passage-set", passage.type, question.family],
+    tags: ["passage-set", passage.type, `family:${question.family}`],
     provenance: { type: "original", generator: GENERATOR, seed: id, created: CREATED },
     contentVersion: loadCatalog().contentVersion,
     reviewStatus: "automated-verified",

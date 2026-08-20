@@ -51,7 +51,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -114,7 +114,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -177,7 +177,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -240,7 +240,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -304,7 +304,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -367,7 +367,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-and-effect"
+      "family:cause-and-effect"
     ],
     "provenance": {
       "type": "original",
@@ -431,7 +431,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "retrospective-narration"
+      "family:retrospective-narration"
     ],
     "provenance": {
       "type": "original",
@@ -494,7 +494,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -558,7 +558,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -622,7 +622,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -685,7 +685,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-argument"
+      "family:central-argument"
     ],
     "provenance": {
       "type": "original",
@@ -748,7 +748,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -811,7 +811,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-and-effect"
+      "family:cause-and-effect"
     ],
     "provenance": {
       "type": "original",
@@ -874,7 +874,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -937,7 +937,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -1000,7 +1000,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -1063,7 +1063,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "comparison-within-passage"
+      "family:comparison-within-passage"
     ],
     "provenance": {
       "type": "original",
@@ -1126,7 +1126,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -1189,7 +1189,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -1252,7 +1252,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "apply-passage-principle"
+      "family:apply-passage-principle"
     ],
     "provenance": {
       "type": "original",
@@ -1315,7 +1315,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-argument"
+      "family:central-argument"
     ],
     "provenance": {
       "type": "original",
@@ -1378,7 +1378,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -1441,7 +1441,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -1504,7 +1504,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-and-effect"
+      "family:cause-and-effect"
     ],
     "provenance": {
       "type": "original",
@@ -1567,7 +1567,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -1630,7 +1630,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -1693,7 +1693,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -1756,7 +1756,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evidence-evaluation"
+      "family:evidence-evaluation"
     ],
     "provenance": {
       "type": "original",
@@ -1819,7 +1819,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "combine-passage-sections"
+      "family:combine-passage-sections"
     ],
     "provenance": {
       "type": "original",
@@ -1882,7 +1882,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -1945,7 +1945,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-argument"
+      "family:central-argument"
     ],
     "provenance": {
       "type": "original",
@@ -2008,7 +2008,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -2071,7 +2071,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -2134,7 +2134,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-and-effect"
+      "family:cause-and-effect"
     ],
     "provenance": {
       "type": "original",
@@ -2197,7 +2197,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -2260,7 +2260,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-an-analogy"
+      "family:purpose-of-an-analogy"
     ],
     "provenance": {
       "type": "original",
@@ -2323,7 +2323,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -2386,7 +2386,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -2449,7 +2449,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "opposing-view"
+      "family:opposing-view"
     ],
     "provenance": {
       "type": "original",
@@ -2512,7 +2512,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "apply-passage-principle"
+      "family:apply-passage-principle"
     ],
     "provenance": {
       "type": "original",
@@ -2575,7 +2575,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-argument"
+      "family:central-argument"
     ],
     "provenance": {
       "type": "original",
@@ -2638,7 +2638,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -2701,7 +2701,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -2764,7 +2764,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-and-effect"
+      "family:cause-and-effect"
     ],
     "provenance": {
       "type": "original",
@@ -2827,7 +2827,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -2890,7 +2890,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "authorial-stance"
+      "family:authorial-stance"
     ],
     "provenance": {
       "type": "original",
@@ -2953,7 +2953,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cross-passage-contrast"
+      "family:cross-passage-contrast"
     ],
     "provenance": {
       "type": "original",
@@ -3016,7 +3016,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cross-passage-synthesis"
+      "family:cross-passage-synthesis"
     ],
     "provenance": {
       "type": "original",
@@ -3079,7 +3079,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "reasoning-structure"
+      "family:reasoning-structure"
     ],
     "provenance": {
       "type": "original",
@@ -3142,7 +3142,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evidence-evaluation"
+      "family:evidence-evaluation"
     ],
     "provenance": {
       "type": "original",
@@ -3205,7 +3205,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -3268,7 +3268,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -3331,7 +3331,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -3394,7 +3394,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-and-effect"
+      "family:cause-and-effect"
     ],
     "provenance": {
       "type": "original",
@@ -3457,7 +3457,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -3520,7 +3520,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -3583,7 +3583,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "retrospective-narration"
+      "family:retrospective-narration"
     ],
     "provenance": {
       "type": "original",
@@ -3646,7 +3646,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -3709,7 +3709,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -3772,7 +3772,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "combine-passage-sections"
+      "family:combine-passage-sections"
     ],
     "provenance": {
       "type": "original",
@@ -3835,7 +3835,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -3898,7 +3898,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -3961,7 +3961,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-a-condition"
+      "family:cause-of-a-condition"
     ],
     "provenance": {
       "type": "original",
@@ -4024,7 +4024,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -4087,7 +4087,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -4150,7 +4150,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -4213,7 +4213,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -4276,7 +4276,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -4340,7 +4340,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -4404,7 +4404,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-a-dispute"
+      "family:evaluating-a-dispute"
     ],
     "provenance": {
       "type": "original",
@@ -4467,7 +4467,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -4530,7 +4530,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -4593,7 +4593,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-condition"
+      "family:cause-of-a-condition"
     ],
     "provenance": {
       "type": "original",
@@ -4656,7 +4656,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "contrast-of-positions"
+      "family:contrast-of-positions"
     ],
     "provenance": {
       "type": "original",
@@ -4719,7 +4719,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -4782,7 +4782,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -4845,7 +4845,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -4908,7 +4908,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -4972,7 +4972,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -5036,7 +5036,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -5099,7 +5099,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -5162,7 +5162,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -5225,7 +5225,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-an-event"
+      "family:cause-of-an-event"
     ],
     "provenance": {
       "type": "original",
@@ -5288,7 +5288,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -5351,7 +5351,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -5414,7 +5414,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -5477,7 +5477,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -5541,7 +5541,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -5605,7 +5605,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -5669,7 +5669,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -5732,7 +5732,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -5795,7 +5795,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -5858,7 +5858,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-an-outcome"
+      "family:cause-of-an-outcome"
     ],
     "provenance": {
       "type": "original",
@@ -5921,7 +5921,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -5984,7 +5984,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -6047,7 +6047,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -6110,7 +6110,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "summary-of-a-section"
+      "family:summary-of-a-section"
     ],
     "provenance": {
       "type": "original",
@@ -6174,7 +6174,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "comparing-two-texts"
+      "family:comparing-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -6238,7 +6238,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "combining-two-texts"
+      "family:combining-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -6302,7 +6302,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -6365,7 +6365,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -6428,7 +6428,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -6491,7 +6491,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-an-outcome"
+      "family:cause-of-an-outcome"
     ],
     "provenance": {
       "type": "original",
@@ -6554,7 +6554,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -6618,7 +6618,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "reading-a-table"
+      "family:reading-a-table"
     ],
     "provenance": {
       "type": "original",
@@ -6681,7 +6681,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -6744,7 +6744,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -6808,7 +6808,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "drawing-a-conclusion"
+      "family:drawing-a-conclusion"
     ],
     "provenance": {
       "type": "original",
@@ -6872,7 +6872,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -6936,7 +6936,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-a-practice"
+      "family:evaluating-a-practice"
     ],
     "provenance": {
       "type": "original",
@@ -6999,7 +6999,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -7062,7 +7062,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -7125,7 +7125,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-an-outcome"
+      "family:cause-of-an-outcome"
     ],
     "provenance": {
       "type": "original",
@@ -7188,7 +7188,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -7251,7 +7251,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -7314,7 +7314,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -7377,7 +7377,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -7441,7 +7441,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -7505,7 +7505,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -7569,7 +7569,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -7632,7 +7632,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -7695,7 +7695,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -7758,7 +7758,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-an-outcome"
+      "family:cause-of-an-outcome"
     ],
     "provenance": {
       "type": "original",
@@ -7821,7 +7821,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "contrast-of-measures"
+      "family:contrast-of-measures"
     ],
     "provenance": {
       "type": "original",
@@ -7884,7 +7884,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -7947,7 +7947,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -8010,7 +8010,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -8074,7 +8074,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -8138,7 +8138,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-a-dispute"
+      "family:evaluating-a-dispute"
     ],
     "provenance": {
       "type": "original",
@@ -8202,7 +8202,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -8265,7 +8265,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -8328,7 +8328,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -8391,7 +8391,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-a-decision"
+      "family:cause-of-a-decision"
     ],
     "provenance": {
       "type": "original",
@@ -8454,7 +8454,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -8517,7 +8517,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -8580,7 +8580,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-scene"
+      "family:function-of-a-scene"
     ],
     "provenance": {
       "type": "original",
@@ -8643,7 +8643,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -8707,7 +8707,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -8771,7 +8771,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -8835,7 +8835,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "evaluating-a-belief"
+      "family:evaluating-a-belief"
     ],
     "provenance": {
       "type": "original",
@@ -8898,7 +8898,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -8961,7 +8961,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -9024,7 +9024,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-a-behaviour"
+      "family:cause-of-a-behaviour"
     ],
     "provenance": {
       "type": "original",
@@ -9087,7 +9087,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -9150,7 +9150,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -9213,7 +9213,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-a-term"
+      "family:function-of-a-term"
     ],
     "provenance": {
       "type": "original",
@@ -9276,7 +9276,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -9339,7 +9339,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -9403,7 +9403,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -9467,7 +9467,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-an-objection"
+      "family:evaluating-an-objection"
     ],
     "provenance": {
       "type": "original",
@@ -9530,7 +9530,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -9593,7 +9593,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -9656,7 +9656,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-an-effect"
+      "family:cause-of-an-effect"
     ],
     "provenance": {
       "type": "original",
@@ -9719,7 +9719,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -9782,7 +9782,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -9845,7 +9845,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -9908,7 +9908,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -9972,7 +9972,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "comparing-two-texts"
+      "family:comparing-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -10036,7 +10036,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "combining-two-texts"
+      "family:combining-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -10100,7 +10100,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -10163,7 +10163,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -10226,7 +10226,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -10289,7 +10289,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-an-effect"
+      "family:cause-of-an-effect"
     ],
     "provenance": {
       "type": "original",
@@ -10352,7 +10352,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -10415,7 +10415,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -10478,7 +10478,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -10541,7 +10541,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "function-of-a-concession"
+      "family:function-of-a-concession"
     ],
     "provenance": {
       "type": "original",
@@ -10604,7 +10604,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -10668,7 +10668,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-an-objection"
+      "family:evaluating-an-objection"
     ],
     "provenance": {
       "type": "original",
@@ -10732,7 +10732,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -10795,7 +10795,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -10858,7 +10858,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -10921,7 +10921,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "reading-a-figure"
+      "family:reading-a-figure"
     ],
     "provenance": {
       "type": "original",
@@ -10984,7 +10984,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-a-cycle"
+      "family:cause-of-a-cycle"
     ],
     "provenance": {
       "type": "original",
@@ -11047,7 +11047,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -11110,7 +11110,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -11174,7 +11174,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -11238,7 +11238,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-explanations"
+      "family:evaluating-explanations"
     ],
     "provenance": {
       "type": "original",
@@ -11301,7 +11301,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -11364,7 +11364,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -11427,7 +11427,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -11490,7 +11490,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -11553,7 +11553,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-a-difficulty"
+      "family:cause-of-a-difficulty"
     ],
     "provenance": {
       "type": "original",
@@ -11616,7 +11616,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -11679,7 +11679,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -11743,7 +11743,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-scene"
+      "family:function-of-a-scene"
     ],
     "provenance": {
       "type": "original",
@@ -11806,7 +11806,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "retrospective-narration"
+      "family:retrospective-narration"
     ],
     "provenance": {
       "type": "original",
@@ -11870,7 +11870,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -11934,7 +11934,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -11997,7 +11997,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -12060,7 +12060,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -12123,7 +12123,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -12186,7 +12186,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-a-failure"
+      "family:cause-of-a-failure"
     ],
     "provenance": {
       "type": "original",
@@ -12249,7 +12249,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "contrast-of-conditions"
+      "family:contrast-of-conditions"
     ],
     "provenance": {
       "type": "original",
@@ -12312,7 +12312,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -12375,7 +12375,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -12438,7 +12438,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -12502,7 +12502,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -12566,7 +12566,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-a-distinction"
+      "family:evaluating-a-distinction"
     ],
     "provenance": {
       "type": "original",
@@ -12629,7 +12629,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -12692,7 +12692,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -12755,7 +12755,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -12818,7 +12818,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-a-collapse"
+      "family:cause-of-a-collapse"
     ],
     "provenance": {
       "type": "original",
@@ -12881,7 +12881,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -12944,7 +12944,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -13007,7 +13007,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -13071,7 +13071,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "comparing-two-texts"
+      "family:comparing-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -13135,7 +13135,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "combining-two-texts"
+      "family:combining-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -13198,7 +13198,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -13262,7 +13262,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-an-objection"
+      "family:evaluating-an-objection"
     ],
     "provenance": {
       "type": "original",
@@ -13325,7 +13325,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -13388,7 +13388,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -13451,7 +13451,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-change"
+      "family:cause-of-a-change"
     ],
     "provenance": {
       "type": "original",
@@ -13514,7 +13514,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -13577,7 +13577,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -13640,7 +13640,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -13704,7 +13704,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "contrast-of-methods"
+      "family:contrast-of-methods"
     ],
     "provenance": {
       "type": "original",
@@ -13768,7 +13768,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -13832,7 +13832,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-a-remedy"
+      "family:evaluating-a-remedy"
     ],
     "provenance": {
       "type": "original",
@@ -13896,7 +13896,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "strengthening-a-position"
+      "family:strengthening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -13959,7 +13959,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -14022,7 +14022,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -14085,7 +14085,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-an-error"
+      "family:cause-of-an-error"
     ],
     "provenance": {
       "type": "original",
@@ -14148,7 +14148,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -14211,7 +14211,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -14274,7 +14274,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -14338,7 +14338,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "retrospective-narration"
+      "family:retrospective-narration"
     ],
     "provenance": {
       "type": "original",
@@ -14402,7 +14402,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -14466,7 +14466,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -14529,7 +14529,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -14592,7 +14592,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -14655,7 +14655,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -14718,7 +14718,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-an-outcome"
+      "family:cause-of-an-outcome"
     ],
     "provenance": {
       "type": "original",
@@ -14781,7 +14781,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -14844,7 +14844,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -14907,7 +14907,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -14970,7 +14970,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -15034,7 +15034,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -15098,7 +15098,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -15162,7 +15162,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -15225,7 +15225,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -15288,7 +15288,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -15351,7 +15351,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-an-error"
+      "family:cause-of-an-error"
     ],
     "provenance": {
       "type": "original",
@@ -15414,7 +15414,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -15478,7 +15478,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "contrast-of-conditions"
+      "family:contrast-of-conditions"
     ],
     "provenance": {
       "type": "original",
@@ -15541,7 +15541,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -15604,7 +15604,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -15668,7 +15668,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -15732,7 +15732,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-a-method"
+      "family:evaluating-a-method"
     ],
     "provenance": {
       "type": "original",
@@ -15795,7 +15795,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -15858,7 +15858,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -15921,7 +15921,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -15984,7 +15984,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-change"
+      "family:cause-of-a-change"
     ],
     "provenance": {
       "type": "original",
@@ -16047,7 +16047,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -16110,7 +16110,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -16173,7 +16173,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -16236,7 +16236,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -16300,7 +16300,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -16364,7 +16364,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -16427,7 +16427,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -16490,7 +16490,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -16553,7 +16553,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -16616,7 +16616,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-a-difficulty"
+      "family:cause-of-a-difficulty"
     ],
     "provenance": {
       "type": "original",
@@ -16679,7 +16679,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -16742,7 +16742,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -16805,7 +16805,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -16868,7 +16868,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -16932,7 +16932,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -16996,7 +16996,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -17060,7 +17060,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -17123,7 +17123,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -17186,7 +17186,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -17249,7 +17249,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-an-outcome"
+      "family:cause-of-an-outcome"
     ],
     "provenance": {
       "type": "original",
@@ -17312,7 +17312,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -17375,7 +17375,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -17439,7 +17439,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "comparing-two-texts"
+      "family:comparing-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -17503,7 +17503,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "combining-two-texts"
+      "family:combining-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -17567,7 +17567,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -17631,7 +17631,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -17694,7 +17694,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -17757,7 +17757,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -17820,7 +17820,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -17883,7 +17883,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-an-omission"
+      "family:cause-of-an-omission"
     ],
     "provenance": {
       "type": "original",
@@ -17946,7 +17946,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -18009,7 +18009,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -18072,7 +18072,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-a-qualification"
+      "family:function-of-a-qualification"
     ],
     "provenance": {
       "type": "original",
@@ -18136,7 +18136,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -18200,7 +18200,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-a-case"
+      "family:evaluating-a-case"
     ],
     "provenance": {
       "type": "original",
@@ -18264,7 +18264,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "drawing-a-conclusion"
+      "family:drawing-a-conclusion"
     ],
     "provenance": {
       "type": "original",
@@ -18327,7 +18327,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -18390,7 +18390,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -18453,7 +18453,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -18516,7 +18516,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-practice"
+      "family:cause-of-a-practice"
     ],
     "provenance": {
       "type": "original",
@@ -18579,7 +18579,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -18642,7 +18642,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "contrast-of-methods"
+      "family:contrast-of-methods"
     ],
     "provenance": {
       "type": "original",
@@ -18705,7 +18705,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -18768,7 +18768,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -18832,7 +18832,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-a-cost"
+      "family:evaluating-a-cost"
     ],
     "provenance": {
       "type": "original",
@@ -18896,7 +18896,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -18960,7 +18960,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -19023,7 +19023,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -19086,7 +19086,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -19149,7 +19149,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-a-choice"
+      "family:cause-of-a-choice"
     ],
     "provenance": {
       "type": "original",
@@ -19212,7 +19212,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -19275,7 +19275,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -19338,7 +19338,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -19401,7 +19401,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -19465,7 +19465,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "character-perspective"
+      "family:character-perspective"
     ],
     "provenance": {
       "type": "original",
@@ -19529,7 +19529,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -19592,7 +19592,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -19655,7 +19655,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "evaluating-a-belief"
+      "family:evaluating-a-belief"
     ],
     "provenance": {
       "type": "original",
@@ -19718,7 +19718,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -19781,7 +19781,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -19844,7 +19844,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "contrast-of-methods"
+      "family:contrast-of-methods"
     ],
     "provenance": {
       "type": "original",
@@ -19907,7 +19907,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-an-effect"
+      "family:cause-of-an-effect"
     ],
     "provenance": {
       "type": "original",
@@ -19970,7 +19970,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -20033,7 +20033,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "function-of-a-qualification"
+      "family:function-of-a-qualification"
     ],
     "provenance": {
       "type": "original",
@@ -20096,7 +20096,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -20160,7 +20160,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -20224,7 +20224,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-a-comparison"
+      "family:evaluating-a-comparison"
     ],
     "provenance": {
       "type": "original",
@@ -20288,7 +20288,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -20351,7 +20351,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -20414,7 +20414,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -20477,7 +20477,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -20540,7 +20540,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-a-behaviour"
+      "family:cause-of-a-behaviour"
     ],
     "provenance": {
       "type": "original",
@@ -20603,7 +20603,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -20666,7 +20666,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -20729,7 +20729,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "contrast-of-explanations"
+      "family:contrast-of-explanations"
     ],
     "provenance": {
       "type": "original",
@@ -20793,7 +20793,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -20857,7 +20857,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-an-inference"
+      "family:evaluating-an-inference"
     ],
     "provenance": {
       "type": "original",
@@ -20920,7 +20920,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -20983,7 +20983,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -21046,7 +21046,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -21109,7 +21109,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -21172,7 +21172,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -21235,7 +21235,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-result"
+      "family:cause-of-a-result"
     ],
     "provenance": {
       "type": "original",
@@ -21298,7 +21298,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -21361,7 +21361,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -21424,7 +21424,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-a-paragraph"
+      "family:function-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -21487,7 +21487,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -21551,7 +21551,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-an-explanation"
+      "family:evaluating-an-explanation"
     ],
     "provenance": {
       "type": "original",
@@ -21615,7 +21615,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -21678,7 +21678,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -21742,7 +21742,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -21805,7 +21805,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -21868,7 +21868,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -21931,7 +21931,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-a-choice"
+      "family:cause-of-a-choice"
     ],
     "provenance": {
       "type": "original",
@@ -21994,7 +21994,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -22057,7 +22057,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -22120,7 +22120,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-scene"
+      "family:function-of-a-scene"
     ],
     "provenance": {
       "type": "original",
@@ -22183,7 +22183,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "character-perspective"
+      "family:character-perspective"
     ],
     "provenance": {
       "type": "original",
@@ -22247,7 +22247,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -22311,7 +22311,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -22375,7 +22375,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "strengthening-a-reading"
+      "family:strengthening-a-reading"
     ],
     "provenance": {
       "type": "original",
@@ -22438,7 +22438,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -22501,7 +22501,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -22564,7 +22564,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -22627,7 +22627,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-a-practice"
+      "family:cause-of-a-practice"
     ],
     "provenance": {
       "type": "original",
@@ -22690,7 +22690,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -22753,7 +22753,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "contrast-of-questions"
+      "family:contrast-of-questions"
     ],
     "provenance": {
       "type": "original",
@@ -22816,7 +22816,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "function-of-a-concession"
+      "family:function-of-a-concession"
     ],
     "provenance": {
       "type": "original",
@@ -22880,7 +22880,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "comparing-two-texts"
+      "family:comparing-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -22944,7 +22944,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "combining-two-texts"
+      "family:combining-two-texts"
     ],
     "provenance": {
       "type": "original",
@@ -23008,7 +23008,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -23072,7 +23072,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -23135,7 +23135,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -23198,7 +23198,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -23261,7 +23261,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -23324,7 +23324,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-an-absence"
+      "family:cause-of-an-absence"
     ],
     "provenance": {
       "type": "original",
@@ -23387,7 +23387,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -23450,7 +23450,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -23513,7 +23513,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -23576,7 +23576,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -23640,7 +23640,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-an-inference"
+      "family:evaluating-an-inference"
     ],
     "provenance": {
       "type": "original",
@@ -23704,7 +23704,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "contrast-of-conditions"
+      "family:contrast-of-conditions"
     ],
     "provenance": {
       "type": "original",
@@ -23768,7 +23768,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -23831,7 +23831,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -23894,7 +23894,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -23957,7 +23957,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -24020,7 +24020,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-an-error"
+      "family:cause-of-an-error"
     ],
     "provenance": {
       "type": "original",
@@ -24083,7 +24083,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -24146,7 +24146,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "contrast-of-sources"
+      "family:contrast-of-sources"
     ],
     "provenance": {
       "type": "original",
@@ -24209,7 +24209,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-a-concession"
+      "family:function-of-a-concession"
     ],
     "provenance": {
       "type": "original",
@@ -24272,7 +24272,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -24336,7 +24336,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -24400,7 +24400,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "strengthening-a-position"
+      "family:strengthening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -24464,7 +24464,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -24527,7 +24527,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -24590,7 +24590,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -24653,7 +24653,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -24716,7 +24716,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-an-argument"
+      "family:cause-of-an-argument"
     ],
     "provenance": {
       "type": "original",
@@ -24779,7 +24779,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -24842,7 +24842,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -24905,7 +24905,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-a-delay"
+      "family:cause-of-a-delay"
     ],
     "provenance": {
       "type": "original",
@@ -24968,7 +24968,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "contrast-of-interpretations"
+      "family:contrast-of-interpretations"
     ],
     "provenance": {
       "type": "original",
@@ -25032,7 +25032,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -25096,7 +25096,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -25160,7 +25160,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -25223,7 +25223,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -25286,7 +25286,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -25349,7 +25349,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -25412,7 +25412,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-a-failure"
+      "family:cause-of-a-failure"
     ],
     "provenance": {
       "type": "original",
@@ -25475,7 +25475,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -25538,7 +25538,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -25601,7 +25601,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -25664,7 +25664,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -25728,7 +25728,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -25792,7 +25792,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -25856,7 +25856,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "evaluating-a-belief"
+      "family:evaluating-a-belief"
     ],
     "provenance": {
       "type": "original",
@@ -25919,7 +25919,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -25982,7 +25982,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -26045,7 +26045,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -26108,7 +26108,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-convergence"
+      "family:cause-of-convergence"
     ],
     "provenance": {
       "type": "original",
@@ -26171,7 +26171,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -26234,7 +26234,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -26297,7 +26297,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -26361,7 +26361,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -26425,7 +26425,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-conditions"
+      "family:evaluating-conditions"
     ],
     "provenance": {
       "type": "original",
@@ -26489,7 +26489,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -26553,7 +26553,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -26616,7 +26616,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -26679,7 +26679,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -26742,7 +26742,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -26805,7 +26805,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-finding"
+      "family:cause-of-a-finding"
     ],
     "provenance": {
       "type": "original",
@@ -26868,7 +26868,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -26931,7 +26931,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -26994,7 +26994,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -27057,7 +27057,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "contrast-of-claims"
+      "family:contrast-of-claims"
     ],
     "provenance": {
       "type": "original",
@@ -27121,7 +27121,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -27185,7 +27185,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -27249,7 +27249,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -27312,7 +27312,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -27375,7 +27375,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -27438,7 +27438,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -27501,7 +27501,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-a-policy"
+      "family:cause-of-a-policy"
     ],
     "provenance": {
       "type": "original",
@@ -27564,7 +27564,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -27627,7 +27627,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -27690,7 +27690,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-permanence"
+      "family:cause-of-permanence"
     ],
     "provenance": {
       "type": "original",
@@ -27753,7 +27753,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -27817,7 +27817,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-a-claim"
+      "family:evaluating-a-claim"
     ],
     "provenance": {
       "type": "original",
@@ -27881,7 +27881,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -27944,7 +27944,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -28007,7 +28007,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -28070,7 +28070,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -28133,7 +28133,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -28196,7 +28196,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-a-behaviour"
+      "family:cause-of-a-behaviour"
     ],
     "provenance": {
       "type": "original",
@@ -28259,7 +28259,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -28322,7 +28322,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -28385,7 +28385,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -28448,7 +28448,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -28512,7 +28512,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -28576,7 +28576,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -28640,7 +28640,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "evaluating-a-choice"
+      "family:evaluating-a-choice"
     ],
     "provenance": {
       "type": "original",
@@ -28703,7 +28703,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -28766,7 +28766,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -28829,7 +28829,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -28892,7 +28892,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-a-pattern"
+      "family:cause-of-a-pattern"
     ],
     "provenance": {
       "type": "original",
@@ -28955,7 +28955,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -29018,7 +29018,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -29081,7 +29081,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-a-contrast"
+      "family:function-of-a-contrast"
     ],
     "provenance": {
       "type": "original",
@@ -29145,7 +29145,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -29209,7 +29209,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "contrast-of-explanations"
+      "family:contrast-of-explanations"
     ],
     "provenance": {
       "type": "original",
@@ -29273,7 +29273,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-explanations"
+      "family:evaluating-explanations"
     ],
     "provenance": {
       "type": "original",
@@ -29336,7 +29336,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -29399,7 +29399,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -29462,7 +29462,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -29525,7 +29525,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -29588,7 +29588,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-quality"
+      "family:cause-of-a-quality"
     ],
     "provenance": {
       "type": "original",
@@ -29651,7 +29651,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -29714,7 +29714,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -29777,7 +29777,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "contrast-of-designs"
+      "family:contrast-of-designs"
     ],
     "provenance": {
       "type": "original",
@@ -29840,7 +29840,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-a-qualification"
+      "family:function-of-a-qualification"
     ],
     "provenance": {
       "type": "original",
@@ -29903,7 +29903,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -29967,7 +29967,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -30031,7 +30031,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -30095,7 +30095,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -30158,7 +30158,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -30221,7 +30221,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -30284,7 +30284,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-a-cost"
+      "family:cause-of-a-cost"
     ],
     "provenance": {
       "type": "original",
@@ -30347,7 +30347,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -30410,7 +30410,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "contrast-of-effects"
+      "family:contrast-of-effects"
     ],
     "provenance": {
       "type": "original",
@@ -30473,7 +30473,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -30536,7 +30536,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "function-of-a-concession"
+      "family:function-of-a-concession"
     ],
     "provenance": {
       "type": "original",
@@ -30600,7 +30600,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -30664,7 +30664,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -30728,7 +30728,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "strengthening-a-position"
+      "family:strengthening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -30791,7 +30791,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -30854,7 +30854,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -30917,7 +30917,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -30980,7 +30980,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-an-outcome"
+      "family:cause-of-an-outcome"
     ],
     "provenance": {
       "type": "original",
@@ -31043,7 +31043,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -31106,7 +31106,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -31169,7 +31169,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -31232,7 +31232,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -31296,7 +31296,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -31360,7 +31360,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -31424,7 +31424,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "evaluating-an-action"
+      "family:evaluating-an-action"
     ],
     "provenance": {
       "type": "original",
@@ -31487,7 +31487,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -31550,7 +31550,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -31613,7 +31613,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -31676,7 +31676,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-a-failure"
+      "family:cause-of-a-failure"
     ],
     "provenance": {
       "type": "original",
@@ -31739,7 +31739,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -31802,7 +31802,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -31865,7 +31865,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -31928,7 +31928,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -31992,7 +31992,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -32056,7 +32056,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-an-explanation"
+      "family:evaluating-an-explanation"
     ],
     "provenance": {
       "type": "original",
@@ -32120,7 +32120,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -32183,7 +32183,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "drawing-a-conclusion"
+      "family:drawing-a-conclusion"
     ],
     "provenance": {
       "type": "original",
@@ -32246,7 +32246,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -32309,7 +32309,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -32372,7 +32372,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-practice"
+      "family:cause-of-a-practice"
     ],
     "provenance": {
       "type": "original",
@@ -32435,7 +32435,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -32498,7 +32498,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "contrast-of-uses"
+      "family:contrast-of-uses"
     ],
     "provenance": {
       "type": "original",
@@ -32561,7 +32561,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-a-comparison"
+      "family:function-of-a-comparison"
     ],
     "provenance": {
       "type": "original",
@@ -32625,7 +32625,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -32689,7 +32689,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-a-claim"
+      "family:evaluating-a-claim"
     ],
     "provenance": {
       "type": "original",
@@ -32753,7 +32753,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "weakening-a-position"
+      "family:weakening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -32817,7 +32817,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -32880,7 +32880,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -32943,7 +32943,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -33006,7 +33006,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -33069,7 +33069,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-a-capacity"
+      "family:cause-of-a-capacity"
     ],
     "provenance": {
       "type": "original",
@@ -33132,7 +33132,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -33195,7 +33195,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -33258,7 +33258,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-scene"
+      "family:function-of-a-scene"
     ],
     "provenance": {
       "type": "original",
@@ -33321,7 +33321,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -33385,7 +33385,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "character-perspective"
+      "family:character-perspective"
     ],
     "provenance": {
       "type": "original",
@@ -33449,7 +33449,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -33513,7 +33513,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -33576,7 +33576,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "evaluating-an-inference"
+      "family:evaluating-an-inference"
     ],
     "provenance": {
       "type": "original",
@@ -33639,7 +33639,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -33702,7 +33702,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -33765,7 +33765,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "cause-of-a-property"
+      "family:cause-of-a-property"
     ],
     "provenance": {
       "type": "original",
@@ -33828,7 +33828,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -33891,7 +33891,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -33954,7 +33954,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -34017,7 +34017,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "passage-structure"
+      "family:passage-structure"
     ],
     "provenance": {
       "type": "original",
@@ -34081,7 +34081,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -34145,7 +34145,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "evaluating-an-explanation"
+      "family:evaluating-an-explanation"
     ],
     "provenance": {
       "type": "original",
@@ -34209,7 +34209,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "strengthening-a-position"
+      "family:strengthening-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -34272,7 +34272,7 @@
     "tags": [
       "passage-set",
       "natural-science",
-      "drawing-a-conclusion"
+      "family:drawing-a-conclusion"
     ],
     "provenance": {
       "type": "original",
@@ -34335,7 +34335,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -34398,7 +34398,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -34461,7 +34461,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "cause-of-a-judgement"
+      "family:cause-of-a-judgement"
     ],
     "provenance": {
       "type": "original",
@@ -34524,7 +34524,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -34587,7 +34587,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "contrast-of-forms"
+      "family:contrast-of-forms"
     ],
     "provenance": {
       "type": "original",
@@ -34650,7 +34650,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "function-of-an-example"
+      "family:function-of-an-example"
     ],
     "provenance": {
       "type": "original",
@@ -34713,7 +34713,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -34777,7 +34777,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -34841,7 +34841,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "evaluating-an-objection"
+      "family:evaluating-an-objection"
     ],
     "provenance": {
       "type": "original",
@@ -34905,7 +34905,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -34968,7 +34968,7 @@
     "tags": [
       "passage-set",
       "humanities",
-      "purpose-of-a-passage"
+      "family:purpose-of-a-passage"
     ],
     "provenance": {
       "type": "original",
@@ -35031,7 +35031,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "central-claim"
+      "family:central-claim"
     ],
     "provenance": {
       "type": "original",
@@ -35094,7 +35094,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -35157,7 +35157,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "cause-of-a-constraint"
+      "family:cause-of-a-constraint"
     ],
     "provenance": {
       "type": "original",
@@ -35220,7 +35220,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -35283,7 +35283,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "supported-inference"
+      "family:supported-inference"
     ],
     "provenance": {
       "type": "original",
@@ -35346,7 +35346,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "function-of-a-qualification"
+      "family:function-of-a-qualification"
     ],
     "provenance": {
       "type": "original",
@@ -35410,7 +35410,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -35474,7 +35474,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "evaluating-a-position"
+      "family:evaluating-a-position"
     ],
     "provenance": {
       "type": "original",
@@ -35538,7 +35538,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "combining-sections"
+      "family:combining-sections"
     ],
     "provenance": {
       "type": "original",
@@ -35602,7 +35602,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "purpose-of-a-paragraph"
+      "family:purpose-of-a-paragraph"
     ],
     "provenance": {
       "type": "original",
@@ -35665,7 +35665,7 @@
     "tags": [
       "passage-set",
       "social-science",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -35728,7 +35728,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "narrative-central-insight"
+      "family:narrative-central-insight"
     ],
     "provenance": {
       "type": "original",
@@ -35791,7 +35791,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "stated-detail"
+      "family:stated-detail"
     ],
     "provenance": {
       "type": "original",
@@ -35854,7 +35854,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "cause-of-an-accident"
+      "family:cause-of-an-accident"
     ],
     "provenance": {
       "type": "original",
@@ -35917,7 +35917,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "vocabulary-in-context"
+      "family:vocabulary-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -35980,7 +35980,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "detail-interpretation"
+      "family:detail-interpretation"
     ],
     "provenance": {
       "type": "original",
@@ -36043,7 +36043,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "function-of-a-detail"
+      "family:function-of-a-detail"
     ],
     "provenance": {
       "type": "original",
@@ -36106,7 +36106,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "point-of-view"
+      "family:point-of-view"
     ],
     "provenance": {
       "type": "original",
@@ -36169,7 +36169,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "character-perspective"
+      "family:character-perspective"
     ],
     "provenance": {
       "type": "original",
@@ -36232,7 +36232,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "thematic-statement"
+      "family:thematic-statement"
     ],
     "provenance": {
       "type": "original",
@@ -36296,7 +36296,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "claim-and-support"
+      "family:claim-and-support"
     ],
     "provenance": {
       "type": "original",
@@ -36359,7 +36359,7 @@
     "tags": [
       "passage-set",
       "literary-narrative",
-      "evaluating-a-belief"
+      "family:evaluating-a-belief"
     ],
     "provenance": {
       "type": "original",

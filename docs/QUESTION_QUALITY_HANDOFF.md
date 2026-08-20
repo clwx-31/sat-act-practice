@@ -2,10 +2,15 @@
 
 Live working document. Whoever picks this up (human, Claude, or Codex) should
 read it end to end before touching a generator, a bank, or the app shell.
-Last updated 2026-08-18, after `cec80d6`. **Numbers below were re-measured
-against the working tree at that commit** — re-run the commands in
-[Commands](#commands) before trusting any figure here; they drift every time a
+Last updated 2026-08-19, after the ACT Reading rebuild shipped. **Numbers below
+were re-measured against the working tree at that commit** — re-run the commands
+in [Commands](#commands) before trusting any figure here; they drift every time a
 generator or a gate changes.
+
+> **Resume here.** ACT Reading is finished and shipped and passes both gates.
+> ACT English is the next section and its authoring contract exists but no
+> passage has been written yet. The exact continuation checkpoint is at the
+> bottom of this file, under [Checkpoint](#checkpoint-2026-08-19).
 
 ## The goal
 
@@ -71,19 +76,50 @@ Measured by `npm run audit:questions` against the **committed** banks. Targets:
 near-dup < 2%, no family over 10%, no tier's top answer position over 40%,
 longest-is-key < 40%, answerable-without-reading < 40%.
 
-| Section | distinct shapes / 575 | near-dup | longest = key | blind score | generator state |
-| --- | --- | --- | --- | --- | --- |
-| act-mathematics | 72 | 87.5% | 1.2% | 73.9% | **rewritten, not yet shipped** |
-| sat-math | 144 | 75.0% | 5.2% | 72.7% | not started |
-| act-english | 344 | 40.2% | 26.3% | 78.4% | not started |
-| sat-reading-writing | 410 | 28.7% | 50.3% | 84.9% | not started |
-| act-reading | 575 | 0% | **83.3%** | **97.4%** | not started |
-| act-science | 575 | 0% | 39.8% | 87.7% | not started |
-| act-writing | 575 | 0% | n/a | n/a (essay) | passes |
+| Section | distinct shapes / 575 | near-dup | longest = key | blind score | audit | generator state |
+| --- | --- | --- | --- | --- | --- | --- |
+| act-reading | 575 | 0% | 18.8% | 23.8% | **PASS** | **rebuilt and shipped** |
+| act-writing | 575 | 0% | n/a | n/a (essay) | PASS | passes |
+| act-mathematics | 72 | 87.5% | 1.2% | 73.9% | FAIL | rewritten, not yet shipped |
+| sat-math | 144 | 75.0% | 5.2% | 72.7% | FAIL | not started |
+| act-english | 344 | 40.2% | 26.3% | 78.4% | FAIL | contract written, no passages yet |
+| sat-reading-writing | 410 | 28.7% | 50.3% | 84.9% | FAIL | not started |
+| act-science | 575 | 0% | 39.8% | 87.7% | FAIL | not started |
 
-The committed banks are all still the original content. The ACT Mathematics
-*generator* has been fully rewritten but its output has never been shipped,
-because it does not yet clear rule 1 (see below).
+`npm run check:difficulty` now reports **2 of 7** sections with meaningful
+difficulty labels (act-reading and act-writing).
+
+Five banks are still the original content. The ACT Mathematics *generator* has
+been fully rewritten but its output has never been shipped, because it does not
+yet clear rule 1 (see below).
+
+## ACT Reading — done
+
+Rebuilt from scratch and shipped. 55 authored passages in
+`scripts/data/act-reading/`, 575 questions, exactly on the catalog's domain
+targets (275 / 160 / 140) and difficulty targets (175 / 250 / 150).
+`scripts/generate-act-reading.js` no longer generates anything: it assembles the
+authored sets into bank records, writes the shared passages to
+`content/passages/act-reading.json`, and balances answer positions inside each
+difficulty tier *and* overall.
+
+What moved with it, and why it matters to every remaining section:
+
+- **Three gates scored a passage-set item on its stem alone**, so two sets both
+  asking "the passage is best described as" — wording the real ACT reuses on
+  every form — read as duplicates. `duplicateErrors` and the audit's
+  `shapeSignature`/`exactSignature` now anchor on `passageId`;
+  `check-difficulty.js` uses the stem together with its choices. Expect to need
+  the same treatment for ACT English, whose stems repeat by design.
+- **`booklet.js` refuses non-ASCII LaTeX**, so authored prose with real names
+  needs its accented letters in `TEX_UNICODE`. A table of common Latin accents
+  is now there; add to it rather than rewriting a name.
+- **Strategy is per-subskill, everything else is per-item.** `explanation`,
+  `solutionSteps`, `hint`, and `trap` all come from the authored question.
+  `strategy` comes from a 25-entry table in the generator, because the fastest
+  reliable approach to a vocabulary-in-context item genuinely is the same one
+  every time. A `trap` the author did not write is built from the first
+  distractor's own reason, so it still names that item's wrong turn.
 
 ## ACT Mathematics — what is done and what blocks it
 
@@ -135,14 +171,7 @@ systems, unit conversion. Run the harness for the current list.
    throws on it today. (It throws on every section except `act-mathematics` for
    the same reason — that is expected, not a bug to chase.) Same structure as ACT Mathematics, roughly twice the
    size.
-3. **ACT Reading** — the worst section. 97.4% answerable without reading,
-   because the key is always the hedged, qualified, longest option and the
-   distractors are short absolutes. Fix by length-matching and equally
-   qualifying every distractor. Also: median passage in the *committed bank* is 52 words against a real ~750.
-   **Passage sets now exist as a first-class entity** (`830f57c`) — a stimulus
-   can be shared across items — and `scripts/data/act-reading/` holds the
-   authoring spec and one file per passage. That directory's `README.md` is the
-   contract for writing passages; read it before authoring any.
+3. ~~**ACT Reading**~~ — done, see above.
 4. **SAT Reading & Writing and ACT English** — 25 items whose keyed answer is
    ungrammatical (`sat-reading-writing-0011` and every 6th id through 0155); 29
    whose explanation describes a different question (`0316`, `0320`, `0324`, …);
@@ -231,3 +260,70 @@ npm run build:booklet -- --form sat-full --pdf
 
 Deployed from `main` via GitHub Pages at
 <https://clwx-31.github.io/sat-act-practice/>.
+
+## Checkpoint 2026-08-19
+
+Where this stopped, precisely, so the next session does not repeat the audit.
+
+### Completed and committed
+
+- **ACT Reading, end to end.** 55 passage files in `scripts/data/act-reading/`
+  (`001-lamplighter.js` … `055-ice.js`), the assembling generator, the shipped
+  bank, `content/passages/act-reading.json`, and the three gate fixes described
+  above. `npm run check` passes; `npm run audit:questions` and
+  `npm run check:difficulty` both report act-reading as PASS.
+- Two of the 55 carry data: `011-smoke-seeds.js` has a pipe table and
+  `018-breathing-curve.js` has an ASCII plot. `unwrapParagraphs` keeps the line
+  structure of any block containing `|`, which is what makes both render.
+
+### In progress, uncommitted at the point of stopping
+
+- `scripts/data/act-english/` exists with `index.js` and `README.md` only. The
+  README is the authoring contract and the build arithmetic (40 passages:
+  20 × 14 at 6/3/5, 5 × 14 at 5/3/6, 15 × 15 at 6/3/6 → 575 questions,
+  235 / 120 / 220). **No passage has been written and no harness rules exist
+  for the section yet.**
+
+### The next four steps, in order
+
+1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes
+   the reading rules: `SOURCES` has one entry, `checkQuestion` applies the
+   reading length-ratio rule, and the pace report is reading-shaped. Split the
+   per-section rules out. English needs: numbers running 1..N with markers in
+   passage order; `{n text}` present exactly once per underlined question and
+   `{n}` optional for a non-underlined one; `keep === true` → three distractors,
+   `keep === false` → `key` plus `noChange` plus two distractors; every reason
+   ≥ 25 characters; all three domains per set; no family more than twice per
+   set; and a bank-wide **NO CHANGE keep rate between 20% and 30%**. Do *not*
+   apply the reading choice-length ratio — "NO CHANGE" is nine characters and
+   would fail every item.
+2. **Author the 40 passages**, watching the pace report the way the reading
+   build did. `PASSAGE_RULES["act-english"]` already exists in
+   `scripts/lib/content.js`: 250–450 words, 12–18 questions, types
+   `personal-essay`, `informative-essay`, `historical-account`,
+   `process-narrative`.
+3. **Rewrite `scripts/generate-act-english.js`** on the model of
+   `generate-act-reading.js`. Differences to plan for: **NO CHANGE is always
+   choice A**, so the answer position is forced whenever an item has one, and
+   the position planner can only balance the items that are free. The generated
+   stem for an underlined item should be `Which choice is best for underlined
+   portion N?`, which repeats within a passage only by number — so check the
+   audit's `shapeSignature` handles it, since it maps digits to `#` and would
+   otherwise collide every underlined item in a set. That is the fourth place
+   the passage-set assumption bites; fix it the same way as the other three.
+4. **Then** ACT Mathematics (clear the shapes the harness reports and ship),
+   ACT Science, SAT Math, SAT Reading & Writing.
+
+### Known divergences, deliberately not changed
+
+- The catalog gives ACT English 235 / 120 / 220 across Production of Writing,
+  Knowledge of Language, and Conventions of Standard English (41% / 21% / 38%).
+  The real test weights Conventions closer to 52–55%. The catalog is the
+  enforced contract and rescaling it touches `content/catalog.json` and
+  `tests/content.test.js`, so the build plan above follows the catalog. Raise it
+  as a decision before authoring rather than after.
+- `strategy` on a reading item is shared across the items with the same
+  subskill. Everything a student reads about *their* question — explanation,
+  steps, hint, trap — is per item. Per-item strategy lines would be 575 more
+  authored sentences and are worth doing only if the shared ones start reading
+  as filler.

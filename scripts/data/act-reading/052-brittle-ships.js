@@ -50,7 +50,12 @@ remove the concentrations. Steel specifications were changed to lower the transi
 temperature, which is a matter of composition and grain size. And riveted crack-arrestor
 strakes were built back into welded hulls, restoring the discontinuity that riveting had
 supplied by accident — a deliberate reconstruction of a property nobody had known they were
-relying on until it was gone.`,
+relying on until it was gone.
+
+The episode is a standard teaching case, and what it is usually taught for is the last
+point rather than the metallurgy. An old design carries properties its designers never
+wrote down, because nobody writes down what has never failed. Replace it with something
+better on every dimension anybody measured, and the dimensions nobody measured go with it.`,
   questions: [
     {
       subskill: "main idea",
@@ -229,7 +234,7 @@ relying on until it was gone.`,
         ["Welders on the programme had a high rate of defective seams.", "Defects are one trigger the account already treats as ordinary."],
         ["The emergency designs used thinner plate than earlier ships.", "Thinner plate would suggest an overload story, which Tipper rejects."],
       ],
-      why: "Tipper's account attributes the initiation to steel that turns brittle below a transition temperature reached by the winter North Atlantic. Identical hulls failing only in cold water isolates temperature as the operative variable.",
+      why: "The passage says the steel's transition temperature was \"near, and in some batches above, the temperature of the North Atlantic in winter,\" so hulls failing only in cold water would isolate temperature as the operative variable.",
       steps: [
         "State the variable Tipper's account makes decisive.",
         "Look for evidence that varies that alone.",

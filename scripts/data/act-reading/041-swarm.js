@@ -234,7 +234,7 @@ the decision stops being reliably good.`,
         ["the same scouts performing both roles at once.", "Scouts do both, but the passage separates the jobs the mechanisms do."],
         ["a comparison between rival sites on the cluster.", "The passage says decay is independent of what rivals advertise."],
       ],
-      why: "Dance decay is what filters sites by quality, since only a good cavity recruits faster than its advocates fade; the quorum at a site is separately what determines when the swarm departs.",
+      why: "The passage says a good site \"recruits faster than its advocates fade,\" so dance decay is what filters sites by quality; it then states that the quorum at a cavity, not the dance count, is what triggers departure.",
       steps: [
         "State what the decay accomplishes.",
         "State what the quorum accomplishes.",

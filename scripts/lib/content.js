@@ -459,8 +459,14 @@ function duplicateErrors(questions) {
     if (ids.has(question.id)) errors.push(`Duplicate id: ${question.id}`);
     else ids.set(question.id, true);
 
+    // A passage-set item carries no stimulus of its own, so comparing stems
+    // alone would condemn two sets that both ask "the passage is best described
+    // as" — wording the real ACT reuses on every form. The passage a stem is
+    // asked about is part of what makes it that question, so it anchors the
+    // comparison, exactly as it does in structuralSignature.
+    const anchor = question.passageId ? `${question.passageId} ` : "";
     const fullText = normalizeText(
-      `${question.stimulus ? question.stimulus.content : ""} ${question.stem}`,
+      `${anchor}${question.stimulus ? question.stimulus.content : ""} ${question.stem}`,
     );
     if (exact.has(fullText)) {
       errors.push(`Exact duplicate text: ${exact.get(fullText)} and ${question.id}`);

@@ -119,7 +119,9 @@ function strategyFor(question) {
 // authored for that item and names the specific wrong turn the item invites.
 function trapFor(question) {
   if (question.trap) return question.trap;
-  return question.wrong[0][1];
+  const [text, reason] = question.wrong[0];
+  const choice = String(text).replace(/\s*\.$/, "");
+  return `Choosing "${choice}" — ${reason}`;
 }
 
 function buildRecord({ passage, question, sequence, section, index, position }) {

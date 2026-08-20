@@ -81,11 +81,11 @@ the conditions under which it appears, and they are, unlike most findings in med
       family: "stated-detail",
       difficulty: "Easy",
       stem: "According to the passage, the largest of the effects producing improvement without treatment is:",
-      key: "regression to the mean.",
+      key: "regression towards the average value.",
       wrong: [
-        ["reporting favourably to an interested doctor.", "This is listed but is not identified as the largest."],
-        ["the conditioning built up over a lifetime.", "Conditioning is one explanation of the placebo effect, not a trial artefact."],
-        ["changes in how much a patient moves.", "Behaviour change is listed last among the effects."],
+        ["reporting well to an interested doctor.", "This is listed among the effects but is not identified as the largest."],
+        ["conditioning built up over a lifetime.", "Conditioning is one explanation of the placebo effect, not a trial artefact."],
+        ["changes in how much a patient moves.", "Behaviour change is listed last among the effects, without any ranking."],
       ],
       why: "The passage says people seek treatment at their worst so the next measurement is usually better, and \"this is regression to the mean and it is the largest of the effects involved.\"",
       steps: [

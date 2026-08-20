@@ -33,7 +33,10 @@ had been said in 1915.
 The standardisation followed. The League of Nations conferences of 1920 and 1926 fixed the
 booklet format, the dimensions, the number of pages, the placement of the photograph, and the
 languages in which the headings appear. That is why passports from countries with no other
-common institution look so much alike: the design is a treaty artefact.
+common institution look so much alike: the design is a treaty artefact. A Uruguayan passport and a Norwegian one are the same
+object in two liveries, because both were built to a specification agreed in a room in
+Geneva by people who were mainly trying to reduce the time an official spent looking for
+the page they wanted.
 
 The photograph is the part historians argue about most. A photograph does not identify a
 person; it invites a comparison, made by an official under time pressure, between a face and

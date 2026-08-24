@@ -279,9 +279,11 @@ Where this stopped, precisely, so the next session does not repeat the audit.
 ### In progress, uncommitted at the point of stopping
 
 - `scripts/data/act-english/` holds `index.js`, `README.md`, and **passage 001
-  of 40** (`001-key-counter.js`, personal essay, 16 questions at 5 PoW / 3 KoL /
-  8 CSE, 5 Easy / 7 Medium / 4 Hard, 3 NO CHANGE keys of 12 underlined = 25%).
-  It is authored but **not yet verified by a harness** — `check-passages.js`
+  of 40** and **002 of 40** — `001-key-counter.js` (personal essay, 16 questions
+  at 5 PoW / 3 KoL / 8 CSE, 5/7/4 Easy/Medium/Hard, 3 NO CHANGE keys of 12
+  underlined = 25%) and `002-snow-fence.js` (informative essay, 14 questions at
+  4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%). Running keep rate 6 of 23 = 26.1%.
+  They are authored but **not yet verified by a harness** — `check-passages.js`
   still has no act-english rules, and nothing loads the file, so `npm run check`
   passing says nothing about it. Codex Task 1 in `docs/CODEX_LANE.md` is that
   harness; run it against this passage first.

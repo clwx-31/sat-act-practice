@@ -1606,11 +1606,10 @@ SHAPES.systems = {
       const answer = (b * c) / d;
       return {
         family: "matrix-determinant-parameter",
-        stem: choose(variant, [
-          `The matrix [[k, ${b}], [${c}, ${d}]] has no inverse. What is the value of k?`,
-          `For which value of k is the determinant of [[k, ${b}], [${c}, ${d}]] equal to 0?`,
-          `A 2 × 2 matrix [[k, ${b}], [${c}, ${d}]] is singular. Which number is k?`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `the matrix [[k, ${b}], [${c}, ${d}]] is singular`,
+          parameter: "k",
+        }),
         answer,
         wrong: [
           [round3(d / (b * c)), "This inverts the relationship, dividing the corner entry by the off-diagonal product."],

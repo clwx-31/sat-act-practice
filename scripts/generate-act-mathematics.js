@@ -986,11 +986,11 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const rate = 14 + (s % 11);
       const hours = 4 + (s % 4);
-      const mover = choose(variant, ["delivery van", "freight truck", "mail carrier", "shuttle bus"]);
+      const trip = scene(variant, TRAVEL);
       const distance = rate * hours;
       return {
         family: "rate-from-distance-and-time",
-        stem: `A ${mover} covers ${distance} miles in ${hours} hours. What is the average speed, in miles per hour?`,
+        stem: `A ${trip.mover} covers ${distance} miles along the ${trip.route} in ${hours} hours. What is the average speed, in miles per hour?`,
         answer: rate,
         wrong: [
           [round3(hours / distance), "This inverts the rate, giving hours per mile."],

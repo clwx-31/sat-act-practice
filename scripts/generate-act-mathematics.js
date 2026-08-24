@@ -1641,11 +1641,9 @@ SHAPES.systems = {
       const answer = a * f + b * h;
       return {
         family: "matrix-product-entry",
-        stem: choose(variant, [
-          `If A = [[${a}, ${b}], [${c}, ${d}]] and B = [[${e}, ${f}], [${g}, ${h}]], what is the entry in row 1, column 2 of the product AB?`,
-          `For A = [[${a}, ${b}], [${c}, ${d}]] and B = [[${e}, ${f}], [${g}, ${h}]], the row 1, column 2 entry of AB equals what?`,
-          `Matrices A = [[${a}, ${b}], [${c}, ${d}]] and B = [[${e}, ${f}], [${g}, ${h}]] are multiplied. Which number sits in row 1, column 2 of AB?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the row 1, column 2 entry of [[${a}, ${b}], [${c}, ${d}]] [[${e}, ${f}], [${g}, ${h}]]`,
+        }),
         answer,
         wrong: [
           [b * f, "This multiplies the two entries that already sit in row 1, column 2, which is entrywise multiplication rather than matrix multiplication."],

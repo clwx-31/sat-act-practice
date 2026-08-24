@@ -810,12 +810,9 @@ SHAPES["unit conversion"] = {
       const answer = amount * unit.factor;
       return {
         family: "single-step-conversion-up",
-        stem: choose(variant, [
-          `A measurement of ${amount} ${unit.from} is equivalent to how many ${unit.to}?`,
-          `Convert ${amount} ${unit.from} into ${unit.to}.`,
-          `How many ${unit.to} are in ${amount} ${unit.from}?`,
-          `A quantity recorded as ${amount} ${unit.from} equals what number of ${unit.to}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of ${unit.to} equivalent to ${amount} ${unit.from}`,
+        }),
         answer,
         wrong: [
           [round3(amount / unit.factor), "This divides by the conversion factor, which converts in the opposite direction."],

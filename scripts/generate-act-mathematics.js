@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { RECIPE, scene, TRAVEL } = require("./lib/scenes");
+const { GROUND, RECIPE, scene, TRAVEL } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -907,14 +907,13 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const rooms = [[12, 18], [9, 20], [15, 24], [21, 12], [18, 27], [24, 15]];
       const [length, width] = rooms[(s + variant) % rooms.length];
-      const space = choose(variant, ["studio", "gallery", "rehearsal room", "reading room"]);
-      const covering = choose(variant, ["carpet", "cork flooring", "vinyl tile", "woven matting"]);
+      const ground = scene(variant, GROUND);
       const price = 20 + 5 * (s % 5);
       const area = length * width;
       const answer = (area / 9) * price;
       return {
         family: "square-unit-conversion-cost",
-        stem: `A ${space} measures ${length} feet by ${width} feet. ${covering[0].toUpperCase()}${covering.slice(1)} costs $${price} per square yard. What is the cost, in dollars, to cover the floor?`,
+        stem: `A ${ground.region} measures ${length} feet by ${width} feet. ${ground.cover[0].toUpperCase()}${ground.cover.slice(1)} costs $${price} per square yard. What is the cost, in dollars, to cover it?`,
         answer,
         wrong: [
           [price, "This is the price of a single square yard."],

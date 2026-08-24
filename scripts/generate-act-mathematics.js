@@ -4,6 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
+const { scene, TRAVEL } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -857,11 +858,11 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const speeds = [36, 54, 72, 90, 18, 108];
       const speed = speeds[(s + variant) % speeds.length];
-      const mover = choose(variant, ["train", "tram", "cargo drone", "ferry"]);
+      const trip = scene(variant, TRAVEL);
       const answer = speed / 3.6;
       return {
         family: "speed-unit-conversion",
-        stem: `A ${mover} travels at ${speed} kilometres per hour. What is that speed in metres per second?`,
+        stem: `On a ${trip.route}, a ${trip.mover} travels at ${speed} kilometres per hour. What is that speed in metres per second?`,
         answer,
         wrong: [
           [round3(speed / 3600), "This converts hours to seconds but never converts kilometres to metres."],

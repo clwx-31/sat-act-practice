@@ -2687,12 +2687,9 @@ SHAPES["domain and range"] = {
       const answer = inner + outer * outer;
       return {
         family: "domain-of-a-composition",
-        stem: choose(variant, [
-          `If f(x) = √(x ${MINUS} ${inner}) and g(x) = f(x) ${MINUS} ${outer}, the expression 1/g(x) is undefined at which value of x?`,
-          `Let f(x) = √(x ${MINUS} ${inner}) and g(x) = f(x) ${MINUS} ${outer}. For which x is 1/g(x) undefined even though f is defined there?`,
-          `Given f(x) = √(x ${MINUS} ${inner}), the reciprocal 1/(f(x) ${MINUS} ${outer}) fails to exist at which value of x?`,
-          `For f(x) = √(x ${MINUS} ${inner}), which value of x must be removed from the domain of 1/(f(x) ${MINUS} ${outer})?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the value of x for which 1/(√(x ${MINUS} ${inner}) ${MINUS} ${outer}) is undefined`,
+        }),
         answer,
         wrong: [
           [inner, "The square root is defined here and equals 0, so the reciprocal exists unless the subtracted constant is also 0."],

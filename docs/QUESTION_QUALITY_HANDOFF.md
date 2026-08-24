@@ -278,11 +278,65 @@ Where this stopped, precisely, so the next session does not repeat the audit.
 
 ### In progress, uncommitted at the point of stopping
 
+- `scripts/data/act-english/` holds `index.js`, `README.md`, and **passage 001
+  of 40** and **002 of 40** — `001-key-counter.js` (personal essay, 16 questions
+  at 5 PoW / 3 KoL / 8 CSE, 5/7/4 Easy/Medium/Hard, 3 NO CHANGE keys of 12
+  underlined = 25%) and `002-snow-fence.js` (informative essay, 14 questions at
+  4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%), plus `003-hose-threads.js`
+  (historical account, 16 questions at 5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
+  **3 of 40 authored, 46 of 575 questions.** Running keep rate 9 of 35 = 25.7%;
+  domain and difficulty gaps are 0 on all six rows. 003 is the first passage
+  written under the whole-essay marker rule: q15 and q16 carry no marker and are
+  numbered last.
+  They are authored but **not yet verified by a harness** — `check-passages.js`
+  still has no act-english rules, and nothing loads the file, so `npm run check`
+  passing says nothing about it. Codex Task 1 in `docs/CODEX_LANE.md` is that
+  harness; run it against this passage first.
+- The keep rate is defined as `keeps / underlined questions` — non-underlined
+  rhetorical questions carry no NO CHANGE and stay out of the denominator. This
+  is now stated in the authoring README so the checker matches the authoring.
+
+Superseded note, kept for the record:
+
 - `scripts/data/act-english/` exists with `index.js` and `README.md` only. The
   README is the authoring contract and the build arithmetic (40 passages:
   12 × 16 at 5/3/8, 3 × 15 at 5/2/8, 13 × 14 at 4/2/8, 12 × 13 at 4/2/7 →
   575 questions, 175 / 92 / 308). **No passage has been written and no harness
   rules exist for the section yet.**
+
+### Requirement for the Codex lane — marker rule is too strict
+
+`scripts/check-passages.js` (committed on `codex-lane` as `f946286`) requires a
+`{n}` marker for every question. It should not. Run against passages 001 and 002
+it reports 5 problems, and all five are the same false positive:
+
+```
+act-english-p001 q15: needs exactly one {15} marker
+act-english-p001 q16: needs exactly one {16} marker
+act-english-p002 q14: needs exactly one {14} marker
+```
+
+Those are **whole-essay questions** — *"Suppose the writer's goal had been…"*,
+*"Paragraph 3 should be placed:"*. On the real ACT they have no location in the
+text; they are printed after the passage. The checkpoint spec already said `{n}`
+is *optional* for a non-underlined question.
+
+The rule the harness should enforce, now written into
+`scripts/data/act-english/README.md`:
+
+- An **underlined** question needs exactly one `{n text}` marker. (Correct today.)
+- A **point-specific non-underlined** question needs exactly one bare `{n}`.
+- A **whole-essay non-underlined** question carries **no marker at all**, and
+  every such question must be numbered last in the set — which keeps the markers
+  that do exist running in passage order.
+
+Distinguish them by whether a marker exists, not by a new field: a question with
+no marker is valid only if it is non-underlined and its number is greater than
+every numbered marker in the passage.
+
+Everything else the harness reports is correct, including the keep-rate
+denominator (`6/23 underlined`, 26.1%) and the on-pace domain and difficulty
+tables, which show 0 gap on all six rows at 30 questions.
 
 ### The next four steps, in order
 

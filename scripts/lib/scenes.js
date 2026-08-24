@@ -85,7 +85,7 @@ const VESSEL = [
   { vessel: "reservoir", filler: "channel", fluid: "water", unit: "liters" },
   { vessel: "pool", filler: "hose", fluid: "water", unit: "liters" },
   { vessel: "drum", filler: "valve", fluid: "coolant", unit: "liters" },
-  { vessel: "silo", filler: "conveyor", fluid: "grain", unit: "liters" },
+  { vessel: "header tank", filler: "inlet", fluid: "oil", unit: "liters" },
   { vessel: "trough", filler: "spout", fluid: "water", unit: "liters" },
 ];
 

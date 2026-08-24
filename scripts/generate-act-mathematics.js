@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { GROUND, RECIPE, scene, TRAVEL } = require("./lib/scenes");
+const { GROUND, RECIPE, scene, TRAVEL, VESSEL } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -933,21 +933,21 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const volume = 40 * (2 + (s % 5));
       const rate = choose(s + variant, [10, 12, 15, 20, 25, 30]);
-      const vessel = choose(variant, ["tank", "reservoir", "cistern", "holding pool"]);
+      const vessel = scene(variant, VESSEL);
       const gallons = volume * 7.5;
       const answer = gallons / rate;
       return {
         family: "chained-rate-conversion",
-        stem: `A ${vessel} holds ${volume} cubic feet of water, 1 cubic foot holds 7.5 gallons, and a pump delivers ${rate} gallons per minute. How many minutes does the pump take to fill it?`,
+        stem: `A ${vessel.vessel} holds ${volume} cubic feet of ${vessel.fluid}, 1 cubic foot holds 7.5 gallons, and a ${vessel.filler} delivers ${rate} gallons per minute. How many minutes does filling it take?`,
         answer,
         wrong: [
           [round3(volume / (7.5 * rate)), "This divides by the 7.5 gallons per cubic foot instead of multiplying by it."],
           [round3(volume / rate), "This ignores the conversion from cubic feet to gallons."],
-          [round3(rate * 7.5), "This multiplies the pump rate by the conversion factor and never uses the tank size."],
+          [round3(rate * 7.5), `This multiplies the ${vessel.filler} rate by the conversion factor and never uses the ${vessel.vessel} size.`],
           [gallons, "This is the capacity in gallons, not the time to fill it."],
           [round3(volume * 7.5 * rate), "This multiplies by the pump rate; time is capacity divided by rate."],
         ],
-        why: `The tank holds ${volume} × 7.5 = ${gallons} gallons. At ${rate} gallons per minute it fills in ${gallons}/${rate} = ${answer} minutes.`,
+        why: `The ${vessel.vessel} holds ${volume} × 7.5 = ${gallons} gallons. At ${rate} gallons per minute it fills in ${gallons}/${rate} = ${answer} minutes.`,
         steps: ["Convert cubic feet to gallons.", "Divide the gallons by the pump rate.", "Check the units: gallons ÷ gallons per minute leaves minutes."],
         principles: ["Time = quantity ÷ rate, after both are expressed in matching units."],
         hint: "Convert to a common unit before dividing by the rate.",

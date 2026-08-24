@@ -2851,12 +2851,9 @@ SHAPES["transformations"] = {
       const newY = factor * pointY + raise;
       return {
         family: "combined-transformation-of-a-point",
-        stem: choose(variant, [
-          `The point (${pointX}, ${pointY}) lies on y = f(x). Which point lies on y = ${factor}f(x ${MINUS} ${shift}) + ${raise}?`,
-          `If f(${pointX}) = ${pointY}, which point is on the graph of y = ${factor}f(x ${MINUS} ${shift}) + ${raise}?`,
-          `Given (${pointX}, ${pointY}) on y = f(x), the transformed graph y = ${factor}f(x ${MINUS} ${shift}) + ${raise} contains which point?`,
-          `Applying y = ${factor}f(x ${MINUS} ${shift}) + ${raise} to the point (${pointX}, ${pointY}) of y = f(x) gives which point?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the image of (${pointX}, ${pointY}) under y = ${factor}f(x ${MINUS} ${shift}) + ${raise}`,
+        }),
         answer: point(newX, newY),
         wrong: [
           [point(pointX - shift, newY), "The horizontal shift moves the graph right, so the x-coordinate increases."],

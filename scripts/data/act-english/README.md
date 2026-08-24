@@ -69,7 +69,8 @@ non-underlined question asks about.`,
   wrong noun, a redundancy the sentence already contains.
 - **NO CHANGE must be right often enough to be worth considering.** Across the
   bank the keep rate has to land between 20% and 30%, which is where the real
-  test sits. A bank where NO CHANGE is never correct teaches students to ignore
+  test sits. The rate is `keeps / underlined questions` — non-underlined
+  rhetorical questions have no NO CHANGE choice and are not in the denominator. A bank where NO CHANGE is never correct teaches students to ignore
   it, and a bank where it is usually correct teaches them to pick it.
 - Passage length 250–450 words, 12–18 questions per passage.
 - Every set reaches all three reporting domains.

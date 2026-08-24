@@ -278,6 +278,19 @@ Where this stopped, precisely, so the next session does not repeat the audit.
 
 ### In progress, uncommitted at the point of stopping
 
+- `scripts/data/act-english/` holds `index.js`, `README.md`, and **passage 001
+  of 40** (`001-key-counter.js`, personal essay, 16 questions at 5 PoW / 3 KoL /
+  8 CSE, 5 Easy / 7 Medium / 4 Hard, 3 NO CHANGE keys of 12 underlined = 25%).
+  It is authored but **not yet verified by a harness** — `check-passages.js`
+  still has no act-english rules, and nothing loads the file, so `npm run check`
+  passing says nothing about it. Codex Task 1 in `docs/CODEX_LANE.md` is that
+  harness; run it against this passage first.
+- The keep rate is defined as `keeps / underlined questions` — non-underlined
+  rhetorical questions carry no NO CHANGE and stay out of the denominator. This
+  is now stated in the authoring README so the checker matches the authoring.
+
+Superseded note, kept for the record:
+
 - `scripts/data/act-english/` exists with `index.js` and `README.md` only. The
   README is the authoring contract and the build arithmetic (40 passages:
   12 × 16 at 5/3/8, 3 × 15 at 5/2/8, 13 × 14 at 4/2/8, 12 × 13 at 4/2/7 →

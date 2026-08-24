@@ -2627,12 +2627,9 @@ SHAPES["domain and range"] = {
       const answer = constant / coefficient;
       return {
         family: "domain-of-decreasing-radicand",
-        stem: choose(variant, [
-          `What is the greatest value of x in the domain of f(x) = √(${constant} ${MINUS} ${coefficient}x)?`,
-          `The function f(x) = √(${constant} ${MINUS} ${coefficient}x) is defined for x no larger than which number?`,
-          `For f(x) = √(${constant} ${MINUS} ${coefficient}x), the largest allowed value of x is what?`,
-          `The domain of f(x) = √(${constant} ${MINUS} ${coefficient}x) ends at which value of x?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the greatest real value in the domain of f(x) = √(${constant} ${MINUS} ${coefficient}x)`,
+        }),
         answer,
         wrong: [
           [constant, `This ignores the coefficient ${coefficient} multiplying x.`],

@@ -834,12 +834,9 @@ SHAPES["unit conversion"] = {
       const amount = answer * unit.factor;
       return {
         family: "single-step-conversion-down",
-        stem: choose(variant, [
-          `Rewriting ${amount} ${unit.to} in the larger unit gives how many ${unit.from}?`,
-          `${amount} ${unit.to} is the same as what number of ${unit.from}?`,
-          `Express ${amount} ${unit.to} in ${unit.from}.`,
-          `A reading of ${amount} ${unit.to} corresponds to which measurement in ${unit.from}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of ${unit.from} equivalent to ${amount} ${unit.to}`,
+        }),
         answer,
         wrong: [
           [round3(amount / (unit.factor * 2)), "This divides by twice the conversion factor."],

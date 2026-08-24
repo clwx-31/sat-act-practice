@@ -2787,12 +2787,10 @@ SHAPES["transformations"] = {
       const answer = pointX + shift;
       return {
         family: "horizontal-shift-of-a-point",
-        stem: choose(variant, [
-          `The graph of y = f(x) passes through (${pointX}, ${pointY}). The graph of y = f(x ${MINUS} ${shift}) passes through (k, ${pointY}). ${ask(variant, "k")}`,
-          `If f(${pointX}) = ${pointY}, for which value of k does f(k ${MINUS} ${shift}) equal ${pointY}?`,
-          `Given that (${pointX}, ${pointY}) lies on y = f(x), the point with the same y-value on y = f(x ${MINUS} ${shift}) has which x-coordinate?`,
-          `The point (${pointX}, ${pointY}) is on y = f(x). Where does it move on the graph of y = f(x ${MINUS} ${shift})?`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `f(k ${MINUS} ${shift}) = ${pointY}, given f(${pointX}) = ${pointY}`,
+          parameter: "k",
+        }),
         answer,
         wrong: [
           [pointX - shift, "Subtracting inside the function shifts the graph right, not left."],

@@ -1011,12 +1011,12 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const pairs = [[30, 60], [20, 30], [40, 60], [12, 24], [10, 15], [45, 90]];
       const [slow, fast] = pairs[(s + variant) % pairs.length];
-      const mover = choose(variant, ["driver", "courier", "bus", "van"]);
+      const trip = scene(variant, TRAVEL);
       const leg = lcm(slow, fast);
       const answer = (2 * slow * fast) / (slow + fast);
       return {
         family: "average-speed-two-legs",
-        stem: `A ${mover} covers ${leg} miles at ${slow} miles per hour and then returns over the same ${leg} miles at ${fast} miles per hour. What is the average speed for the whole trip, in miles per hour?`,
+        stem: `A ${trip.mover} covers ${leg} miles along the ${trip.route} at ${slow} miles per hour and then returns over the same route at ${fast} miles per hour. What is the average speed for the whole trip, in miles per hour?`,
         answer,
         wrong: [
           [slow, "This is the speed of the slower leg only."],

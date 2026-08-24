@@ -602,12 +602,9 @@ SHAPES["complex numbers"] = {
       const [legA, legB, hypotenuse] = TRIPLES[(s + variant) % TRIPLES.length];
       return {
         family: "complex-plane-modulus",
-        stem: choose(variant, [
-          `In the complex plane, what is the distance from the origin to the point that represents ${legA} ${MINUS} ${legB}i?`,
-          `A point in the complex plane represents ${legA} ${MINUS} ${legB}i. How far is it from the origin?`,
-          `What is the modulus |${legA} ${MINUS} ${legB}i|?`,
-          `Plotted as a point, ${legA} ${MINUS} ${legB}i lies at which distance from 0?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the modulus |${legA} ${MINUS} ${legB}i|`,
+        }),
         answer: hypotenuse,
         wrong: [
           [Math.abs(legA - legB), "This subtracts the coordinates; distance from the origin uses the Pythagorean relationship."],

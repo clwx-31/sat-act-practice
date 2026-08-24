@@ -181,6 +181,64 @@ counts:
    gate to hit a count. Update `scripts/smoke-static.js` (which reads
    `targetPerSection`), the README table, and the coverage report together.
 
+## Two-agent lanes
+
+Two agents work this repository in parallel: **Claude** in the primary checkout
+on `main`, and **Codex** in a separate worktree on `codex-lane`. The split is by
+file ownership, and the paths do not overlap, so merges between the lanes are
+always clean.
+
+| Lane | Owns | Nature of the work |
+| --- | --- | --- |
+| **Codex** | `scripts/*.js`, `scripts/lib/*.js`, `app.js`, `core.js`, `styles.css`, `booklet.js`, `print.js`, `index.html`, `tests/` | Mechanical, rule-verified: a gate says pass or fail |
+| **Claude** | `scripts/data/**`, `guides/**`, `docs/**`, `README.md` | Authored prose: only a person reading it can judge it |
+
+`content/catalog.json`, `content/banks/`, and `content/generated/` are shared.
+Change them only in a commit that also ships the work requiring the change, and
+say so in the commit body.
+
+Rules that hold in both lanes:
+
+- **A gate is the contract, not review.** Neither agent reviews the other's
+  work. Codex is done when its check passes; Claude is done when
+  `node scripts/check-passages.js <section>` passes.
+- **Stay in your lane.** If work requires a file the other lane owns, stop and
+  write the requirement into `docs/QUESTION_QUALITY_HANDOFF.md` instead of
+  editing across the boundary.
+- **Commit only paths your lane owns.** Never `git add -A`.
+- **Do not push, merge, rebase, or switch branches.** The user does that.
+
+## Context hygiene
+
+These rules exist because violating them has repeatedly ended sessions by
+exhausting the context window. They are not style preferences.
+
+- **Never read a bank or a generated bank.** `content/banks/` is 11 MB and
+  `content/generated/` is 9.4 MB; `content/banks/act-writing.json` alone is
+  3.1 MB, which is roughly 800k tokens and larger than most context windows.
+  Query them instead, and print only aggregates:
+
+  ```sh
+  node -e "const b=require('./content/banks/act-english.json');console.log(b.length)"
+  ```
+
+- **Pipe every gate through `tail`.** A failing report is a count plus the first
+  few offenders, never a full listing:
+
+  ```sh
+  npm run check:shapes -- act-mathematics 2>&1 | tail -30
+  ```
+
+- **Do not read prior authored files for style.** One ACT Reading passage is
+  ~260 lines; reading eight to warm up spends thousands of lines of context
+  before a word is written. Read one, or read the contract README.
+- **Read only the checkpoint.** `docs/QUESTION_QUALITY_HANDOFF.md` is ~400
+  lines. At session start read its `## Checkpoint` section; read the rest only
+  when the task actually needs it.
+- **Stop at a boundary you chose.** Work in units that end in a commit — one
+  passage, one shape family. Update the checkpoint and stop deliberately rather
+  than being cut off mid-unit.
+
 ## Required verification
 
 Run the smallest relevant checks during development and the full check before a

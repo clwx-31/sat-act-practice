@@ -280,9 +280,9 @@ Where this stopped, precisely, so the next session does not repeat the audit.
 
 - `scripts/data/act-english/` exists with `index.js` and `README.md` only. The
   README is the authoring contract and the build arithmetic (40 passages:
-  20 × 14 at 6/3/5, 5 × 14 at 5/3/6, 15 × 15 at 6/3/6 → 575 questions,
-  235 / 120 / 220). **No passage has been written and no harness rules exist
-  for the section yet.**
+  12 × 16 at 5/3/8, 3 × 15 at 5/2/8, 13 × 14 at 4/2/8, 12 × 13 at 4/2/7 →
+  575 questions, 175 / 92 / 308). **No passage has been written and no harness
+  rules exist for the section yet.**
 
 ### The next four steps, in order
 
@@ -316,12 +316,19 @@ Where this stopped, precisely, so the next session does not repeat the audit.
 
 ### Known divergences, deliberately not changed
 
-- The catalog gives ACT English 235 / 120 / 220 across Production of Writing,
-  Knowledge of Language, and Conventions of Standard English (41% / 21% / 38%).
-  The real test weights Conventions closer to 52–55%. The catalog is the
-  enforced contract and rescaling it touches `content/catalog.json` and
-  `tests/content.test.js`, so the build plan above follows the catalog. Raise it
-  as a decision before authoring rather than after.
+- ~~The catalog gives ACT English 235 / 120 / 220…~~ **Decided 2026-08-24:
+  rescale to 175 / 92 / 308** (30% / 16% / 54%), which matches how the real ACT
+  weights the section. Taken now because zero English passages existed, so it
+  was the cheapest it would ever be.
+  **It is deliberately a two-step change.** `scripts/data/act-english/README.md`
+  already carries the new arithmetic and is what authoring follows.
+  `content/catalog.json` still says 235 / 120 / 220 and flips only in the commit
+  that ships the rebuilt bank — `validateAll({ requireComplete: true })` in
+  `scripts/lib/content.js:550` compares per-domain counts exactly, so editing
+  the catalog before the bank exists makes `npm run check` fail for every lane
+  until all 40 passages are written. `tests/content.test.js` needs no change:
+  it asserts only that domain targets sum to `targetPerSection`, and 175 + 92 +
+  308 = 575.
 - `strategy` on a reading item is shared across the items with the same
   subskill. Everything a student reads about *their* question — explanation,
   steps, hint, trap — is per item. Per-item strategy lines would be 575 more

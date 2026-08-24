@@ -83,18 +83,28 @@ rule can be applied at all.
 
 ## The build plan
 
-The bank must land on exactly 575 questions with the catalog's domain targets
-(235 Production of Writing / 120 Knowledge of Language / 220 Conventions of
-Standard English) and difficulty targets (175 Easy / 250 Medium / 150 Hard).
+The bank must land on exactly 575 questions with the difficulty targets
+(175 Easy / 250 Medium / 150 Hard) and the domain targets **175 Production of
+Writing / 92 Knowledge of Language / 308 Conventions of Standard English** —
+30% / 16% / 54%, which is how the real ACT weights the section.
+
+> `content/catalog.json` still carries the old 235 / 120 / 220 split. Author
+> against the numbers in this table, not against the catalog. The catalog flips
+> to 175 / 92 / 308 in the same commit that ships the rebuilt bank, because
+> `npm run check` enforces per-domain counts exactly and changing the catalog
+> any earlier turns the gate red for every lane until all 40 passages exist.
+
 That fixes the arithmetic in advance:
 
 | Passages | Questions each | Domain split (PoW / KoL / CSE) |
 | --- | --- | --- |
-| 20 | 14 | 6 / 3 / 5 |
-| 5 | 14 | 5 / 3 / 6 |
-| 15 | 15 | 6 / 3 / 6 |
+| 12 | 16 | 5 / 3 / 8 |
+| 3 | 15 | 5 / 2 / 8 |
+| 13 | 14 | 4 / 2 / 8 |
+| 12 | 13 | 4 / 2 / 7 |
 
-**40 passages, 575 questions, 235 / 120 / 220.**
+**40 passages, 575 questions, 175 / 92 / 308.** Every set stays inside the
+12–18 question rule in `PASSAGE_RULES`.
 
 Progress is `node scripts/check-passages.js act-english`, which reports
 passages, questions, tier counts, domain counts, and the NO CHANGE keep rate,

@@ -1942,11 +1942,10 @@ SHAPES["rational expressions"] = {
       for (let value = -lower + 1; value < upper; value += 1) integers.push(value);
       return {
         family: "rational-inequality-sign-chart",
-        stem: choose(variant, [
-          `How many integer values of x satisfy (x ${MINUS} ${upper})/(x + ${lower}) < 0?`,
-          `The inequality (x ${MINUS} ${upper})/(x + ${lower}) < 0 holds for how many integers x?`,
-          `Count the integers x for which (x ${MINUS} ${upper})/(x + ${lower}) is negative.`,
-        ]),
+        stem: pose(variant, "countIntegers", {
+          condition: `(x ${MINUS} ${upper})/(x + ${lower}) < 0`,
+          symbol: "x",
+        }),
         answer: integers.length,
         wrong: [
           [integers.length - 1, "This drops one interior integer; every integer strictly between the two critical values works."],

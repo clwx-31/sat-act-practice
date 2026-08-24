@@ -1784,11 +1784,10 @@ SHAPES.factoring = {
       const remainder = divisorRoot ** 3 + k * divisorRoot ** 2 - linear * divisorRoot + constant;
       return {
         family: "remainder-theorem-parameter",
-        stem: choose(variant, [
-          `When p(x) = x³ + kx² ${MINUS} ${linear}x + ${constant} is divided by (x ${MINUS} ${divisorRoot}), the remainder is ${remainder}. What is the value of k?`,
-          `The polynomial p(x) = x³ + kx² ${MINUS} ${linear}x + ${constant} leaves remainder ${remainder} upon division by (x ${MINUS} ${divisorRoot}). Which number is k?`,
-          `Dividing p(x) = x³ + kx² ${MINUS} ${linear}x + ${constant} by (x ${MINUS} ${divisorRoot}) leaves a remainder of ${remainder}. What does k equal?`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `p(x) = x³ + kx² ${MINUS} ${linear}x + ${constant} leaves remainder ${remainder} when divided by (x ${MINUS} ${divisorRoot})`,
+          parameter: "k",
+        }),
         answer: k,
         wrong: [
           [round3(remainder / (divisorRoot ** 2)) - divisorRoot, "This divides the whole remainder by the square of the root without first removing the other terms."],

@@ -2501,12 +2501,10 @@ SHAPES["notation"] = {
       const c = a + 1 + (s % 3);
       return {
         family: "composition-order-comparison",
-        stem: choose(variant, [
-          `Let f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}. What is the value of f(g(0)) ${MINUS} g(f(0))?`,
-          `For f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, evaluate f(g(0)) ${MINUS} g(f(0)).`,
-          `Given f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, the difference f(g(0)) ${MINUS} g(f(0)) equals what?`,
-          `If f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, which number is f(g(0)) ${MINUS} g(f(0))?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}`,
+          target: `f(g(0)) ${MINUS} g(f(0))`,
+        }),
         answer: a * d + b - (c * b + d),
         wrong: [
           [c * b + d - (a * d + b), "This reverses the subtraction, giving g(f(0)) − f(g(0))."],

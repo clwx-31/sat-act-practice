@@ -1235,7 +1235,10 @@ SHAPES["linear equations"] = {
       const secondC = ratio * firstC + 1 + variant;
       return {
         family: "system-parameter-no-solution",
-        stem: `The system of equations kx + ${firstY}y = ${firstC} and ${secondX}x + ${secondY}y = ${secondC} has no solution. What is the value of k?`,
+        stem: pose(variant, "parameterFor", {
+          condition: `the system kx + ${firstY}y = ${firstC} and ${secondX}x + ${secondY}y = ${secondC} has no solution`,
+          parameter: "k",
+        }),
         answer,
         wrong: [
           [ratio, `${ratio} is the factor relating the two equations, not the coefficient of x in the first one.`],

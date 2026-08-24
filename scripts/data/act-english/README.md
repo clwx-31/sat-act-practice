@@ -57,8 +57,17 @@ non-underlined question asks about.`,
 - **Non-underlined.** Carries its own `stem` and three distractors, and no NO
   CHANGE. These are the rhetorical questions: what a paragraph is for, where a
   sentence belongs, whether to add or delete something, whether the essay met a
-  stated goal. Mark the place with a bare `{n}` when the question asks about a
-  particular point in the text.
+  stated goal.
+
+  A non-underlined question comes in two kinds, and they are marked differently:
+
+  - **Point-specific** — it asks about one place in the text, such as adding a
+    sentence here or opening this paragraph. Mark that place with a bare `{n}`.
+  - **Whole-essay** — it asks about the essay as a whole: whether a stated goal
+    was met, where a paragraph belongs, whether a closing clause earns its keep.
+    These carry **no marker**, because on the real test they have no location;
+    they are printed after the passage. Number them **last in the set**, so
+    every marker that does exist still runs in passage order.
 
 ## Rules the generator enforces
 

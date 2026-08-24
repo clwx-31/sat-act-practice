@@ -299,6 +299,40 @@ Superseded note, kept for the record:
   575 questions, 175 / 92 / 308). **No passage has been written and no harness
   rules exist for the section yet.**
 
+### Requirement for the Codex lane — marker rule is too strict
+
+`scripts/check-passages.js` (committed on `codex-lane` as `f946286`) requires a
+`{n}` marker for every question. It should not. Run against passages 001 and 002
+it reports 5 problems, and all five are the same false positive:
+
+```
+act-english-p001 q15: needs exactly one {15} marker
+act-english-p001 q16: needs exactly one {16} marker
+act-english-p002 q14: needs exactly one {14} marker
+```
+
+Those are **whole-essay questions** — *"Suppose the writer's goal had been…"*,
+*"Paragraph 3 should be placed:"*. On the real ACT they have no location in the
+text; they are printed after the passage. The checkpoint spec already said `{n}`
+is *optional* for a non-underlined question.
+
+The rule the harness should enforce, now written into
+`scripts/data/act-english/README.md`:
+
+- An **underlined** question needs exactly one `{n text}` marker. (Correct today.)
+- A **point-specific non-underlined** question needs exactly one bare `{n}`.
+- A **whole-essay non-underlined** question carries **no marker at all**, and
+  every such question must be numbered last in the set — which keeps the markers
+  that do exist running in passage order.
+
+Distinguish them by whether a marker exists, not by a new field: a question with
+no marker is valid only if it is non-underlined and its number is greater than
+every numbered marker in the passage.
+
+Everything else the harness reports is correct, including the keep-rate
+denominator (`6/23 underlined`, 26.1%) and the on-pace domain and difficulty
+tables, which show 0 gap on all six rows at 30 questions.
+
 ### The next four steps, in order
 
 1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes

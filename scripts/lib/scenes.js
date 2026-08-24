@@ -51,6 +51,18 @@ const TRAVEL = [
   { mover: "tractor", verb: "hauls", route: "farm track", unit: "miles", place: "barn" },
 ];
 
+// A watercraft moves while a current supplies a perpendicular velocity.
+const WATERCRAFT = [
+  { craft: "boat", water: "harbor" },
+  { craft: "kayak", water: "inlet" },
+  { craft: "ferry", water: "channel" },
+  { craft: "raft", water: "river" },
+  { craft: "skiff", water: "estuary" },
+  { craft: "launch", water: "bay" },
+  { craft: "canoe", water: "lake" },
+  { craft: "barge", water: "canal" },
+];
+
 // A thing is bought and sold.
 const RETAIL = [
   { item: "notebook", plural: "notebooks", shop: "stationer" },
@@ -200,4 +212,5 @@ module.exports = {
   TRAVEL,
   VENUE,
   VESSEL,
+  WATERCRAFT,
 };

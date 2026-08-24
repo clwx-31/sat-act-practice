@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { GROUND, RECIPE, scene, TRAVEL, VESSEL } = require("./lib/scenes");
+const { GROUND, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -1061,10 +1061,10 @@ SHAPES["dimensional reasoning"] = {
   Hard: [
     (s, variant) => {
       const [north, east, resultant] = TRIPLES[(s * 3 + variant) % TRIPLES.length];
-      const craft = choose(variant, ["boat", "kayak", "ferry", "raft"]);
+      const trip = scene(variant, WATERCRAFT);
       return {
         family: "vector-resultant-speed",
-        stem: `A ${craft} is driven due north at ${north} kilometres per hour while a current carries it due east at ${east} kilometres per hour. What is the resulting speed, in kilometres per hour?`,
+        stem: `In a ${trip.water}, a ${trip.craft} is driven due north at ${north} kilometres per hour while a current carries it due east at ${east} kilometres per hour. What is the resulting speed, in kilometres per hour?`,
         answer: resultant,
         wrong: [
           [Math.abs(north - east), "This subtracts the components, which would apply only if they pointed along the same line in opposite directions."],

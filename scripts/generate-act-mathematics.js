@@ -2462,12 +2462,10 @@ SHAPES["notation"] = {
       const answer = a * (2 * x + h);
       return {
         family: "difference-quotient",
-        stem: choose(variant, [
-          `For f(x) = ${a}x², what is the value of (f(${x} + ${h}) ${MINUS} f(${x}))/${h}?`,
-          `Let f(x) = ${a}x². Evaluate (f(${x} + ${h}) ${MINUS} f(${x}))/${h}.`,
-          `Given f(x) = ${a}x², the difference quotient (f(${x} + ${h}) ${MINUS} f(${x}))/${h} equals what?`,
-          `If f(x) = ${a}x², which number is (f(${x} + ${h}) ${MINUS} f(${x}))/${h}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(x) = ${a}x²`,
+          target: `(f(${x} + ${h}) ${MINUS} f(${x}))/${h}`,
+        }),
         answer,
         wrong: [
           [a * (2 * x + h) * h, "This never divides by the change in x."],

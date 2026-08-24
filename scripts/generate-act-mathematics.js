@@ -2754,12 +2754,10 @@ SHAPES["transformations"] = {
       const answer = factor * pointY;
       return {
         family: "vertical-stretch-of-a-point",
-        stem: choose(variant, [
-          `The graph of y = f(x) contains (${pointX}, ${pointY}). What is the y-value of y = ${factor}f(x) at x = ${pointX}?`,
-          `If f(${pointX}) = ${pointY}, what is the value of ${factor}f(${pointX})?`,
-          `The point (${pointX}, ${pointY}) lies on y = f(x). The graph of y = ${factor}f(x) passes through (${pointX}, k). What is k?`,
-          `Given f(${pointX}) = ${pointY}, the stretched graph y = ${factor}f(x) has which y-value at x = ${pointX}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(${pointX}) = ${pointY}`,
+          target: `${factor}f(${pointX})`,
+        }),
         answer,
         wrong: [
           [pointY + factor, "This adds the factor instead of multiplying by it."],

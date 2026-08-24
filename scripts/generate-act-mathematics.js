@@ -1265,11 +1265,10 @@ SHAPES["linear equations"] = {
       const constant = 9 + (s % 12);
       return {
         family: "parameter-for-no-solution",
-        stem: choose(variant, [
-          `For what value of k does the equation k(x + ${inside}) ${MINUS} ${subtracted}x = ${rightCoefficient}x + ${constant} have no solution?`,
-          `The equation k(x + ${inside}) ${MINUS} ${subtracted}x = ${rightCoefficient}x + ${constant} has no solution for exactly one value of k. Which value is it?`,
-          `Which value of k makes k(x + ${inside}) ${MINUS} ${subtracted}x = ${rightCoefficient}x + ${constant} true for no value of x?`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `k(x + ${inside}) ${MINUS} ${subtracted}x = ${rightCoefficient}x + ${constant} has no solution`,
+          parameter: "k",
+        }),
         answer,
         wrong: [
           [rightCoefficient - subtracted, "This subtracts the coefficients instead of adding them; the x terms must cancel completely."],

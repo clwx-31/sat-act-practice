@@ -2270,12 +2270,11 @@ SHAPES["exponents"] = {
       const answer = m * outer;
       return {
         family: "negative-fractional-exponent-simplification",
-        stem: choose(variant, [
-          `For x > 0, (x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) = x^n. ${ask(variant, "n")}`,
-          `The expression (x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) equals x^n for x > 0. What is n?`,
-          `Simplify (x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) to x^n. Which value is n?`,
-          `If (x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) is written as x^n, n equals what?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `(x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) for x > 0`,
+          form: "x^n",
+          target: "n",
+        }),
         answer,
         wrong: [
           [-answer, "Two negative exponents multiply to a positive exponent, not a negative one."],

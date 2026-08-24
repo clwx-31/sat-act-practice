@@ -2817,12 +2817,9 @@ SHAPES["transformations"] = {
       const pointY = 3 + (s % 6);
       return {
         family: "reflection-across-an-axis",
-        stem: choose(variant, [
-          `The point (${pointX}, ${pointY}) lies on the graph of y = f(x). Which point must lie on the graph of y = ${MINUS}f(x)?`,
-          `If f(${pointX}) = ${pointY}, which point is on the graph of y = ${MINUS}f(x)?`,
-          `Reflecting the graph of y = f(x) to obtain y = ${MINUS}f(x) sends (${pointX}, ${pointY}) to which point?`,
-          `Given that (${pointX}, ${pointY}) is on y = f(x), the graph of y = ${MINUS}f(x) contains which point?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the image of (${pointX}, ${pointY}) under the transformation y = ${MINUS}f(x)`,
+        }),
         answer: point(pointX, -pointY),
         wrong: [
           [point(-pointX, pointY), "This reflects across the y-axis, which is the graph of f(−x), not −f(x)."],

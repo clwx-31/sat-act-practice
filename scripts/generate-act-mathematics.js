@@ -1971,11 +1971,10 @@ SHAPES["rational expressions"] = {
       const answer = frac(y - x, y + x);
       return {
         family: "complex-fraction-simplification",
-        stem: choose(variant, [
-          `If x = ${x} and y = ${y}, what is the value of (1/x ${MINUS} 1/y)/(1/x + 1/y)?`,
-          `Evaluate (1/x ${MINUS} 1/y)/(1/x + 1/y) when x = ${x} and y = ${y}.`,
-          `For x = ${x} and y = ${y}, the complex fraction (1/x ${MINUS} 1/y)/(1/x + 1/y) equals what?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `x = ${x} and y = ${y}`,
+          target: `(1/x ${MINUS} 1/y)/(1/x + 1/y)`,
+        }),
         answer,
         wrong: [
           [frac(x - y, x + y), "This reverses the numerator; clearing the fractions gives y − x on top, not x − y."],

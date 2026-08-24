@@ -2598,12 +2598,9 @@ SHAPES["domain and range"] = {
       const minimum = 2 + (s % 9);
       return {
         family: "range-of-upward-parabola",
-        stem: choose(variant, [
-          `The function f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum} has which range?`,
-          `What is the range of f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum}?`,
-          `For f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum}, the set of possible output values is described by which statement?`,
-          `Which description gives the range of f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the range of f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum}`,
+        }),
         answer: `f(x) ≥ ${minimum}`,
         wrong: [
           [`f(x) ≥ ${vertexX}`, `${vertexX} is the x-coordinate of the vertex; the range is built from the y-coordinate.`],

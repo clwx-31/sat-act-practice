@@ -2540,12 +2540,9 @@ SHAPES["domain and range"] = {
       const numeratorConstant = 1 + (s % 7);
       return {
         family: "domain-exclusion-rational",
-        stem: choose(variant, [
-          `The function f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) is defined for every real number except which value of x?`,
-          `For which value of x is f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) undefined?`,
-          `Which real number must be excluded from the domain of f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded})?`,
-          `The domain of f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) omits exactly one number. Which one?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the real value excluded from the domain of f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded})`,
+        }),
         answer: excluded,
         wrong: [
           [-excluded, "This flips the sign; the denominator vanishes where x equals the subtracted number."],

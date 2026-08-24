@@ -1089,11 +1089,9 @@ SHAPES["dimensional reasoning"] = {
       const vy = totalY - uy;
       return {
         family: "vector-sum-magnitude",
-        stem: choose(variant, [
-          `Vectors u and v have components u = ⟨${num(ux)}, ${num(uy)}⟩ and v = ⟨${num(vx)}, ${num(vy)}⟩. What is the magnitude of u + v?`,
-          `For u = ⟨${num(ux)}, ${num(uy)}⟩ and v = ⟨${num(vx)}, ${num(vy)}⟩, the length |u + v| equals what?`,
-          `Adding the vectors ⟨${num(ux)}, ${num(uy)}⟩ and ⟨${num(vx)}, ${num(vy)}⟩ produces a vector of which magnitude?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the magnitude of ⟨${num(ux)}, ${num(uy)}⟩ + ⟨${num(vx)}, ${num(vy)}⟩`,
+        }),
         answer: magnitude,
         wrong: [
           [Math.abs(totalX - totalY), "This subtracts the two components of the sum instead of using the Pythagorean length."],

@@ -2167,12 +2167,11 @@ SHAPES["exponents"] = {
       const degree = p * q - r;
       return {
         family: "combined-exponent-rules-degree",
-        stem: choose(variant, [
-          `For x > 0, (${a}x^${p})^${q}/(${c}x^${r}) is equivalent to kx^n. ${ask(variant, "n")}`,
-          `The expression (${a}x^${p})^${q}/(${c}x^${r}) equals kx^n for all positive x. What is n?`,
-          `Simplified to the form kx^n, the expression (${a}x^${p})^${q}/(${c}x^${r}) has which exponent n?`,
-          `If (${a}x^${p})^${q}/(${c}x^${r}) = kx^n for x > 0, n equals what?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `(${a}x^${p})^${q}/(${c}x^${r}) for x > 0`,
+          form: "kx^n",
+          target: "n",
+        }),
         answer: degree,
         wrong: [
           [p * q + r, "This adds the denominator's exponent; division subtracts it."],

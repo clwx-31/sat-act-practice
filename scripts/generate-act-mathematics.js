@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { GROUND, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { GROUND, MEMBERSHIP, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -1204,10 +1204,10 @@ SHAPES["linear equations"] = {
       const joining = 40 + 10 * (s % 7);
       const months = 4 + (s % 8);
       const total = joining + monthly * months;
-      const facility = choose(variant, ["climbing gym", "maker space", "rowing club", "art studio"]);
+      const membership = scene(variant, MEMBERSHIP);
       return {
         family: "linear-model-solve-for-input",
-        stem: `A ${facility} charges a one-time fee of $${joining} plus $${monthly} per month. A member has paid $${total} in total. For how many months has the member belonged?`,
+        stem: `A ${membership.service} charges a one-time fee of $${joining} plus $${monthly} per month. A ${membership.member} has paid $${total} in total. For how many months has the membership lasted?`,
         answer: months,
         wrong: [
           [round3(total / (monthly + joining)), "This divides the total by the sum of the two fees, which mixes a one-time charge with a monthly rate."],

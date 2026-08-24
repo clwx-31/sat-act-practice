@@ -161,6 +161,18 @@ const FINANCE = [
   { account: "fixed-term account", payer: "lender", plan: "studio hire", earner: "distributor" },
 ];
 
+// A membership combines one enrollment charge with a monthly rate.
+const MEMBERSHIP = [
+  { service: "climbing gym", member: "climber" },
+  { service: "maker space", member: "maker" },
+  { service: "rowing club", member: "rower" },
+  { service: "art studio", member: "artist" },
+  { service: "language school", member: "learner" },
+  { service: "tennis center", member: "player" },
+  { service: "music workshop", member: "musician" },
+  { service: "community garden", member: "gardener" },
+];
+
 // Tickets are sold to an event at two prices.
 const VENUE = [
   { venue: "planetarium", full: "adult", reduced: "child", token: "tickets" },
@@ -203,6 +215,7 @@ module.exports = {
   COLLECTION,
   FINANCE,
   GROUND,
+  MEMBERSHIP,
   PRODUCTION,
   RECIPE,
   RETAIL,

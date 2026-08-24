@@ -65,6 +65,18 @@ const RETAIL = [
   { item: "thermos", plural: "thermoses", shop: "camping supplier" },
 ];
 
+// A recipe scales one measured ingredient across batches.
+const RECIPE = [
+  { dish: "soup", ingredient: "stock" },
+  { dish: "scone", ingredient: "buttermilk" },
+  { dish: "salsa", ingredient: "tomato purée" },
+  { dish: "bread", ingredient: "milk" },
+  { dish: "sorbet", ingredient: "fruit juice" },
+  { dish: "stew", ingredient: "broth" },
+  { dish: "pancake", ingredient: "oat drink" },
+  { dish: "custard", ingredient: "cream" },
+];
+
 // A vessel holds or transfers a fluid.
 const VESSEL = [
   { vessel: "tank", filler: "pump", fluid: "water", unit: "liters" },
@@ -180,6 +192,7 @@ module.exports = {
   FINANCE,
   GROUND,
   PRODUCTION,
+  RECIPE,
   RETAIL,
   SOLUTION,
   SURFACE,

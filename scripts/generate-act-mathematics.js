@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { scene, TRAVEL } = require("./lib/scenes");
+const { RECIPE, scene, TRAVEL } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -881,11 +881,12 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const cupsPerBatch = choose(s, [2, 3, 5, 6]);
       const batches = choose(s * 2 + 1 + variant, [8, 12, 16, 20]);
-      const liquid = choose(variant, ["stock", "cider", "buttermilk", "tomato purée"]);
+      const recipe = scene(variant, RECIPE);
+      const liquid = recipe.ingredient;
       const answer = (cupsPerBatch * batches) / 4;
       return {
         family: "recipe-scaling-conversion",
-        stem: `A recipe uses ${cupsPerBatch} cups of ${liquid} per batch, and 1 quart equals 4 cups. How many quarts of ${liquid} are needed for ${batches} batches?`,
+        stem: `A ${recipe.dish} recipe uses ${cupsPerBatch} cups of ${liquid} per batch, and 1 quart equals 4 cups. How many quarts of ${liquid} are needed for ${batches} batches?`,
         answer,
         wrong: [
           [round3(cupsPerBatch / 4), "This converts one batch and forgets the remaining batches."],

@@ -73,9 +73,20 @@ test("ACT English requires ordered question numbers and matching marker kinds", 
 
   const errors = checkPassages("act-english", [passage]).join("\n");
   assert.match(errors, /q3: number must be 3/);
-  assert.match(errors, /question markers must appear once each in passage order/);
+  assert.match(errors, /question markers must form a contiguous prefix in passage order/);
   assert.match(errors, /q1: needs exactly one \{1 text\} marker/);
   assert.match(errors, /q9: needs exactly one \{9\} marker/);
+});
+
+test("ACT English permits only a trailing block of unmarked whole-essay questions", () => {
+  const valid = validEnglishPassage();
+  valid.content = valid.content.replace("{11}", "").replace("{12}", "");
+  assert.deepEqual(checkPassages("act-english", [valid]), []);
+
+  const misplaced = validEnglishPassage();
+  misplaced.content = misplaced.content.replace("{9}", "");
+  const errors = checkPassages("act-english", [misplaced]).join("\n");
+  assert.match(errors, /q9: an unmarked whole-essay question must come after every marked question/);
 });
 
 test("ACT English enforces each question kind and distractor rationale", () => {

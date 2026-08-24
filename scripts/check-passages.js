@@ -192,14 +192,15 @@ function checkEnglishQuestion(passage, question, position, index, problems) {
 function checkEnglishMarkers(passage, questions, problems) {
   const where = passage && passage.id ? passage.id : "(passage with no id)";
   const markers = englishMarkers(passage.content);
-  const expected = questions.map((_, position) => position + 1);
   const found = markers.map((marker) => marker.number);
-  if (found.length !== expected.length || found.some((number, position) => number !== expected[position])) {
+  const expected = found.map((_, position) => position + 1);
+  if (found.some((number, position) => number !== expected[position])) {
     problems.push(
-      `${where}: question markers must appear once each in passage order as 1..${questions.length}` +
+      `${where}: question markers must form a contiguous prefix in passage order` +
         ` (found ${found.length ? found.join(", ") : "none"})`,
     );
   }
+  const lastMarked = found.length ? Math.max(...found) : 0;
 
   questions.forEach((question, position) => {
     if (!question || typeof question !== "object" || Array.isArray(question)) return;
@@ -207,9 +208,15 @@ function checkEnglishMarkers(passage, questions, problems) {
     const matches = markers.filter((marker) => marker.number === number);
     const underlined = hasOwn(question, "keep");
     const correctKind = matches.filter((marker) => underlined ? marker.text : !marker.text);
-    if (matches.length !== 1 || correctKind.length !== 1) {
+    if (underlined && (matches.length !== 1 || correctKind.length !== 1)) {
       problems.push(
-        `${where} q${number}: needs exactly one ${underlined ? `{${number} text}` : `{${number}}`} marker`,
+        `${where} q${number}: needs exactly one {${number} text} marker`,
+      );
+    } else if (!underlined && matches.length && (matches.length !== 1 || correctKind.length !== 1)) {
+      problems.push(`${where} q${number}: needs exactly one {${number}} marker`);
+    } else if (!underlined && !matches.length && number <= lastMarked) {
+      problems.push(
+        `${where} q${number}: an unmarked whole-essay question must come after every marked question`,
       );
     }
   });

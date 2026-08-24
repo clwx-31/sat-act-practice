@@ -2567,12 +2567,9 @@ SHAPES["domain and range"] = {
       const shift = 2 + (s % 10);
       return {
         family: "domain-of-square-root",
-        stem: choose(variant, [
-          `What is the least value of x in the domain of f(x) = √(x ${MINUS} ${shift})?`,
-          `The function f(x) = √(x ${MINUS} ${shift}) is defined for x greater than or equal to which number?`,
-          `For f(x) = √(x ${MINUS} ${shift}), the smallest allowed value of x is which number?`,
-          `The domain of f(x) = √(x ${MINUS} ${shift}) begins at which value of x?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the least real value in the domain of f(x) = √(x ${MINUS} ${shift})`,
+        }),
         answer: shift,
         wrong: [
           [-shift, "This flips the sign; the radicand is non-negative when x is at least the subtracted value."],

@@ -2723,12 +2723,10 @@ SHAPES["transformations"] = {
       const answer = pointY + shift;
       return {
         family: "vertical-shift-of-a-point",
-        stem: choose(variant, [
-          `The graph of y = f(x) passes through (${pointX}, ${pointY}). Through which y-value does the graph of y = f(x) + ${shift} pass when x = ${pointX}?`,
-          `If f(${pointX}) = ${pointY}, what is the value of f(${pointX}) + ${shift}?`,
-          `The point (${pointX}, ${pointY}) lies on y = f(x). The graph of y = f(x) + ${shift} contains the point (${pointX}, k). What is k?`,
-          `Given f(${pointX}) = ${pointY}, the transformed graph y = f(x) + ${shift} has which y-value at x = ${pointX}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(${pointX}) = ${pointY}`,
+          target: `f(${pointX}) + ${shift}`,
+        }),
         answer,
         wrong: [
           [pointY - shift, "Adding a constant outside the function shifts the graph up, not down."],

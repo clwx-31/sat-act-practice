@@ -963,11 +963,11 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const speed = 12 + (s % 9);
       const hours = 3 + (s % 5);
-      const mover = choose(variant, ["cyclist", "kayaker", "hiker", "scooter rider"]);
+      const trip = scene(variant, TRAVEL);
       const answer = speed * hours;
       return {
         family: "distance-from-rate-and-time",
-        stem: `A ${mover} moves at a constant ${speed} kilometres per hour for ${hours} hours. How many kilometres are covered?`,
+        stem: `A ${trip.mover} travels along the ${trip.route} at a constant ${speed} kilometres per hour for ${hours} hours. How many kilometres are covered?`,
         answer,
         wrong: [
           [round3(hours / speed), "This inverts the rate, giving hours per kilometre."],

@@ -413,9 +413,14 @@ SHAPES["number properties"] = {
       return {
         family: "arithmetic-series-sum",
         stem: choose(variant, [
-          `The first term of an arithmetic sequence is ${first}, and each term after the first is ${step} greater than the term before it. What is the sum of the first ${count} terms?`,
-          `An arithmetic sequence begins at ${first} and grows by ${step} at every step. What is the total of its first ${count} terms?`,
-          `In an arithmetic sequence, a₁ = ${first} and the common difference is ${step}. What is the sum of the first ${count} terms?`,
+          `Given an arithmetic sequence whose first term is ${first} and whose common difference is ${step}, what is the sum of its first ${count} terms?`,
+          `Suppose an arithmetic sequence begins with ${first} and increases by ${step} per term. Find the total of the first ${count} terms.`,
+          `Assume a₁ = ${first} and the common difference is ${step}. Calculate the sum through a${sub(count)}.`,
+          `Determine the sum of the first ${count} terms of the arithmetic sequence that starts at ${first} with common difference ${step}.`,
+          `Which value equals the sum of ${count} terms in an arithmetic sequence beginning at ${first} and advancing by ${step}?`,
+          `When an arithmetic sequence has first term ${first} and common difference ${step}, what do its first ${count} terms total?`,
+          `Let an arithmetic sequence start with ${first} and add ${step} for each successive term. Find S${sub(count)}.`,
+          `Take ${first} as the first term of an arithmetic sequence with common difference ${step}. Compute the sum of the first ${count} terms.`,
         ]),
         answer: total,
         wrong: [

@@ -2658,12 +2658,9 @@ SHAPES["domain and range"] = {
       const asymptote = 1 + (s % 6);
       return {
         family: "range-of-shifted-exponential",
-        stem: choose(variant, [
-          `What is the range of f(x) = ${shift}^x + ${asymptote}?`,
-          `The function f(x) = ${shift}^x + ${asymptote} takes which set of output values?`,
-          `For f(x) = ${shift}^x + ${asymptote}, which statement describes the range?`,
-          `Which description gives the range of f(x) = ${shift}^x + ${asymptote}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the range of f(x) = ${shift}^x + ${asymptote}`,
+        }),
         answer: `f(x) > ${asymptote}`,
         wrong: [
           [`f(x) ≥ ${asymptote}`, `${shift}^x is strictly positive and never reaches 0, so the value ${asymptote} itself is never attained.`],

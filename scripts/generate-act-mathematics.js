@@ -4513,12 +4513,9 @@ SHAPES["surface area"] = {
       const answer = 4 * radius * radius;
       return {
         family: "sphere-surface-area",
-        stem: choose(variant, [
-          `What is the surface area of a sphere of radius ${radius}, in terms of π?`,
-          `A sphere has radius ${radius}. Express its surface area in terms of π.`,
-          `Find the surface area of a sphere whose radius is ${radius}.`,
-          `The surface area of a sphere of radius ${radius} equals what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the surface area, in terms of π, of a sphere with radius ${radius}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(round3((4 * radius ** 3) / 3)), "This is the volume formula, (4/3)πr³, not the surface area."],

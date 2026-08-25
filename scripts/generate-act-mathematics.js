@@ -4681,7 +4681,9 @@ SHAPES["volume"] = {
       const answer = length * width * rise;
       return {
         family: "displacement-volume",
-        stem: `A rectangular tank with a ${length} by ${width} base holds water ${depth} units deep. A stone is lowered in and the water rises by ${rise} units without overflowing. What is the volume of the stone?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the volume of a stone that raises the water in a ${length} by ${width} rectangular tank by ${rise} units without overflowing`,
+        }),
         answer,
         wrong: [
           [length * width * depth, "This is the original volume of water, not the displaced amount."],

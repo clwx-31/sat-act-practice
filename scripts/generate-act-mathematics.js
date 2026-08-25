@@ -5377,18 +5377,16 @@ SHAPES["data displays"] = {
       const median = q1 + 4 + (s % 4);
       const q3 = median + 5 + (s % 3);
       const answer = q3 - q1;
+      const collection = scene(variant, COLLECTION);
       return {
         family: "interquartile-range-from-a-box-plot",
         stimulus: {
           type: "diagram",
-          content: `A box plot of daily bicycle counts has these five-number summary values.\n\nstatistic | value\nminimum | ${q1 - 6}\nfirst quartile | ${q1}\nmedian | ${median}\nthird quartile | ${q3}\nmaximum | ${q3 + 8}`,
+          content: `A ${collection.owner} made a box plot of daily ${collection.plural} placed on a ${collection.holder}. It has these five-number summary values.\n\nstatistic | value\nminimum | ${q1 - 6}\nfirst quartile | ${q1}\nmedian | ${median}\nthird quartile | ${q3}\nmaximum | ${q3 + 8}`,
         },
-        stem: choose(variant, [
-          "What is the interquartile range of the data shown?",
-          "According to the summary, what is the interquartile range?",
-          "The interquartile range of this distribution equals what?",
-          "Using the five-number summary, find the interquartile range.",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the interquartile range of the displayed ${collection.item} counts`,
+        }),
         answer,
         wrong: [
           [q3 + 8 - (q1 - 6), "This is the full range, from minimum to maximum, not the middle 50%."],

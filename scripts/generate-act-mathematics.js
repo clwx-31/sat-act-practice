@@ -6826,9 +6826,12 @@ SHAPES["perimeter and area"] = {
       const cutW = span(s, 3, 4);
       const cutH = span(s, 2, 4);
       const answer = outerW * outerH - cutW * cutH;
+      const ground = scene(variant, GROUND);
       return {
         family: "composite-l-shaped-area",
-        stem: `An L-shaped floor is formed by removing a ${cutW}-foot by ${cutH}-foot rectangular corner from a ${outerW}-foot by ${outerH}-foot rectangle. What is the area of the floor, in square feet?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the area of an L-shaped ${ground.region} formed by removing a ${cutW}-foot by ${cutH}-foot corner from a ${outerW}-foot by ${outerH}-foot rectangle`,
+        }),
         answer,
         wrong: [
           [outerW * outerH, "This is the full rectangle before the corner is removed."],

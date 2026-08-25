@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { COLLECTION, GROUND, HOURLY_SERVICE, MEMBERSHIP, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { COLLECTION, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -3174,9 +3174,10 @@ SHAPES["quadratic"] = {
       // h(t) = −16t² + speed·t + start; peak at t = speed/32.
       const peakTime = speed / 32;
       const answer = -16 * peakTime * peakTime + speed * peakTime + start;
+      const projectile = scene(variant, PROJECTILE);
       return {
         family: "projectile-maximum-height",
-        stem: `A ball is thrown upward from a height of ${start} feet with an initial speed of ${speed} feet per second, so its height after t seconds is h(t) = ${MINUS}16t² + ${speed}t + ${start}. What is the ball's maximum height, in feet?`,
+        stem: `A ${projectile.object} is ${projectile.verb} upward from a height of ${start} feet with an initial speed of ${speed} feet per second, so its height after t seconds is h(t) = ${MINUS}16t² + ${speed}t + ${start}. What is its maximum height, in feet?`,
         answer,
         wrong: [
           [start, "This is the release height, not the peak."],

@@ -37,6 +37,18 @@ const PRODUCTION = [
   { actor: "packer", verb: "seals", object: "cartons", site: "warehouse" },
 ];
 
+// An object follows a vertical projectile-height model.
+const PROJECTILE = [
+  { object: "ball", verb: "thrown" },
+  { object: "model rocket", verb: "launched" },
+  { object: "signal flare", verb: "fired" },
+  { object: "stone", verb: "tossed" },
+  { object: "training weight", verb: "propelled" },
+  { object: "beanbag", verb: "hurled" },
+  { object: "foam dart", verb: "shot" },
+  { object: "practice capsule", verb: "ejected" },
+];
+
 // Someone covers ground at a speed.
 const TRAVEL = [
   { mover: "cyclist", verb: "rides", route: "canal path", unit: "miles", place: "lake" },
@@ -230,6 +242,7 @@ module.exports = {
   HOURLY_SERVICE,
   MEMBERSHIP,
   PRODUCTION,
+  PROJECTILE,
   RECIPE,
   RETAIL,
   SOLUTION,

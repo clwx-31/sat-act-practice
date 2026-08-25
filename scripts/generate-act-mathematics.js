@@ -4891,7 +4891,9 @@ SHAPES["right-triangle trigonometry"] = {
       const answer = round3(distance * factor + eye);
       return {
         family: "angle-of-elevation-with-eye-height",
-        stem: `An observer whose eyes are ${eye} feet above the ground stands ${distance} feet from the base of a tower. The angle of elevation to the top of the tower is ${angle}°. To the nearest tenth of a foot, how tall is the tower?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest tenth of a foot, the tower height seen at a ${angle}° angle of elevation from ${distance} feet away by an observer whose eyes are ${eye} feet high`,
+        }),
         answer: round3(Math.round(answer * 10) / 10),
         wrong: [
           [round3(Math.round(distance * factor * 10) / 10), `This finds the height above eye level but never adds the observer's ${eye} feet.`],

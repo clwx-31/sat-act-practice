@@ -2209,6 +2209,7 @@ registerShapePhrasings("factoring", "factored-polynomial");
 registerShapePhrasings("exponent rules", "exponent-law");
 registerShapePhrasings("rational expressions", "rational-expression");
 registerShapePhrasings("quadratic equations", "quadratic-root");
+registerShapePhrasings("radical equations", "radical-equation");
 
 defineShapes({
   "factoring": {
@@ -2895,7 +2896,7 @@ defineShapes({
         const a = b * b - valid * other;
         return {
           family: "radical-extraneous-linear",
-          stem: `What is the solution to √(x ${signed(a)}) = x ${MINUS} ${b}?`,
+          stem: `What is the solution to √(x ${signed(a)}) = ${lin(1, -b)}?`,
           correct: valid,
           wrong: [
             [other, "This root of the squared equation makes the right side negative, so a principal square root cannot equal it."],

@@ -207,6 +207,33 @@ function linearCheck(a, b, c) {
 const SHAPES = {};
 const SHAPE_PHRASINGS = {};
 
+function completeWrongPool(correct, wrong) {
+  const completed = wrong.slice(0, 6);
+  const seen = new Set([label(correct), ...completed.map(([value]) => label(value))]);
+  if (typeof correct === "number") {
+    [1, -1, 2, -2, 3, -3, 4, -4].forEach((offset) => {
+      const candidate = correct + offset;
+      const text = label(candidate);
+      if (completed.length >= 5 || seen.has(text)) return;
+      seen.add(text);
+      completed.push([
+        candidate,
+        "This nearby value does not satisfy the original equation or condition.",
+      ]);
+    });
+  } else {
+    ["Cannot be determined", "None of these", "All real numbers"].forEach((candidate) => {
+      if (completed.length >= 5 || seen.has(candidate)) return;
+      seen.add(candidate);
+      completed.push([
+        candidate,
+        "This conclusion does not follow from the stated mathematical conditions.",
+      ]);
+    });
+  }
+  return completed;
+}
+
 function normalizeShapeSpec(spec, subskill, sequence, variant) {
   const phrasing = SHAPE_PHRASINGS[subskill];
   const stem = phrasing ? phrasing(spec.stem, variant, sequence) : spec.stem;
@@ -214,6 +241,7 @@ function normalizeShapeSpec(spec, subskill, sequence, variant) {
     ...spec,
     stem,
     answer: spec.correct,
+    wrong: completeWrongPool(spec.correct, spec.wrong || []),
     why: spec.explanation,
     hint: spec.hint || "Identify the governing relationship before substituting values.",
   };

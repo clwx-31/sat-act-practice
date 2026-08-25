@@ -574,6 +574,34 @@ The separately logged Science content defects — 31 tautological items, 31 with
 swapped-row distractor pairs, 63 `type: "graph"` items rendering a table — are
 real, are not what this metric is measuring, and remain open.
 
+### Measuring repetition: compare shapes, not stems — 2026-08-25
+
+Task 10 told Codex that SAT Math looked mechanical rather than needing the
+generator rewrite. That was wrong, and the way it was wrong is worth keeping.
+
+The claim rested on a stem-level sweep that found **one** near-duplicate pair.
+The audit reports **75%**. The audit is right. `shapeSignature` strips the scene
+preamble, every proper noun and every digit before comparing, so these collapse
+into a single shape:
+
+```
+x18  exponent rules|in the product x^# · x^# = x^k, what is k?
+x18  quadratic equations|what is the positive solution to x² = #?
+```
+
+Reproduced against the committed bank: **144 distinct shapes across 575 items,
+85.7% of items sharing a shape with another.** Eighteen items asking one
+question with different numbers are eighteen distinct strings and one question.
+
+**The lesson for every remaining section:** textual similarity is not the
+measure. A bank can have 575 unique stems and four distinct questions. When
+judging whether a section is repetitive, run the audit's signature, not a string
+comparison — and that is exactly the property the project exists to get right.
+
+Codex's blocker on the SAT Math rebuild — a Medium unit-conversion subskill with
+no shapes — is the same fact from the other side: the generator cannot rebuild
+because the shapes were never written. SAT Math needs Task 4.
+
 ### The next four steps, in order
 
 1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes

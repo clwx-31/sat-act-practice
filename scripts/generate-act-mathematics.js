@@ -6624,9 +6624,12 @@ SHAPES["percentages"] = {
       const second = span(s, 5, 4, 5);
       const answer = money(round3(price * (1 - first / 100) * (1 - second / 100)));
       const naive = money(round3(price * (1 - (first + second) / 100)));
+      const retail = scene(variant, RETAIL);
       return {
         family: "successive-discounts",
-        stem: `A coat priced at ${price} is marked down ${first}%, and the sale price is then reduced by a further ${second}%. What is the final price?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the final price of a ${retail.item} priced at ${price} after successive discounts of ${first}% and ${second}% at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [naive, `This subtracts ${first + second}% from the original price. The second discount applies to the already-reduced price, so the total reduction is smaller than the sum of the two percents.`],

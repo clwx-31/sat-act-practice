@@ -294,6 +294,7 @@ const TEXT_ANSWER = new Set();
 /* ------------------------------- Algebra -------------------------------- */
 
 registerShapePhrasings("solve", "linear-equation");
+registerShapePhrasings("interpret constants", "linear-model constant");
 
 defineShapes({
   "solve": {

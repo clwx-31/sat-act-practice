@@ -4953,12 +4953,10 @@ SHAPES["identities"] = {
       const denominator = numerator + 2 + (s % 4);
       return {
         family: "pythagorean-identity-basic",
-        stem: choose(variant, [
-          `If sin θ = ${numerator}/${denominator}, what is the value of sin²θ + cos²θ?`,
-          `For any angle θ with sin θ = ${numerator}/${denominator}, the expression sin²θ + cos²θ equals what?`,
-          `Given sin θ = ${numerator}/${denominator}, evaluate sin²θ + cos²θ.`,
-          `What is sin²θ + cos²θ when sin θ = ${numerator}/${denominator}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `sin θ = ${numerator}/${denominator}`,
+          target: "sin²θ + cos²θ",
+        }),
         answer: 1,
         wrong: [
           [frac(numerator, denominator), "This repeats the given sine rather than applying the identity."],

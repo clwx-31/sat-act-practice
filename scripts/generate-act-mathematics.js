@@ -5761,14 +5761,12 @@ SHAPES["counting"] = {
     (s, variant) => {
       const items = 4 + (s % 4);
       const answer = factorial(items);
+      const collection = scene(variant, COLLECTION);
       return {
         family: "arrangements-of-distinct-items",
-        stem: choose(variant, [
-          `In how many different orders can ${items} distinct books be arranged on a shelf?`,
-          `How many arrangements are there of ${items} different books in a row?`,
-          `${items} distinct posters are hung in a row. How many orderings are possible?`,
-          `How many ways can ${items} distinct objects be placed in order?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of orders for ${items} distinct ${collection.plural} placed in a row by a ${collection.owner}`,
+        }),
         answer,
         wrong: [
           [items * items, "This allows each position to repeat any item; the items are distinct and used once each."],

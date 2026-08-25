@@ -173,6 +173,18 @@ const MEMBERSHIP = [
   { service: "community garden", member: "gardener" },
 ];
 
+// A service charges once for setup and then by the hour.
+const HOURLY_SERVICE = [
+  "bike repair shop",
+  "kiln rental",
+  "darkroom",
+  "recording studio",
+  "practice room",
+  "workbench rental",
+  "editing suite",
+  "ceramics studio",
+];
+
 // Tickets are sold to an event at two prices.
 const VENUE = [
   { venue: "planetarium", full: "adult", reduced: "child", token: "tickets" },
@@ -215,6 +227,7 @@ module.exports = {
   COLLECTION,
   FINANCE,
   GROUND,
+  HOURLY_SERVICE,
   MEMBERSHIP,
   PRODUCTION,
   RECIPE,

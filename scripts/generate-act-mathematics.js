@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { GROUND, MEMBERSHIP, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { GROUND, HOURLY_SERVICE, MEMBERSHIP, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -2950,7 +2950,7 @@ SHAPES["linear"] = {
       const intercept = 3 + (s % 9);
       const input = 2 + (s % 5);
       const answer = slope * input + intercept;
-      const service = choose(variant, ["bike repair shop", "kiln rental", "darkroom", "recording studio"]);
+      const service = scene(variant, HOURLY_SERVICE);
       return {
         family: "linear-model-evaluate",
         stem: `A ${service} charges a flat ${intercept} plus ${slope} per hour. What is the total charge for a ${input}-hour session?`,

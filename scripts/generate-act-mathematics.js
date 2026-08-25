@@ -4103,12 +4103,9 @@ SHAPES["coordinate geometry"] = {
       const y2 = y1 + b;
       return {
         family: "distance-between-two-points",
-        stem: choose(variant, [
-          `What is the distance between (${x1}, ${y1}) and (${x2}, ${y2})?`,
-          `Two points are located at (${x1}, ${y1}) and (${x2}, ${y2}). How far apart are they?`,
-          `Find the distance from (${x1}, ${y1}) to (${x2}, ${y2}).`,
-          `The segment joining (${x1}, ${y1}) and (${x2}, ${y2}) has what length?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the distance between (${x1}, ${y1}) and (${x2}, ${y2})`,
+        }),
         answer: c,
         wrong: [
           [a + b, "This adds the horizontal and vertical changes; the distance is the hypotenuse of that right triangle."],

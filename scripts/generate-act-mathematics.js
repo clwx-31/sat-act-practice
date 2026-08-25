@@ -4396,7 +4396,9 @@ SHAPES["area"] = {
       const answer = outer * outer - inner * inner;
       return {
         family: "area-of-a-border",
-        stem: `A square photograph of side ${inner} is centred on a square mat of side ${outer}. What is the area of the mat that remains visible around the photograph?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the visible area of a square mat of side ${outer} around a centered square photograph of side ${inner}`,
+        }),
         answer,
         wrong: [
           [outer * outer, "This is the whole mat, without removing the photograph."],

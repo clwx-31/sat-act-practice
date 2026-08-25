@@ -8,7 +8,7 @@ module.exports = {
 {1 means} that for eleven years our house ran on a {2 rule between} eight in the
 morning and three in the afternoon, it was the middle of the night.
 
-[2] {3} We learned the floor. There {4 is} a board in the upstairs hall that
+[2] {3} We learned the floor. There {4 are} a board in the upstairs hall that
 speaks if you put weight on the middle of it and says nothing at the {5 edge, I
 could cross that hall} at eleven years old without a sound. My brother could
 not, and never learned, and I have thought since that this was {6 less a matter
@@ -124,7 +124,7 @@ hall.`,
         "which is singular.",
       steps: [
         "Look past the verb for the real subject: 'a board.'",
-        "Keep the singular verb that matches it.",
+        "Choose the singular verb that matches it.",
       ],
       hint: "'There' is never the subject; find the noun after the verb.",
       trap: "The two long clauses after the noun make the sentence feel plural by the end.",

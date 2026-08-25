@@ -4759,6 +4759,48 @@ defineShapes({
   },
 });
 
+registerShapePhrasings("circle equations", "coordinate-circle equation");
+
+defineShapes({
+  "circle equations": {
+    Easy: [
+      (t) => {
+        const h = t.int(-8, 8); const k = t.int(-8, 8); const r = t.int(2, 10);
+        return { family: "center-x-from-standard-form", stem: `A circle has equation (x ${signed(-h)})² + (y ${signed(-k)})² = ${r * r}. What is the x-coordinate of its center?`, correct: h,
+          wrong: [[-h, "This reads the sign in the squared binomial without reversing it."], [k, "This is the y-coordinate of the center."], [-k, "This reverses the y-coordinate's sign and reports the wrong coordinate."], [r, "This is the radius, not a center coordinate."]], explanation: `In (x ${MINUS} h)² + (y ${MINUS} k)² = r², the center is (h, k), so the x-coordinate is ${num(h)}.`, steps: ["Match each squared binomial to standard circle form.", "Reverse the displayed x-binomial sign to read h."], principles: ["A circle centered at (h, k) has equation (x − h)² + (y − k)² = r²."] };
+      },
+      (t) => {
+        const h = t.int(-7, 7); const k = t.int(-7, 7); const r = t.int(3, 12);
+        return { family: "radius-from-standard-form", stem: `The equation (x ${signed(-h)})² + (y ${signed(-k)})² = ${r * r} represents a circle. What is its radius?`, correct: r,
+          wrong: [[r * r, "This is the squared radius on the right side."], [2 * r, "This is the diameter."], [h, "This is a center coordinate."], [Math.abs(h) + Math.abs(k), "The center coordinates do not add to give the radius."]], explanation: `The right side is r² = ${r * r}, so the positive radius is √${r * r} = ${r}.`, steps: ["Identify the squared radius on the right side.", "Take its positive square root."], principles: ["The right side of standard circle form is the square of the radius."] };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const h = t.int(1, 8); const k = t.int(1, 8); const r = t.int(2, 9);
+        const answer = `(x ${MINUS} ${h})² + (y ${MINUS} ${k})² = ${r * r}`;
+        return { family: "write-standard-circle-equation", stem: `Which equation represents the circle centered at (${h}, ${k}) with radius ${r}?`, correct: answer,
+          wrong: [[`(x + ${h})² + (y + ${k})² = ${r * r}`, "This reverses both center coordinates."], [`(x ${MINUS} ${h})² + (y ${MINUS} ${k})² = ${r}`, "This uses the radius rather than its square."], [`(x ${MINUS} ${k})² + (y ${MINUS} ${h})² = ${r * r}`, "This swaps the center coordinates."], [`(x + ${h})² + (y ${MINUS} ${k})² = ${r * r}`, "This reverses only the x-coordinate."]], explanation: `Substitute h = ${h}, k = ${k}, and r = ${r} into (x ${MINUS} h)² + (y ${MINUS} k)² = r².`, steps: ["Place the center coordinates with opposite signs in the binomials.", "Square the radius on the right side."], principles: ["Standard circle form records center with opposite binomial signs."] };
+      },
+      (t) => {
+        const h = t.int(-6, 6); const k = t.int(-6, 6); const r = t.int(3, 12);
+        return { family: "vertical-point-on-circle", stem: `A circle centered at (${num(h)}, ${num(k)}) has radius ${r}. A point on the circle has x-coordinate ${num(h)}. What is the greater possible y-coordinate?`, correct: k + r,
+          wrong: [[k - r, "This is the lesser possible y-coordinate."], [r, "This is the vertical distance from the center, not the coordinate itself."], [k, "This is the center's y-coordinate, which is not on the circle at the same x-coordinate."], [h + r, "This adds the radius to the x-coordinate instead of the y-coordinate."]], explanation: `Directly above and below the center, y = ${num(k)} ± ${r}; the greater value is ${num(k + r)}.`, steps: ["Recognize that matching the center's x-coordinate gives vertical radius endpoints.", "Add the radius to the center's y-coordinate."], principles: ["Endpoints of a vertical diameter have y-coordinates k ± r."] };
+      },
+    ],
+    Hard: [
+      importedActShape("circle equations", "circles", "Hard", 0),
+      (t) => {
+        const h = t.nonzero(-9, 9); const k = t.int(-9, 9); const radiusSquared = h * h + k * k;
+        return { family: "circle-through-origin-radius-squared", stem: `A circle centered at (${num(h)}, ${num(k)}) passes through the origin. What is the square of its radius?`, correct: radiusSquared,
+          wrong: [[Math.abs(h) + Math.abs(k), "This adds coordinate distances instead of their squares."], [Math.hypot(h, k), "This is the radius, not its square."], [h * h - k * k, "This subtracts squared coordinate differences instead of adding them."], [h + k, "This adds signed coordinates rather than using distance."]], explanation: `The radius is the distance from (${num(h)}, ${num(k)}) to (0, 0), so r² = ${h}² + ${k}² = ${radiusSquared}.`, steps: ["Use the center-to-origin segment as a radius.", "Apply the squared distance formula without taking a square root."], principles: ["Squared distance between (h, k) and the origin is h² + k²."], verification: { kind: "sum", inputs: [h * h, k * k], expected: radiusSquared } };
+      },
+    ],
+  },
+});
+
+["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`circle equations|${tier}`));
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

@@ -3880,12 +3880,9 @@ SHAPES["circles"] = {
       const radius = 3 + (s % 10);
       return {
         family: "circle-area-in-terms-of-pi",
-        stem: choose(variant, [
-          `What is the area of a circle with radius ${radius}, in terms of π?`,
-          `A circle has radius ${radius}. What is its area?`,
-          `Express the area of a circle of radius ${radius} in terms of π.`,
-          `The area of a circle whose radius is ${radius} equals what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area in terms of π of a circle with radius ${radius}`,
+        }),
         answer: pi(radius * radius),
         wrong: [
           [pi(2 * radius), "This is the circumference, which uses 2πr rather than πr²."],

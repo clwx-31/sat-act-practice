@@ -4594,6 +4594,27 @@ defineShapes({
   },
 });
 
+registerShapePhrasings("samples and populations", "sampling inference");
+
+defineShapes({
+  "samples and populations": {
+    Easy: [
+      conceptualShape("identify-population", "A random sample of 200 students from a school is surveyed about lunch preferences. What is the population of interest?", "All students at the school", [["The 200 surveyed students", "Those students form the sample, not the full population."], ["All students in the city", "The study sampled one school and cannot automatically represent the city."], ["Only students who buy lunch", "The survey concerns all sampled students, not only one response group."], ["The survey questions", "Questions are the measurement instrument, not the population."]], "The population is the complete group the study aims to describe: all students at that school.", "A population is the entire group about which an inference is intended."),
+      conceptualShape("representative-random-sample", "Which method is most likely to produce a representative sample of voters in a town?", "Randomly select voters from the complete voter list", [["Survey visitors leaving one campaign rally", "A rally audience is systematically aligned with one campaign."], ["Ask only voters who volunteer online", "Volunteers can differ systematically from nonvolunteers."], ["Interview the first 100 people at city hall", "A convenience location excludes many town voters."], ["Choose only voters from the largest neighborhood", "One neighborhood does not represent the whole town."]], "Random selection from the complete population gives each listed voter a chance to be chosen.", "Random sampling reduces systematic selection bias."),
+    ],
+    Medium: [
+      conceptualShape("convenience-sample-bias", "A gym asks only people currently exercising in its weight room how often town residents exercise. What is the main sampling problem?", "The convenience sample likely overrepresents frequent exercisers", [["The sample is too random", "The selection is based on location, not random choice."], ["Exercise frequency cannot be measured", "It can be measured, but this sample is biased."], ["Every resident has the same chance to respond", "Residents outside the weight room have no chance in this design."], ["The population contains too many people", "Population size is not the source of this selection bias."]], "People present in a weight room are more likely than typical residents to exercise frequently.", "Convenience samples can systematically differ from the target population."),
+      conceptualShape("stratified-random-sample", "A school is 60% grades 9–10 and 40% grades 11–12. Which sampling plan best preserves this composition?", "Randomly sample within each grade band in a 60:40 ratio", [["Choose the same number from every individual grade", "Equal grade counts need not match the population's stated band proportions."], ["Survey one randomly chosen classroom", "One classroom may not represent both grade bands."], ["Ask students who arrive earliest", "Arrival time creates a convenience sample."], ["Select only grades 11–12", "This excludes most of the target population."]], "Sampling randomly inside each band while matching its population share is proportional stratified sampling.", "Stratification represents important subgroups in planned proportions."),
+    ],
+    Hard: [
+      conceptualShape("scope-of-generalization", "Researchers randomly sample adults from one county and find 62% support a proposal. To which group can the result most defensibly be generalized?", "Adults in that county", [["All adults in the country", "The sample frame covered only one county."], ["Everyone of every age in the county", "Only adults were sampled."], ["Only the sampled adults", "Random sampling supports inference beyond the sample to its source population."], ["All future county residents", "The study describes the population represented at the time of sampling."]], "The random sample represents the source population from which it was drawn: adults in that county.", "Generalization is limited to the population covered by the sampling frame."),
+      conceptualShape("nonresponse-bias", "A random survey has a very low response rate, and people with strong opinions are more likely to reply. Which concern is most important?", "Nonresponse may make respondents systematically unrepresentative", [["Random selection guarantees unbiased results regardless of response", "Random selection cannot correct systematic nonresponse after selection."], ["The sample automatically becomes a census", "A low response rate is the opposite of measuring everyone."], ["The response variable becomes categorical", "Variable type is unrelated to the response bias described."], ["The population size must be small", "Nonresponse bias can occur in populations of any size."]], "If response depends on opinion strength, the responding subset can differ systematically from all selected people.", "Nonresponse can reintroduce bias after a probability sample is drawn."),
+    ],
+  },
+});
+
+["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`samples and populations|${tier}`));
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

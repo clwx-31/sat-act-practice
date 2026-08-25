@@ -7146,12 +7146,9 @@ SHAPES["averages"] = {
       const answer = values.reduce((sum, value) => sum + value, 0) / values.length;
       return {
         family: "mean-of-a-list",
-        stem: choose(variant, [
-          `What is the average (arithmetic mean) of ${values.join(", ")}?`,
-          `Find the mean of the five numbers ${values.join(", ")}.`,
-          `A tally records ${values.join(", ")}. What is the average of these five values?`,
-          `The five readings ${values.join(", ")} were taken. What is their arithmetic mean?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the arithmetic mean of ${values.join(", ")}`,
+        }),
         answer,
         wrong: [
           [values.reduce((sum, value) => sum + value, 0), "This is the sum; the mean also divides by how many values there are."],

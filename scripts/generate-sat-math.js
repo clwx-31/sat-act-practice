@@ -4262,6 +4262,107 @@ defineShapes({
   },
 });
 
+registerShapePhrasings("percent applications", "percent application");
+
+defineShapes({
+  "percent applications": {
+    Easy: [
+      (t) => {
+        const percent = 5 * t.int(2, 12);
+        const whole = 20 * t.int(3, 15);
+        return {
+          family: "percent-of-number",
+          stem: `What is ${percent}% of ${whole}?`,
+          correct: percent * whole / 100,
+          wrong: [[percent * whole, "This multiplies by the percent as a whole number rather than as a decimal."], [whole / percent, "This divides the whole by the percent without converting the percent."], [whole - percent, "This subtracts the displayed numbers instead of taking a percent."], [whole * (1 - percent / 100), "This finds the amount remaining after a decrease, not the requested part."]],
+          explanation: `${percent}% of ${whole} is ${percent}/100 · ${whole} = ${percent * whole / 100}.`,
+          steps: ["Convert the percent to a decimal factor.", "Multiply that factor by the whole."],
+          principles: ["The word 'of' in a percent calculation indicates multiplication."],
+          verification: { kind: "percent-of", inputs: [percent, whole], expected: percent * whole / 100 },
+        };
+      },
+      (t) => {
+        const price = 20 * t.int(2, 12);
+        const tax = t.int(4, 10);
+        const total = price * (1 + tax / 100);
+        return {
+          family: "sales-tax-total",
+          stem: `An item costs $${price} before ${tax}% sales tax. What is the total price, in dollars, after tax?`,
+          correct: total,
+          wrong: [[price * tax / 100, "This is the tax alone, not the price including tax."], [price + tax, "This adds the percent number as dollars."], [price * (1 - tax / 100), "This applies a discount instead of a tax increase."], [price * tax, "This uses the percent as a whole-number multiplier."]],
+          explanation: `The tax is $${price * tax / 100}, so the total is $${total}.`,
+          steps: ["Find the tax as a percent of the price.", "Add the tax to the original price."],
+          principles: ["A taxed total equals the original multiplied by 1 plus the tax rate."],
+          verification: { kind: "sum", inputs: [price, price * tax / 100], expected: total },
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const cost = 20 * t.int(3, 12);
+        const markup = 5 * t.int(3, 10);
+        const discount = 5 * t.int(2, 8);
+        const final = cost * (1 + markup / 100) * (1 - discount / 100);
+        return {
+          family: "markup-then-discount",
+          stem: `A store marks a $${cost} item up by ${markup}% and then discounts the marked price by ${discount}%. What is the final price in dollars?`,
+          correct: final,
+          wrong: [[cost * (1 + (markup - discount) / 100), "This combines the percentages even though they use different base prices."], [cost + markup - discount, "This treats percentages as dollar amounts."], [cost * (1 + markup / 100), "This is the marked price before the discount."], [cost * (1 - discount / 100), "This applies the discount but omits the markup."]],
+          explanation: `Apply the two multipliers in order: ${cost}(${1 + markup / 100})(${1 - discount / 100}) = ${formatNumber(final)}.`,
+          steps: ["Multiply by the markup factor.", "Multiply the marked price by the discount factor."],
+          principles: ["Sequential percentage operations multiply their factors."],
+        };
+      },
+      (t) => {
+        const part = t.int(3, 12);
+        const total = part + t.int(4, 18);
+        const amount = 5 * t.int(4, 20);
+        return {
+          family: "mixture-percent-component",
+          stem: `In a mixture, ${part} of every ${total} equal parts are concentrate. How much concentrate is in ${amount} liters of the mixture?`,
+          correct: amount * part / total,
+          wrong: [[amount * total / part, "This reverses the fraction of the mixture that is concentrate."], [amount - part / total, "This subtracts a fraction from a volume."], [part / total, "This is the concentrate fraction, not the concentrate volume."], [amount * part, "This multiplies by the part count without dividing by total parts."]],
+          explanation: `Concentrate is ${part}/${total} of the mixture, so its volume is ${amount}(${part}/${total}) = ${formatNumber(amount * part / total)} liters.`,
+          steps: ["Write the concentrate share as a fraction of total parts.", "Multiply that fraction by the mixture volume."],
+          principles: ["A component amount equals its fraction of the whole times the total."],
+          verification: quotient(amount * part, total),
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const percent = 5 * t.int(3, 12);
+        const remainder = 20 * t.int(2, 10);
+        const original = remainder / (1 - percent / 100);
+        return {
+          family: "recover-whole-from-remainder",
+          stem: `After ${percent}% of a quantity is removed, ${remainder} remains. What was the original quantity?`,
+          correct: original,
+          wrong: [[remainder / (percent / 100), "This treats the remainder as the removed portion."], [remainder * (1 + percent / 100), "This increases the remainder by the removed percent instead of undoing the multiplier."], [remainder + percent, "This adds a percent as an absolute quantity."], [remainder * percent / 100, "This finds a percent of the remainder rather than the original whole."]],
+          explanation: `${100 - percent}% remains, so the original is ${remainder}/${1 - percent / 100} = ${formatNumber(original)}.`,
+          steps: ["Find the percentage that remains.", "Divide the remainder by its decimal share of the original."],
+          principles: ["Recover a whole by dividing a known part by its fractional share."],
+          verification: quotient(remainder * 100, 100 - percent),
+        };
+      },
+      (t) => {
+        const first = 5 * t.int(2, 8);
+        const secondOfRest = 5 * t.int(2, 8);
+        const selected = first + (100 - first) * secondOfRest / 100;
+        return {
+          family: "percent-of-remainder",
+          stem: `${first}% of a group is selected first. Then ${secondOfRest}% of the remaining group is selected. What percent of the original group is selected altogether?`,
+          correct: selected,
+          wrong: [[first + secondOfRest, "This applies both percentages to the original group."], [first * secondOfRest / 100, "This finds the overlap of the percentages rather than the total selected."], [secondOfRest, "This ignores the first selected portion."], [100 - selected, "This is the percentage left unselected."]],
+          explanation: `After the first selection, ${100 - first}% remains. The second selection is ${(100 - first) * secondOfRest / 100}% of the original, for ${formatNumber(selected)}% total.`,
+          steps: ["Find the percent of the original group remaining.", "Take the second percent of that remainder and add the first selection."],
+          principles: ["A percent of a remainder uses a smaller base than the original whole."],
+        };
+      },
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

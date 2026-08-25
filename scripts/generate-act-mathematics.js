@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { GROUND, HOURLY_SERVICE, MEMBERSHIP, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { COLLECTION, GROUND, HOURLY_SERVICE, MEMBERSHIP, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -3014,9 +3014,10 @@ SHAPES["linear"] = {
       const rateB = rateA + 2 + (s % 3);
       const weeks = 3 + (s % 7);
       const startB = startA + (rateA - rateB) * weeks;
+      const collection = scene(variant, COLLECTION);
       return {
         family: "two-linear-models-equal",
-        stem: `Two seed trays start with ${startA} and ${startB} sprouts. The first gains ${rateA} sprouts per week and the second gains ${rateB} per week. After how many weeks do the trays hold equal numbers?`,
+        stem: `A ${collection.owner} tracks two collections containing ${startA} and ${startB} ${collection.plural}. The first gains ${rateA} ${collection.plural} per week and the second gains ${rateB} per week. After how many weeks do the collections hold equal numbers?`,
         answer: weeks,
         wrong: [
           [startA - startB, "This is the initial gap in sprouts, not a number of weeks."],

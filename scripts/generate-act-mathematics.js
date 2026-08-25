@@ -4485,12 +4485,9 @@ SHAPES["surface area"] = {
       const answer = 2 * radius * height + 2 * radius * radius;
       return {
         family: "cylinder-surface-area",
-        stem: choose(variant, [
-          `A closed cylinder has radius ${radius} and height ${height}. What is its surface area, in terms of π?`,
-          `What is the total surface area of a cylinder of radius ${radius} and height ${height}, including both ends?`,
-          `A sealed can has radius ${radius} and height ${height}. Express its surface area in terms of π.`,
-          `Find the surface area of a closed cylinder with radius ${radius} and height ${height}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the total surface area, in terms of π, of a closed cylinder with radius ${radius} and height ${height}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(2 * radius * height), "This is the curved side alone, without the two circular ends."],

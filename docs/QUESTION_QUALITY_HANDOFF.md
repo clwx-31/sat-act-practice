@@ -438,6 +438,25 @@ serves today. It does not require regenerating any section: permuting the
 
 Filed as Codex Task 6 in `docs/CODEX_LANE.md`.
 
+**Verified 2026-08-24.** Codex's `scripts/rebalance-answers.js` was run against
+the committed banks from the other lane, writing nothing, and independently
+checked. All three sections go to exactly 25/25/25/25 in every tier, with **0
+integrity problems** across 1,725 items: key text unchanged, choice set
+identical, no duplicate choices introduced, every rationale still bound to the
+choice it describes, and no rationale pointing at the key. The script verifies
+the rationale binding by text rather than by index, which is what makes the
+permutation safe.
+
+**The trap that would undo this.** Task 6 repairs the banks as they stand. Three
+of those banks are scheduled to be regenerated — ACT English from the authored
+passages, ACT Mathematics after Task 5, ACT Science later — and **a regenerated
+bank will bring the skew straight back unless its generator balances answer
+positions inside each difficulty tier as well as overall.** That is the one
+thing `generate-act-reading.js` does that the others do not, and it is why
+act-reading is the only section that was already clean. Every rebuilt generator
+must do the same, and the per-tier measurement belongs in `npm run check` so the
+regression cannot return unnoticed.
+
 ### The next four steps, in order
 
 1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes

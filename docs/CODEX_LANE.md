@@ -245,6 +245,18 @@ Then apply it to **act-english, act-mathematics, and act-science**, run
 `npm run check` still passes. Re-measure with a script rather than trusting the
 audit alone, and report the nine before/after numbers.
 
+**Verified from the other lane:** your `rebalance-answers.js` was run against the
+committed banks without writing, and it takes all three sections to exactly
+25/25/25/25 in every tier with zero integrity problems across 1,725 items. The
+script is correct. What remains is to apply it, rebuild, and commit.
+
+**Then add the guard.** After the three banks are committed, add a per-tier
+answer-position check to `npm run check` that fails if any position exceeds 30%
+within any difficulty tier of any section. Without it, the next regenerated bank
+reintroduces the skew silently — ACT English, ACT Mathematics, and ACT Science
+are all scheduled for regeneration, and only `generate-act-reading.js` currently
+balances within tier.
+
 Two cautions:
 
 - **Do not touch act-reading.** It is already 25/25/25/25 in every tier and is

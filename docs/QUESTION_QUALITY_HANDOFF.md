@@ -545,6 +545,31 @@ same underlying problem and they are real.
 
 Filed as Codex Task 8 in `docs/CODEX_LANE.md`.
 
+### ACT Science is one metric from PASS, and it is two mechanical tells — 2026-08-25
+
+After the codex-lane merge, act-science fails the audit on
+answerable-without-reading alone, at 77.9%. Everything else passes: 0 exact and 0
+near duplicates, 575 distinct shapes, largest family 0.2%, answer positions
+25.1 / 25.2 / 25.3, difficulty mix exactly on target.
+
+Measured, the 77.9% decomposes into:
+
+- **59.0% (339 items): the sorted choice set has appeared before with the same
+  key.** A student who has met the option set recalls the answer without reading.
+  This is the same defect Codex took from 49 to 0 in ACT Mathematics.
+- **19.0%: the longest-option rule**, and 229 items (39.8%) have the key
+  *strictly* longest. The key averages 43.8 characters against 29.7 for
+  distractors, and the median key is 27 characters longer than its nearest rival.
+
+Neither is a content problem. Both are generator-level and mechanical, which
+means Science does not need the authoring rebuild ACT English is getting — it
+needs the Task 8b treatment plus distractors written at the key's length. Filed
+as Codex Task 9.
+
+The separately logged Science content defects — 31 tautological items, 31 with
+swapped-row distractor pairs, 63 `type: "graph"` items rendering a table — are
+real, are not what this metric is measuring, and remain open.
+
 ### The next four steps, in order
 
 1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes

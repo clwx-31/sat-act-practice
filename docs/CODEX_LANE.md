@@ -367,6 +367,47 @@ extended the others.
 no threshold changed. If near-duplicates will not come under 2% without
 loosening something, stop and report rather than adjusting the target.
 
+---
+
+## Task 9 — ACT Science: the two tells
+
+ACT Science is **one metric from PASS**. Everything else is already clean: 0
+exact duplicates, 0 near duplicates, largest family 0.2%, answer positions
+25.1 / 25.2 / 25.3 across the tiers, difficulty mix exactly 175 / 250 / 150. The
+single failure is answerable-without-reading at **77.9%** against a 40% target,
+the worst figure in the project.
+
+Measured from the other lane, that 77.9% is two separate defects:
+
+| Driver | Items | Share |
+| --- | ---: | ---: |
+| Choice set already seen, same key | 339 | **59.0%** |
+| Key is the longest option | — | 19.0% |
+| (key strictly longest, no tie) | 229 | 39.8% |
+
+**9a. Repeated choice sets — 339 items.** The same four options recur across the
+bank with the same answer, so a student who has met the set before recalls the
+key without reading. This is the defect you took from 49 to 0 in ACT Mathematics
+under Task 8b; apply the same treatment. It is the larger half by far and worth
+doing first.
+
+**9b. The length tell.** The key averages **43.8 characters** and the distractors
+**29.7**. The median winning option is **27 characters longer** than its nearest
+rival. A student who simply picks the longest option is right 39.8% of the time
+without reading anything.
+
+Distractors have to be written at the length of the key. A wrong answer that is
+obviously too short to be the careful one is not a distractor, it is a spacer.
+Where the generator builds a correct answer as a full explanatory clause and the
+wrong ones as fragments, the wrong ones need the same grammatical weight.
+
+**Done when** `npm run audit:questions` reports act-science **PASS**, with no
+threshold changed. Report the same five numbers as Task 7.
+
+Do not chase the separate content defects logged in the handoff — the
+tautological items, the swapped-row distractor pairs, and the `type: "graph"`
+items that render a table. Those are real and they are a different job.
+
 ## Where to write reports
 
 Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to

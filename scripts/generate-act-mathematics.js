@@ -6091,18 +6091,16 @@ SHAPES["compound probability"] = {
       const bothNo = 20 + (s % 6);
       const columnTotal = bothYes + noYes;
       const answer = frac(bothYes, columnTotal);
+      const survey = scene(variant, TWO_WAY_SURVEY);
       return {
         family: "conditional-probability-reversed",
         stimulus: {
           type: "table",
-          content: `A clinic recorded test results against whether the condition was present.\n\n | condition present | condition absent\npositive test | ${bothYes} | ${noYes}\nnegative test | ${yesNo} | ${bothNo}`,
+          content: `${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.first} | do not ${survey.first}\n${survey.second} | ${bothYes} | ${noYes}\ndo not ${survey.second} | ${yesNo} | ${bothNo}`,
         },
-        stem: choose(variant, [
-          "Given that a randomly chosen patient tested positive, what is the probability that the condition is present?",
-          "A patient is selected at random from those who tested positive. What is the probability that the condition is present?",
-          "Among patients with a positive test, what is the probability of the condition being present?",
-          "If a randomly chosen patient has a positive test result, how likely is it that the condition is present?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the probability that a randomly chosen ${survey.group.slice(0, -1)} ${survey.first}, given that the person ${survey.second}`,
+        }),
         answer,
         wrong: [
           [frac(bothYes, bothYes + yesNo), "This conditions on having the condition, answering the reverse question: given the condition, how likely is a positive test?"],

@@ -6764,14 +6764,12 @@ SHAPES["perimeter and area"] = {
       const length = span(s, 7, 6, 2);
       const width = span(s, 3, 5, 2);
       const answer = 2 * (length + width);
+      const ground = scene(variant, GROUND);
       return {
         family: "rectangle-perimeter",
-        stem: choose(variant, [
-          `A rectangular patio measures ${length} feet by ${width} feet. What is its perimeter, in feet?`,
-          `What is the perimeter, in feet, of a rectangle ${length} feet long and ${width} feet wide?`,
-          `A rectangular sign is ${length} feet long and ${width} feet high. How many feet of trim go around its edge?`,
-          `A ${length}-foot by ${width}-foot rectangular plot is fenced on all four sides. How many feet of fence are used?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the perimeter, in feet, of a rectangular ${ground.region} measuring ${length} feet by ${width} feet`,
+        }),
         answer,
         wrong: [
           [length * width, "This is the area, in square feet, not the distance around."],

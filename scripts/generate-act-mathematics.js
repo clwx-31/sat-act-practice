@@ -4338,12 +4338,9 @@ SHAPES["area"] = {
       const answer = baseArea * scale * scale;
       return {
         family: "area-under-similarity-scaling",
-        stem: choose(variant, [
-          `Two similar figures have corresponding sides in the ratio 1 to ${scale}. If the smaller has area ${baseArea}, what is the area of the larger?`,
-          `A figure of area ${baseArea} is enlarged so that every length is multiplied by ${scale}. What is the new area?`,
-          `Similar polygons have sides in the ratio 1 : ${scale}. The smaller has area ${baseArea}. Find the larger area.`,
-          `If each dimension of a shape with area ${baseArea} is scaled by ${scale}, the resulting area is what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the new area when a figure of area ${baseArea} has every length multiplied by ${scale}`,
+        }),
         answer,
         wrong: [
           [baseArea * scale, "This scales the area by the length ratio; area scales by the square of that ratio."],

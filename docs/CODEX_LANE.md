@@ -408,6 +408,63 @@ Do not chase the separate content defects logged in the handoff — the
 tautological items, the swapped-row distractor pairs, and the `type: "graph"`
 items that render a table. Those are real and they are a different job.
 
+---
+
+## Task 10 — SAT Math: almost certainly just the choice sets
+
+**Do not start the Task 4 generator rewrite.** Measured from the other lane, SAT
+Math does not look like a section that needs one. Of its 458 four-choice items
+(the rest are grid-ins):
+
+| Signal | SAT Math |
+| --- | --- |
+| Repeated choice set, same key | **210 items, 45.9%** |
+| Key strictly longest | 11 items, 2.4% |
+| Average key vs distractor length | 1.8 vs 2.0 characters |
+| Near-duplicate stem pairs | **1** |
+
+There is no length tell and the stems are effectively clean. Nearly the whole
+failure is the defect you have now fixed twice: the same option set recurring
+with the same answer, so a student who has met it recalls the key.
+
+Apply the ACT Science freshness treatment. Start there and re-audit before doing
+anything else — this may be most of the job.
+
+The audit also reports a near-duplicate failure for sat-math. My stem-level
+measurement finds one pair, so the audit is counting a different signature;
+check what `shapeSignature` is keying on for this section before assuming the
+stems need work.
+
+**Done when** `npm run audit:questions` reports sat-math **PASS** with no
+threshold changed. Report the same five numbers.
+
+If it does not reach PASS on the choice sets alone, stop and report what remains
+rather than starting the generator rewrite in the same sitting.
+
+---
+
+## Task 11 — SAT Reading & Writing (the real rebuild, do not start yet)
+
+This one genuinely is a rebuild, and the numbers say so:
+
+| Signal | SAT Reading & Writing |
+| --- | --- |
+| Repeated choice set, same key | 310 items, 53.9% |
+| Key strictly longest | 167 items, 29.0% |
+| Average key vs distractor length | 51.5 vs 40.2 characters |
+| **Near-duplicate stem pairs** | **16,900** |
+
+Sixteen thousand nine hundred near-duplicate stem pairs is a different order of
+problem from anything fixed so far — the stems themselves are overwhelmingly the
+same. On top of that sit the content defects already logged in the handoff: 25
+items whose keyed answer is ungrammatical, 29 whose explanation describes a
+different question, 40 that ask one thing in the stimulus and another in the
+stem, and roughly 87 article-agreement errors.
+
+Do not begin this until SAT Math is finished and merged. When it starts it will
+need a plan first, written into `docs/CODEX_REPORTS.md`, not a direct attack on
+the generator.
+
 ## Where to write reports
 
 Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to

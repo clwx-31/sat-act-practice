@@ -5545,7 +5545,9 @@ SHAPES["regression"] = {
       const answer = slope * input + intercept;
       return {
         family: "predict-from-line-of-best-fit",
-        stem: `A line of best fit for a scatterplot is y = ${slope}x + ${intercept}. What value does it predict when x = ${input}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the value predicted at x = ${input} by the line of best fit y = ${slope}x + ${intercept}`,
+        }),
         answer,
         wrong: [
           [slope * input, "This omits the intercept."],

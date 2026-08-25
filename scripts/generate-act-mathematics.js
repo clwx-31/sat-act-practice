@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -6384,9 +6384,12 @@ SHAPES["proportions"] = {
       const cost = count * price;
       const wanted = count + span(s, 2, 4);
       const answer = money(wanted * price);
+      const retail = scene(variant, RETAIL);
       return {
         family: "unit-price-proportion",
-        stem: `${count} identical notebooks cost ${cost}. At the same price per notebook, what is the cost of ${wanted} notebooks?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the cost of ${wanted} ${retail.plural} when ${count} identical ${retail.plural} cost ${cost} at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [money(cost + (wanted - count)), "This adds the extra notebooks as dollars rather than pricing them."],

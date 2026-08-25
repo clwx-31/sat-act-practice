@@ -295,6 +295,7 @@ const TEXT_ANSWER = new Set();
 
 registerShapePhrasings("solve", "linear-equation");
 registerShapePhrasings("interpret constants", "linear-model constant");
+registerShapePhrasings("no or infinite solutions", "solution-count condition");
 
 defineShapes({
   "solve": {

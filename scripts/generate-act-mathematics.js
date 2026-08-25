@@ -4829,12 +4829,9 @@ SHAPES["right-triangle trigonometry"] = {
       }[angle];
       return {
         family: "special-angle-opposite-side",
-        stem: choose(variant, [
-          `A right triangle has a hypotenuse of ${hypotenuse} and an acute angle of ${angle}°. What is the length of the side opposite that angle?`,
-          `In a right triangle with hypotenuse ${hypotenuse}, one acute angle measures ${angle}°. How long is the opposite leg?`,
-          `The hypotenuse of a right triangle is ${hypotenuse} and one angle is ${angle}°. Find the side opposite the ${angle}° angle.`,
-          `What is the leg opposite a ${angle}° angle in a right triangle whose hypotenuse is ${hypotenuse}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the leg opposite a ${angle}° angle in a right triangle with hypotenuse ${hypotenuse}`,
+        }),
         answer: val(exact.text, exact.value),
         wrong: [
           [hypotenuse, "This is the hypotenuse itself; a leg is always shorter."],

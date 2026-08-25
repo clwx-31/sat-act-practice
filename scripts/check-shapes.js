@@ -19,11 +19,30 @@
 // Imported rather than reimplemented: this is the rule that decides whether a
 // rebuilt bank is accepted, so the harness has to apply exactly the validator's
 // comparison, not a lookalike that could drift away from it.
-const { jaccard, tokenSet } = require("./lib/content");
+const { jaccard, loadBank, loadCatalog, tokenSet } = require("./lib/content");
+const { assignDifficulties, expandTaxonomy } = require("./lib/generation");
 
 const SECTIONS = {
   "act-mathematics": () => require("./generate-act-mathematics").SHAPES,
   "sat-math": () => require("./generate-sat-math").SHAPES,
+};
+
+function loadActMathematicsRebuildGenerator() {
+  const modulePath = require.resolve("./generate-act-mathematics");
+  delete require.cache[modulePath];
+  process.argv.push("--rebuild");
+  try {
+    return require(modulePath).generate;
+  } finally {
+    process.argv.pop();
+  }
+}
+
+const SECTION_GENERATORS = {
+  "act-mathematics": {
+    generatorName: "act-mathematics-generator-v1",
+    load: loadActMathematicsRebuildGenerator,
+  },
 };
 
 const TIERS = ["Easy", "Medium", "Hard"];
@@ -251,6 +270,81 @@ function checkSection(sectionKey, problems) {
   return covered.length;
 }
 
+// The per-shape sweep above proves that one shape can safely be reused, but a
+// rebuilt bank interleaves every shape in the section. Recreate that emitted
+// set without writing it, then apply the validator's token rule to every pair
+// built by different shapes. Shared phrasing that makes two subskills converge
+// must fail here before a rebuild reaches duplicateErrors.
+function checkCrossShapeCollisions(sectionKey, problems) {
+  const config = SECTION_GENERATORS[sectionKey];
+  if (!config) return 0;
+
+  const catalog = loadCatalog();
+  const section = catalog.sections.find((entry) => entry.key === sectionKey);
+  if (!section) throw new Error(`Unknown section ${sectionKey}`);
+
+  const existing = loadBank(sectionKey).filter(
+    (question) => question.provenance.generator !== config.generatorName,
+  );
+  const tasks = expandTaxonomy(section, existing);
+  assignDifficulties(tasks, existing, catalog.difficultyTargets);
+  const generate = config.load();
+  const choiceSets = new Map();
+  existing
+    .filter((question) => Array.isArray(question.choices))
+    .forEach((question) => {
+      choiceSets.set(question.choices.slice().sort().join("||"), {
+        sequence: question.id,
+        subskill: question.subskill,
+        family: "retained item",
+      });
+    });
+  const emitted = tasks.map((task, index) => {
+    const sequence = existing.length + index + 1;
+    const question = generate({ sequence, task });
+    const family = question.tags.find((tag) => tag.startsWith("templateFamily:")) || "untagged";
+    const choiceSet = [question.correct, ...question.distractors.map((item) => item.text)]
+      .slice()
+      .sort()
+      .join("||");
+    const prior = choiceSets.get(choiceSet);
+    if (prior) {
+      problems.push(
+        `${sectionKey} repeated choice set ${prior.subskill} (${prior.family}, ` +
+          `seq=${prior.sequence}) and ${task.subskill} (${family}, seq=${sequence})`,
+      );
+    } else {
+      choiceSets.set(choiceSet, { sequence, subskill: task.subskill, family });
+    }
+    return {
+      sequence,
+      subskill: task.subskill,
+      family,
+      tokens: tokenSet({
+        ...question,
+        section: section.section,
+        sectionKey,
+      }),
+    };
+  });
+
+  let collisions = 0;
+  for (let left = 0; left < emitted.length; left += 1) {
+    for (let right = left + 1; right < emitted.length; right += 1) {
+      const overlap = jaccard(emitted[left].tokens, emitted[right].tokens);
+      if (overlap < NEAR_DUPLICATE) continue;
+      collisions += 1;
+      problems.push(
+        `${sectionKey} cross-shape ${emitted[left].subskill} (${emitted[left].family}, ` +
+          `seq=${emitted[left].sequence}) and ${emitted[right].subskill} ` +
+          `(${emitted[right].family}, seq=${emitted[right].sequence}) overlap ` +
+          `${Math.round(overlap * 100)}%`,
+      );
+    }
+  }
+  return collisions;
+}
+
 function main() {
   const requested = process.argv.slice(2).filter((argument) => !argument.startsWith("--"));
   const sections = requested.length ? requested : Object.keys(SECTIONS);
@@ -259,6 +353,7 @@ function main() {
   sections.forEach((sectionKey) => {
     if (!SECTIONS[sectionKey]) throw new Error(`Unknown section ${sectionKey}`);
     shapes += checkSection(sectionKey, problems);
+    checkCrossShapeCollisions(sectionKey, problems);
   });
 
   const unique = [...new Set(problems)];
@@ -273,4 +368,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { checkShape, checkSection };
+module.exports = { checkCrossShapeCollisions, checkShape, checkSection };

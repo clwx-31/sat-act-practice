@@ -37,6 +37,18 @@ const PRODUCTION = [
   { actor: "packer", verb: "seals", object: "cartons", site: "warehouse" },
 ];
 
+// An object follows a vertical projectile-height model.
+const PROJECTILE = [
+  { object: "ball", verb: "thrown" },
+  { object: "model rocket", verb: "launched" },
+  { object: "signal flare", verb: "fired" },
+  { object: "stone", verb: "tossed" },
+  { object: "training weight", verb: "propelled" },
+  { object: "beanbag", verb: "hurled" },
+  { object: "foam dart", verb: "shot" },
+  { object: "practice capsule", verb: "ejected" },
+];
+
 // Someone covers ground at a speed.
 const TRAVEL = [
   { mover: "cyclist", verb: "rides", route: "canal path", unit: "miles", place: "lake" },
@@ -49,6 +61,18 @@ const TRAVEL = [
   { mover: "bus", verb: "travels", route: "moorland route", unit: "miles", place: "village" },
   { mover: "runner", verb: "jogs", route: "towpath", unit: "miles", place: "bridge" },
   { mover: "tractor", verb: "hauls", route: "farm track", unit: "miles", place: "barn" },
+];
+
+// A watercraft moves while a current supplies a perpendicular velocity.
+const WATERCRAFT = [
+  { craft: "boat", water: "harbor" },
+  { craft: "kayak", water: "inlet" },
+  { craft: "ferry", water: "channel" },
+  { craft: "raft", water: "river" },
+  { craft: "skiff", water: "estuary" },
+  { craft: "launch", water: "bay" },
+  { craft: "canoe", water: "lake" },
+  { craft: "barge", water: "canal" },
 ];
 
 // A thing is bought and sold.
@@ -65,6 +89,42 @@ const RETAIL = [
   { item: "thermos", plural: "thermoses", shop: "camping supplier" },
 ];
 
+// A recipe scales one measured ingredient across batches.
+const RECIPE = [
+  { dish: "soup", ingredient: "stock" },
+  { dish: "scone", ingredient: "buttermilk" },
+  { dish: "salsa", ingredient: "tomato purée" },
+  { dish: "bread", ingredient: "milk" },
+  { dish: "sorbet", ingredient: "fruit juice" },
+  { dish: "stew", ingredient: "broth" },
+  { dish: "pancake", ingredient: "oat drink" },
+  { dish: "custard", ingredient: "cream" },
+];
+
+// A product combines one choice from each of three categories.
+const CHOICE_MENU = [
+  { product: "sandwich", first: "breads", second: "fillings", third: "spreads" },
+  { product: "meal", first: "starters", second: "mains", third: "desserts" },
+  { product: "bicycle", first: "frames", second: "gears", third: "colors" },
+  { product: "bouquet", first: "flowers", second: "ribbons", third: "vases" },
+  { product: "notebook", first: "covers", second: "papers", third: "bindings" },
+  { product: "uniform", first: "shirts", second: "trousers", third: "jackets" },
+  { product: "lamp", first: "bases", second: "shades", third: "bulbs" },
+  { product: "gift box", first: "boxes", second: "wrappings", third: "cards" },
+];
+
+// Distinguishable items are drawn at random from a container.
+const DRAW_POOL = [
+  { container: "bag", item: "marbles", first: "red", second: "blue" },
+  { container: "jar", item: "tokens", first: "green", second: "yellow" },
+  { container: "box", item: "tiles", first: "square", second: "round" },
+  { container: "bowl", item: "counters", first: "white", second: "black" },
+  { container: "bin", item: "cards", first: "striped", second: "plain" },
+  { container: "case", item: "beads", first: "glass", second: "wooden" },
+  { container: "drum", item: "tickets", first: "gold", second: "silver" },
+  { container: "tray", item: "disks", first: "marked", second: "blank" },
+];
+
 // A vessel holds or transfers a fluid.
 const VESSEL = [
   { vessel: "tank", filler: "pump", fluid: "water", unit: "liters" },
@@ -73,7 +133,7 @@ const VESSEL = [
   { vessel: "reservoir", filler: "channel", fluid: "water", unit: "liters" },
   { vessel: "pool", filler: "hose", fluid: "water", unit: "liters" },
   { vessel: "drum", filler: "valve", fluid: "coolant", unit: "liters" },
-  { vessel: "silo", filler: "conveyor", fluid: "grain", unit: "liters" },
+  { vessel: "header tank", filler: "inlet", fluid: "oil", unit: "liters" },
   { vessel: "trough", filler: "spout", fluid: "water", unit: "liters" },
 ];
 
@@ -87,6 +147,18 @@ const SURVEY = [
   { group: "subscribers", topic: "renewed early", place: "county" },
   { group: "visitors", topic: "returned within a year", place: "museum" },
   { group: "students", topic: "walk to school", place: "school" },
+];
+
+// A group answers two yes-or-no survey questions.
+const TWO_WAY_SURVEY = [
+  { group: "students", first: "cycle to school", second: "own a helmet" },
+  { group: "commuters", first: "take the train", second: "buy a monthly pass" },
+  { group: "residents", first: "use the library", second: "borrow ebooks" },
+  { group: "members", first: "attend classes", second: "use the pool" },
+  { group: "visitors", first: "take a tour", second: "visit the gallery" },
+  { group: "households", first: "compost food", second: "collect rainwater" },
+  { group: "employees", first: "work remotely", second: "use flex hours" },
+  { group: "subscribers", first: "read online", second: "receive alerts" },
 ];
 
 // A flat region gets measured, fenced, or covered.
@@ -137,6 +209,54 @@ const FINANCE = [
   { account: "fixed-term account", payer: "lender", plan: "studio hire", earner: "distributor" },
 ];
 
+// A count grows by the same multiplicative factor each period.
+const EXPONENTIAL_GROWTH = [
+  { subject: "bacterial culture", unit: "cells", period: "hour" },
+  { subject: "yeast colony", unit: "cells", period: "hour" },
+  { subject: "computer archive", unit: "copies", period: "day" },
+  { subject: "crystal cluster", unit: "crystals", period: "week" },
+  { subject: "insect colony", unit: "insects", period: "month" },
+  { subject: "seedling nursery", unit: "plants", period: "season" },
+  { subject: "video library", unit: "files", period: "month" },
+  { subject: "cell sample", unit: "cells", period: "minute" },
+];
+
+// A measured radioactive sample loses half its mass over each half-life.
+const DECAY_SAMPLE = [
+  "medical isotope sample",
+  "archaeological carbon fragment",
+  "laboratory phosphorus tracer",
+  "sealed radium source",
+  "environmental cesium specimen",
+  "geological potassium sample",
+  "research iodine capsule",
+  "calibration cobalt standard",
+];
+
+// A membership combines one enrollment charge with a monthly rate.
+const MEMBERSHIP = [
+  { service: "climbing gym", member: "climber" },
+  { service: "maker space", member: "maker" },
+  { service: "rowing club", member: "rower" },
+  { service: "art studio", member: "artist" },
+  { service: "language school", member: "learner" },
+  { service: "tennis center", member: "player" },
+  { service: "music workshop", member: "musician" },
+  { service: "community garden", member: "gardener" },
+];
+
+// A service charges once for setup and then by the hour.
+const HOURLY_SERVICE = [
+  "bike repair shop",
+  "kiln rental",
+  "darkroom",
+  "recording studio",
+  "practice room",
+  "workbench rental",
+  "editing suite",
+  "ceramics studio",
+];
+
 // Tickets are sold to an event at two prices.
 const VENUE = [
   { venue: "planetarium", full: "adult", reduced: "child", token: "tickets" },
@@ -176,15 +296,25 @@ const COHORT = [
 module.exports = {
   scene,
   COHORT,
+  CHOICE_MENU,
   COLLECTION,
+  DECAY_SAMPLE,
+  DRAW_POOL,
+  EXPONENTIAL_GROWTH,
   FINANCE,
   GROUND,
+  HOURLY_SERVICE,
+  MEMBERSHIP,
   PRODUCTION,
+  PROJECTILE,
+  RECIPE,
   RETAIL,
   SOLUTION,
   SURFACE,
   SURVEY,
   TRAVEL,
+  TWO_WAY_SURVEY,
   VENUE,
   VESSEL,
+  WATERCRAFT,
 };

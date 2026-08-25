@@ -116,6 +116,7 @@ function assignDifficulties(tasks, existing, targets) {
 // broken by an item hash so the choice never follows generation order.
 function answerPositionPlanner(existing) {
   const counts = {};
+  const overall = [0, 0, 0, 0];
   DIFFICULTY_TIERS.forEach((tier) => {
     counts[tier] = [0, 0, 0, 0];
   });
@@ -124,14 +125,18 @@ function answerPositionPlanner(existing) {
     .forEach((question) => {
       const tier = counts[question.difficulty] || counts.Medium;
       tier[question.correctAnswer] += 1;
+      overall[question.correctAnswer] += 1;
     });
 
   return function nextPosition(difficulty, seedKey) {
     const tier = counts[difficulty] || counts.Medium;
-    const fewest = Math.min(...tier);
-    const candidates = [0, 1, 2, 3].filter((index) => tier[index] === fewest);
+    const fewestInTier = Math.min(...tier);
+    const inTier = [0, 1, 2, 3].filter((index) => tier[index] === fewestInTier);
+    const fewestOverall = Math.min(...inTier.map((index) => overall[index]));
+    const candidates = inTier.filter((index) => overall[index] === fewestOverall);
     const choice = candidates[hashString(String(seedKey)) % candidates.length];
     tier[choice] += 1;
+    overall[choice] += 1;
     return choice;
   };
 }
@@ -269,8 +274,11 @@ function generateSection(sectionKey, generator, options = {}) {
 
 module.exports = {
   arrangeChoices,
+  answerPositionPlanner,
+  assignDifficulties,
   baseRecord,
   createRandom,
+  expandTaxonomy,
   generateSection,
   hashString,
   pick,

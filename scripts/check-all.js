@@ -8,6 +8,7 @@ const checks = [
   ["node", ["--check", "core.js"]],
   ["node", ["--check", "scripts/lib/content.js"]],
   ["node", ["scripts/validate-content.js", "--complete"]],
+  ["node", ["scripts/check-answer-positions.js"]],
   ["node", ["scripts/smoke-static.js"]],
   ["node", ["scripts/check-guides.js"]],
   ["node", ["--test"]],

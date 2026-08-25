@@ -2,8 +2,9 @@
 "use strict";
 
 const { generateSection, hashString, rotate } = require("./lib/generation");
-const { loadBank } = require("./lib/content");
+const { jaccard, loadBank, tokenSet } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
+const { CHOICE_MENU, COHORT, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SOLUTION, SURFACE, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -122,6 +123,274 @@ function ask(variant, symbol) {
   ]);
 }
 
+// Bare symbolic stems need vocabulary that identifies the mathematical object
+// under test. Without it, the validator discards the short variables and
+// numbers and sees unrelated shapes as the same generic question. These pools
+// are reserved to the abstract subskills that need that extra signal; concrete
+// shapes already carry their own geometry, data, or real-world vocabulary.
+const SUBSKILL_LEADS = {
+  "angles": [
+    "Use the angle relationship shown.",
+    "Classify the geometric angle pair first.",
+    "Apply the relevant angle-sum fact.",
+    "Track how the two angle measures relate.",
+    "Interpret the angular condition before calculating.",
+    "Identify the governing angle equation.",
+    "Reason from the stated angle geometry.",
+    "Connect the unknown angle to its partner.",
+  ],
+  "area": [
+    "Model the two-dimensional region carefully.",
+    "Use the area relationship for this figure.",
+    "Track how the planar measure changes.",
+    "Decompose the region before calculating.",
+    "Interpret the figure's covered space.",
+    "Apply the appropriate area scale or formula.",
+    "Compare the component regions geometrically.",
+    "Measure the portion of the plane described.",
+  ],
+  "averages": [
+    "Use the arithmetic mean of the data.",
+    "Balance the list around its average.",
+    "Relate the data total to its entry count.",
+    "Compute the equal-share center of the values.",
+    "Treat the mean as a total-per-entry measure.",
+    "Track how the list average is formed.",
+    "Recover the data sum from its mean.",
+    "Analyze the central quotient for the list.",
+  ],
+  "center and spread": [
+    "Describe the distribution's center or variability.",
+    "Use a resistant summary of the data set.",
+    "Compare the locations within the ordered distribution.",
+    "Measure how widely the observations disperse.",
+    "Interpret the statistical spread of the sample.",
+    "Locate the median-based summary in the data.",
+    "Analyze a variability statistic for the observations.",
+    "Read the distribution summary before calculating.",
+  ],
+  "complex numbers": [
+    "Work within the complex-number system.",
+    "Separate the real and imaginary components.",
+    "Apply arithmetic involving the imaginary unit.",
+    "Track both parts of the complex value.",
+    "Interpret the number in rectangular complex form.",
+    "Use the defining property of the imaginary unit.",
+    "Combine the real-imaginary terms carefully.",
+    "Analyze the complex expression by component.",
+  ],
+  "coordinate geometry": [
+    "Translate the coordinate data into geometry.",
+    "Use the point locations on the coordinate plane.",
+    "Relate the ordered pairs through a geometric formula.",
+    "Track horizontal and vertical coordinate changes.",
+    "Interpret the plane figures from their coordinates.",
+    "Analyze the coordinate relationship between the points.",
+    "Convert the plotted information into a measurement.",
+    "Reason from the Cartesian positions given.",
+  ],
+  "dimensional reasoning": [
+    "Follow the units through the calculation.",
+    "Build a conversion chain with compatible dimensions.",
+    "Cancel the measurement units in sequence.",
+    "Track how each rate changes the quantity.",
+    "Use dimensional labels to choose the operations.",
+    "Reconcile the rates before computing the result.",
+    "Let the desired unit guide the setup.",
+    "Analyze the compound measurement one factor at a time.",
+  ],
+  "domain and range": [
+    "Identify the function's allowable inputs or outputs.",
+    "Check the mapping's permissible argument set.",
+    "Track which input values the rule accepts.",
+    "Determine the attainable outputs of the function.",
+    "Apply the restriction governing the function domain.",
+    "Read the correspondence between inputs and results.",
+    "Analyze the function's defined-value set.",
+    "Locate the permitted side of the input-output mapping.",
+  ],
+  "exponents": [
+    "Apply the relevant exponent law.",
+    "Read the base-and-power structure carefully.",
+    "Simplify using the rules for powers.",
+    "Track how the indices combine.",
+    "Interpret the repeated-factor notation.",
+    "Preserve the exponential structure while solving.",
+    "Analyze the powers before evaluating.",
+    "Use the relationship between bases and exponents.",
+  ],
+  "factoring": [
+    "Expose the polynomial's factor structure.",
+    "Rewrite the expression as a binomial product.",
+    "Use the factors to analyze the polynomial.",
+    "Identify the product hidden in the expanded form.",
+    "Decompose the polynomial into multiplying parts.",
+    "Match the terms to a factor pattern.",
+    "Recover the factor pair from the coefficients.",
+    "Analyze the expression through its product form.",
+  ],
+  "inequalities": [
+    "Interpret the order relation and its boundary.",
+    "Locate the solution region on a number line.",
+    "Track the direction of the inequality.",
+    "Test which values satisfy the ordered condition.",
+    "Analyze the interval described by the comparison.",
+    "Preserve the bound while isolating the variable.",
+    "Determine the permitted side of each boundary.",
+    "Read the inequality as a set of solutions.",
+  ],
+  "linear equations": [
+    "Balance the linear equation to isolate its unknown.",
+    "Use inverse operations on the first-degree equality.",
+    "Track the coefficient and constant terms.",
+    "Solve the variable equation without disturbing equality.",
+    "Collect the linear terms before isolating the variable.",
+    "Find the value that makes the equality true.",
+    "Reduce the one-variable relation systematically.",
+    "Maintain both sides while solving the linear statement.",
+  ],
+  "notation": [
+    "Decode the function notation before computing.",
+    "Interpret the symbolic input-output instruction.",
+    "Follow the mapping rule represented by the symbols.",
+    "Read what the function notation asks you to evaluate.",
+    "Apply the named operation to the indicated input.",
+    "Translate the symbolic definition into a calculation.",
+    "Track the input through the stated function rule.",
+    "Resolve the notation by using its definition.",
+  ],
+  "number properties": [
+    "Use the integer structure in the statement.",
+    "Analyze the divisibility or sequence pattern.",
+    "Track the whole-number relationship carefully.",
+    "Represent the integers with their defining property.",
+    "Apply the relevant arithmetic pattern.",
+    "Reason from the spacing between the integers.",
+    "Identify the shared number-theory structure.",
+    "Translate the integer condition into an equation.",
+  ],
+  "percentages": [
+    "Represent the percent change with a multiplier.",
+    "Track the original and changed quantities separately.",
+    "Convert the percentage statement into a factor.",
+    "Use the correct base for the percent comparison.",
+    "Interpret which quantity represents one hundred percent.",
+    "Reverse or apply the stated percent operation.",
+    "Relate the part, rate, and reference amount.",
+    "Analyze the proportional change before calculating.",
+  ],
+  "proportions": [
+    "Set up the proportional relationship between quantities.",
+    "Track which variables scale together.",
+    "Use the constant ratio or product implied.",
+    "Compare corresponding quantities before solving.",
+    "Translate the variation statement into an equation.",
+    "Preserve the scaling relationship across both cases.",
+    "Identify whether the quantities vary directly or inversely.",
+    "Solve from the invariant connecting the variables.",
+  ],
+  "quadratic": [
+    "Analyze the parabola's defining structure.",
+    "Use the quadratic form suited to the question.",
+    "Track the roots, vertex, or discriminant as needed.",
+    "Interpret the second-degree function geometrically.",
+    "Rewrite the quadratic to expose the requested feature.",
+    "Apply the governing property of the parabola.",
+    "Connect the coefficients to the quadratic's behavior.",
+    "Reason from the squared-term structure first.",
+  ],
+  "rational expressions": [
+    "Analyze the algebraic fraction and its denominator.",
+    "Preserve the restrictions of the rational expression.",
+    "Simplify the quotient structure carefully.",
+    "Use the common-denominator relationship.",
+    "Track the reciprocal form in the algebraic fraction.",
+    "Identify valid cancellations in the rational form.",
+    "Respect excluded values while manipulating the quotient.",
+    "Rewrite the fractional expression without losing factors.",
+  ],
+  "regression": [
+    "Interpret the fitted relationship in its data context.",
+    "Compare the observed value with the model prediction.",
+    "Use the regression equation as a statistical estimate.",
+    "Track what the model's slope or residual represents.",
+    "Analyze the linear fit without claiming causation.",
+    "Relate the data point to the trend line.",
+    "Read the statistical model within its observed range.",
+    "Evaluate what the fitted line supports.",
+  ],
+  "right-triangle trigonometry": [
+    "Choose the trigonometric ratio matching the sides.",
+    "Model the right triangle before evaluating.",
+    "Relate the acute angle to the needed side lengths.",
+    "Use sine, cosine, or tangent from the diagram.",
+    "Separate the right-triangle calculation from any offset.",
+    "Identify opposite, adjacent, and hypotenuse roles.",
+    "Translate the elevation or depression into a triangle.",
+    "Apply the trigonometric relationship in stages.",
+  ],
+  "surface area": [
+    "Measure every exposed face of the solid.",
+    "Use the surface formula for the three-dimensional object.",
+    "Track the exterior area rather than the enclosed space.",
+    "Decompose the solid's boundary into familiar regions.",
+    "Interpret the requested measure as an outer covering.",
+    "Add or apply the areas forming the solid's surface.",
+    "Distinguish the boundary measure from volume.",
+    "Analyze the solid's complete exterior geometry.",
+  ],
+  "systems": [
+    "Solve the simultaneous pair of equations.",
+    "Find the shared solution to the coupled relations.",
+    "Use both conditions in the equation system.",
+    "Locate where the two linear relations agree.",
+    "Combine the paired equations to determine the unknowns.",
+    "Interpret the intersection represented by the system.",
+    "Track the ordered pair satisfying both statements.",
+    "Analyze the linked equations together.",
+  ],
+  "triangles": [
+    "Use the stated relationships within the triangle.",
+    "Identify the relevant triangular measure.",
+    "Apply the base-height or side-angle structure.",
+    "Track how the triangle's dimensions determine the result.",
+    "Interpret the geometric information as a triangle formula.",
+    "Reason from the sides, heights, or angles provided.",
+    "Connect the given measurements inside the triangle.",
+    "Analyze the three-sided figure before calculating.",
+  ],
+  "transformations": [
+    "Track the stated motion of the graph.",
+    "Relate the transformed function to its parent.",
+    "Follow how the coordinates change under the mapping.",
+    "Interpret the shift, reflection, or stretch.",
+    "Analyze the image of the original graph.",
+    "Use the transformation rule on the function.",
+    "Determine how the curve's position or scale changes.",
+    "Map the original relation to its transformed form.",
+  ],
+  "volume": [
+    "Measure the three-dimensional space described.",
+    "Use cross-sectional area through the solid's depth.",
+    "Track how the solid's dimensions determine capacity.",
+    "Interpret the displacement or enclosure geometrically.",
+    "Apply the appropriate volume relationship.",
+    "Build the cubic measure from the given lengths.",
+    "Analyze the space occupied inside the solid.",
+    "Relate the base region to the solid's extent.",
+  ],
+};
+
+function distinguishSubskillStem(subskill, spec, variant) {
+  const leads = SUBSKILL_LEADS[subskill];
+  if (!leads) return spec;
+  const offset = hashString(spec.family) % leads.length;
+  return {
+    ...spec,
+    stem: `${leads[(variant + offset) % leads.length]} ${spec.stem}`,
+  };
+}
+
 function gcd(left, right) {
   let a = Math.abs(left);
   let b = Math.abs(right);
@@ -185,19 +454,24 @@ function factorCountCheck(argument, base, expected) {
 // ascending, which is what catches any drift between the two copies.
 function mirrorAnswerPlanner() {
   const counts = { Easy: [0, 0, 0, 0], Medium: [0, 0, 0, 0], Hard: [0, 0, 0, 0] };
+  const overall = [0, 0, 0, 0];
   loadBank(SECTION_KEY)
     .filter((question) => !REBUILD || question.provenance.generator !== GENERATOR_NAME)
     .filter((question) => question.responseType === "multiple-choice")
     .forEach((question) => {
       const tier = counts[question.difficulty] || counts.Medium;
       tier[question.correctAnswer] += 1;
+      overall[question.correctAnswer] += 1;
     });
   return function nextPosition(difficulty, seedKey) {
     const tier = counts[difficulty] || counts.Medium;
-    const fewest = Math.min(...tier);
-    const candidates = [0, 1, 2, 3].filter((index) => tier[index] === fewest);
+    const fewestInTier = Math.min(...tier);
+    const inTier = [0, 1, 2, 3].filter((index) => tier[index] === fewestInTier);
+    const fewestOverall = Math.min(...inTier.map((index) => overall[index]));
+    const candidates = inTier.filter((index) => overall[index] === fewestOverall);
     const choice = candidates[hashString(String(seedKey)) % candidates.length];
     tier[choice] += 1;
+    overall[choice] += 1;
     return choice;
   };
 }
@@ -363,7 +637,16 @@ SHAPES["number properties"] = {
       const place = context(s).place;
       return {
         family: "lcm-repeating-cycles",
-        stem: `At the ${place} transit stop, one shuttle leaves every ${first} minutes and another leaves every ${second} minutes. Both leave at 9:00 a.m. How many minutes later do they next leave at the same time?`,
+        stem: `${choose(variant, [
+          "Compare the repeating departure cycles.",
+          "Synchronize the two shuttle schedules.",
+          "Find when the recurring departures coincide.",
+          "Track the first shared point in both timetables.",
+          "Use the cycle lengths to predict the next match.",
+          "Determine when both transit patterns align again.",
+          "Analyze the shuttles' common departure interval.",
+          "Locate the earliest reunion of the two schedules.",
+        ])} At the ${place} transit stop, one shuttle leaves every ${first} minutes and another leaves every ${second} minutes. Both leave at 9:00 a.m. How many minutes later do they next leave at the same time?`,
         answer: together,
         wrong: [
           [gcd(first, second), "This is the greatest common factor of the two cycles; a shared departure needs a common multiple instead."],
@@ -413,9 +696,14 @@ SHAPES["number properties"] = {
       return {
         family: "arithmetic-series-sum",
         stem: choose(variant, [
-          `The first term of an arithmetic sequence is ${first}, and each term after the first is ${step} greater than the term before it. What is the sum of the first ${count} terms?`,
-          `An arithmetic sequence begins at ${first} and grows by ${step} at every step. What is the total of its first ${count} terms?`,
-          `In an arithmetic sequence, a₁ = ${first} and the common difference is ${step}. What is the sum of the first ${count} terms?`,
+          `Given an arithmetic sequence whose first term is ${first} and whose common difference is ${step}, what is the sum of its first ${count} terms?`,
+          `Suppose an arithmetic sequence begins with ${first} and increases by ${step} per term. Find the total of the first ${count} terms.`,
+          `Assume a₁ = ${first} and the common difference is ${step}. Calculate the sum through a${sub(count)}.`,
+          `Determine the sum of the first ${count} terms of the arithmetic sequence that starts at ${first} with common difference ${step}.`,
+          `Which value equals the sum of ${count} terms in an arithmetic sequence beginning at ${first} and advancing by ${step}?`,
+          `When an arithmetic sequence has first term ${first} and common difference ${step}, what do its first ${count} terms total?`,
+          `Let an arithmetic sequence start with ${first} and add ${step} for each successive term. Find S${sub(count)}.`,
+          `Take ${first} as the first term of an arithmetic sequence with common difference ${step}. Compute the sum of the first ${count} terms.`,
         ]),
         answer: total,
         wrong: [
@@ -502,9 +790,16 @@ SHAPES["complex numbers"] = {
       const d = b + 1 + (s % 5);
       return {
         family: "complex-difference",
-        stem: pose(variant, "value", {
-          expression: `(${a} + ${b}i) ${MINUS} (${c} + ${d}i)`,
-        }),
+        stem: choose(variant, [
+          `Subtract the complex numbers: (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
+          `Compute the complex difference (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
+          `Combine real and imaginary parts to find (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
+          `Remove ${c} + ${d}i from ${a} + ${b}i and state the resulting complex number.`,
+          `What complex number remains after subtracting (${c} + ${d}i) from (${a} + ${b}i)?`,
+          `Evaluate the subtraction (${a} + ${b}i) ${MINUS} (${c} + ${d}i) in rectangular form.`,
+          `Perform componentwise subtraction on (${a} + ${b}i) and (${c} + ${d}i).`,
+          `Simplify the difference between ${a} + ${b}i and ${c} + ${d}i, in that order.`,
+        ]),
         answer: cplx(a - c, b - d),
         wrong: [
           [cplx(a + c, b + d), "This adds the two complex numbers instead of subtracting the second one."],
@@ -528,9 +823,16 @@ SHAPES["complex numbers"] = {
       const d = 2 + (s % 7);
       return {
         family: "complex-product",
-        stem: pose(variant, "value", {
-          expression: `(${a} + ${b}i)(${c} + ${d}i)`,
-        }),
+        stem: choose(variant, [
+          `Multiply the complex factors (${a} + ${b}i) and (${c} + ${d}i).`,
+          `Expand the complex product (${a} + ${b}i)(${c} + ${d}i).`,
+          `Using i² = ${MINUS}1, compute (${a} + ${b}i)(${c} + ${d}i).`,
+          `Apply binomial multiplication to (${a} + ${b}i)(${c} + ${d}i).`,
+          `Determine the product of the complex numbers ${a} + ${b}i and ${c} + ${d}i.`,
+          `Evaluate the multiplication (${a} + ${b}i)(${c} + ${d}i) in rectangular form.`,
+          `Combine the cross terms after multiplying (${a} + ${b}i) by (${c} + ${d}i).`,
+          `What results when the complex value ${a} + ${b}i is multiplied by ${c} + ${d}i?`,
+        ]),
         answer: cplx(a * c - b * d, a * d + b * c),
         wrong: [
           [cplx(a * c + b * d, a * d + b * c), "This treats i² as +1 instead of −1, so the last term keeps its sign."],
@@ -597,12 +899,9 @@ SHAPES["complex numbers"] = {
       const [legA, legB, hypotenuse] = TRIPLES[(s + variant) % TRIPLES.length];
       return {
         family: "complex-plane-modulus",
-        stem: choose(variant, [
-          `In the complex plane, what is the distance from the origin to the point that represents ${legA} ${MINUS} ${legB}i?`,
-          `A point in the complex plane represents ${legA} ${MINUS} ${legB}i. How far is it from the origin?`,
-          `What is the modulus |${legA} ${MINUS} ${legB}i|?`,
-          `Plotted as a point, ${legA} ${MINUS} ${legB}i lies at which distance from 0?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the modulus |${legA} ${MINUS} ${legB}i|`,
+        }),
         answer: hypotenuse,
         wrong: [
           [Math.abs(legA - legB), "This subtracts the coordinates; distance from the origin uses the Pythagorean relationship."],
@@ -808,12 +1107,9 @@ SHAPES["unit conversion"] = {
       const answer = amount * unit.factor;
       return {
         family: "single-step-conversion-up",
-        stem: choose(variant, [
-          `A measurement of ${amount} ${unit.from} is equivalent to how many ${unit.to}?`,
-          `Convert ${amount} ${unit.from} into ${unit.to}.`,
-          `How many ${unit.to} are in ${amount} ${unit.from}?`,
-          `A quantity recorded as ${amount} ${unit.from} equals what number of ${unit.to}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of ${unit.to} equivalent to ${amount} ${unit.from}`,
+        }),
         answer,
         wrong: [
           [round3(amount / unit.factor), "This divides by the conversion factor, which converts in the opposite direction."],
@@ -835,12 +1131,9 @@ SHAPES["unit conversion"] = {
       const amount = answer * unit.factor;
       return {
         family: "single-step-conversion-down",
-        stem: choose(variant, [
-          `Rewriting ${amount} ${unit.to} in the larger unit gives how many ${unit.from}?`,
-          `${amount} ${unit.to} is the same as what number of ${unit.from}?`,
-          `Express ${amount} ${unit.to} in ${unit.from}.`,
-          `A reading of ${amount} ${unit.to} corresponds to which measurement in ${unit.from}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of ${unit.from} equivalent to ${amount} ${unit.to}`,
+        }),
         answer,
         wrong: [
           [round3(amount / (unit.factor * 2)), "This divides by twice the conversion factor."],
@@ -861,11 +1154,11 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const speeds = [36, 54, 72, 90, 18, 108];
       const speed = speeds[(s + variant) % speeds.length];
-      const mover = choose(variant, ["train", "tram", "cargo drone", "ferry"]);
+      const trip = scene(variant, TRAVEL);
       const answer = speed / 3.6;
       return {
         family: "speed-unit-conversion",
-        stem: `A ${mover} travels at ${speed} kilometres per hour. What is that speed in metres per second?`,
+        stem: `On a ${trip.route}, a ${trip.mover} travels at ${speed} kilometres per hour. What is that speed in metres per second?`,
         answer,
         wrong: [
           [round3(speed / 3600), "This converts hours to seconds but never converts kilometres to metres."],
@@ -884,11 +1177,12 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const cupsPerBatch = choose(s, [2, 3, 5, 6]);
       const batches = choose(s * 2 + 1 + variant, [8, 12, 16, 20]);
-      const liquid = choose(variant, ["stock", "cider", "buttermilk", "tomato purée"]);
+      const recipe = scene(variant, RECIPE);
+      const liquid = recipe.ingredient;
       const answer = (cupsPerBatch * batches) / 4;
       return {
         family: "recipe-scaling-conversion",
-        stem: `A recipe uses ${cupsPerBatch} cups of ${liquid} per batch, and 1 quart equals 4 cups. How many quarts of ${liquid} are needed for ${batches} batches?`,
+        stem: `A ${recipe.dish} recipe uses ${cupsPerBatch} cups of ${liquid} per batch, and 1 quart equals 4 cups. How many quarts of ${liquid} are needed for ${batches} batches?`,
         answer,
         wrong: [
           [round3(cupsPerBatch / 4), "This converts one batch and forgets the remaining batches."],
@@ -909,14 +1203,13 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const rooms = [[12, 18], [9, 20], [15, 24], [21, 12], [18, 27], [24, 15]];
       const [length, width] = rooms[(s + variant) % rooms.length];
-      const space = choose(variant, ["studio", "gallery", "rehearsal room", "reading room"]);
-      const covering = choose(variant, ["carpet", "cork flooring", "vinyl tile", "woven matting"]);
+      const ground = scene(variant, GROUND);
       const price = 20 + 5 * (s % 5);
       const area = length * width;
       const answer = (area / 9) * price;
       return {
         family: "square-unit-conversion-cost",
-        stem: `A ${space} measures ${length} feet by ${width} feet. ${covering[0].toUpperCase()}${covering.slice(1)} costs $${price} per square yard. What is the cost, in dollars, to cover the floor?`,
+        stem: `A ${ground.region} measures ${length} feet by ${width} feet. ${ground.cover[0].toUpperCase()}${ground.cover.slice(1)} costs $${price} per square yard. What is the cost, in dollars, to cover it?`,
         answer,
         wrong: [
           [price, "This is the price of a single square yard."],
@@ -936,21 +1229,30 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const volume = 40 * (2 + (s % 5));
       const rate = choose(s + variant, [10, 12, 15, 20, 25, 30]);
-      const vessel = choose(variant, ["tank", "reservoir", "cistern", "holding pool"]);
+      const vessel = scene(s, VESSEL);
       const gallons = volume * 7.5;
       const answer = gallons / rate;
       return {
         family: "chained-rate-conversion",
-        stem: `A ${vessel} holds ${volume} cubic feet of water, 1 cubic foot holds 7.5 gallons, and a pump delivers ${rate} gallons per minute. How many minutes does the pump take to fill it?`,
+        stem: `${choose(variant, [
+          "Convert the capacity before using the delivery rate.",
+          "Link the volume conversion to the filling time.",
+          "Trace cubic feet through gallons into minutes.",
+          "Use compatible units for the fluid-transfer calculation.",
+          "Translate the vessel capacity into the pump's units.",
+          "Combine the liquid-volume factor with the flow rate.",
+          "Follow the unit chain to determine duration.",
+          "Reconcile the storage measure and the fill-rate measure.",
+        ])} A ${vessel.vessel} holds ${volume} cubic feet of ${vessel.fluid}, 1 cubic foot holds 7.5 gallons, and a ${vessel.filler} delivers ${rate} gallons per minute. How many minutes does filling it take?`,
         answer,
         wrong: [
           [round3(volume / (7.5 * rate)), "This divides by the 7.5 gallons per cubic foot instead of multiplying by it."],
           [round3(volume / rate), "This ignores the conversion from cubic feet to gallons."],
-          [round3(rate * 7.5), "This multiplies the pump rate by the conversion factor and never uses the tank size."],
+          [round3(rate * 7.5), `This multiplies the ${vessel.filler} rate by the conversion factor and never uses the ${vessel.vessel} size.`],
           [gallons, "This is the capacity in gallons, not the time to fill it."],
           [round3(volume * 7.5 * rate), "This multiplies by the pump rate; time is capacity divided by rate."],
         ],
-        why: `The tank holds ${volume} × 7.5 = ${gallons} gallons. At ${rate} gallons per minute it fills in ${gallons}/${rate} = ${answer} minutes.`,
+        why: `The ${vessel.vessel} holds ${volume} × 7.5 = ${gallons} gallons. At ${rate} gallons per minute it fills in ${gallons}/${rate} = ${answer} minutes.`,
         steps: ["Convert cubic feet to gallons.", "Divide the gallons by the pump rate.", "Check the units: gallons ÷ gallons per minute leaves minutes."],
         principles: ["Time = quantity ÷ rate, after both are expressed in matching units."],
         hint: "Convert to a common unit before dividing by the rate.",
@@ -966,11 +1268,11 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const speed = 12 + (s % 9);
       const hours = 3 + (s % 5);
-      const mover = choose(variant, ["cyclist", "kayaker", "hiker", "scooter rider"]);
+      const trip = scene(variant, TRAVEL);
       const answer = speed * hours;
       return {
         family: "distance-from-rate-and-time",
-        stem: `A ${mover} moves at a constant ${speed} kilometres per hour for ${hours} hours. How many kilometres are covered?`,
+        stem: `A ${trip.mover} travels along the ${trip.route} at a constant ${speed} kilometres per hour for ${hours} hours. How many kilometres are covered?`,
         answer,
         wrong: [
           [round3(hours / speed), "This inverts the rate, giving hours per kilometre."],
@@ -989,11 +1291,11 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const rate = 14 + (s % 11);
       const hours = 4 + (s % 4);
-      const mover = choose(variant, ["delivery van", "freight truck", "mail carrier", "shuttle bus"]);
+      const trip = scene(variant, TRAVEL);
       const distance = rate * hours;
       return {
         family: "rate-from-distance-and-time",
-        stem: `A ${mover} covers ${distance} miles in ${hours} hours. What is the average speed, in miles per hour?`,
+        stem: `A ${trip.mover} covers ${distance} miles along the ${trip.route} in ${hours} hours. What is the average speed, in miles per hour?`,
         answer: rate,
         wrong: [
           [round3(hours / distance), "This inverts the rate, giving hours per mile."],
@@ -1014,12 +1316,12 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const pairs = [[30, 60], [20, 30], [40, 60], [12, 24], [10, 15], [45, 90]];
       const [slow, fast] = pairs[(s + variant) % pairs.length];
-      const mover = choose(variant, ["driver", "courier", "bus", "van"]);
+      const trip = scene(variant, TRAVEL);
       const leg = lcm(slow, fast);
       const answer = (2 * slow * fast) / (slow + fast);
       return {
         family: "average-speed-two-legs",
-        stem: `A ${mover} covers ${leg} miles at ${slow} miles per hour and then returns over the same ${leg} miles at ${fast} miles per hour. What is the average speed for the whole trip, in miles per hour?`,
+        stem: `A ${trip.mover} covers ${leg} miles along the ${trip.route} at ${slow} miles per hour and then returns over the same route at ${fast} miles per hour. What is the average speed for the whole trip, in miles per hour?`,
         answer,
         wrong: [
           [slow, "This is the speed of the slower leg only."],
@@ -1064,10 +1366,10 @@ SHAPES["dimensional reasoning"] = {
   Hard: [
     (s, variant) => {
       const [north, east, resultant] = TRIPLES[(s * 3 + variant) % TRIPLES.length];
-      const craft = choose(variant, ["boat", "kayak", "ferry", "raft"]);
+      const trip = scene(variant, WATERCRAFT);
       return {
         family: "vector-resultant-speed",
-        stem: `A ${craft} is driven due north at ${north} kilometres per hour while a current carries it due east at ${east} kilometres per hour. What is the resulting speed, in kilometres per hour?`,
+        stem: `In a ${trip.water}, a ${trip.craft} is driven due north at ${north} kilometres per hour while a current carries it due east at ${east} kilometres per hour. What is the resulting speed, in kilometres per hour?`,
         answer: resultant,
         wrong: [
           [Math.abs(north - east), "This subtracts the components, which would apply only if they pointed along the same line in opposite directions."],
@@ -1092,11 +1394,9 @@ SHAPES["dimensional reasoning"] = {
       const vy = totalY - uy;
       return {
         family: "vector-sum-magnitude",
-        stem: choose(variant, [
-          `Vectors u and v have components u = ⟨${num(ux)}, ${num(uy)}⟩ and v = ⟨${num(vx)}, ${num(vy)}⟩. What is the magnitude of u + v?`,
-          `For u = ⟨${num(ux)}, ${num(uy)}⟩ and v = ⟨${num(vx)}, ${num(vy)}⟩, the length |u + v| equals what?`,
-          `Adding the vectors ⟨${num(ux)}, ${num(uy)}⟩ and ⟨${num(vx)}, ${num(vy)}⟩ produces a vector of which magnitude?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the magnitude of ⟨${num(ux)}, ${num(uy)}⟩ + ⟨${num(vx)}, ${num(vy)}⟩`,
+        }),
         answer: magnitude,
         wrong: [
           [Math.abs(totalX - totalY), "This subtracts the two components of the sum instead of using the Pythagorean length."],
@@ -1209,10 +1509,10 @@ SHAPES["linear equations"] = {
       const joining = 40 + 10 * (s % 7);
       const months = 4 + (s % 8);
       const total = joining + monthly * months;
-      const facility = choose(variant, ["climbing gym", "maker space", "rowing club", "art studio"]);
+      const membership = scene(variant, MEMBERSHIP);
       return {
         family: "linear-model-solve-for-input",
-        stem: `A ${facility} charges a one-time fee of $${joining} plus $${monthly} per month. A member has paid $${total} in total. For how many months has the member belonged?`,
+        stem: `A ${membership.service} charges a one-time fee of $${joining} plus $${monthly} per month. A ${membership.member} has paid $${total} in total. For how many months has the membership lasted?`,
         answer: months,
         wrong: [
           [round3(total / (monthly + joining)), "This divides the total by the sum of the two fees, which mixes a one-time charge with a monthly rate."],
@@ -1240,7 +1540,10 @@ SHAPES["linear equations"] = {
       const secondC = ratio * firstC + 1 + variant;
       return {
         family: "system-parameter-no-solution",
-        stem: `The system of equations kx + ${firstY}y = ${firstC} and ${secondX}x + ${secondY}y = ${secondC} has no solution. What is the value of k?`,
+        stem: pose(variant, "parameterFor", {
+          condition: `the system kx + ${firstY}y = ${firstC} and ${secondX}x + ${secondY}y = ${secondC} has no solution`,
+          parameter: "k",
+        }),
         answer,
         wrong: [
           [ratio, `${ratio} is the factor relating the two equations, not the coefficient of x in the first one.`],
@@ -1267,11 +1570,10 @@ SHAPES["linear equations"] = {
       const constant = 9 + (s % 12);
       return {
         family: "parameter-for-no-solution",
-        stem: choose(variant, [
-          `For what value of k does the equation k(x + ${inside}) ${MINUS} ${subtracted}x = ${rightCoefficient}x + ${constant} have no solution?`,
-          `The equation k(x + ${inside}) ${MINUS} ${subtracted}x = ${rightCoefficient}x + ${constant} has no solution for exactly one value of k. Which value is it?`,
-          `Which value of k makes k(x + ${inside}) ${MINUS} ${subtracted}x = ${rightCoefficient}x + ${constant} true for no value of x?`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `k(x + ${inside}) ${MINUS} ${subtracted}x = ${rightCoefficient}x + ${constant} has no solution`,
+          parameter: "k",
+        }),
         answer,
         wrong: [
           [rightCoefficient - subtracted, "This subtracts the coefficients instead of adding them; the x terms must cancel completely."],
@@ -1571,7 +1873,7 @@ SHAPES.systems = {
       const children = adults + 5 + (s % 17);
       const total = adults + children;
       const revenue = adultPrice * adults + childPrice * children;
-      const venue = choose(variant, ["planetarium", "ferry", "aquarium", "heritage railway"]);
+      const venue = choose(s, ["planetarium", "ferry", "aquarium", "heritage railway"]);
       return {
         family: "system-word-problem-two-prices",
         stem: `A ${venue} sold ${total} tickets and collected $${revenue}. Adult tickets cost $${adultPrice} and child tickets cost $${childPrice}. How many adult tickets were sold?`,
@@ -1609,11 +1911,10 @@ SHAPES.systems = {
       const answer = (b * c) / d;
       return {
         family: "matrix-determinant-parameter",
-        stem: choose(variant, [
-          `The matrix [[k, ${b}], [${c}, ${d}]] has no inverse. What is the value of k?`,
-          `For which value of k is the determinant of [[k, ${b}], [${c}, ${d}]] equal to 0?`,
-          `A 2 × 2 matrix [[k, ${b}], [${c}, ${d}]] is singular. Which number is k?`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `the matrix [[k, ${b}], [${c}, ${d}]] is singular`,
+          parameter: "k",
+        }),
         answer,
         wrong: [
           [round3(d / (b * c)), "This inverts the relationship, dividing the corner entry by the off-diagonal product."],
@@ -1645,11 +1946,9 @@ SHAPES.systems = {
       const answer = a * f + b * h;
       return {
         family: "matrix-product-entry",
-        stem: choose(variant, [
-          `If A = [[${a}, ${b}], [${c}, ${d}]] and B = [[${e}, ${f}], [${g}, ${h}]], what is the entry in row 1, column 2 of the product AB?`,
-          `For A = [[${a}, ${b}], [${c}, ${d}]] and B = [[${e}, ${f}], [${g}, ${h}]], the row 1, column 2 entry of AB equals what?`,
-          `Matrices A = [[${a}, ${b}], [${c}, ${d}]] and B = [[${e}, ${f}], [${g}, ${h}]] are multiplied. Which number sits in row 1, column 2 of AB?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the row 1, column 2 entry of [[${a}, ${b}], [${c}, ${d}]] [[${e}, ${f}], [${g}, ${h}]]`,
+        }),
         answer,
         wrong: [
           [b * f, "This multiplies the two entries that already sit in row 1, column 2, which is entrywise multiplication rather than matrix multiplication."],
@@ -1790,11 +2089,10 @@ SHAPES.factoring = {
       const remainder = divisorRoot ** 3 + k * divisorRoot ** 2 - linear * divisorRoot + constant;
       return {
         family: "remainder-theorem-parameter",
-        stem: choose(variant, [
-          `When p(x) = x³ + kx² ${MINUS} ${linear}x + ${constant} is divided by (x ${MINUS} ${divisorRoot}), the remainder is ${remainder}. What is the value of k?`,
-          `The polynomial p(x) = x³ + kx² ${MINUS} ${linear}x + ${constant} leaves remainder ${remainder} upon division by (x ${MINUS} ${divisorRoot}). Which number is k?`,
-          `Dividing p(x) = x³ + kx² ${MINUS} ${linear}x + ${constant} by (x ${MINUS} ${divisorRoot}) leaves a remainder of ${remainder}. What does k equal?`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `p(x) = x³ + kx² ${MINUS} ${linear}x + ${constant} leaves remainder ${remainder} when divided by (x ${MINUS} ${divisorRoot})`,
+          parameter: "k",
+        }),
         answer: k,
         wrong: [
           [round3(remainder / (divisorRoot ** 2)) - divisorRoot, "This divides the whole remainder by the square of the root without first removing the other terms."],
@@ -1949,11 +2247,10 @@ SHAPES["rational expressions"] = {
       for (let value = -lower + 1; value < upper; value += 1) integers.push(value);
       return {
         family: "rational-inequality-sign-chart",
-        stem: choose(variant, [
-          `How many integer values of x satisfy (x ${MINUS} ${upper})/(x + ${lower}) < 0?`,
-          `The inequality (x ${MINUS} ${upper})/(x + ${lower}) < 0 holds for how many integers x?`,
-          `Count the integers x for which (x ${MINUS} ${upper})/(x + ${lower}) is negative.`,
-        ]),
+        stem: pose(variant, "countIntegers", {
+          condition: `(x ${MINUS} ${upper})/(x + ${lower}) < 0`,
+          symbol: "x",
+        }),
         answer: integers.length,
         wrong: [
           [integers.length - 1, "This drops one interior integer; every integer strictly between the two critical values works."],
@@ -1979,11 +2276,10 @@ SHAPES["rational expressions"] = {
       const answer = frac(y - x, y + x);
       return {
         family: "complex-fraction-simplification",
-        stem: choose(variant, [
-          `If x = ${x} and y = ${y}, what is the value of (1/x ${MINUS} 1/y)/(1/x + 1/y)?`,
-          `Evaluate (1/x ${MINUS} 1/y)/(1/x + 1/y) when x = ${x} and y = ${y}.`,
-          `For x = ${x} and y = ${y}, the complex fraction (1/x ${MINUS} 1/y)/(1/x + 1/y) equals what?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `x = ${x} and y = ${y}`,
+          target: `(1/x ${MINUS} 1/y)/(1/x + 1/y)`,
+        }),
         answer,
         wrong: [
           [frac(x - y, x + y), "This reverses the numerator; clearing the fractions gives y − x on top, not x − y."],
@@ -2106,7 +2402,16 @@ SHAPES["exponents"] = {
       const answer = base ** power;
       return {
         family: "fractional-exponent-evaluation",
-        stem: pose(variant, "value", { expression: `${radicand}^(${power}/${root})` }),
+        stem: choose(variant, [
+          `Evaluate the fractional power ${radicand}^(${power}/${root}).`,
+          `Use the root encoded by the denominator to compute ${radicand}^(${power}/${root}).`,
+          `Rewrite the rational exponent, then find the value of ${radicand}^(${power}/${root}).`,
+          `Interpret ${power}/${root} as a fractional index and simplify ${radicand}^(${power}/${root}).`,
+          `Extract the indicated root before applying the numerator in ${radicand}^(${power}/${root}).`,
+          `Convert the radicand to a perfect power and calculate ${radicand}^(${power}/${root}).`,
+          `Resolve the root-and-power expression ${radicand}^(${power}/${root}).`,
+          `What number results from the rational power ${radicand}^(${power}/${root})?`,
+        ]),
         answer,
         wrong: [
           [radicand * power / root, "This multiplies by the fraction instead of using it as an exponent."],
@@ -2135,7 +2440,16 @@ SHAPES["exponents"] = {
       const answer = frac(bottom ** power, top ** power);
       return {
         family: "negative-exponent-on-a-fraction",
-        stem: pose(variant, "value", { expression: `(${top}/${bottom})^${MINUS}${power}` }),
+        stem: choose(variant, [
+          `Apply the negative power to the fraction (${top}/${bottom})^${MINUS}${power}.`,
+          `Reciprocate the fractional base, then evaluate (${top}/${bottom})^${MINUS}${power}.`,
+          `Rewrite the negative exponent as a positive power and simplify (${top}/${bottom})^${MINUS}${power}.`,
+          `Use the reciprocal rule to compute (${top}/${bottom})^${MINUS}${power}.`,
+          `Invert the base before applying the magnitude of the exponent in (${top}/${bottom})^${MINUS}${power}.`,
+          `Determine the value of the negative fractional power (${top}/${bottom})^${MINUS}${power}.`,
+          `Transform (${top}/${bottom})^${MINUS}${power} into an equivalent positive-exponent fraction.`,
+          `What fraction results after evaluating (${top}/${bottom})^${MINUS}${power}?`,
+        ]),
         answer,
         wrong: [
           [frac(top ** power, bottom ** power), "This squares the fraction but never inverts it; the negative exponent reciprocates."],
@@ -2165,12 +2479,11 @@ SHAPES["exponents"] = {
       const degree = p * q - r;
       return {
         family: "combined-exponent-rules-degree",
-        stem: choose(variant, [
-          `For x > 0, (${a}x^${p})^${q}/(${c}x^${r}) is equivalent to kx^n. ${ask(variant, "n")}`,
-          `The expression (${a}x^${p})^${q}/(${c}x^${r}) equals kx^n for all positive x. What is n?`,
-          `Simplified to the form kx^n, the expression (${a}x^${p})^${q}/(${c}x^${r}) has which exponent n?`,
-          `If (${a}x^${p})^${q}/(${c}x^${r}) = kx^n for x > 0, n equals what?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `(${a}x^${p})^${q}/(${c}x^${r}) for x > 0`,
+          form: "kx^n",
+          target: "n",
+        }),
         answer: degree,
         wrong: [
           [p * q + r, "This adds the denominator's exponent; division subtracts it."],
@@ -2269,12 +2582,11 @@ SHAPES["exponents"] = {
       const answer = m * outer;
       return {
         family: "negative-fractional-exponent-simplification",
-        stem: choose(variant, [
-          `For x > 0, (x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) = x^n. ${ask(variant, "n")}`,
-          `The expression (x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) equals x^n for x > 0. What is n?`,
-          `Simplify (x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) to x^n. Which value is n?`,
-          `If (x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) is written as x^n, n equals what?`,
-        ]),
+        stem: pose(variant, "equivalentForm", {
+          expression: `(x^(${MINUS}${m}/${root}))^(${MINUS}${outerExponent}) for x > 0`,
+          form: "x^n",
+          target: "n",
+        }),
         answer,
         wrong: [
           [-answer, "Two negative exponents multiply to a positive exponent, not a negative one."],
@@ -2473,12 +2785,10 @@ SHAPES["notation"] = {
       const answer = a * (2 * x + h);
       return {
         family: "difference-quotient",
-        stem: choose(variant, [
-          `For f(x) = ${a}x², what is the value of (f(${x} + ${h}) ${MINUS} f(${x}))/${h}?`,
-          `Let f(x) = ${a}x². Evaluate (f(${x} + ${h}) ${MINUS} f(${x}))/${h}.`,
-          `Given f(x) = ${a}x², the difference quotient (f(${x} + ${h}) ${MINUS} f(${x}))/${h} equals what?`,
-          `If f(x) = ${a}x², which number is (f(${x} + ${h}) ${MINUS} f(${x}))/${h}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(x) = ${a}x²`,
+          target: `(f(${x} + ${h}) ${MINUS} f(${x}))/${h}`,
+        }),
         answer,
         wrong: [
           [a * (2 * x + h) * h, "This never divides by the change in x."],
@@ -2514,12 +2824,10 @@ SHAPES["notation"] = {
       const c = a + 1 + (s % 3);
       return {
         family: "composition-order-comparison",
-        stem: choose(variant, [
-          `Let f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}. What is the value of f(g(0)) ${MINUS} g(f(0))?`,
-          `For f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, evaluate f(g(0)) ${MINUS} g(f(0)).`,
-          `Given f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, the difference f(g(0)) ${MINUS} g(f(0)) equals what?`,
-          `If f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}, which number is f(g(0)) ${MINUS} g(f(0))?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(x) = ${a}x + ${b} and g(x) = ${c}x + ${d}`,
+          target: `f(g(0)) ${MINUS} g(f(0))`,
+        }),
         answer: a * d + b - (c * b + d),
         wrong: [
           [c * b + d - (a * d + b), "This reverses the subtraction, giving g(f(0)) − f(g(0))."],
@@ -2555,12 +2863,9 @@ SHAPES["domain and range"] = {
       const numeratorConstant = 1 + (s % 7);
       return {
         family: "domain-exclusion-rational",
-        stem: choose(variant, [
-          `The function f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) is defined for every real number except which value of x?`,
-          `For which value of x is f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) undefined?`,
-          `Which real number must be excluded from the domain of f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded})?`,
-          `The domain of f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded}) omits exactly one number. Which one?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the real value excluded from the domain of f(x) = (x + ${numeratorConstant})/(x ${MINUS} ${excluded})`,
+        }),
         answer: excluded,
         wrong: [
           [-excluded, "This flips the sign; the denominator vanishes where x equals the subtracted number."],
@@ -2585,12 +2890,9 @@ SHAPES["domain and range"] = {
       const shift = 2 + (s % 10);
       return {
         family: "domain-of-square-root",
-        stem: choose(variant, [
-          `What is the least value of x in the domain of f(x) = √(x ${MINUS} ${shift})?`,
-          `The function f(x) = √(x ${MINUS} ${shift}) is defined for x greater than or equal to which number?`,
-          `For f(x) = √(x ${MINUS} ${shift}), the smallest allowed value of x is which number?`,
-          `The domain of f(x) = √(x ${MINUS} ${shift}) begins at which value of x?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the least real value in the domain of f(x) = √(x ${MINUS} ${shift})`,
+        }),
         answer: shift,
         wrong: [
           [-shift, "This flips the sign; the radicand is non-negative when x is at least the subtracted value."],
@@ -2619,12 +2921,9 @@ SHAPES["domain and range"] = {
       const minimum = 2 + (s % 9);
       return {
         family: "range-of-upward-parabola",
-        stem: choose(variant, [
-          `The function f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum} has which range?`,
-          `What is the range of f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum}?`,
-          `For f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum}, the set of possible output values is described by which statement?`,
-          `Which description gives the range of f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the range of f(x) = ${a}(x ${MINUS} ${vertexX})² + ${minimum}`,
+        }),
         answer: `f(x) ≥ ${minimum}`,
         wrong: [
           [`f(x) ≥ ${vertexX}`, `${vertexX} is the x-coordinate of the vertex; the range is built from the y-coordinate.`],
@@ -2651,12 +2950,9 @@ SHAPES["domain and range"] = {
       const answer = constant / coefficient;
       return {
         family: "domain-of-decreasing-radicand",
-        stem: choose(variant, [
-          `What is the greatest value of x in the domain of f(x) = √(${constant} ${MINUS} ${coefficient}x)?`,
-          `The function f(x) = √(${constant} ${MINUS} ${coefficient}x) is defined for x no larger than which number?`,
-          `For f(x) = √(${constant} ${MINUS} ${coefficient}x), the largest allowed value of x is what?`,
-          `The domain of f(x) = √(${constant} ${MINUS} ${coefficient}x) ends at which value of x?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the greatest real value in the domain of f(x) = √(${constant} ${MINUS} ${coefficient}x)`,
+        }),
         answer,
         wrong: [
           [constant, `This ignores the coefficient ${coefficient} multiplying x.`],
@@ -2685,12 +2981,9 @@ SHAPES["domain and range"] = {
       const asymptote = 1 + (s % 6);
       return {
         family: "range-of-shifted-exponential",
-        stem: choose(variant, [
-          `What is the range of f(x) = ${shift}^x + ${asymptote}?`,
-          `The function f(x) = ${shift}^x + ${asymptote} takes which set of output values?`,
-          `For f(x) = ${shift}^x + ${asymptote}, which statement describes the range?`,
-          `Which description gives the range of f(x) = ${shift}^x + ${asymptote}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the range of f(x) = ${shift}^x + ${asymptote}`,
+        }),
         answer: `f(x) > ${asymptote}`,
         wrong: [
           [`f(x) ≥ ${asymptote}`, `${shift}^x is strictly positive and never reaches 0, so the value ${asymptote} itself is never attained.`],
@@ -2717,12 +3010,9 @@ SHAPES["domain and range"] = {
       const answer = inner + outer * outer;
       return {
         family: "domain-of-a-composition",
-        stem: choose(variant, [
-          `If f(x) = √(x ${MINUS} ${inner}) and g(x) = f(x) ${MINUS} ${outer}, the expression 1/g(x) is undefined at which value of x?`,
-          `Let f(x) = √(x ${MINUS} ${inner}) and g(x) = f(x) ${MINUS} ${outer}. For which x is 1/g(x) undefined even though f is defined there?`,
-          `Given f(x) = √(x ${MINUS} ${inner}), the reciprocal 1/(f(x) ${MINUS} ${outer}) fails to exist at which value of x?`,
-          `For f(x) = √(x ${MINUS} ${inner}), which value of x must be removed from the domain of 1/(f(x) ${MINUS} ${outer})?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the value of x for which 1/(√(x ${MINUS} ${inner}) ${MINUS} ${outer}) is undefined`,
+        }),
         answer,
         wrong: [
           [inner, "The square root is defined here and equals 0, so the reciprocal exists unless the subtracted constant is also 0."],
@@ -2756,12 +3046,10 @@ SHAPES["transformations"] = {
       const answer = pointY + shift;
       return {
         family: "vertical-shift-of-a-point",
-        stem: choose(variant, [
-          `The graph of y = f(x) passes through (${pointX}, ${pointY}). Through which y-value does the graph of y = f(x) + ${shift} pass when x = ${pointX}?`,
-          `If f(${pointX}) = ${pointY}, what is the value of f(${pointX}) + ${shift}?`,
-          `The point (${pointX}, ${pointY}) lies on y = f(x). The graph of y = f(x) + ${shift} contains the point (${pointX}, k). What is k?`,
-          `Given f(${pointX}) = ${pointY}, the transformed graph y = f(x) + ${shift} has which y-value at x = ${pointX}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(${pointX}) = ${pointY}`,
+          target: `f(${pointX}) + ${shift}`,
+        }),
         answer,
         wrong: [
           [pointY - shift, "Adding a constant outside the function shifts the graph up, not down."],
@@ -2789,12 +3077,10 @@ SHAPES["transformations"] = {
       const answer = factor * pointY;
       return {
         family: "vertical-stretch-of-a-point",
-        stem: choose(variant, [
-          `The graph of y = f(x) contains (${pointX}, ${pointY}). What is the y-value of y = ${factor}f(x) at x = ${pointX}?`,
-          `If f(${pointX}) = ${pointY}, what is the value of ${factor}f(${pointX})?`,
-          `The point (${pointX}, ${pointY}) lies on y = f(x). The graph of y = ${factor}f(x) passes through (${pointX}, k). What is k?`,
-          `Given f(${pointX}) = ${pointY}, the stretched graph y = ${factor}f(x) has which y-value at x = ${pointX}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `f(${pointX}) = ${pointY}`,
+          target: `${factor}f(${pointX})`,
+        }),
         answer,
         wrong: [
           [pointY + factor, "This adds the factor instead of multiplying by it."],
@@ -2824,12 +3110,10 @@ SHAPES["transformations"] = {
       const answer = pointX + shift;
       return {
         family: "horizontal-shift-of-a-point",
-        stem: choose(variant, [
-          `The graph of y = f(x) passes through (${pointX}, ${pointY}). The graph of y = f(x ${MINUS} ${shift}) passes through (k, ${pointY}). ${ask(variant, "k")}`,
-          `If f(${pointX}) = ${pointY}, for which value of k does f(k ${MINUS} ${shift}) equal ${pointY}?`,
-          `Given that (${pointX}, ${pointY}) lies on y = f(x), the point with the same y-value on y = f(x ${MINUS} ${shift}) has which x-coordinate?`,
-          `The point (${pointX}, ${pointY}) is on y = f(x). Where does it move on the graph of y = f(x ${MINUS} ${shift})?`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `f(k ${MINUS} ${shift}) = ${pointY}, given f(${pointX}) = ${pointY}`,
+          parameter: "k",
+        }),
         answer,
         wrong: [
           [pointX - shift, "Subtracting inside the function shifts the graph right, not left."],
@@ -2856,12 +3140,9 @@ SHAPES["transformations"] = {
       const pointY = 3 + (s % 6);
       return {
         family: "reflection-across-an-axis",
-        stem: choose(variant, [
-          `The point (${pointX}, ${pointY}) lies on the graph of y = f(x). Which point must lie on the graph of y = ${MINUS}f(x)?`,
-          `If f(${pointX}) = ${pointY}, which point is on the graph of y = ${MINUS}f(x)?`,
-          `Reflecting the graph of y = f(x) to obtain y = ${MINUS}f(x) sends (${pointX}, ${pointY}) to which point?`,
-          `Given that (${pointX}, ${pointY}) is on y = f(x), the graph of y = ${MINUS}f(x) contains which point?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the image of (${pointX}, ${pointY}) under the transformation y = ${MINUS}f(x)`,
+        }),
         answer: point(pointX, -pointY),
         wrong: [
           [point(-pointX, pointY), "This reflects across the y-axis, which is the graph of f(−x), not −f(x)."],
@@ -2893,12 +3174,9 @@ SHAPES["transformations"] = {
       const newY = factor * pointY + raise;
       return {
         family: "combined-transformation-of-a-point",
-        stem: choose(variant, [
-          `The point (${pointX}, ${pointY}) lies on y = f(x). Which point lies on y = ${factor}f(x ${MINUS} ${shift}) + ${raise}?`,
-          `If f(${pointX}) = ${pointY}, which point is on the graph of y = ${factor}f(x ${MINUS} ${shift}) + ${raise}?`,
-          `Given (${pointX}, ${pointY}) on y = f(x), the transformed graph y = ${factor}f(x ${MINUS} ${shift}) + ${raise} contains which point?`,
-          `Applying y = ${factor}f(x ${MINUS} ${shift}) + ${raise} to the point (${pointX}, ${pointY}) of y = f(x) gives which point?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the image of (${pointX}, ${pointY}) under y = ${factor}f(x ${MINUS} ${shift}) + ${raise}`,
+        }),
         answer: point(newX, newY),
         wrong: [
           [point(pointX - shift, newY), "The horizontal shift moves the graph right, so the x-coordinate increases."],
@@ -2967,12 +3245,9 @@ SHAPES["linear"] = {
       const y2 = y1 + slope * run;
       return {
         family: "slope-from-two-points",
-        stem: choose(variant, [
-          `What is the slope of the line through (${x1}, ${y1}) and (${x2}, ${y2})?`,
-          `A line passes through (${x1}, ${y1}) and (${x2}, ${y2}). What is its slope?`,
-          `The line containing (${x1}, ${y1}) and (${x2}, ${y2}) has which slope?`,
-          `Find the slope of the line joining (${x1}, ${y1}) to (${x2}, ${y2}).`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the slope of the line through (${x1}, ${y1}) and (${x2}, ${y2})`,
+        }),
         answer: slope,
         wrong: [
           [round3(run / (slope * run)), "This inverts the ratio, dividing the run by the rise."],
@@ -2998,7 +3273,7 @@ SHAPES["linear"] = {
       const intercept = 3 + (s % 9);
       const input = 2 + (s % 5);
       const answer = slope * input + intercept;
-      const service = choose(variant, ["bike repair shop", "kiln rental", "darkroom", "recording studio"]);
+      const service = scene(variant, HOURLY_SERVICE);
       return {
         family: "linear-model-evaluate",
         stem: `A ${service} charges a flat ${intercept} plus ${slope} per hour. What is the total charge for a ${input}-hour session?`,
@@ -3031,12 +3306,10 @@ SHAPES["linear"] = {
       const intercept = y1 - slope * x1;
       return {
         family: "line-through-point-with-slope",
-        stem: choose(variant, [
-          `A line with slope ${slope} passes through (${x1}, ${y1}). What is its y-intercept?`,
-          `The line through (${x1}, ${y1}) with slope ${slope} crosses the y-axis at which value?`,
-          `If a line has slope ${slope} and contains (${x1}, ${y1}), what is b in y = ${slope}x + b?`,
-          `Find the y-intercept of the line of slope ${slope} that passes through (${x1}, ${y1}).`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `y = ${slope}x + b passes through (${x1}, ${y1})`,
+          parameter: "b",
+        }),
         answer: intercept,
         wrong: [
           [y1 + slope * x1, "This adds the product instead of subtracting it when solving for b."],
@@ -3064,9 +3337,10 @@ SHAPES["linear"] = {
       const rateB = rateA + 2 + (s % 3);
       const weeks = 3 + (s % 7);
       const startB = startA + (rateA - rateB) * weeks;
+      const collection = scene(variant, COLLECTION);
       return {
         family: "two-linear-models-equal",
-        stem: `Two seed trays start with ${startA} and ${startB} sprouts. The first gains ${rateA} sprouts per week and the second gains ${rateB} per week. After how many weeks do the trays hold equal numbers?`,
+        stem: `A ${collection.owner} tracks two collections containing ${startA} and ${startB} ${collection.plural}. The first gains ${rateA} ${collection.plural} per week and the second gains ${rateB} per week. After how many weeks do the collections hold equal numbers?`,
         answer: weeks,
         wrong: [
           [startA - startB, "This is the initial gap in sprouts, not a number of weeks."],
@@ -3096,9 +3370,10 @@ SHAPES["linear"] = {
       const extraRate = 3 + (s % 5);
       const hours = included + 2 + (s % 6);
       const answer = base + extraRate * (hours - included);
+      const service = scene(variant, HOURLY_SERVICE);
       return {
         family: "piecewise-linear-model",
-        stem: `A workshop charges ${base} for the first ${included} hours of studio time and ${extraRate} for each additional hour. What is the charge for ${hours} hours?`,
+        stem: `A ${service} charges ${base} for the first ${included} hours and ${extraRate} for each additional hour. What is the charge for ${hours} hours?`,
         answer,
         wrong: [
           [base + extraRate * hours, `This charges the extra rate for all ${hours} hours instead of only the hours beyond ${included}.`],
@@ -3127,12 +3402,9 @@ SHAPES["linear"] = {
       const answer = intercept + shiftUp;
       return {
         family: "parallel-line-through-point",
-        stem: choose(variant, [
-          `Line ℓ has equation y = ${slope}x + ${intercept}. Line m is parallel to ℓ and passes through (0, ${answer}). What is the y-intercept of m?`,
-          `A line parallel to y = ${slope}x + ${intercept} passes through the point (0, ${answer}). What is its y-intercept?`,
-          `Line m is parallel to y = ${slope}x + ${intercept} and crosses the y-axis at (0, ${answer}). Which number is m's y-intercept?`,
-          `Given y = ${slope}x + ${intercept}, a parallel line through (0, ${answer}) has which y-intercept?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the y-intercept of the line through (0, ${answer}) parallel to y = ${slope}x + ${intercept}`,
+        }),
         answer,
         wrong: [
           [intercept, "This is the intercept of the original line; parallel lines share a slope, not an intercept."],
@@ -3165,12 +3437,9 @@ SHAPES["quadratic"] = {
       const k = 2 + (s % 8);
       return {
         family: "vertex-from-vertex-form",
-        stem: choose(variant, [
-          `What is the minimum value of f(x) = ${a}(x ${MINUS} ${h})² + ${k}?`,
-          `The function f(x) = ${a}(x ${MINUS} ${h})² + ${k} attains which least value?`,
-          `For f(x) = ${a}(x ${MINUS} ${h})² + ${k}, the smallest output is which number?`,
-          `Which value is the minimum of f(x) = ${a}(x ${MINUS} ${h})² + ${k}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the minimum value of f(x) = ${a}(x ${MINUS} ${h})² + ${k}`,
+        }),
         answer: k,
         wrong: [
           [h, "This is the x-coordinate of the vertex, not the minimum output."],
@@ -3197,12 +3466,9 @@ SHAPES["quadratic"] = {
       const sum = r1 + r2;
       return {
         family: "roots-from-factored-quadratic",
-        stem: choose(variant, [
-          `The equation (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0 has two solutions. What is their sum?`,
-          `What is the sum of the solutions of (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0?`,
-          `If (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0, the two values of x add to what?`,
-          `Solve (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0 and report the sum of the roots.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the sum of the solutions of (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0`,
+        }),
         answer: sum,
         wrong: [
           [r1 * r2, "This is the product of the roots, which is the constant term."],
@@ -3231,9 +3497,10 @@ SHAPES["quadratic"] = {
       // h(t) = −16t² + speed·t + start; peak at t = speed/32.
       const peakTime = speed / 32;
       const answer = -16 * peakTime * peakTime + speed * peakTime + start;
+      const projectile = scene(variant, PROJECTILE);
       return {
         family: "projectile-maximum-height",
-        stem: `A ball is thrown upward from a height of ${start} feet with an initial speed of ${speed} feet per second, so its height after t seconds is h(t) = ${MINUS}16t² + ${speed}t + ${start}. What is the ball's maximum height, in feet?`,
+        stem: `A ${projectile.object} is ${projectile.verb} upward from a height of ${start} feet with an initial speed of ${speed} feet per second, so its height after t seconds is h(t) = ${MINUS}16t² + ${speed}t + ${start}. What is its maximum height, in feet?`,
         answer,
         wrong: [
           [start, "This is the release height, not the peak."],
@@ -3262,12 +3529,10 @@ SHAPES["quadratic"] = {
       const c = r1 * r2;
       return {
         family: "solve-quadratic-by-factoring",
-        stem: choose(variant, [
-          `What is the greater solution of x² ${MINUS} ${Math.abs(b)}x + ${c} = 0?`,
-          `The equation x² ${MINUS} ${Math.abs(b)}x + ${c} = 0 has two roots. Which is larger?`,
-          `Solve x² ${MINUS} ${Math.abs(b)}x + ${c} = 0 and give the greater value of x.`,
-          `Of the two solutions of x² ${MINUS} ${Math.abs(b)}x + ${c} = 0, which is the greater?`,
-        ]),
+        stem: pose(variant, "extremeSolution", {
+          equation: `x² ${MINUS} ${Math.abs(b)}x + ${c} = 0`,
+          extreme: "greater",
+        }),
         answer: r2,
         wrong: [
           [r1, "This is the smaller of the two roots."],
@@ -3373,10 +3638,10 @@ SHAPES["exponential"] = {
       const factor = 2 + (s % 3);
       const periods = 2 + (s % 4);
       const answer = start * factor ** periods;
-      const subject = choose(variant, ["a bacterial culture", "a share count", "a colony of mites", "a stack of folded paper layers"]);
+      const growth = scene(variant, EXPONENTIAL_GROWTH);
       return {
         family: "exponential-growth-after-n-periods",
-        stem: `In ${subject}, the quantity starts at ${start} and multiplies by ${factor} each hour. What is the quantity after ${periods} hours?`,
+        stem: `A ${growth.subject} starts with ${start} ${growth.unit} and multiplies by ${factor} each ${growth.period}. What is the quantity after ${periods} such periods?`,
         answer,
         wrong: [
           [start * factor * periods, "This multiplies once and then scales by the number of hours; repeated growth uses an exponent."],
@@ -3402,9 +3667,10 @@ SHAPES["exponential"] = {
       const halvings = 2 + (s % 4);
       const answer = start / 2 ** halvings;
       const halfLife = 3 + (s % 5);
+      const sample = scene(variant, DECAY_SAMPLE);
       return {
         family: "half-life-decay",
-        stem: `A sample of ${start} milligrams decays with a half-life of ${halfLife} years. How many milligrams remain after ${halfLife * halvings} years?`,
+        stem: `A ${sample} of ${start} milligrams decays with a half-life of ${halfLife} years. How many milligrams remain after ${halfLife * halvings} years?`,
         answer,
         wrong: [
           [round3(start / (2 * halvings)), "This divides by twice the number of half-lives instead of halving repeatedly."],
@@ -3438,9 +3704,10 @@ SHAPES["exponential"] = {
       const cents = (value) => money(Math.round(value * 100) / 100);
       const exact = principal * (1 + rate / 100) ** years;
       const answer = cents(exact);
+      const finance = scene(variant, FINANCE);
       return {
         family: "compound-interest-balance",
-        stem: `An account holds ${principal} and earns ${rate}% interest compounded annually. To the nearest cent, what is the balance after ${years} years?`,
+        stem: `A ${finance.account} holds ${principal} and earns ${rate}% interest compounded annually. To the nearest cent, what is the balance after ${years} years?`,
         answer,
         wrong: [
           [cents(principal * (1 + rate * years / 100)), "This applies simple interest, which never earns interest on interest."],
@@ -3466,9 +3733,10 @@ SHAPES["exponential"] = {
       const factor = 2 + (s % 3);
       const target = start * factor ** (2 + (s % 4));
       const answer = Math.round(Math.log(target / start) / Math.log(factor));
+      const growth = scene(variant, EXPONENTIAL_GROWTH);
       return {
         family: "solve-for-number-of-periods",
-        stem: `A population of ${start} thousand multiplies by ${factor} every decade. After how many decades does it reach ${target} thousand?`,
+        stem: `A ${growth.subject} starts with ${start} ${growth.unit} and multiplies by ${factor} each ${growth.period}. After how many such periods does it reach ${target} ${growth.unit}?`,
         answer,
         wrong: [
           [round3(target / start), "This divides the totals; repeated multiplication needs an exponent, not a quotient."],
@@ -3568,12 +3836,9 @@ SHAPES["angles"] = {
       const answer = 180 - known;
       return {
         family: "supplementary-angle",
-        stem: choose(variant, [
-          `Two angles form a straight line. If one measures ${known}°, what is the measure of the other?`,
-          `Angles ABD and DBC are supplementary. If angle ABD measures ${known}°, what is the measure of angle DBC?`,
-          `A ray divides a straight angle into two parts, one measuring ${known}°. What is the measure of the second part?`,
-          `If two angles are supplementary and one is ${known}°, the other measures how many degrees?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the measure of an angle supplementary to ${known}°`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(90 - known < 0 ? known + 90 : 90 - known), "This treats the angles as complementary, summing to 90° rather than 180°."],
@@ -3598,12 +3863,9 @@ SHAPES["angles"] = {
       const answer = 180 - known;
       return {
         family: "parallel-lines-cointerior",
-        stem: choose(variant, [
-          `Two parallel lines are cut by a transversal. One interior angle on the same side of the transversal measures ${known}°. What is the measure of the other?`,
-          `A transversal crosses two parallel lines, forming co-interior angles. If one measures ${known}°, what does the other measure?`,
-          `When parallel lines are cut by a transversal, same-side interior angles are supplementary. If one is ${known}°, what is the other?`,
-          `Parallel lines are crossed by a transversal, and one same-side interior angle is ${known}°. How large is its partner?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the same-side interior angle paired with ${known}° when a transversal crosses parallel lines`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(known), "This describes alternate interior or corresponding angles, which are equal; same-side interior angles are supplementary."],
@@ -3634,12 +3896,9 @@ SHAPES["angles"] = {
       const answer = ((sides - 2) * 180) / sides;
       return {
         family: "regular-polygon-interior-angle",
-        stem: choose(variant, [
-          `What is the measure of each interior angle of a regular polygon with ${sides} sides?`,
-          `A regular ${sides}-gon has interior angles of what measure?`,
-          `Each interior angle of a regular polygon with ${sides} congruent sides measures how many degrees?`,
-          `In a regular polygon with ${sides} sides, one interior angle measures what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the measure of each interior angle of a regular ${sides}-gon`,
+        }),
         answer: degrees(round3(answer)),
         wrong: [
           [degrees(round3(360 / sides)), "This is the exterior angle; the interior angle is its supplement."],
@@ -3665,12 +3924,9 @@ SHAPES["angles"] = {
       const answer = (180 - apex) / 2;
       return {
         family: "isosceles-base-angles",
-        stem: choose(variant, [
-          `An isosceles triangle has a vertex angle of ${apex}°. What is the measure of each base angle?`,
-          `In an isosceles triangle the apex angle measures ${apex}°. How large is each of the two congruent angles?`,
-          `A triangle has two congruent sides and an included angle of ${apex}°. What is the measure of each remaining angle?`,
-          `The vertex angle of an isosceles triangle is ${apex}°. Each base angle measures what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `each base angle of an isosceles triangle whose vertex angle is ${apex}°`,
+        }),
         answer: degrees(round3(answer)),
         wrong: [
           [degrees(round3(180 - apex)), "This is the combined measure of both base angles, not one of them."],
@@ -3731,12 +3987,9 @@ SHAPES["angles"] = {
       const answer = first + second;
       return {
         family: "exterior-angle-theorem",
-        stem: choose(variant, [
-          `In a triangle, the two remote interior angles measure ${first}° and ${second}°. What is the measure of the exterior angle at the third vertex?`,
-          `A triangle has interior angles of ${first}° and ${second}° at two vertices. What is the exterior angle at the remaining vertex?`,
-          `Two angles of a triangle are ${first}° and ${second}°. The exterior angle adjacent to the third angle measures what?`,
-          `The remote interior angles of a triangle measure ${first}° and ${second}°. How large is the corresponding exterior angle?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the exterior angle of a triangle whose remote interior angles are ${first}° and ${second}°`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(180 - answer), "This is the third interior angle, not the exterior angle beside it."],
@@ -3768,12 +4021,9 @@ SHAPES["triangles"] = {
       const answer = 180 - first - second;
       return {
         family: "third-angle-of-triangle",
-        stem: choose(variant, [
-          `Two angles of a triangle measure ${first}° and ${second}°. What is the measure of the third angle?`,
-          `A triangle has angles of ${first}° and ${second}°. How large is the remaining angle?`,
-          `In a triangle with angles ${first}° and ${second}°, the third angle measures what?`,
-          `If two of a triangle's angles are ${first}° and ${second}°, what is the third?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the third angle of a triangle whose other angles are ${first}° and ${second}°`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(first + second), "This is the sum of the two given angles, not what remains of 180°."],
@@ -3797,12 +4047,9 @@ SHAPES["triangles"] = {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
       return {
         family: "pythagorean-hypotenuse",
-        stem: choose(variant, [
-          `A right triangle has legs of ${a} and ${b}. What is the length of the hypotenuse?`,
-          `The legs of a right triangle measure ${a} and ${b}. How long is its hypotenuse?`,
-          `In a right triangle with legs ${a} and ${b}, the hypotenuse has what length?`,
-          `What is the hypotenuse of a right triangle whose legs are ${a} and ${b}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the hypotenuse of a right triangle with legs ${a} and ${b}`,
+        }),
         answer: c,
         wrong: [
           [a + b, "This adds the legs; the Pythagorean theorem adds their squares."],
@@ -3833,12 +4080,9 @@ SHAPES["triangles"] = {
       const answer = smallOther * scale;
       return {
         family: "similar-triangle-missing-side",
-        stem: choose(variant, [
-          `Two triangles are similar. In the smaller one a pair of sides measures ${small} and ${smallOther}. The side corresponding to ${small} in the larger triangle is ${large}. What is the length of the side corresponding to ${smallOther}?`,
-          `Triangle ABC is similar to triangle DEF. AB = ${small}, BC = ${smallOther}, and DE = ${large}. What is the length of EF?`,
-          `In similar triangles, a side of ${small} corresponds to ${large}. What length corresponds to a side of ${smallOther}?`,
-          `Two similar triangles have corresponding sides ${small} and ${large}. If another side of the smaller triangle is ${smallOther}, what is its counterpart?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the side corresponding to ${smallOther} when similar triangles pair ${small} with ${large}`,
+        }),
         answer,
         wrong: [
           [smallOther + (large - small), "This adds the difference between corresponding sides; similarity scales by a ratio, not a constant."],
@@ -3866,12 +4110,9 @@ SHAPES["triangles"] = {
       const answer = (base * height) / 2;
       return {
         family: "triangle-area-from-base-and-height",
-        stem: choose(variant, [
-          `A triangle has a base of ${base} and a height of ${height}. What is its area?`,
-          `What is the area of a triangle with base ${base} and corresponding height ${height}?`,
-          `A triangle measures ${base} across its base, with a height of ${height} to that base. Its area is what?`,
-          `Find the area of a triangle whose base is ${base} and whose height is ${height}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area of a triangle with base ${base} and corresponding height ${height}`,
+        }),
         answer,
         wrong: [
           [base * height, "This is the area of a rectangle with those dimensions; a triangle is half of it."],
@@ -3902,12 +4143,9 @@ SHAPES["triangles"] = {
       const answer = high - low - 1;
       return {
         family: "triangle-inequality-count",
-        stem: choose(variant, [
-          `Two sides of a triangle measure ${known} and ${other}. How many integer values are possible for the third side?`,
-          `A triangle has sides of length ${known} and ${other}. The third side must be an integer. How many values can it take?`,
-          `If two sides of a triangle are ${known} and ${other}, how many whole-number lengths are possible for the remaining side?`,
-          `Two sides of a triangle are ${known} and ${other} units long. How many integer lengths could the third side have?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of integer third-side lengths possible with triangle sides ${known} and ${other}`,
+        }),
         answer,
         wrong: [
           [answer + 1, "This counts one of the endpoints, where the three sides would lie flat instead of forming a triangle."],
@@ -3934,12 +4172,9 @@ SHAPES["triangles"] = {
       const answer = round3(leg * Math.sqrt(2));
       return {
         family: "isosceles-right-triangle-hypotenuse",
-        stem: choose(variant, [
-          `A right triangle has two legs of length ${leg}. What is the length of its hypotenuse?`,
-          `An isosceles right triangle has legs measuring ${leg}. How long is the hypotenuse?`,
-          `In a 45°–45°–90° triangle each leg measures ${leg}. What is the hypotenuse?`,
-          `The two congruent legs of a right triangle are ${leg} units long. What is the hypotenuse?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the hypotenuse of an isosceles right triangle with leg length ${leg}`,
+        }),
         answer: radical(leg, 2),
         wrong: [
           [2 * leg, "This doubles the leg; the hypotenuse of an isosceles right triangle is the leg times √2, which is less than double."],
@@ -3968,12 +4203,9 @@ SHAPES["circles"] = {
       const radius = 3 + (s % 10);
       return {
         family: "circle-area-in-terms-of-pi",
-        stem: choose(variant, [
-          `What is the area of a circle with radius ${radius}, in terms of π?`,
-          `A circle has radius ${radius}. What is its area?`,
-          `Express the area of a circle of radius ${radius} in terms of π.`,
-          `The area of a circle whose radius is ${radius} equals what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area in terms of π of a circle with radius ${radius}`,
+        }),
         answer: pi(radius * radius),
         wrong: [
           [pi(2 * radius), "This is the circumference, which uses 2πr rather than πr²."],
@@ -3998,12 +4230,9 @@ SHAPES["circles"] = {
       const radius = 2 + (s % 11);
       return {
         family: "circumference-from-radius",
-        stem: choose(variant, [
-          `What is the circumference of a circle with radius ${radius}, in terms of π?`,
-          `A circle has radius ${radius}. What is its circumference?`,
-          `Express in terms of π the circumference of a circle whose radius is ${radius}.`,
-          `The distance around a circle of radius ${radius} equals what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the circumference in terms of π of a circle with radius ${radius}`,
+        }),
         answer: pi(2 * radius),
         wrong: [
           [pi(radius * radius), "This is the area, πr², not the circumference."],
@@ -4031,12 +4260,9 @@ SHAPES["circles"] = {
       const answer = round3((degreesArc / 360) * 2 * radius);
       return {
         family: "arc-length-fraction-of-circumference",
-        stem: choose(variant, [
-          `A circle has radius ${radius}. What is the length of an arc subtending a central angle of ${degreesArc}°, in terms of π?`,
-          `In a circle of radius ${radius}, a central angle of ${degreesArc}° cuts off an arc of what length?`,
-          `What is the arc length for a ${degreesArc}° central angle in a circle whose radius is ${radius}?`,
-          `A ${degreesArc}° sector is cut from a circle of radius ${radius}. How long is its arc?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the arc length in terms of π for a ${degreesArc}° central angle in a circle of radius ${radius}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(round3((degreesArc / 360) * radius * radius)), "This computes the sector's area rather than its arc length."],
@@ -4062,12 +4288,9 @@ SHAPES["circles"] = {
       const answer = round3((degreesArc / 360) * radius * radius);
       return {
         family: "sector-area-fraction-of-circle",
-        stem: choose(variant, [
-          `A sector of a circle of radius ${radius} has a central angle of ${degreesArc}°. What is its area, in terms of π?`,
-          `What is the area of a ${degreesArc}° sector in a circle whose radius is ${radius}?`,
-          `In a circle of radius ${radius}, a central angle of ${degreesArc}° bounds a sector of what area?`,
-          `Find the area of the sector cut by a ${degreesArc}° central angle in a circle of radius ${radius}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area in terms of π of a ${degreesArc}° sector in a circle of radius ${radius}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(round3((degreesArc / 360) * 2 * radius)), "This is the arc length, not the sector's area."],
@@ -4136,12 +4359,9 @@ SHAPES["circles"] = {
       const answer = 2 * inscribed;
       return {
         family: "inscribed-angle-theorem",
-        stem: choose(variant, [
-          `An inscribed angle in a circle measures ${inscribed}°. What is the measure of the central angle subtending the same arc?`,
-          `In a circle, an inscribed angle of ${inscribed}° and a central angle share an arc. What does the central angle measure?`,
-          `An angle inscribed in a circle intercepts an arc and measures ${inscribed}°. How large is that arc?`,
-          `If an inscribed angle measures ${inscribed}°, the central angle on the same arc measures what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the central angle subtending the same arc as an inscribed angle of ${inscribed}°`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(inscribed), "The inscribed angle is half the central angle, so the two are not equal."],
@@ -4175,12 +4395,9 @@ SHAPES["coordinate geometry"] = {
       const answer = (x1 + x2) / 2;
       return {
         family: "midpoint-x-coordinate",
-        stem: choose(variant, [
-          `What is the x-coordinate of the midpoint of the segment joining (${x1}, ${y1}) and (${x2}, ${y2})?`,
-          `A segment has endpoints (${x1}, ${y1}) and (${x2}, ${y2}). What is the x-coordinate of its midpoint?`,
-          `The midpoint of the segment from (${x1}, ${y1}) to (${x2}, ${y2}) has which x-coordinate?`,
-          `Find the x-coordinate of the midpoint between (${x1}, ${y1}) and (${x2}, ${y2}).`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the x-coordinate of the midpoint between (${x1}, ${y1}) and (${x2}, ${y2})`,
+        }),
         answer,
         wrong: [
           [x2 - x1, "This is the horizontal distance, not the midpoint."],
@@ -4209,12 +4426,9 @@ SHAPES["coordinate geometry"] = {
       const y2 = y1 + b;
       return {
         family: "distance-between-two-points",
-        stem: choose(variant, [
-          `What is the distance between (${x1}, ${y1}) and (${x2}, ${y2})?`,
-          `Two points are located at (${x1}, ${y1}) and (${x2}, ${y2}). How far apart are they?`,
-          `Find the distance from (${x1}, ${y1}) to (${x2}, ${y2}).`,
-          `The segment joining (${x1}, ${y1}) and (${x2}, ${y2}) has what length?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the distance between (${x1}, ${y1}) and (${x2}, ${y2})`,
+        }),
         answer: c,
         wrong: [
           [a + b, "This adds the horizontal and vertical changes; the distance is the hypotenuse of that right triangle."],
@@ -4242,12 +4456,9 @@ SHAPES["coordinate geometry"] = {
       const denominator = numerator + 1 + (s % 4);
       return {
         family: "perpendicular-slope",
-        stem: choose(variant, [
-          `A line has slope ${numerator}/${denominator}. What is the slope of a line perpendicular to it?`,
-          `What slope is perpendicular to a line of slope ${numerator}/${denominator}?`,
-          `If a line has slope ${numerator}/${denominator}, a line at right angles to it has which slope?`,
-          `Find the slope perpendicular to the line whose slope is ${numerator}/${denominator}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the slope perpendicular to ${numerator}/${denominator}`,
+        }),
         answer: frac(-denominator, numerator),
         wrong: [
           [frac(denominator, numerator), "This is the reciprocal but omits the sign change."],
@@ -4273,12 +4484,9 @@ SHAPES["coordinate geometry"] = {
       const answer = round3(-intercept / slope);
       return {
         family: "x-intercept-of-a-line",
-        stem: choose(variant, [
-          `What is the x-intercept of the line y = ${slope}x + ${intercept}?`,
-          `The line y = ${slope}x + ${intercept} crosses the x-axis at which value of x?`,
-          `Find the x-intercept of y = ${slope}x + ${intercept}.`,
-          `At what x-value does the graph of y = ${slope}x + ${intercept} meet the x-axis?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the x-intercept of y = ${slope}x + ${intercept}`,
+        }),
         answer: frac(-intercept, slope),
         wrong: [
           [frac(intercept, slope), "This drops the minus sign that comes from moving the constant across the equals sign."],
@@ -4307,12 +4515,9 @@ SHAPES["coordinate geometry"] = {
       const b = a + 1 + (s % 3);
       return {
         family: "ellipse-major-axis",
-        stem: choose(variant, [
-          `The ellipse (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1 has a major axis of what length?`,
-          `What is the length of the major axis of the ellipse (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1?`,
-          `For the ellipse (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1, the major axis measures what?`,
-          `Find the major axis length of (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the major axis length of the ellipse (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1`,
+        }),
         answer: 2 * b,
         wrong: [
           [b, "This is the semi-major axis; the full axis is twice as long."],
@@ -4342,12 +4547,9 @@ SHAPES["coordinate geometry"] = {
       const answer = 2 * x2 - x1;
       return {
         family: "endpoint-from-midpoint",
-        stem: choose(variant, [
-          `The point (${x2}, ${y2}) is the midpoint of the segment from (${x1}, ${y1}) to (p, q). ${ask(variant, "p")}`,
-          `A segment has one endpoint (${x1}, ${y1}) and midpoint (${x2}, ${y2}). What is the x-coordinate of the other endpoint?`,
-          `If (${x2}, ${y2}) is halfway between (${x1}, ${y1}) and (p, q), what is p?`,
-          `Given midpoint (${x2}, ${y2}) and endpoint (${x1}, ${y1}), find the x-coordinate of the missing endpoint.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the missing endpoint's x-coordinate when (${x2}, ${y2}) is the midpoint between (${x1}, ${y1}) and (p, q)`,
+        }),
         answer,
         wrong: [
           [round3((x1 + x2) / 2), "This averages the endpoint and the midpoint, which finds a quarter point rather than the far endpoint."],
@@ -4380,12 +4582,9 @@ SHAPES["area"] = {
       const answer = width * height;
       return {
         family: "rectangle-area",
-        stem: choose(variant, [
-          `A rectangle measures ${width} by ${height}. What is its area?`,
-          `What is the area of a rectangle whose sides are ${width} and ${height}?`,
-          `A rectangular panel is ${width} units wide and ${height} units tall. What is its area?`,
-          `Find the area of a ${width} by ${height} rectangle.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area of a rectangle with side lengths ${width} and ${height}`,
+        }),
         answer,
         wrong: [
           [2 * (width + height), "This is the perimeter, the distance around, not the area."],
@@ -4408,12 +4607,9 @@ SHAPES["area"] = {
       const answer = ((first + second) / 2) * height;
       return {
         family: "trapezoid-area",
-        stem: choose(variant, [
-          `A trapezoid has parallel sides of ${first} and ${second} and a height of ${height}. What is its area?`,
-          `What is the area of a trapezoid whose bases measure ${first} and ${second} and whose height is ${height}?`,
-          `A trapezoidal plot has parallel edges ${first} and ${second} apart by a height of ${height}. What is its area?`,
-          `Find the area of a trapezoid with bases ${first} and ${second} and height ${height}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area of a trapezoid with bases ${first} and ${second} and height ${height}`,
+        }),
         answer,
         wrong: [
           [(first + second) * height, "This omits the factor of one half; the trapezoid's area uses the average of the bases."],
@@ -4437,7 +4633,9 @@ SHAPES["area"] = {
       const answer = round3(side * side - Math.PI * radius * radius);
       return {
         family: "shaded-region-circle-in-square",
-        stem: `A circle is inscribed in a square of side ${side}, touching all four sides. To the nearest hundredth, what is the area of the region inside the square but outside the circle?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest hundredth, the area inside a square of side ${side} but outside its inscribed circle`,
+        }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
           [round3(Math.round((Math.PI * radius * radius) * 100) / 100), "This is the circle's area, the part that was removed rather than what remains."],
@@ -4463,12 +4661,9 @@ SHAPES["area"] = {
       const answer = baseArea * scale * scale;
       return {
         family: "area-under-similarity-scaling",
-        stem: choose(variant, [
-          `Two similar figures have corresponding sides in the ratio 1 to ${scale}. If the smaller has area ${baseArea}, what is the area of the larger?`,
-          `A figure of area ${baseArea} is enlarged so that every length is multiplied by ${scale}. What is the new area?`,
-          `Similar polygons have sides in the ratio 1 : ${scale}. The smaller has area ${baseArea}. Find the larger area.`,
-          `If each dimension of a shape with area ${baseArea} is scaled by ${scale}, the resulting area is what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the new area when a figure of area ${baseArea} has every length multiplied by ${scale}`,
+        }),
         answer,
         wrong: [
           [baseArea * scale, "This scales the area by the length ratio; area scales by the square of that ratio."],
@@ -4496,12 +4691,9 @@ SHAPES["area"] = {
       const answer = round3((side * side * Math.sqrt(3)) / 4);
       return {
         family: "equilateral-triangle-area",
-        stem: choose(variant, [
-          `What is the area of an equilateral triangle with side length ${side}, in simplest radical form?`,
-          `An equilateral triangle has sides of ${side}. What is its exact area?`,
-          `Express the area of an equilateral triangle of side ${side} in radical form.`,
-          `Find the exact area of an equilateral triangle whose side measures ${side}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the exact area, in simplest radical form, of an equilateral triangle with side length ${side}`,
+        }),
         answer: radical((side * side) / 4, 3),
         wrong: [
           [radical((side * side) / 2, 3), "This halves rather than quarters; the height is (√3/2)s and the area takes another half."],
@@ -4527,7 +4719,9 @@ SHAPES["area"] = {
       const answer = outer * outer - inner * inner;
       return {
         family: "area-of-a-border",
-        stem: `A square photograph of side ${inner} is centred on a square mat of side ${outer}. What is the area of the mat that remains visible around the photograph?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the visible area of a square mat of side ${outer} around a centered square photograph of side ${inner}`,
+        }),
         answer,
         wrong: [
           [outer * outer, "This is the whole mat, without removing the photograph."],
@@ -4558,12 +4752,9 @@ SHAPES["surface area"] = {
       const answer = 6 * edge * edge;
       return {
         family: "cube-surface-area",
-        stem: choose(variant, [
-          `What is the surface area of a cube with edge length ${edge}?`,
-          `A cube has edges measuring ${edge}. What is its total surface area?`,
-          `Find the surface area of a cube whose edge is ${edge}.`,
-          `A cube of edge ${edge} has how much surface area?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the surface area of a cube with edge length ${edge}`,
+        }),
         answer,
         wrong: [
           [edge ** 3, "This is the volume, not the surface area."],
@@ -4587,12 +4778,9 @@ SHAPES["surface area"] = {
       const answer = 2 * (length * width + length * height + width * height);
       return {
         family: "rectangular-prism-surface-area",
-        stem: choose(variant, [
-          `A rectangular box measures ${length} by ${width} by ${height}. What is its surface area?`,
-          `What is the total surface area of a rectangular prism with dimensions ${length}, ${width}, and ${height}?`,
-          `A crate is ${length} by ${width} by ${height}. How much material covers its outside?`,
-          `Find the surface area of a ${length} by ${width} by ${height} rectangular prism.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the surface area of a rectangular prism with dimensions ${length}, ${width}, and ${height}`,
+        }),
         answer,
         wrong: [
           [length * width * height, "This is the volume."],
@@ -4620,12 +4808,9 @@ SHAPES["surface area"] = {
       const answer = 2 * radius * height + 2 * radius * radius;
       return {
         family: "cylinder-surface-area",
-        stem: choose(variant, [
-          `A closed cylinder has radius ${radius} and height ${height}. What is its surface area, in terms of π?`,
-          `What is the total surface area of a cylinder of radius ${radius} and height ${height}, including both ends?`,
-          `A sealed can has radius ${radius} and height ${height}. Express its surface area in terms of π.`,
-          `Find the surface area of a closed cylinder with radius ${radius} and height ${height}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the total surface area, in terms of π, of a closed cylinder with radius ${radius} and height ${height}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(2 * radius * height), "This is the curved side alone, without the two circular ends."],
@@ -4651,12 +4836,9 @@ SHAPES["surface area"] = {
       const answer = 4 * radius * radius;
       return {
         family: "sphere-surface-area",
-        stem: choose(variant, [
-          `What is the surface area of a sphere of radius ${radius}, in terms of π?`,
-          `A sphere has radius ${radius}. Express its surface area in terms of π.`,
-          `Find the surface area of a sphere whose radius is ${radius}.`,
-          `The surface area of a sphere of radius ${radius} equals what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the surface area, in terms of π, of a sphere with radius ${radius}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(round3((4 * radius ** 3) / 3)), "This is the volume formula, (4/3)πr³, not the surface area."],
@@ -4681,12 +4863,9 @@ SHAPES["surface area"] = {
       const answer = radius * slant + radius * radius;
       return {
         family: "cone-surface-area",
-        stem: choose(variant, [
-          `A cone has radius ${radius} and slant height ${slant}. What is its total surface area, in terms of π?`,
-          `What is the surface area of a closed cone with radius ${radius} and slant height ${slant}?`,
-          `A cone of radius ${radius} has slant height ${slant}. Express its full surface area in terms of π.`,
-          `Find the total surface area of a cone whose radius is ${radius} and slant height is ${slant}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the total surface area, in terms of π, of a closed cone with radius ${radius} and slant height ${slant}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(radius * slant), "This is the lateral surface alone, without the circular base."],
@@ -4713,12 +4892,9 @@ SHAPES["surface area"] = {
       const answer = base * scale * scale;
       return {
         family: "surface-area-under-scaling",
-        stem: choose(variant, [
-          `A solid has surface area ${base}. Every length is multiplied by ${scale}. What is the new surface area?`,
-          `Scaling a solid so each dimension grows by a factor of ${scale} changes its surface area from ${base} to what?`,
-          `Two similar solids have lengths in the ratio 1 : ${scale}. The smaller has surface area ${base}. What is the larger's?`,
-          `If each dimension of a solid with surface area ${base} is multiplied by ${scale}, the surface area becomes what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the new surface area when a solid of surface area ${base} has every length multiplied by ${scale}`,
+        }),
         answer,
         wrong: [
           [base * scale, "This scales by the length ratio; surface area scales by its square."],
@@ -4751,12 +4927,9 @@ SHAPES["volume"] = {
       const answer = length * width * height;
       return {
         family: "rectangular-prism-volume",
-        stem: choose(variant, [
-          `What is the volume of a rectangular box measuring ${length} by ${width} by ${height}?`,
-          `A rectangular prism has dimensions ${length}, ${width}, and ${height}. What is its volume?`,
-          `A container is ${length} by ${width} by ${height}. How much does it hold?`,
-          `Find the volume of a ${length} by ${width} by ${height} rectangular prism.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the volume of a rectangular prism with dimensions ${length}, ${width}, and ${height}`,
+        }),
         answer,
         wrong: [
           [2 * (length * width + length * height + width * height), "This is the surface area, not the volume."],
@@ -4778,12 +4951,9 @@ SHAPES["volume"] = {
       const answer = radius * radius * height;
       return {
         family: "cylinder-volume",
-        stem: choose(variant, [
-          `What is the volume of a cylinder with radius ${radius} and height ${height}, in terms of π?`,
-          `A cylinder has radius ${radius} and height ${height}. Express its volume in terms of π.`,
-          `Find the volume of a cylindrical tank of radius ${radius} and height ${height}.`,
-          `A cylinder of radius ${radius} and height ${height} has what volume?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the volume, in terms of π, of a cylinder with radius ${radius} and height ${height}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(2 * radius * height + 2 * radius * radius), "This is the surface area, not the volume."],
@@ -4807,12 +4977,9 @@ SHAPES["volume"] = {
       const answer = (radius * radius * height) / 3;
       return {
         family: "cone-volume",
-        stem: choose(variant, [
-          `What is the volume of a cone with radius ${radius} and height ${height}, in terms of π?`,
-          `A cone has radius ${radius} and vertical height ${height}. Express its volume in terms of π.`,
-          `Find the volume of a conical funnel of radius ${radius} and height ${height}.`,
-          `A cone of radius ${radius} and height ${height} holds what volume?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the volume, in terms of π, of a cone with radius ${radius} and vertical height ${height}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(radius * radius * height), "This is the volume of a cylinder with the same base and height; a cone is one third of it."],
@@ -4837,7 +5004,9 @@ SHAPES["volume"] = {
       const answer = length * width * rise;
       return {
         family: "displacement-volume",
-        stem: `A rectangular tank with a ${length} by ${width} base holds water ${depth} units deep. A stone is lowered in and the water rises by ${rise} units without overflowing. What is the volume of the stone?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the volume of a stone that raises the water in a ${length} by ${width} rectangular tank by ${rise} units without overflowing`,
+        }),
         answer,
         wrong: [
           [length * width * depth, "This is the original volume of water, not the displaced amount."],
@@ -4865,12 +5034,9 @@ SHAPES["volume"] = {
       const answer = (4 * radius ** 3) / 3;
       return {
         family: "sphere-volume",
-        stem: choose(variant, [
-          `What is the volume of a sphere of radius ${radius}, in terms of π?`,
-          `A sphere has radius ${radius}. Express its volume in terms of π.`,
-          `Find the volume of a spherical tank of radius ${radius}.`,
-          `The volume of a sphere whose radius is ${radius} equals what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the volume, in terms of π, of a sphere with radius ${radius}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(4 * radius * radius), "This is the surface area, 4πr², not the volume."],
@@ -4893,12 +5059,9 @@ SHAPES["volume"] = {
       const answer = base * scale ** 3;
       return {
         family: "volume-under-scaling",
-        stem: choose(variant, [
-          `A solid of volume ${base} is enlarged so that every length is multiplied by ${scale}. What is the new volume?`,
-          `Two similar solids have lengths in the ratio 1 : ${scale}. If the smaller has volume ${base}, what is the larger's volume?`,
-          `Scaling every dimension of a solid with volume ${base} by ${scale} produces what volume?`,
-          `If each length of a solid with volume ${base} grows by a factor of ${scale}, the volume becomes what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the new volume when a solid of volume ${base} has every length multiplied by ${scale}`,
+        }),
         answer,
         wrong: [
           [base * scale, "This scales by the length ratio; volume scales by its cube."],
@@ -4928,12 +5091,9 @@ SHAPES["right-triangle trigonometry"] = {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
       return {
         family: "sine-ratio-from-sides",
-        stem: choose(variant, [
-          `In a right triangle, the side opposite angle A measures ${a} and the hypotenuse measures ${c}. What is sin A?`,
-          `A right triangle has hypotenuse ${c} and a side of ${a} opposite angle A. What is the value of sin A?`,
-          `If the leg opposite angle A is ${a} and the hypotenuse is ${c}, sin A equals what?`,
-          `What is sin A in a right triangle whose hypotenuse is ${c} and whose side opposite A is ${a}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `sin A in a right triangle whose side opposite A is ${a} and whose hypotenuse is ${c}`,
+        }),
         answer: frac(a, c),
         wrong: [
           [frac(b, c), "This is cos A, the adjacent side over the hypotenuse."],
@@ -4957,12 +5117,9 @@ SHAPES["right-triangle trigonometry"] = {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
       return {
         family: "tangent-ratio-from-sides",
-        stem: choose(variant, [
-          `In a right triangle, the leg opposite angle B measures ${b} and the leg adjacent to B measures ${a}. What is tan B?`,
-          `A right triangle has legs ${a} and ${b}, with ${b} opposite angle B. What is the value of tan B?`,
-          `If the side opposite angle B is ${b} and the adjacent side is ${a}, tan B equals what?`,
-          `What is tan B when the opposite leg measures ${b} and the adjacent leg measures ${a}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `tan B in a right triangle whose opposite leg is ${b} and whose adjacent leg is ${a}`,
+        }),
         answer: frac(b, a),
         wrong: [
           [frac(a, b), "This inverts the ratio, giving the tangent of the other acute angle."],
@@ -4995,12 +5152,9 @@ SHAPES["right-triangle trigonometry"] = {
       }[angle];
       return {
         family: "special-angle-opposite-side",
-        stem: choose(variant, [
-          `A right triangle has a hypotenuse of ${hypotenuse} and an acute angle of ${angle}°. What is the length of the side opposite that angle?`,
-          `In a right triangle with hypotenuse ${hypotenuse}, one acute angle measures ${angle}°. How long is the opposite leg?`,
-          `The hypotenuse of a right triangle is ${hypotenuse} and one angle is ${angle}°. Find the side opposite the ${angle}° angle.`,
-          `What is the leg opposite a ${angle}° angle in a right triangle whose hypotenuse is ${hypotenuse}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the leg opposite a ${angle}° angle in a right triangle with hypotenuse ${hypotenuse}`,
+        }),
         answer: val(exact.text, exact.value),
         wrong: [
           [hypotenuse, "This is the hypotenuse itself; a leg is always shorter."],
@@ -5025,7 +5179,9 @@ SHAPES["right-triangle trigonometry"] = {
       const answer = round3((Math.atan(b / a) * 180) / Math.PI);
       return {
         family: "angle-from-tangent",
-        stem: `A ramp rises ${b} units over a horizontal run of ${a} units. To the nearest tenth of a degree, what angle does the ramp make with the horizontal?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest tenth of a degree, the angle a ramp with rise ${b} and horizontal run ${a} makes with the horizontal`,
+        }),
         answer: degrees(round3(Math.round(answer * 10) / 10)),
         wrong: [
           [degrees(round3(Math.round(((Math.atan(a / b) * 180) / Math.PI) * 10) / 10)), "This inverts the ratio, finding the angle at the top of the ramp instead of at the ground."],
@@ -5058,7 +5214,9 @@ SHAPES["right-triangle trigonometry"] = {
       const answer = round3(distance * factor + eye);
       return {
         family: "angle-of-elevation-with-eye-height",
-        stem: `An observer whose eyes are ${eye} feet above the ground stands ${distance} feet from the base of a tower. The angle of elevation to the top of the tower is ${angle}°. To the nearest tenth of a foot, how tall is the tower?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest tenth of a foot, the tower height seen at a ${angle}° angle of elevation from ${distance} feet away by an observer whose eyes are ${eye} feet high`,
+        }),
         answer: round3(Math.round(answer * 10) / 10),
         wrong: [
           [round3(Math.round(distance * factor * 10) / 10), `This finds the height above eye level but never adds the observer's ${eye} feet.`],
@@ -5086,7 +5244,9 @@ SHAPES["right-triangle trigonometry"] = {
       const answer = round3(Math.sqrt(a * a + b * b - 2 * a * b * cosine));
       return {
         family: "law-of-cosines-third-side",
-        stem: `A triangle has sides of ${a} and ${b} with an included angle of ${angle}°. To the nearest hundredth, what is the length of the third side?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest hundredth, the third side length of a triangle with sides ${a} and ${b} enclosing a ${angle}° angle`,
+        }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
           [round3(Math.round(Math.sqrt(a * a + b * b) * 100) / 100), "This applies the Pythagorean theorem, which is the law of cosines only when the included angle is 90°."],
@@ -5116,12 +5276,10 @@ SHAPES["identities"] = {
       const denominator = numerator + 2 + (s % 4);
       return {
         family: "pythagorean-identity-basic",
-        stem: choose(variant, [
-          `If sin θ = ${numerator}/${denominator}, what is the value of sin²θ + cos²θ?`,
-          `For any angle θ with sin θ = ${numerator}/${denominator}, the expression sin²θ + cos²θ equals what?`,
-          `Given sin θ = ${numerator}/${denominator}, evaluate sin²θ + cos²θ.`,
-          `What is sin²θ + cos²θ when sin θ = ${numerator}/${denominator}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `sin θ = ${numerator}/${denominator}`,
+          target: "sin²θ + cos²θ",
+        }),
         answer: 1,
         wrong: [
           [frac(numerator, denominator), "This repeats the given sine rather than applying the identity."],
@@ -5146,12 +5304,10 @@ SHAPES["identities"] = {
       const denominator = numerator + 2 + (s % 5);
       return {
         family: "tangent-as-sine-over-cosine",
-        stem: choose(variant, [
-          `If sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}, what is tan θ?`,
-          `Given sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}, evaluate tan θ.`,
-          `For an angle with sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}, tan θ equals what?`,
-          `What is tan θ when sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}`,
+          target: "tan θ",
+        }),
         answer: numerator,
         wrong: [
           [frac(1, numerator), "This is cot θ, the reciprocal of the tangent."],
@@ -5177,12 +5333,10 @@ SHAPES["identities"] = {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
       return {
         family: "cosine-from-sine-via-identity",
-        stem: choose(variant, [
-          `If sin θ = ${a}/${c} and θ is acute, what is cos θ?`,
-          `An acute angle satisfies sin θ = ${a}/${c}. What is the value of cos θ?`,
-          `Given that θ is acute and sin θ = ${a}/${c}, evaluate cos θ.`,
-          `For an acute angle with sin θ = ${a}/${c}, cos θ equals what?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `θ is acute and sin θ = ${a}/${c}`,
+          target: "cos θ",
+        }),
         answer: frac(b, c),
         wrong: [
           [frac(a, c), "This repeats the sine."],
@@ -5209,12 +5363,9 @@ SHAPES["identities"] = {
       const answer = 360 / frequency;
       return {
         family: "period-of-a-sinusoid",
-        stem: choose(variant, [
-          `What is the period, in degrees, of y = ${amplitude} sin(${frequency}x)?`,
-          `The function y = ${amplitude} sin(${frequency}x) repeats after how many degrees?`,
-          `Find the period of y = ${amplitude} sin(${frequency}x), measured in degrees.`,
-          `Over what interval in degrees does y = ${amplitude} sin(${frequency}x) complete one full cycle?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the period, in degrees, of y = ${amplitude} sin(${frequency}x)`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(360), "This is the period of sin x; the coefficient inside compresses the graph."],
@@ -5242,12 +5393,10 @@ SHAPES["identities"] = {
       const answer = frac(2 * a * b, c * c);
       return {
         family: "double-angle-sine",
-        stem: choose(variant, [
-          `If sin θ = ${a}/${c} and cos θ = ${b}/${c}, what is sin 2θ?`,
-          `Given sin θ = ${a}/${c} and cos θ = ${b}/${c}, evaluate sin 2θ.`,
-          `For an angle with sin θ = ${a}/${c} and cos θ = ${b}/${c}, sin 2θ equals what?`,
-          `What is sin 2θ when sin θ = ${a}/${c} and cos θ = ${b}/${c}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `sin θ = ${a}/${c} and cos θ = ${b}/${c}`,
+          target: "sin 2θ",
+        }),
         answer,
         wrong: [
           [frac(2 * a, c), "This doubles the sine; sin 2θ is not 2 sin θ."],
@@ -5277,12 +5426,9 @@ SHAPES["identities"] = {
       const sineText = { 30: "1/2", 45: "√2/2", 60: "√3/2" }[solutions.value];
       return {
         family: "solve-trig-equation-on-an-interval",
-        stem: choose(variant, [
-          `How many solutions does sin θ = ${sineText} have for 0° ≤ θ < 360°?`,
-          `On the interval 0° ≤ θ < 360°, the equation sin θ = ${sineText} has how many solutions?`,
-          `Find the number of angles θ with 0° ≤ θ < 360° satisfying sin θ = ${sineText}.`,
-          `For 0° ≤ θ < 360°, how many values of θ satisfy sin θ = ${sineText}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of solutions to sin θ = ${sineText} on 0° ≤ θ < 360°`,
+        }),
         answer: 2,
         wrong: [
           [1, `Only ${solutions.value}° is found by the inverse sine, but ${solutions.other}° has the same sine.`],
@@ -5313,12 +5459,9 @@ SHAPES["center and spread"] = {
       const answer = total / values.length;
       return {
         family: "mean-of-a-list",
-        stem: choose(variant, [
-          `What is the mean of ${values.join(", ")}?`,
-          `Find the average of the five values ${values.join(", ")}.`,
-          `The numbers ${values.join(", ")} have what mean?`,
-          `Compute the arithmetic mean of ${values.join(", ")}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the arithmetic mean of ${values.join(", ")}`,
+        }),
         answer: round3(answer),
         wrong: [
           [values.slice().sort((a, b) => a - b)[2], "This is the median, the middle value, not the mean."],
@@ -5341,12 +5484,9 @@ SHAPES["center and spread"] = {
       const answer = sorted[2];
       return {
         family: "median-of-a-list",
-        stem: choose(variant, [
-          `What is the median of ${values.join(", ")}?`,
-          `Find the median of the five values ${values.join(", ")}.`,
-          `The numbers ${values.join(", ")} have what median?`,
-          `Which value is the median of ${values.join(", ")}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the median of ${values.join(", ")}`,
+        }),
         answer,
         wrong: [
           [round3(values.reduce((sum, value) => sum + value, 0) / values.length), "This is the mean, not the middle value."],
@@ -5373,7 +5513,9 @@ SHAPES["center and spread"] = {
       const answer = (count + 1) * targetMean - currentTotal;
       return {
         family: "value-needed-to-reach-a-target-mean",
-        stem: `A student's ${count} quiz scores average ${currentMean}. What score on the next quiz would raise the average of all ${count + 1} quizzes to ${targetMean}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the next quiz score needed to raise a student's ${count}-quiz average of ${currentMean} to ${targetMean} across all ${count + 1} quizzes`,
+        }),
         answer,
         wrong: [
           [targetMean, "This is the target average itself; one score must pull the whole set up, so it exceeds the target."],
@@ -5403,7 +5545,9 @@ SHAPES["center and spread"] = {
       const answer = round3((groupA * meanA + groupB * meanB) / (groupA + groupB));
       return {
         family: "weighted-mean-of-two-groups",
-        stem: `One class of ${groupA} students averaged ${meanA} on a test, while another class of ${groupB} students averaged ${meanB}. To the nearest hundredth, what is the mean score of all ${groupA + groupB} students combined?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest hundredth, the combined mean of ${groupA} scores averaging ${meanA} and ${groupB} scores averaging ${meanB}`,
+        }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
           [round3((meanA + meanB) / 2), "This averages the two class means, which is only valid when the classes are the same size."],
@@ -5433,7 +5577,9 @@ SHAPES["center and spread"] = {
       const wide = [base - spread, base, base + 1, base + 2, base + spread + 2];
       return {
         family: "compare-standard-deviations",
-        stem: `Data set P is ${tight.join(", ")} and data set Q is ${wide.join(", ")}. Which statement correctly compares their standard deviations?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the correct comparison of the standard deviations of data set P, ${tight.join(", ")}, and data set Q, ${wide.join(", ")}`,
+        }),
         answer: "Q has the larger standard deviation because its values are spread farther from the mean.",
         wrong: [
           ["P has the larger standard deviation because it contains repeated values.", "Repeated values pull a set together rather than spreading it out, which lowers the standard deviation."],
@@ -5461,7 +5607,9 @@ SHAPES["center and spread"] = {
       const answer = round3(newMean - oldMean);
       return {
         family: "effect-of-an-outlier-on-the-mean",
-        stem: `The values ${values.join(", ")} have a mean of ${round3(oldMean)}. A fifth value, ${addition}, is added to the set. By how much does the mean increase?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the increase in the mean of ${values.join(", ")} when a fifth value, ${addition}, is added`,
+        }),
         answer: round3(Math.round(answer * 1000) / 1000),
         wrong: [
           [round3(addition - oldMean), "This is how far the new value sits above the old mean; the mean moves only a fifth of that distance."],
@@ -5492,18 +5640,16 @@ SHAPES["data displays"] = {
       const counts = [12 + (s % 7), 18 + (s % 5), 9 + (s % 6), 15 + (s % 4)];
       const maxIndex = counts.indexOf(Math.max(...counts));
       const answer = counts[maxIndex];
+      const collection = scene(variant, COLLECTION);
       return {
         family: "read-maximum-from-a-table",
         stimulus: {
           type: "table",
-          content: `A library recorded the number of study rooms booked each day.\n\nday | rooms booked\n${categories.map((name, index) => `${name} | ${counts[index]}`).join("\n")}`,
+          content: `A ${collection.owner} recorded the number of ${collection.plural} placed on a ${collection.holder} each day.\n\nday | ${collection.plural}\n${categories.map((name, index) => `${name} | ${counts[index]}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          "According to the table, how many rooms were booked on the busiest day?",
-          "What is the greatest number of rooms booked on any single day shown?",
-          "On the day with the most bookings, how many rooms were booked?",
-          "The table's largest daily booking count is which number?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the greatest daily ${collection.item} count in the table`,
+        }),
         answer,
         wrong: [
           [Math.min(...counts), "This is the smallest daily count, not the largest."],
@@ -5522,18 +5668,16 @@ SHAPES["data displays"] = {
       const counts = [8 + (s % 5), 14 + (s % 6), 11 + (s % 4), 17 + (s % 7)];
       const total = counts.reduce((sum, value) => sum + value, 0);
       const answer = total;
+      const collection = scene(variant, COLLECTION);
       return {
         family: "total-from-a-table",
         stimulus: {
           type: "table",
-          content: `A repair café logged the items brought in over four weeks.\n\nweek | items\n${counts.map((value, index) => `Week ${index + 1} | ${value}`).join("\n")}`,
+          content: `A ${collection.owner} logged ${collection.plural} added to a ${collection.holder} over four weeks.\n\nweek | ${collection.plural}\n${counts.map((value, index) => `Week ${index + 1} | ${value}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          "According to the table, how many items were brought in over the four weeks?",
-          "What is the total number of items recorded in the table?",
-          "Across all four weeks, how many items were brought in altogether?",
-          "The table records how many items in total?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the total number of ${collection.plural} recorded across all four weeks`,
+        }),
         answer,
         wrong: [
           [Math.max(...counts), "This is the busiest single week."],
@@ -5556,18 +5700,16 @@ SHAPES["data displays"] = {
       const median = q1 + 4 + (s % 4);
       const q3 = median + 5 + (s % 3);
       const answer = q3 - q1;
+      const collection = scene(variant, COLLECTION);
       return {
         family: "interquartile-range-from-a-box-plot",
         stimulus: {
           type: "diagram",
-          content: `A box plot of daily bicycle counts has these five-number summary values.\n\nstatistic | value\nminimum | ${q1 - 6}\nfirst quartile | ${q1}\nmedian | ${median}\nthird quartile | ${q3}\nmaximum | ${q3 + 8}`,
+          content: `A ${collection.owner} made a box plot of daily ${collection.plural} placed on a ${collection.holder}. It has these five-number summary values.\n\nstatistic | value\nminimum | ${q1 - 6}\nfirst quartile | ${q1}\nmedian | ${median}\nthird quartile | ${q3}\nmaximum | ${q3 + 8}`,
         },
-        stem: choose(variant, [
-          "What is the interquartile range of the data shown?",
-          "According to the summary, what is the interquartile range?",
-          "The interquartile range of this distribution equals what?",
-          "Using the five-number summary, find the interquartile range.",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the interquartile range of the displayed ${collection.item} counts`,
+        }),
         answer,
         wrong: [
           [q3 + 8 - (q1 - 6), "This is the full range, from minimum to maximum, not the middle 50%."],
@@ -5600,18 +5742,16 @@ SHAPES["data displays"] = {
       const answer = round3(
         rows.reduce((sum, row) => sum + Number(row.label) * row.frequency, 0) / total,
       );
+      const collection = scene(variant, COLLECTION);
       return {
         family: "mean-from-a-frequency-table",
         stimulus: {
           type: "table",
-          content: `A survey recorded how many pets each household keeps.\n\npets | households\n${rows.map((row) => `${row.label} | ${row.frequency}`).join("\n")}`,
+          content: `A ${collection.owner} recorded how many ${collection.plural} each ${collection.holder} holds.\n\n${collection.plural} | locations\n${rows.map((row) => `${row.label} | ${row.frequency}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          "To the nearest hundredth, what is the mean number of pets per household?",
-          "According to the table, what is the average number of pets per household, to the nearest hundredth?",
-          "What is the mean of the pet counts, weighted by the number of households, to the nearest hundredth?",
-          "Find the average number of pets per household to the nearest hundredth.",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest hundredth, the mean number of ${collection.plural} per ${collection.holder}`,
+        }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
           [round3(Math.round((rows.reduce((sum, row) => sum + Number(row.label), 0) / rows.length) * 100) / 100), "This averages the pet counts 1 through 4 without weighting by how many households reported each."],
@@ -5643,18 +5783,16 @@ SHAPES["data displays"] = {
       const bothNo = 30 + (s % 7);
       const rowTotal = bothYes + yesNo;
       const answer = frac(bothYes, rowTotal);
+      const survey = scene(variant, TWO_WAY_SURVEY);
       return {
         family: "conditional-proportion-from-two-way-table",
         stimulus: {
           type: "table",
-          content: `Students were asked whether they cycle to school and whether they own a helmet.\n\n | owns a helmet | no helmet\ncycles | ${bothYes} | ${yesNo}\ndoes not cycle | ${noYes} | ${bothNo}`,
+          content: `A frequency cross-tabulation summarizes the survey responses. ${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.second} | do not ${survey.second}\n${survey.first} | ${bothYes} | ${yesNo}\ndo not ${survey.first} | ${noYes} | ${bothNo}`,
         },
-        stem: choose(variant, [
-          "Among the students who cycle to school, what fraction own a helmet?",
-          "What proportion of the cycling students own a helmet?",
-          "Of the students who cycle, what fraction also own a helmet?",
-          "Restricted to students who cycle, what fraction own a helmet?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the fraction who ${survey.second} among the ${survey.group} who ${survey.first}`,
+        }),
         answer,
         wrong: [
           [frac(bothYes, bothYes + yesNo + noYes + bothNo), "This divides by every student surveyed; the question restricts attention to those who cycle."],
@@ -5689,18 +5827,16 @@ SHAPES["data displays"] = {
           break;
         }
       }
+      const trip = scene(variant, TRAVEL);
       return {
         family: "median-class-from-a-histogram",
         stimulus: {
           type: "diagram",
-          content: `A histogram of commute times has these bar heights.\n\ncommute (minutes) | commuters\n${values.map((value, index) => `${value} | ${frequencies[index]}`).join("\n")}`,
+          content: `A histogram of ${trip.mover} travel times on a ${trip.route} has these bar heights.\n\ntravel time (minutes) | journeys\n${values.map((value, index) => `${value} | ${frequencies[index]}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          "Which commute time is the median for this group of commuters?",
-          "According to the histogram, the median commute time is which value?",
-          "What is the median commute time recorded in the histogram?",
-          "Reading the histogram, which commute time falls at the median?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the median ${trip.mover} travel time represented by the histogram`,
+        }),
         answer,
         wrong: [
           [values[frequencies.indexOf(Math.max(...frequencies))] === answer ? values[values.length - 1] : values[frequencies.indexOf(Math.max(...frequencies))], "This is the tallest bar, which gives the mode rather than the median."],
@@ -5732,7 +5868,9 @@ SHAPES["regression"] = {
       const answer = slope * input + intercept;
       return {
         family: "predict-from-line-of-best-fit",
-        stem: `A line of best fit for a scatterplot is y = ${slope}x + ${intercept}. What value does it predict when x = ${input}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the value predicted at x = ${input} by the line of best fit y = ${slope}x + ${intercept}`,
+        }),
         answer,
         wrong: [
           [slope * input, "This omits the intercept."],
@@ -5754,7 +5892,9 @@ SHAPES["regression"] = {
       const intercept = 12 + (s % 9);
       return {
         family: "interpret-regression-slope",
-        stem: `A line of best fit relating study hours x to test score y is y = ${slope}x + ${intercept}. Which statement best interprets the slope?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the best interpretation of the slope in y = ${slope}x + ${intercept}, where x is study hours and y is test score`,
+        }),
         answer: `Each additional hour of study is associated with an increase of about ${slope} points.`,
         wrong: [
           [`A student who does not study is predicted to score ${slope}.`, `That describes the intercept ${intercept}, not the slope.`],
@@ -5785,7 +5925,9 @@ SHAPES["regression"] = {
       const answer = observed - predicted;
       return {
         family: "residual-from-a-regression-line",
-        stem: `A line of best fit is y = ${slope}x + ${intercept}. An observed data point is (${input}, ${observed}). What is the residual at that point?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the residual at observed point (${input}, ${observed}) for the line of best fit y = ${slope}x + ${intercept}`,
+        }),
         answer,
         wrong: [
           [-answer, "The residual is observed minus predicted; this reverses the subtraction."],
@@ -5814,7 +5956,9 @@ SHAPES["regression"] = {
       const far = maxObserved + 30 + (s % 10);
       return {
         family: "extrapolation-caution",
-        stem: `A regression line y = ${slope}x + ${intercept} was fitted to data with x-values ranging from 1 to ${maxObserved}. Why should a prediction at x = ${far} be treated with caution?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the reason to treat a prediction at x = ${far} cautiously when y = ${slope}x + ${intercept} was fitted only for 1 ≤ x ≤ ${maxObserved}`,
+        }),
         answer: `x = ${far} lies far outside the range of the data used to fit the line, so the pattern may not continue there.`,
         wrong: [
           [`The slope ${slope} is too small to make predictions.`, "The size of the slope does not determine whether a prediction is trustworthy."],
@@ -5847,18 +5991,17 @@ SHAPES["regression"] = {
       const meanX = points.reduce((sum, [x]) => sum + x, 0) / points.length;
       const meanY = points.reduce((sum, [, y]) => sum + y, 0) / points.length;
       const answer = round3(meanY);
+      const collection = scene(variant, COLLECTION);
       return {
         family: "regression-passes-through-the-means",
         stimulus: {
           type: "table",
-          content: `Four observations were collected.\n\nx | y\n${points.map(([x, y]) => `${x} | ${y}`).join("\n")}`,
+          content: `A ${collection.owner} recorded ${collection.plural} on a ${collection.holder} at four checkpoints.\n\ncheckpoint | ${collection.plural}\n${points.map(([x, y]) => `${x} | ${y}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          `The least-squares regression line for these data passes through the point (${round3(meanX)}, k). What is the value of k?`,
-          `A least-squares line fitted to these four observations passes through (${round3(meanX)}, k). Which value is k?`,
-          `For these data, the regression line contains the point (${round3(meanX)}, k). What does k equal?`,
-          `The line of best fit for this table passes through (${round3(meanX)}, k). Find k.`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `the least-squares line for the ${collection.item} data passes through (${round3(meanX)}, k)`,
+          target: "k",
+        }),
         answer,
         wrong: [
           [round3(meanX), "This is the mean of x, which is the first coordinate, not the second."],
@@ -5885,7 +6028,9 @@ SHAPES["regression"] = {
       const weak = 0.3 + 0.05 * (s % 4);
       return {
         family: "interpret-correlation-coefficient",
-        stem: `Study A reports a correlation coefficient of ${round3(strong)} between two variables; Study B reports ${round3(weak)} between a different pair. Which conclusion is best supported?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the best-supported conclusion when Study A reports r = ${round3(strong)} and Study B reports r = ${round3(weak)} for different variable pairs`,
+        }),
         answer: "Study A's variables show a stronger linear association than Study B's.",
         wrong: [
           ["Study A's variables cause each other, while Study B's do not.", "A correlation coefficient measures association only; neither value establishes causation."],
@@ -5915,9 +6060,12 @@ SHAPES["counting"] = {
       const second = 4 + (s % 4);
       const third = 2 + (s % 3);
       const answer = first * second * third;
+      const menu = scene(variant, CHOICE_MENU);
       return {
         family: "fundamental-counting-principle",
-        stem: `A café offers ${first} breads, ${second} fillings, and ${third} spreads. How many different sandwiches can be made by choosing one of each?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of different ${menu.product} designs made from ${first} ${menu.first}, ${second} ${menu.second}, and ${third} ${menu.third} by choosing one of each`,
+        }),
         answer,
         wrong: [
           [first + second + third, "This adds the options; independent choices multiply."],
@@ -5936,14 +6084,12 @@ SHAPES["counting"] = {
     (s, variant) => {
       const items = 4 + (s % 4);
       const answer = factorial(items);
+      const collection = scene(variant, COLLECTION);
       return {
         family: "arrangements-of-distinct-items",
-        stem: choose(variant, [
-          `In how many different orders can ${items} distinct books be arranged on a shelf?`,
-          `How many arrangements are there of ${items} different books in a row?`,
-          `${items} distinct posters are hung in a row. How many orderings are possible?`,
-          `How many ways can ${items} distinct objects be placed in order?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of orders for ${items} distinct ${collection.plural} placed in a row by a ${collection.owner}`,
+        }),
         answer,
         wrong: [
           [items * items, "This allows each position to repeat any item; the items are distinct and used once each."],
@@ -5969,9 +6115,12 @@ SHAPES["counting"] = {
       const n = 6 + (s % 4);
       const r = 2 + (s % 2);
       const answer = combinations(n, r);
+      const membership = scene(variant, MEMBERSHIP);
       return {
         family: "combinations-choose-a-committee",
-        stem: `A club has ${n} members. How many different committees of ${r} members can be formed?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of ${r}-member committees that can be formed from ${n} members of a ${membership.service}`,
+        }),
         answer,
         wrong: [
           [permutations(n, r), "This counts ordered selections; a committee's members have no order, so each group is counted " + factorial(r) + " times."],
@@ -5997,9 +6146,12 @@ SHAPES["counting"] = {
       const n = 5 + (s % 4);
       const r = 3;
       const answer = permutations(n, r);
+      const menu = scene(variant, CHOICE_MENU);
       return {
         family: "permutations-of-ranked-places",
-        stem: `${n} runners finish a race with no ties. How many different orderings of first, second, and third place are possible?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of first-, second-, and third-place orders possible among ${n} finalists in a ${menu.product} design contest with no ties`,
+        }),
         answer,
         wrong: [
           [combinations(n, r), "This ignores the ranking; first, second, and third are distinguishable positions."],
@@ -6028,14 +6180,12 @@ SHAPES["counting"] = {
       const required = 2;
       const size = 4;
       const answer = combinations(total - required, size - required);
+      const membership = scene(variant, MEMBERSHIP);
       return {
         family: "combinations-with-a-restriction",
-        stem: choose(variant, [
-          `From ${total} volunteers, a team of ${size} must be chosen, and ${required} particular volunteers must both be included. How many different teams are possible?`,
-          `A team of ${size} is selected from ${total} volunteers, with ${required} named volunteers guaranteed places. How many teams can be formed?`,
-          `${total} volunteers are available and a group of ${size} is needed. If ${required} specified volunteers must be on it, how many groups are possible?`,
-          `How many teams of ${size} can be chosen from ${total} volunteers if ${required} particular people must be included?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of ${size}-person teams chosen from ${total} ${membership.service} members when ${required} specified members must be included`,
+        }),
         answer,
         wrong: [
           [combinations(total, size), "This ignores the restriction and counts every possible team."],
@@ -6069,7 +6219,9 @@ SHAPES["counting"] = {
       );
       return {
         family: "arrangements-with-repeated-letters",
-        stem: `How many distinguishable arrangements can be made of the letters in the word ${letters}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of distinguishable arrangements of the letters in ${letters}`,
+        }),
         answer,
         wrong: [
           [factorial(letters.length), "This treats every letter as distinct; swapping two identical letters produces no new arrangement."],
@@ -6099,9 +6251,12 @@ SHAPES["compound probability"] = {
       const favourable = 3 + (s % 5);
       const others = 5 + (s % 6);
       const total = favourable + others;
+      const draw = scene(variant, DRAW_POOL);
       return {
         family: "single-event-probability",
-        stem: `A bag holds ${favourable} red marbles and ${others} blue marbles. If one marble is drawn at random, what is the probability that it is red?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the probability of randomly drawing a ${draw.first} ${draw.item.slice(0, -1)} from a ${draw.container} holding ${favourable} ${draw.first} and ${others} ${draw.second} ${draw.item}`,
+        }),
         answer: frac(favourable, total),
         wrong: [
           [frac(favourable, others), "This compares red to blue rather than red to the whole bag."],
@@ -6123,7 +6278,9 @@ SHAPES["compound probability"] = {
       const answer = frac(sides - target + 1, sides);
       return {
         family: "probability-at-least-a-value",
-        stem: `A fair six-sided die is rolled once. What is the probability that the result is at least ${target}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the probability that one roll of a fair six-sided die is at least ${target}`,
+        }),
         answer,
         wrong: [
           [frac(sides - target, sides), `This excludes ${target} itself; "at least" includes the value named.`],
@@ -6151,9 +6308,12 @@ SHAPES["compound probability"] = {
       const blue = 4 + (s % 5);
       const total = red + blue;
       const answer = frac(red * (red - 1), total * (total - 1));
+      const draw = scene(variant, DRAW_POOL);
       return {
         family: "dependent-draws-without-replacement",
-        stem: `A jar holds ${red} red and ${blue} blue tokens. Two tokens are drawn without replacement. What is the probability that both are red?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the probability that two ${draw.item} drawn without replacement from a ${draw.container} holding ${red} ${draw.first} and ${blue} ${draw.second} ${draw.item} are both ${draw.first}`,
+        }),
         answer,
         wrong: [
           [frac(red * red, total * total), "This treats the draws as independent; without replacement the second draw has one fewer token of each kind."],
@@ -6182,7 +6342,9 @@ SHAPES["compound probability"] = {
       const answer = frac(firstNumerator * secondNumerator, firstDenominator * secondDenominator);
       return {
         family: "independent-events-both-occur",
-        stem: `Two independent events have probabilities ${firstNumerator}/${firstDenominator} and ${secondNumerator}/${secondDenominator}. What is the probability that both occur?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the probability that both of two independent events occur when their probabilities are ${firstNumerator}/${firstDenominator} and ${secondNumerator}/${secondDenominator}`,
+        }),
         answer,
         wrong: [
           [frac(firstNumerator * secondDenominator + secondNumerator * firstDenominator, firstDenominator * secondDenominator), "This adds the probabilities, which answers \"at least one\" only when the events are mutually exclusive."],
@@ -6215,12 +6377,9 @@ SHAPES["compound probability"] = {
       );
       return {
         family: "at-least-one-via-complement",
-        stem: choose(variant, [
-          `On each of ${trials} independent attempts, the probability of failure is ${missNumerator}/${missDenominator}. What is the probability of at least one success?`,
-          `An attempt fails with probability ${missNumerator}/${missDenominator}. Over ${trials} independent attempts, what is the probability of succeeding at least once?`,
-          `Each of ${trials} independent trials fails with probability ${missNumerator}/${missDenominator}. How likely is at least one success?`,
-          `The chance of failure on a single attempt is ${missNumerator}/${missDenominator}. In ${trials} independent attempts, what is the probability that at least one succeeds?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the probability of at least one success in ${trials} independent attempts when each fails with probability ${missNumerator}/${missDenominator}`,
+        }),
         answer,
         wrong: [
           [frac(missDenominator - missNumerator, missDenominator), "This is the probability of success on a single attempt, not across all " + trials + "."],
@@ -6255,18 +6414,16 @@ SHAPES["compound probability"] = {
       const bothNo = 20 + (s % 6);
       const columnTotal = bothYes + noYes;
       const answer = frac(bothYes, columnTotal);
+      const survey = scene(variant, TWO_WAY_SURVEY);
       return {
         family: "conditional-probability-reversed",
         stimulus: {
           type: "table",
-          content: `A clinic recorded test results against whether the condition was present.\n\n | condition present | condition absent\npositive test | ${bothYes} | ${noYes}\nnegative test | ${yesNo} | ${bothNo}`,
+          content: `A conditional-probability contingency table records the joint outcomes. ${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.first} | do not ${survey.first}\n${survey.second} | ${bothYes} | ${noYes}\ndo not ${survey.second} | ${yesNo} | ${bothNo}`,
         },
-        stem: choose(variant, [
-          "Given that a randomly chosen patient tested positive, what is the probability that the condition is present?",
-          "A patient is selected at random from those who tested positive. What is the probability that the condition is present?",
-          "Among patients with a positive test, what is the probability of the condition being present?",
-          "If a randomly chosen patient has a positive test result, how likely is it that the condition is present?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the probability that a randomly chosen ${survey.group.slice(0, -1)} ${survey.first}, given that the person ${survey.second}`,
+        }),
         answer,
         wrong: [
           [frac(bothYes, bothYes + yesNo), "This conditions on having the condition, answering the reverse question: given the condition, how likely is a positive test?"],
@@ -6306,14 +6463,12 @@ SHAPES["rates"] = {
       const rate = span(s, 12, 8, 3);
       const hours = span(s, 3, 5);
       const total = rate * hours;
+      const production = scene(variant, PRODUCTION);
       return {
         family: "unit-rate-from-a-total",
-        stem: choose(variant, [
-          `A press prints ${total} flyers in ${hours} hours at a constant rate. How many flyers does it print per hour?`,
-          `A constant-speed press finishes ${total} flyers over ${hours} hours. What is its hourly output?`,
-          `Over ${hours} hours a machine produces ${total} flyers at a steady rate. How many flyers per hour is that?`,
-          `${total} flyers are printed in ${hours} hours at an unchanging rate. Find the number of flyers per hour.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the hourly output when a ${production.actor} ${production.verb} ${total} ${production.object} in ${hours} hours at a constant rate`,
+        }),
         answer: rate,
         wrong: [
           [total, "This is the whole job, not the amount finished in one hour."],
@@ -6337,14 +6492,12 @@ SHAPES["rates"] = {
       const speed = span(s, 25, 8, 5);
       const hours = span(s, 2, 4);
       const distance = speed * hours;
+      const trip = scene(variant, TRAVEL);
       return {
         family: "average-speed-single-leg",
-        stem: choose(variant, [
-          `A van covers ${distance} miles in ${hours} hours. What is its average speed, in miles per hour?`,
-          `A driver travels ${distance} miles over ${hours} hours. Find the average speed in miles per hour.`,
-          `A bus needs ${hours} hours to travel ${distance} miles. What is its average speed, in miles per hour?`,
-          `In ${hours} hours a truck goes ${distance} miles. What average speed, in miles per hour, is that?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the average speed, in miles per hour, of a ${trip.mover} covering ${distance} miles along a ${trip.route} in ${hours} hours`,
+        }),
         answer: speed,
         wrong: [
           [distance, "This is the distance, not the speed."],
@@ -6374,9 +6527,12 @@ SHAPES["rates"] = {
       const distance = first * t1 + second * t2;
       const time = t1 + t2;
       const answer = round3(distance / time);
+      const trip = scene(variant, TRAVEL);
       return {
         family: "average-speed-two-legs",
-        stem: `A driver travels for ${t1} hours at ${first} miles per hour and then for ${t2} hours at ${second} miles per hour. What is the average speed for the entire trip, in miles per hour?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the average speed of a ${trip.mover} traveling a ${trip.route} for ${t1} hours at ${first} miles per hour and then ${t2} hours at ${second} miles per hour`,
+        }),
         answer,
         wrong: [
           [round3((first + second) / 2), "This averages the two speeds, which is only correct when the two times are equal."],
@@ -6403,14 +6559,12 @@ SHAPES["rates"] = {
       const a = span(s, 4, 5, 2);
       const b = a + span(s, 2, 4, 2);
       const answer = round3((a * b) / (a + b));
+      const production = scene(variant, PRODUCTION);
       return {
         family: "combined-work-rate",
-        stem: choose(variant, [
-          `Pump A alone fills a tank in ${a} hours and pump B alone fills the same tank in ${b} hours. Working together at those rates, how many hours do they take to fill the tank?`,
-          `One hose fills a pool in ${a} hours; a second fills it in ${b} hours. Running both at once, how many hours does filling the pool take?`,
-          `Working alone, printer A finishes a run in ${a} hours and printer B finishes it in ${b} hours. Running together, how many hours does the run take?`,
-          `Machine A completes a job in ${a} hours and machine B completes it in ${b} hours. How many hours does the job take with both machines running?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the time for two ${production.actor}s working together to finish a ${production.object} job when they need ${a} and ${b} hours alone`,
+        }),
         answer,
         wrong: [
           [a + b, "This adds the times; two workers together are faster than either alone."],
@@ -6445,9 +6599,12 @@ SHAPES["rates"] = {
       ];
       const [out, back, answer] = choose(s, table);
       const distance = lcm(out, back);
+      const trip = scene(variant, TRAVEL);
       return {
         family: "round-trip-harmonic-average-speed",
-        stem: `A cyclist rides ${distance} miles to a lake at ${out} miles per hour and returns along the same road at ${back} miles per hour. What is the average speed for the round trip, in miles per hour?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the round-trip average speed of a ${trip.mover} covering ${distance} miles along a ${trip.route} at ${out} miles per hour and returning at ${back} miles per hour`,
+        }),
         answer,
         wrong: [
           [round3((out + back) / 2), "This averages the two speeds. Averaging speeds is only valid when equal time is spent at each, and here the slower leg takes longer."],
@@ -6480,9 +6637,12 @@ SHAPES["rates"] = {
       const hours = span(s, 2, 3);
       const minutes = hours * 60;
       const answer = (a * minutes) / m + (b * minutes) / p;
+      const production = scene(variant, PRODUCTION);
       return {
         family: "two-machine-rate-with-time-conversion",
-        stem: `Machine A seals ${a} cartons every ${m} minutes and machine B seals ${b} cartons every ${p} minutes. If both run continuously for ${hours} hours, how many cartons do they seal in all?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the total ${production.object} made in ${hours} hours by machines producing ${a} every ${m} minutes and ${b} every ${p} minutes`,
+        }),
         answer,
         wrong: [
           [round3((a * hours) / m + (b * hours) / p), "This uses hours where the rates are stated per minute; the running time has to be converted first."],
@@ -6516,14 +6676,12 @@ SHAPES["proportions"] = {
       const factor = span(s, 2, 4);
       const target = serves * factor;
       const answer = cups * factor;
+      const recipe = scene(variant, RECIPE);
       return {
         family: "direct-proportion-scale-up",
-        stem: choose(variant, [
-          `A recipe that serves ${serves} people uses ${cups} cups of flour. How many cups of flour are needed to serve ${target} people, keeping the same proportions?`,
-          `${cups} cups of flour serve ${serves} people. At the same ratio, how many cups serve ${target} people?`,
-          `A batch for ${serves} people takes ${cups} cups of flour. Scaled to ${target} people, how many cups are required?`,
-          `Flour is used at ${cups} cups per ${serves} servings. How many cups are needed for ${target} servings?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the cups of ${recipe.ingredient} needed for ${target} servings of ${recipe.dish} when ${cups} cups make ${serves} servings`,
+        }),
         answer,
         wrong: [
           [cups + factor, "This adds the scale factor instead of multiplying by it."],
@@ -6549,9 +6707,12 @@ SHAPES["proportions"] = {
       const cost = count * price;
       const wanted = count + span(s, 2, 4);
       const answer = money(wanted * price);
+      const retail = scene(variant, RETAIL);
       return {
         family: "unit-price-proportion",
-        stem: `${count} identical notebooks cost ${cost}. At the same price per notebook, what is the cost of ${wanted} notebooks?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the cost of ${wanted} ${retail.plural} when ${count} identical ${retail.plural} cost ${cost} at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [money(cost + (wanted - count)), "This adds the extra notebooks as dollars rather than pricing them."],
@@ -6579,9 +6740,12 @@ SHAPES["proportions"] = {
       const groups = span(s, 6, 5, 2);
       const total = (red + blue) * groups;
       const answer = red * groups;
+      const collection = scene(variant, COLLECTION);
       return {
         family: "part-to-whole-ratio",
-        stem: `In a mosaic the ratio of red tiles to blue tiles is ${red} to ${blue}. The mosaic uses ${total} tiles in all. How many of them are red?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the first-group count among ${total} ${collection.plural} when the ratio of first-group to second-group ${collection.plural} is ${red} to ${blue}`,
+        }),
         answer,
         wrong: [
           [blue * groups, "This is the number of blue tiles."],
@@ -6610,9 +6774,12 @@ SHAPES["proportions"] = {
       const meters = span(s, 3, 5);
       const wall = meters * span(s, 2, 5);
       const answer = round3((wall / meters) * cm);
+      const ground = scene(variant, GROUND);
       return {
         family: "scale-drawing-inverse-direction",
-        stem: `On a scale drawing, ${cm} centimeters represents ${meters} meters. A wall is ${wall} meters long. How many centimeters long is that wall in the drawing?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the drawing length in centimeters of a ${wall}-meter ${ground.edge} around a ${ground.region} when ${cm} centimeters represents ${meters} meters`,
+        }),
         answer,
         wrong: [
           [round3((wall / cm) * meters), "This applies the scale upside down, converting drawing units into real ones."],
@@ -6684,7 +6851,9 @@ SHAPES["proportions"] = {
       const answer = managers * scale;
       return {
         family: "chained-three-term-ratio",
-        stem: `At a firm the ratio of managers to engineers is ${a} to ${b}, and the ratio of engineers to technicians is ${c} to ${d}. If the firm has ${total} technicians, how many managers does it have?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the manager count at a firm with manager-to-engineer ratio ${a}:${b}, engineer-to-technician ratio ${c}:${d}, and ${total} technicians`,
+        }),
         answer,
         wrong: [
           [round3((total * a) / b), "This uses the manager-to-engineer ratio directly against the technician count, skipping the link through engineers."],
@@ -6719,12 +6888,9 @@ SHAPES["percentages"] = {
       const answer = round3((base * percent) / 100);
       return {
         family: "percent-of-a-number",
-        stem: choose(variant, [
-          `What is ${percent}% of ${base}?`,
-          `Find ${percent} percent of ${base}.`,
-          `A survey covers ${base} households, and ${percent}% of them recycle. How many households recycle?`,
-          `${percent}% of a ${base}-page manuscript has been edited. How many pages is that?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `${percent}% of ${base}`,
+        }),
         answer,
         wrong: [
           [percent, "This repeats the percent instead of applying it."],
@@ -6748,9 +6914,12 @@ SHAPES["percentages"] = {
       const before = span(s, 40, 6, 20);
       const after = before + (before * choose(s, [5, 10, 20, 25])) / 100;
       const answer = round3(((after - before) / before) * 100);
+      const membership = scene(variant, MEMBERSHIP);
       return {
         family: "percent-increase",
-        stem: `A club's membership grew from ${before} to ${after}. By what percent did it increase?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the percent increase when a ${membership.service}'s membership grows from ${before} to ${after}`,
+        }),
         answer,
         wrong: [
           [after - before, "This is the raw increase, not a percent."],
@@ -6778,9 +6947,12 @@ SHAPES["percentages"] = {
       const second = span(s, 5, 4, 5);
       const answer = money(round3(price * (1 - first / 100) * (1 - second / 100)));
       const naive = money(round3(price * (1 - (first + second) / 100)));
+      const retail = scene(variant, RETAIL);
       return {
         family: "successive-discounts",
-        stem: `A coat priced at ${price} is marked down ${first}%, and the sale price is then reduced by a further ${second}%. What is the final price?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the final price of a ${retail.item} priced at ${price} after successive discounts of ${first}% and ${second}% at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [naive, `This subtracts ${first + second}% from the original price. The second discount applies to the already-reduced price, so the total reduction is smaller than the sum of the two percents.`],
@@ -6846,9 +7018,12 @@ SHAPES["percentages"] = {
       ];
       const [volume, weak, target] = choose(s, table);
       const answer = round3((volume * (target - weak)) / (100 - target));
+      const solution = scene(variant, SOLUTION);
       return {
         family: "acid-mixture-add-pure-solute",
-        stem: `A chemist has ${volume} liters of a solution that is ${weak}% acid. How many liters of pure acid must be added so that the resulting solution is ${target}% acid?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the liters of pure ${solution.solute} a ${solution.agent} must add to ${volume} liters of ${weak}% ${solution.solvent} to make it ${target}% ${solution.solute}`,
+        }),
         answer,
         wrong: [
           [round3((volume * (target - weak)) / 100), "This takes the percent difference of the original volume, treating the added acid as if it did not also enlarge the total."],
@@ -6875,9 +7050,12 @@ SHAPES["percentages"] = {
       const up = span(s, 10, 5, 10);
       const down = span(s, 10, 4, 5);
       const answer = round3((100 + up) * (100 - down) / 100);
+      const retail = scene(variant, RETAIL);
       return {
         family: "compounded-percent-change-net-effect",
-        stem: `A retailer raises the price of an item by ${up}% and later reduces the new price by ${down}%. The final price is what percent of the original price?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the final price of a ${retail.item} as a percent of its original price after a ${up}% increase and a ${down}% reduction at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [100 + up - down, `This adds and subtracts the percents. The ${down}% reduction is taken from the raised price, not from the original, so the two percents apply to different bases.`],
@@ -6909,14 +7087,12 @@ SHAPES["perimeter and area"] = {
       const length = span(s, 7, 6, 2);
       const width = span(s, 3, 5, 2);
       const answer = 2 * (length + width);
+      const ground = scene(variant, GROUND);
       return {
         family: "rectangle-perimeter",
-        stem: choose(variant, [
-          `A rectangular patio measures ${length} feet by ${width} feet. What is its perimeter, in feet?`,
-          `What is the perimeter, in feet, of a rectangle ${length} feet long and ${width} feet wide?`,
-          `A rectangular sign is ${length} feet long and ${width} feet high. How many feet of trim go around its edge?`,
-          `A ${length}-foot by ${width}-foot rectangular plot is fenced on all four sides. How many feet of fence are used?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the perimeter, in feet, of a rectangular ${ground.region} measuring ${length} feet by ${width} feet`,
+        }),
         answer,
         wrong: [
           [length * width, "This is the area, in square feet, not the distance around."],
@@ -6940,9 +7116,12 @@ SHAPES["perimeter and area"] = {
       const width = span(s, 4, 5, 2);
       const length = span(s, 9, 6, 3);
       const area = length * width;
+      const ground = scene(variant, GROUND);
       return {
         family: "rectangle-missing-side-from-area",
-        stem: `A rectangular rug has an area of ${area} square feet and a width of ${width} feet. What is its length, in feet?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the length, in feet, of a rectangular ${ground.region} with area ${area} square feet and width ${width} feet`,
+        }),
         answer: length,
         wrong: [
           [area - width, "This subtracts the width from the area; area is a product, so recovering a side needs division."],
@@ -6970,9 +7149,12 @@ SHAPES["perimeter and area"] = {
       const cutW = span(s, 3, 4);
       const cutH = span(s, 2, 4);
       const answer = outerW * outerH - cutW * cutH;
+      const ground = scene(variant, GROUND);
       return {
         family: "composite-l-shaped-area",
-        stem: `An L-shaped floor is formed by removing a ${cutW}-foot by ${cutH}-foot rectangular corner from a ${outerW}-foot by ${outerH}-foot rectangle. What is the area of the floor, in square feet?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the area of an L-shaped ${ground.region} formed by removing a ${cutW}-foot by ${cutH}-foot corner from a ${outerW}-foot by ${outerH}-foot rectangle`,
+        }),
         answer,
         wrong: [
           [outerW * outerH, "This is the full rectangle before the corner is removed."],
@@ -6999,9 +7181,12 @@ SHAPES["perimeter and area"] = {
       const width = span(s, 5, 5, 3);
       const perimeter = 2 * (length + width);
       const answer = length * width;
+      const ground = scene(variant, GROUND);
       return {
         family: "area-from-perimeter-and-one-side",
-        stem: `A rectangular garden has a perimeter of ${perimeter} feet and a length of ${length} feet. What is its area, in square feet?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the area, in square feet, of a rectangular ${ground.region} with perimeter ${perimeter} feet and length ${length} feet`,
+        }),
         answer,
         wrong: [
           [round3(length * (perimeter / 2)), "This uses half the perimeter as the width; half the perimeter is the length plus the width."],
@@ -7030,7 +7215,9 @@ SHAPES["perimeter and area"] = {
       const coefficient = radius * radius;
       return {
         family: "shaded-region-circle-in-square",
-        stem: `A circle of radius ${radius} is inscribed in a square, touching all four sides. What is the area of the region inside the square but outside the circle?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the area inside a square but outside an inscribed circle of radius ${radius}`,
+        }),
         answer: val(`${square} ${MINUS} ${coefficient}π`, square - Math.PI * coefficient),
         wrong: [
           [val(`${coefficient}π`, Math.PI * coefficient), "This is the circle's area alone."],
@@ -7060,7 +7247,9 @@ SHAPES["perimeter and area"] = {
       const answer = round3((area * large * large) / (small * small));
       return {
         family: "similar-figure-area-ratio",
-        stem: `Two similar hexagons have corresponding side lengths in the ratio ${small} to ${large}. The smaller hexagon has an area of ${area} square centimeters. What is the area of the larger hexagon, in square centimeters?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the larger area, in square centimeters, for similar hexagons with side ratio ${small}:${large} and smaller area ${area}`,
+        }),
         answer,
         wrong: [
           [round3((area * large) / small), "This scales the area by the ratio of the sides. Areas scale by the square of that ratio, because both dimensions stretch."],
@@ -7094,7 +7283,16 @@ SHAPES["measurement conversion"] = {
       const answer = count * unit.factor;
       return {
         family: "single-step-unit-conversion",
-        stem: `There are ${unit.factor} ${unit.to} in one ${unit.from.replace(/s$/, "")}. How many ${unit.to} are in ${count} ${unit.from}?`,
+        stem: choose(variant, [
+          `Scale into the smaller measurement unit. There are ${unit.factor} ${unit.to} in one ${unit.from.replace(/s$/, "")}. How many ${unit.to} are in ${count} ${unit.from}?`,
+          `Convert the stated quantity using its unit factor. One ${unit.from.replace(/s$/, "")} equals ${unit.factor} ${unit.to}; express ${count} ${unit.from} in ${unit.to}.`,
+          `Translate this measure without changing its size. If 1 ${unit.from.replace(/s$/, "")} is ${unit.factor} ${unit.to}, how many ${unit.to} equal ${count} ${unit.from}?`,
+          `Apply the equivalence between these measurement units. Given ${unit.factor} ${unit.to} per ${unit.from.replace(/s$/, "")}, convert ${count} ${unit.from}.`,
+          `Rewrite the quantity in the finer unit. A single ${unit.from.replace(/s$/, "")} contains ${unit.factor} ${unit.to}; what is the ${unit.to} count for ${count} ${unit.from}?`,
+          `Use dimensional conversion on the measurement. How many ${unit.to} represent ${count} ${unit.from} when each ${unit.from.replace(/s$/, "")} contains ${unit.factor}?`,
+          `Change the unit label while preserving the quantity. With ${unit.factor} ${unit.to} in every ${unit.from.replace(/s$/, "")}, find the equivalent of ${count} ${unit.from}.`,
+          `Map the larger-unit count to smaller units. If ${unit.factor} ${unit.to} make one ${unit.from.replace(/s$/, "")}, determine the number in ${count} ${unit.from}.`,
+        ]),
         answer,
         wrong: [
           [round3(count / unit.factor), "This divides when converting to a smaller unit; a smaller unit needs more of them."],
@@ -7117,9 +7315,12 @@ SHAPES["measurement conversion"] = {
     (s, variant) => {
       const yards = span(s, 2, 6);
       const answer = yards * 36;
+      const ground = scene(variant, GROUND);
       return {
         family: "two-step-length-conversion",
-        stem: `A rope is ${yards} yards long. Given that 1 yard is 3 feet and 1 foot is 12 inches, how many inches long is the rope?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the length in inches of a ${yards}-yard ${ground.edge}, given 1 yard = 3 feet and 1 foot = 12 inches`,
+        }),
         answer,
         wrong: [
           [yards * 12, "This converts yards to feet and stops, or converts as if a yard were 12 inches."],
@@ -7144,9 +7345,12 @@ SHAPES["measurement conversion"] = {
     (s, variant) => {
       const feetPerSecond = span(s, 22, 6, 22);
       const answer = round3((feetPerSecond * 3600) / 5280);
+      const trip = scene(variant, TRAVEL);
       return {
         family: "rate-unit-conversion-fps-to-mph",
-        stem: `An object moves at ${feetPerSecond} feet per second. Given that 1 mile is 5280 feet, what is its speed in miles per hour?`,
+        stem: pose(variant, "quantityOf", {
+          description: `in miles per hour, a ${trip.mover}'s speed of ${feetPerSecond} feet per second along a ${trip.route}, given 1 mile = 5280 feet`,
+        }),
         answer,
         wrong: [
           [round3((feetPerSecond * 60) / 5280), "This converts seconds to minutes rather than to hours."],
@@ -7172,9 +7376,12 @@ SHAPES["measurement conversion"] = {
     (s, variant) => {
       const quarts = span(s, 3, 6);
       const answer = quarts * 32;
+      const recipe = scene(variant, RECIPE);
       return {
         family: "capacity-conversion-chain",
-        stem: `A recipe calls for ${quarts} quarts of stock. Given that 1 quart is 2 pints and 1 pint is 16 fluid ounces, how many fluid ounces of stock are needed?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the fluid ounces of ${recipe.ingredient} in ${quarts} quarts for a ${recipe.dish} recipe, given 1 quart = 2 pints and 1 pint = 16 fluid ounces`,
+        }),
         answer,
         wrong: [
           [quarts * 2, "This converts quarts to pints and stops."],
@@ -7200,9 +7407,12 @@ SHAPES["measurement conversion"] = {
       const width = span(s, 9, 5, 3);
       const length = span(s, 12, 5, 3);
       const answer = round3((width * length) / 9);
+      const ground = scene(variant, GROUND);
       return {
         family: "square-unit-conversion",
-        stem: `A room measures ${width} feet by ${length} feet. Carpet is sold by the square yard. How many square yards of carpet cover the room exactly?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the square yards of ${ground.cover} needed to cover a ${width}-foot by ${length}-foot ${ground.region}`,
+        }),
         answer,
         wrong: [
           [round3((width * length) / 3), "This divides by 3, the linear conversion. A square yard is 3 feet by 3 feet, so it holds 9 square feet, not 3."],
@@ -7229,9 +7439,12 @@ SHAPES["measurement conversion"] = {
       const table = [288, 144, 432, 576, 720, 864];
       const perSecond = choose(s, table);
       const answer = round3((perSecond * 60) / 1728);
+      const vessel = scene(variant, VESSEL);
       return {
         family: "cubic-rate-conversion",
-        stem: `A nozzle delivers ${perSecond} cubic inches of water per second. Given that 1 foot is 12 inches, how many cubic feet per minute is that?`,
+        stem: pose(variant, "quantityOf", {
+          description: `in cubic feet per minute, a ${vessel.filler}'s delivery of ${perSecond} cubic inches of ${vessel.fluid} per second to a ${vessel.vessel}, given 1 foot = 12 inches`,
+        }),
         answer,
         wrong: [
           [round3((perSecond * 60) / 12), "This divides by the linear factor. A cubic foot is 12 inches cubed, or 1728 cubic inches."],
@@ -7265,12 +7478,9 @@ SHAPES["averages"] = {
       const answer = values.reduce((sum, value) => sum + value, 0) / values.length;
       return {
         family: "mean-of-a-list",
-        stem: choose(variant, [
-          `What is the average (arithmetic mean) of ${values.join(", ")}?`,
-          `Find the mean of the five numbers ${values.join(", ")}.`,
-          `A tally records ${values.join(", ")}. What is the average of these five values?`,
-          `The five readings ${values.join(", ")} were taken. What is their arithmetic mean?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the arithmetic mean of ${values.join(", ")}`,
+        }),
         answer,
         wrong: [
           [values.reduce((sum, value) => sum + value, 0), "This is the sum; the mean also divides by how many values there are."],
@@ -7290,9 +7500,12 @@ SHAPES["averages"] = {
       const scores = [span(s, 72, 6, 2), span(s, 80, 5, 3), span(s, 88, 4, 2), span(s, 91, 4, 2)];
       const total = scores.reduce((sum, value) => sum + value, 0);
       const answer = round3(total / scores.length);
+      const cohort = scene(variant, COHORT);
       return {
         family: "mean-of-test-scores",
-        stem: `A student's four test scores are ${scores.join(", ")}. What is the student's average score?`,
+        stem: pose(variant, "quantityOf", {
+          description: `a ${cohort.member}'s average across four ${cohort.plural} scored ${scores.join(", ")}`,
+        }),
         answer,
         wrong: [
           [total, "This is the total of the scores, not their average."],
@@ -7314,9 +7527,12 @@ SHAPES["averages"] = {
       const known = [span(s, 74, 5, 3), span(s, 81, 5, 2), span(s, 88, 4, 2)];
       const target = span(s, 84, 5, 2);
       const answer = 4 * target - known.reduce((sum, value) => sum + value, 0);
+      const cohort = scene(variant, COHORT);
       return {
         family: "missing-score-for-target-mean",
-        stem: `A student has scored ${known.join(", ")} on three tests. What score on a fourth test would make the average of all four tests exactly ${target}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the fourth ${cohort.unit} score a ${cohort.member} needs after ${known.join(", ")} to average exactly ${target}`,
+        }),
         answer,
         wrong: [
           [target, "This is the target average, which the fourth score only equals when the first three already average to it."],
@@ -7347,9 +7563,12 @@ SHAPES["averages"] = {
       const m1 = span(s, 70, 5, 2);
       const m2 = m1 + span(s, 6, 4, 3);
       const answer = round3((n1 * m1 + n2 * m2) / (n1 + n2));
+      const cohort = scene(variant, COHORT);
       return {
         family: "weighted-average-of-two-groups",
-        stem: `One class of ${n1} students averaged ${m1} on a test and another class of ${n2} students averaged ${m2}. What is the average score of all ${n1 + n2} students combined?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the combined average of ${n1} ${cohort.unit} records averaging ${m1} and ${n2} records averaging ${m2} for a ${cohort.body}`,
+        }),
         answer,
         wrong: [
           [round3((m1 + m2) / 2), "This averages the two class averages, which is correct only when the classes are the same size."],
@@ -7380,7 +7599,9 @@ SHAPES["averages"] = {
       const answer = count * mean - (count - 1) * restMean;
       return {
         family: "value-removed-changes-the-mean",
-        stem: `The average of ${count} numbers is ${mean}. When one of the numbers is removed, the average of the remaining ${count - 1} numbers is ${restMean}. What was the number that was removed?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the removed number when ${count} numbers average ${mean} and the remaining ${count - 1} average ${restMean}`,
+        }),
         answer,
         wrong: [
           [round3(count * restMean - (count - 1) * mean), "This pairs each average with the other's count, reversing the roles of the two totals."],
@@ -7414,9 +7635,12 @@ SHAPES["averages"] = {
       const extra = span(s, 2, 3);
       const target = current + span(s, 2, 4);
       const answer = round3(((taken + extra) * target - taken * current) / extra);
+      const cohort = scene(variant, COHORT);
       return {
         family: "scores-needed-to-raise-a-mean",
-        stem: `A student has taken ${taken} tests and has an average of ${current}. The student will take ${extra} more tests and wants an average of ${target} over all ${taken + extra} tests. What score, the same on each remaining test, is required?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the equal score needed on ${extra} remaining ${cohort.plural} to raise a ${cohort.member}'s ${taken}-${cohort.unit} average from ${current} to ${target}`,
+        }),
         answer,
         wrong: [
           [target, "This is the desired overall average; because the existing scores sit below it, the remaining tests have to score higher to pull the mean up."],
@@ -7447,9 +7671,12 @@ SHAPES["financial contexts"] = {
       const price = span(s, 20, 6, 10);
       const rate = choose(s, [5, 6, 8, 10]);
       const answer = money(round3(price * (1 + rate / 100)));
+      const retail = scene(variant, RETAIL);
       return {
         family: "price-plus-sales-tax",
-        stem: `A jacket costs ${price} before tax. With a sales tax of ${rate}%, what is the total cost?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the total cost of a ${retail.item} priced at ${price} before ${rate}% sales tax at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [money(round3((price * rate) / 100)), "This is the tax alone, not the total."],
@@ -7473,9 +7700,12 @@ SHAPES["financial contexts"] = {
       const price = span(s, 40, 6, 20);
       const rate = choose(s, [10, 15, 20, 25]);
       const answer = money(round3(price * (1 - rate / 100)));
+      const retail = scene(variant, RETAIL);
       return {
         family: "sale-price-after-discount",
-        stem: `A lamp regularly priced at ${price} is on sale for ${rate}% off. What is the sale price?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the sale price of a ${retail.item} regularly priced at ${price} with ${rate}% off at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [money(round3((price * rate) / 100)), "This is the amount saved, not the price paid."],
@@ -7502,9 +7732,12 @@ SHAPES["financial contexts"] = {
       const rate = choose(s, [3, 4, 5, 6]);
       const years = span(s, 2, 4);
       const interest = round3((principal * rate * years) / 100);
+      const finance = scene(variant, FINANCE);
       return {
         family: "simple-interest",
-        stem: `${principal} is deposited in an account paying ${rate}% simple annual interest. How much interest does the account earn in ${years} years?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the interest earned when ${principal} is deposited in a ${finance.account} paying ${rate}% simple annual interest for ${years} years`,
+        }),
         answer: money(interest),
         wrong: [
           [money(round3((principal * rate) / 100)), "This is one year's interest."],
@@ -7530,9 +7763,12 @@ SHAPES["financial contexts"] = {
       const rate = choose(s, [4, 5, 8, 10]);
       const target = base + span(s, 200, 5, 100);
       const answer = round3(((target - base) * 100) / rate);
+      const finance = scene(variant, FINANCE);
       return {
         family: "commission-to-reach-a-target",
-        stem: `A salesperson earns ${base} per week plus a ${rate}% commission on sales. What must the week's sales total be for the weekly earnings to reach ${target}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the weekly sales a ${finance.earner} needs to earn ${target} from ${base} base pay plus ${rate}% commission`,
+        }),
         answer: money(answer),
         wrong: [
           [money(target - base), "This is the commission that must be earned, not the sales that generate it."],
@@ -7563,9 +7799,12 @@ SHAPES["financial contexts"] = {
       const years = span(s, 2, 3);
       const compound = round3(principal * (1 + rate / 100) ** years);
       const simple = round3(principal * (1 + (rate * years) / 100));
+      const finance = scene(variant, FINANCE);
       return {
         family: "compound-interest-balance",
-        stem: `${principal} is invested at ${rate}% annual interest compounded once per year. What is the balance after ${years} years, to the nearest cent?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest cent, the balance after ${years} years when ${principal} in a ${finance.account} earns ${rate}% interest compounded annually`,
+        }),
         answer: money(compound),
         wrong: [
           [money(simple), `This applies ${rate * years}% once, which is simple interest. Compounding pays interest on the interest already credited, so the balance is higher.`],
@@ -7599,9 +7838,12 @@ SHAPES["financial contexts"] = {
       const [feeA, rateA, feeB, rateB] = choose(s, table);
       const answer = round3((feeA - feeB) / (rateB - rateA));
       const totalAtCross = round3(feeA + rateA * answer);
+      const finance = scene(variant, FINANCE);
       return {
         family: "two-plan-break-even",
-        stem: `Plan A charges a ${feeA} membership fee plus ${rateA} per class. Plan B charges a ${feeB} fee plus ${rateB} per class. For how many classes do the two plans cost the same amount?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of uses at which two ${finance.plan} options cost the same when Plan A charges ${feeA} plus ${rateA} per use and Plan B charges ${feeB} plus ${rateB} per use`,
+        }),
         answer,
         wrong: [
           [round3(feeA - feeB), "This is the difference of the fees; it still has to be spread across the difference in the per-class rates."],
@@ -7635,9 +7877,12 @@ SHAPES["combined concepts"] = {
       const answer = span(s, 5, 6);
       const sold = perBox * answer;
       const total = (sold * 100) / percent;
+      const production = scene(variant, PRODUCTION);
       return {
         family: "percent-then-rate-two-step",
-        stem: `A warehouse holds ${total} mugs, and ${percent}% of them are shipped out. The shipped mugs are packed ${perBox} to a box. How many boxes are used?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the boxes used when a ${production.site} ships ${percent}% of ${total} ${production.object} and packs ${perBox} per box`,
+        }),
         answer,
         wrong: [
           [sold, "This is the number of mugs shipped, not the number of boxes."],
@@ -7664,7 +7909,9 @@ SHAPES["combined concepts"] = {
       const answer = money(inches * costPerInch);
       return {
         family: "convert-then-price",
-        stem: `Ribbon costs ${costPerInch} per inch. How much does ${feet} feet of ribbon cost, given that 1 foot is 12 inches?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the cost of ${feet} feet of ribbon priced at ${costPerInch} per inch, given 1 foot = 12 inches`,
+        }),
         answer,
         wrong: [
           [money(feet * costPerInch), "This prices the ribbon by the foot at the per-inch rate."],
@@ -7692,9 +7939,12 @@ SHAPES["combined concepts"] = {
       const coverage = choose(s, [40, 50, 60, 80]);
       const area = length * height;
       const answer = Math.ceil(area / coverage);
+      const surface = scene(variant, SURFACE);
       return {
         family: "area-then-coverage-rate",
-        stem: `A wall is ${length} feet long and ${height} feet high. One can of paint covers ${coverage} square feet, and paint is sold only in whole cans. How many cans are needed to cover the wall?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the whole cans of ${surface.finish} a ${surface.worker} needs for a ${length}-foot by ${height}-foot ${surface.surface} when each can covers ${coverage} square feet`,
+        }),
         answer,
         wrong: [
           [area, "This is the wall's area in square feet, not a number of cans."],
@@ -7724,9 +7974,12 @@ SHAPES["combined concepts"] = {
       const percent = choose(s, [25, 50, 20, 75]);
       const larger = parts2 * scale;
       const answer = round3((larger * percent) / 100);
+      const collection = scene(variant, COLLECTION);
       return {
         family: "ratio-then-percent",
-        stem: `A collection of ${total} stamps is split between two albums in the ratio ${parts1} to ${parts2}. Of the stamps in the larger album, ${percent}% are foreign. How many foreign stamps are in the larger album?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the marked ${collection.plural} in the larger of two ${collection.holder} groups when ${total} are split ${parts1}:${parts2} and ${percent}% of the larger group are marked`,
+        }),
         answer,
         wrong: [
           [larger, "This is the number of stamps in the larger album, before the percent is applied."],
@@ -7760,9 +8013,12 @@ SHAPES["combined concepts"] = {
       ];
       const [workers, miles, days, newMiles, newWorkers] = choose(s, table);
       const answer = round3((days * newMiles * workers) / (miles * newWorkers));
+      const trip = scene(variant, TRAVEL);
       return {
         family: "combined-direct-and-inverse-variation",
-        stem: `A crew of ${workers} workers paves ${miles} miles of road in ${days} days. Working at the same rate per worker, how many days would ${newWorkers} workers need to pave ${newMiles} miles?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the days ${newWorkers} workers need to repair ${newMiles} miles of a ${trip.route} when ${workers} workers repair ${miles} miles in ${days} days at the same per-worker rate`,
+        }),
         answer,
         wrong: [
           [round3((days * newMiles) / miles), "This scales for the change in distance but ignores the change in crew size."],
@@ -7796,9 +8052,12 @@ SHAPES["combined concepts"] = {
       ];
       const [volumeA, percentA, percentB, target] = choose(s, table);
       const answer = round3((volumeA * (target - percentA)) / (percentB - target));
+      const solution = scene(variant, SOLUTION);
       return {
         family: "two-solution-mixture-alligation",
-        stem: `A ${volumeA}-liter solution is ${percentA}% salt. How many liters of a ${percentB}% salt solution must be mixed with it to produce a solution that is ${target}% salt?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the liters of ${percentB}% ${solution.solute} ${solution.solvent} a ${solution.agent} must mix with ${volumeA} liters at ${percentA}% to obtain ${target}% ${solution.solute}`,
+        }),
         answer,
         wrong: [
           [round3((volumeA * (target - percentA)) / percentB), "This divides by the stronger solution's concentration rather than by how far it exceeds the target."],
@@ -7835,14 +8094,32 @@ const nextAnswerPosition = mirrorAnswerPlanner();
 // stops the bank from shipping the same sentence five times over.
 const shapeUses = new Map();
 
+function generatedChoiceSet(question) {
+  return [question.correct, ...question.distractors.map((item) => item.text)]
+    .slice()
+    .sort()
+    .join("||");
+}
+
+const retainedQuestions = loadBank(SECTION_KEY).filter(
+  (question) => !REBUILD || question.provenance.generator !== GENERATOR_NAME,
+);
+
 // Every stem the section has already emitted. A shape's parameters cycle, so
 // two uses that land on congruent sequences would otherwise print the same
 // sentence twice — that is where the previous rebuild's 63 exact duplicates
 // came from. A stem that has been seen is not rejected outright; the variant
 // is advanced first, which is what the wording rotations exist for, and only
 // then does the search move on to the next shape.
-const emittedStems = new Set();
+const emittedStems = new Set(retainedQuestions.map((question) => question.stem));
+const emittedTokenSets = retainedQuestions.map((question) => tokenSet(question));
+const emittedChoiceSets = new Set(
+  retainedQuestions
+    .filter((question) => Array.isArray(question.choices))
+    .map((question) => question.choices.slice().sort().join("||")),
+);
 const VARIANT_ATTEMPTS = 12;
+const PARAMETER_RETRY_STEP = 53;
 
 function generate({ sequence, task }) {
   const tier = task.difficulty;
@@ -7857,6 +8134,8 @@ function generate({ sequence, task }) {
   const index = nextAnswerPosition(tier, `${SECTION_KEY}-${sequence}`);
   const offset = hashString(`${SECTION_KEY}-${sequence}-shape`) % shapes.length;
   let unordered = null;
+  let repeatedChoices = null;
+  let repeatedStem = null;
   let duplicate = null;
 
   for (let step = 0; step < shapes.length; step += 1) {
@@ -7865,27 +8144,47 @@ function generate({ sequence, task }) {
     const base = shapeUses.get(key) || 0;
     for (let attempt = 0; attempt < VARIANT_ATTEMPTS; attempt += 1) {
       const variant = base + attempt;
-      const spec = shapes[position](sequence, variant);
-      const fresh = !emittedStems.has(spec.stem);
+      const parameterSequence = sequence + attempt * PARAMETER_RETRY_STEP;
+      const spec = distinguishSubskillStem(
+        task.subskill,
+        shapes[position](parameterSequence, variant),
+        variant,
+      );
       const built = assemble(spec, tier, index);
-      const candidate = { question: built.question, stem: spec.stem, key, variant };
-      if (fresh && built.ordered) return accept(candidate);
-      if (fresh && !unordered) unordered = candidate;
-      if (!fresh && !duplicate) duplicate = candidate;
-      if (!fresh) break;
+      const choiceSet = generatedChoiceSet(built.question);
+      const freshStem = !emittedStems.has(spec.stem);
+      const tokens = tokenSet({ ...built.question, section: "Mathematics" });
+      const freshShape = emittedTokenSets.every((prior) => jaccard(prior, tokens) < 0.9);
+      const freshText = freshStem && freshShape;
+      const freshChoices = !emittedChoiceSets.has(choiceSet);
+      const candidate = {
+        question: built.question,
+        stem: spec.stem,
+        tokens,
+        choiceSet,
+        key,
+        variant,
+      };
+      if (freshText && freshChoices && built.ordered) return accept(candidate);
+      if (freshText && freshChoices && !unordered) unordered = candidate;
+      if (freshText && !freshChoices && !repeatedChoices) repeatedChoices = candidate;
+      if (!freshText && freshChoices && !repeatedStem) repeatedStem = candidate;
+      if (!freshText && !freshChoices && !duplicate) duplicate = candidate;
     }
   }
 
   // A fresh stem whose choices could not be ordered around the planned answer
   // position beats a repeated one; ascending choices are cosmetic, a duplicate
   // question is not.
-  const chosen = unordered || duplicate;
+  const chosen = unordered || repeatedChoices || repeatedStem || duplicate;
   if (!chosen) throw new Error(`No usable ${tier} shape for ${task.subskill}`);
   return accept(chosen);
 }
 
-function accept({ question, stem, key, variant }) {
+function accept({ question, stem, tokens, choiceSet, key, variant }) {
   emittedStems.add(stem);
+  emittedTokenSets.push(tokens);
+  emittedChoiceSets.add(choiceSet);
   shapeUses.set(key, variant + 1);
   return question;
 }

@@ -141,7 +141,8 @@ function blindScore(bank) {
     } else {
       const lengths = question.choices.map((choice) => choice.length);
       const longest = Math.max(...lengths);
-      if (lengths[question.correctAnswer] === longest) correct += 1;
+      const longestCount = lengths.filter((length) => length === longest).length;
+      if (lengths[question.correctAnswer] === longest) correct += 1 / longestCount;
     }
     memory.set(key, answer);
   });

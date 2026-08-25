@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SOLUTION, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -6695,9 +6695,12 @@ SHAPES["percentages"] = {
       ];
       const [volume, weak, target] = choose(s, table);
       const answer = round3((volume * (target - weak)) / (100 - target));
+      const solution = scene(variant, SOLUTION);
       return {
         family: "acid-mixture-add-pure-solute",
-        stem: `A chemist has ${volume} liters of a solution that is ${weak}% acid. How many liters of pure acid must be added so that the resulting solution is ${target}% acid?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the liters of pure ${solution.solute} a ${solution.agent} must add to ${volume} liters of ${weak}% ${solution.solvent} to make it ${target}% ${solution.solute}`,
+        }),
         answer,
         wrong: [
           [round3((volume * (target - weak)) / 100), "This takes the percent difference of the original volume, treating the added acid as if it did not also enlarge the total."],

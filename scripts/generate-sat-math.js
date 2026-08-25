@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-const { generateSection, hashString } = require("./lib/generation");
+const { createRandom, generateSection, hashString } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 
 const GENERATOR = "sat-math-generator-v1";
@@ -205,10 +205,43 @@ function linearCheck(a, b, c) {
 // ---------------------------------------------------------------------------
 
 const SHAPES = {};
+const SHAPE_PHRASINGS = {};
+
+function normalizeShapeSpec(spec, subskill, sequence, variant) {
+  const phrasing = SHAPE_PHRASINGS[subskill];
+  const stem = phrasing ? phrasing(spec.stem, variant, sequence) : spec.stem;
+  return {
+    ...spec,
+    stem,
+    answer: spec.correct,
+    why: spec.explanation,
+    hint: spec.hint || "Identify the governing relationship before substituting values.",
+  };
+}
+
+function adaptShape(subskill, shape) {
+  return (first, second, third) => {
+    if (typeof first === "number") {
+      const sequence = first;
+      const variant = second;
+      const random = createRandom(`sat-math-shape|${subskill}|${sequence}`);
+      const spec = shape(tools(random), context(sequence), sequence);
+      return normalizeShapeSpec(spec, subskill, sequence, variant);
+    }
+    const sequence = Number.isInteger(third) ? third : 0;
+    const variant = hashString(`${subskill}|${sequence}`) % 8;
+    return normalizeShapeSpec(shape(first, second, sequence), subskill, sequence, variant);
+  };
+}
 
 function defineShapes(group) {
   Object.entries(group).forEach(([subskill, tiers]) => {
-    SHAPES[subskill] = tiers;
+    SHAPES[subskill] = Object.fromEntries(
+      Object.entries(tiers).map(([tier, shapes]) => [
+        tier,
+        shapes.map((shape) => adaptShape(subskill, shape)),
+      ]),
+    );
   });
 }
 
@@ -3878,7 +3911,9 @@ if (require.main === module) {
 }
 
 module.exports = {
+  SHAPES,
   context,
   formatNumber,
+  generate,
   mathQuestion,
 };

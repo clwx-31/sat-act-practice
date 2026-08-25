@@ -5010,12 +5010,10 @@ SHAPES["identities"] = {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
       return {
         family: "cosine-from-sine-via-identity",
-        stem: choose(variant, [
-          `If sin θ = ${a}/${c} and θ is acute, what is cos θ?`,
-          `An acute angle satisfies sin θ = ${a}/${c}. What is the value of cos θ?`,
-          `Given that θ is acute and sin θ = ${a}/${c}, evaluate cos θ.`,
-          `For an acute angle with sin θ = ${a}/${c}, cos θ equals what?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `θ is acute and sin θ = ${a}/${c}`,
+          target: "cos θ",
+        }),
         answer: frac(b, c),
         wrong: [
           [frac(a, c), "This repeats the sine."],

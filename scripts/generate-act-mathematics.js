@@ -7339,9 +7339,12 @@ SHAPES["financial contexts"] = {
       const price = span(s, 20, 6, 10);
       const rate = choose(s, [5, 6, 8, 10]);
       const answer = money(round3(price * (1 + rate / 100)));
+      const retail = scene(variant, RETAIL);
       return {
         family: "price-plus-sales-tax",
-        stem: `A jacket costs ${price} before tax. With a sales tax of ${rate}%, what is the total cost?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the total cost of a ${retail.item} priced at ${price} before ${rate}% sales tax at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [money(round3((price * rate) / 100)), "This is the tax alone, not the total."],

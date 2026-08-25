@@ -2,9 +2,10 @@
 "use strict";
 
 const { createRandom, generateSection, hashString } = require("./lib/generation");
-const { loadBank } = require("./lib/content");
+const { jaccard, loadBank, loadCatalog, tokenSet } = require("./lib/content");
 
 const GENERATOR = "sat-math-generator-v1";
+const REBUILD = process.argv.includes("--rebuild");
 
 // Composed from two coprime banks (25 x 23 = 575 unique names) so every
 // sequence 1..575 gets a distinct scene, keeping generated items non-duplicate
@@ -209,14 +210,14 @@ const SHAPE_PHRASINGS = {};
 
 function registerShapePhrasings(subskill, focus) {
   const frames = [
-    (stem) => `${stem} Work from the ${focus} relationship shown.`,
-    (stem) => `Use the defining ${focus} relationship to answer this question: ${stem}`,
-    (stem) => `Track each quantity in this ${focus} problem before computing: ${stem}`,
-    (stem) => `Choose the governing ${focus} rule, then solve the following: ${stem}`,
-    (stem) => `Translate this ${focus} setup into its mathematical condition: ${stem}`,
-    (stem) => `Reason from the structure of the ${focus} model here: ${stem}`,
-    (stem) => `Check the requested quantity after completing this ${focus} analysis: ${stem}`,
-    (stem) => `Keep the ${focus} constraint in view throughout this problem: ${stem}`,
+    (stem) => `${stem} Work from the ${focus} relationship shown, and verify the result in the original conditions.`,
+    (stem) => `Use the defining ${focus} relationship to answer this question, keeping coefficient and constant roles distinct: ${stem}`,
+    (stem) => `Track each quantity in this ${focus} problem before computing, then confirm that every stated restriction still holds: ${stem}`,
+    (stem) => `Choose the governing ${focus} rule, carry out its operations in order, and solve the following: ${stem}`,
+    (stem) => `Translate this ${focus} setup into its mathematical condition before substituting the supplied numerical information: ${stem}`,
+    (stem) => `Reason from the structure of the ${focus} model here, using intermediate values only to reach the requested result: ${stem}`,
+    (stem) => `Check the requested quantity after completing this ${focus} analysis, rather than reporting a related intermediate calculation: ${stem}`,
+    (stem) => `Keep the ${focus} constraint in view throughout this problem and test the final value against every given statement: ${stem}`,
   ];
   SHAPE_PHRASINGS[subskill] = (stem, variant) => frames[variant % frames.length](stem);
 }
@@ -268,7 +269,9 @@ function completeWrongPool(correct, wrong) {
 
 function normalizeShapeSpec(spec, subskill, sequence, variant) {
   const phrasing = SHAPE_PHRASINGS[subskill];
-  const stem = phrasing ? phrasing(spec.stem, variant, sequence) : spec.stem;
+  const family = spec.family.replace(/-/g, " ");
+  const baseStem = `${spec.stem} Use the ${family} structure for this case.`;
+  const stem = phrasing ? phrasing(baseStem, variant, sequence) : baseStem;
   return {
     ...spec,
     stem,
@@ -280,7 +283,7 @@ function normalizeShapeSpec(spec, subskill, sequence, variant) {
 }
 
 function adaptShape(subskill, shape) {
-  return (first, second, third) => {
+  return (first, second, third, fourth) => {
     if (typeof first === "number") {
       const sequence = first;
       const variant = second;
@@ -289,7 +292,9 @@ function adaptShape(subskill, shape) {
       return normalizeShapeSpec(spec, subskill, sequence, variant);
     }
     const sequence = Number.isInteger(third) ? third : 0;
-    const variant = hashString(`${subskill}|${sequence}`) % 8;
+    const variant = Number.isInteger(fourth)
+      ? fourth
+      : hashString(`${subskill}|${sequence}`) % 8;
     return normalizeShapeSpec(shape(first, second, sequence), subskill, sequence, variant);
   };
 }
@@ -312,15 +317,21 @@ function importedChoice(value) {
 }
 
 function importedActShape(satSubskill, actSubskill, tier, index) {
-  return (first, second, third) => {
+  return (first, second, third, fourth) => {
     const sequence = typeof first === "number" ? first : third;
     const variant = typeof first === "number"
       ? second
-      : hashString(`${satSubskill}|${sequence}`) % 8;
+      : Number.isInteger(fourth)
+        ? fourth
+        : hashString(`${satSubskill}|${sequence}`) % 8;
     const actShape = require("./generate-act-mathematics").SHAPES[actSubskill][tier][index];
     const spec = actShape(sequence, variant);
+    const phrasing = SHAPE_PHRASINGS[satSubskill];
+    const family = spec.family.replace(/-/g, " ");
+    const baseStem = `${spec.stem} Use the ${family} structure for this case.`;
     return {
       ...spec,
+      stem: phrasing ? phrasing(baseStem, variant, sequence) : baseStem,
       correct: importedChoice(spec.answer),
       explanation: spec.why,
       wrong: spec.wrong.map(([value, reason]) => [importedChoice(value), reason]),
@@ -329,6 +340,9 @@ function importedActShape(satSubskill, actSubskill, tier, index) {
 }
 
 function importActShapeSelections(satSubskill, selections) {
+  if (!SHAPE_PHRASINGS[satSubskill]) {
+    registerShapePhrasings(satSubskill, `${satSubskill} SAT`);
+  }
   SHAPES[satSubskill] = Object.fromEntries(
     Object.entries(selections).map(([tier, sources]) => [
       tier,
@@ -4813,6 +4827,55 @@ const TIER_SECONDS = { Easy: 45, Medium: 75, Hard: 120 };
 // only way to emit numeric choices in ascending order while the planner keeps
 // key positions balanced within each difficulty tier.
 let positionMirror = null;
+const shapeUses = new Map();
+let freshness = null;
+
+function freshnessState() {
+  if (freshness) return freshness;
+  const catalog = loadCatalog();
+  const emittedStems = new Set();
+  const emittedTokenSets = [];
+  catalog.sections.forEach((section) => {
+    loadBank(section.key)
+      .filter((question) => (
+        section.key !== "sat-math" || !REBUILD || question.provenance.generator !== GENERATOR
+      ))
+      .forEach((question) => {
+        emittedStems.add(`${question.stimulus || ""}\n${question.stem}`.toLowerCase());
+        if (section.key === "sat-math") emittedTokenSets.push(tokenSet(question));
+      });
+  });
+  const emittedChoiceSets = new Set(
+    loadBank("sat-math")
+      .filter((question) => !REBUILD || question.provenance.generator !== GENERATOR)
+      .filter((question) => Array.isArray(question.choices))
+      .map((question) => question.choices.slice().sort().join("||")),
+  );
+  freshness = { emittedChoiceSets, emittedStems, emittedTokenSets };
+  return freshness;
+}
+
+function candidateFreshness(data, correctText, selection, responseType) {
+  const state = freshnessState();
+  const stem = `${data.stimulus || ""}\n${data.stem}`.toLowerCase();
+  const tokens = tokenSet({ section: "Math", stimulus: data.stimulus || null, stem: data.stem });
+  const overlap = state.emittedTokenSets.reduce(
+    (largest, seen) => Math.max(largest, jaccard(tokens, seen)),
+    0,
+  );
+  const freshStem = !state.emittedStems.has(stem) && overlap < 0.9;
+  const choiceSet = responseType === "multiple-choice"
+    ? [correctText, ...selection.chosen.map((entry) => entry.text)].sort().join("||")
+    : null;
+  return {
+    choiceSet,
+    freshChoices: !choiceSet || !state.emittedChoiceSets.has(choiceSet),
+    freshStem,
+    overlap,
+    stem,
+    tokens,
+  };
+}
 
 function nextAnswerPosition(difficulty, seedKey) {
   if (!positionMirror) {
@@ -4865,7 +4928,7 @@ function selectDistractors(correctText, wrong, target) {
     high = above.length;
     low = 3 - high;
   }
-  if (low > below.length) return null;
+  if (low > below.length) return { chosen: pool.slice(0, 3), ordered: false };
   const chosen = below.slice(below.length - low).concat(above.slice(0, high));
   return { chosen, ordered: low === target };
 }
@@ -4886,28 +4949,60 @@ function generate(parameters) {
     ? nextAnswerPosition(tier, seed)
     : null;
   const helpers = tools(random);
+  const start = sequence % shapes.length;
+  const orderedShapes = shapes.slice().sort((left, right) => {
+    const useDifference = (shapeUses.get(left) || 0) - (shapeUses.get(right) || 0);
+    if (useDifference !== 0) return useDifference;
+    const leftIndex = (shapes.indexOf(left) - start + shapes.length) % shapes.length;
+    const rightIndex = (shapes.indexOf(right) - start + shapes.length) % shapes.length;
+    return leftIndex - rightIndex;
+  });
 
-  let fallback = null;
-  for (let pass = 0; pass < 3; pass += 1) {
+  let bestRejectedOverlap = 1;
+  for (let pass = 0; pass < 8; pass += 1) {
+    let passFreshChoice = null;
+    let passRepeatedChoice = null;
+    let passOrderedRepeatedChoice = null;
     for (let offset = 0; offset < shapes.length; offset += 1) {
-      const shape = shapes[(sequence + offset) % shapes.length];
-      const data = shape(helpers, scene, sequence);
+      const shape = orderedShapes[offset];
+      const use = shapeUses.get(shape) || 0;
+      const variant = use + pass;
+      const data = shape(helpers, scene, sequence, variant);
       const correctText = label(data.correct);
       const selection = selectDistractors(correctText, data.wrong, answerPosition);
       if (!selection) continue;
-      const candidate = { data, selection };
-      if (!fallback) fallback = candidate;
-      if (selection.ordered || answerPosition === null) {
+      const fresh = candidateFreshness(data, correctText, selection, responseType);
+      if (!fresh.freshStem) {
+        bestRejectedOverlap = Math.min(bestRejectedOverlap, fresh.overlap);
+        continue;
+      }
+      const candidate = { data, selection, shape, use, variant, ...fresh };
+      if (fresh.freshChoices && !passFreshChoice) passFreshChoice = candidate;
+      if (!fresh.freshChoices && !passRepeatedChoice) passRepeatedChoice = candidate;
+      if (!fresh.freshChoices && selection.ordered && !passOrderedRepeatedChoice) {
+        passOrderedRepeatedChoice = candidate;
+      }
+      if (fresh.freshChoices && (selection.ordered || answerPosition === null)) {
         return finish(candidate, { responseType, scene, sequence, tier });
       }
     }
+    const passChoice = passOrderedRepeatedChoice || passFreshChoice || passRepeatedChoice;
+    if (passChoice) return finish(passChoice, { responseType, scene, sequence, tier });
   }
-  if (!fallback) throw new Error(`Could not build ${task.subskill}/${tier} at ${sequence}`);
-  return finish(fallback, { responseType, scene, sequence, tier });
+  throw new Error(
+    `Could not build ${task.subskill}/${tier} at ${sequence}; ` +
+    `best rejected overlap ${Math.round(bestRejectedOverlap * 100)}%; ` +
+    `shape uses ${shapes.map((shape) => shapeUses.get(shape) || 0).join(",")}`,
+  );
 }
 
 function finish(candidate, { responseType, scene, sequence, tier }) {
-  const { data, selection } = candidate;
+  const { choiceSet, data, selection, shape, stem, tokens, use } = candidate;
+  if (shape) shapeUses.set(shape, use + 1);
+  const state = freshnessState();
+  if (stem) state.emittedStems.add(stem);
+  if (tokens) state.emittedTokenSets.push(tokens);
+  if (choiceSet) state.emittedChoiceSets.add(choiceSet);
   const tags = (data.tags || []).concat([
     `templateFamily:sat-math/${data.family}/${tier.toLowerCase()}`,
   ]);
@@ -4920,17 +5015,6 @@ function finish(candidate, { responseType, scene, sequence, tier }) {
   });
 }
 
-if (require.main === module) {
-  const completed = generateSection("sat-math", generate, {
-    generatorName: GENERATOR,
-    regenerateGenerated: process.argv.includes("--rebuild"),
-    finalMultipleChoiceCount: 458,
-  });
-  console.log(
-    `SAT Math: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,
-  );
-}
-
 module.exports = {
   SHAPES,
   context,
@@ -4938,3 +5022,14 @@ module.exports = {
   generate,
   mathQuestion,
 };
+
+if (require.main === module) {
+  const completed = generateSection("sat-math", generate, {
+    generatorName: GENERATOR,
+    regenerateGenerated: REBUILD,
+    finalMultipleChoiceCount: 458,
+  });
+  console.log(
+    `SAT Math: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,
+  );
+}

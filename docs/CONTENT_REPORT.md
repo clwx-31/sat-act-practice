@@ -81,11 +81,11 @@ Content version: 2026.1
 | Section | Multiple choice | Numeric | Essay | A | B | C | D |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | SAT Reading & Writing | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
-| SAT Math | 458 | 117 | 0 | 115 | 115 | 114 | 114 |
-| ACT English | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
-| ACT Math | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
+| SAT Math | 473 | 102 | 0 | 118 | 118 | 119 | 118 |
+| ACT English | 575 | 0 | 0 | 144 | 144 | 143 | 144 |
+| ACT Math | 575 | 0 | 0 | 144 | 144 | 143 | 144 |
 | ACT Reading | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
-| ACT Science (optional) | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
+| ACT Science (optional) | 575 | 0 | 0 | 144 | 143 | 144 | 144 |
 | ACT Writing (optional) | 0 | 0 | 575 | 0 | 0 | 0 | 0 |
 
 ## Validation status

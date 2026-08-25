@@ -3114,12 +3114,9 @@ SHAPES["quadratic"] = {
       const k = 2 + (s % 8);
       return {
         family: "vertex-from-vertex-form",
-        stem: choose(variant, [
-          `What is the minimum value of f(x) = ${a}(x ${MINUS} ${h})² + ${k}?`,
-          `The function f(x) = ${a}(x ${MINUS} ${h})² + ${k} attains which least value?`,
-          `For f(x) = ${a}(x ${MINUS} ${h})² + ${k}, the smallest output is which number?`,
-          `Which value is the minimum of f(x) = ${a}(x ${MINUS} ${h})² + ${k}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the minimum value of f(x) = ${a}(x ${MINUS} ${h})² + ${k}`,
+        }),
         answer: k,
         wrong: [
           [h, "This is the x-coordinate of the vertex, not the minimum output."],

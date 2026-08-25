@@ -5705,7 +5705,9 @@ SHAPES["regression"] = {
       const weak = 0.3 + 0.05 * (s % 4);
       return {
         family: "interpret-correlation-coefficient",
-        stem: `Study A reports a correlation coefficient of ${round3(strong)} between two variables; Study B reports ${round3(weak)} between a different pair. Which conclusion is best supported?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the best-supported conclusion when Study A reports r = ${round3(strong)} and Study B reports r = ${round3(weak)} for different variable pairs`,
+        }),
         answer: "Study A's variables show a stronger linear association than Study B's.",
         wrong: [
           ["Study A's variables cause each other, while Study B's do not.", "A correlation coefficient measures association only; neither value establishes causation."],

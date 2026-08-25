@@ -2210,6 +2210,7 @@ registerShapePhrasings("exponent rules", "exponent-law");
 registerShapePhrasings("rational expressions", "rational-expression");
 registerShapePhrasings("quadratic equations", "quadratic-root");
 registerShapePhrasings("radical equations", "radical-equation");
+registerShapePhrasings("absolute value", "absolute-value distance");
 
 defineShapes({
   "factoring": {

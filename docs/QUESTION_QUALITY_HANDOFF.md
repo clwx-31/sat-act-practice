@@ -312,8 +312,10 @@ Where this stopped, precisely, so the next session does not repeat the audit.
   Passage 018 is `018-road-salt.js` (informative essay, 15 questions at
   5 / 2 / 8, 5/6/4, 3 keeps of 12 = 25%). All three passages in the 15-question
   group are now written.
-  **18 of 40 authored, 263 of 575 questions**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 54 of 205 = 26.3%. Verified
+  Passage 019 is `019-six-dots.js` (historical account, 14 questions at
+  4 / 2 / 8, 4/7/3, 3 keeps of 11 = 27.3%).
+  **19 of 40 authored, 277 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 57 of 216 = 26.4%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.

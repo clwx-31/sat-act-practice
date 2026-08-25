@@ -4368,12 +4368,9 @@ SHAPES["area"] = {
       const answer = round3((side * side * Math.sqrt(3)) / 4);
       return {
         family: "equilateral-triangle-area",
-        stem: choose(variant, [
-          `What is the area of an equilateral triangle with side length ${side}, in simplest radical form?`,
-          `An equilateral triangle has sides of ${side}. What is its exact area?`,
-          `Express the area of an equilateral triangle of side ${side} in radical form.`,
-          `Find the exact area of an equilateral triangle whose side measures ${side}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the exact area, in simplest radical form, of an equilateral triangle with side length ${side}`,
+        }),
         answer: radical((side * side) / 4, 3),
         wrong: [
           [radical((side * side) / 2, 3), "This halves rather than quarters; the height is (√3/2)s and the area takes another half."],

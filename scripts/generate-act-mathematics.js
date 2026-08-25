@@ -5040,12 +5040,9 @@ SHAPES["identities"] = {
       const answer = 360 / frequency;
       return {
         family: "period-of-a-sinusoid",
-        stem: choose(variant, [
-          `What is the period, in degrees, of y = ${amplitude} sin(${frequency}x)?`,
-          `The function y = ${amplitude} sin(${frequency}x) repeats after how many degrees?`,
-          `Find the period of y = ${amplitude} sin(${frequency}x), measured in degrees.`,
-          `Over what interval in degrees does y = ${amplitude} sin(${frequency}x) complete one full cycle?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the period, in degrees, of y = ${amplitude} sin(${frequency}x)`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(360), "This is the period of sin x; the coefficient inside compresses the graph."],

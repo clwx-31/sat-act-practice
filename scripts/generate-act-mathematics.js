@@ -6924,7 +6924,9 @@ SHAPES["perimeter and area"] = {
       const answer = round3((area * large * large) / (small * small));
       return {
         family: "similar-figure-area-ratio",
-        stem: `Two similar hexagons have corresponding side lengths in the ratio ${small} to ${large}. The smaller hexagon has an area of ${area} square centimeters. What is the area of the larger hexagon, in square centimeters?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the larger area, in square centimeters, for similar hexagons with side ratio ${small}:${large} and smaller area ${area}`,
+        }),
         answer,
         wrong: [
           [round3((area * large) / small), "This scales the area by the ratio of the sides. Areas scale by the square of that ratio, because both dimensions stretch."],

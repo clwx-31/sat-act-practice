@@ -6417,9 +6417,12 @@ SHAPES["proportions"] = {
       const groups = span(s, 6, 5, 2);
       const total = (red + blue) * groups;
       const answer = red * groups;
+      const collection = scene(variant, COLLECTION);
       return {
         family: "part-to-whole-ratio",
-        stem: `In a mosaic the ratio of red tiles to blue tiles is ${red} to ${blue}. The mosaic uses ${total} tiles in all. How many of them are red?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the first-group count among ${total} ${collection.plural} when the ratio of first-group to second-group ${collection.plural} is ${red} to ${blue}`,
+        }),
         answer,
         wrong: [
           [blue * groups, "This is the number of blue tiles."],

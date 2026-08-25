@@ -6892,7 +6892,9 @@ SHAPES["perimeter and area"] = {
       const coefficient = radius * radius;
       return {
         family: "shaded-region-circle-in-square",
-        stem: `A circle of radius ${radius} is inscribed in a square, touching all four sides. What is the area of the region inside the square but outside the circle?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the area inside a square but outside an inscribed circle of radius ${radius}`,
+        }),
         answer: val(`${square} ${MINUS} ${coefficient}π`, square - Math.PI * coefficient),
         wrong: [
           [val(`${coefficient}π`, Math.PI * coefficient), "This is the circle's area alone."],

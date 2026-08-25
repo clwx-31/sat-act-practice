@@ -3410,9 +3410,10 @@ SHAPES["exponential"] = {
       const factor = 2 + (s % 3);
       const target = start * factor ** (2 + (s % 4));
       const answer = Math.round(Math.log(target / start) / Math.log(factor));
+      const growth = scene(variant, EXPONENTIAL_GROWTH);
       return {
         family: "solve-for-number-of-periods",
-        stem: `A population of ${start} thousand multiplies by ${factor} every decade. After how many decades does it reach ${target} thousand?`,
+        stem: `A ${growth.subject} starts with ${start} ${growth.unit} and multiplies by ${factor} each ${growth.period}. After how many such periods does it reach ${target} ${growth.unit}?`,
         answer,
         wrong: [
           [round3(target / start), "This divides the totals; repeated multiplication needs an exponent, not a quotient."],

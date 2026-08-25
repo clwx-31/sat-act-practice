@@ -293,6 +293,8 @@ const TEXT_ANSWER = new Set();
 
 /* ------------------------------- Algebra -------------------------------- */
 
+registerShapePhrasings("solve", "linear-equation");
+
 defineShapes({
   "solve": {
     Easy: [
@@ -375,7 +377,7 @@ defineShapes({
         const d = a * (x + b) - c;
         return {
           family: "solve-then-transform",
-          stem: `If ${a}(x + ${b}) ${MINUS} ${c} = ${d}, what is the value of ${lin(k, shift)}?`,
+          stem: `If ${a}(x + ${b}) ${MINUS} ${c} = ${num(d)}, what is the value of ${lin(k, shift)}?`,
           correct: k * x + shift,
           wrong: [
             [x, "This stops at x instead of evaluating the expression the question asks for."],
@@ -387,7 +389,7 @@ defineShapes({
           steps: [`Add ${c} to both sides and divide by ${a}.`, `Subtract ${b} to get x = ${x}.`, `Substitute into ${lin(k, shift)}.`],
           principles: ["Answer the quantity that is requested, not the intermediate variable."],
           trap: "The value of x is a trap answer; the question asks for an expression in x.",
-          verification: linearCheck(1, -shift, k * x + 2 * shift),
+          verification: { kind: "sum", inputs: [k * x, shift], expected: k * x + shift },
         };
       },
     ],

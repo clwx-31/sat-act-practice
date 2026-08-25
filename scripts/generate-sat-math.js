@@ -2212,6 +2212,7 @@ registerShapePhrasings("quadratic equations", "quadratic-root");
 registerShapePhrasings("radical equations", "radical-equation");
 registerShapePhrasings("absolute value", "absolute-value distance");
 registerShapePhrasings("linear-quadratic systems", "line-parabola system");
+registerShapePhrasings("nonlinear systems", "nonlinear-system");
 
 defineShapes({
   "factoring": {
@@ -3370,8 +3371,10 @@ defineShapes({
         };
       },
       (t) => {
-        const s = t.int(3, 14);
-        const p = t.int(2, 20);
+        const x = t.int(2, 10);
+        const y = t.int(1, x);
+        const s = x + y;
+        const p = x * y;
         const sumSquares = s * s - 2 * p;
         return {
           family: "symmetric-nonlinear-identity",

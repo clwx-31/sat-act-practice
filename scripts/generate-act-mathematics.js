@@ -7545,9 +7545,12 @@ SHAPES["combined concepts"] = {
       const answer = span(s, 5, 6);
       const sold = perBox * answer;
       const total = (sold * 100) / percent;
+      const production = scene(variant, PRODUCTION);
       return {
         family: "percent-then-rate-two-step",
-        stem: `A warehouse holds ${total} mugs, and ${percent}% of them are shipped out. The shipped mugs are packed ${perBox} to a box. How many boxes are used?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the boxes used when a ${production.site} ships ${percent}% of ${total} ${production.object} and packs ${perBox} per box`,
+        }),
         answer,
         wrong: [
           [sold, "This is the number of mugs shipped, not the number of boxes."],

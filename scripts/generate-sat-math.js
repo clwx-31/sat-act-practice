@@ -4160,6 +4160,108 @@ defineShapes({
   },
 });
 
+registerShapePhrasings("percent change", "relative percent change");
+
+defineShapes({
+  "percent change": {
+    Easy: [
+      (t) => {
+        const original = 10 * t.int(4, 15);
+        const percent = 5 * t.int(2, 8);
+        const newer = original * (1 + percent / 100);
+        return {
+          family: "percent-increase",
+          stem: `A quantity increases from ${original} to ${newer}. What is the percent increase?`,
+          correct: percent,
+          wrong: [[newer - original, "This is the absolute increase, not the increase relative to the original."], [(newer - original) / newer * 100, "This divides by the new value instead of the original value."], [newer / original, "This is the growth factor rather than the percent increase."], [100 + percent, "This is the new value as a percent of the original, not the percent increase."]],
+          explanation: `The increase is ${newer - original}; dividing by ${original} and multiplying by 100 gives ${percent}%.`,
+          steps: ["Subtract to find the increase.", "Divide by the original value and convert to a percent."],
+          principles: ["Percent change uses the original value as its denominator."],
+          verification: { kind: "percent-change", inputs: [original, newer], expected: percent },
+        };
+      },
+      (t) => {
+        const original = 20 * t.int(5, 16);
+        const percent = 5 * t.int(2, 9);
+        const newer = original * (1 - percent / 100);
+        return {
+          family: "percent-decrease",
+          stem: `A price falls from $${original} to $${newer}. What is the percent decrease?`,
+          correct: percent,
+          wrong: [[original - newer, "This is the dollar decrease rather than the percent decrease."], [(original - newer) / newer * 100, "This compares the decrease with the reduced price instead of the original."], [newer / original * 100, "This is the percent of the original price that remains."], [100 - percent / 100, "This mixes a decimal change with a percentage scale."]],
+          explanation: `The decrease is ${original - newer}; (${original - newer})/${original} · 100 = ${percent}%.`,
+          steps: ["Find the amount of the decrease.", "Divide by the starting price and multiply by 100."],
+          principles: ["A percent decrease is decrease divided by original amount."],
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const percent = 5 * t.int(2, 8);
+        const original = 20 * t.int(4, 15);
+        const sale = original * (1 - percent / 100);
+        return {
+          family: "reverse-percent-decrease",
+          stem: `After a ${percent}% discount, an item costs $${sale}. What was its price before the discount?`,
+          correct: original,
+          wrong: [[sale / (percent / 100), "This treats the sale price as the discount amount."], [sale * (1 + percent / 100), "This increases the reduced price by the same percent, which does not undo the decrease."], [sale + percent, "This adds a percent as though it were a dollar amount."], [sale * percent / 100, "This finds a percent of the sale price rather than the original price."]],
+          explanation: `The sale price is ${100 - percent}% of the original, so the original is ${sale}/${1 - percent / 100} = ${original}.`,
+          steps: ["Express the remaining percent as a decimal multiplier.", "Divide the sale price by that multiplier."],
+          principles: ["Undo a percent multiplier by division, not by applying the opposite percent."],
+          verification: quotient(sale * 100, 100 - percent),
+        };
+      },
+      (t) => {
+        const first = 5 * t.int(2, 6);
+        const second = 5 * t.int(2, 6);
+        const net = ((1 + first / 100) * (1 - second / 100) - 1) * 100;
+        return {
+          family: "successive-opposite-changes",
+          stem: `A value increases by ${first}% and then decreases by ${second}%. What is the overall percent change from the original value?`,
+          correct: net,
+          wrong: [[first - second, "This subtracts the percentages even though the second change uses a different base."], [first + second, "This adds changes that act in opposite directions."], [first * second / 100, "This is only the interaction term, not the complete net change."], [-second, "This ignores the initial increase."]],
+          explanation: `The combined multiplier is ${1 + first / 100}(${1 - second / 100}) = ${formatNumber(1 + net / 100)}, giving an overall change of ${formatNumber(net)}%.`,
+          steps: ["Convert each percent change to a multiplier.", "Multiply the factors and compare the result with 1."],
+          principles: ["Successive percent changes multiply; their percentages do not simply add."],
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const oldRate = 5 * t.int(2, 8);
+        const points = 5 * t.int(1, 5);
+        const newRate = oldRate + points;
+        const relative = points / oldRate * 100;
+        return {
+          family: "percentage-points-versus-percent",
+          stem: `A rate rises from ${oldRate}% to ${newRate}%. By what percent did the rate itself increase?`,
+          correct: relative,
+          wrong: [[points, "This is the increase in percentage points, not the relative percent increase."], [newRate / oldRate, "This is the growth factor rather than the percent increase."], [newRate, "This is the final rate, not its relative change."], [points / newRate * 100, "This divides by the new rate instead of the original rate."]],
+          explanation: `The rate rises by ${points} percentage points; relative to ${oldRate}, that is ${points}/${oldRate} · 100 = ${formatNumber(relative)}%.`,
+          steps: ["Find the percentage-point increase.", "Divide it by the original rate and convert to percent."],
+          principles: ["Percentage-point change and relative percent change use different scales."],
+          verification: { kind: "percent-change", inputs: [oldRate, newRate], expected: relative },
+        };
+      },
+      (t) => {
+        const annual = 5 * t.int(2, 7);
+        const years = t.int(2, 4);
+        const factor = (1 + annual / 100) ** years;
+        const change = (factor - 1) * 100;
+        return {
+          family: "compound-percent-growth",
+          stem: `A quantity grows by ${annual}% each year for ${years} years. What is its total percent increase over that period?`,
+          correct: change,
+          wrong: [[annual * years, "This adds annual percentages and ignores compounding on the growing base."], [factor, "This is the total growth factor, not the percent increase."], [annual ** years, "This raises the percentage itself to a power rather than using a growth factor."], [100 * factor, "This is the final value as a percent of the original, not just the increase."]],
+          explanation: `The growth factor is (1 + ${annual}/100)^${years} = ${formatNumber(factor)}, so the increase is ${formatNumber(change)}%.`,
+          steps: ["Convert the annual increase to a growth factor.", "Raise it to the number of years, subtract 1, and convert to percent."],
+          principles: ["Repeated percent growth compounds multiplicatively."],
+        };
+      },
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

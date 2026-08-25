@@ -4674,6 +4674,33 @@ importActShapeSubskill("angle relationships", "angles");
 importActShapeSubskill("triangle geometry", "triangles");
 importActShapeSubskill("trigonometric ratios", "right-triangle trigonometry");
 
+registerShapePhrasings("similarity", "similar-figure scale");
+
+defineShapes({
+  "similarity": {
+    Easy: [
+      importedActShape("similarity", "triangles", "Medium", 0),
+      (t) => {
+        const perimeter = t.int(12, 40); const scale = t.int(2, 6);
+        return { family: "similar-perimeter-scale", stem: `Two polygons are similar with linear scale factor ${scale} from the smaller to the larger. If the smaller perimeter is ${perimeter}, what is the larger perimeter?`, correct: perimeter * scale,
+          wrong: [[perimeter + scale, "This adds the scale factor instead of multiplying all side lengths."], [perimeter * scale * scale, "This uses the area scale factor for a perimeter."], [perimeter / scale, "This scales in the direction from larger to smaller."], [scale, "This is the scale factor alone."]], explanation: `Perimeter is a linear measure, so it scales by ${scale}: ${perimeter}(${scale}) = ${perimeter * scale}.`, steps: ["Identify the linear scale factor.", "Multiply the perimeter by that factor."], principles: ["Perimeters of similar figures scale by the linear factor."], verification: { kind: "product", inputs: [perimeter, scale], expected: perimeter * scale } };
+      },
+    ],
+    Medium: [
+      importedActShape("similarity", "area", "Medium", 1),
+      (t) => {
+        const a = t.int(3, 9); const b = a + t.int(2, 7); const side = t.int(5, 18);
+        return { family: "similar-side-from-ratio", stem: `Two similar triangles have corresponding side ratio ${a}:${b}. If the smaller corresponding side is ${side * a}, what is the larger side?`, correct: side * b,
+          wrong: [[side * a + b - a, "This adds the change in ratio parts instead of scaling."], [side * a * a / b, "This reverses the similarity ratio."], [side * a, "This repeats the smaller side."], [side * a * b, "This multiplies by the larger ratio term without dividing by the smaller term."]], explanation: `Each ratio part represents ${side}, so the larger side is ${b}(${side}) = ${side * b}.`, steps: ["Find the length represented by one ratio part.", "Multiply by the larger ratio term."], principles: ["Corresponding sides of similar triangles are proportional."], verification: { kind: "product", inputs: [side, b], expected: side * b } };
+      },
+    ],
+    Hard: [
+      importedActShape("similarity", "surface area", "Hard", 1),
+      importedActShape("similarity", "volume", "Hard", 1),
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

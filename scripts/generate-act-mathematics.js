@@ -4192,12 +4192,9 @@ SHAPES["coordinate geometry"] = {
       const b = a + 1 + (s % 3);
       return {
         family: "ellipse-major-axis",
-        stem: choose(variant, [
-          `The ellipse (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1 has a major axis of what length?`,
-          `What is the length of the major axis of the ellipse (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1?`,
-          `For the ellipse (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1, the major axis measures what?`,
-          `Find the major axis length of (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the major axis length of the ellipse (x ${MINUS} ${centerX})²/${a * a} + (y ${MINUS} ${centerY})²/${b * b} = 1`,
+        }),
         answer: 2 * b,
         wrong: [
           [b, "This is the semi-major axis; the full axis is twice as long."],

@@ -492,6 +492,47 @@ Do not begin this until SAT Math is finished and merged. When it starts it will
 need a plan first, written into `docs/CODEX_REPORTS.md`, not a direct attack on
 the generator.
 
+---
+
+## Task 12 — rebuild SAT Math and audit it
+
+Task 4 is done: 48 of 48 subskills implemented, 309 shapes exercised over 1,200
+sequences, harness clean, nothing rebuilt. This is the run that turns that into
+a bank.
+
+```sh
+git merge --no-ff main
+node scripts/generate-sat-math.js --rebuild
+npm run build:content
+npm run check
+npm run audit:questions 2>&1 | sed -n '/== sat-math/,/^==/p'
+npm run check:difficulty 2>&1 | tail -20
+node scripts/check-answer-positions.js
+```
+
+**Report the five numbers:** near-duplicate rate, distinct shapes, largest family
+share, answerable-without-reading, and the worst answer position in any tier.
+
+**The number that matters most is distinct shapes.** The committed bank has
+**144 distinct shapes across 575 items — 85.7% of items share a shape with
+another**, which is the defect this whole task exists to fix. With 309 shapes
+built and three difficulty tiers each, the rebuild should land far above 144. If
+it does not, the shapes are not reaching the bank and that is worth stopping for,
+whatever the other metrics say.
+
+Watch for the choice-set repetition that ACT Math and ACT Science both had: SAT
+Math measured **210 items (45.9%) sharing a choice set with an earlier item**
+before the rebuild. The freshness technique you used twice should carry over.
+
+`generation.js` now balances answer positions at generation time, so the per-tier
+gate should pass without intervention. If it does not, that is a regression in
+the generator rather than something to fix in the bank.
+
+**Done when** `npm run check` passes, the audit reports sat-math **PASS**, and
+both the bank and its generated file are committed together. That would be five
+of seven sections finished, leaving only SAT Reading & Writing and the ACT
+English rebuild in the other lane.
+
 ## Where to write reports
 
 Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to

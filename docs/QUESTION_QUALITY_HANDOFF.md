@@ -286,9 +286,11 @@ Where this stopped, precisely, so the next session does not repeat the audit.
   (historical account, 16 questions at 5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
   and `004-piano-tuning.js` (process narrative, 13 questions at 4 / 2 / 7,
   4/6/3, 3 keeps of 11 = 27.3%), and `005-shallow-end.js` (personal essay, 15
-  questions at 5 / 2 / 8, 5/6/4, 3 keeps of 12 = 25%). **5 of 40 authored, 74 of
-  575 questions**; all four passage types are in use and all four size groups
-  from the build plan have one member. Running keep rate 15 of 58 = 25.9%.
+  questions at 5 / 2 / 8, 5/6/4, 3 keeps of 12 = 25%), and `006-stale-bread.js`
+  (informative essay, 14 questions at 4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
+  **6 of 40 authored, 88 of 575 questions**; all four passage types are in use
+  and all four size groups from the build plan have a member. Running keep rate
+  18 of 69 = 26.1%. Verified `clean` by the fixed `check-passages.js`.
   From 003 on, whole-essay questions carry no marker and are numbered last.
   They are authored but **not yet verified by a harness** — `check-passages.js`
   still has no act-english rules, and nothing loads the file, so `npm run check`

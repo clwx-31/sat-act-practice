@@ -4540,12 +4540,9 @@ SHAPES["surface area"] = {
       const answer = radius * slant + radius * radius;
       return {
         family: "cone-surface-area",
-        stem: choose(variant, [
-          `A cone has radius ${radius} and slant height ${slant}. What is its total surface area, in terms of π?`,
-          `What is the surface area of a closed cone with radius ${radius} and slant height ${slant}?`,
-          `A cone of radius ${radius} has slant height ${slant}. Express its full surface area in terms of π.`,
-          `Find the total surface area of a cone whose radius is ${radius} and slant height is ${slant}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the total surface area, in terms of π, of a closed cone with radius ${radius} and slant height ${slant}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(radius * slant), "This is the lateral surface alone, without the circular base."],

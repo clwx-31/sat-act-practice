@@ -3079,12 +3079,9 @@ SHAPES["linear"] = {
       const answer = intercept + shiftUp;
       return {
         family: "parallel-line-through-point",
-        stem: choose(variant, [
-          `Line ℓ has equation y = ${slope}x + ${intercept}. Line m is parallel to ℓ and passes through (0, ${answer}). What is the y-intercept of m?`,
-          `A line parallel to y = ${slope}x + ${intercept} passes through the point (0, ${answer}). What is its y-intercept?`,
-          `Line m is parallel to y = ${slope}x + ${intercept} and crosses the y-axis at (0, ${answer}). Which number is m's y-intercept?`,
-          `Given y = ${slope}x + ${intercept}, a parallel line through (0, ${answer}) has which y-intercept?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the y-intercept of the line through (0, ${answer}) parallel to y = ${slope}x + ${intercept}`,
+        }),
         answer,
         wrong: [
           [intercept, "This is the intercept of the original line; parallel lines share a slope, not an intercept."],

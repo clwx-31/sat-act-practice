@@ -5792,9 +5792,12 @@ SHAPES["counting"] = {
       const n = 6 + (s % 4);
       const r = 2 + (s % 2);
       const answer = combinations(n, r);
+      const membership = scene(variant, MEMBERSHIP);
       return {
         family: "combinations-choose-a-committee",
-        stem: `A club has ${n} members. How many different committees of ${r} members can be formed?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of ${r}-member committees that can be formed from ${n} members of a ${membership.service}`,
+        }),
         answer,
         wrong: [
           [permutations(n, r), "This counts ordered selections; a committee's members have no order, so each group is counted " + factorial(r) + " times."],

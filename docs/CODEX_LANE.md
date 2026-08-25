@@ -410,7 +410,34 @@ items that render a table. Those are real and they are a different job.
 
 ---
 
-## Task 10 — SAT Math: almost certainly just the choice sets
+## Task 10 — SUPERSEDED. SAT Math does need the generator work
+
+**This task was scoped wrongly and Codex was right to stop.** It said SAT Math
+looked mechanical because a stem-level sweep found one near-duplicate pair. That
+sweep was the wrong instrument. Reproducing the audit's own `shapeSignature` —
+which strips the scene preamble, every proper noun and every digit before
+comparing — gives:
+
+```
+sat-math distinct shapes: 144 of 575   items sharing a shape: 85.7%
+  x18  exponent rules|in the product x^# · x^# = x^k, what is k?
+  x18  rational expressions|for x ≠ #, (x² − #)/(x − #) is equivalent to x + k. is k?
+  x18  quadratic equations|what is the positive solution to x² = #?
+```
+
+Eighteen items asking the same question with different numbers are eighteen
+different strings and one question. Textual comparison cannot see that; the
+audit can. **Go to Task 4.** The blocker Codex hit — Medium unit conversion
+having no shapes — is the same finding from the other direction: the generator
+cannot rebuild because the shapes do not exist yet.
+
+Nothing below about the choice sets is wrong, but it is a consequence rather
+than the cause. Repeated choice sets follow from repeated shapes, and building
+real shapes fixes both.
+
+### The original text, kept for the record
+
+
 
 **Do not start the Task 4 generator rewrite.** Measured from the other lane, SAT
 Math does not look like a section that needs one. Of its 458 four-choice items

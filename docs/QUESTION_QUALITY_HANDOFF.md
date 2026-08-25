@@ -401,6 +401,43 @@ Filed as Codex Task 5 in `docs/CODEX_LANE.md`.
 The 45.7% answerable-without-reading figure is a separate, unrelated problem and
 is not addressed by any of this.
 
+### Answer positions are balanced per bank but skewed per tier — 2026-08-24
+
+Reported by the user from live practice: "almost every answer is A." Measured
+against the committed banks, that is correct, and the mechanism is specific.
+
+**Every bank is a perfect 25/25/25/25 overall.** Inside each difficulty tier,
+three sections are badly skewed:
+
+| Section | Easy A/B/C/D | Medium A/B/C/D | Hard A/B/C/D |
+| --- | --- | --- | --- |
+| act-english | 21/18/**46**/15 | **3**/43/22/33 | **67**/4/6/23 |
+| act-mathematics | 20/18/**47**/15 | **3**/42/22/32 | **67**/5/5/23 |
+| act-science | 20/18/**46**/16 | **3**/42/22/32 | **67**/5/5/23 |
+| act-reading | 25/25/25/25 | 25/25/25/25 | 25/25/25/25 |
+| sat-math | 24/36/24/16 | 28/20/21/30 | 21/20/32/26 |
+| sat-reading-writing | 29/21/29/21 | 22/28/23/27 | 26/25/24/25 |
+
+A student drilling Hard items in ACT English, Mathematics, or Science sees the
+key at position A **two thirds of the time**, and a student drilling Medium sees
+it at A **three per cent** of the time. Both are worse than useless: they are
+teachable patterns, and a student who notices will out-score the content.
+
+**Why act-reading is clean:** its rebuilt generator balances answer positions
+inside each difficulty tier *and* overall. The other three balance only overall.
+Difficulty is assigned by `assignDifficulties` in hash order while positions are
+planned across the whole bank, so the two orderings interact and produce a
+distribution that is uniform in aggregate and lopsided in every slice a student
+actually practises.
+
+**This is the single highest-value fix available right now**, because it is
+mechanical, it needs no new authored content, and it affects what the live site
+serves today. It does not require regenerating any section: permuting the
+`choices` array of an existing item and remapping `correctAnswer` and the
+`index` field of each `distractorRationales` entry preserves the item exactly.
+
+Filed as Codex Task 6 in `docs/CODEX_LANE.md`.
+
 ### The next four steps, in order
 
 1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes

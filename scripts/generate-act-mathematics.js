@@ -3724,12 +3724,9 @@ SHAPES["triangles"] = {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
       return {
         family: "pythagorean-hypotenuse",
-        stem: choose(variant, [
-          `A right triangle has legs of ${a} and ${b}. What is the length of the hypotenuse?`,
-          `The legs of a right triangle measure ${a} and ${b}. How long is its hypotenuse?`,
-          `In a right triangle with legs ${a} and ${b}, the hypotenuse has what length?`,
-          `What is the hypotenuse of a right triangle whose legs are ${a} and ${b}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the hypotenuse of a right triangle with legs ${a} and ${b}`,
+        }),
         answer: c,
         wrong: [
           [a + b, "This adds the legs; the Pythagorean theorem adds their squares."],

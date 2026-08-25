@@ -4981,12 +4981,10 @@ SHAPES["identities"] = {
       const denominator = numerator + 2 + (s % 5);
       return {
         family: "tangent-as-sine-over-cosine",
-        stem: choose(variant, [
-          `If sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}, what is tan θ?`,
-          `Given sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}, evaluate tan θ.`,
-          `For an angle with sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}, tan θ equals what?`,
-          `What is tan θ when sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}`,
+          target: "tan θ",
+        }),
         answer: numerator,
         wrong: [
           [frac(1, numerator), "This is cot θ, the reciprocal of the tangent."],

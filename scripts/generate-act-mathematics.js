@@ -4310,7 +4310,9 @@ SHAPES["area"] = {
       const answer = round3(side * side - Math.PI * radius * radius);
       return {
         family: "shaded-region-circle-in-square",
-        stem: `A circle is inscribed in a square of side ${side}, touching all four sides. To the nearest hundredth, what is the area of the region inside the square but outside the circle?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest hundredth, the area inside a square of side ${side} but outside its inscribed circle`,
+        }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
           [round3(Math.round((Math.PI * radius * radius) * 100) / 100), "This is the circle's area, the part that was removed rather than what remains."],

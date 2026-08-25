@@ -123,6 +123,144 @@ function ask(variant, symbol) {
   ]);
 }
 
+// Bare symbolic stems need vocabulary that identifies the mathematical object
+// under test. Without it, the validator discards the short variables and
+// numbers and sees unrelated shapes as the same generic question. These pools
+// are reserved to the abstract subskills that need that extra signal; concrete
+// shapes already carry their own geometry, data, or real-world vocabulary.
+const SUBSKILL_LEADS = {
+  "averages": [
+    "Use the arithmetic mean of the data.",
+    "Balance the list around its average.",
+    "Relate the data total to its entry count.",
+    "Compute the equal-share center of the values.",
+    "Treat the mean as a total-per-entry measure.",
+    "Track how the list average is formed.",
+    "Recover the data sum from its mean.",
+    "Analyze the central quotient for the list.",
+  ],
+  "center and spread": [
+    "Describe the distribution's center or variability.",
+    "Use a resistant summary of the data set.",
+    "Compare the locations within the ordered distribution.",
+    "Measure how widely the observations disperse.",
+    "Interpret the statistical spread of the sample.",
+    "Locate the median-based summary in the data.",
+    "Analyze a variability statistic for the observations.",
+    "Read the distribution summary before calculating.",
+  ],
+  "complex numbers": [
+    "Work within the complex-number system.",
+    "Separate the real and imaginary components.",
+    "Apply arithmetic involving the imaginary unit.",
+    "Track both parts of the complex value.",
+    "Interpret the number in rectangular complex form.",
+    "Use the defining property of the imaginary unit.",
+    "Combine the real-imaginary terms carefully.",
+    "Analyze the complex expression by component.",
+  ],
+  "domain and range": [
+    "Identify the function's allowable inputs or outputs.",
+    "Check the mapping's permissible argument set.",
+    "Track which input values the rule accepts.",
+    "Determine the attainable outputs of the function.",
+    "Apply the restriction governing the function domain.",
+    "Read the correspondence between inputs and results.",
+    "Analyze the function's defined-value set.",
+    "Locate the permitted side of the input-output mapping.",
+  ],
+  "exponents": [
+    "Apply the relevant exponent law.",
+    "Read the base-and-power structure carefully.",
+    "Simplify using the rules for powers.",
+    "Track how the indices combine.",
+    "Interpret the repeated-factor notation.",
+    "Preserve the exponential structure while solving.",
+    "Analyze the powers before evaluating.",
+    "Use the relationship between bases and exponents.",
+  ],
+  "factoring": [
+    "Expose the polynomial's factor structure.",
+    "Rewrite the expression as a binomial product.",
+    "Use the factors to analyze the polynomial.",
+    "Identify the product hidden in the expanded form.",
+    "Decompose the polynomial into multiplying parts.",
+    "Match the terms to a factor pattern.",
+    "Recover the factor pair from the coefficients.",
+    "Analyze the expression through its product form.",
+  ],
+  "inequalities": [
+    "Interpret the order relation and its boundary.",
+    "Locate the solution region on a number line.",
+    "Track the direction of the inequality.",
+    "Test which values satisfy the ordered condition.",
+    "Analyze the interval described by the comparison.",
+    "Preserve the bound while isolating the variable.",
+    "Determine the permitted side of each boundary.",
+    "Read the inequality as a set of solutions.",
+  ],
+  "linear equations": [
+    "Balance the linear equation to isolate its unknown.",
+    "Use inverse operations on the first-degree equality.",
+    "Track the coefficient and constant terms.",
+    "Solve the variable equation without disturbing equality.",
+    "Collect the linear terms before isolating the variable.",
+    "Find the value that makes the equality true.",
+    "Reduce the one-variable relation systematically.",
+    "Maintain both sides while solving the linear statement.",
+  ],
+  "notation": [
+    "Decode the function notation before computing.",
+    "Interpret the symbolic input-output instruction.",
+    "Follow the mapping rule represented by the symbols.",
+    "Read what the function notation asks you to evaluate.",
+    "Apply the named operation to the indicated input.",
+    "Translate the symbolic definition into a calculation.",
+    "Track the input through the stated function rule.",
+    "Resolve the notation by using its definition.",
+  ],
+  "rational expressions": [
+    "Analyze the algebraic fraction and its denominator.",
+    "Preserve the restrictions of the rational expression.",
+    "Simplify the quotient structure carefully.",
+    "Use the common-denominator relationship.",
+    "Track the reciprocal form in the algebraic fraction.",
+    "Identify valid cancellations in the rational form.",
+    "Respect excluded values while manipulating the quotient.",
+    "Rewrite the fractional expression without losing factors.",
+  ],
+  "systems": [
+    "Solve the simultaneous pair of equations.",
+    "Find the shared solution to the coupled relations.",
+    "Use both conditions in the equation system.",
+    "Locate where the two linear relations agree.",
+    "Combine the paired equations to determine the unknowns.",
+    "Interpret the intersection represented by the system.",
+    "Track the ordered pair satisfying both statements.",
+    "Analyze the linked equations together.",
+  ],
+  "transformations": [
+    "Track the stated motion of the graph.",
+    "Relate the transformed function to its parent.",
+    "Follow how the coordinates change under the mapping.",
+    "Interpret the shift, reflection, or stretch.",
+    "Analyze the image of the original graph.",
+    "Use the transformation rule on the function.",
+    "Determine how the curve's position or scale changes.",
+    "Map the original relation to its transformed form.",
+  ],
+};
+
+function distinguishSubskillStem(subskill, spec, variant) {
+  const leads = SUBSKILL_LEADS[subskill];
+  if (!leads) return spec;
+  const offset = hashString(spec.family) % leads.length;
+  return {
+    ...spec,
+    stem: `${leads[(variant + offset) % leads.length]} ${spec.stem}`,
+  };
+}
+
 function gcd(left, right) {
   let a = Math.abs(left);
   let b = Math.abs(right);
@@ -186,19 +324,24 @@ function factorCountCheck(argument, base, expected) {
 // ascending, which is what catches any drift between the two copies.
 function mirrorAnswerPlanner() {
   const counts = { Easy: [0, 0, 0, 0], Medium: [0, 0, 0, 0], Hard: [0, 0, 0, 0] };
+  const overall = [0, 0, 0, 0];
   loadBank(SECTION_KEY)
     .filter((question) => !REBUILD || question.provenance.generator !== GENERATOR_NAME)
     .filter((question) => question.responseType === "multiple-choice")
     .forEach((question) => {
       const tier = counts[question.difficulty] || counts.Medium;
       tier[question.correctAnswer] += 1;
+      overall[question.correctAnswer] += 1;
     });
   return function nextPosition(difficulty, seedKey) {
     const tier = counts[difficulty] || counts.Medium;
-    const fewest = Math.min(...tier);
-    const candidates = [0, 1, 2, 3].filter((index) => tier[index] === fewest);
+    const fewestInTier = Math.min(...tier);
+    const inTier = [0, 1, 2, 3].filter((index) => tier[index] === fewestInTier);
+    const fewestOverall = Math.min(...inTier.map((index) => overall[index]));
+    const candidates = inTier.filter((index) => overall[index] === fewestOverall);
     const choice = candidates[hashString(String(seedKey)) % candidates.length];
     tier[choice] += 1;
+    overall[choice] += 1;
     return choice;
   };
 }
@@ -364,7 +507,16 @@ SHAPES["number properties"] = {
       const place = context(s).place;
       return {
         family: "lcm-repeating-cycles",
-        stem: `At the ${place} transit stop, one shuttle leaves every ${first} minutes and another leaves every ${second} minutes. Both leave at 9:00 a.m. How many minutes later do they next leave at the same time?`,
+        stem: `${choose(variant, [
+          "Compare the repeating departure cycles.",
+          "Synchronize the two shuttle schedules.",
+          "Find when the recurring departures coincide.",
+          "Track the first shared point in both timetables.",
+          "Use the cycle lengths to predict the next match.",
+          "Determine when both transit patterns align again.",
+          "Analyze the shuttles' common departure interval.",
+          "Locate the earliest reunion of the two schedules.",
+        ])} At the ${place} transit stop, one shuttle leaves every ${first} minutes and another leaves every ${second} minutes. Both leave at 9:00 a.m. How many minutes later do they next leave at the same time?`,
         answer: together,
         wrong: [
           [gcd(first, second), "This is the greatest common factor of the two cycles; a shared departure needs a common multiple instead."],
@@ -508,9 +660,16 @@ SHAPES["complex numbers"] = {
       const d = b + 1 + (s % 5);
       return {
         family: "complex-difference",
-        stem: pose(variant, "value", {
-          expression: `(${a} + ${b}i) ${MINUS} (${c} + ${d}i)`,
-        }),
+        stem: choose(variant, [
+          `Subtract the complex numbers: (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
+          `Compute the complex difference (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
+          `Combine real and imaginary parts to find (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
+          `Remove ${c} + ${d}i from ${a} + ${b}i and state the resulting complex number.`,
+          `What complex number remains after subtracting (${c} + ${d}i) from (${a} + ${b}i)?`,
+          `Evaluate the subtraction (${a} + ${b}i) ${MINUS} (${c} + ${d}i) in rectangular form.`,
+          `Perform componentwise subtraction on (${a} + ${b}i) and (${c} + ${d}i).`,
+          `Simplify the difference between ${a} + ${b}i and ${c} + ${d}i, in that order.`,
+        ]),
         answer: cplx(a - c, b - d),
         wrong: [
           [cplx(a + c, b + d), "This adds the two complex numbers instead of subtracting the second one."],
@@ -534,9 +693,16 @@ SHAPES["complex numbers"] = {
       const d = 2 + (s % 7);
       return {
         family: "complex-product",
-        stem: pose(variant, "value", {
-          expression: `(${a} + ${b}i)(${c} + ${d}i)`,
-        }),
+        stem: choose(variant, [
+          `Multiply the complex factors (${a} + ${b}i) and (${c} + ${d}i).`,
+          `Expand the complex product (${a} + ${b}i)(${c} + ${d}i).`,
+          `Using i² = ${MINUS}1, compute (${a} + ${b}i)(${c} + ${d}i).`,
+          `Apply binomial multiplication to (${a} + ${b}i)(${c} + ${d}i).`,
+          `Determine the product of the complex numbers ${a} + ${b}i and ${c} + ${d}i.`,
+          `Evaluate the multiplication (${a} + ${b}i)(${c} + ${d}i) in rectangular form.`,
+          `Combine the cross terms after multiplying (${a} + ${b}i) by (${c} + ${d}i).`,
+          `What results when the complex value ${a} + ${b}i is multiplied by ${c} + ${d}i?`,
+        ]),
         answer: cplx(a * c - b * d, a * d + b * c),
         wrong: [
           [cplx(a * c + b * d, a * d + b * c), "This treats i² as +1 instead of −1, so the last term keeps its sign."],
@@ -933,12 +1099,21 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const volume = 40 * (2 + (s % 5));
       const rate = choose(s + variant, [10, 12, 15, 20, 25, 30]);
-      const vessel = scene(variant, VESSEL);
+      const vessel = scene(s, VESSEL);
       const gallons = volume * 7.5;
       const answer = gallons / rate;
       return {
         family: "chained-rate-conversion",
-        stem: `A ${vessel.vessel} holds ${volume} cubic feet of ${vessel.fluid}, 1 cubic foot holds 7.5 gallons, and a ${vessel.filler} delivers ${rate} gallons per minute. How many minutes does filling it take?`,
+        stem: `${choose(variant, [
+          "Convert the capacity before using the delivery rate.",
+          "Link the volume conversion to the filling time.",
+          "Trace cubic feet through gallons into minutes.",
+          "Use compatible units for the fluid-transfer calculation.",
+          "Translate the vessel capacity into the pump's units.",
+          "Combine the liquid-volume factor with the flow rate.",
+          "Follow the unit chain to determine duration.",
+          "Reconcile the storage measure and the fill-rate measure.",
+        ])} A ${vessel.vessel} holds ${volume} cubic feet of ${vessel.fluid}, 1 cubic foot holds 7.5 gallons, and a ${vessel.filler} delivers ${rate} gallons per minute. How many minutes does filling it take?`,
         answer,
         wrong: [
           [round3(volume / (7.5 * rate)), "This divides by the 7.5 gallons per cubic foot instead of multiplying by it."],
@@ -1568,7 +1743,7 @@ SHAPES.systems = {
       const children = adults + 5 + (s % 17);
       const total = adults + children;
       const revenue = adultPrice * adults + childPrice * children;
-      const venue = choose(variant, ["planetarium", "ferry", "aquarium", "heritage railway"]);
+      const venue = choose(s, ["planetarium", "ferry", "aquarium", "heritage railway"]);
       return {
         family: "system-word-problem-two-prices",
         stem: `A ${venue} sold ${total} tickets and collected $${revenue}. Adult tickets cost $${adultPrice} and child tickets cost $${childPrice}. How many adult tickets were sold?`,
@@ -2097,7 +2272,16 @@ SHAPES["exponents"] = {
       const answer = base ** power;
       return {
         family: "fractional-exponent-evaluation",
-        stem: pose(variant, "value", { expression: `${radicand}^(${power}/${root})` }),
+        stem: choose(variant, [
+          `Evaluate the fractional power ${radicand}^(${power}/${root}).`,
+          `Use the root encoded by the denominator to compute ${radicand}^(${power}/${root}).`,
+          `Rewrite the rational exponent, then find the value of ${radicand}^(${power}/${root}).`,
+          `Interpret ${power}/${root} as a fractional index and simplify ${radicand}^(${power}/${root}).`,
+          `Extract the indicated root before applying the numerator in ${radicand}^(${power}/${root}).`,
+          `Convert the radicand to a perfect power and calculate ${radicand}^(${power}/${root}).`,
+          `Resolve the root-and-power expression ${radicand}^(${power}/${root}).`,
+          `What number results from the rational power ${radicand}^(${power}/${root})?`,
+        ]),
         answer,
         wrong: [
           [radicand * power / root, "This multiplies by the fraction instead of using it as an exponent."],
@@ -2126,7 +2310,16 @@ SHAPES["exponents"] = {
       const answer = frac(bottom ** power, top ** power);
       return {
         family: "negative-exponent-on-a-fraction",
-        stem: pose(variant, "value", { expression: `(${top}/${bottom})^${MINUS}${power}` }),
+        stem: choose(variant, [
+          `Apply the negative power to the fraction (${top}/${bottom})^${MINUS}${power}.`,
+          `Reciprocate the fractional base, then evaluate (${top}/${bottom})^${MINUS}${power}.`,
+          `Rewrite the negative exponent as a positive power and simplify (${top}/${bottom})^${MINUS}${power}.`,
+          `Use the reciprocal rule to compute (${top}/${bottom})^${MINUS}${power}.`,
+          `Invert the base before applying the magnitude of the exponent in (${top}/${bottom})^${MINUS}${power}.`,
+          `Determine the value of the negative fractional power (${top}/${bottom})^${MINUS}${power}.`,
+          `Transform (${top}/${bottom})^${MINUS}${power} into an equivalent positive-exponent fraction.`,
+          `What fraction results after evaluating (${top}/${bottom})^${MINUS}${power}?`,
+        ]),
         answer,
         wrong: [
           [frac(top ** power, bottom ** power), "This squares the fraction but never inverts it; the negative exponent reciprocates."],
@@ -5465,7 +5658,7 @@ SHAPES["data displays"] = {
         family: "conditional-proportion-from-two-way-table",
         stimulus: {
           type: "table",
-          content: `${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.second} | do not ${survey.second}\n${survey.first} | ${bothYes} | ${yesNo}\ndo not ${survey.first} | ${noYes} | ${bothNo}`,
+          content: `A frequency cross-tabulation summarizes the survey responses. ${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.second} | do not ${survey.second}\n${survey.first} | ${bothYes} | ${yesNo}\ndo not ${survey.first} | ${noYes} | ${bothNo}`,
         },
         stem: pose(variant, "quantityOf", {
           description: `the fraction who ${survey.second} among the ${survey.group} who ${survey.first}`,
@@ -6096,7 +6289,7 @@ SHAPES["compound probability"] = {
         family: "conditional-probability-reversed",
         stimulus: {
           type: "table",
-          content: `${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.first} | do not ${survey.first}\n${survey.second} | ${bothYes} | ${noYes}\ndo not ${survey.second} | ${yesNo} | ${bothNo}`,
+          content: `A conditional-probability contingency table records the joint outcomes. ${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.first} | do not ${survey.first}\n${survey.second} | ${bothYes} | ${noYes}\ndo not ${survey.second} | ${yesNo} | ${bothNo}`,
         },
         stem: pose(variant, "quantityOf", {
           description: `the probability that a randomly chosen ${survey.group.slice(0, -1)} ${survey.first}, given that the person ${survey.second}`,
@@ -6960,7 +7153,16 @@ SHAPES["measurement conversion"] = {
       const answer = count * unit.factor;
       return {
         family: "single-step-unit-conversion",
-        stem: `There are ${unit.factor} ${unit.to} in one ${unit.from.replace(/s$/, "")}. How many ${unit.to} are in ${count} ${unit.from}?`,
+        stem: choose(variant, [
+          `Scale into the smaller measurement unit. There are ${unit.factor} ${unit.to} in one ${unit.from.replace(/s$/, "")}. How many ${unit.to} are in ${count} ${unit.from}?`,
+          `Convert the stated quantity using its unit factor. One ${unit.from.replace(/s$/, "")} equals ${unit.factor} ${unit.to}; express ${count} ${unit.from} in ${unit.to}.`,
+          `Translate this measure without changing its size. If 1 ${unit.from.replace(/s$/, "")} is ${unit.factor} ${unit.to}, how many ${unit.to} equal ${count} ${unit.from}?`,
+          `Apply the equivalence between these measurement units. Given ${unit.factor} ${unit.to} per ${unit.from.replace(/s$/, "")}, convert ${count} ${unit.from}.`,
+          `Rewrite the quantity in the finer unit. A single ${unit.from.replace(/s$/, "")} contains ${unit.factor} ${unit.to}; what is the ${unit.to} count for ${count} ${unit.from}?`,
+          `Use dimensional conversion on the measurement. How many ${unit.to} represent ${count} ${unit.from} when each ${unit.from.replace(/s$/, "")} contains ${unit.factor}?`,
+          `Change the unit label while preserving the quantity. With ${unit.factor} ${unit.to} in every ${unit.from.replace(/s$/, "")}, find the equivalent of ${count} ${unit.from}.`,
+          `Map the larger-unit count to smaller units. If ${unit.factor} ${unit.to} make one ${unit.from.replace(/s$/, "")}, determine the number in ${count} ${unit.from}.`,
+        ]),
         answer,
         wrong: [
           [round3(count / unit.factor), "This divides when converting to a smaller unit; a smaller unit needs more of them."],
@@ -7792,7 +7994,11 @@ function generate({ sequence, task }) {
     const base = shapeUses.get(key) || 0;
     for (let attempt = 0; attempt < VARIANT_ATTEMPTS; attempt += 1) {
       const variant = base + attempt;
-      const spec = shapes[position](sequence, variant);
+      const spec = distinguishSubskillStem(
+        task.subskill,
+        shapes[position](sequence, variant),
+        variant,
+      );
       const fresh = !emittedStems.has(spec.stem);
       const built = assemble(spec, tier, index);
       const candidate = { question: built.question, stem: spec.stem, key, variant };

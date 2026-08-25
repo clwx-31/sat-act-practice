@@ -5633,7 +5633,9 @@ SHAPES["regression"] = {
       const far = maxObserved + 30 + (s % 10);
       return {
         family: "extrapolation-caution",
-        stem: `A regression line y = ${slope}x + ${intercept} was fitted to data with x-values ranging from 1 to ${maxObserved}. Why should a prediction at x = ${far} be treated with caution?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the reason to treat a prediction at x = ${far} cautiously when y = ${slope}x + ${intercept} was fitted only for 1 ≤ x ≤ ${maxObserved}`,
+        }),
         answer: `x = ${far} lies far outside the range of the data used to fit the line, so the pattern may not continue there.`,
         wrong: [
           [`The slope ${slope} is too small to make predictions.`, "The size of the slope does not determine whether a prediction is trustworthy."],

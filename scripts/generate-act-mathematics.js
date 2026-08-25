@@ -4284,12 +4284,9 @@ SHAPES["area"] = {
       const answer = ((first + second) / 2) * height;
       return {
         family: "trapezoid-area",
-        stem: choose(variant, [
-          `A trapezoid has parallel sides of ${first} and ${second} and a height of ${height}. What is its area?`,
-          `What is the area of a trapezoid whose bases measure ${first} and ${second} and whose height is ${height}?`,
-          `A trapezoidal plot has parallel edges ${first} and ${second} apart by a height of ${height}. What is its area?`,
-          `Find the area of a trapezoid with bases ${first} and ${second} and height ${height}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area of a trapezoid with bases ${first} and ${second} and height ${height}`,
+        }),
         answer,
         wrong: [
           [(first + second) * height, "This omits the factor of one half; the trapezoid's area uses the average of the bases."],

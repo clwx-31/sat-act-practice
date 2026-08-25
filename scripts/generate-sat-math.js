@@ -3855,6 +3855,112 @@ defineShapes({
   },
 });
 
+/* ------------------- Problem-Solving and Data Analysis ------------------ */
+
+registerShapePhrasings("unit rates", "unit-rate comparison");
+
+defineShapes({
+  "unit rates": {
+    Easy: [
+      (t, scene) => {
+        const count = t.int(3, 12);
+        const rate = t.int(4, 18);
+        const total = count * rate;
+        return {
+          family: "unit-price-from-total",
+          stem: `${count} identical ${scene.item} from ${scene.place} cost $${total} altogether. What is the cost, in dollars, of one?`,
+          correct: rate,
+          wrong: [[total, "This is the total cost rather than the cost per item."], [total - count, "This subtracts the count instead of dividing by it."], [count, "This is the number of items rather than their unit price."], [rate * 2, "This is the cost of two items, not one."]],
+          explanation: `Divide the total cost by the number of items: ${total} ÷ ${count} = ${rate}.`,
+          steps: ["Identify the total cost and item count.", "Divide the total by the count."],
+          principles: ["A unit rate is a total divided by its number of units."],
+          verification: quotient(total, count),
+        };
+      },
+      (t) => {
+        const hours = t.int(2, 8);
+        const speed = t.int(25, 70);
+        const distance = hours * speed;
+        return {
+          family: "speed-from-distance-time",
+          stem: `A vehicle travels ${distance} miles in ${hours} hours at a constant speed. What is its speed in miles per hour?`,
+          correct: speed,
+          wrong: [[distance, "This is the total distance, not the distance traveled each hour."], [distance - hours, "This subtracts time instead of dividing by time."], [hours, "This is the travel time, not the speed."], [speed + hours, "This adds the time to the rate without a unit-rate calculation."]],
+          explanation: `Speed is distance divided by time: ${distance}/${hours} = ${speed} miles per hour.`,
+          steps: ["Write speed as distance divided by time.", "Divide by the number of hours."],
+          principles: ["Constant speed equals distance per unit of time."],
+          verification: quotient(distance, hours),
+        };
+      },
+    ],
+    Medium: [
+      (t, scene) => {
+        const batches = t.int(3, 9);
+        const minutes = t.int(4, 15);
+        const perBatch = t.int(6, 20);
+        const total = batches * perBatch;
+        const time = batches * minutes;
+        return {
+          family: "production-rate",
+          stem: `A machine at ${scene.place} produces ${total} ${scene.item} in ${time} minutes at a constant rate. How many does it produce per minute?`,
+          correct: perBatch / minutes,
+          wrong: [[total / minutes, "This divides by one batch time but uses the output from every batch."], [perBatch, "This is the output per batch, not per minute."], [time / total, "This is minutes per item, the reciprocal of the requested rate."], [total - time, "This subtracts unlike quantities instead of forming a rate."]],
+          explanation: `The rate is ${total}/${time} = ${formatNumber(perBatch / minutes)} item per minute.`,
+          steps: ["Pair the total output with the total elapsed time.", "Divide output by minutes."],
+          principles: ["Equivalent total ratios reduce to the same unit rate."],
+          verification: quotient(total, time),
+        };
+      },
+      (t) => {
+        const seconds = t.int(15, 50);
+        const perMinute = 60 / seconds;
+        return {
+          family: "seconds-per-task-conversion",
+          stem: `A device completes one scan every ${seconds} seconds. At that pace, how many scans does it complete per minute?`,
+          correct: perMinute,
+          wrong: [[seconds / 60, "This is minutes per scan, the reciprocal of the requested rate."], [seconds, "This repeats the seconds per scan instead of converting to scans per minute."], [60 - seconds, "This subtracts elapsed times rather than dividing them."], [60 + seconds, "This adds the time measures rather than forming a rate."]],
+          explanation: `One minute is 60 seconds, so the rate is 60/${seconds} = ${formatNumber(perMinute)} scans per minute.`,
+          steps: ["Convert one minute to 60 seconds.", "Divide the available seconds by seconds per scan."],
+          principles: ["Items per interval is interval length divided by time per item."],
+          verification: quotient(60, seconds),
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const slow = t.int(24, 45);
+        const fast = slow + t.int(10, 30);
+        const average = (2 * slow * fast) / (slow + fast);
+        return {
+          family: "equal-distance-average-speed",
+          stem: `A driver covers the same distance at ${slow} miles per hour and then at ${fast} miles per hour. What is the average speed, in miles per hour, for the entire trip?`,
+          correct: average,
+          wrong: [[(slow + fast) / 2, "This averages the speeds without accounting for the longer time spent at the lower speed."], [fast - slow, "This is the difference between the speeds, not their trip average."], [slow * fast, "This multiplies the rates without dividing by total travel time."], [slow + fast, "This adds two rates rather than finding total distance per total time."]],
+          explanation: `For equal distances d, average speed is 2d/(d/${slow} + d/${fast}) = ${formatNumber(average)}.`,
+          steps: ["Represent each travel time as distance divided by speed.", "Divide total distance by total time and simplify."],
+          principles: ["Average speed is total distance divided by total time, not generally the mean of two speeds."],
+          verification: quotient(2 * slow * fast, slow + fast),
+        };
+      },
+      (t) => {
+        const a = t.int(3, 9);
+        const b = t.int(3, 9);
+        const combined = (a * b) / (a + b);
+        return {
+          family: "combined-work-time",
+          stem: `One pump can fill a tank in ${a} hours and another can fill it in ${b} hours. Working together at constant rates, how many hours do they need?`,
+          correct: combined,
+          wrong: [[a + b, "This adds completion times instead of adding work rates."], [(a + b) / 2, "This averages the separate times rather than combining their rates."], [1 / a + 1 / b, "This is the fraction of the tank filled per hour, not the number of hours."], [a * b, "This multiplies the times without dividing by their sum."]],
+          explanation: `The combined rate is 1/${a} + 1/${b} = ${a + b}/${a * b} tank per hour, so the time is ${a * b}/${a + b} = ${formatNumber(combined)} hours.`,
+          steps: ["Add the two fractions of a tank filled per hour.", "Take the reciprocal of the combined rate."],
+          principles: ["Work rates add when machines operate simultaneously."],
+          verification: quotient(a * b, a + b),
+        };
+      },
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

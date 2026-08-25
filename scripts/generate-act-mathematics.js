@@ -6204,9 +6204,12 @@ SHAPES["rates"] = {
       const distance = first * t1 + second * t2;
       const time = t1 + t2;
       const answer = round3(distance / time);
+      const trip = scene(variant, TRAVEL);
       return {
         family: "average-speed-two-legs",
-        stem: `A driver travels for ${t1} hours at ${first} miles per hour and then for ${t2} hours at ${second} miles per hour. What is the average speed for the entire trip, in miles per hour?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the average speed of a ${trip.mover} traveling a ${trip.route} for ${t1} hours at ${first} miles per hour and then ${t2} hours at ${second} miles per hour`,
+        }),
         answer,
         wrong: [
           [round3((first + second) / 2), "This averages the two speeds, which is only correct when the two times are equal."],

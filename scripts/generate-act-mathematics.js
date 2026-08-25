@@ -7368,9 +7368,12 @@ SHAPES["financial contexts"] = {
       const price = span(s, 40, 6, 20);
       const rate = choose(s, [10, 15, 20, 25]);
       const answer = money(round3(price * (1 - rate / 100)));
+      const retail = scene(variant, RETAIL);
       return {
         family: "sale-price-after-discount",
-        stem: `A lamp regularly priced at ${price} is on sale for ${rate}% off. What is the sale price?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the sale price of a ${retail.item} regularly priced at ${price} with ${rate}% off at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [money(round3((price * rate) / 100)), "This is the amount saved, not the price paid."],

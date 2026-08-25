@@ -5857,14 +5857,12 @@ SHAPES["counting"] = {
       const required = 2;
       const size = 4;
       const answer = combinations(total - required, size - required);
+      const membership = scene(variant, MEMBERSHIP);
       return {
         family: "combinations-with-a-restriction",
-        stem: choose(variant, [
-          `From ${total} volunteers, a team of ${size} must be chosen, and ${required} particular volunteers must both be included. How many different teams are possible?`,
-          `A team of ${size} is selected from ${total} volunteers, with ${required} named volunteers guaranteed places. How many teams can be formed?`,
-          `${total} volunteers are available and a group of ${size} is needed. If ${required} specified volunteers must be on it, how many groups are possible?`,
-          `How many teams of ${size} can be chosen from ${total} volunteers if ${required} particular people must be included?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of ${size}-person teams chosen from ${total} ${membership.service} members when ${required} specified members must be included`,
+        }),
         answer,
         wrong: [
           [combinations(total, size), "This ignores the restriction and counts every possible team."],

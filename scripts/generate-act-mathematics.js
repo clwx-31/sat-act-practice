@@ -6276,9 +6276,12 @@ SHAPES["rates"] = {
       ];
       const [out, back, answer] = choose(s, table);
       const distance = lcm(out, back);
+      const trip = scene(variant, TRAVEL);
       return {
         family: "round-trip-harmonic-average-speed",
-        stem: `A cyclist rides ${distance} miles to a lake at ${out} miles per hour and returns along the same road at ${back} miles per hour. What is the average speed for the round trip, in miles per hour?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the round-trip average speed of a ${trip.mover} covering ${distance} miles along a ${trip.route} at ${out} miles per hour and returning at ${back} miles per hour`,
+        }),
         answer,
         wrong: [
           [round3((out + back) / 2), "This averages the two speeds. Averaging speeds is only valid when equal time is spent at each, and here the slower leg takes longer."],

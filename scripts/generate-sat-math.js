@@ -3961,6 +3961,110 @@ defineShapes({
   },
 });
 
+registerShapePhrasings("proportions", "proportional relationship");
+
+defineShapes({
+  "proportions": {
+    Easy: [
+      (t) => {
+        const left = t.int(2, 9);
+        const right = t.int(3, 12);
+        const scale = t.int(2, 8);
+        return {
+          family: "equivalent-ratio-missing-term",
+          stem: `The ratios ${left}/${right} and x/${right * scale} are equivalent. What is the value of x?`,
+          correct: left * scale,
+          wrong: [[left + scale, "This adds the scale factor instead of multiplying by it."], [right * scale, "This copies the second denominator rather than scaling the numerator."], [left * right, "This multiplies by the original denominator rather than the scale factor."], [scale, "This is the scale factor alone, not the missing term."]],
+          explanation: `The denominator is multiplied by ${scale}, so the numerator is also multiplied by ${scale}: x = ${left * scale}.`,
+          steps: ["Find the factor relating the denominators.", "Multiply the numerator by the same factor."],
+          principles: ["Equivalent ratios scale both terms by the same nonzero factor."],
+          verification: { kind: "product", inputs: [left, scale], expected: left * scale },
+        };
+      },
+      (t, scene) => {
+        const small = t.int(2, 6);
+        const large = small * t.int(2, 7);
+        const amount = t.int(3, 12);
+        return {
+          family: "recipe-scale-up",
+          stem: `A mixture at ${scene.place} uses ${amount} cups for ${small} batches. At the same proportion, how many cups are needed for ${large} batches?`,
+          correct: amount * large / small,
+          wrong: [[amount + large - small, "This adds the increase in batches rather than scaling multiplicatively."], [amount * small / large, "This scales in the opposite direction and makes the larger recipe smaller."], [large / small, "This is only the scale factor, not the required amount."], [amount * large, "This multiplies by the new count without dividing by the original count."]],
+          explanation: `The batch count is multiplied by ${large / small}, so the amount is ${amount}(${large / small}) = ${amount * large / small} cups.`,
+          steps: ["Compute the scale factor from old batches to new batches.", "Multiply the original amount by that factor."],
+          principles: ["Directly proportional quantities share the same scale factor."],
+          verification: quotient(amount * large, small),
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const map = t.int(2, 8);
+        const actualPer = t.int(3, 15);
+        const shown = t.int(5, 18);
+        return {
+          family: "map-scale-distance",
+          stem: `On a map, ${map} centimeters represents ${map * actualPer} kilometers. Two points are ${shown} centimeters apart on the map. What is their actual distance in kilometers?`,
+          correct: shown * actualPer,
+          wrong: [[shown + actualPer, "This adds the scale rate instead of multiplying by it."], [shown / actualPer, "This reverses the scale conversion."], [map * actualPer, "This repeats the distance represented by the example segment."], [shown * map, "This uses the example map length instead of kilometers per centimeter."]],
+          explanation: `The scale is ${actualPer} kilometers per centimeter, so ${shown} centimeters represents ${shown * actualPer} kilometers.`,
+          steps: ["Reduce the given map scale to one centimeter.", "Multiply by the measured map distance."],
+          principles: ["A scale drawing preserves ratios of corresponding lengths."],
+          verification: { kind: "product", inputs: [shown, actualPer], expected: shown * actualPer },
+        };
+      },
+      (t) => {
+        const concentrate = t.int(2, 7);
+        const water = t.int(3, 10);
+        const newConcentrate = concentrate * t.int(2, 5);
+        return {
+          family: "mixture-fixed-ratio",
+          stem: `A solution mixes concentrate and water in the ratio ${concentrate}:${water}. How much water is needed with ${newConcentrate} liters of concentrate to keep the same ratio?`,
+          correct: newConcentrate * water / concentrate,
+          wrong: [[newConcentrate * concentrate / water, "This reverses the concentrate-to-water ratio."], [newConcentrate + water, "This adds the original water amount rather than scaling it."], [water, "This does not scale the water amount with the larger concentrate amount."], [newConcentrate * water, "This multiplies without dividing by the original concentrate part."]],
+          explanation: `Set ${concentrate}/${water} = ${newConcentrate}/w. Then w = ${newConcentrate}(${water})/${concentrate} = ${newConcentrate * water / concentrate}.`,
+          steps: ["Match concentrate parts with water parts in a proportion.", "Cross-multiply and solve for the new water amount."],
+          principles: ["A mixture keeps its composition only when component ratios remain equal."],
+          verification: quotient(newConcentrate * water, concentrate),
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const workers = t.int(4, 10);
+        const hours = t.int(6, 15);
+        const newWorkers = workers + t.int(2, 8);
+        const newHours = workers * hours / newWorkers;
+        return {
+          family: "inverse-work-proportion",
+          stem: `${workers} equally productive workers complete a fixed job in ${hours} hours. At the same individual rate, how many hours would ${newWorkers} workers need?`,
+          correct: newHours,
+          wrong: [[hours * newWorkers / workers, "This treats time as directly proportional to the number of workers."], [hours - (newWorkers - workers), "This subtracts workers from hours instead of preserving total worker-hours."], [workers * hours, "This is the total number of worker-hours, not the elapsed time."], [newWorkers / workers, "This is the staffing scale factor alone."]],
+          explanation: `The job requires ${workers * hours} worker-hours, so ${newWorkers} workers need ${workers * hours}/${newWorkers} = ${formatNumber(newHours)} hours.`,
+          steps: ["Compute the fixed total in worker-hours.", "Divide that total by the new number of workers."],
+          principles: ["For fixed work, number of workers and completion time are inversely proportional."],
+          verification: quotient(workers * hours, newWorkers),
+        };
+      },
+      (t) => {
+        const width = t.int(3, 9);
+        const height = t.int(4, 12);
+        const scale = t.int(2, 6);
+        return {
+          family: "area-scale-from-length",
+          stem: `Two similar rectangles have corresponding widths ${width} and ${width * scale}. If the smaller rectangle has area ${width * height}, what is the area of the larger rectangle?`,
+          correct: width * height * scale * scale,
+          wrong: [[width * height * scale, "This scales area by the length factor only once."], [width * height + scale * scale, "This adds the squared scale factor instead of multiplying by it."], [width * height + scale, "This treats multiplicative scaling as an additive change."], [width * height * 2 * scale, "This doubles the linear scale rather than squaring it."]],
+          explanation: `The length scale factor is ${scale}, so the area scale factor is ${scale}² = ${scale * scale}. The larger area is ${width * height * scale * scale}.`,
+          steps: ["Find the ratio of corresponding side lengths.", "Square that ratio and multiply the original area."],
+          principles: ["Areas of similar figures scale as the square of the linear scale factor."],
+          verification: { kind: "product", inputs: [width, height, scale, scale], expected: width * height * scale * scale },
+        };
+      },
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

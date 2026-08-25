@@ -3601,12 +3601,9 @@ SHAPES["angles"] = {
       const answer = (180 - apex) / 2;
       return {
         family: "isosceles-base-angles",
-        stem: choose(variant, [
-          `An isosceles triangle has a vertex angle of ${apex}°. What is the measure of each base angle?`,
-          `In an isosceles triangle the apex angle measures ${apex}°. How large is each of the two congruent angles?`,
-          `A triangle has two congruent sides and an included angle of ${apex}°. What is the measure of each remaining angle?`,
-          `The vertex angle of an isosceles triangle is ${apex}°. Each base angle measures what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `each base angle of an isosceles triangle whose vertex angle is ${apex}°`,
+        }),
         answer: degrees(round3(answer)),
         wrong: [
           [degrees(round3(180 - apex)), "This is the combined measure of both base angles, not one of them."],

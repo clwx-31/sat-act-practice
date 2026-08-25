@@ -173,6 +173,18 @@ const FINANCE = [
   { account: "fixed-term account", payer: "lender", plan: "studio hire", earner: "distributor" },
 ];
 
+// A count grows by the same multiplicative factor each period.
+const EXPONENTIAL_GROWTH = [
+  { subject: "bacterial culture", unit: "cells", period: "hour" },
+  { subject: "yeast colony", unit: "cells", period: "hour" },
+  { subject: "computer archive", unit: "copies", period: "day" },
+  { subject: "crystal cluster", unit: "crystals", period: "week" },
+  { subject: "insect colony", unit: "insects", period: "month" },
+  { subject: "seedling nursery", unit: "plants", period: "season" },
+  { subject: "video library", unit: "files", period: "month" },
+  { subject: "cell sample", unit: "cells", period: "minute" },
+];
+
 // A membership combines one enrollment charge with a monthly rate.
 const MEMBERSHIP = [
   { service: "climbing gym", member: "climber" },
@@ -237,6 +249,7 @@ module.exports = {
   scene,
   COHORT,
   COLLECTION,
+  EXPONENTIAL_GROWTH,
   FINANCE,
   GROUND,
   HOURLY_SERVICE,

@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { COLLECTION, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { COLLECTION, EXPONENTIAL_GROWTH, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -3315,10 +3315,10 @@ SHAPES["exponential"] = {
       const factor = 2 + (s % 3);
       const periods = 2 + (s % 4);
       const answer = start * factor ** periods;
-      const subject = choose(variant, ["a bacterial culture", "a share count", "a colony of mites", "a stack of folded paper layers"]);
+      const growth = scene(variant, EXPONENTIAL_GROWTH);
       return {
         family: "exponential-growth-after-n-periods",
-        stem: `In ${subject}, the quantity starts at ${start} and multiplies by ${factor} each hour. What is the quantity after ${periods} hours?`,
+        stem: `A ${growth.subject} starts with ${start} ${growth.unit} and multiplies by ${factor} each ${growth.period}. What is the quantity after ${periods} such periods?`,
         answer,
         wrong: [
           [start * factor * periods, "This multiplies once and then scales by the number of hours; repeated growth uses an exponent."],

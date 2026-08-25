@@ -6169,14 +6169,12 @@ SHAPES["rates"] = {
       const speed = span(s, 25, 8, 5);
       const hours = span(s, 2, 4);
       const distance = speed * hours;
+      const trip = scene(variant, TRAVEL);
       return {
         family: "average-speed-single-leg",
-        stem: choose(variant, [
-          `A van covers ${distance} miles in ${hours} hours. What is its average speed, in miles per hour?`,
-          `A driver travels ${distance} miles over ${hours} hours. Find the average speed in miles per hour.`,
-          `A bus needs ${hours} hours to travel ${distance} miles. What is its average speed, in miles per hour?`,
-          `In ${hours} hours a truck goes ${distance} miles. What average speed, in miles per hour, is that?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the average speed, in miles per hour, of a ${trip.mover} covering ${distance} miles along a ${trip.route} in ${hours} hours`,
+        }),
         answer: speed,
         wrong: [
           [distance, "This is the distance, not the speed."],

@@ -5569,7 +5569,9 @@ SHAPES["regression"] = {
       const intercept = 12 + (s % 9);
       return {
         family: "interpret-regression-slope",
-        stem: `A line of best fit relating study hours x to test score y is y = ${slope}x + ${intercept}. Which statement best interprets the slope?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the best interpretation of the slope in y = ${slope}x + ${intercept}, where x is study hours and y is test score`,
+        }),
         answer: `Each additional hour of study is associated with an increase of about ${slope} points.`,
         wrong: [
           [`A student who does not study is predicted to score ${slope}.`, `That describes the intercept ${intercept}, not the slope.`],

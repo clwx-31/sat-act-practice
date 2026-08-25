@@ -299,30 +299,41 @@ function importedChoice(value) {
     : value;
 }
 
+function importedActShape(satSubskill, actSubskill, tier, index) {
+  return (first, second, third) => {
+    const sequence = typeof first === "number" ? first : third;
+    const variant = typeof first === "number"
+      ? second
+      : hashString(`${satSubskill}|${sequence}`) % 8;
+    const actShape = require("./generate-act-mathematics").SHAPES[actSubskill][tier][index];
+    const spec = actShape(sequence, variant);
+    return {
+      ...spec,
+      correct: importedChoice(spec.answer),
+      explanation: spec.why,
+      wrong: spec.wrong.map(([value, reason]) => [importedChoice(value), reason]),
+    };
+  };
+}
+
+function importActShapeSelections(satSubskill, selections) {
+  SHAPES[satSubskill] = Object.fromEntries(
+    Object.entries(selections).map(([tier, sources]) => [
+      tier,
+      sources.map(([actSubskill, actTier, index]) => (
+        importedActShape(satSubskill, actSubskill, actTier, index)
+      )),
+    ]),
+  );
+}
+
 function importActShapeSubskill(satSubskill, actSubskill) {
-  const tiers = {};
-  ["Easy", "Medium", "Hard"].forEach((tier) => {
-    const count = 2;
-    tiers[tier] = Array.from({ length: count }, (_, index) => (
-      first,
-      second,
-      third,
-    ) => {
-      const sequence = typeof first === "number" ? first : third;
-      const variant = typeof first === "number"
-        ? second
-        : hashString(`${satSubskill}|${sequence}`) % 8;
-      const actShape = require("./generate-act-mathematics").SHAPES[actSubskill][tier][index];
-      const spec = actShape(sequence, variant);
-      return {
-        ...spec,
-        correct: importedChoice(spec.answer),
-        explanation: spec.why,
-        wrong: spec.wrong.map(([value, reason]) => [importedChoice(value), reason]),
-      };
-    });
-  });
-  SHAPES[satSubskill] = tiers;
+  importActShapeSelections(satSubskill, Object.fromEntries(
+    ["Easy", "Medium", "Hard"].map((tier) => [
+      tier,
+      [[actSubskill, tier, 0], [actSubskill, tier, 1]],
+    ]),
+  ));
 }
 
 // Cells whose answers are words rather than numbers; forced to multiple choice

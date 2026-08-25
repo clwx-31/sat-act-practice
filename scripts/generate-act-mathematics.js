@@ -3513,12 +3513,9 @@ SHAPES["angles"] = {
       const answer = 180 - known;
       return {
         family: "supplementary-angle",
-        stem: choose(variant, [
-          `Two angles form a straight line. If one measures ${known}°, what is the measure of the other?`,
-          `Angles ABD and DBC are supplementary. If angle ABD measures ${known}°, what is the measure of angle DBC?`,
-          `A ray divides a straight angle into two parts, one measuring ${known}°. What is the measure of the second part?`,
-          `If two angles are supplementary and one is ${known}°, the other measures how many degrees?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the measure of an angle supplementary to ${known}°`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(90 - known < 0 ? known + 90 : 90 - known), "This treats the angles as complementary, summing to 90° rather than 180°."],

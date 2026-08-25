@@ -321,6 +321,43 @@ gap recorded in the handoff.
 and both banks are committed together. If it passes, that is the third of seven
 sections finished and the first new one since ACT Reading.
 
+---
+
+## Task 8 — fix the blind-score tie bug, then close the last duplicates
+
+Your Task 7 report was right and stopping was right. One of the two failures is
+a bug in the measurement; the other is real.
+
+**8a. Fix `blindScore` in `scripts/audit-questions.js`.** Its longest-option
+branch counts a hit whenever `lengths[correctAnswer] === longest`, which is true
+whenever **all four choices are the same length** — the normal case for numeric
+maths choices such as `12`, `15`, `18`, `21`. A student applying "take the
+longest" to four equal-length options has nothing to go on and would score at
+chance.
+
+`longestChoiceIsKey`, twenty lines earlier in the same file, already requires
+`lengths.filter((l) => l === longest).length === 1` before counting a hit. Apply
+the same condition in `blindScore`. When the longest length is tied, the blind
+student should score at chance across the tied options rather than automatically
+succeeding.
+
+On the rebuilt ACT Mathematics bank the 47.1% is 46 items from recalled choice
+sets, 225 from the longest-choice rule, and **81 of those 225 have all four
+choices the same length**. Removing the artefact gives **33.0%**, which passes.
+Re-run the audit and confirm that figure; add a test so the tie case cannot
+regress.
+
+**8b. Close the remaining duplicates.** Near duplicates at 4.5% (26 items) and
+the 8.0% of items whose sorted choice set has appeared before are the same
+problem seen twice. The choice-set repeat is the sharper signal — two items with
+identical option sets are the same question however the stem is worded — so use
+it to find the shapes still colliding, and extend those the way Task 5b
+extended the others.
+
+**Done when** the audit reports act-mathematics **PASS** on every metric, with
+no threshold changed. If near-duplicates will not come under 2% without
+loosening something, stop and report rather than adjusting the target.
+
 ## Where to write reports
 
 Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to

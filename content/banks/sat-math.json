@@ -14,10 +14,10 @@
     "choices": [
       "3",
       "5",
-      "7",
-      "9"
+      "9",
+      "7"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "hint": "Identify the solve relationship, then work one operation at a time.",
     "explanation": "Distribute: 5x − 10 = 3x + 4. Subtract 3x from both sides: 2x − 10 = 4. Add 10: 2x = 14. Divide by 2: x = 7.",
     "solutionSteps": [
@@ -35,7 +35,7 @@
         "reason": "5 does not satisfy the full solve calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "9 does not satisfy the full solve calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       }
     ],
@@ -74,11 +74,11 @@
     "stem": "A gym charges a $30 one-time sign-up fee plus $20 per month. Which equation gives the total cost y, in dollars, after m months?",
     "choices": [
       "y = 30m + 20",
-      "y = 20m + 30",
       "y = 50m",
-      "y = 20 + 30m"
+      "y = 20 + 30m",
+      "y = 20m + 30"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "hint": "Identify the equation modeling relationship, then work one operation at a time.",
     "explanation": "The $20 monthly charge depends on the number of months, so it is 20m. The $30 fee is paid only once, so it is a constant. Total: y = 20m + 30.",
     "solutionSteps": [
@@ -92,11 +92,11 @@
         "reason": "y = 30m + 20 does not satisfy the full equation modeling calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "y = 50m does not satisfy the full equation modeling calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "y = 20 + 30m does not satisfy the full equation modeling calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       }
     ],
@@ -135,11 +135,11 @@
     "stem": "A shirt originally priced at $40 is discounted by 25%. What is the sale price?",
     "choices": [
       "$10",
+      "$30",
       "$15",
-      "$25",
-      "$30"
+      "$25"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "hint": "Identify the percent applications relationship, then work one operation at a time.",
     "explanation": "25% of $40 is 0.25 × 40 = $10. Subtract the discount from the original price: 40 − 10 = $30.",
     "solutionSteps": [
@@ -153,11 +153,11 @@
         "reason": "$10 does not satisfy the full percent applications calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "$15 does not satisfy the full percent applications calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "$25 does not satisfy the full percent applications calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       }
     ],
@@ -195,12 +195,12 @@
     "stimulus": null,
     "stem": "If 4 pencils cost $1.20, how much do 10 pencils cost at the same rate?",
     "choices": [
-      "$2.40",
       "$3.00",
+      "$2.40",
       "$3.60",
       "$4.80"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "hint": "Identify the proportions relationship, then work one operation at a time.",
     "explanation": "Find the cost per pencil: $1.20 ÷ 4 = $0.30. Then multiply by 10: 0.30 × 10 = $3.00.",
     "solutionSteps": [
@@ -210,7 +210,7 @@
     ],
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "$2.40 does not satisfy the full proportions calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
@@ -256,12 +256,12 @@
     "stimulus": null,
     "stem": "If x + y = 10 and x − y = 4, what is the value of y?",
     "choices": [
-      "3",
       "4",
+      "3",
       "6",
       "7"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "hint": "Identify the solve systems relationship, then work one operation at a time.",
     "explanation": "Add the two equations: (x + y) + (x − y) = 10 + 4, so 2x = 14 and x = 7. Substitute into x + y = 10: 7 + y = 10, so y = 3.",
     "solutionSteps": [
@@ -271,7 +271,7 @@
     ],
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "4 does not satisfy the full solve systems calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
@@ -317,12 +317,12 @@
     "stimulus": null,
     "stem": "A line passes through the points (0, 3) and (2, 7). What is the slope of the line?",
     "choices": [
-      "1",
       "2",
+      "1",
       "3",
       "4"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "hint": "Identify the slope relationship, then work one operation at a time.",
     "explanation": "Slope = (change in y) ÷ (change in x) = (7 − 3) ÷ (2 − 0) = 4 ÷ 2 = 2.",
     "solutionSteps": [
@@ -332,7 +332,7 @@
     ],
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "1 does not satisfy the full slope calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
@@ -379,11 +379,11 @@
     "stem": "What are the solutions to x² − 5x + 6 = 0?",
     "choices": [
       "x = 1 and x = 6",
-      "x = 2 and x = 3",
       "x = −2 and x = −3",
+      "x = 2 and x = 3",
       "x = 5 and x = 6"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "hint": "Identify the quadratic equations relationship, then work one operation at a time.",
     "explanation": "Factor into (x − 2)(x − 3) = 0. Each factor can be zero, so x = 2 or x = 3. (Check: 2 + 3 = 5 and 2 × 3 = 6.)",
     "solutionSteps": [
@@ -397,7 +397,7 @@
         "reason": "x = 1 and x = 6 does not satisfy the full quadratic equations calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "x = −2 and x = −3 does not satisfy the full quadratic equations calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
@@ -439,12 +439,12 @@
     "stimulus": null,
     "stem": "Which expression is equivalent to (2x³)(3x²)?",
     "choices": [
-      "5x⁵",
       "6x⁵",
+      "5x⁵",
       "6x⁶",
       "5x⁶"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "hint": "Identify the exponent rules relationship, then work one operation at a time.",
     "explanation": "Multiply the coefficients: 2 × 3 = 6. Add the exponents when multiplying like bases: x³ · x² = x^(3+2) = x⁵. Result: 6x⁵.",
     "solutionSteps": [
@@ -454,7 +454,7 @@
     ],
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "5x⁵ does not satisfy the full exponent rules calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
@@ -500,12 +500,12 @@
     "stimulus": null,
     "stem": "The mean (average) of five numbers is 12. Four of the numbers are 10, 14, 8, and 16. What is the fifth number?",
     "choices": [
-      "10",
       "12",
+      "10",
       "14",
       "16"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "hint": "Identify the mean and median relationship, then work one operation at a time.",
     "explanation": "If the mean of five numbers is 12, their total is 5 × 12 = 60. The four known numbers add to 10 + 14 + 8 + 16 = 48. The fifth number is 60 − 48 = 12.",
     "solutionSteps": [
@@ -515,7 +515,7 @@
     ],
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "10 does not satisfy the full mean and median calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
@@ -562,11 +562,11 @@
     "stem": "A bag contains 3 red, 5 blue, and 2 green marbles. If one marble is drawn at random, what is the probability it is red?",
     "choices": [
       "1/10",
-      "3/10",
       "3/7",
-      "1/3"
+      "1/3",
+      "3/10"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "hint": "Identify the basic probability relationship, then work one operation at a time.",
     "explanation": "There are 3 + 5 + 2 = 10 marbles total, and 3 are red. Probability = favorable ÷ total = 3/10.",
     "solutionSteps": [
@@ -580,11 +580,11 @@
         "reason": "1/10 does not satisfy the full basic probability calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "3/7 does not satisfy the full basic probability calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "1/3 does not satisfy the full basic probability calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       }
     ],
@@ -623,11 +623,11 @@
     "stem": "A circle has a radius of 5. What is its area?",
     "choices": [
       "10π",
-      "25π",
       "50π",
+      "25π",
       "100π"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "hint": "Identify the circle measures relationship, then work one operation at a time.",
     "explanation": "Area of a circle = πr². With r = 5, that is π × 5² = 25π.",
     "solutionSteps": [
@@ -641,7 +641,7 @@
         "reason": "10π does not satisfy the full circle measures calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "50π does not satisfy the full circle measures calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
@@ -683,12 +683,12 @@
     "stimulus": null,
     "stem": "A right triangle has legs of length 6 and 8. What is the length of the hypotenuse?",
     "choices": [
-      "10",
       "12",
       "14",
-      "48"
+      "48",
+      "10"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "hint": "Identify the Pythagorean theorem relationship, then work one operation at a time.",
     "explanation": "Use the Pythagorean theorem: a² + b² = c². So 6² + 8² = 36 + 64 = 100, and c = √100 = 10.",
     "solutionSteps": [
@@ -698,15 +698,15 @@
     ],
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "12 does not satisfy the full Pythagorean theorem calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "14 does not satisfy the full Pythagorean theorem calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "48 does not satisfy the full Pythagorean theorem calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       }
     ],
@@ -807,10 +807,10 @@
     "choices": [
       "15%",
       "23%",
-      "30%",
-      "65%"
+      "65%",
+      "30%"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "hint": "Identify the percent applications relationship, then work one operation at a time.",
     "explanation": "Percent increase = (increase ÷ original) × 100. The increase is 65 − 50 = 15, so (15 ÷ 50) × 100 = 30%.",
     "solutionSteps": [
@@ -828,7 +828,7 @@
         "reason": "23% does not satisfy the full percent applications calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "65% does not satisfy the full percent applications calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       }
     ],
@@ -866,12 +866,12 @@
     "stimulus": null,
     "stem": "If 2x + 3 > 11, which of the following must be true?",
     "choices": [
-      "x > 4",
       "x < 4",
+      "x > 4",
       "x > 7",
       "x > 14"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "hint": "Identify the solve inequalities relationship, then work one operation at a time.",
     "explanation": "Subtract 3 from both sides: 2x > 8. Divide by 2: x > 4. (The inequality sign only flips when you divide by a negative number, which we did not do here.)",
     "solutionSteps": [
@@ -881,7 +881,7 @@
     ],
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "x < 4 does not satisfy the full solve inequalities calculation described in the solution; it reflects an arithmetic, setup, or intermediate-step error."
       },
       {
@@ -1044,10 +1044,10 @@
     "choices": [
       "0",
       "1",
-      "5",
-      "-1"
+      "-1",
+      "5"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -1058,7 +1058,7 @@
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coefficient is not the number of solutions."
       }
     ]
@@ -1101,19 +1101,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "6",
       "0.167",
       "30",
+      "6",
       "5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This uses only the rise."
       },
       {
@@ -1162,10 +1162,10 @@
     "choices": [
       "2",
       "-3.5",
-      "7",
-      "9"
+      "9",
+      "7"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -1176,7 +1176,7 @@
         "reason": "This is the x-intercept."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The coefficients are not added to find an intercept."
       }
     ]
@@ -1220,22 +1220,22 @@
     "verification": null,
     "choices": [
       "7",
+      "10",
       "12",
-      "9",
-      "10"
+      "9"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This adds instead of multiplying the coefficient and input."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This incorrectly puts the constant inside the multiplication."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This omits the constant term."
       }
     ]
@@ -1319,19 +1319,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "57",
       "31",
       "40",
+      "57",
       "78"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits the starting amount."
       },
       {
@@ -1379,18 +1379,18 @@
     "verification": null,
     "choices": [
       "6",
-      "4",
       "2",
+      "4",
       "12"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the value of y."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds equations but does not divide by 2."
       },
       {
@@ -1437,23 +1437,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "3",
       "30",
       "4",
-      "27",
-      "3"
+      "27"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the common attendance, the y-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This shifts the intersection without justification."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coordinates should not be subtracted."
       }
     ]
@@ -1496,15 +1496,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "6",
+      "7",
       "24",
       "8.5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "The inequality is strict, so the boundary itself is excluded."
       },
       {
@@ -1645,19 +1645,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "13",
       "5",
       "18",
-      "13",
       "65"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the hourly rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This combines the hourly and fixed amounts without a value of h."
       },
       {
@@ -1704,23 +1704,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "-1",
       "0",
       "1",
-      "2",
-      "-1"
+      "2"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This reverses the meaning of the simplified identity or contradiction."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coefficient is not the number of solutions."
       }
     ]
@@ -1763,23 +1763,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "3",
       "0.333",
       "27",
-      "9"
+      "9",
+      "3"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This uses only the rise."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This uses only the run."
       }
     ]
@@ -1822,19 +1822,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "10",
       "2",
       "-5",
-      "10",
       "12"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the slope."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the x-intercept."
       },
       {
@@ -1981,19 +1981,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "60",
       "34",
       "40",
+      "60",
       "90"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits the starting amount."
       },
       {
@@ -2040,19 +2040,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "2",
       "4",
       "8",
-      "2",
       "3"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the value of y."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This corresponds to twice y, not x."
       },
       {
@@ -2268,10 +2268,10 @@
     "choices": [
       "8",
       "10",
-      "4",
-      "7"
+      "7",
+      "4"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -2282,7 +2282,7 @@
         "reason": "This adds the constant instead of subtracting it."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This divides before accounting for the constant term."
       }
     ]
@@ -2325,23 +2325,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "12",
       "10",
       "22",
-      "120",
-      "12"
+      "120"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the hourly rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This combines the hourly and fixed amounts without a value of h."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The model does not multiply the two constants."
       }
     ]
@@ -2384,23 +2384,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "-1",
       "0",
       "1",
-      "4"
+      "4",
+      "-1"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses the meaning of the simplified identity or contradiction."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The coefficient is not the number of solutions."
       }
     ]
@@ -2543,19 +2543,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "10",
       "9",
       "18",
-      "10",
       "6"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This adds instead of multiplying the coefficient and input."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This incorrectly puts the constant inside the multiplication."
       },
       {
@@ -2603,22 +2603,22 @@
     "verification": null,
     "choices": [
       "10",
+      "5",
       "0.2",
-      "7",
-      "5"
+      "7"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This uses total distance rather than distance per hour."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This computes hours per mile."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Rate requires division, not addition."
       }
     ]
@@ -2661,23 +2661,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "54",
       "28",
       "40",
-      "66"
+      "66",
+      "54"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits the starting amount."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This multiplies the initial value rather than the rate."
       }
     ]
@@ -2721,18 +2721,18 @@
     "verification": null,
     "choices": [
       "9",
-      "2",
       "4",
+      "2",
       "18"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the value of y."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds equations but does not divide by 2."
       },
       {
@@ -2879,23 +2879,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "4",
       "5",
       "7",
-      "3",
-      "4"
+      "3"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This incorrectly includes the lower boundary."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This counts from zero rather than within the interval."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is a boundary, not a count."
       }
     ]
@@ -2946,15 +2946,15 @@
       "expected": 8
     },
     "choices": [
-      "8",
       "32",
+      "8",
       "11",
       "9.5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This subtracts but does not divide by the coefficient."
       },
       {
@@ -3005,15 +3005,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "8",
       "11",
+      "8",
       "19",
       "88"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the hourly rate."
       },
       {
@@ -3164,23 +3164,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "7",
       "2",
       "-3.5",
-      "9",
-      "7"
+      "9"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the slope."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the x-intercept."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coefficients are not added to find an intercept."
       }
     ]
@@ -3223,19 +3223,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "14",
       "9",
       "18",
+      "14",
       "12"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This adds instead of multiplying the coefficient and input."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This incorrectly puts the constant inside the multiplication."
       },
       {
@@ -3500,19 +3500,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "11",
       "10",
       "40",
+      "11",
       "12.5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "The inequality is strict, so the boundary itself is excluded."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits division by the coefficient."
       },
       {
@@ -3559,15 +3559,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "5",
       "4",
+      "5",
       "9",
       "6"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This incorrectly includes the lower boundary."
       },
       {
@@ -3627,18 +3627,18 @@
     },
     "choices": [
       "24",
-      "6",
       "4",
+      "6",
       "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This subtracts but does not divide by the coefficient."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds the constant instead of subtracting it."
       },
       {
@@ -3785,19 +3785,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "4",
       "0.25",
       "20",
+      "4",
       "5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This uses only the rise."
       },
       {
@@ -3845,22 +3845,22 @@
     "verification": null,
     "choices": [
       "2",
-      "10",
       "-5",
-      "12"
+      "12",
+      "10"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the slope."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the x-intercept."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The coefficients are not added to find an intercept."
       }
     ]
@@ -3904,18 +3904,18 @@
     "verification": null,
     "choices": [
       "16",
-      "39",
       "25",
+      "39",
       "18"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This adds instead of multiplying the coefficient and input."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This incorrectly puts the constant inside the multiplication."
       },
       {
@@ -4062,19 +4062,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "5",
       "4",
+      "2",
       "10"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the value of y."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds equations but does not divide by 2."
       },
       {
@@ -4121,15 +4121,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "33",
       "6",
+      "33",
       "7",
       "27"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the common attendance, the y-coordinate."
       },
       {
@@ -4388,15 +4388,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "-1",
       "0",
+      "-1",
       "1",
       "5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses the meaning of the simplified identity or contradiction."
       },
       {
@@ -4448,18 +4448,18 @@
     "verification": null,
     "choices": [
       "0.167",
-      "6",
       "54",
+      "6",
       "9"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This uses only the rise."
       },
       {
@@ -4508,10 +4508,10 @@
     "choices": [
       "2",
       "-6.5",
-      "13",
-      "15"
+      "15",
+      "13"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -4522,7 +4522,7 @@
         "reason": "This is the x-intercept."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The coefficients are not added to find an intercept."
       }
     ]
@@ -4566,22 +4566,22 @@
     "verification": null,
     "choices": [
       "11",
+      "14",
       "24",
-      "9",
-      "14"
+      "9"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This adds instead of multiplying the coefficient and input."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This incorrectly puts the constant inside the multiplication."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This omits the constant term."
       }
     ]
@@ -4665,23 +4665,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "54",
       "28",
       "40",
-      "66"
+      "66",
+      "54"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits the starting amount."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This multiplies the initial value rather than the rate."
       }
     ]
@@ -4725,18 +4725,18 @@
     "verification": null,
     "choices": [
       "3",
-      "2",
       "4",
+      "2",
       "6"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the value of y."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds equations but does not divide by 2."
       },
       {
@@ -4784,18 +4784,18 @@
     "verification": null,
     "choices": [
       "30",
-      "4",
       "3",
+      "4",
       "27"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the common attendance, the y-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This shifts the intersection without justification."
       },
       {
@@ -4844,10 +4844,10 @@
     "choices": [
       "10",
       "40",
-      "12.5",
-      "11"
+      "11",
+      "12.5"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -4858,7 +4858,7 @@
         "reason": "This omits division by the coefficient."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This adds instead of subtracting the constant."
       }
     ]
@@ -4950,15 +4950,15 @@
       "expected": 4
     },
     "choices": [
-      "4",
       "20",
+      "4",
       "6.4",
       "5.2"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This subtracts but does not divide by the coefficient."
       },
       {
@@ -5068,19 +5068,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "-1",
       "0",
       "1",
-      "-1",
       "2"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This reverses the meaning of the simplified identity or contradiction."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
@@ -5128,22 +5128,22 @@
     "verification": null,
     "choices": [
       "0.333",
+      "3",
       "15",
-      "5",
-      "3"
+      "5"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This uses only the rise."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This uses only the run."
       }
     ]
@@ -5186,23 +5186,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "2",
       "-3.5",
-      "9"
+      "9",
+      "7"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the slope."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the x-intercept."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The coefficients are not added to find an intercept."
       }
     ]
@@ -5345,19 +5345,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "57",
       "31",
       "40",
-      "57",
       "78"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This omits the starting amount."
       },
       {
@@ -5406,10 +5406,10 @@
     "choices": [
       "8",
       "4",
-      "16",
-      "2"
+      "2",
+      "16"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -5420,7 +5420,7 @@
         "reason": "This adds equations but does not divide by 2."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This corresponds to twice y, not x."
       }
     ]
@@ -5564,18 +5564,18 @@
     "verification": null,
     "choices": [
       "5",
-      "4",
       "10",
+      "4",
       "6"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This incorrectly includes the lower boundary."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This counts from zero rather than within the interval."
       },
       {
@@ -5690,22 +5690,22 @@
     "verification": null,
     "choices": [
       "7",
+      "20",
       "27",
-      "140",
-      "20"
+      "140"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the hourly rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This combines the hourly and fixed amounts without a value of h."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The model does not multiply the two constants."
       }
     ]
@@ -5807,15 +5807,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "0.2",
       "5",
+      "0.2",
       "45",
       "9"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This reverses rise and run."
       },
       {
@@ -5966,23 +5966,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "5",
       "10",
       "0.2",
-      "7",
-      "5"
+      "7"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This uses total distance rather than distance per hour."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This computes hours per mile."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Rate requires division, not addition."
       }
     ]
@@ -6025,15 +6025,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "60",
       "34",
+      "60",
       "40",
       "90"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
@@ -6085,22 +6085,22 @@
     "verification": null,
     "choices": [
       "6",
-      "2",
       "4",
-      "12"
+      "12",
+      "2"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the value of y."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds equations but does not divide by 2."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This corresponds to twice y, not x."
       }
     ]
@@ -6186,10 +6186,10 @@
     "choices": [
       "10",
       "40",
-      "11",
-      "12.5"
+      "12.5",
+      "11"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -6200,7 +6200,7 @@
         "reason": "This omits division by the coefficient."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This adds instead of subtracting the constant."
       }
     ]
@@ -6243,23 +6243,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "4",
       "5",
       "7",
-      "3",
-      "4"
+      "3"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This incorrectly includes the lower boundary."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This counts from zero rather than within the interval."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is a boundary, not a count."
       }
     ]
@@ -6310,15 +6310,15 @@
       "expected": 4
     },
     "choices": [
-      "4",
       "16",
+      "4",
       "7",
       "5.5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This subtracts but does not divide by the coefficient."
       },
       {
@@ -6370,18 +6370,18 @@
     "verification": null,
     "choices": [
       "5",
-      "19",
       "24",
+      "19",
       "95"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the hourly rate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This combines the hourly and fixed amounts without a value of h."
       },
       {
@@ -6646,15 +6646,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "10",
       "5",
+      "10",
       "0.2",
       "7"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This uses total distance rather than distance per hour."
       },
       {
@@ -6707,10 +6707,10 @@
     "choices": [
       "28",
       "40",
-      "54",
-      "66"
+      "66",
+      "54"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -6721,7 +6721,7 @@
         "reason": "This omits the starting amount."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This multiplies the initial value rather than the rate."
       }
     ]
@@ -6806,22 +6806,22 @@
     "verification": null,
     "choices": [
       "21",
+      "4",
       "5",
-      "17",
-      "4"
+      "17"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the common attendance, the y-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This shifts the intersection without justification."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coordinates should not be subtracted."
       }
     ]
@@ -6864,23 +6864,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "6",
       "24",
-      "8.5"
+      "8.5",
+      "7"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "The inequality is strict, so the boundary itself is excluded."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits division by the coefficient."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This adds instead of subtracting the constant."
       }
     ]
@@ -6924,22 +6924,22 @@
     "verification": null,
     "choices": [
       "5",
-      "4",
       "9",
-      "6"
+      "6",
+      "4"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This incorrectly includes the lower boundary."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This counts from zero rather than within the interval."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -6990,19 +6990,19 @@
       "expected": 8
     },
     "choices": [
+      "8",
       "48",
       "10",
-      "8",
       "9"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This subtracts but does not divide by the coefficient."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds the constant instead of subtracting it."
       },
       {
@@ -7190,19 +7190,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "2",
       "-3.5",
+      "7",
       "9"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the slope."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the x-intercept."
       },
       {
@@ -7309,18 +7309,18 @@
     "verification": null,
     "choices": [
       "10",
-      "0.2",
       "5",
+      "0.2",
       "7"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This uses total distance rather than distance per hour."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This computes hours per mile."
       },
       {
@@ -7409,22 +7409,22 @@
     "verification": null,
     "choices": [
       "9",
+      "2",
       "4",
-      "18",
-      "2"
+      "18"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the value of y."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds equations but does not divide by 2."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This corresponds to twice y, not x."
       }
     ]
@@ -7467,23 +7467,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "6",
       "33",
       "7",
-      "27"
+      "27",
+      "6"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the common attendance, the y-coordinate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This shifts the intersection without justification."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The coordinates should not be subtracted."
       }
     ]
@@ -7586,18 +7586,18 @@
     "verification": null,
     "choices": [
       "5",
-      "6",
       "4",
+      "6",
       "2"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This incorrectly includes the lower boundary."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This counts from zero rather than within the interval."
       },
       {
@@ -7735,22 +7735,22 @@
     "verification": null,
     "choices": [
       "0",
+      "-1",
       "1",
-      "5",
-      "-1"
+      "5"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This reverses the meaning of the simplified identity or contradiction."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coefficient is not the number of solutions."
       }
     ]
@@ -7793,19 +7793,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "6",
       "0.167",
       "30",
+      "6",
       "5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This uses only the rise."
       },
       {
@@ -8012,22 +8012,22 @@
     "verification": null,
     "choices": [
       "34",
+      "60",
       "40",
-      "90",
-      "60"
+      "90"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This omits the starting amount."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This multiplies the initial value rather than the rate."
       }
     ]
@@ -8070,19 +8070,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "7",
       "4",
+      "2",
       "14"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the value of y."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds equations but does not divide by 2."
       },
       {
@@ -8129,15 +8129,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "30",
       "3",
+      "30",
       "4",
       "27"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the common attendance, the y-coordinate."
       },
       {
@@ -8298,10 +8298,10 @@
     "choices": [
       "40",
       "10.4",
-      "9.2",
-      "8"
+      "8",
+      "9.2"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -8312,7 +8312,7 @@
         "reason": "This adds the constant instead of subtracting it."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This divides before accounting for the constant term."
       }
     ]
@@ -8415,22 +8415,22 @@
     "verification": null,
     "choices": [
       "0",
-      "-1",
       "1",
-      "2"
+      "2",
+      "-1"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This reverses the meaning of the simplified identity or contradiction."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The coefficient is not the number of solutions."
       }
     ]
@@ -8473,19 +8473,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "3",
       "0.333",
       "27",
-      "3",
       "9"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This uses only the rise."
       },
       {
@@ -8532,23 +8532,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "13",
       "2",
       "-6.5",
-      "15",
-      "13"
+      "15"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the slope."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the x-intercept."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coefficients are not added to find an intercept."
       }
     ]
@@ -8632,15 +8632,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "5",
       "10",
+      "5",
       "0.2",
       "7"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This uses total distance rather than distance per hour."
       },
       {
@@ -8691,15 +8691,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "28",
       "54",
+      "28",
       "40",
       "66"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
@@ -8811,10 +8811,10 @@
     "choices": [
       "27",
       "6",
-      "22",
-      "5"
+      "5",
+      "22"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -8825,7 +8825,7 @@
         "reason": "This shifts the intersection without justification."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coordinates should not be subtracted."
       }
     ]
@@ -8977,18 +8977,18 @@
     },
     "choices": [
       "8",
-      "4",
       "10",
+      "4",
       "7"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This subtracts but does not divide by the coefficient."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds the constant instead of subtracting it."
       },
       {
@@ -9035,19 +9035,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "15",
       "4",
       "19",
-      "15",
       "60"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the hourly rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This combines the hourly and fixed amounts without a value of h."
       },
       {
@@ -9094,23 +9094,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "-1",
       "0",
       "1",
-      "4",
-      "-1"
+      "4"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This reverses the meaning of the simplified identity or contradiction."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coefficient is not the number of solutions."
       }
     ]
@@ -9153,23 +9153,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "5",
       "0.2",
       "25",
-      "6"
+      "6",
+      "5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This uses only the rise."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -9314,10 +9314,10 @@
     "choices": [
       "10",
       "0.2",
-      "5",
-      "7"
+      "7",
+      "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -9328,7 +9328,7 @@
         "reason": "This computes hours per mile."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Rate requires division, not addition."
       }
     ]
@@ -9372,22 +9372,22 @@
     "verification": null,
     "choices": [
       "31",
+      "57",
       "40",
-      "78",
-      "57"
+      "78"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This omits the starting amount."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This multiplies the initial value rather than the rate."
       }
     ]
@@ -9531,22 +9531,22 @@
     "verification": null,
     "choices": [
       "6",
-      "7",
       "24",
-      "8.5"
+      "8.5",
+      "7"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "The inequality is strict, so the boundary itself is excluded."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits division by the coefficient."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This adds instead of subtracting the constant."
       }
     ]
@@ -9656,23 +9656,23 @@
       "expected": 8
     },
     "choices": [
+      "8",
       "32",
       "11",
-      "9.5",
-      "8"
+      "9.5"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This subtracts but does not divide by the coefficient."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds the constant instead of subtracting it."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This divides before accounting for the constant term."
       }
     ]
@@ -9715,15 +9715,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "14",
       "9",
+      "14",
       "23",
       "126"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the hourly rate."
       },
       {
@@ -9775,18 +9775,18 @@
     "verification": null,
     "choices": [
       "0",
-      "-1",
       "1",
+      "-1",
       "6"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This reverses the meaning of the simplified identity or contradiction."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
@@ -9875,18 +9875,18 @@
     "verification": null,
     "choices": [
       "2",
-      "-5",
       "10",
+      "-5",
       "12"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the slope."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the x-intercept."
       },
       {
@@ -9992,23 +9992,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "5",
       "10",
       "0.2",
-      "7"
+      "7",
+      "5"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This uses total distance rather than distance per hour."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This computes hours per mile."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Rate requires division, not addition."
       }
     ]
@@ -10052,22 +10052,22 @@
     "verification": null,
     "choices": [
       "34",
-      "60",
       "40",
-      "90"
+      "90",
+      "60"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits the starting amount."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This multiplies the initial value rather than the rate."
       }
     ]
@@ -10153,10 +10153,10 @@
     "choices": [
       "21",
       "5",
-      "4",
-      "17"
+      "17",
+      "4"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -10167,7 +10167,7 @@
         "reason": "This shifts the intersection without justification."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The coordinates should not be subtracted."
       }
     ]
@@ -10212,10 +10212,10 @@
     "choices": [
       "10",
       "40",
-      "12.5",
-      "11"
+      "11",
+      "12.5"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -10226,7 +10226,7 @@
         "reason": "This omits division by the coefficient."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This adds instead of subtracting the constant."
       }
     ]
@@ -10269,15 +10269,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "4",
       "5",
+      "4",
       "9",
       "6"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This incorrectly includes the lower boundary."
       },
       {
@@ -10477,19 +10477,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "4",
       "0.25",
       "20",
-      "4",
       "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This reverses rise and run."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This uses only the rise."
       },
       {
@@ -10654,15 +10654,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "10",
       "5",
+      "10",
       "0.2",
       "7"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This uses total distance rather than distance per hour."
       },
       {
@@ -10815,10 +10815,10 @@
     "choices": [
       "33",
       "7",
-      "27",
-      "6"
+      "6",
+      "27"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -10829,7 +10829,7 @@
         "reason": "This shifts the intersection without justification."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coordinates should not be subtracted."
       }
     ]
@@ -10872,23 +10872,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "6",
       "24",
-      "8.5"
+      "8.5",
+      "7"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "The inequality is strict, so the boundary itself is excluded."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This omits division by the coefficient."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This adds instead of subtracting the constant."
       }
     ]
@@ -10932,18 +10932,18 @@
     "verification": null,
     "choices": [
       "5",
-      "4",
       "6",
+      "4",
       "2"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This incorrectly includes the lower boundary."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This counts from zero rather than within the interval."
       },
       {
@@ -11041,10 +11041,10 @@
     "choices": [
       "5",
       "17",
-      "12",
-      "60"
+      "60",
+      "12"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -11055,7 +11055,7 @@
         "reason": "This combines the hourly and fixed amounts without a value of h."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The model does not multiply the two constants."
       }
     ]
@@ -11100,10 +11100,10 @@
     "choices": [
       "0",
       "1",
-      "5",
-      "-1"
+      "-1",
+      "5"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -11114,7 +11114,7 @@
         "reason": "The variable terms cancel, so there is not exactly one solution."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The coefficient is not the number of solutions."
       }
     ]
@@ -11157,15 +11157,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "6",
       "0.167",
+      "6",
       "54",
       "9"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses rise and run."
       },
       {
@@ -11216,15 +11216,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "7",
+      "2",
       "-3.5",
       "9"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the slope."
       },
       {
@@ -11275,19 +11275,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "15",
       "12",
       "27",
-      "15",
       "9"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This adds instead of multiplying the coefficient and input."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This incorrectly puts the constant inside the multiplication."
       },
       {
@@ -11375,23 +11375,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "57",
       "31",
       "40",
-      "78",
-      "57"
+      "78"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This adds the weeks instead of multiplying by the weekly rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This omits the starting amount."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This multiplies the initial value rather than the rate."
       }
     ]
@@ -11434,15 +11434,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "4",
+      "2",
       "8",
       "3"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the value of y."
       },
       {
@@ -11494,18 +11494,18 @@
     "verification": null,
     "choices": [
       "30",
-      "3",
       "4",
+      "3",
       "27"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the common attendance, the y-coordinate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This shifts the intersection without justification."
       },
       {
@@ -11552,19 +11552,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "8",
       "15",
       "2",
-      "8",
       "9"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "Exponents are added, not multiplied, for like bases."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "Subtraction applies to division of like bases."
       },
       {
@@ -11711,19 +11711,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "10",
       "-2",
       "22",
+      "10",
       "4"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds the shift instead of subtracting it."
       },
       {
@@ -11770,15 +11770,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "1",
       "5",
+      "1",
       "2",
       "3"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
@@ -11831,10 +11831,10 @@
     "choices": [
       "-3",
       "9",
-      "3",
-      "0"
+      "0",
+      "3"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -11845,7 +11845,7 @@
         "reason": "This squares the coefficient unnecessarily."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Zero is one intersection, but k denotes the other."
       }
     ]
@@ -11889,22 +11889,22 @@
     "verification": null,
     "choices": [
       "4",
+      "16",
       "8",
-      "0",
-      "16"
+      "0"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the positive x-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not evaluate either equation at the intersection."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the other intersection's y-coordinate."
       }
     ]
@@ -11988,19 +11988,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "48",
       "12",
       "36",
+      "48",
       "8"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
@@ -12166,22 +12166,22 @@
     "verification": null,
     "choices": [
       "16",
+      "8",
       "0",
-      "9",
-      "8"
+      "9"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Exponents are added, not multiplied, for like bases."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "Subtraction applies to division of like bases."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "No additional exponent is introduced."
       }
     ]
@@ -12265,19 +12265,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "4",
       "-4",
       "16",
+      "4",
       "8"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is x², not x."
       },
       {
@@ -12501,15 +12501,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "9",
       "3",
+      "9",
       "6",
       "0"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the positive x-coordinate."
       },
       {
@@ -12602,22 +12602,22 @@
     "verification": null,
     "choices": [
       "8",
-      "16",
       "12",
-      "17"
+      "17",
+      "16"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -12661,18 +12661,18 @@
     "verification": null,
     "choices": [
       "64",
-      "12",
       "60",
+      "12",
       "68"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This omits the −x term."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This squares rather than cubes the input."
       },
       {
@@ -12720,22 +12720,22 @@
     "verification": null,
     "choices": [
       "7",
+      "9",
       "16",
-      "63",
-      "9"
+      "63"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the product of the roots."
       }
     ]
@@ -12778,23 +12778,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "8",
       "15",
       "2",
-      "9"
+      "9",
+      "8"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Exponents are added, not multiplied, for like bases."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "Subtraction applies to division of like bases."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "No additional exponent is introduced."
       }
     ]
@@ -12878,15 +12878,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "-8",
       "8",
+      "-8",
       "64",
       "16"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
@@ -12938,18 +12938,18 @@
     "verification": null,
     "choices": [
       "1",
-      "19",
       "13",
+      "19",
       "4"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds the shift instead of subtracting it."
       },
       {
@@ -12996,23 +12996,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "11",
       "3",
       "4",
-      "7",
-      "11"
+      "7"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The center is not a solution when the distance is positive."
       }
     ]
@@ -13055,15 +13055,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "5",
       "-5",
+      "5",
       "25",
       "0"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Substitution gives x(x − coefficient) = 0, not a negative second root."
       },
       {
@@ -13197,18 +13197,18 @@
     "verification": null,
     "choices": [
       "9",
-      "24",
       "18",
+      "24",
       "8"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
@@ -13257,10 +13257,10 @@
     "choices": [
       "27",
       "6",
-      "24",
-      "30"
+      "30",
+      "24"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -13271,7 +13271,7 @@
         "reason": "This squares rather than cubes the input."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This adds instead of subtracting x."
       }
     ]
@@ -13315,22 +13315,22 @@
     "verification": null,
     "choices": [
       "3",
+      "6",
       "9",
-      "18",
-      "6"
+      "18"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the product of the roots."
       }
     ]
@@ -13473,15 +13473,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "-5",
       "5",
+      "-5",
       "25",
       "10"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
@@ -13532,19 +13532,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "12",
       "0",
       "20",
-      "12",
       "4"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This subtracts before squaring."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds the shift instead of subtracting it."
       },
       {
@@ -13592,22 +13592,22 @@
     "verification": null,
     "choices": [
       "1",
+      "11",
       "5",
-      "6",
-      "11"
+      "6"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The center is not a solution when the distance is positive."
       }
     ]
@@ -13650,23 +13650,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "6",
       "-6",
       "36",
-      "0"
+      "0",
+      "6"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Substitution gives x(x − coefficient) = 0, not a negative second root."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This squares the coefficient unnecessarily."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Zero is one intersection, but k denotes the other."
       }
     ]
@@ -13868,23 +13868,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "6",
       "8",
       "2",
-      "10",
-      "6"
+      "10"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This omits the −x term."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This squares rather than cubes the input."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This adds instead of subtracting x."
       }
     ]
@@ -13927,19 +13927,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "5",
       "4",
       "9",
+      "5",
       "20"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the sum of the roots, not a root."
       },
       {
@@ -13987,22 +13987,22 @@
     "verification": null,
     "choices": [
       "14",
-      "9",
       "5",
-      "10"
+      "10",
+      "9"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Exponents are added, not multiplied, for like bases."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "Subtraction applies to division of like bases."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "No additional exponent is introduced."
       }
     ]
@@ -14088,10 +14088,10 @@
     "choices": [
       "-2",
       "4",
-      "2",
-      "3"
+      "3",
+      "2"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -14102,7 +14102,7 @@
         "reason": "This is x², not x."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -14147,10 +14147,10 @@
     "choices": [
       "-1",
       "21",
-      "4",
-      "11"
+      "11",
+      "4"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -14161,7 +14161,7 @@
         "reason": "This adds the shift instead of subtracting it."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This stops before undoing the square root."
       }
     ]
@@ -14204,23 +14204,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "11",
       "-1",
       "6",
-      "5"
+      "5",
+      "11"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The center is not a solution when the distance is positive."
       }
     ]
@@ -14264,22 +14264,22 @@
     "verification": null,
     "choices": [
       "-2",
-      "2",
       "4",
-      "0"
+      "0",
+      "2"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Substitution gives x(x − coefficient) = 0, not a negative second root."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This squares the coefficient unnecessarily."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Zero is one intersection, but k denotes the other."
       }
     ]
@@ -14365,10 +14365,10 @@
     "choices": [
       "7",
       "-4",
-      "4",
-      "11"
+      "11",
+      "4"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -14379,7 +14379,7 @@
         "reason": "The graph is shifted upward, not downward."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Vertex coordinates are not added."
       }
     ]
@@ -14481,23 +14481,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "120",
       "125",
       "20",
-      "130"
+      "130",
+      "120"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This omits the −x term."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This squares rather than cubes the input."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This adds instead of subtracting x."
       }
     ]
@@ -14540,15 +14540,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "4",
       "5",
+      "4",
       "9",
       "20"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
@@ -14600,18 +14600,18 @@
     "verification": null,
     "choices": [
       "18",
-      "3",
       "9",
+      "3",
       "10"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Exponents are added, not multiplied, for like bases."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "Subtraction applies to division of like bases."
       },
       {
@@ -14758,23 +14758,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "10",
       "-2",
       "22",
-      "4"
+      "4",
+      "10"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds the shift instead of subtracting it."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This stops before undoing the square root."
       }
     ]
@@ -14817,15 +14817,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "6",
+      "2",
       "4",
       "7"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
@@ -14878,10 +14878,10 @@
     "choices": [
       "-3",
       "9",
-      "3",
-      "0"
+      "0",
+      "3"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -14892,7 +14892,7 @@
         "reason": "This squares the coefficient unnecessarily."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Zero is one intersection, but k denotes the other."
       }
     ]
@@ -14976,23 +14976,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "7",
       "6",
       "-7",
-      "13",
-      "7"
+      "13"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the vertex's x-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The graph is shifted upward, not downward."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Vertex coordinates are not added."
       }
     ]
@@ -15035,19 +15035,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "48",
       "12",
       "36",
+      "48",
       "8"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
@@ -15094,15 +15094,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "64",
       "60",
+      "64",
       "12",
       "68"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This omits the −x term."
       },
       {
@@ -15154,18 +15154,18 @@
     "verification": null,
     "choices": [
       "3",
-      "9",
       "6",
+      "9",
       "18"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the sum of the roots, not a root."
       },
       {
@@ -15212,23 +15212,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "9",
       "20",
       "1",
-      "10",
-      "9"
+      "10"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "Exponents are added, not multiplied, for like bases."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "Subtraction applies to division of like bases."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "No additional exponent is introduced."
       }
     ]
@@ -15371,15 +15371,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "14",
+      "2",
       "18",
       "4"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This subtracts before squaring."
       },
       {
@@ -15430,19 +15430,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "6",
       "0",
       "3",
-      "6",
       "7"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
@@ -15491,10 +15491,10 @@
     "choices": [
       "-4",
       "16",
-      "0",
-      "4"
+      "4",
+      "0"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -15505,7 +15505,7 @@
         "reason": "This squares the coefficient unnecessarily."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Zero is one intersection, but k denotes the other."
       }
     ]
@@ -15649,18 +15649,18 @@
     "verification": null,
     "choices": [
       "8",
-      "16",
       "12",
+      "16",
       "17"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
@@ -15708,18 +15708,18 @@
     "verification": null,
     "choices": [
       "27",
-      "6",
       "24",
+      "6",
       "30"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This omits the −x term."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This squares rather than cubes the input."
       },
       {
@@ -15767,22 +15767,22 @@
     "verification": null,
     "choices": [
       "2",
+      "7",
       "9",
-      "14",
-      "7"
+      "14"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the product of the roots."
       }
     ]
@@ -15825,19 +15825,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "9",
       "20",
       "1",
+      "9",
       "10"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Exponents are added, not multiplied, for like bases."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "Subtraction applies to division of like bases."
       },
       {
@@ -15925,15 +15925,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "-7",
       "7",
+      "-7",
       "49",
       "14"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
@@ -16043,23 +16043,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "12",
       "4",
       "8",
-      "13",
-      "12"
+      "13"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The center is not a solution when the distance is positive."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -16102,15 +16102,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "5",
       "-5",
+      "5",
       "25",
       "0"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Substitution gives x(x − coefficient) = 0, not a negative second root."
       },
       {
@@ -16203,18 +16203,18 @@
     "verification": null,
     "choices": [
       "4",
-      "5",
       "-5",
+      "5",
       "9"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the vertex's x-coordinate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "The graph is shifted upward, not downward."
       },
       {
@@ -16261,19 +16261,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "24",
       "9",
       "18",
-      "24",
       "8"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
@@ -16379,23 +16379,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "8",
       "7",
       "15",
-      "56"
+      "56",
+      "8"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the product of the roots."
       }
     ]
@@ -16521,22 +16521,22 @@
     "verification": null,
     "choices": [
       "-4",
-      "4",
       "16",
-      "8"
+      "8",
+      "4"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is x², not x."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Taking a square root does not double the value."
       }
     ]
@@ -16580,18 +16580,18 @@
     "verification": null,
     "choices": [
       "-1",
-      "13",
       "5",
+      "13",
       "3"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds the shift instead of subtracting it."
       },
       {
@@ -16640,10 +16640,10 @@
     "choices": [
       "2",
       "5",
-      "7",
-      "12"
+      "12",
+      "7"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -16654,7 +16654,7 @@
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The center is not a solution when the distance is positive."
       }
     ]
@@ -16697,23 +16697,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "6",
       "-6",
       "36",
-      "0"
+      "0",
+      "6"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Substitution gives x(x − coefficient) = 0, not a negative second root."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This squares the coefficient unnecessarily."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Zero is one intersection, but k denotes the other."
       }
     ]
@@ -16798,18 +16798,18 @@
     "verification": null,
     "choices": [
       "3",
-      "8",
       "-8",
+      "8",
       "11"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the vertex's x-coordinate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "The graph is shifted upward, not downward."
       },
       {
@@ -16915,23 +16915,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "120",
       "125",
       "20",
-      "130",
-      "120"
+      "130"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This omits the −x term."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This squares rather than cubes the input."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This adds instead of subtracting x."
       }
     ]
@@ -16974,23 +16974,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "9",
       "6",
       "15",
-      "54"
+      "54",
+      "9"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the product of the roots."
       }
     ]
@@ -17075,18 +17075,18 @@
     "verification": null,
     "choices": [
       "-7",
-      "7",
       "49",
+      "7",
       "14"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This uses the other factor with the wrong sign."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the constant in the difference of squares, not k."
       },
       {
@@ -17133,19 +17133,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "8",
       "-8",
       "64",
-      "8",
       "16"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is x², not x."
       },
       {
@@ -17193,22 +17193,22 @@
     "verification": null,
     "choices": [
       "-1",
+      "11",
       "21",
-      "4",
-      "11"
+      "4"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This adds the shift instead of subtracting it."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This stops before undoing the square root."
       }
     ]
@@ -17251,23 +17251,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "12",
       "0",
       "6",
-      "13"
+      "13",
+      "12"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -17311,22 +17311,22 @@
     "verification": null,
     "choices": [
       "-2",
-      "2",
       "4",
-      "0"
+      "0",
+      "2"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Substitution gives x(x − coefficient) = 0, not a negative second root."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This squares the coefficient unnecessarily."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Zero is one intersection, but k denotes the other."
       }
     ]
@@ -17410,19 +17410,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "3",
       "2",
       "-3",
-      "3",
       "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the vertex's x-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The graph is shifted upward, not downward."
       },
       {
@@ -17471,10 +17471,10 @@
     "choices": [
       "11",
       "30",
-      "8",
-      "40"
+      "40",
+      "8"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -17485,7 +17485,7 @@
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This omits the starting amount."
       }
     ]
@@ -17588,22 +17588,22 @@
     "verification": null,
     "choices": [
       "3",
-      "5",
       "8",
-      "15"
+      "15",
+      "5"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the product of the roots."
       }
     ]
@@ -17805,15 +17805,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "10",
       "-2",
+      "10",
       "22",
       "4"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
@@ -17864,15 +17864,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "3",
       "7",
+      "3",
       "2",
       "5"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
@@ -17925,10 +17925,10 @@
     "choices": [
       "-3",
       "9",
-      "3",
-      "0"
+      "0",
+      "3"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -17939,7 +17939,7 @@
         "reason": "This squares the coefficient unnecessarily."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Zero is one intersection, but k denotes the other."
       }
     ]
@@ -18023,23 +18023,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "6",
       "7",
       "-6",
-      "13",
-      "6"
+      "13"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the vertex's x-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The graph is shifted upward, not downward."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Vertex coordinates are not added."
       }
     ]
@@ -18082,19 +18082,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "48",
       "12",
       "36",
+      "48",
       "8"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
@@ -18141,15 +18141,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "27",
       "24",
+      "27",
       "6",
       "30"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This omits the −x term."
       },
       {
@@ -18200,19 +18200,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "4",
       "8",
       "16",
-      "4",
       "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the product of the roots."
       },
       {
@@ -18301,22 +18301,22 @@
     "verification": null,
     "choices": [
       "-8",
+      "8",
       "64",
-      "16",
-      "8"
+      "16"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This uses the other factor with the wrong sign."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the constant in the difference of squares, not k."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The factorization does not double the constant."
       }
     ]
@@ -18419,18 +18419,18 @@
     "verification": null,
     "choices": [
       "2",
-      "14",
       "18",
+      "14",
       "4"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds the shift instead of subtracting it."
       },
       {
@@ -18477,19 +18477,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "7",
       "1",
       "3",
-      "7",
       "4"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
@@ -18636,15 +18636,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "9",
       "6",
+      "9",
       "-9",
       "15"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the vertex's x-coordinate."
       },
       {
@@ -18696,18 +18696,18 @@
     "verification": null,
     "choices": [
       "8",
-      "16",
       "12",
+      "16",
       "17"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
@@ -18913,19 +18913,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "5",
       "-5",
       "25",
+      "5",
       "10"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This uses the other factor with the wrong sign."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the constant in the difference of squares, not k."
       },
       {
@@ -18973,22 +18973,22 @@
     "verification": null,
     "choices": [
       "-6",
-      "6",
       "36",
-      "12"
+      "12",
+      "6"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is x², not x."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Taking a square root does not double the value."
       }
     ]
@@ -19231,15 +19231,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "4",
       "5",
+      "4",
       "-4",
       "9"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the vertex's x-coordinate."
       },
       {
@@ -19350,18 +19350,18 @@
     "verification": null,
     "choices": [
       "125",
-      "20",
       "120",
+      "20",
       "130"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This omits the −x term."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This squares rather than cubes the input."
       },
       {
@@ -19409,22 +19409,22 @@
     "verification": null,
     "choices": [
       "2",
+      "6",
       "8",
-      "12",
-      "6"
+      "12"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the product of the roots."
       }
     ]
@@ -19567,15 +19567,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "-3",
       "3",
+      "-3",
       "9",
       "6"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
@@ -19628,10 +19628,10 @@
     "choices": [
       "-1",
       "13",
-      "5",
-      "3"
+      "3",
+      "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -19642,7 +19642,7 @@
         "reason": "This adds the shift instead of subtracting it."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This stops before undoing the square root."
       }
     ]
@@ -19686,22 +19686,22 @@
     "verification": null,
     "choices": [
       "3",
+      "13",
       "5",
-      "8",
-      "13"
+      "8"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The center is not a solution when the distance is positive."
       }
     ]
@@ -19785,15 +19785,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "9",
       "3",
+      "9",
       "6",
       "0"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the positive x-coordinate."
       },
       {
@@ -19844,15 +19844,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "4",
       "7",
+      "4",
       "-7",
       "11"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the vertex's x-coordinate."
       },
       {
@@ -19904,18 +19904,18 @@
     "verification": null,
     "choices": [
       "10",
-      "24",
       "32",
+      "24",
       "8"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
@@ -19964,10 +19964,10 @@
     "choices": [
       "64",
       "12",
-      "68",
-      "60"
+      "60",
+      "68"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -19978,7 +19978,7 @@
         "reason": "This squares rather than cubes the input."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This adds instead of subtracting x."
       }
     ]
@@ -20021,23 +20021,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "14",
       "49",
-      "8"
+      "8",
+      "7"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the product of the roots."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -20122,18 +20122,18 @@
     "verification": null,
     "choices": [
       "-6",
-      "6",
       "36",
+      "6",
       "12"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This uses the other factor with the wrong sign."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the constant in the difference of squares, not k."
       },
       {
@@ -20181,18 +20181,18 @@
     "verification": null,
     "choices": [
       "-7",
-      "49",
       "7",
+      "49",
       "14"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is x², not x."
       },
       {
@@ -20298,19 +20298,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "13",
       "1",
       "6",
+      "13",
       "7"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
@@ -20398,15 +20398,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "4",
+      "2",
       "0",
       "5"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the positive x-coordinate."
       },
       {
@@ -20635,22 +20635,22 @@
     "verification": null,
     "choices": [
       "6",
-      "8",
       "14",
-      "48"
+      "48",
+      "8"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the product of the roots."
       }
     ]
@@ -20735,18 +20735,18 @@
     "verification": null,
     "choices": [
       "-3",
-      "9",
       "3",
+      "9",
       "6"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This uses the other factor with the wrong sign."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the constant in the difference of squares, not k."
       },
       {
@@ -20793,23 +20793,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "4",
       "-4",
       "16",
-      "8",
-      "4"
+      "8"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is x², not x."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Taking a square root does not double the value."
       }
     ]
@@ -20852,15 +20852,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "10",
       "-2",
+      "10",
       "22",
       "4"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
@@ -20912,22 +20912,22 @@
     "verification": null,
     "choices": [
       "4",
-      "8",
       "2",
-      "6"
+      "6",
+      "8"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The center is not a solution when the distance is positive."
       }
     ]
@@ -21071,22 +21071,22 @@
     "verification": null,
     "choices": [
       "2",
+      "5",
       "-5",
-      "7",
-      "5"
+      "7"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the vertex's x-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The graph is shifted upward, not downward."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Vertex coordinates are not added."
       }
     ]
@@ -21129,23 +21129,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "48",
       "12",
       "36",
-      "8"
+      "8",
+      "48"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This models linear rather than exponential growth."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This multiplies by 2n instead of 2^n."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This omits the starting amount."
       }
     ]
@@ -21189,22 +21189,22 @@
     "verification": null,
     "choices": [
       "8",
-      "6",
       "2",
-      "10"
+      "10",
+      "6"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This omits the −x term."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This squares rather than cubes the input."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This adds instead of subtracting x."
       }
     ]
@@ -21249,10 +21249,10 @@
     "choices": [
       "5",
       "14",
-      "9",
-      "45"
+      "45",
+      "9"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -21263,7 +21263,7 @@
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the product of the roots."
       }
     ]
@@ -21347,23 +21347,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "7",
       "-7",
       "49",
-      "14",
-      "7"
+      "14"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This uses the other factor with the wrong sign."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the constant in the difference of squares, not k."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The factorization does not double the constant."
       }
     ]
@@ -21406,15 +21406,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "8",
       "-8",
+      "8",
       "64",
       "16"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the negative solution, not the requested positive one."
       },
       {
@@ -21466,22 +21466,22 @@
     "verification": null,
     "choices": [
       "2",
-      "14",
       "18",
-      "4"
+      "4",
+      "14"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This subtracts before squaring."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This adds the shift instead of subtracting it."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This stops before undoing the square root."
       }
     ]
@@ -21526,10 +21526,10 @@
     "choices": [
       "2",
       "3",
-      "8",
-      "5"
+      "5",
+      "8"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -21540,7 +21540,7 @@
         "reason": "This is the distance from the center, not the larger x-value."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The center is not a solution when the distance is positive."
       }
     ]
@@ -21625,22 +21625,22 @@
     "verification": null,
     "choices": [
       "6",
+      "36",
       "12",
-      "0",
-      "36"
+      "0"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the positive x-coordinate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not evaluate either equation at the intersection."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the other intersection's y-coordinate."
       }
     ]
@@ -21683,23 +21683,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "8",
       "7",
       "-8",
-      "15"
+      "15",
+      "8"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the vertex's x-coordinate."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "The graph is shifted upward, not downward."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Vertex coordinates are not added."
       }
     ]
@@ -21742,15 +21742,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "8",
       "16",
+      "8",
       "12",
       "17"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This models linear rather than exponential growth."
       },
       {
@@ -21801,19 +21801,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "120",
       "125",
       "20",
-      "120",
       "130"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This omits the −x term."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This squares rather than cubes the input."
       },
       {
@@ -21860,23 +21860,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "4",
       "3",
       "7",
-      "12",
-      "4"
+      "12"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the smaller solution."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the sum of the roots, not a root."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the product of the roots."
       }
     ]
@@ -21960,19 +21960,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "4",
       "-4",
       "16",
+      "4",
       "8"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This uses the other factor with the wrong sign."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the constant in the difference of squares, not k."
       },
       {
@@ -22251,15 +22251,15 @@
       "expected": 50
     },
     "choices": [
-      "50",
       "20",
+      "50",
       "33.333",
       "150"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the absolute increase, not the percent."
       },
       {
@@ -22386,19 +22386,19 @@
       "expected": 7
     },
     "choices": [
+      "7",
       "35",
       "9",
-      "7",
       "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the sum, not the mean."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not divide the total by all five values."
       },
       {
@@ -22445,23 +22445,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "10",
       "22",
       "16",
-      "6",
-      "10"
+      "6"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "Range uses subtraction, not addition."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the maximum."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the minimum."
       }
     ]
@@ -22586,19 +22586,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "-1",
       "1",
       "0",
+      "-1",
       "2"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Positive association means both variables tend to rise together."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "The described trend is not no association."
       },
       {
@@ -22653,22 +22653,22 @@
     },
     "choices": [
       "0.75",
-      "0.25",
       "0.333",
-      "0.083"
+      "0.083",
+      "0.25"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the probability of not blue."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This divides by unfavorable outcomes instead of total outcomes."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This counts only one favorable token."
       }
     ]
@@ -22719,18 +22719,18 @@
     },
     "choices": [
       "0.353",
-      "0.455",
       "0.545",
+      "0.455",
       "0.091"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "The conditional group already contains all bus riders."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the conditional probability of not walking."
       },
       {
@@ -22777,23 +22777,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "2",
       "1",
       "0",
-      "3",
-      "2"
+      "3"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The sample is only the selected subset."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This code is not defined."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Only sample and population are options."
       }
     ]
@@ -22877,23 +22877,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "1",
       "0",
-      "3"
+      "3",
+      "2"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Random assignment to treatments makes this an experiment."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This code is not defined."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Only the two stated study types apply."
       }
     ]
@@ -23004,10 +23004,10 @@
     "choices": [
       "39",
       "77",
-      "44",
-      "4"
+      "4",
+      "44"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -23018,7 +23018,7 @@
         "reason": "This uses boxes per group instead of items per box."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is only the unit rate."
       }
     ]
@@ -23070,10 +23070,10 @@
     "choices": [
       "65",
       "500",
-      "12",
-      "300"
+      "300",
+      "12"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -23084,7 +23084,7 @@
         "reason": "An hour has 60, not 100, minutes."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This reverses the conversion."
       }
     ]
@@ -23182,19 +23182,19 @@
       "expected": 12
     },
     "choices": [
-      "12",
       "48",
       "20",
+      "12",
       "72"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the sale price, not the discount amount."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This repeats the percent as a dollar amount."
       },
       {
@@ -23252,18 +23252,18 @@
     },
     "choices": [
       "30",
-      "6",
       "8",
+      "6",
       "5"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the sum, not the mean."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This does not divide the total by all five values."
       },
       {
@@ -23310,19 +23310,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "13",
       "23",
       "18",
-      "13",
       "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "Range uses subtraction, not addition."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the maximum."
       },
       {
@@ -23370,22 +23370,22 @@
     "verification": null,
     "choices": [
       "1",
+      "2",
       "0",
-      "3",
-      "2"
+      "3"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "The mean uses every value and is pulled toward the outlier."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This code does not name either measure."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Only choices 1 and 2 are defined."
       }
     ]
@@ -23428,19 +23428,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "0.143",
       "8",
+      "7",
       "0"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses output per input."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "No extra unit is added to the stated rate."
       },
       {
@@ -23536,18 +23536,18 @@
     },
     "choices": [
       "0.667",
-      "0.333",
       "0.5",
+      "0.333",
       "0.111"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the probability of not blue."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This divides by unfavorable outcomes instead of total outcomes."
       },
       {
@@ -23601,19 +23601,19 @@
       "expected": 0.4166666666666667
     },
     "choices": [
+      "0.417",
       "0.294",
       "0.583",
-      "0.417",
       "0.083"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The conditional group already contains all bus riders."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the conditional probability of not walking."
       },
       {
@@ -23661,22 +23661,22 @@
     "verification": null,
     "choices": [
       "1",
+      "2",
       "0",
-      "3",
-      "2"
+      "3"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "The sample is only the selected subset."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This code is not defined."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Only sample and population are options."
       }
     ]
@@ -23719,19 +23719,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "51",
       "57",
       "3",
+      "51",
       "48"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the upper endpoint."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is only the margin."
       },
       {
@@ -23826,15 +23826,15 @@
       "expected": 5
     },
     "choices": [
-      "50",
       "5",
+      "50",
       "10",
       "40"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the total cost."
       },
       {
@@ -23885,19 +23885,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "32",
       "24",
       "4",
-      "32",
       "33"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This adds boxes to items instead of using a constant rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is only the unit rate."
       },
       {
@@ -24017,15 +24017,15 @@
       "expected": 20
     },
     "choices": [
-      "20",
       "9.8",
+      "20",
       "16.667",
       "120"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the absolute increase, not the percent."
       },
       {
@@ -24084,18 +24084,18 @@
     },
     "choices": [
       "56",
-      "14",
       "20",
+      "14",
       "84"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the sale price, not the discount amount."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This repeats the percent as a dollar amount."
       },
       {
@@ -24193,19 +24193,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "10",
       "18",
       "14",
-      "10",
       "4"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "Range uses subtraction, not addition."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the maximum."
       },
       {
@@ -24484,19 +24484,19 @@
       "expected": 0.3076923076923077
     },
     "choices": [
+      "0.308",
       "0.235",
       "0.692",
-      "0.308",
       "0.077"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The conditional group already contains all bus riders."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the conditional probability of not walking."
       },
       {
@@ -24602,19 +24602,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "63",
       "75",
       "6",
+      "63",
       "57"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the upper endpoint."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is only the margin."
       },
       {
@@ -24662,22 +24662,22 @@
     "verification": null,
     "choices": [
       "1",
-      "2",
       "0",
-      "3"
+      "3",
+      "2"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Random assignment to treatments makes this an experiment."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This code is not defined."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Only the two stated study types apply."
       }
     ]
@@ -24727,19 +24727,19 @@
       "expected": 4
     },
     "choices": [
+      "4",
       "16",
       "12",
-      "4",
       "5"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the total cost."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This subtracts instead of dividing."
       },
       {
@@ -24834,23 +24834,23 @@
       "expected": 300
     },
     "choices": [
+      "300",
       "65",
       "500",
-      "12",
-      "300"
+      "12"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This adds rather than multiplies by the conversion factor."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "An hour has 60, not 100, minutes."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This reverses the conversion."
       }
     ]
@@ -24900,23 +24900,23 @@
       "expected": 10
     },
     "choices": [
-      "10",
       "4.3",
       "9.091",
-      "110"
+      "110",
+      "10"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the absolute increase, not the percent."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This divides by the new value instead of the original."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the new value as a percent of the original."
       }
     ]
@@ -25037,10 +25037,10 @@
     "choices": [
       "60",
       "14",
-      "12",
-      "5"
+      "5",
+      "12"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -25051,7 +25051,7 @@
         "reason": "This does not divide the total by all five values."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the number of data values."
       }
     ]
@@ -25137,10 +25137,10 @@
     "choices": [
       "1",
       "0",
-      "3",
-      "2"
+      "2",
+      "3"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -25151,7 +25151,7 @@
         "reason": "This code does not name either measure."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Only choices 1 and 2 are defined."
       }
     ]
@@ -25194,19 +25194,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "0.143",
       "8",
+      "7",
       "0"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses output per input."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "No extra unit is added to the stated rate."
       },
       {
@@ -25468,22 +25468,22 @@
     "verification": null,
     "choices": [
       "69",
+      "59",
       "5",
-      "54",
-      "59"
+      "54"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the upper endpoint."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is only the margin."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The stated margin is subtracted once."
       }
     ]
@@ -25526,15 +25526,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "1",
+      "2",
       "0",
       "3"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Random assignment to treatments makes this an experiment."
       },
       {
@@ -25593,18 +25593,18 @@
     },
     "choices": [
       "15",
-      "3",
       "5",
+      "3",
       "10"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the total cost."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the number of items."
       },
       {
@@ -25653,10 +25653,10 @@
     "choices": [
       "24",
       "4",
-      "32",
-      "33"
+      "33",
+      "32"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -25667,7 +25667,7 @@
         "reason": "This is only the unit rate."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -25767,10 +25767,10 @@
     "choices": [
       "29",
       "33.333",
-      "150",
-      "50"
+      "50",
+      "150"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -25781,7 +25781,7 @@
         "reason": "This divides by the new value instead of the original."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is the new value as a percent of the original."
       }
     ]
@@ -25831,19 +25831,19 @@
       "expected": 18
     },
     "choices": [
-      "18",
       "72",
       "20",
+      "18",
       "108"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the sale price, not the discount amount."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This repeats the percent as a dollar amount."
       },
       {
@@ -25900,15 +25900,15 @@
       "expected": 11
     },
     "choices": [
-      "55",
       "11",
+      "55",
       "13",
       "5"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the sum, not the mean."
       },
       {
@@ -25961,10 +25961,10 @@
     "choices": [
       "30",
       "20",
-      "10",
-      "11"
+      "11",
+      "10"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -25975,7 +25975,7 @@
         "reason": "This is the maximum."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       }
     ]
@@ -26061,10 +26061,10 @@
     "choices": [
       "0.25",
       "5",
-      "0",
-      "4"
+      "4",
+      "0"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -26075,7 +26075,7 @@
         "reason": "No extra unit is added to the stated rate."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The prediction changes with hours, so slope is not zero."
       }
     ]
@@ -26118,15 +26118,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "-1",
       "1",
+      "-1",
       "0",
       "2"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Positive association means both variables tend to rise together."
       },
       {
@@ -26185,22 +26185,22 @@
     },
     "choices": [
       "0.75",
-      "0.25",
       "0.333",
-      "0.083"
+      "0.083",
+      "0.25"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the probability of not blue."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This divides by unfavorable outcomes instead of total outcomes."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This counts only one favorable token."
       }
     ]
@@ -26250,19 +26250,19 @@
       "expected": 0.4
     },
     "choices": [
+      "0.4",
       "0.286",
       "0.6",
-      "0.4",
       "0.067"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The conditional group already contains all bus riders."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the conditional probability of not walking."
       },
       {
@@ -26409,19 +26409,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "2",
       "1",
       "0",
+      "2",
       "3"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Random assignment to treatments makes this an experiment."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This code is not defined."
       },
       {
@@ -26476,18 +26476,18 @@
     },
     "choices": [
       "60",
-      "10",
       "6",
+      "10",
       "54"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the total cost."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the number of items."
       },
       {
@@ -26535,18 +26535,18 @@
     "verification": null,
     "choices": [
       "39",
-      "77",
       "44",
+      "77",
       "4"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This adds boxes to items instead of using a constant rate."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This uses boxes per group instead of items per box."
       },
       {
@@ -26600,23 +26600,23 @@
       "expected": 300
     },
     "choices": [
+      "300",
       "65",
       "500",
-      "12",
-      "300"
+      "12"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This adds rather than multiplies by the conversion factor."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "An hour has 60, not 100, minutes."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This reverses the conversion."
       }
     ]
@@ -26714,19 +26714,19 @@
       "expected": 20
     },
     "choices": [
-      "20",
       "80",
       "120",
+      "20",
       "21"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the sale price, not the discount amount."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "A discount does not increase the price."
       },
       {
@@ -26784,22 +26784,22 @@
     },
     "choices": [
       "50",
-      "10",
       "12",
-      "5"
+      "5",
+      "10"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the sum, not the mean."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This does not divide the total by all five values."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the number of data values."
       }
     ]
@@ -26843,18 +26843,18 @@
     "verification": null,
     "choices": [
       "31",
-      "22",
       "13",
+      "22",
       "9"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Range uses subtraction, not addition."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the maximum."
       },
       {
@@ -26960,15 +26960,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "7",
       "0.143",
+      "7",
       "8",
       "0"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses output per input."
       },
       {
@@ -27068,22 +27068,22 @@
     },
     "choices": [
       "0.667",
-      "0.333",
       "0.5",
-      "0.111"
+      "0.111",
+      "0.333"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the probability of not blue."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This divides by unfavorable outcomes instead of total outcomes."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This counts only one favorable token."
       }
     ]
@@ -27133,19 +27133,19 @@
       "expected": 0.3125
     },
     "choices": [
+      "0.313",
       "0.238",
       "0.688",
-      "0.313",
       "0.063"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The conditional group already contains all bus riders."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This is the conditional probability of not walking."
       },
       {
@@ -27193,22 +27193,22 @@
     "verification": null,
     "choices": [
       "1",
+      "2",
       "0",
-      "3",
-      "2"
+      "3"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "The sample is only the selected subset."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This code is not defined."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Only sample and population are options."
       }
     ]
@@ -27251,23 +27251,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "51",
       "57",
       "3",
-      "48"
+      "48",
+      "51"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the upper endpoint."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is only the margin."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "The stated margin is subtracted once."
       }
     ]
@@ -27411,18 +27411,18 @@
     "verification": null,
     "choices": [
       "1.667",
-      "16",
       "15",
+      "16",
       "17"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This scales in the wrong direction."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This value does not satisfy the final equation or condition."
       },
       {
@@ -27470,22 +27470,22 @@
     "verification": null,
     "choices": [
       "121",
+      "59",
       "127",
-      "239",
-      "59"
+      "239"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the sum of known angles."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This subtracts only one known angle."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "A triangle's angles sum to 180, not 360."
       }
     ]
@@ -27535,19 +27535,19 @@
       "expected": 10
     },
     "choices": [
-      "10",
       "14",
       "3.742",
+      "10",
       "48"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "The hypotenuse is not the sum of the legs."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "The theorem squares the legs before adding."
       },
       {
@@ -27709,10 +27709,10 @@
     "choices": [
       "36",
       "2",
-      "6",
-      "5"
+      "5",
+      "6"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -27723,7 +27723,7 @@
         "reason": "This is the center's x-coordinate."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the center's y-coordinate."
       }
     ]
@@ -27775,10 +27775,10 @@
     "choices": [
       "42",
       "21",
-      "216",
-      "108"
+      "108",
+      "216"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -27789,7 +27789,7 @@
         "reason": "Area requires multiplication."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The rectangle is counted only once."
       }
     ]
@@ -27832,19 +27832,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "150",
       "125",
       "20",
+      "150",
       "30"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is volume."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This does not find the area of six faces."
       },
       {
@@ -27899,15 +27899,15 @@
       "expected": 120
     },
     "choices": [
-      "148",
       "120",
+      "148",
       "15",
       "24"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is surface area."
       },
       {
@@ -27999,19 +27999,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "27",
       "19",
       "3",
-      "27",
       "15"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "Similarity uses multiplication by a scale factor, not adding side difference."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This scales in the wrong direction."
       },
       {
@@ -28344,19 +28344,19 @@
       "expected": 154
     },
     "choices": [
+      "154",
       "50",
       "25",
-      "154",
       "308"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is perimeter."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "Area requires multiplication."
       },
       {
@@ -28404,22 +28404,22 @@
     "verification": null,
     "choices": [
       "27",
+      "54",
       "12",
-      "18",
-      "54"
+      "18"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is volume."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not find the area of six faces."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Each face has area side squared."
       }
     ]
@@ -28470,15 +28470,15 @@
       "expected": 48
     },
     "choices": [
-      "48",
       "80",
+      "48",
       "11",
       "16"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is surface area."
       },
       {
@@ -28530,22 +28530,22 @@
     "verification": null,
     "choices": [
       "246",
-      "114",
       "24",
-      "66"
+      "66",
+      "114"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Linear-pair angles sum to 180, not exceed it."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This treats the pair as complementary."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Linear-pair angles need not be equal."
       }
     ]
@@ -28631,10 +28631,10 @@
     "choices": [
       "136",
       "107",
-      "44",
-      "224"
+      "224",
+      "44"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -28645,7 +28645,7 @@
         "reason": "This subtracts only one known angle."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "A triangle's angles sum to 180, not 360."
       }
     ]
@@ -28697,10 +28697,10 @@
     "choices": [
       "14",
       "3.742",
-      "48",
-      "10"
+      "10",
+      "48"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -28711,7 +28711,7 @@
         "reason": "The theorem squares the legs before adding."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The product of legs is unrelated to hypotenuse length."
       }
     ]
@@ -28761,15 +28761,15 @@
       "expected": 0.375
     },
     "choices": [
-      "0.375",
       "2.667",
+      "0.375",
       "0.625",
       "0.6"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses the ratio."
       },
       {
@@ -28826,15 +28826,15 @@
       "expected": 100
     },
     "choices": [
-      "20",
       "100",
+      "20",
       "10",
       "400"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the coefficient in circumference."
       },
       {
@@ -28975,18 +28975,18 @@
     "verification": null,
     "choices": [
       "343",
-      "28",
       "294",
+      "28",
       "42"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is volume."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not find the area of six faces."
       },
       {
@@ -29043,10 +29043,10 @@
     "choices": [
       "188",
       "17",
-      "24",
-      "168"
+      "168",
+      "24"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -29057,7 +29057,7 @@
         "reason": "Volume requires multiplying dimensions."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is base area only."
       }
     ]
@@ -29160,18 +29160,18 @@
     "verification": null,
     "choices": [
       "1.667",
-      "15",
       "16",
+      "15",
       "17"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This scales in the wrong direction."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This value does not satisfy the final equation or condition."
       },
       {
@@ -29267,18 +29267,18 @@
     },
     "choices": [
       "28",
-      "5.292",
       "20",
+      "5.292",
       "192"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "The hypotenuse is not the sum of the legs."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The theorem squares the legs before adding."
       },
       {
@@ -29334,10 +29334,10 @@
     "choices": [
       "2.667",
       "0.625",
-      "0.6",
-      "0.375"
+      "0.375",
+      "0.6"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -29348,7 +29348,7 @@
         "reason": "This substitutes an unsupported adjacent length."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This resembles tangent, not sine."
       }
     ]
@@ -29397,15 +29397,15 @@
       "expected": 16
     },
     "choices": [
-      "16",
       "8",
+      "16",
       "4",
       "64"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the coefficient in circumference."
       },
       {
@@ -29563,19 +29563,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "150",
       "125",
       "20",
-      "150",
       "30"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is volume."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not find the area of six faces."
       },
       {
@@ -29689,19 +29689,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "134",
       "226",
       "44",
+      "134",
       "46"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Linear-pair angles sum to 180, not exceed it."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This treats the pair as complementary."
       },
       {
@@ -29749,18 +29749,18 @@
     "verification": null,
     "choices": [
       "19",
-      "27",
       "3",
+      "27",
       "15"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Similarity uses multiplication by a scale factor, not adding side difference."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This scales in the wrong direction."
       },
       {
@@ -29809,10 +29809,10 @@
     "choices": [
       "121",
       "117",
-      "59",
-      "239"
+      "239",
+      "59"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
@@ -29823,7 +29823,7 @@
         "reason": "This subtracts only one known angle."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "A triangle's angles sum to 180, not 360."
       }
     ]
@@ -29986,19 +29986,19 @@
       "expected": 36
     },
     "choices": [
-      "36",
       "12",
       "6",
+      "36",
       "144"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the coefficient in circumference."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "Area uses radius squared."
       },
       {
@@ -30045,15 +30045,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "16",
       "4",
+      "16",
       "6",
       "5"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The right side is r², not r."
       },
       {
@@ -30278,23 +30278,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "124",
       "236",
       "34",
-      "56"
+      "56",
+      "124"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Linear-pair angles sum to 180, not exceed it."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This treats the pair as complementary."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Linear-pair angles need not be equal."
       }
     ]
@@ -30338,22 +30338,22 @@
     "verification": null,
     "choices": [
       "17",
-      "21",
       "2.333",
-      "15"
+      "15",
+      "21"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "Similarity uses multiplication by a scale factor, not adding side difference."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This scales in the wrong direction."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This repeats a different side length."
       }
     ]
@@ -30396,19 +30396,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "39",
       "141",
       "107",
-      "39",
       "219"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is the sum of known angles."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This subtracts only one known angle."
       },
       {
@@ -30462,23 +30462,23 @@
       "expected": 20
     },
     "choices": [
+      "20",
       "28",
       "5.292",
-      "192",
-      "20"
+      "192"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The hypotenuse is not the sum of the legs."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The theorem squares the legs before adding."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The product of legs is unrelated to hypotenuse length."
       }
     ]
@@ -30575,19 +30575,19 @@
       "expected": 64
     },
     "choices": [
-      "64",
       "16",
       "8",
+      "64",
       "256"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is the coefficient in circumference."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "Area uses radius squared."
       },
       {
@@ -30635,22 +30635,22 @@
     "verification": null,
     "choices": [
       "49",
-      "7",
       "4",
-      "5"
+      "5",
+      "7"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "The right side is r², not r."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This is the center's x-coordinate."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is the center's y-coordinate."
       }
     ]
@@ -30761,10 +30761,10 @@
     "choices": [
       "343",
       "28",
-      "42",
-      "294"
+      "294",
+      "42"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -30775,7 +30775,7 @@
         "reason": "This does not find the area of six faces."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Each face has area side squared."
       }
     ]
@@ -30867,19 +30867,19 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "114",
       "246",
       "24",
+      "114",
       "66"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Linear-pair angles sum to 180, not exceed it."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This treats the pair as complementary."
       },
       {
@@ -31053,10 +31053,10 @@
     "choices": [
       "14",
       "3.742",
-      "48",
-      "10"
+      "10",
+      "48"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -31067,7 +31067,7 @@
         "reason": "The theorem squares the legs before adding."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The product of legs is unrelated to hypotenuse length."
       }
     ]
@@ -31117,15 +31117,15 @@
       "expected": 0.375
     },
     "choices": [
-      "0.375",
       "2.667",
+      "0.375",
       "0.625",
       "0.6"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses the ratio."
       },
       {
@@ -31223,15 +31223,15 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "100",
       "10",
+      "100",
       "2",
       "5"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The right side is r², not r."
       },
       {
@@ -31290,18 +31290,18 @@
     },
     "choices": [
       "26",
-      "13",
       "40",
+      "13",
       "80"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is perimeter."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "Area requires multiplication."
       },
       {
@@ -31348,23 +31348,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
+      "150",
       "125",
       "20",
-      "30",
-      "150"
+      "30"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is volume."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not find the area of six faces."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "Each face has area side squared."
       }
     ]
@@ -31415,23 +31415,23 @@
       "expected": 120
     },
     "choices": [
-      "120",
       "148",
       "15",
-      "24"
+      "24",
+      "120"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This is surface area."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "Volume requires multiplying dimensions."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "This is base area only."
       }
     ]
@@ -31575,18 +31575,18 @@
     "verification": null,
     "choices": [
       "126",
-      "117",
       "54",
+      "117",
       "234"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the sum of known angles."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This subtracts only one known angle."
       },
       {
@@ -31640,23 +31640,23 @@
       "expected": 20
     },
     "choices": [
+      "20",
       "28",
       "5.292",
-      "192",
-      "20"
+      "192"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "The hypotenuse is not the sum of the legs."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "The theorem squares the legs before adding."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "The product of legs is unrelated to hypotenuse length."
       }
     ]
@@ -31706,19 +31706,19 @@
       "expected": 0.375
     },
     "choices": [
-      "0.375",
       "2.667",
       "0.625",
+      "0.375",
       "0.6"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "This reverses the ratio."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This substitutes an unsupported adjacent length."
       },
       {
@@ -31860,15 +31860,15 @@
       "expected": 70
     },
     "choices": [
-      "34",
       "70",
+      "34",
       "17",
       "140"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is perimeter."
       },
       {
@@ -31920,18 +31920,18 @@
     "verification": null,
     "choices": [
       "27",
-      "12",
       "54",
+      "12",
       "18"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is volume."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not find the area of six faces."
       },
       {
@@ -31987,22 +31987,22 @@
     },
     "choices": [
       "80",
+      "48",
       "11",
-      "16",
-      "48"
+      "16"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is surface area."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "Volume requires multiplying dimensions."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is base area only."
       }
     ]
@@ -32045,23 +32045,23 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "134",
       "226",
       "44",
-      "46"
+      "46",
+      "134"
     ],
-    "correctAnswer": 0,
+    "correctAnswer": 3,
     "distractorRationales": [
       {
-        "index": 1,
+        "index": 0,
         "reason": "Linear-pair angles sum to 180, not exceed it."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This treats the pair as complementary."
       },
       {
-        "index": 3,
+        "index": 2,
         "reason": "Linear-pair angles need not be equal."
       }
     ]
@@ -32146,18 +32146,18 @@
     "verification": null,
     "choices": [
       "146",
-      "34",
       "107",
+      "34",
       "214"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is the sum of known angles."
       },
       {
-        "index": 2,
+        "index": 1,
         "reason": "This subtracts only one known angle."
       },
       {
@@ -32449,15 +32449,15 @@
       "expected": 108
     },
     "choices": [
-      "42",
       "108",
+      "42",
       "21",
       "216"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 0,
     "distractorRationales": [
       {
-        "index": 0,
+        "index": 1,
         "reason": "This is perimeter."
       },
       {
@@ -32509,18 +32509,18 @@
     "verification": null,
     "choices": [
       "343",
-      "28",
       "294",
+      "28",
       "42"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
         "reason": "This is volume."
       },
       {
-        "index": 1,
+        "index": 2,
         "reason": "This does not find the area of six faces."
       },
       {
@@ -32577,10 +32577,10 @@
     "choices": [
       "188",
       "17",
-      "24",
-      "168"
+      "168",
+      "24"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
@@ -32591,7 +32591,7 @@
         "reason": "Volume requires multiplying dimensions."
       },
       {
-        "index": 2,
+        "index": 3,
         "reason": "This is base area only."
       }
     ]

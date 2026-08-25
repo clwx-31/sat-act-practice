@@ -245,10 +245,21 @@ Then apply it to **act-english, act-mathematics, and act-science**, run
 `npm run check` still passes. Re-measure with a script rather than trusting the
 audit alone, and report the nine before/after numbers.
 
-**Verified from the other lane:** your `rebalance-answers.js` was run against the
-committed banks without writing, and it takes all three sections to exactly
-25/25/25/25 in every tier with zero integrity problems across 1,725 items. The
-script is correct. What remains is to apply it, rebuild, and commit.
+> **The bank half of this task is already done on `main`.** Your
+> `rebalance-answers.js` was verified from the other lane and then applied there
+> to **act-english, act-mathematics, act-science, and also sat-math**, followed by
+> `npm run build:content`. Every section now sits at or below **25.6%** for its
+> worst answer position in any difficulty tier, except sat-reading-writing at
+> 29.1%, which was already inside the guard. `npm run check` passes.
+>
+> **Do not apply it again.** Merge `main`, drop any local bank changes from this
+> task, and do only the guard described below. Your script itself is not on
+> `main` — it arrives when `codex-lane` merges, and the transformation is
+> recorded in the commit that applied it.
+
+sat-math was not in the original task list because it was under the audit's 40%
+threshold, but its Easy tier sat at 36% B, which fails the 30% guard. It was
+rebalanced for that reason.
 
 **Then add the guard.** After the three banks are committed, add a per-tier
 answer-position check to `npm run check` that fails if any position exceeds 30%

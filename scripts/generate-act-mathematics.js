@@ -3540,12 +3540,9 @@ SHAPES["angles"] = {
       const answer = 180 - known;
       return {
         family: "parallel-lines-cointerior",
-        stem: choose(variant, [
-          `Two parallel lines are cut by a transversal. One interior angle on the same side of the transversal measures ${known}°. What is the measure of the other?`,
-          `A transversal crosses two parallel lines, forming co-interior angles. If one measures ${known}°, what does the other measure?`,
-          `When parallel lines are cut by a transversal, same-side interior angles are supplementary. If one is ${known}°, what is the other?`,
-          `Parallel lines are crossed by a transversal, and one same-side interior angle is ${known}°. How large is its partner?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the same-side interior angle paired with ${known}° when a transversal crosses parallel lines`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(known), "This describes alternate interior or corresponding angles, which are equal; same-side interior angles are supplementary."],

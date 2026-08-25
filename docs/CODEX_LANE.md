@@ -533,6 +533,74 @@ both the bank and its generated file are committed together. That would be five
 of seven sections finished, leaving only SAT Reading & Writing and the ACT
 English rebuild in the other lane.
 
+---
+
+## Task 13 — assemble the authored ACT English passages (HIGHEST VALUE REMAINING)
+
+**Do this before anything else once Task 12 lands, and before SAT Reading &
+Writing.** `scripts/generate-act-english.js` still contains the old template
+generator and has **zero references** to `scripts/data/act-english/`. Forty
+authored passages and 575 questions exist and reach nothing. Until this runs,
+the site serves the old bank and the entire English rebuild is invisible.
+
+Rewrite it on the model of `scripts/generate-act-reading.js`, which does exactly
+this job for Reading: it assembles authored sets into bank records rather than
+generating anything. Read that file first.
+
+**Four things differ from Reading, and each has bitten before:**
+
+1. **NO CHANGE is always choice A.** For every underlined item the answer
+   position is forced, so the position planner can only balance the
+   non-underlined rhetorical questions. Do not try to balance the underlined
+   ones; report the resulting distribution instead. `check-answer-positions.js`
+   will need to know that act-english is a special case, or it will fail on a
+   bank that is correct.
+
+2. **The generated stem for an underlined item repeats by number.** Something
+   like `Which choice is best for underlined portion 7?` differs from item 3 in
+   the same passage only by a digit — and `shapeSignature` maps digits to `#`,
+   so every underlined item in a set collapses to one shape. Anchor on
+   `passageId`, the same fix already applied in `duplicateErrors`,
+   `exactSignature` and `check-difficulty.js`. **This is the fourth place the
+   passage-set assumption bites.**
+
+3. **`strategy` is per-subskill, everything else is per-item.** Reading uses a
+   25-entry table in its generator because the fastest reliable approach to a
+   given item type genuinely is the same every time. Do the same here.
+   `explanation`, `solutionSteps`, `hint` and `trap` all come from the authored
+   question.
+
+4. **The catalog flip happens in this commit.** `content/catalog.json` still
+   gives ACT English 235 / 120 / 220. The authored bank is built to
+   **175 / 92 / 308**. `validateAll({requireComplete: true})` compares per-domain
+   counts exactly, so the catalog change and the new bank must land together or
+   `npm run check` fails. `tests/content.test.js` needs no change — it asserts
+   only that the domain targets sum to `targetPerSection`, and 175 + 92 + 308 =
+   575.
+
+Run `node scripts/check-passages.js act-english` first. It enforces the
+authoring rules this script is entitled to assume, and it currently reports
+clean.
+
+**Done when** `npm run check` passes, `npm run audit:questions` reports
+act-english, and the bank, the generated file and the catalog are committed
+together. Report the five numbers and the answer-position distribution.
+
+---
+
+## Task 14 — SAT Reading & Writing: write a plan, do not start the rebuild
+
+Only if credits remain after Task 13. This section has **16,900 near-duplicate
+stem pairs**, a 29% longest-key tell, and the content defects logged in the
+handoff — 25 ungrammatical keys, 29 explanations describing a different
+question, 40 stimulus/stem mismatches, ~87 article-agreement errors.
+
+It cannot be finished in a short sitting, and a half-finished attempt is worse
+than none because it leaves the bank in a state nobody can reason about. Write a
+plan into `docs/CODEX_REPORTS.md` covering what the 16,900 pairs actually are —
+run the audit's `shapeSignature` and count distinct shapes, as was done for SAT
+Math — and stop there.
+
 ## Where to write reports
 
 Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to

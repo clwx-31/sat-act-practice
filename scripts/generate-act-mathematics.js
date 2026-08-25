@@ -5070,12 +5070,10 @@ SHAPES["identities"] = {
       const answer = frac(2 * a * b, c * c);
       return {
         family: "double-angle-sine",
-        stem: choose(variant, [
-          `If sin θ = ${a}/${c} and cos θ = ${b}/${c}, what is sin 2θ?`,
-          `Given sin θ = ${a}/${c} and cos θ = ${b}/${c}, evaluate sin 2θ.`,
-          `For an angle with sin θ = ${a}/${c} and cos θ = ${b}/${c}, sin 2θ equals what?`,
-          `What is sin 2θ when sin θ = ${a}/${c} and cos θ = ${b}/${c}?`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `sin θ = ${a}/${c} and cos θ = ${b}/${c}`,
+          target: "sin 2θ",
+        }),
         answer,
         wrong: [
           [frac(2 * a, c), "This doubles the sine; sin 2θ is not 2 sin θ."],

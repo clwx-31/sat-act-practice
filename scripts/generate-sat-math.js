@@ -221,6 +221,18 @@ function registerShapePhrasings(subskill, focus) {
   SHAPE_PHRASINGS[subskill] = (stem, variant) => frames[variant % frames.length](stem);
 }
 
+function conceptualShape(family, stem, correct, wrong, explanation, principle) {
+  return () => ({
+    family,
+    stem,
+    correct,
+    wrong,
+    explanation,
+    steps: ["Identify the population, condition, or relationship named in the question.", "Apply the relevant statistical definition to the evidence given."],
+    principles: [principle],
+  });
+}
+
 function completeWrongPool(correct, wrong) {
   const completed = [];
   const seen = new Set([label(correct)]);

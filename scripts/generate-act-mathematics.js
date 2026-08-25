@@ -5161,12 +5161,9 @@ SHAPES["center and spread"] = {
       const answer = sorted[2];
       return {
         family: "median-of-a-list",
-        stem: choose(variant, [
-          `What is the median of ${values.join(", ")}?`,
-          `Find the median of the five values ${values.join(", ")}.`,
-          `The numbers ${values.join(", ")} have what median?`,
-          `Which value is the median of ${values.join(", ")}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the median of ${values.join(", ")}`,
+        }),
         answer,
         wrong: [
           [round3(values.reduce((sum, value) => sum + value, 0) / values.length), "This is the mean, not the middle value."],

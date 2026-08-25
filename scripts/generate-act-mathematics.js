@@ -6528,7 +6528,9 @@ SHAPES["proportions"] = {
       const answer = managers * scale;
       return {
         family: "chained-three-term-ratio",
-        stem: `At a firm the ratio of managers to engineers is ${a} to ${b}, and the ratio of engineers to technicians is ${c} to ${d}. If the firm has ${total} technicians, how many managers does it have?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the manager count at a firm with manager-to-engineer ratio ${a}:${b}, engineer-to-technician ratio ${c}:${d}, and ${total} technicians`,
+        }),
         answer,
         wrong: [
           [round3((total * a) / b), "This uses the manager-to-engineer ratio directly against the technician count, skipping the link through engineers."],

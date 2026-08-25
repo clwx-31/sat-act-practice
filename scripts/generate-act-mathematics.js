@@ -7681,9 +7681,12 @@ SHAPES["combined concepts"] = {
       ];
       const [workers, miles, days, newMiles, newWorkers] = choose(s, table);
       const answer = round3((days * newMiles * workers) / (miles * newWorkers));
+      const trip = scene(variant, TRAVEL);
       return {
         family: "combined-direct-and-inverse-variation",
-        stem: `A crew of ${workers} workers paves ${miles} miles of road in ${days} days. Working at the same rate per worker, how many days would ${newWorkers} workers need to pave ${newMiles} miles?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the days ${newWorkers} workers need to repair ${newMiles} miles of a ${trip.route} when ${workers} workers repair ${miles} miles in ${days} days at the same per-worker rate`,
+        }),
         answer,
         wrong: [
           [round3((days * newMiles) / miles), "This scales for the change in distance but ignores the change in crew size."],

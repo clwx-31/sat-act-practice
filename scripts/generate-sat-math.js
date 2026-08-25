@@ -222,8 +222,14 @@ function registerShapePhrasings(subskill, focus) {
 }
 
 function completeWrongPool(correct, wrong) {
-  const completed = wrong.slice(0, 6);
-  const seen = new Set([label(correct), ...completed.map(([value]) => label(value))]);
+  const completed = [];
+  const seen = new Set([label(correct)]);
+  wrong.forEach(([value, reason]) => {
+    const text = label(value);
+    if (completed.length >= 6 || seen.has(text) || ["NaN", "Infinity", "-Infinity"].includes(text)) return;
+    seen.add(text);
+    completed.push([value, reason]);
+  });
   if (typeof correct === "number") {
     [1, -1, 2, -2, 3, -3, 4, -4].forEach((offset) => {
       const candidate = correct + offset;

@@ -306,6 +306,7 @@ registerShapePhrasings("slope", "rate-of-change");
 registerShapePhrasings("intercepts", "axis-intercept");
 registerShapePhrasings("function notation", "function-value");
 registerShapePhrasings("graph interpretation", "linear-graph");
+registerShapePhrasings("equation modeling", "linear-model equation");
 
 defineShapes({
   "solve": {

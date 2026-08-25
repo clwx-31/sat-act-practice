@@ -4224,12 +4224,9 @@ SHAPES["coordinate geometry"] = {
       const answer = 2 * x2 - x1;
       return {
         family: "endpoint-from-midpoint",
-        stem: choose(variant, [
-          `The point (${x2}, ${y2}) is the midpoint of the segment from (${x1}, ${y1}) to (p, q). ${ask(variant, "p")}`,
-          `A segment has one endpoint (${x1}, ${y1}) and midpoint (${x2}, ${y2}). What is the x-coordinate of the other endpoint?`,
-          `If (${x2}, ${y2}) is halfway between (${x1}, ${y1}) and (p, q), what is p?`,
-          `Given midpoint (${x2}, ${y2}) and endpoint (${x1}, ${y1}), find the x-coordinate of the missing endpoint.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the missing endpoint's x-coordinate when (${x2}, ${y2}) is the midpoint between (${x1}, ${y1}) and (p, q)`,
+        }),
         answer,
         wrong: [
           [round3((x1 + x2) / 2), "This averages the endpoint and the midpoint, which finds a quarter point rather than the far endpoint."],

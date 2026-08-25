@@ -166,6 +166,55 @@ reports zero problems across all 48 subskills.
 
 ---
 
+## Task 5 — cross-shape collisions (supersedes the rest of Task 3)
+
+Your Task 3 report was correct and the stop was the right call. The diagnosis is
+in `docs/QUESTION_QUALITY_HANDOFF.md` under **"Why the ACT Mathematics rebuild
+failed the audit"** — read it first. The short version:
+
+`check-shapes` compares each shape against **its own reuses only**. It reports
+232 shapes clean while 137 of 575 items sit in a near-duplicate pair, because
+**225 of the 296 pairs are between two *different* subskills**. Task 2's eight
+shared frames (`Given`, `Suppose`, `Assume`, …) are the likely cause: the
+validator drops tokens of two characters or fewer, so a bare algebra stem is
+almost all frame, and shapes from different subskills now open identically.
+
+Two pieces of work, in this order:
+
+**5a. Make the harness see it.** Extend `scripts/check-shapes.js` to compare
+every emitted stem against every other emitted stem across all shapes in the
+section, applying the same Jaccard ≥ 0.90 rule as `duplicateErrors`, and report
+the colliding pairs with both subskill names. Today it only sweeps within a
+shape. Confirm the extended harness reproduces the failure — it should report
+roughly 296 pairs, not zero. **A harness that still reports clean has not been
+extended correctly**, and that check is the whole point of this step.
+
+**5b. Give each subskill its own phrasing.** Do not add more shared frames; that
+is what caused this. Each subskill needs wording no other subskill uses —
+subskill-specific verbs, nouns naming the object under test, and where a setting
+fits, a `scene()` pool reserved to that subskill. The heaviest clusters to start
+with are `notation` (which collides with five other subskills), `linear
+equations`, `exponents`, and `transformations`.
+
+**Done when** the extended harness reports zero cross-shape collisions and
+`node scripts/generate-act-mathematics.js --rebuild` followed by
+`npm run build:content` completes without the near-duplicate stop.
+
+Leave the rebuilt bank uncommitted until then, and do not run the audit as a way
+of deciding whether to proceed — 5a's harness is the gate now.
+
+Note: the 45.7% answerable-without-reading figure is a **separate** problem. Do
+not try to fix it in this task.
+
+## Where to write reports
+
+Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to
+`docs/QUESTION_QUALITY_HANDOFF.md`. The handoff is edited continuously in the
+other lane and concurrent edits to it are the one merge conflict this setup can
+produce. Create the file if it does not exist.
+
+---
+
 ## Commands
 
 ```sh

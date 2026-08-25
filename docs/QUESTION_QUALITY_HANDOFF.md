@@ -362,6 +362,45 @@ Everything else the harness reports is correct, including the keep-rate
 denominator (`6/23 underlined`, 26.1%) and the on-pace domain and difficulty
 tables, which show 0 gap on all six rows at 30 questions.
 
+### Why the ACT Mathematics rebuild failed the audit — diagnosis 2026-08-24
+
+Codex rebuilt the bank and stopped at a failed audit, correctly, without
+loosening a gate (its report is committed on `codex-lane` as `7d38944`). The
+audit reported 8.2% near duplicates against a 2% target and 45.7% answerable
+without reading against a 40% target.
+
+**The near-duplicate failure is not what the shape harness measures.** Measuring
+the uncommitted bank directly gives 296 near-duplicate pairs touching 137 of 575
+items (23.8%). Of those pairs:
+
+- **71 are between two uses of the same subskill.**
+- **225 — three quarters — are between *different* subskills.**
+
+The heaviest cross-subskill clusters are `notation` against `linear equations`
+(30 pairs), `exponents` against `notation` (23), `notation` against
+`transformations` (19), and `exponents` against `linear equations` (18).
+
+`scripts/check-shapes.js` tests each shape against **its own reuses**. It cannot
+see two *different* shapes converging, so it reports clean while a quarter of the
+bank is in a near-duplicate pair. That is a gap in the harness, not a flake.
+
+**The Task 2 remedy is the probable cause of the Task 3 failure.** Task 2 told
+every bare-algebra shape to rotate through the same eight frames — `Given`,
+`Suppose`, `Assume`, `Determine`, `Which`, `When`, `Let`, `Take`. The validator
+tokenises words of **more than two characters**, so an algebra stem is almost
+entirely frame: the variables, digits, and operators contribute nothing. Two
+shapes from different subskills that both open `Suppose f(x) = 5x + …` are
+therefore near-identical to the rule even though they test different things.
+Giving every shape the same eight frames made the frames the whole signal.
+
+The fix is not more frames of the same kind. It is **per-subskill phrasing
+pools** — each subskill drawing from wording no other subskill uses — plus a
+harness that compares shapes against each other, not only against themselves.
+Filed as Codex Task 5 in `docs/CODEX_LANE.md`.
+
+The 45.7% answerable-without-reading figure is a separate, unrelated problem and
+is not addressed by any of this.
+
 ### The next four steps, in order
 
 1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes

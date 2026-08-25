@@ -3143,12 +3143,9 @@ SHAPES["quadratic"] = {
       const sum = r1 + r2;
       return {
         family: "roots-from-factored-quadratic",
-        stem: choose(variant, [
-          `The equation (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0 has two solutions. What is their sum?`,
-          `What is the sum of the solutions of (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0?`,
-          `If (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0, the two values of x add to what?`,
-          `Solve (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0 and report the sum of the roots.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the sum of the solutions of (x ${MINUS} ${r1})(x ${MINUS} ${r2}) = 0`,
+        }),
         answer: sum,
         wrong: [
           [r1 * r2, "This is the product of the roots, which is the constant term."],

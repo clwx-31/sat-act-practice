@@ -5136,12 +5136,9 @@ SHAPES["center and spread"] = {
       const answer = total / values.length;
       return {
         family: "mean-of-a-list",
-        stem: choose(variant, [
-          `What is the mean of ${values.join(", ")}?`,
-          `Find the average of the five values ${values.join(", ")}.`,
-          `The numbers ${values.join(", ")} have what mean?`,
-          `Compute the arithmetic mean of ${values.join(", ")}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the arithmetic mean of ${values.join(", ")}`,
+        }),
         answer: round3(answer),
         wrong: [
           [values.slice().sort((a, b) => a - b)[2], "This is the median, the middle value, not the mean."],

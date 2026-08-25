@@ -5190,7 +5190,9 @@ SHAPES["center and spread"] = {
       const answer = (count + 1) * targetMean - currentTotal;
       return {
         family: "value-needed-to-reach-a-target-mean",
-        stem: `A student's ${count} quiz scores average ${currentMean}. What score on the next quiz would raise the average of all ${count + 1} quizzes to ${targetMean}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the next quiz score needed to raise a student's ${count}-quiz average of ${currentMean} to ${targetMean} across all ${count + 1} quizzes`,
+        }),
         answer,
         wrong: [
           [targetMean, "This is the target average itself; one score must pull the whole set up, so it exceeds the target."],

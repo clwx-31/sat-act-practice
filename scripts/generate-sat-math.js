@@ -4533,6 +4533,12 @@ defineShapes({
   "scatterplots|Hard",
 ].forEach((cell) => TEXT_ANSWER.add(cell));
 
+importActShapeSelections("basic probability", {
+  Easy: [["compound probability", "Easy", 0], ["compound probability", "Easy", 1]],
+  Medium: [["compound probability", "Medium", 1], ["counting", "Easy", 0]],
+  Hard: [["compound probability", "Hard", 0], ["compound probability", "Medium", 0]],
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

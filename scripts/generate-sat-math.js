@@ -4701,6 +4701,41 @@ defineShapes({
   },
 });
 
+registerShapePhrasings("Pythagorean theorem", "right-triangle length");
+
+defineShapes({
+  "Pythagorean theorem": {
+    Easy: [
+      importedActShape("Pythagorean theorem", "triangles", "Easy", 1),
+      importedActShape("Pythagorean theorem", "coordinate geometry", "Easy", 1),
+    ],
+    Medium: [
+      (t) => {
+        const k = t.int(2, 6); const leg = 3 * k; const other = 4 * k; const hyp = 5 * k;
+        return { family: "missing-leg", stem: `A right triangle has hypotenuse ${hyp} and one leg ${leg}. What is the length of the other leg?`, correct: other,
+          wrong: [[hyp - leg, "This subtracts lengths instead of subtracting their squares."], [Math.sqrt(hyp * hyp + leg * leg), "This treats the hypotenuse as another leg."], [hyp + leg, "This adds side lengths rather than using the Pythagorean theorem."], [leg, "This repeats the known leg."]], explanation: `The missing leg is √(${hyp}² ${MINUS} ${leg}²) = √${other * other} = ${other}.`, steps: ["Square the hypotenuse and known leg.", "Subtract and take the positive square root."], principles: ["For a right triangle, a² + b² = c² with c the hypotenuse."] };
+      },
+      (t) => {
+        const k = t.int(2, 8); const width = 5 * k; const height = 12 * k; const diagonal = 13 * k;
+        return { family: "rectangle-diagonal", stem: `A rectangle is ${width} units wide and ${height} units tall. What is the length of its diagonal?`, correct: diagonal,
+          wrong: [[width + height, "This adds the side lengths rather than using them as perpendicular legs."], [height - width, "This subtracts the side lengths."], [width * height, "This is the rectangle's area."], [(width + height) * 2, "This is the perimeter."]], explanation: `The diagonal is the hypotenuse: √(${width}² + ${height}²) = ${diagonal}.`, steps: ["Treat the width and height as perpendicular legs.", "Apply the Pythagorean theorem and take the square root."], principles: ["A rectangle's diagonal forms a right triangle with two adjacent sides."], verification: { kind: "pythagorean", inputs: [width, height], expected: diagonal } };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const k = t.int(1, 5); const a = 3 * k; const b = 4 * k; const c = 12 * k; const diagonal = 13 * k;
+        return { family: "rectangular-prism-diagonal", stem: `A rectangular prism has side lengths ${a}, ${b}, and ${c}. What is the length of the segment joining opposite vertices?`, correct: diagonal,
+          wrong: [[a + b + c, "This adds three edge lengths rather than combining perpendicular components."], [a * b * c, "This is the volume."], [5 * k, `This is only the diagonal of the ${a} by ${b} face.`], [Math.sqrt(a * a + b * b), "This omits the third dimension."]], explanation: `The space diagonal is √(${a}² + ${b}² + ${c}²) = √${diagonal * diagonal} = ${diagonal}.`, steps: ["Find or represent the diagonal of one face.", "Combine that perpendicular length with the third edge using the Pythagorean theorem again."], principles: ["A rectangular-prism diagonal satisfies d² = l² + w² + h²."], verification: { kind: "pythagorean", inputs: [5 * k, c], expected: diagonal } };
+      },
+      (t) => {
+        const y = t.int(2, 9); const run = t.int(3, 10); const distance = Math.hypot(run, y);
+        return { family: "coordinate-distance-unknown", stem: `The distance between (0, 0) and (x, ${y}) is ${formatNumber(distance)}, where x is positive. What is x?`, correct: run,
+          wrong: [[distance - y, "This subtracts coordinate differences instead of their squares."], [distance + y, "This adds a coordinate difference to the distance."], [y, "This repeats the vertical coordinate difference."], [distance * distance - y * y, "This is x², before taking the positive square root."]], explanation: `x² + ${y}² = ${formatNumber(distance)}², so x² = ${run * run} and positive x = ${run}.`, steps: ["Apply the distance formula from the origin.", "Subtract the vertical square and take the positive square root."], principles: ["The distance formula is the Pythagorean theorem in coordinates."] };
+      },
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

@@ -3206,12 +3206,10 @@ SHAPES["quadratic"] = {
       const c = r1 * r2;
       return {
         family: "solve-quadratic-by-factoring",
-        stem: choose(variant, [
-          `What is the greater solution of x² ${MINUS} ${Math.abs(b)}x + ${c} = 0?`,
-          `The equation x² ${MINUS} ${Math.abs(b)}x + ${c} = 0 has two roots. Which is larger?`,
-          `Solve x² ${MINUS} ${Math.abs(b)}x + ${c} = 0 and give the greater value of x.`,
-          `Of the two solutions of x² ${MINUS} ${Math.abs(b)}x + ${c} = 0, which is the greater?`,
-        ]),
+        stem: pose(variant, "extremeSolution", {
+          equation: `x² ${MINUS} ${Math.abs(b)}x + ${c} = 0`,
+          extreme: "greater",
+        }),
         answer: r2,
         wrong: [
           [r1, "This is the smaller of the two roots."],

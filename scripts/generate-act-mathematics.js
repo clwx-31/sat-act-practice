@@ -4036,12 +4036,9 @@ SHAPES["circles"] = {
       const answer = 2 * inscribed;
       return {
         family: "inscribed-angle-theorem",
-        stem: choose(variant, [
-          `An inscribed angle in a circle measures ${inscribed}°. What is the measure of the central angle subtending the same arc?`,
-          `In a circle, an inscribed angle of ${inscribed}° and a central angle share an arc. What does the central angle measure?`,
-          `An angle inscribed in a circle intercepts an arc and measures ${inscribed}°. How large is that arc?`,
-          `If an inscribed angle measures ${inscribed}°, the central angle on the same arc measures what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the central angle subtending the same arc as an inscribed angle of ${inscribed}°`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(inscribed), "The inscribed angle is half the central angle, so the two are not equal."],

@@ -4604,12 +4604,9 @@ SHAPES["volume"] = {
       const answer = length * width * height;
       return {
         family: "rectangular-prism-volume",
-        stem: choose(variant, [
-          `What is the volume of a rectangular box measuring ${length} by ${width} by ${height}?`,
-          `A rectangular prism has dimensions ${length}, ${width}, and ${height}. What is its volume?`,
-          `A container is ${length} by ${width} by ${height}. How much does it hold?`,
-          `Find the volume of a ${length} by ${width} by ${height} rectangular prism.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the volume of a rectangular prism with dimensions ${length}, ${width}, and ${height}`,
+        }),
         answer,
         wrong: [
           [2 * (length * width + length * height + width * height), "This is the surface area, not the volume."],

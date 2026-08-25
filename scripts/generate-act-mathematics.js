@@ -4259,12 +4259,9 @@ SHAPES["area"] = {
       const answer = width * height;
       return {
         family: "rectangle-area",
-        stem: choose(variant, [
-          `A rectangle measures ${width} by ${height}. What is its area?`,
-          `What is the area of a rectangle whose sides are ${width} and ${height}?`,
-          `A rectangular panel is ${width} units wide and ${height} units tall. What is its area?`,
-          `Find the area of a ${width} by ${height} rectangle.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area of a rectangle with side lengths ${width} and ${height}`,
+        }),
         answer,
         wrong: [
           [2 * (width + height), "This is the perimeter, the distance around, not the area."],

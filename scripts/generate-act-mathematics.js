@@ -5985,9 +5985,12 @@ SHAPES["compound probability"] = {
       const blue = 4 + (s % 5);
       const total = red + blue;
       const answer = frac(red * (red - 1), total * (total - 1));
+      const draw = scene(variant, DRAW_POOL);
       return {
         family: "dependent-draws-without-replacement",
-        stem: `A jar holds ${red} red and ${blue} blue tokens. Two tokens are drawn without replacement. What is the probability that both are red?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the probability that two ${draw.item} drawn without replacement from a ${draw.container} holding ${red} ${draw.first} and ${blue} ${draw.second} ${draw.item} are both ${draw.first}`,
+        }),
         answer,
         wrong: [
           [frac(red * red, total * total), "This treats the draws as independent; without replacement the second draw has one fewer token of each kind."],

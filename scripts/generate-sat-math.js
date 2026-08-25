@@ -310,6 +310,7 @@ registerShapePhrasings("equation modeling", "linear-model equation");
 registerShapePhrasings("solve systems", "simultaneous-equation");
 registerShapePhrasings("interpret intersection", "system-intersection");
 registerShapePhrasings("solve inequalities", "inequality boundary");
+registerShapePhrasings("systems of inequalities", "feasible-region");
 
 defineShapes({
   "solve": {

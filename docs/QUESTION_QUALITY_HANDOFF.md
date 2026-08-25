@@ -265,6 +265,25 @@ Deployed from `main` via GitHub Pages at
 
 Where this stopped, precisely, so the next session does not repeat the audit.
 
+### Codex Task 3 rebuild failure — 2026-08-24
+
+Codex rebuilt ACT Mathematics with the required `--rebuild` flag. The generator
+kept the 5 `legacy-migration` items, generated 570 items, and wrote a canonical
+bank of 575 items. `npm run build:content` then stopped on cross-item near
+duplicates, so the generated browser bank was not updated.
+
+The unchanged question audit gate reports:
+
+- 575 items, with 47 near duplicates (8.2%) and 528 distinct question shapes;
+- a largest family of 5 items (0.9%);
+- 45.7% answerable without reading;
+- `FAIL: near-duplicate rate, answerable without reading`.
+
+Per `docs/CODEX_LANE.md` Task 3, work stopped at the failed audit. Neither
+`scripts/audit-questions.js` nor `scripts/lib/content.js` was loosened, and the
+difficulty check was not run. The rebuilt canonical bank remains uncommitted;
+the generated bank still reflects the previously committed canonical bank.
+
 ### Completed and committed
 
 - **ACT Reading, end to end.** 55 passage files in `scripts/data/act-reading/`

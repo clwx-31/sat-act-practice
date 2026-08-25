@@ -4736,6 +4736,29 @@ defineShapes({
   },
 });
 
+registerShapePhrasings("circle measures", "circle arc and angle");
+
+defineShapes({
+  "circle measures": {
+    Easy: [
+      importedActShape("circle measures", "circles", "Easy", 0),
+      importedActShape("circle measures", "circles", "Easy", 1),
+    ],
+    Medium: [
+      importedActShape("circle measures", "circles", "Medium", 0),
+      importedActShape("circle measures", "circles", "Medium", 1),
+    ],
+    Hard: [
+      importedActShape("circle measures", "circles", "Hard", 1),
+      (t) => {
+        const radius = t.int(3, 15);
+        return { family: "radius-tangent-angle", stem: `A line is tangent to a circle at point T, and O is the center of the circle. What is the measure, in degrees, of the angle between OT and the tangent line?`, correct: 90,
+          wrong: [[radius, "The radius length does not determine the angle measure."], [45, "A radius to a tangent point forms a right angle, not a 45-degree angle."], [180, "A straight angle would place the radius along the tangent."], [360, "This is a full turn, not the angle at the tangency point."]], explanation: `A radius drawn to a point of tangency is perpendicular to the tangent line, so the angle is 90°.`, steps: ["Identify OT as a radius to the tangency point.", "Apply the radius-tangent perpendicularity theorem."], principles: ["A tangent to a circle is perpendicular to the radius at the point of tangency."] };
+      },
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

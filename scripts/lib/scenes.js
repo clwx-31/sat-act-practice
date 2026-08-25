@@ -185,6 +185,18 @@ const EXPONENTIAL_GROWTH = [
   { subject: "cell sample", unit: "cells", period: "minute" },
 ];
 
+// A measured radioactive sample loses half its mass over each half-life.
+const DECAY_SAMPLE = [
+  "medical isotope sample",
+  "archaeological carbon fragment",
+  "laboratory phosphorus tracer",
+  "sealed radium source",
+  "environmental cesium specimen",
+  "geological potassium sample",
+  "research iodine capsule",
+  "calibration cobalt standard",
+];
+
 // A membership combines one enrollment charge with a monthly rate.
 const MEMBERSHIP = [
   { service: "climbing gym", member: "climber" },
@@ -249,6 +261,7 @@ module.exports = {
   scene,
   COHORT,
   COLLECTION,
+  DECAY_SAMPLE,
   EXPONENTIAL_GROWTH,
   FINANCE,
   GROUND,

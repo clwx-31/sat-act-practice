@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { COLLECTION, EXPONENTIAL_GROWTH, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { COLLECTION, DECAY_SAMPLE, EXPONENTIAL_GROWTH, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -3344,9 +3344,10 @@ SHAPES["exponential"] = {
       const halvings = 2 + (s % 4);
       const answer = start / 2 ** halvings;
       const halfLife = 3 + (s % 5);
+      const sample = scene(variant, DECAY_SAMPLE);
       return {
         family: "half-life-decay",
-        stem: `A sample of ${start} milligrams decays with a half-life of ${halfLife} years. How many milligrams remain after ${halfLife * halvings} years?`,
+        stem: `A ${sample} of ${start} milligrams decays with a half-life of ${halfLife} years. How many milligrams remain after ${halfLife * halvings} years?`,
         answer,
         wrong: [
           [round3(start / (2 * halvings)), "This divides by twice the number of half-lives instead of halving repeatedly."],

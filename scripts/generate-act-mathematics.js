@@ -7267,7 +7267,9 @@ SHAPES["averages"] = {
       const answer = count * mean - (count - 1) * restMean;
       return {
         family: "value-removed-changes-the-mean",
-        stem: `The average of ${count} numbers is ${mean}. When one of the numbers is removed, the average of the remaining ${count - 1} numbers is ${restMean}. What was the number that was removed?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the removed number when ${count} numbers average ${mean} and the remaining ${count - 1} average ${restMean}`,
+        }),
         answer,
         wrong: [
           [round3(count * restMean - (count - 1) * mean), "This pairs each average with the other's count, reversing the roles of the two totals."],

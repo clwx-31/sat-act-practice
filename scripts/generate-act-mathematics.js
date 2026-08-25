@@ -6591,9 +6591,12 @@ SHAPES["percentages"] = {
       const before = span(s, 40, 6, 20);
       const after = before + (before * choose(s, [5, 10, 20, 25])) / 100;
       const answer = round3(((after - before) / before) * 100);
+      const membership = scene(variant, MEMBERSHIP);
       return {
         family: "percent-increase",
-        stem: `A club's membership grew from ${before} to ${after}. By what percent did it increase?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the percent increase when a ${membership.service}'s membership grows from ${before} to ${after}`,
+        }),
         answer,
         wrong: [
           [after - before, "This is the raw increase, not a percent."],

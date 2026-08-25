@@ -5345,18 +5345,16 @@ SHAPES["data displays"] = {
       const counts = [8 + (s % 5), 14 + (s % 6), 11 + (s % 4), 17 + (s % 7)];
       const total = counts.reduce((sum, value) => sum + value, 0);
       const answer = total;
+      const collection = scene(variant, COLLECTION);
       return {
         family: "total-from-a-table",
         stimulus: {
           type: "table",
-          content: `A repair café logged the items brought in over four weeks.\n\nweek | items\n${counts.map((value, index) => `Week ${index + 1} | ${value}`).join("\n")}`,
+          content: `A ${collection.owner} logged ${collection.plural} added to a ${collection.holder} over four weeks.\n\nweek | ${collection.plural}\n${counts.map((value, index) => `Week ${index + 1} | ${value}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          "According to the table, how many items were brought in over the four weeks?",
-          "What is the total number of items recorded in the table?",
-          "Across all four weeks, how many items were brought in altogether?",
-          "The table records how many items in total?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the total number of ${collection.plural} recorded across all four weeks`,
+        }),
         answer,
         wrong: [
           [Math.max(...counts), "This is the busiest single week."],

@@ -308,6 +308,7 @@ registerShapePhrasings("function notation", "function-value");
 registerShapePhrasings("graph interpretation", "linear-graph");
 registerShapePhrasings("equation modeling", "linear-model equation");
 registerShapePhrasings("solve systems", "simultaneous-equation");
+registerShapePhrasings("interpret intersection", "system-intersection");
 
 defineShapes({
   "solve": {
@@ -1850,9 +1851,9 @@ defineShapes({
       },
       (t, scene) => {
         const perWeekA = t.int(2, 9);
-        const startA = t.int(40, 200);
-        const perDayB = t.int(1, 4);
-        const startB = t.int(20, 180);
+        const startB = t.int(20, 120);
+        const startA = startB + t.int(20, 100);
+        const perDayB = t.int(2, 4);
         const perWeekB = 7 * perDayB;
         const gap = startA - startB;
         const diff = perWeekB - perWeekA;
@@ -1862,7 +1863,7 @@ defineShapes({
           stem: `${scene.place} has ${startA} ${scene.item} and gains ${perWeekA} more each week. A second site has ${startB} and gains ${perDayB} each day. Assuming steady rates, what is the least whole number of weeks after which the second site has at least as many as the first?`,
           correct: weeks,
           wrong: [
-            [Math.ceil(gap / (perDayB - perWeekA)) > 0 ? Math.ceil(gap / (perDayB - perWeekA)) : gap, "This compares a weekly rate with a daily rate without converting to a common unit."],
+            [Math.ceil(gap / perDayB), "This treats a daily rate as though it were already a weekly rate."],
             [gap, "This is the initial difference in supply, not a number of weeks."],
             [diff, "This is the weekly gain in the gap, not the number of weeks."],
             [weeks * 7, "This reports the answer in days rather than weeks."],

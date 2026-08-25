@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SOLUTION, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { CHOICE_MENU, COHORT, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SOLUTION, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -7168,9 +7168,12 @@ SHAPES["averages"] = {
       const scores = [span(s, 72, 6, 2), span(s, 80, 5, 3), span(s, 88, 4, 2), span(s, 91, 4, 2)];
       const total = scores.reduce((sum, value) => sum + value, 0);
       const answer = round3(total / scores.length);
+      const cohort = scene(variant, COHORT);
       return {
         family: "mean-of-test-scores",
-        stem: `A student's four test scores are ${scores.join(", ")}. What is the student's average score?`,
+        stem: pose(variant, "quantityOf", {
+          description: `a ${cohort.member}'s average across four ${cohort.plural} scored ${scores.join(", ")}`,
+        }),
         answer,
         wrong: [
           [total, "This is the total of the scores, not their average."],

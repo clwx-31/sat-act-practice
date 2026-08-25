@@ -5823,9 +5823,12 @@ SHAPES["counting"] = {
       const n = 5 + (s % 4);
       const r = 3;
       const answer = permutations(n, r);
+      const menu = scene(variant, CHOICE_MENU);
       return {
         family: "permutations-of-ranked-places",
-        stem: `${n} runners finish a race with no ties. How many different orderings of first, second, and third place are possible?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of first-, second-, and third-place orders possible among ${n} finalists in a ${menu.product} design contest with no ties`,
+        }),
         answer,
         wrong: [
           [combinations(n, r), "This ignores the ranking; first, second, and third are distinguishable positions."],

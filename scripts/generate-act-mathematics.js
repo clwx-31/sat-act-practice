@@ -7642,9 +7642,12 @@ SHAPES["combined concepts"] = {
       const percent = choose(s, [25, 50, 20, 75]);
       const larger = parts2 * scale;
       const answer = round3((larger * percent) / 100);
+      const collection = scene(variant, COLLECTION);
       return {
         family: "ratio-then-percent",
-        stem: `A collection of ${total} stamps is split between two albums in the ratio ${parts1} to ${parts2}. Of the stamps in the larger album, ${percent}% are foreign. How many foreign stamps are in the larger album?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the marked ${collection.plural} in the larger of two ${collection.holder} groups when ${total} are split ${parts1}:${parts2} and ${percent}% of the larger group are marked`,
+        }),
         answer,
         wrong: [
           [larger, "This is the number of stamps in the larger album, before the percent is applied."],

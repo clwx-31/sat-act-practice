@@ -353,8 +353,10 @@ the generated bank still reflects the previously committed canonical bank.
   5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
   Passage 029 is `029-allowed-to-quit.js` (personal essay, 14 questions at
   4 / 2 / 8, 4/7/3, 3 keeps of 11 = 27.3%).
-  **29 of 40 authored, 420 of 575 questions**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 87 of 328 = 26.5%. Verified
+  Passage 030 is `030-the-air-has.js` (informative essay, 13 questions at
+  4 / 2 / 7, 4/5/4, 3 keeps of 11 = 27.3%).
+  **30 of 40 authored, 433 of 575 questions — three quarters of the section**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 90 of 339 = 26.5%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.

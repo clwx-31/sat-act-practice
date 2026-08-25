@@ -4711,12 +4711,9 @@ SHAPES["volume"] = {
       const answer = (4 * radius ** 3) / 3;
       return {
         family: "sphere-volume",
-        stem: choose(variant, [
-          `What is the volume of a sphere of radius ${radius}, in terms of π?`,
-          `A sphere has radius ${radius}. Express its volume in terms of π.`,
-          `Find the volume of a spherical tank of radius ${radius}.`,
-          `The volume of a sphere whose radius is ${radius} equals what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the volume, in terms of π, of a sphere with radius ${radius}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(4 * radius * radius), "This is the surface area, 4πr², not the volume."],

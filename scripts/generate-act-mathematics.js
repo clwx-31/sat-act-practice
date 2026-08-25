@@ -4768,12 +4768,9 @@ SHAPES["right-triangle trigonometry"] = {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
       return {
         family: "sine-ratio-from-sides",
-        stem: choose(variant, [
-          `In a right triangle, the side opposite angle A measures ${a} and the hypotenuse measures ${c}. What is sin A?`,
-          `A right triangle has hypotenuse ${c} and a side of ${a} opposite angle A. What is the value of sin A?`,
-          `If the leg opposite angle A is ${a} and the hypotenuse is ${c}, sin A equals what?`,
-          `What is sin A in a right triangle whose hypotenuse is ${c} and whose side opposite A is ${a}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `sin A in a right triangle whose side opposite A is ${a} and whose hypotenuse is ${c}`,
+        }),
         answer: frac(a, c),
         wrong: [
           [frac(b, c), "This is cos A, the adjacent side over the hypotenuse."],

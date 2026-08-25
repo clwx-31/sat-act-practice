@@ -7577,7 +7577,9 @@ SHAPES["combined concepts"] = {
       const answer = money(inches * costPerInch);
       return {
         family: "convert-then-price",
-        stem: `Ribbon costs ${costPerInch} per inch. How much does ${feet} feet of ribbon cost, given that 1 foot is 12 inches?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the cost of ${feet} feet of ribbon priced at ${costPerInch} per inch, given 1 foot = 12 inches`,
+        }),
         answer,
         wrong: [
           [money(feet * costPerInch), "This prices the ribbon by the foot at the per-inch rate."],

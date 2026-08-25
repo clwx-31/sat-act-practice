@@ -27,10 +27,21 @@ const SECTIONS = {
   "sat-math": () => require("./generate-sat-math").SHAPES,
 };
 
+function loadActMathematicsRebuildGenerator() {
+  const modulePath = require.resolve("./generate-act-mathematics");
+  delete require.cache[modulePath];
+  process.argv.push("--rebuild");
+  try {
+    return require(modulePath).generate;
+  } finally {
+    process.argv.pop();
+  }
+}
+
 const SECTION_GENERATORS = {
   "act-mathematics": {
     generatorName: "act-mathematics-generator-v1",
-    load: () => require("./generate-act-mathematics").generate,
+    load: loadActMathematicsRebuildGenerator,
   },
 };
 
@@ -285,7 +296,6 @@ function checkCrossShapeCollisions(sectionKey, problems) {
     return {
       sequence,
       subskill: task.subskill,
-      shape: `${task.subskill}|${family}`,
       family,
       tokens: tokenSet({
         ...question,
@@ -298,7 +308,6 @@ function checkCrossShapeCollisions(sectionKey, problems) {
   let collisions = 0;
   for (let left = 0; left < emitted.length; left += 1) {
     for (let right = left + 1; right < emitted.length; right += 1) {
-      if (emitted[left].shape === emitted[right].shape) continue;
       const overlap = jaccard(emitted[left].tokens, emitted[right].tokens);
       if (overlap < NEAR_DUPLICATE) continue;
       collisions += 1;

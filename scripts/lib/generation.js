@@ -269,8 +269,10 @@ function generateSection(sectionKey, generator, options = {}) {
 
 module.exports = {
   arrangeChoices,
+  assignDifficulties,
   baseRecord,
   createRandom,
+  expandTaxonomy,
   generateSection,
   hashString,
   pick,

@@ -6793,9 +6793,12 @@ SHAPES["perimeter and area"] = {
       const width = span(s, 4, 5, 2);
       const length = span(s, 9, 6, 3);
       const area = length * width;
+      const ground = scene(variant, GROUND);
       return {
         family: "rectangle-missing-side-from-area",
-        stem: `A rectangular rug has an area of ${area} square feet and a width of ${width} feet. What is its length, in feet?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the length, in feet, of a rectangular ${ground.region} with area ${area} square feet and width ${width} feet`,
+        }),
         answer: length,
         wrong: [
           [area - width, "This subtracts the width from the area; area is a product, so recovering a side needs division."],

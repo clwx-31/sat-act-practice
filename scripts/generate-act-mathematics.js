@@ -6054,12 +6054,9 @@ SHAPES["compound probability"] = {
       );
       return {
         family: "at-least-one-via-complement",
-        stem: choose(variant, [
-          `On each of ${trials} independent attempts, the probability of failure is ${missNumerator}/${missDenominator}. What is the probability of at least one success?`,
-          `An attempt fails with probability ${missNumerator}/${missDenominator}. Over ${trials} independent attempts, what is the probability of succeeding at least once?`,
-          `Each of ${trials} independent trials fails with probability ${missNumerator}/${missDenominator}. How likely is at least one success?`,
-          `The chance of failure on a single attempt is ${missNumerator}/${missDenominator}. In ${trials} independent attempts, what is the probability that at least one succeeds?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the probability of at least one success in ${trials} independent attempts when each fails with probability ${missNumerator}/${missDenominator}`,
+        }),
         answer,
         wrong: [
           [frac(missDenominator - missNumerator, missDenominator), "This is the probability of success on a single attempt, not across all " + trials + "."],

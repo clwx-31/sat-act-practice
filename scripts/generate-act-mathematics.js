@@ -5103,12 +5103,9 @@ SHAPES["identities"] = {
       const sineText = { 30: "1/2", 45: "√2/2", 60: "√3/2" }[solutions.value];
       return {
         family: "solve-trig-equation-on-an-interval",
-        stem: choose(variant, [
-          `How many solutions does sin θ = ${sineText} have for 0° ≤ θ < 360°?`,
-          `On the interval 0° ≤ θ < 360°, the equation sin θ = ${sineText} has how many solutions?`,
-          `Find the number of angles θ with 0° ≤ θ < 360° satisfying sin θ = ${sineText}.`,
-          `For 0° ≤ θ < 360°, how many values of θ satisfy sin θ = ${sineText}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of solutions to sin θ = ${sineText} on 0° ≤ θ < 360°`,
+        }),
         answer: 2,
         wrong: [
           [1, `Only ${solutions.value}° is found by the inverse sine, but ${solutions.other}° has the same sine.`],

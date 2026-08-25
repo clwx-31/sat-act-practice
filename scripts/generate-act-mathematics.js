@@ -5222,7 +5222,9 @@ SHAPES["center and spread"] = {
       const answer = round3((groupA * meanA + groupB * meanB) / (groupA + groupB));
       return {
         family: "weighted-mean-of-two-groups",
-        stem: `One class of ${groupA} students averaged ${meanA} on a test, while another class of ${groupB} students averaged ${meanB}. To the nearest hundredth, what is the mean score of all ${groupA + groupB} students combined?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest hundredth, the combined mean of ${groupA} scores averaging ${meanA} and ${groupB} scores averaging ${meanB}`,
+        }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
           [round3((meanA + meanB) / 2), "This averages the two class means, which is only valid when the classes are the same size."],

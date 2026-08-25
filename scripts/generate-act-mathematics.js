@@ -6314,9 +6314,12 @@ SHAPES["rates"] = {
       const hours = span(s, 2, 3);
       const minutes = hours * 60;
       const answer = (a * minutes) / m + (b * minutes) / p;
+      const production = scene(variant, PRODUCTION);
       return {
         family: "two-machine-rate-with-time-conversion",
-        stem: `Machine A seals ${a} cartons every ${m} minutes and machine B seals ${b} cartons every ${p} minutes. If both run continuously for ${hours} hours, how many cartons do they seal in all?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the total ${production.object} made in ${hours} hours by machines producing ${a} every ${m} minutes and ${b} every ${p} minutes`,
+        }),
         answer,
         wrong: [
           [round3((a * hours) / m + (b * hours) / p), "This uses hours where the rates are stated per minute; the running time has to be converted first."],

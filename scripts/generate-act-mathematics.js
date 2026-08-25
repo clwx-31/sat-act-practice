@@ -5419,18 +5419,16 @@ SHAPES["data displays"] = {
       const answer = round3(
         rows.reduce((sum, row) => sum + Number(row.label) * row.frequency, 0) / total,
       );
+      const collection = scene(variant, COLLECTION);
       return {
         family: "mean-from-a-frequency-table",
         stimulus: {
           type: "table",
-          content: `A survey recorded how many pets each household keeps.\n\npets | households\n${rows.map((row) => `${row.label} | ${row.frequency}`).join("\n")}`,
+          content: `A ${collection.owner} recorded how many ${collection.plural} each ${collection.holder} holds.\n\n${collection.plural} | locations\n${rows.map((row) => `${row.label} | ${row.frequency}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          "To the nearest hundredth, what is the mean number of pets per household?",
-          "According to the table, what is the average number of pets per household, to the nearest hundredth?",
-          "What is the mean of the pet counts, weighted by the number of households, to the nearest hundredth?",
-          "Find the average number of pets per household to the nearest hundredth.",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest hundredth, the mean number of ${collection.plural} per ${collection.holder}`,
+        }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
           [round3(Math.round((rows.reduce((sum, row) => sum + Number(row.label), 0) / rows.length) * 100) / 100), "This averages the pet counts 1 through 4 without weighting by how many households reported each."],

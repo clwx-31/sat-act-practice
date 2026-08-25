@@ -2,7 +2,7 @@
 "use strict";
 
 const { generateSection, hashString, rotate } = require("./lib/generation");
-const { loadBank } = require("./lib/content");
+const { jaccard, loadBank, tokenSet } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
 const { CHOICE_MENU, COHORT, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SOLUTION, SURFACE, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
@@ -129,6 +129,26 @@ function ask(variant, symbol) {
 // are reserved to the abstract subskills that need that extra signal; concrete
 // shapes already carry their own geometry, data, or real-world vocabulary.
 const SUBSKILL_LEADS = {
+  "angles": [
+    "Use the angle relationship shown.",
+    "Classify the geometric angle pair first.",
+    "Apply the relevant angle-sum fact.",
+    "Track how the two angle measures relate.",
+    "Interpret the angular condition before calculating.",
+    "Identify the governing angle equation.",
+    "Reason from the stated angle geometry.",
+    "Connect the unknown angle to its partner.",
+  ],
+  "area": [
+    "Model the two-dimensional region carefully.",
+    "Use the area relationship for this figure.",
+    "Track how the planar measure changes.",
+    "Decompose the region before calculating.",
+    "Interpret the figure's covered space.",
+    "Apply the appropriate area scale or formula.",
+    "Compare the component regions geometrically.",
+    "Measure the portion of the plane described.",
+  ],
   "averages": [
     "Use the arithmetic mean of the data.",
     "Balance the list around its average.",
@@ -158,6 +178,26 @@ const SUBSKILL_LEADS = {
     "Use the defining property of the imaginary unit.",
     "Combine the real-imaginary terms carefully.",
     "Analyze the complex expression by component.",
+  ],
+  "coordinate geometry": [
+    "Translate the coordinate data into geometry.",
+    "Use the point locations on the coordinate plane.",
+    "Relate the ordered pairs through a geometric formula.",
+    "Track horizontal and vertical coordinate changes.",
+    "Interpret the plane figures from their coordinates.",
+    "Analyze the coordinate relationship between the points.",
+    "Convert the plotted information into a measurement.",
+    "Reason from the Cartesian positions given.",
+  ],
+  "dimensional reasoning": [
+    "Follow the units through the calculation.",
+    "Build a conversion chain with compatible dimensions.",
+    "Cancel the measurement units in sequence.",
+    "Track how each rate changes the quantity.",
+    "Use dimensional labels to choose the operations.",
+    "Reconcile the rates before computing the result.",
+    "Let the desired unit guide the setup.",
+    "Analyze the compound measurement one factor at a time.",
   ],
   "domain and range": [
     "Identify the function's allowable inputs or outputs.",
@@ -219,6 +259,46 @@ const SUBSKILL_LEADS = {
     "Track the input through the stated function rule.",
     "Resolve the notation by using its definition.",
   ],
+  "number properties": [
+    "Use the integer structure in the statement.",
+    "Analyze the divisibility or sequence pattern.",
+    "Track the whole-number relationship carefully.",
+    "Represent the integers with their defining property.",
+    "Apply the relevant arithmetic pattern.",
+    "Reason from the spacing between the integers.",
+    "Identify the shared number-theory structure.",
+    "Translate the integer condition into an equation.",
+  ],
+  "percentages": [
+    "Represent the percent change with a multiplier.",
+    "Track the original and changed quantities separately.",
+    "Convert the percentage statement into a factor.",
+    "Use the correct base for the percent comparison.",
+    "Interpret which quantity represents one hundred percent.",
+    "Reverse or apply the stated percent operation.",
+    "Relate the part, rate, and reference amount.",
+    "Analyze the proportional change before calculating.",
+  ],
+  "proportions": [
+    "Set up the proportional relationship between quantities.",
+    "Track which variables scale together.",
+    "Use the constant ratio or product implied.",
+    "Compare corresponding quantities before solving.",
+    "Translate the variation statement into an equation.",
+    "Preserve the scaling relationship across both cases.",
+    "Identify whether the quantities vary directly or inversely.",
+    "Solve from the invariant connecting the variables.",
+  ],
+  "quadratic": [
+    "Analyze the parabola's defining structure.",
+    "Use the quadratic form suited to the question.",
+    "Track the roots, vertex, or discriminant as needed.",
+    "Interpret the second-degree function geometrically.",
+    "Rewrite the quadratic to expose the requested feature.",
+    "Apply the governing property of the parabola.",
+    "Connect the coefficients to the quadratic's behavior.",
+    "Reason from the squared-term structure first.",
+  ],
   "rational expressions": [
     "Analyze the algebraic fraction and its denominator.",
     "Preserve the restrictions of the rational expression.",
@@ -228,6 +308,36 @@ const SUBSKILL_LEADS = {
     "Identify valid cancellations in the rational form.",
     "Respect excluded values while manipulating the quotient.",
     "Rewrite the fractional expression without losing factors.",
+  ],
+  "regression": [
+    "Interpret the fitted relationship in its data context.",
+    "Compare the observed value with the model prediction.",
+    "Use the regression equation as a statistical estimate.",
+    "Track what the model's slope or residual represents.",
+    "Analyze the linear fit without claiming causation.",
+    "Relate the data point to the trend line.",
+    "Read the statistical model within its observed range.",
+    "Evaluate what the fitted line supports.",
+  ],
+  "right-triangle trigonometry": [
+    "Choose the trigonometric ratio matching the sides.",
+    "Model the right triangle before evaluating.",
+    "Relate the acute angle to the needed side lengths.",
+    "Use sine, cosine, or tangent from the diagram.",
+    "Separate the right-triangle calculation from any offset.",
+    "Identify opposite, adjacent, and hypotenuse roles.",
+    "Translate the elevation or depression into a triangle.",
+    "Apply the trigonometric relationship in stages.",
+  ],
+  "surface area": [
+    "Measure every exposed face of the solid.",
+    "Use the surface formula for the three-dimensional object.",
+    "Track the exterior area rather than the enclosed space.",
+    "Decompose the solid's boundary into familiar regions.",
+    "Interpret the requested measure as an outer covering.",
+    "Add or apply the areas forming the solid's surface.",
+    "Distinguish the boundary measure from volume.",
+    "Analyze the solid's complete exterior geometry.",
   ],
   "systems": [
     "Solve the simultaneous pair of equations.",
@@ -239,6 +349,16 @@ const SUBSKILL_LEADS = {
     "Track the ordered pair satisfying both statements.",
     "Analyze the linked equations together.",
   ],
+  "triangles": [
+    "Use the stated relationships within the triangle.",
+    "Identify the relevant triangular measure.",
+    "Apply the base-height or side-angle structure.",
+    "Track how the triangle's dimensions determine the result.",
+    "Interpret the geometric information as a triangle formula.",
+    "Reason from the sides, heights, or angles provided.",
+    "Connect the given measurements inside the triangle.",
+    "Analyze the three-sided figure before calculating.",
+  ],
   "transformations": [
     "Track the stated motion of the graph.",
     "Relate the transformed function to its parent.",
@@ -248,6 +368,16 @@ const SUBSKILL_LEADS = {
     "Use the transformation rule on the function.",
     "Determine how the curve's position or scale changes.",
     "Map the original relation to its transformed form.",
+  ],
+  "volume": [
+    "Measure the three-dimensional space described.",
+    "Use cross-sectional area through the solid's depth.",
+    "Track how the solid's dimensions determine capacity.",
+    "Interpret the displacement or enclosure geometrically.",
+    "Apply the appropriate volume relationship.",
+    "Build the cubic measure from the given lengths.",
+    "Analyze the space occupied inside the solid.",
+    "Relate the base region to the solid's extent.",
   ],
 };
 
@@ -7964,14 +8094,32 @@ const nextAnswerPosition = mirrorAnswerPlanner();
 // stops the bank from shipping the same sentence five times over.
 const shapeUses = new Map();
 
+function generatedChoiceSet(question) {
+  return [question.correct, ...question.distractors.map((item) => item.text)]
+    .slice()
+    .sort()
+    .join("||");
+}
+
+const retainedQuestions = loadBank(SECTION_KEY).filter(
+  (question) => !REBUILD || question.provenance.generator !== GENERATOR_NAME,
+);
+
 // Every stem the section has already emitted. A shape's parameters cycle, so
 // two uses that land on congruent sequences would otherwise print the same
 // sentence twice — that is where the previous rebuild's 63 exact duplicates
 // came from. A stem that has been seen is not rejected outright; the variant
 // is advanced first, which is what the wording rotations exist for, and only
 // then does the search move on to the next shape.
-const emittedStems = new Set();
+const emittedStems = new Set(retainedQuestions.map((question) => question.stem));
+const emittedTokenSets = retainedQuestions.map((question) => tokenSet(question));
+const emittedChoiceSets = new Set(
+  retainedQuestions
+    .filter((question) => Array.isArray(question.choices))
+    .map((question) => question.choices.slice().sort().join("||")),
+);
 const VARIANT_ATTEMPTS = 12;
+const PARAMETER_RETRY_STEP = 53;
 
 function generate({ sequence, task }) {
   const tier = task.difficulty;
@@ -7986,6 +8134,8 @@ function generate({ sequence, task }) {
   const index = nextAnswerPosition(tier, `${SECTION_KEY}-${sequence}`);
   const offset = hashString(`${SECTION_KEY}-${sequence}-shape`) % shapes.length;
   let unordered = null;
+  let repeatedChoices = null;
+  let repeatedStem = null;
   let duplicate = null;
 
   for (let step = 0; step < shapes.length; step += 1) {
@@ -7994,31 +8144,47 @@ function generate({ sequence, task }) {
     const base = shapeUses.get(key) || 0;
     for (let attempt = 0; attempt < VARIANT_ATTEMPTS; attempt += 1) {
       const variant = base + attempt;
+      const parameterSequence = sequence + attempt * PARAMETER_RETRY_STEP;
       const spec = distinguishSubskillStem(
         task.subskill,
-        shapes[position](sequence, variant),
+        shapes[position](parameterSequence, variant),
         variant,
       );
-      const fresh = !emittedStems.has(spec.stem);
       const built = assemble(spec, tier, index);
-      const candidate = { question: built.question, stem: spec.stem, key, variant };
-      if (fresh && built.ordered) return accept(candidate);
-      if (fresh && !unordered) unordered = candidate;
-      if (!fresh && !duplicate) duplicate = candidate;
-      if (!fresh) break;
+      const choiceSet = generatedChoiceSet(built.question);
+      const freshStem = !emittedStems.has(spec.stem);
+      const tokens = tokenSet({ ...built.question, section: "Mathematics" });
+      const freshShape = emittedTokenSets.every((prior) => jaccard(prior, tokens) < 0.9);
+      const freshText = freshStem && freshShape;
+      const freshChoices = !emittedChoiceSets.has(choiceSet);
+      const candidate = {
+        question: built.question,
+        stem: spec.stem,
+        tokens,
+        choiceSet,
+        key,
+        variant,
+      };
+      if (freshText && freshChoices && built.ordered) return accept(candidate);
+      if (freshText && freshChoices && !unordered) unordered = candidate;
+      if (freshText && !freshChoices && !repeatedChoices) repeatedChoices = candidate;
+      if (!freshText && freshChoices && !repeatedStem) repeatedStem = candidate;
+      if (!freshText && !freshChoices && !duplicate) duplicate = candidate;
     }
   }
 
   // A fresh stem whose choices could not be ordered around the planned answer
   // position beats a repeated one; ascending choices are cosmetic, a duplicate
   // question is not.
-  const chosen = unordered || duplicate;
+  const chosen = unordered || repeatedChoices || repeatedStem || duplicate;
   if (!chosen) throw new Error(`No usable ${tier} shape for ${task.subskill}`);
   return accept(chosen);
 }
 
-function accept({ question, stem, key, variant }) {
+function accept({ question, stem, tokens, choiceSet, key, variant }) {
   emittedStems.add(stem);
+  emittedTokenSets.push(tokens);
+  emittedChoiceSets.add(choiceSet);
   shapeUses.set(key, variant + 1);
   return question;
 }

@@ -289,10 +289,33 @@ function checkCrossShapeCollisions(sectionKey, problems) {
   const tasks = expandTaxonomy(section, existing);
   assignDifficulties(tasks, existing, catalog.difficultyTargets);
   const generate = config.load();
+  const choiceSets = new Map();
+  existing
+    .filter((question) => Array.isArray(question.choices))
+    .forEach((question) => {
+      choiceSets.set(question.choices.slice().sort().join("||"), {
+        sequence: question.id,
+        subskill: question.subskill,
+        family: "retained item",
+      });
+    });
   const emitted = tasks.map((task, index) => {
     const sequence = existing.length + index + 1;
     const question = generate({ sequence, task });
     const family = question.tags.find((tag) => tag.startsWith("templateFamily:")) || "untagged";
+    const choiceSet = [question.correct, ...question.distractors.map((item) => item.text)]
+      .slice()
+      .sort()
+      .join("||");
+    const prior = choiceSets.get(choiceSet);
+    if (prior) {
+      problems.push(
+        `${sectionKey} repeated choice set ${prior.subskill} (${prior.family}, ` +
+          `seq=${prior.sequence}) and ${task.subskill} (${family}, seq=${sequence})`,
+      );
+    } else {
+      choiceSets.set(choiceSet, { sequence, subskill: task.subskill, family });
+    }
     return {
       sequence,
       subskill: task.subskill,

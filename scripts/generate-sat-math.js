@@ -4482,6 +4482,8 @@ defineShapes({
 
 TEXT_ANSWER.add("spread|Hard");
 
+importActShapeSubskill("distributions", "data displays");
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

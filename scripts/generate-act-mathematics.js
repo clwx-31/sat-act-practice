@@ -4628,12 +4628,9 @@ SHAPES["volume"] = {
       const answer = radius * radius * height;
       return {
         family: "cylinder-volume",
-        stem: choose(variant, [
-          `What is the volume of a cylinder with radius ${radius} and height ${height}, in terms of π?`,
-          `A cylinder has radius ${radius} and height ${height}. Express its volume in terms of π.`,
-          `Find the volume of a cylindrical tank of radius ${radius} and height ${height}.`,
-          `A cylinder of radius ${radius} and height ${height} has what volume?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the volume, in terms of π, of a cylinder with radius ${radius} and height ${height}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(2 * radius * height + 2 * radius * radius), "This is the surface area, not the volume."],

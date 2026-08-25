@@ -2215,6 +2215,7 @@ registerShapePhrasings("linear-quadratic systems", "line-parabola system");
 registerShapePhrasings("nonlinear systems", "nonlinear-system");
 registerShapePhrasings("quadratic functions", "parabola feature");
 registerShapePhrasings("exponential functions", "exponential-model");
+registerShapePhrasings("polynomial functions", "polynomial structure");
 
 defineShapes({
   "factoring": {
@@ -3792,7 +3793,7 @@ defineShapes({
         const cAdjusted = root ** 3 + kInt * root * root - b * root;
         return {
           family: "factor-theorem-coefficient",
-          stem: `The polynomial p is defined by p(x) = x³ + kx² ${MINUS} ${b}x ${MINUS} ${cAdjusted}, where k is a constant. If x ${MINUS} ${root} is a factor of p, what is the value of k?`,
+          stem: `The polynomial p is defined by p(x) = x³ + kx² ${signed(-b)}x ${signed(-cAdjusted)}, where k is a constant. If x ${MINUS} ${root} is a factor of p, what is the value of k?`,
           correct: kInt,
           wrong: [
             [root, "This is the zero coming from the factor, not the unknown coefficient."],

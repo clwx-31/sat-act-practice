@@ -3698,12 +3698,9 @@ SHAPES["triangles"] = {
       const answer = 180 - first - second;
       return {
         family: "third-angle-of-triangle",
-        stem: choose(variant, [
-          `Two angles of a triangle measure ${first}° and ${second}°. What is the measure of the third angle?`,
-          `A triangle has angles of ${first}° and ${second}°. How large is the remaining angle?`,
-          `In a triangle with angles ${first}° and ${second}°, the third angle measures what?`,
-          `If two of a triangle's angles are ${first}° and ${second}°, what is the third?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the third angle of a triangle whose other angles are ${first}° and ${second}°`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(first + second), "This is the sum of the two given angles, not what remains of 180°."],

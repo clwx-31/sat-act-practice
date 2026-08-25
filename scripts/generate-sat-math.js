@@ -2205,6 +2205,8 @@ defineShapes({
 
 /* ---------------------------- Advanced Math ----------------------------- */
 
+registerShapePhrasings("factoring", "factored-polynomial");
+
 defineShapes({
   "factoring": {
     Easy: [

@@ -4065,6 +4065,101 @@ defineShapes({
   },
 });
 
+registerShapePhrasings("unit conversion", "measurement conversion");
+
+defineShapes({
+  "unit conversion": {
+    Easy: [
+      (t) => {
+        const hours = t.int(2, 9);
+        const minutes = t.int(5, 55);
+        return {
+          family: "hours-to-minutes",
+          stem: `A duration is ${hours} hours and ${minutes} minutes. How many minutes is this duration in total?`,
+          correct: 60 * hours + minutes,
+          wrong: [[hours + minutes, "This adds unlike units without converting hours to minutes."], [100 * hours + minutes, "This treats an hour as 100 minutes rather than 60."], [60 * hours, "This converts the whole hours but omits the additional minutes."], [60 * (hours + minutes), "This incorrectly multiplies the stated minutes by 60 as well."]],
+          explanation: `${hours} hours is ${60 * hours} minutes; adding ${minutes} gives ${60 * hours + minutes} minutes.`,
+          steps: ["Multiply the hour count by 60.", "Add the remaining minutes."],
+          principles: ["One hour equals 60 minutes."],
+          verification: { kind: "sum", inputs: [60 * hours, minutes], expected: 60 * hours + minutes },
+        };
+      },
+      (t) => {
+        const feet = t.int(3, 14);
+        const inches = t.int(1, 11);
+        return {
+          family: "feet-to-inches",
+          stem: `A board is ${feet} feet ${inches} inches long. What is its total length in inches?`,
+          correct: 12 * feet + inches,
+          wrong: [[feet + inches, "This combines unlike units without converting feet."], [12 * feet, "This omits the additional inches."], [12 * (feet + inches), "This converts the inches a second time."], [10 * feet + inches, "This treats a foot as 10 inches rather than 12."]],
+          explanation: `${feet} feet is ${12 * feet} inches, so the total is ${12 * feet + inches} inches.`,
+          steps: ["Convert each foot to 12 inches.", "Add the stated extra inches."],
+          principles: ["One foot equals 12 inches."],
+          verification: { kind: "sum", inputs: [12 * feet, inches], expected: 12 * feet + inches },
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const mph = 15 * t.int(2, 6);
+        const feetPerSecond = mph * 22 / 15;
+        return {
+          family: "miles-per-hour-to-feet-per-second",
+          stem: `A vehicle moves at ${mph} miles per hour. At this rate, how many feet does it travel per second? Use 1 mile = 5,280 feet.`,
+          correct: feetPerSecond,
+          wrong: [[mph * 5280 / 60, "This converts hours to minutes but not all the way to seconds."], [mph / 3600, "This converts the time unit but omits the miles-to-feet conversion."], [mph * 5280, "This is feet traveled in one hour, not one second."], [mph * 15 / 22, "This reverses the standard miles-per-hour conversion factor."]],
+          explanation: `${mph} · 5,280/3,600 = ${feetPerSecond} feet per second.`,
+          steps: ["Convert miles in the numerator to feet.", "Convert one hour in the denominator to 3,600 seconds and simplify."],
+          principles: ["Multiply by conversion factors arranged so unwanted units cancel."],
+          verification: quotient(mph * 5280, 3600),
+        };
+      },
+      (t) => {
+        const liters = t.int(2, 12);
+        const perLiter = t.int(3, 15);
+        return {
+          family: "liters-to-milliliters-rate",
+          stem: `A solution contains ${perLiter} milligrams of a substance per liter. How many milligrams are in ${liters * 1000} milliliters? Use 1 liter = 1,000 milliliters.`,
+          correct: perLiter * liters,
+          wrong: [[perLiter * liters * 1000, "This applies the milliliter conversion even though the volume already equals a whole number of liters."], [perLiter / liters, "This divides by the volume instead of multiplying the rate by it."], [perLiter * 1000, "This gives the amount in 1,000 liters rather than in the stated volume."], [liters, "This is the volume in liters, not the substance amount."]],
+          explanation: `${liters * 1000} milliliters is ${liters} liters, so the amount is ${perLiter}(${liters}) = ${perLiter * liters} milligrams.`,
+          steps: ["Convert milliliters to liters.", "Multiply liters by milligrams per liter."],
+          principles: ["A per-unit rate multiplies the number of matching units."],
+          verification: { kind: "product", inputs: [perLiter, liters], expected: perLiter * liters },
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const squareMeters = t.int(2, 18);
+        return {
+          family: "square-meters-to-square-centimeters",
+          stem: `A rectangular surface has area ${squareMeters} square meters. What is its area in square centimeters? Use 1 meter = 100 centimeters.`,
+          correct: squareMeters * 10000,
+          wrong: [[squareMeters * 100, "This uses the linear conversion factor only once instead of squaring it."], [squareMeters * 1000, "This confuses the metric volume factor with the square-area factor."], [squareMeters + 10000, "This adds the conversion factor rather than multiplying by it."], [squareMeters * 200, "This doubles the linear factor instead of squaring it."]],
+          explanation: `One square meter is 100² = 10,000 square centimeters, so the area is ${squareMeters * 10000}.`,
+          steps: ["Square the meter-to-centimeter length factor.", "Multiply the area by 10,000."],
+          principles: ["Area conversion factors are the squares of corresponding length factors."],
+          verification: { kind: "product", inputs: [squareMeters, 100, 100], expected: squareMeters * 10000 },
+        };
+      },
+      (t) => {
+        const cubicFeet = t.int(2, 10);
+        return {
+          family: "cubic-feet-to-cubic-inches",
+          stem: `A container has volume ${cubicFeet} cubic feet. What is its volume in cubic inches? Use 1 foot = 12 inches.`,
+          correct: cubicFeet * 1728,
+          wrong: [[cubicFeet * 12, "This applies only a one-dimensional conversion to a volume."], [cubicFeet * 144, "This squares the length conversion, which converts area rather than volume."], [cubicFeet * 36, "This triples the factor instead of cubing it."], [cubicFeet + 1728, "This adds one cubic-foot conversion rather than scaling every cubic foot."]],
+          explanation: `One cubic foot is 12³ = 1,728 cubic inches, so ${cubicFeet} cubic feet is ${cubicFeet * 1728} cubic inches.`,
+          steps: ["Cube the foot-to-inch length factor.", "Multiply the volume by 1,728."],
+          principles: ["Volume conversion factors are the cubes of corresponding length factors."],
+          verification: { kind: "product", inputs: [cubicFeet, 12, 12, 12], expected: cubicFeet * 1728 },
+        };
+      },
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

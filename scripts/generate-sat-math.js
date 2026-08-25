@@ -4412,6 +4412,76 @@ importActShapeSelections("mean and median", {
   Hard: [["averages", "Hard", 0], ["averages", "Hard", 1]],
 });
 
+registerShapePhrasings("spread", "data-spread measure");
+
+defineShapes({
+  "spread": {
+    Easy: [
+      (t) => {
+        const low = t.int(2, 20);
+        const high = low + t.int(8, 30);
+        return {
+          family: "range-from-extremes", stem: `A data set has minimum ${low} and maximum ${high}. What is its range?`, correct: high - low,
+          wrong: [[high, "This is the maximum, not the difference between the extremes."], [low, "This is the minimum, not the range."], [high + low, "This adds the extremes instead of subtracting them."], [(high + low) / 2, "This is the midpoint of the extremes, not the range."]],
+          explanation: `Range = ${high} ${MINUS} ${low} = ${high - low}.`, steps: ["Identify the maximum and minimum.", "Subtract the minimum from the maximum."], principles: ["Range measures the distance between the extreme values."], verification: { kind: "sum", inputs: [high, -low], expected: high - low },
+        };
+      },
+      (t) => {
+        const q1 = t.int(5, 25);
+        const q3 = q1 + t.int(6, 24);
+        return {
+          family: "interquartile-range", stem: `The first quartile of a data set is ${q1}, and the third quartile is ${q3}. What is the interquartile range?`, correct: q3 - q1,
+          wrong: [[q3, "This is the third quartile alone."], [q1, "This is the first quartile alone."], [q3 + q1, "This adds the quartiles instead of finding the width between them."], [(q3 + q1) / 2, "This is the midpoint between the quartiles."]],
+          explanation: `IQR = Q3 ${MINUS} Q1 = ${q3} ${MINUS} ${q1} = ${q3 - q1}.`, steps: ["Locate Q1 and Q3.", "Subtract Q1 from Q3."], principles: ["The interquartile range covers the middle half of a data set."], verification: { kind: "sum", inputs: [q3, -q1], expected: q3 - q1 },
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const range = t.int(5, 20);
+        const factor = t.int(2, 6);
+        return {
+          family: "range-under-scaling", stem: `A data set has range ${range}. Every value is multiplied by ${factor}. What is the range of the new data set?`, correct: range * factor,
+          wrong: [[range + factor, "This treats multiplication of every value as an additive change."], [range, "This would be true for adding a constant, not multiplying by a factor."], [factor, "This is the scale factor alone."], [range / factor, "This scales the range in the opposite direction."]],
+          explanation: `Multiplying every value by ${factor} multiplies both extremes and their difference by ${factor}, so the new range is ${range * factor}.`, steps: ["Track how both extremes scale.", "Multiply their original difference by the scale factor."], principles: ["Multiplying all observations by a positive factor multiplies every spread measure by that factor."], verification: { kind: "product", inputs: [range, factor], expected: range * factor },
+        };
+      },
+      (t) => {
+        const oldLow = t.int(5, 20);
+        const oldHigh = oldLow + t.int(8, 25);
+        const added = oldHigh + t.int(3, 15);
+        return {
+          family: "range-after-outlier", stem: `A data set has minimum ${oldLow} and maximum ${oldHigh}. After ${added} is added, what is the new range?`, correct: added - oldLow,
+          wrong: [[oldHigh - oldLow, "This is the old range before the new maximum is included."], [added - oldHigh, "This is only the increase in the maximum."], [added, "This is the new maximum, not the range."], [added + oldLow, "This adds the extremes instead of subtracting them."]],
+          explanation: `${added} becomes the new maximum, so the range is ${added} ${MINUS} ${oldLow} = ${added - oldLow}.`, steps: ["Recognize that the added value is the new maximum.", "Subtract the unchanged minimum."], principles: ["An outlier beyond an extreme changes the range by moving that extreme."], verification: { kind: "sum", inputs: [added, -oldLow], expected: added - oldLow },
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const spreadA = t.int(2, 6);
+        const spreadB = spreadA + t.int(2, 6);
+        return {
+          family: "compare-standard-deviation", stem: `Data set A is clustered within ${spreadA} units of its mean, while equally sized data set B is clustered within ${spreadB} units of the same mean. Which set has the greater standard deviation?`, correct: "Data set B",
+          wrong: [["Data set A", "The more tightly clustered set has the smaller standard deviation."], ["The standard deviations are equal", "The sets have different distances from their common mean."], ["It cannot be determined", "The stated clustering widths are sufficient for this comparison."], ["Neither set has a standard deviation", "Both numerical data sets have defined standard deviations."]],
+          explanation: `Set B is more dispersed around the same mean, so it has the greater standard deviation.`, steps: ["Compare distances from the shared mean.", "Identify the set with greater dispersion."], principles: ["Standard deviation increases as observations spread farther from their mean."],
+        };
+      },
+      (t) => {
+        const deviation = t.int(2, 12);
+        const factor = t.int(2, 7);
+        return {
+          family: "standard-deviation-under-scaling", stem: `A data set has standard deviation ${deviation}. Every value is multiplied by ${factor} and then increased by 10. What is the new standard deviation?`, correct: deviation * factor,
+          wrong: [[deviation * factor + 10, "Adding the same constant shifts the center but does not change spread."], [deviation + factor, "This adds the scale factor rather than multiplying by it."], [deviation + 10, "This changes spread for a translation, which leaves it unchanged."], [deviation, "This ignores the multiplicative scaling of every deviation from the mean."]],
+          explanation: `Multiplication by ${factor} scales standard deviation to ${deviation * factor}; adding 10 afterward does not affect it.`, steps: ["Apply the multiplicative scale to the standard deviation.", "Ignore the common translation when measuring spread."], principles: ["Scaling changes standard deviation; translation does not."], verification: { kind: "product", inputs: [deviation, factor], expected: deviation * factor },
+        };
+      },
+    ],
+  },
+});
+
+TEXT_ANSWER.add("spread|Hard");
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

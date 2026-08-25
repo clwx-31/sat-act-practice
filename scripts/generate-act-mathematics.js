@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { COLLECTION, DECAY_SAMPLE, EXPONENTIAL_GROWTH, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { COLLECTION, DECAY_SAMPLE, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -3381,9 +3381,10 @@ SHAPES["exponential"] = {
       const cents = (value) => money(Math.round(value * 100) / 100);
       const exact = principal * (1 + rate / 100) ** years;
       const answer = cents(exact);
+      const finance = scene(variant, FINANCE);
       return {
         family: "compound-interest-balance",
-        stem: `An account holds ${principal} and earns ${rate}% interest compounded annually. To the nearest cent, what is the balance after ${years} years?`,
+        stem: `A ${finance.account} holds ${principal} and earns ${rate}% interest compounded annually. To the nearest cent, what is the balance after ${years} years?`,
         answer,
         wrong: [
           [cents(principal * (1 + rate * years / 100)), "This applies simple interest, which never earns interest on interest."],

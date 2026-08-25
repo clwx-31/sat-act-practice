@@ -4736,12 +4736,9 @@ SHAPES["volume"] = {
       const answer = base * scale ** 3;
       return {
         family: "volume-under-scaling",
-        stem: choose(variant, [
-          `A solid of volume ${base} is enlarged so that every length is multiplied by ${scale}. What is the new volume?`,
-          `Two similar solids have lengths in the ratio 1 : ${scale}. If the smaller has volume ${base}, what is the larger's volume?`,
-          `Scaling every dimension of a solid with volume ${base} by ${scale} produces what volume?`,
-          `If each length of a solid with volume ${base} grows by a factor of ${scale}, the volume becomes what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the new volume when a solid of volume ${base} has every length multiplied by ${scale}`,
+        }),
         answer,
         wrong: [
           [base * scale, "This scales by the length ratio; volume scales by its cube."],

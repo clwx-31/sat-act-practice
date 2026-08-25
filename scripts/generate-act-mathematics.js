@@ -6983,9 +6983,12 @@ SHAPES["measurement conversion"] = {
     (s, variant) => {
       const yards = span(s, 2, 6);
       const answer = yards * 36;
+      const ground = scene(variant, GROUND);
       return {
         family: "two-step-length-conversion",
-        stem: `A rope is ${yards} yards long. Given that 1 yard is 3 feet and 1 foot is 12 inches, how many inches long is the rope?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the length in inches of a ${yards}-yard ${ground.edge}, given 1 yard = 3 feet and 1 foot = 12 inches`,
+        }),
         answer,
         wrong: [
           [yards * 12, "This converts yards to feet and stops, or converts as if a yard were 12 inches."],

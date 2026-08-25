@@ -5602,7 +5602,9 @@ SHAPES["regression"] = {
       const answer = observed - predicted;
       return {
         family: "residual-from-a-regression-line",
-        stem: `A line of best fit is y = ${slope}x + ${intercept}. An observed data point is (${input}, ${observed}). What is the residual at that point?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the residual at observed point (${input}, ${observed}) for the line of best fit y = ${slope}x + ${intercept}`,
+        }),
         answer,
         wrong: [
           [-answer, "The residual is observed minus predicted; this reverses the subtraction."],

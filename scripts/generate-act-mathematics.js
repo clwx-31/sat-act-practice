@@ -7720,9 +7720,12 @@ SHAPES["combined concepts"] = {
       ];
       const [volumeA, percentA, percentB, target] = choose(s, table);
       const answer = round3((volumeA * (target - percentA)) / (percentB - target));
+      const solution = scene(variant, SOLUTION);
       return {
         family: "two-solution-mixture-alligation",
-        stem: `A ${volumeA}-liter solution is ${percentA}% salt. How many liters of a ${percentB}% salt solution must be mixed with it to produce a solution that is ${target}% salt?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the liters of ${percentB}% ${solution.solute} ${solution.solvent} a ${solution.agent} must mix with ${volumeA} liters at ${percentA}% to obtain ${target}% ${solution.solute}`,
+        }),
         answer,
         wrong: [
           [round3((volumeA * (target - percentA)) / percentB), "This divides by the stronger solution's concentration rather than by how far it exceeds the target."],

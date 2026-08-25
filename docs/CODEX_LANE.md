@@ -9,8 +9,17 @@ You own `scripts/*.js`, `scripts/lib/*.js`, `app.js`, `core.js`, `styles.css`,
 in those concurrently, and editing them causes the only merge conflicts this
 setup can produce. If a task seems to require one, stop and say so.
 
-Branch `codex-lane`, worktree `../sat-act-codex`. Do not push, merge, rebase, or
-switch branches.
+Branch `codex-lane`, worktree `../sat-act-codex`. Do not push, rebase, or switch
+branches.
+
+**Standing authorisation for one merge only:** you may run `git merge --no-ff main`
+whenever you need main's work, without asking each time. `--ff-only` will keep
+failing because both branches carry real commits, and that failure is expected
+rather than a problem to report. The lanes own disjoint paths, so these merges
+are clean; the only file both lanes have ever edited is
+`docs/QUESTION_QUALITY_HANDOFF.md`, which is why your reports now go to
+`docs/CODEX_REPORTS.md`. If that file does conflict, keep both sides. No other
+merge, and no push, is authorised.
 
 ---
 

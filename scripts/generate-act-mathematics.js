@@ -4654,12 +4654,9 @@ SHAPES["volume"] = {
       const answer = (radius * radius * height) / 3;
       return {
         family: "cone-volume",
-        stem: choose(variant, [
-          `What is the volume of a cone with radius ${radius} and height ${height}, in terms of π?`,
-          `A cone has radius ${radius} and vertical height ${height}. Express its volume in terms of π.`,
-          `Find the volume of a conical funnel of radius ${radius} and height ${height}.`,
-          `A cone of radius ${radius} and height ${height} holds what volume?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the volume, in terms of π, of a cone with radius ${radius} and vertical height ${height}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(radius * radius * height), "This is the volume of a cylinder with the same base and height; a cone is one third of it."],

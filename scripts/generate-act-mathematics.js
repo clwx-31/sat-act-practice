@@ -4921,7 +4921,9 @@ SHAPES["right-triangle trigonometry"] = {
       const answer = round3(Math.sqrt(a * a + b * b - 2 * a * b * cosine));
       return {
         family: "law-of-cosines-third-side",
-        stem: `A triangle has sides of ${a} and ${b} with an included angle of ${angle}°. To the nearest hundredth, what is the length of the third side?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest hundredth, the third side length of a triangle with sides ${a} and ${b} enclosing a ${angle}° angle`,
+        }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
           [round3(Math.round(Math.sqrt(a * a + b * b) * 100) / 100), "This applies the Pythagorean theorem, which is the law of cosines only when the included angle is 90°."],

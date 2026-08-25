@@ -5668,18 +5668,17 @@ SHAPES["regression"] = {
       const meanX = points.reduce((sum, [x]) => sum + x, 0) / points.length;
       const meanY = points.reduce((sum, [, y]) => sum + y, 0) / points.length;
       const answer = round3(meanY);
+      const collection = scene(variant, COLLECTION);
       return {
         family: "regression-passes-through-the-means",
         stimulus: {
           type: "table",
-          content: `Four observations were collected.\n\nx | y\n${points.map(([x, y]) => `${x} | ${y}`).join("\n")}`,
+          content: `A ${collection.owner} recorded ${collection.plural} on a ${collection.holder} at four checkpoints.\n\ncheckpoint | ${collection.plural}\n${points.map(([x, y]) => `${x} | ${y}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          `The least-squares regression line for these data passes through the point (${round3(meanX)}, k). What is the value of k?`,
-          `A least-squares line fitted to these four observations passes through (${round3(meanX)}, k). Which value is k?`,
-          `For these data, the regression line contains the point (${round3(meanX)}, k). What does k equal?`,
-          `The line of best fit for this table passes through (${round3(meanX)}, k). Find k.`,
-        ]),
+        stem: pose(variant, "givenFind", {
+          given: `the least-squares line for the ${collection.item} data passes through (${round3(meanX)}, k)`,
+          target: "k",
+        }),
         answer,
         wrong: [
           [round3(meanX), "This is the mean of x, which is the first coordinate, not the second."],

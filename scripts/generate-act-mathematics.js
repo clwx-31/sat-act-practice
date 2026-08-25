@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { COLLECTION, DECAY_SAMPLE, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { COLLECTION, DECAY_SAMPLE, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -5460,18 +5460,16 @@ SHAPES["data displays"] = {
       const bothNo = 30 + (s % 7);
       const rowTotal = bothYes + yesNo;
       const answer = frac(bothYes, rowTotal);
+      const survey = scene(variant, TWO_WAY_SURVEY);
       return {
         family: "conditional-proportion-from-two-way-table",
         stimulus: {
           type: "table",
-          content: `Students were asked whether they cycle to school and whether they own a helmet.\n\n | owns a helmet | no helmet\ncycles | ${bothYes} | ${yesNo}\ndoes not cycle | ${noYes} | ${bothNo}`,
+          content: `${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.second} | do not ${survey.second}\n${survey.first} | ${bothYes} | ${yesNo}\ndo not ${survey.first} | ${noYes} | ${bothNo}`,
         },
-        stem: choose(variant, [
-          "Among the students who cycle to school, what fraction own a helmet?",
-          "What proportion of the cycling students own a helmet?",
-          "Of the students who cycle, what fraction also own a helmet?",
-          "Restricted to students who cycle, what fraction own a helmet?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the fraction who ${survey.second} among the ${survey.group} who ${survey.first}`,
+        }),
         answer,
         wrong: [
           [frac(bothYes, bothYes + yesNo + noYes + bothNo), "This divides by every student surveyed; the question restricts attention to those who cycle."],

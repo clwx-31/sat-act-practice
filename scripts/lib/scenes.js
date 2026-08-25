@@ -125,6 +125,18 @@ const SURVEY = [
   { group: "students", topic: "walk to school", place: "school" },
 ];
 
+// A group answers two yes-or-no survey questions.
+const TWO_WAY_SURVEY = [
+  { group: "students", first: "cycle to school", second: "own a helmet" },
+  { group: "commuters", first: "take the train", second: "buy a monthly pass" },
+  { group: "residents", first: "use the library", second: "borrow ebooks" },
+  { group: "members", first: "attend classes", second: "use the pool" },
+  { group: "visitors", first: "take a tour", second: "visit the gallery" },
+  { group: "households", first: "compost food", second: "collect rainwater" },
+  { group: "employees", first: "work remotely", second: "use flex hours" },
+  { group: "subscribers", first: "read online", second: "receive alerts" },
+];
+
 // A flat region gets measured, fenced, or covered.
 const GROUND = [
   { region: "patio", edge: "trim", cover: "paving", owner: "café" },
@@ -275,6 +287,7 @@ module.exports = {
   SURFACE,
   SURVEY,
   TRAVEL,
+  TWO_WAY_SURVEY,
   VENUE,
   VESSEL,
   WATERCRAFT,

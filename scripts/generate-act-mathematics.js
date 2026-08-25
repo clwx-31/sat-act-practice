@@ -4455,12 +4455,9 @@ SHAPES["surface area"] = {
       const answer = 2 * (length * width + length * height + width * height);
       return {
         family: "rectangular-prism-surface-area",
-        stem: choose(variant, [
-          `A rectangular box measures ${length} by ${width} by ${height}. What is its surface area?`,
-          `What is the total surface area of a rectangular prism with dimensions ${length}, ${width}, and ${height}?`,
-          `A crate is ${length} by ${width} by ${height}. How much material covers its outside?`,
-          `Find the surface area of a ${length} by ${width} by ${height} rectangular prism.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the surface area of a rectangular prism with dimensions ${length}, ${width}, and ${height}`,
+        }),
         answer,
         wrong: [
           [length * width * height, "This is the volume."],

@@ -4615,6 +4615,35 @@ defineShapes({
 
 ["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`samples and populations|${tier}`));
 
+registerShapePhrasings("margin of error", "confidence-interval margin");
+
+defineShapes({
+  "margin of error": {
+    Easy: [
+      (t) => {
+        const estimate = t.int(35, 75); const margin = t.int(2, 8);
+        return { family: "confidence-interval-lower-end", stem: `A survey estimate is ${estimate}% with a margin of error of ${margin} percentage points. What is the lower endpoint of the reported interval?`, correct: estimate - margin,
+          wrong: [[estimate + margin, "This is the upper endpoint."], [margin, "This is the margin alone, not an endpoint."], [estimate, "This is the point estimate at the center of the interval."], [estimate - margin / 100, "A percentage-point margin is subtracted directly, not as a decimal fraction."]], explanation: `The lower endpoint is ${estimate} ${MINUS} ${margin} = ${estimate - margin}%.`, steps: ["Identify the point estimate and margin.", "Subtract the margin from the estimate."], principles: ["A reported estimate ± margin spans from estimate minus margin to estimate plus margin."], verification: { kind: "sum", inputs: [estimate, -margin], expected: estimate - margin } };
+      },
+      conceptualShape("larger-sample-smaller-margin", "Two random samples use the same method and confidence level, but one sample is much larger. Which sample will generally have the smaller margin of error?", "The larger sample", [["The smaller sample", "Smaller samples have more sampling variability."], ["They must have equal margins", "Sample size affects sampling variability."], ["Whichever sample has the larger estimate", "The estimate's magnitude does not determine the standard sample-size effect."], ["It cannot be compared", "With method and confidence fixed, sample size gives the comparison."]], "A larger random sample generally yields a more precise estimate and a smaller margin of error.", "Increasing sample size reduces sampling variability."),
+    ],
+    Medium: [
+      (t) => {
+        const estimate = t.int(30, 70); const margin = t.int(3, 9);
+        return { family: "confidence-interval-width", stem: `An estimate is reported as ${estimate}% ± ${margin} percentage points. What is the total width, in percentage points, of the confidence interval?`, correct: 2 * margin,
+          wrong: [[margin, "This is the distance from the center to one endpoint, only half the width."], [estimate + margin, "This is the upper endpoint, not the interval width."], [estimate - margin, "This is the lower endpoint."], [2 * estimate, "The width depends on the margin, not twice the estimate."]], explanation: `The interval extends ${margin} points on each side, so its width is 2(${margin}) = ${2 * margin}.`, steps: ["Recognize that the margin applies on both sides.", "Double the margin."], principles: ["The width of estimate ± m is 2m."], verification: { kind: "product", inputs: [2, margin], expected: 2 * margin } };
+      },
+      conceptualShape("sample-size-quadrupling", "Under the usual square-root relationship, a study quadruples its random sample size while keeping the confidence level fixed. What happens approximately to the margin of error?", "It is cut in half", [["It is divided by four", "Margin scales with the square root of sample size, not sample size directly."], ["It doubles", "A larger sample decreases rather than increases sampling error."], ["It stays unchanged", "Sample size affects the standard error."], ["It becomes zero", "Finite samples retain sampling variability."]], "Margin of error is proportional to 1/√n, so multiplying n by 4 divides the margin by √4 = 2.", "Sampling error typically decreases in proportion to the reciprocal square root of sample size."),
+    ],
+    Hard: [
+      conceptualShape("confidence-level-tradeoff", "Using the same sample data, a researcher raises the confidence level from 90% to 99%. What happens to the margin of error?", "It increases", [["It decreases", "Greater confidence requires a wider interval, not a narrower one."], ["It remains exactly the same", "The critical value changes with confidence level."], ["It becomes zero", "Higher confidence does not eliminate sampling uncertainty."], ["It changes sign", "A margin of error is a nonnegative distance."]], "A higher confidence level requires a wider interval to capture the parameter more reliably, so the margin increases.", "For fixed data, greater confidence trades precision for wider intervals."),
+      conceptualShape("plausible-parameter-value", "A 95% confidence interval for a population proportion is 0.42 to 0.50. Which value is most plausible under this interval?", "0.47", [["0.35", "This lies below the reported interval."], ["0.58", "This lies above the reported interval."], ["1.20", "A proportion cannot exceed 1 and is outside the interval."], ["−0.10", "A proportion cannot be negative and is outside the interval."]], "The value 0.47 lies inside the reported confidence interval.", "Values inside a confidence interval are compatible with the estimate at its stated confidence procedure."),
+    ],
+  },
+});
+
+["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`margin of error|${tier}`));
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

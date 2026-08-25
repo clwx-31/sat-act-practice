@@ -7075,9 +7075,12 @@ SHAPES["measurement conversion"] = {
       const width = span(s, 9, 5, 3);
       const length = span(s, 12, 5, 3);
       const answer = round3((width * length) / 9);
+      const ground = scene(variant, GROUND);
       return {
         family: "square-unit-conversion",
-        stem: `A room measures ${width} feet by ${length} feet. Carpet is sold by the square yard. How many square yards of carpet cover the room exactly?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the square yards of ${ground.cover} needed to cover a ${width}-foot by ${length}-foot ${ground.region}`,
+        }),
         answer,
         wrong: [
           [round3((width * length) / 3), "This divides by 3, the linear conversion. A square yard is 3 feet by 3 feet, so it holds 9 square feet, not 3."],

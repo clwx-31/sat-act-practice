@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -5928,9 +5928,12 @@ SHAPES["compound probability"] = {
       const favourable = 3 + (s % 5);
       const others = 5 + (s % 6);
       const total = favourable + others;
+      const draw = scene(variant, DRAW_POOL);
       return {
         family: "single-event-probability",
-        stem: `A bag holds ${favourable} red marbles and ${others} blue marbles. If one marble is drawn at random, what is the probability that it is red?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the probability of randomly drawing a ${draw.first} ${draw.item.slice(0, -1)} from a ${draw.container} holding ${favourable} ${draw.first} and ${others} ${draw.second} ${draw.item}`,
+        }),
         answer: frac(favourable, total),
         wrong: [
           [frac(favourable, others), "This compares red to blue rather than red to the whole bag."],

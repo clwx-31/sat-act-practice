@@ -113,6 +113,18 @@ const CHOICE_MENU = [
   { product: "gift box", first: "boxes", second: "wrappings", third: "cards" },
 ];
 
+// Distinguishable items are drawn at random from a container.
+const DRAW_POOL = [
+  { container: "bag", item: "marbles", first: "red", second: "blue" },
+  { container: "jar", item: "tokens", first: "green", second: "yellow" },
+  { container: "box", item: "tiles", first: "square", second: "round" },
+  { container: "bowl", item: "counters", first: "white", second: "black" },
+  { container: "bin", item: "cards", first: "striped", second: "plain" },
+  { container: "case", item: "beads", first: "glass", second: "wooden" },
+  { container: "drum", item: "tickets", first: "gold", second: "silver" },
+  { container: "tray", item: "disks", first: "marked", second: "blank" },
+];
+
 // A vessel holds or transfers a fluid.
 const VESSEL = [
   { vessel: "tank", filler: "pump", fluid: "water", unit: "liters" },
@@ -287,6 +299,7 @@ module.exports = {
   CHOICE_MENU,
   COLLECTION,
   DECAY_SAMPLE,
+  DRAW_POOL,
   EXPONENTIAL_GROWTH,
   FINANCE,
   GROUND,

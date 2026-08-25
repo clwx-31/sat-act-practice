@@ -305,8 +305,10 @@ Where this stopped, precisely, so the next session does not repeat the audit.
   5 / 2 / 8, 4/6/5, 3 keeps of 11 = 27.3%).
   Passage 015 is `015-atlantic-cable.js` (historical account, 14 questions at
   4 / 2 / 8, 5/6/3, 3 keeps of 11 = 27.3%).
-  **15 of 40 authored, 219 of 575 questions**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 45 of 171 = 26.3%. Verified
+  Passage 016 is `016-in-the-dark.js` (process narrative, 13 questions at
+  4 / 2 / 7, 4/6/3, 3 keeps of 10 = 30%).
+  **16 of 40 authored, 232 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 48 of 181 = 26.5%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.

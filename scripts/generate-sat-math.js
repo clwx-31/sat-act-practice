@@ -2214,6 +2214,7 @@ registerShapePhrasings("absolute value", "absolute-value distance");
 registerShapePhrasings("linear-quadratic systems", "line-parabola system");
 registerShapePhrasings("nonlinear systems", "nonlinear-system");
 registerShapePhrasings("quadratic functions", "parabola feature");
+registerShapePhrasings("exponential functions", "exponential-model");
 
 defineShapes({
   "factoring": {

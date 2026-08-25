@@ -3757,12 +3757,9 @@ SHAPES["triangles"] = {
       const answer = smallOther * scale;
       return {
         family: "similar-triangle-missing-side",
-        stem: choose(variant, [
-          `Two triangles are similar. In the smaller one a pair of sides measures ${small} and ${smallOther}. The side corresponding to ${small} in the larger triangle is ${large}. What is the length of the side corresponding to ${smallOther}?`,
-          `Triangle ABC is similar to triangle DEF. AB = ${small}, BC = ${smallOther}, and DE = ${large}. What is the length of EF?`,
-          `In similar triangles, a side of ${small} corresponds to ${large}. What length corresponds to a side of ${smallOther}?`,
-          `Two similar triangles have corresponding sides ${small} and ${large}. If another side of the smaller triangle is ${smallOther}, what is its counterpart?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the side corresponding to ${smallOther} when similar triangles pair ${small} with ${large}`,
+        }),
         answer,
         wrong: [
           [smallOther + (large - small), "This adds the difference between corresponding sides; similarity scales by a ratio, not a constant."],

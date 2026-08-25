@@ -4406,6 +4406,12 @@ defineShapes({
   },
 });
 
+importActShapeSelections("mean and median", {
+  Easy: [["center and spread", "Easy", 0], ["center and spread", "Easy", 1]],
+  Medium: [["center and spread", "Medium", 0], ["center and spread", "Medium", 1]],
+  Hard: [["averages", "Hard", 0], ["averages", "Hard", 1]],
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

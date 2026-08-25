@@ -3849,12 +3849,9 @@ SHAPES["triangles"] = {
       const answer = round3(leg * Math.sqrt(2));
       return {
         family: "isosceles-right-triangle-hypotenuse",
-        stem: choose(variant, [
-          `A right triangle has two legs of length ${leg}. What is the length of its hypotenuse?`,
-          `An isosceles right triangle has legs measuring ${leg}. How long is the hypotenuse?`,
-          `In a 45°–45°–90° triangle each leg measures ${leg}. What is the hypotenuse?`,
-          `The two congruent legs of a right triangle are ${leg} units long. What is the hypotenuse?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the hypotenuse of an isosceles right triangle with leg length ${leg}`,
+        }),
         answer: radical(leg, 2),
         wrong: [
           [2 * leg, "This doubles the leg; the hypotenuse of an isosceles right triangle is the leg times √2, which is less than double."],

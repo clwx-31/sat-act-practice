@@ -3573,12 +3573,9 @@ SHAPES["angles"] = {
       const answer = ((sides - 2) * 180) / sides;
       return {
         family: "regular-polygon-interior-angle",
-        stem: choose(variant, [
-          `What is the measure of each interior angle of a regular polygon with ${sides} sides?`,
-          `A regular ${sides}-gon has interior angles of what measure?`,
-          `Each interior angle of a regular polygon with ${sides} congruent sides measures how many degrees?`,
-          `In a regular polygon with ${sides} sides, one interior angle measures what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the measure of each interior angle of a regular ${sides}-gon`,
+        }),
         answer: degrees(round3(answer)),
         wrong: [
           [degrees(round3(360 / sides)), "This is the exterior angle; the interior angle is its supplement."],

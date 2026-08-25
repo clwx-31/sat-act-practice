@@ -4569,12 +4569,9 @@ SHAPES["surface area"] = {
       const answer = base * scale * scale;
       return {
         family: "surface-area-under-scaling",
-        stem: choose(variant, [
-          `A solid has surface area ${base}. Every length is multiplied by ${scale}. What is the new surface area?`,
-          `Scaling a solid so each dimension grows by a factor of ${scale} changes its surface area from ${base} to what?`,
-          `Two similar solids have lengths in the ratio 1 : ${scale}. The smaller has surface area ${base}. What is the larger's?`,
-          `If each dimension of a solid with surface area ${base} is multiplied by ${scale}, the surface area becomes what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the new surface area when a solid of surface area ${base} has every length multiplied by ${scale}`,
+        }),
         answer,
         wrong: [
           [base * scale, "This scales by the length ratio; surface area scales by its square."],

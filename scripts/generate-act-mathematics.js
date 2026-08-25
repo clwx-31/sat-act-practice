@@ -5504,18 +5504,16 @@ SHAPES["data displays"] = {
           break;
         }
       }
+      const trip = scene(variant, TRAVEL);
       return {
         family: "median-class-from-a-histogram",
         stimulus: {
           type: "diagram",
-          content: `A histogram of commute times has these bar heights.\n\ncommute (minutes) | commuters\n${values.map((value, index) => `${value} | ${frequencies[index]}`).join("\n")}`,
+          content: `A histogram of ${trip.mover} travel times on a ${trip.route} has these bar heights.\n\ntravel time (minutes) | journeys\n${values.map((value, index) => `${value} | ${frequencies[index]}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          "Which commute time is the median for this group of commuters?",
-          "According to the histogram, the median commute time is which value?",
-          "What is the median commute time recorded in the histogram?",
-          "Reading the histogram, which commute time falls at the median?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the median ${trip.mover} travel time represented by the histogram`,
+        }),
         answer,
         wrong: [
           [values[frequencies.indexOf(Math.max(...frequencies))] === answer ? values[values.length - 1] : values[frequencies.indexOf(Math.max(...frequencies))], "This is the tallest bar, which gives the mode rather than the median."],

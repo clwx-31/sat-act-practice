@@ -4670,6 +4670,7 @@ defineShapes({
 importActShapeSubskill("area", "area");
 importActShapeSubskill("surface area", "surface area");
 importActShapeSubskill("volume", "volume");
+importActShapeSubskill("angle relationships", "angles");
 
 // ---------------------------------------------------------------------------
 // Driver

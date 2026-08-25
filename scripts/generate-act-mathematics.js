@@ -7195,9 +7195,12 @@ SHAPES["averages"] = {
       const known = [span(s, 74, 5, 3), span(s, 81, 5, 2), span(s, 88, 4, 2)];
       const target = span(s, 84, 5, 2);
       const answer = 4 * target - known.reduce((sum, value) => sum + value, 0);
+      const cohort = scene(variant, COHORT);
       return {
         family: "missing-score-for-target-mean",
-        stem: `A student has scored ${known.join(", ")} on three tests. What score on a fourth test would make the average of all four tests exactly ${target}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the fourth ${cohort.unit} score a ${cohort.member} needs after ${known.join(", ")} to average exactly ${target}`,
+        }),
         answer,
         wrong: [
           [target, "This is the target average, which the fourth score only equals when the first three already average to it."],

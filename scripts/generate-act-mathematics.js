@@ -4133,12 +4133,9 @@ SHAPES["coordinate geometry"] = {
       const denominator = numerator + 1 + (s % 4);
       return {
         family: "perpendicular-slope",
-        stem: choose(variant, [
-          `A line has slope ${numerator}/${denominator}. What is the slope of a line perpendicular to it?`,
-          `What slope is perpendicular to a line of slope ${numerator}/${denominator}?`,
-          `If a line has slope ${numerator}/${denominator}, a line at right angles to it has which slope?`,
-          `Find the slope perpendicular to the line whose slope is ${numerator}/${denominator}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the slope perpendicular to ${numerator}/${denominator}`,
+        }),
         answer: frac(-denominator, numerator),
         wrong: [
           [frac(denominator, numerator), "This is the reciprocal but omits the sign change."],

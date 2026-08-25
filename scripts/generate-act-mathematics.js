@@ -2983,12 +2983,10 @@ SHAPES["linear"] = {
       const intercept = y1 - slope * x1;
       return {
         family: "line-through-point-with-slope",
-        stem: choose(variant, [
-          `A line with slope ${slope} passes through (${x1}, ${y1}). What is its y-intercept?`,
-          `The line through (${x1}, ${y1}) with slope ${slope} crosses the y-axis at which value?`,
-          `If a line has slope ${slope} and contains (${x1}, ${y1}), what is b in y = ${slope}x + b?`,
-          `Find the y-intercept of the line of slope ${slope} that passes through (${x1}, ${y1}).`,
-        ]),
+        stem: pose(variant, "parameterFor", {
+          condition: `y = ${slope}x + b passes through (${x1}, ${y1})`,
+          parameter: "b",
+        }),
         answer: intercept,
         wrong: [
           [y1 + slope * x1, "This adds the product instead of subtracting it when solving for b."],

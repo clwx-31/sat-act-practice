@@ -4668,6 +4668,7 @@ defineShapes({
 /* ------------------------ Geometry and Trigonometry --------------------- */
 
 importActShapeSubskill("area", "area");
+importActShapeSubskill("surface area", "surface area");
 
 // ---------------------------------------------------------------------------
 // Driver

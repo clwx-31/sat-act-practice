@@ -4794,12 +4794,9 @@ SHAPES["right-triangle trigonometry"] = {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
       return {
         family: "tangent-ratio-from-sides",
-        stem: choose(variant, [
-          `In a right triangle, the leg opposite angle B measures ${b} and the leg adjacent to B measures ${a}. What is tan B?`,
-          `A right triangle has legs ${a} and ${b}, with ${b} opposite angle B. What is the value of tan B?`,
-          `If the side opposite angle B is ${b} and the adjacent side is ${a}, tan B equals what?`,
-          `What is tan B when the opposite leg measures ${b} and the adjacent leg measures ${a}?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `tan B in a right triangle whose opposite leg is ${b} and whose adjacent leg is ${a}`,
+        }),
         answer: frac(b, a),
         wrong: [
           [frac(a, b), "This inverts the ratio, giving the tangent of the other acute angle."],

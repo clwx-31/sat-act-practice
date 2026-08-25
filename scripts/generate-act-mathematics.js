@@ -5317,18 +5317,16 @@ SHAPES["data displays"] = {
       const counts = [12 + (s % 7), 18 + (s % 5), 9 + (s % 6), 15 + (s % 4)];
       const maxIndex = counts.indexOf(Math.max(...counts));
       const answer = counts[maxIndex];
+      const collection = scene(variant, COLLECTION);
       return {
         family: "read-maximum-from-a-table",
         stimulus: {
           type: "table",
-          content: `A library recorded the number of study rooms booked each day.\n\nday | rooms booked\n${categories.map((name, index) => `${name} | ${counts[index]}`).join("\n")}`,
+          content: `A ${collection.owner} recorded the number of ${collection.plural} placed on a ${collection.holder} each day.\n\nday | ${collection.plural}\n${categories.map((name, index) => `${name} | ${counts[index]}`).join("\n")}`,
         },
-        stem: choose(variant, [
-          "According to the table, how many rooms were booked on the busiest day?",
-          "What is the greatest number of rooms booked on any single day shown?",
-          "On the day with the most bookings, how many rooms were booked?",
-          "The table's largest daily booking count is which number?",
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the greatest daily ${collection.item} count in the table`,
+        }),
         answer,
         wrong: [
           [Math.min(...counts), "This is the smallest daily count, not the largest."],

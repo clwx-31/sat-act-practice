@@ -4551,6 +4551,49 @@ importActShapeSelections("basic probability", {
   Hard: [["compound probability", "Hard", 0], ["compound probability", "Medium", 0]],
 });
 
+registerShapePhrasings("conditional probability", "conditional-probability");
+
+defineShapes({
+  "conditional probability": {
+    Easy: [
+      (t) => {
+        const both = t.int(3, 12); const conditionOnly = t.int(4, 15); const conditioned = both + conditionOnly;
+        return { family: "conditional-from-counts", stem: `Among ${conditioned} students who take art, ${both} also take music. If an art student is selected at random, what is the probability that the student also takes music?`, correct: both / conditioned,
+          wrong: [[both, "This is the favorable count, not a probability."], [conditioned, "This is the conditioned group size, not a probability."], [conditionOnly / conditioned, "This is the probability of art without music."], [both / (conditioned + both), "This uses a total that counts the overlap twice."]], explanation: `Restrict the sample space to the ${conditioned} art students; ${both} are also in music, so the probability is ${both}/${conditioned}.`, steps: ["Restrict the denominator to students satisfying the condition.", "Divide the overlap count by that denominator."], principles: ["P(A | B) uses only outcomes in B as its sample space."], verification: { kind: "probability", inputs: [both, conditioned], expected: both / conditioned } };
+      },
+      (t) => {
+        const red = t.int(4, 12); const blue = t.int(4, 12);
+        return { family: "second-draw-given-first", stem: `A bag contains ${red} red and ${blue} blue tokens. Given that a red token was drawn and not replaced, what is the probability the next token is red?`, correct: (red - 1) / (red + blue - 1),
+          wrong: [[red / (red + blue), "This uses the original composition before the known red draw."], [red / (red + blue - 1), "This reduces the total but not the red count."], [(red - 1) / (red + blue), "This reduces the red count but not the total."], [blue / (red + blue - 1), "This gives the probability of blue on the second draw."]], explanation: `After the known red draw, ${red - 1} red tokens remain among ${red + blue - 1} total.`, steps: ["Update both the favorable and total counts after the known draw.", "Form the new favorable-to-total ratio."], principles: ["Without replacement, a known outcome changes the next-draw sample space."], verification: { kind: "probability", inputs: [red - 1, red + blue - 1], expected: (red - 1) / (red + blue - 1) } };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const group = t.int(30, 80); const overlap = t.int(8, group - 8); const percent = overlap / group * 100;
+        return { family: "conditional-percent-table", stem: `A two-way table shows that ${group} surveyed people use public transit and ${overlap} of those people also bicycle to work. What percent of transit users bicycle to work?`, correct: percent,
+          wrong: [[overlap, "This is the overlap count, not its percentage of transit users."], [group, "This is the conditioned group size."], [100 - percent, "This is the percent of transit users who do not bicycle."], [overlap / 100, "This converts the count as if it were already a percent."]], explanation: `Use transit users as the denominator: ${overlap}/${group} · 100 = ${formatNumber(percent)}%.`, steps: ["Use the conditioned row or column as the denominator.", "Divide the overlap and convert to percent."], principles: ["A conditional table percentage is an overlap divided by the conditioned group."] };
+      },
+      (t) => {
+        const pA = t.int(2, 8) / 10; const pBgivenA = t.int(2, 8) / 10;
+        return { family: "intersection-from-conditional", stem: `For events A and B, P(A) = ${pA} and P(B | A) = ${pBgivenA}. What is P(A and B)?`, correct: pA * pBgivenA,
+          wrong: [[pA + pBgivenA, "This adds probabilities instead of using the conditional product rule."], [pBgivenA / pA, "This divides the conditional probability by the conditioning event."], [pA, "This ignores the fraction of A outcomes that also lie in B."], [pBgivenA, "This is conditional within A, not probability in the full sample space."]], explanation: `P(A and B) = P(A)P(B | A) = ${pA}(${pBgivenA}) = ${formatNumber(pA * pBgivenA)}.`, steps: ["Write the conditional multiplication rule.", "Multiply the conditioning-event probability by the conditional probability."], principles: ["P(A ∩ B) = P(A)P(B | A)."], verification: { kind: "product", inputs: [pA, pBgivenA], expected: pA * pBgivenA } };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const pA = t.int(2, 8) / 10; const pB = t.int(2, 8) / 10;
+        return { family: "independence-conditional", stem: `Events A and B are independent, with P(A) = ${pA} and P(B) = ${pB}. What is P(A | B)?`, correct: pA,
+          wrong: [[pA * pB, "This is P(A and B), not P(A given B)."], [pA / pB, "Independence does not require dividing the marginal probabilities."], [pB, "This is the probability of the conditioning event."], [pA + pB, "This adds marginal probabilities without accounting for overlap."]], explanation: `Independence means learning B does not change A, so P(A | B) = P(A) = ${pA}.`, steps: ["Use the definition of independent events.", "Replace the conditional probability with A's marginal probability."], principles: ["For independent events, P(A | B) = P(A)."], verification: { kind: "probability", inputs: [pA, 1], expected: pA } };
+      },
+      (t) => {
+        const total = 100; const a = 10 * t.int(3, 7); const overlap = t.int(5, a - 5); const b = overlap + t.int(8, 25);
+        return { family: "reverse-conditional", stem: `In a group of ${total}, ${a} satisfy A, ${b} satisfy B, and ${overlap} satisfy both. What is P(A | B)?`, correct: overlap / b,
+          wrong: [[overlap / a, "This is P(B | A), which uses A rather than B as the denominator."], [overlap / total, "This is the joint probability in the full group."], [a / b, "This uses all A outcomes, including those outside B."], [b / total, "This is P(B), not the requested conditional probability."]], explanation: `Once B is known, the sample space has ${b} outcomes, of which ${overlap} also satisfy A; P(A | B) = ${overlap}/${b}.`, steps: ["Restrict the denominator to event B.", "Count the outcomes in both A and B."], principles: ["Reversing a conditional probability changes its denominator."], verification: { kind: "probability", inputs: [overlap, b], expected: overlap / b } };
+      },
+    ],
+  },
+});
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

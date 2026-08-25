@@ -303,6 +303,7 @@ registerShapePhrasings("solve", "linear-equation");
 registerShapePhrasings("interpret constants", "linear-model constant");
 registerShapePhrasings("no or infinite solutions", "solution-count condition");
 registerShapePhrasings("slope", "rate-of-change");
+registerShapePhrasings("intercepts", "axis-intercept");
 
 defineShapes({
   "solve": {

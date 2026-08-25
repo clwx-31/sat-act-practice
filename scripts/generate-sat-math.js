@@ -2207,6 +2207,7 @@ defineShapes({
 
 registerShapePhrasings("factoring", "factored-polynomial");
 registerShapePhrasings("exponent rules", "exponent-law");
+registerShapePhrasings("rational expressions", "rational-expression");
 
 defineShapes({
   "factoring": {

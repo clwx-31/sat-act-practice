@@ -206,6 +206,75 @@ of deciding whether to proceed — 5a's harness is the gate now.
 Note: the 45.7% answerable-without-reading figure is a **separate** problem. Do
 not try to fix it in this task.
 
+---
+
+## Task 6 — rebalance answer positions inside each difficulty tier (do this first)
+
+**Priority: ahead of Task 5.** This is small, mechanical, and it fixes what the
+live site serves today. The diagnosis is in `docs/QUESTION_QUALITY_HANDOFF.md`
+under **"Answer positions are balanced per bank but skewed per tier."**
+
+Every bank is a clean 25/25/25/25 overall. Inside each difficulty tier,
+act-english, act-mathematics, and act-science all sit at roughly:
+
+```
+Easy    21/18/46/15      Medium   3/43/22/33      Hard   67/4/6/23
+```
+
+A student drilling Hard sees the key at A two thirds of the time. That is a
+pattern worth more than the content is.
+
+Write `scripts/rebalance-answers.js`, taking a section key and operating on the
+committed bank in place:
+
+- Group items by `difficulty`, then within each tier reassign target positions so
+  each of A/B/C/D lands within one item of a quarter of that tier.
+- For each item, permute the `choices` array to move the key to its assigned
+  position, then update **`correctAnswer`** (a 0-based index into `choices`) and
+  the **`index`** field of every entry in `distractorRationales`, which is also a
+  0-based index into `choices`. A rationale must stay attached to the choice it
+  describes — verify by text, not by position, before and after.
+- Skip items that do not have exactly four choices, and skip
+  `content/banks/act-writing.json`, which has no multiple-choice items.
+- Be deterministic: same input, same output. Seed from the section key.
+
+Then apply it to **act-english, act-mathematics, and act-science**, run
+`npm run build:content`, and commit banks and generated files together.
+
+**Done when**, for all three sections, no position exceeds 30% in any tier, and
+`npm run check` still passes. Re-measure with a script rather than trusting the
+audit alone, and report the nine before/after numbers.
+
+> **The bank half of this task is already done on `main`.** Your
+> `rebalance-answers.js` was verified from the other lane and then applied there
+> to **act-english, act-mathematics, act-science, and also sat-math**, followed by
+> `npm run build:content`. Every section now sits at or below **25.6%** for its
+> worst answer position in any difficulty tier, except sat-reading-writing at
+> 29.1%, which was already inside the guard. `npm run check` passes.
+>
+> **Do not apply it again.** Merge `main`, drop any local bank changes from this
+> task, and do only the guard described below. Your script itself is not on
+> `main` — it arrives when `codex-lane` merges, and the transformation is
+> recorded in the commit that applied it.
+
+sat-math was not in the original task list because it was under the audit's 40%
+threshold, but its Easy tier sat at 36% B, which fails the 30% guard. It was
+rebalanced for that reason.
+
+**Then add the guard.** After the three banks are committed, add a per-tier
+answer-position check to `npm run check` that fails if any position exceeds 30%
+within any difficulty tier of any section. Without it, the next regenerated bank
+reintroduces the skew silently — ACT English, ACT Mathematics, and ACT Science
+are all scheduled for regeneration, and only `generate-act-reading.js` currently
+balances within tier.
+
+Two cautions:
+
+- **Do not touch act-reading.** It is already 25/25/25/25 in every tier and is
+  the model this task is copying.
+- **Do not regenerate any bank.** This task permutes existing items only. If a
+  generator runs, the authored content changes and the task has overreached.
+
 ## Where to write reports
 
 Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to

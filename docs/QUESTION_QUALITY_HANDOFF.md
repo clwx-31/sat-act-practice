@@ -326,8 +326,15 @@ the generated bank still reflects the previously committed canonical bank.
   4 / 2 / 8, 5/6/3, 3 keeps of 11 = 27.3%).
   Passage 016 is `016-in-the-dark.js` (process narrative, 13 questions at
   4 / 2 / 7, 4/6/3, 3 keeps of 10 = 30%).
-  **16 of 40 authored, 232 of 575 questions**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 48 of 181 = 26.5%. Verified
+  Passage 017 is `017-the-oldest-part.js` (personal essay, 16 questions at
+  5 / 3 / 8, 4/7/5, 3 keeps of 12 = 25%).
+  Passage 018 is `018-road-salt.js` (informative essay, 15 questions at
+  5 / 2 / 8, 5/6/4, 3 keeps of 12 = 25%). All three passages in the 15-question
+  group are now written.
+  Passage 019 is `019-six-dots.js` (historical account, 14 questions at
+  4 / 2 / 8, 4/7/3, 3 keeps of 11 = 27.3%).
+  **19 of 40 authored, 277 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 57 of 216 = 26.4%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.
@@ -419,6 +426,62 @@ Filed as Codex Task 5 in `docs/CODEX_LANE.md`.
 
 The 45.7% answerable-without-reading figure is a separate, unrelated problem and
 is not addressed by any of this.
+
+### Answer positions are balanced per bank but skewed per tier — 2026-08-24
+
+Reported by the user from live practice: "almost every answer is A." Measured
+against the committed banks, that is correct, and the mechanism is specific.
+
+**Every bank is a perfect 25/25/25/25 overall.** Inside each difficulty tier,
+three sections are badly skewed:
+
+| Section | Easy A/B/C/D | Medium A/B/C/D | Hard A/B/C/D |
+| --- | --- | --- | --- |
+| act-english | 21/18/**46**/15 | **3**/43/22/33 | **67**/4/6/23 |
+| act-mathematics | 20/18/**47**/15 | **3**/42/22/32 | **67**/5/5/23 |
+| act-science | 20/18/**46**/16 | **3**/42/22/32 | **67**/5/5/23 |
+| act-reading | 25/25/25/25 | 25/25/25/25 | 25/25/25/25 |
+| sat-math | 24/36/24/16 | 28/20/21/30 | 21/20/32/26 |
+| sat-reading-writing | 29/21/29/21 | 22/28/23/27 | 26/25/24/25 |
+
+A student drilling Hard items in ACT English, Mathematics, or Science sees the
+key at position A **two thirds of the time**, and a student drilling Medium sees
+it at A **three per cent** of the time. Both are worse than useless: they are
+teachable patterns, and a student who notices will out-score the content.
+
+**Why act-reading is clean:** its rebuilt generator balances answer positions
+inside each difficulty tier *and* overall. The other three balance only overall.
+Difficulty is assigned by `assignDifficulties` in hash order while positions are
+planned across the whole bank, so the two orderings interact and produce a
+distribution that is uniform in aggregate and lopsided in every slice a student
+actually practises.
+
+**This is the single highest-value fix available right now**, because it is
+mechanical, it needs no new authored content, and it affects what the live site
+serves today. It does not require regenerating any section: permuting the
+`choices` array of an existing item and remapping `correctAnswer` and the
+`index` field of each `distractorRationales` entry preserves the item exactly.
+
+Filed as Codex Task 6 in `docs/CODEX_LANE.md`.
+
+**Verified 2026-08-24.** Codex's `scripts/rebalance-answers.js` was run against
+the committed banks from the other lane, writing nothing, and independently
+checked. All three sections go to exactly 25/25/25/25 in every tier, with **0
+integrity problems** across 1,725 items: key text unchanged, choice set
+identical, no duplicate choices introduced, every rationale still bound to the
+choice it describes, and no rationale pointing at the key. The script verifies
+the rationale binding by text rather than by index, which is what makes the
+permutation safe.
+
+**The trap that would undo this.** Task 6 repairs the banks as they stand. Three
+of those banks are scheduled to be regenerated — ACT English from the authored
+passages, ACT Mathematics after Task 5, ACT Science later — and **a regenerated
+bank will bring the skew straight back unless its generator balances answer
+positions inside each difficulty tier as well as overall.** That is the one
+thing `generate-act-reading.js` does that the others do not, and it is why
+act-reading is the only section that was already clean. Every rebuilt generator
+must do the same, and the per-tier measurement belongs in `npm run check` so the
+regression cannot return unnoticed.
 
 ### The next four steps, in order
 

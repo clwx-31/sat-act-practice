@@ -293,6 +293,38 @@ function defineShapes(group) {
   });
 }
 
+function importedChoice(value) {
+  return value && typeof value === "object" && typeof value.text === "string"
+    ? value.text
+    : value;
+}
+
+function importActShapeSubskill(satSubskill, actSubskill) {
+  const tiers = {};
+  ["Easy", "Medium", "Hard"].forEach((tier) => {
+    const count = 2;
+    tiers[tier] = Array.from({ length: count }, (_, index) => (
+      first,
+      second,
+      third,
+    ) => {
+      const sequence = typeof first === "number" ? first : third;
+      const variant = typeof first === "number"
+        ? second
+        : hashString(`${satSubskill}|${sequence}`) % 8;
+      const actShape = require("./generate-act-mathematics").SHAPES[actSubskill][tier][index];
+      const spec = actShape(sequence, variant);
+      return {
+        ...spec,
+        correct: importedChoice(spec.answer),
+        explanation: spec.why,
+        wrong: spec.wrong.map(([value, reason]) => [importedChoice(value), reason]),
+      };
+    });
+  });
+  SHAPES[satSubskill] = tiers;
+}
+
 // Cells whose answers are words rather than numbers; forced to multiple choice
 // because a student-produced response cannot express them.
 const TEXT_ANSWER = new Set();

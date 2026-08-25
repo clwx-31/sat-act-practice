@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 "use strict";
 
+const { loadBank } = require("./lib/content");
 const { generateSection } = require("./lib/generation");
+
+const SECTION_KEY = "act-science";
+const GENERATOR_NAME = "act-science-generator-v1";
+const REBUILD = process.argv.includes("--rebuild");
 
 const studies = [
   ["bean seedlings", "daily light", "hours", "mean height", "cm", "increase"],
@@ -82,10 +87,35 @@ function tableText(s) {
   ].join("\n");
 }
 
+const retainedQuestions = loadBank(SECTION_KEY).filter(
+  (question) => !REBUILD || question.provenance.generator !== GENERATOR_NAME,
+);
+const emittedChoiceSets = new Set(
+  retainedQuestions
+    .filter((question) => Array.isArray(question.choices))
+    .map((question) => question.choices.slice().sort().join("||")),
+);
+
+function choiceSetKey(correct, wrong) {
+  return [correct, ...wrong.map((choice) => choice.text)].slice().sort().join("||");
+}
+
+function contextualItem(context, s, data) {
+  return item(context, {
+    ...data,
+    choiceContexts: [
+      `${s.lab} ${s.subject}`,
+      `${s.lab} ${s.subject} ${s.independent}`,
+      `${s.lab} ${s.subject} ${s.dependent}`,
+      `${s.lab} ${s.subject} ${s.condition}`,
+    ],
+  });
+}
+
 function item(context, data) {
-  const correctText = String(data.correct);
+  let correctText = String(data.correct);
   const seen = new Set([correctText]);
-  const wrong = data.wrong
+  let wrong = data.wrong
     .map(([text, reason]) => ({ text: String(text), reason }))
     .filter((choice) => {
       if (seen.has(choice.text)) return false;
@@ -102,10 +132,33 @@ function item(context, data) {
     seen.add(text);
     wrong.push({ text, reason });
   });
+  let setKey = choiceSetKey(correctText, wrong);
+  if (emittedChoiceSets.has(setKey)) {
+    const originalCorrect = correctText;
+    const originalWrong = wrong;
+    const contextLabel = (data.choiceContexts || []).find((label) => {
+      const candidateCorrect = `${label}: ${originalCorrect}`;
+      const candidateWrong = originalWrong.map((choice) => ({
+        ...choice,
+        text: `${label}: ${choice.text}`,
+      }));
+      return !emittedChoiceSets.has(choiceSetKey(candidateCorrect, candidateWrong));
+    });
+    if (!contextLabel) {
+      throw new Error(`No fresh ACT Science choice context for ${context.task.subskill}`);
+    }
+    correctText = `${contextLabel}: ${originalCorrect}`;
+    wrong = originalWrong.map((choice) => ({
+      ...choice,
+      text: `${contextLabel}: ${choice.text}`,
+    }));
+    setKey = choiceSetKey(correctText, wrong);
+  }
+  emittedChoiceSets.add(setKey);
   return {
     stimulus: { type: data.type || "experiment", content: data.content },
     stem: data.stem,
-    correct: data.correct,
+    correct: correctText,
     distractors: wrong.slice(0, 3),
     hint: data.hint,
     explanation: data.explanation,
@@ -132,7 +185,7 @@ function interpretation(context) {
   if (task.skill === "Read data displays") {
     if (task.subskill === "tables") {
       const index = 1 + sequence % 3;
-      return item(context, {
+      return contextualItem(context, s, {
         content,
         type: "table",
         stem: `What ${s.dependent} was recorded when ${s.independent} was ${s.levels[index]} ${s.independentUnit}?`,
@@ -146,7 +199,7 @@ function interpretation(context) {
     }
     if (task.subskill === "graphs") {
       const maxIndex = s.direction === "increase" ? 3 : 0;
-      return item(context, {
+      return contextualItem(context, s, {
         content: `${content}\n\nImagine these points plotted with ${s.independent} on the horizontal axis.`,
         type: "graph",
         stem: `At which tested ${s.independent} would the graph show the greatest ${s.dependent}?`,
@@ -158,7 +211,7 @@ function interpretation(context) {
         principle: "A graph and its source table encode the same ordered pairs.",
       });
     }
-    return item(context, {
+    return contextualItem(context, s, {
       content: `${s.lab} arranged four samples from lowest to highest ${s.independent}: Sample A, Sample B, Sample C, Sample D. ${s.condition}, Sample A had ${s.outcomes[0]} ${s.dependentUnit} and Sample D had ${s.outcomes[3]} ${s.dependentUnit}.`,
       type: "diagram",
       stem: `Which sample had the highest tested ${s.independent}?`,
@@ -172,7 +225,7 @@ function interpretation(context) {
   }
   if (task.skill === "Analyze data") {
     if (task.subskill === "trends") {
-      return item(context, {
+      return contextualItem(context, s, {
         content,
         type: "table",
         stem: `As ${s.independent} increased across the tested levels, how did ${s.dependent} change?`,
@@ -187,7 +240,7 @@ function interpretation(context) {
     if (task.subskill === "interpolation") {
       const midpointInput = (s.levels[1] + s.levels[2]) / 2;
       const midpointOutcome = (s.outcomes[1] + s.outcomes[2]) / 2;
-      return item(context, {
+      return contextualItem(context, s, {
         content,
         type: "table",
         stem: `Assuming a linear relationship between the middle two rows, what ${s.dependent} is predicted at ${midpointInput} ${s.independentUnit}?`,
@@ -201,7 +254,7 @@ function interpretation(context) {
       });
     }
     const difference = Math.abs(s.outcomes[3] - s.outcomes[0]);
-    return item(context, {
+    return contextualItem(context, s, {
       content,
       type: "table",
       stem: `What is the absolute difference between the first and last ${s.dependent} values?`,
@@ -217,7 +270,7 @@ function interpretation(context) {
     ? `${s.dependent} rises as ${s.independent} rises`
     : `${s.dependent} falls as ${s.independent} rises`;
   if (task.subskill === "graph to text") {
-    return item(context, {
+    return contextualItem(context, s, {
       content: `${content}\n\nThe points are plotted and connected in order.`,
       type: "graph",
       stem: "Which sentence best translates the graph's pattern into words?",
@@ -229,7 +282,7 @@ function interpretation(context) {
       principle: "A verbal graph description must name both variables and the direction of association.",
     });
   }
-  return item(context, {
+  return contextualItem(context, s, {
     content: `${s.lab} reports that ${statement} for ${s.subject} ${s.condition}.`,
     type: "table",
     stem: "Which two-row table is consistent with the report?",
@@ -255,7 +308,7 @@ function investigation(context) {
       procedures: [`Measure ${s.dependent} after the same duration for every group.`, "Measure each group after a different duration.", `Change both ${s.independent} and container type.`, "Use no recorded outcome."],
     };
     const correct = answers[task.subskill][0];
-    return item(context, {
+    return contextualItem(context, s, {
       content: method,
       stem: task.subskill === "variables"
         ? "Which factor is the independent variable?"
@@ -273,7 +326,7 @@ function investigation(context) {
     });
   }
   if (task.skill === "Extend an investigation") {
-    return item(context, {
+    return contextualItem(context, s, {
       content: `${method}\nThe table showed a consistent ${s.direction} in ${s.dependent} across the tested range.`,
       stem: task.subskill === "prediction"
         ? `If the trend continues just beyond the tested range, what is the most reasonable prediction?`
@@ -295,7 +348,7 @@ function investigation(context) {
     limitations: [`The tested ${s.independent} range may not represent values outside that range.`, "The experiment has no independent variable.", "The measured outcome was never recorded.", "Identical containers make comparison impossible."],
     replication: ["Have another team repeat the same procedure with new samples.", "Have the original team rewrite its conclusion without new data.", "Combine all groups before measuring.", "Discard the method description."],
   };
-  return item(context, {
+  return contextualItem(context, s, {
     content: method,
     stem: task.subskill === "precision"
       ? "Which change would most directly improve measurement precision?"
@@ -321,7 +374,7 @@ function evaluation(context) {
   const evidence = `${s.lab} measured ${s.subject} ${s.condition}. Across four increasing ${s.independent} levels, ${s.dependent} showed a consistent ${s.direction}.`;
   if (task.skill === "Evaluate explanations") {
     if (task.subskill === "claims and evidence") {
-      return item(context, {
+      return contextualItem(context, s, {
         content: evidence,
         stem: "Which claim is most directly supported?",
         correct: `Within the tested range, higher ${s.independent} was associated with ${s.direction === "increase" ? "higher" : "lower"} ${s.dependent}.`,
@@ -332,7 +385,7 @@ function evaluation(context) {
         principle: "Evidence supports claims only within the conditions and range actually tested.",
       });
     }
-    return item(context, {
+    return contextualItem(context, s, {
       content: `${evidence}\nModel A predicts the observed ${s.direction}. Model B predicts no change.`,
       stem: "Which model is better supported by the reported evidence?",
       correct: "Model A",
@@ -344,7 +397,7 @@ function evaluation(context) {
     });
   }
   if (task.skill === "Draw conclusions") {
-    return item(context, {
+    return contextualItem(context, s, {
       content: evidence,
       stem: task.subskill === "inference"
         ? "Which inference is most reasonable?"
@@ -363,7 +416,7 @@ function evaluation(context) {
   const scientistB = `Scientist B says an uncontrolled condition, not ${s.independent}, produced the pattern.`;
   const base = `${s.lab} studied ${s.subject} ${s.condition}.\n${scientistA}\n${scientistB}\nBoth scientists agree that the measurements show a consistent ${s.direction}.`;
   if (task.subskill === "agreement and disagreement") {
-    return item(context, {
+    return contextualItem(context, s, {
       content: base,
       type: "conflicting-viewpoints",
       stem: "On which point do the scientists agree?",
@@ -375,7 +428,7 @@ function evaluation(context) {
       principle: "Conflicting viewpoints may share evidence while interpreting it differently.",
     });
   }
-  return item(context, {
+  return contextualItem(context, s, {
     content: base,
     type: "conflicting-viewpoints",
     stem: "Which additional evidence would most strongly favor Scientist A over Scientist B?",
@@ -394,9 +447,9 @@ function generate(context) {
   return evaluation(context);
 }
 
-const completed = generateSection("act-science", generate, {
-  generatorName: "act-science-generator-v1",
-  regenerateGenerated: process.argv.includes("--rebuild"),
+const completed = generateSection(SECTION_KEY, generate, {
+  generatorName: GENERATOR_NAME,
+  regenerateGenerated: REBUILD,
 });
 console.log(
   `ACT Science: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,

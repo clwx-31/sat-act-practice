@@ -3907,12 +3907,9 @@ SHAPES["circles"] = {
       const radius = 2 + (s % 11);
       return {
         family: "circumference-from-radius",
-        stem: choose(variant, [
-          `What is the circumference of a circle with radius ${radius}, in terms of π?`,
-          `A circle has radius ${radius}. What is its circumference?`,
-          `Express in terms of π the circumference of a circle whose radius is ${radius}.`,
-          `The distance around a circle of radius ${radius} equals what?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the circumference in terms of π of a circle with radius ${radius}`,
+        }),
         answer: pi(2 * radius),
         wrong: [
           [pi(radius * radius), "This is the area, πr², not the circumference."],

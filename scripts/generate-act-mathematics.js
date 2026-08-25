@@ -6727,9 +6727,12 @@ SHAPES["percentages"] = {
       const up = span(s, 10, 5, 10);
       const down = span(s, 10, 4, 5);
       const answer = round3((100 + up) * (100 - down) / 100);
+      const retail = scene(variant, RETAIL);
       return {
         family: "compounded-percent-change-net-effect",
-        stem: `A retailer raises the price of an item by ${up}% and later reduces the new price by ${down}%. The final price is what percent of the original price?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the final price of a ${retail.item} as a percent of its original price after a ${up}% increase and a ${down}% reduction at a ${retail.shop}`,
+        }),
         answer,
         wrong: [
           [100 + up - down, `This adds and subtracts the percents. The ${down}% reduction is taken from the raised price, not from the original, so the two percents apply to different bases.`],

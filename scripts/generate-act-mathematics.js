@@ -5254,7 +5254,9 @@ SHAPES["center and spread"] = {
       const wide = [base - spread, base, base + 1, base + 2, base + spread + 2];
       return {
         family: "compare-standard-deviations",
-        stem: `Data set P is ${tight.join(", ")} and data set Q is ${wide.join(", ")}. Which statement correctly compares their standard deviations?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the correct comparison of the standard deviations of data set P, ${tight.join(", ")}, and data set Q, ${wide.join(", ")}`,
+        }),
         answer: "Q has the larger standard deviation because its values are spread farther from the mean.",
         wrong: [
           ["P has the larger standard deviation because it contains repeated values.", "Repeated values pull a set together rather than spreading it out, which lowers the standard deviation."],

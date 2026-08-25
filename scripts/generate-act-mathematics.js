@@ -2922,12 +2922,9 @@ SHAPES["linear"] = {
       const y2 = y1 + slope * run;
       return {
         family: "slope-from-two-points",
-        stem: choose(variant, [
-          `What is the slope of the line through (${x1}, ${y1}) and (${x2}, ${y2})?`,
-          `A line passes through (${x1}, ${y1}) and (${x2}, ${y2}). What is its slope?`,
-          `The line containing (${x1}, ${y1}) and (${x2}, ${y2}) has which slope?`,
-          `Find the slope of the line joining (${x1}, ${y1}) to (${x2}, ${y2}).`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the slope of the line through (${x1}, ${y1}) and (${x2}, ${y2})`,
+        }),
         answer: slope,
         wrong: [
           [round3(run / (slope * run)), "This inverts the ratio, dividing the run by the rise."],

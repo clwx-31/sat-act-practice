@@ -6236,14 +6236,12 @@ SHAPES["rates"] = {
       const a = span(s, 4, 5, 2);
       const b = a + span(s, 2, 4, 2);
       const answer = round3((a * b) / (a + b));
+      const production = scene(variant, PRODUCTION);
       return {
         family: "combined-work-rate",
-        stem: choose(variant, [
-          `Pump A alone fills a tank in ${a} hours and pump B alone fills the same tank in ${b} hours. Working together at those rates, how many hours do they take to fill the tank?`,
-          `One hose fills a pool in ${a} hours; a second fills it in ${b} hours. Running both at once, how many hours does filling the pool take?`,
-          `Working alone, printer A finishes a run in ${a} hours and printer B finishes it in ${b} hours. Running together, how many hours does the run take?`,
-          `Machine A completes a job in ${a} hours and machine B completes it in ${b} hours. How many hours does the job take with both machines running?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the time for two ${production.actor}s working together to finish a ${production.object} job when they need ${a} and ${b} hours alone`,
+        }),
         answer,
         wrong: [
           [a + b, "This adds the times; two workers together are faster than either alone."],

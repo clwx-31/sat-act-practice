@@ -6451,9 +6451,12 @@ SHAPES["proportions"] = {
       const meters = span(s, 3, 5);
       const wall = meters * span(s, 2, 5);
       const answer = round3((wall / meters) * cm);
+      const ground = scene(variant, GROUND);
       return {
         family: "scale-drawing-inverse-direction",
-        stem: `On a scale drawing, ${cm} centimeters represents ${meters} meters. A wall is ${wall} meters long. How many centimeters long is that wall in the drawing?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the drawing length in centimeters of a ${wall}-meter ${ground.edge} around a ${ground.region} when ${cm} centimeters represents ${meters} meters`,
+        }),
         answer,
         wrong: [
           [round3((wall / cm) * meters), "This applies the scale upside down, converting drawing units into real ones."],

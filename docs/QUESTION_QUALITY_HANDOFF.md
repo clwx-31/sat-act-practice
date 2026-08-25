@@ -339,8 +339,14 @@ the generated bank still reflects the previously committed canonical bank.
   5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
   Passage 022 is `022-one-face.js` (informative essay, 14 questions at
   4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
-  **22 of 40 authored, 320 of 575 questions**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 66 of 249 = 26.5%. Verified
+  Passage 023 is `023-the-computers.js` (historical account, 13 questions at
+  4 / 2 / 7, 4/6/3, 3 keeps of 11 = 27.3%).
+  Passage 024 is `024-with-the-grain.js` (process narrative, 14 questions at
+  4 / 2 / 8, 5/6/3, 3 keeps of 11 = 27.3%).
+  Passage 025 is `025-two-in-the-afternoon.js` (personal essay, 16 questions at
+  5 / 3 / 8, 4/7/5, 3 keeps of 12 = 25%).
+  **25 of 40 authored, 363 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 75 of 283 = 26.5%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.
@@ -540,6 +546,31 @@ and the 8.0% of items whose choice set has appeared before — those two are the
 same underlying problem and they are real.
 
 Filed as Codex Task 8 in `docs/CODEX_LANE.md`.
+
+### ACT Science is one metric from PASS, and it is two mechanical tells — 2026-08-25
+
+After the codex-lane merge, act-science fails the audit on
+answerable-without-reading alone, at 77.9%. Everything else passes: 0 exact and 0
+near duplicates, 575 distinct shapes, largest family 0.2%, answer positions
+25.1 / 25.2 / 25.3, difficulty mix exactly on target.
+
+Measured, the 77.9% decomposes into:
+
+- **59.0% (339 items): the sorted choice set has appeared before with the same
+  key.** A student who has met the option set recalls the answer without reading.
+  This is the same defect Codex took from 49 to 0 in ACT Mathematics.
+- **19.0%: the longest-option rule**, and 229 items (39.8%) have the key
+  *strictly* longest. The key averages 43.8 characters against 29.7 for
+  distractors, and the median key is 27 characters longer than its nearest rival.
+
+Neither is a content problem. Both are generator-level and mechanical, which
+means Science does not need the authoring rebuild ACT English is getting — it
+needs the Task 8b treatment plus distractors written at the key's length. Filed
+as Codex Task 9.
+
+The separately logged Science content defects — 31 tautological items, 31 with
+swapped-row distractor pairs, 63 `type: "graph"` items rendering a table — are
+real, are not what this metric is measuring, and remain open.
 
 ### The next four steps, in order
 

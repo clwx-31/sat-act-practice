@@ -4429,12 +4429,9 @@ SHAPES["surface area"] = {
       const answer = 6 * edge * edge;
       return {
         family: "cube-surface-area",
-        stem: choose(variant, [
-          `What is the surface area of a cube with edge length ${edge}?`,
-          `A cube has edges measuring ${edge}. What is its total surface area?`,
-          `Find the surface area of a cube whose edge is ${edge}.`,
-          `A cube of edge ${edge} has how much surface area?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the surface area of a cube with edge length ${edge}`,
+        }),
         answer,
         wrong: [
           [edge ** 3, "This is the volume, not the surface area."],

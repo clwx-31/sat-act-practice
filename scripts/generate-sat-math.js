@@ -2211,6 +2211,7 @@ registerShapePhrasings("rational expressions", "rational-expression");
 registerShapePhrasings("quadratic equations", "quadratic-root");
 registerShapePhrasings("radical equations", "radical-equation");
 registerShapePhrasings("absolute value", "absolute-value distance");
+registerShapePhrasings("linear-quadratic systems", "line-parabola system");
 
 defineShapes({
   "factoring": {

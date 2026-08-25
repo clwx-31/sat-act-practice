@@ -3965,12 +3965,9 @@ SHAPES["circles"] = {
       const answer = round3((degreesArc / 360) * radius * radius);
       return {
         family: "sector-area-fraction-of-circle",
-        stem: choose(variant, [
-          `A sector of a circle of radius ${radius} has a central angle of ${degreesArc}°. What is its area, in terms of π?`,
-          `What is the area of a ${degreesArc}° sector in a circle whose radius is ${radius}?`,
-          `In a circle of radius ${radius}, a central angle of ${degreesArc}° bounds a sector of what area?`,
-          `Find the area of the sector cut by a ${degreesArc}° central angle in a circle of radius ${radius}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area in terms of π of a ${degreesArc}° sector in a circle of radius ${radius}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(round3((degreesArc / 360) * 2 * radius)), "This is the arc length, not the sector's area."],

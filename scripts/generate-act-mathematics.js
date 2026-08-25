@@ -7303,9 +7303,12 @@ SHAPES["averages"] = {
       const extra = span(s, 2, 3);
       const target = current + span(s, 2, 4);
       const answer = round3(((taken + extra) * target - taken * current) / extra);
+      const cohort = scene(variant, COHORT);
       return {
         family: "scores-needed-to-raise-a-mean",
-        stem: `A student has taken ${taken} tests and has an average of ${current}. The student will take ${extra} more tests and wants an average of ${target} over all ${taken + extra} tests. What score, the same on each remaining test, is required?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the equal score needed on ${extra} remaining ${cohort.plural} to raise a ${cohort.member}'s ${taken}-${cohort.unit} average from ${current} to ${target}`,
+        }),
         answer,
         wrong: [
           [target, "This is the desired overall average; because the existing scores sit below it, the remaining tests have to score higher to pull the mean up."],

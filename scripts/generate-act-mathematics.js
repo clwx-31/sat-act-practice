@@ -6858,9 +6858,12 @@ SHAPES["perimeter and area"] = {
       const width = span(s, 5, 5, 3);
       const perimeter = 2 * (length + width);
       const answer = length * width;
+      const ground = scene(variant, GROUND);
       return {
         family: "area-from-perimeter-and-one-side",
-        stem: `A rectangular garden has a perimeter of ${perimeter} feet and a length of ${length} feet. What is its area, in square feet?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the area, in square feet, of a rectangular ${ground.region} with perimeter ${perimeter} feet and length ${length} feet`,
+        }),
         answer,
         wrong: [
           [round3(length * (perimeter / 2)), "This uses half the perimeter as the width; half the perimeter is the length plus the width."],

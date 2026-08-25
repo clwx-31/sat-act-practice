@@ -3047,9 +3047,10 @@ SHAPES["linear"] = {
       const extraRate = 3 + (s % 5);
       const hours = included + 2 + (s % 6);
       const answer = base + extraRate * (hours - included);
+      const service = scene(variant, HOURLY_SERVICE);
       return {
         family: "piecewise-linear-model",
-        stem: `A workshop charges ${base} for the first ${included} hours of studio time and ${extraRate} for each additional hour. What is the charge for ${hours} hours?`,
+        stem: `A ${service} charges ${base} for the first ${included} hours and ${extraRate} for each additional hour. What is the charge for ${hours} hours?`,
         answer,
         wrong: [
           [base + extraRate * hours, `This charges the extra rate for all ${hours} hours instead of only the hours beyond ${included}.`],

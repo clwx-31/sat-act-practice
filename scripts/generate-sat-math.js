@@ -207,6 +207,20 @@ function linearCheck(a, b, c) {
 const SHAPES = {};
 const SHAPE_PHRASINGS = {};
 
+function registerShapePhrasings(subskill, focus) {
+  const frames = [
+    (stem) => `${stem} Work from the ${focus} relationship shown.`,
+    (stem) => `Use the defining ${focus} relationship to answer this question: ${stem}`,
+    (stem) => `Track each quantity in this ${focus} problem before computing: ${stem}`,
+    (stem) => `Choose the governing ${focus} rule, then solve the following: ${stem}`,
+    (stem) => `Translate this ${focus} setup into its mathematical condition: ${stem}`,
+    (stem) => `Reason from the structure of the ${focus} model here: ${stem}`,
+    (stem) => `Check the requested quantity after completing this ${focus} analysis: ${stem}`,
+    (stem) => `Keep the ${focus} constraint in view throughout this problem: ${stem}`,
+  ];
+  SHAPE_PHRASINGS[subskill] = (stem, variant) => frames[variant % frames.length](stem);
+}
+
 function completeWrongPool(correct, wrong) {
   const completed = wrong.slice(0, 6);
   const seen = new Set([label(correct), ...completed.map(([value]) => label(value))]);

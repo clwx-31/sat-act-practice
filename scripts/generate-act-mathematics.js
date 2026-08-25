@@ -6565,12 +6565,9 @@ SHAPES["percentages"] = {
       const answer = round3((base * percent) / 100);
       return {
         family: "percent-of-a-number",
-        stem: choose(variant, [
-          `What is ${percent}% of ${base}?`,
-          `Find ${percent} percent of ${base}.`,
-          `A survey covers ${base} households, and ${percent}% of them recycle. How many households recycle?`,
-          `${percent}% of a ${base}-page manuscript has been edited. How many pages is that?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `${percent}% of ${base}`,
+        }),
         answer,
         wrong: [
           [percent, "This repeats the percent instead of applying it."],

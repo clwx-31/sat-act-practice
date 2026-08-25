@@ -7107,9 +7107,12 @@ SHAPES["measurement conversion"] = {
       const table = [288, 144, 432, 576, 720, 864];
       const perSecond = choose(s, table);
       const answer = round3((perSecond * 60) / 1728);
+      const vessel = scene(variant, VESSEL);
       return {
         family: "cubic-rate-conversion",
-        stem: `A nozzle delivers ${perSecond} cubic inches of water per second. Given that 1 foot is 12 inches, how many cubic feet per minute is that?`,
+        stem: pose(variant, "quantityOf", {
+          description: `in cubic feet per minute, a ${vessel.filler}'s delivery of ${perSecond} cubic inches of ${vessel.fluid} per second to a ${vessel.vessel}, given 1 foot = 12 inches`,
+        }),
         answer,
         wrong: [
           [round3((perSecond * 60) / 12), "This divides by the linear factor. A cubic foot is 12 inches cubed, or 1728 cubic inches."],

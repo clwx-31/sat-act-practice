@@ -4856,7 +4856,9 @@ SHAPES["right-triangle trigonometry"] = {
       const answer = round3((Math.atan(b / a) * 180) / Math.PI);
       return {
         family: "angle-from-tangent",
-        stem: `A ramp rises ${b} units over a horizontal run of ${a} units. To the nearest tenth of a degree, what angle does the ramp make with the horizontal?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest tenth of a degree, the angle a ramp with rise ${b} and horizontal run ${a} makes with the horizontal`,
+        }),
         answer: degrees(round3(Math.round(answer * 10) / 10)),
         wrong: [
           [degrees(round3(Math.round(((Math.atan(a / b) * 180) / Math.PI) * 10) / 10)), "This inverts the ratio, finding the angle at the top of the ramp instead of at the ground."],

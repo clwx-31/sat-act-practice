@@ -3937,12 +3937,9 @@ SHAPES["circles"] = {
       const answer = round3((degreesArc / 360) * 2 * radius);
       return {
         family: "arc-length-fraction-of-circumference",
-        stem: choose(variant, [
-          `A circle has radius ${radius}. What is the length of an arc subtending a central angle of ${degreesArc}°, in terms of π?`,
-          `In a circle of radius ${radius}, a central angle of ${degreesArc}° cuts off an arc of what length?`,
-          `What is the arc length for a ${degreesArc}° central angle in a circle whose radius is ${radius}?`,
-          `A ${degreesArc}° sector is cut from a circle of radius ${radius}. How long is its arc?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the arc length in terms of π for a ${degreesArc}° central angle in a circle of radius ${radius}`,
+        }),
         answer: pi(answer),
         wrong: [
           [pi(round3((degreesArc / 360) * radius * radius)), "This computes the sector's area rather than its arc length."],

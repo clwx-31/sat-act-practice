@@ -3787,12 +3787,9 @@ SHAPES["triangles"] = {
       const answer = (base * height) / 2;
       return {
         family: "triangle-area-from-base-and-height",
-        stem: choose(variant, [
-          `A triangle has a base of ${base} and a height of ${height}. What is its area?`,
-          `What is the area of a triangle with base ${base} and corresponding height ${height}?`,
-          `A triangle measures ${base} across its base, with a height of ${height} to that base. Its area is what?`,
-          `Find the area of a triangle whose base is ${base} and whose height is ${height}.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the area of a triangle with base ${base} and corresponding height ${height}`,
+        }),
         answer,
         wrong: [
           [base * height, "This is the area of a rectangle with those dimensions; a triangle is half of it."],

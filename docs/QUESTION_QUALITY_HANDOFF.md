@@ -335,8 +335,12 @@ the generated bank still reflects the previously committed canonical bank.
   4 / 2 / 8, 4/7/3, 3 keeps of 11 = 27.3%).
   Passage 020 is `020-dry-stone.js` (process narrative, 13 questions at
   4 / 2 / 7, 4/5/4, 3 keeps of 10 = 30%).
-  **20 of 40 authored, 290 of 575 questions — half the section**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 60 of 226 = 26.5%. Verified
+  Passage 021 is `021-second-drawer.js` (personal essay, 16 questions at
+  5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
+  Passage 022 is `022-one-face.js` (informative essay, 14 questions at
+  4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
+  **22 of 40 authored, 320 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 66 of 249 = 26.5%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.
@@ -484,6 +488,58 @@ thing `generate-act-reading.js` does that the others do not, and it is why
 act-reading is the only section that was already clean. Every rebuilt generator
 must do the same, and the per-tier measurement belongs in `npm run check` so the
 regression cannot return unnoticed.
+
+### `blindScore` counts a four-way tie as a blind success — 2026-08-25
+
+Codex's Task 7 rebuild passed `npm run check`, the difficulty gate and the
+per-tier answer-position gate, and failed the audit on two metrics: near
+duplicates at 4.5% against a 2% target, and answerable-without-reading at 47.1%
+against 40%. It changed no thresholds and no content, which was right.
+
+**One of those two failures is a measurement bug, not a content problem.**
+
+`blindScore` in `scripts/audit-questions.js` simulates a student who never
+reads: on a choice set seen before they recall the answer, otherwise they take
+the longest option. The second branch tests
+
+```js
+if (lengths[question.correctAnswer] === longest) correct += 1;
+```
+
+which is **true whenever every choice has the same length**. On a numeric maths
+item with choices `12`, `15`, `18`, `21`, all four are two characters, so the
+key is trivially "the longest" and the item scores as answerable without
+reading. A student actually applying that heuristic to four equal-length choices
+has nothing to choose between and would score 25%.
+
+Measured on the rebuilt bank, the 47.1% breaks down as:
+
+| Source | Items | Share |
+| --- | ---: | ---: |
+| Recalled a repeated choice set | 46 | 8.0% |
+| Key was the longest choice | 225 | 39.1% |
+| — of those, **all four choices the same length** | **81** | **14.1%** |
+
+Remove the tie artefact and the figure is **33.0%, which passes the 40%
+target.** 15.8% of the bank has four equal-length choices, which is what a
+numeric maths section looks like.
+
+**The codebase already implements the correct rule twenty lines earlier.**
+`longestChoiceIsKey` requires
+
+```js
+lengths.filter((length) => length === longest).length === 1
+```
+
+before counting a hit. `blindScore` omits that condition. The two functions
+disagree about the same idea in the same file, which makes this a bug rather
+than a judgement call, and fixing it is not loosening a gate.
+
+**What remains genuinely failing is the near-duplicate rate**, 4.5% against 2%,
+and the 8.0% of items whose choice set has appeared before — those two are the
+same underlying problem and they are real.
+
+Filed as Codex Task 8 in `docs/CODEX_LANE.md`.
 
 ### The next four steps, in order
 

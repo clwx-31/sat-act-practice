@@ -5955,7 +5955,9 @@ SHAPES["compound probability"] = {
       const answer = frac(sides - target + 1, sides);
       return {
         family: "probability-at-least-a-value",
-        stem: `A fair six-sided die is rolled once. What is the probability that the result is at least ${target}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the probability that one roll of a fair six-sided die is at least ${target}`,
+        }),
         answer,
         wrong: [
           [frac(sides - target, sides), `This excludes ${target} itself; "at least" includes the value named.`],

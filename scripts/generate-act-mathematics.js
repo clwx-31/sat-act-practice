@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -6140,14 +6140,12 @@ SHAPES["rates"] = {
       const rate = span(s, 12, 8, 3);
       const hours = span(s, 3, 5);
       const total = rate * hours;
+      const production = scene(variant, PRODUCTION);
       return {
         family: "unit-rate-from-a-total",
-        stem: choose(variant, [
-          `A press prints ${total} flyers in ${hours} hours at a constant rate. How many flyers does it print per hour?`,
-          `A constant-speed press finishes ${total} flyers over ${hours} hours. What is its hourly output?`,
-          `Over ${hours} hours a machine produces ${total} flyers at a steady rate. How many flyers per hour is that?`,
-          `${total} flyers are printed in ${hours} hours at an unchanging rate. Find the number of flyers per hour.`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the hourly output when a ${production.actor} ${production.verb} ${total} ${production.object} in ${hours} hours at a constant rate`,
+        }),
         answer: rate,
         wrong: [
           [total, "This is the whole job, not the amount finished in one hour."],

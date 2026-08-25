@@ -4072,12 +4072,9 @@ SHAPES["coordinate geometry"] = {
       const answer = (x1 + x2) / 2;
       return {
         family: "midpoint-x-coordinate",
-        stem: choose(variant, [
-          `What is the x-coordinate of the midpoint of the segment joining (${x1}, ${y1}) and (${x2}, ${y2})?`,
-          `A segment has endpoints (${x1}, ${y1}) and (${x2}, ${y2}). What is the x-coordinate of its midpoint?`,
-          `The midpoint of the segment from (${x1}, ${y1}) to (${x2}, ${y2}) has which x-coordinate?`,
-          `Find the x-coordinate of the midpoint between (${x1}, ${y1}) and (${x2}, ${y2}).`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the x-coordinate of the midpoint between (${x1}, ${y1}) and (${x2}, ${y2})`,
+        }),
         answer,
         wrong: [
           [x2 - x1, "This is the horizontal distance, not the midpoint."],

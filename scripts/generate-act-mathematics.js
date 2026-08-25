@@ -7013,9 +7013,12 @@ SHAPES["measurement conversion"] = {
     (s, variant) => {
       const feetPerSecond = span(s, 22, 6, 22);
       const answer = round3((feetPerSecond * 3600) / 5280);
+      const trip = scene(variant, TRAVEL);
       return {
         family: "rate-unit-conversion-fps-to-mph",
-        stem: `An object moves at ${feetPerSecond} feet per second. Given that 1 mile is 5280 feet, what is its speed in miles per hour?`,
+        stem: pose(variant, "quantityOf", {
+          description: `in miles per hour, a ${trip.mover}'s speed of ${feetPerSecond} feet per second along a ${trip.route}, given 1 mile = 5280 feet`,
+        }),
         answer,
         wrong: [
           [round3((feetPerSecond * 60) / 5280), "This converts seconds to minutes rather than to hours."],

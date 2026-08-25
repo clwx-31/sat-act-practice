@@ -7231,9 +7231,12 @@ SHAPES["averages"] = {
       const m1 = span(s, 70, 5, 2);
       const m2 = m1 + span(s, 6, 4, 3);
       const answer = round3((n1 * m1 + n2 * m2) / (n1 + n2));
+      const cohort = scene(variant, COHORT);
       return {
         family: "weighted-average-of-two-groups",
-        stem: `One class of ${n1} students averaged ${m1} on a test and another class of ${n2} students averaged ${m2}. What is the average score of all ${n1 + n2} students combined?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the combined average of ${n1} ${cohort.unit} records averaging ${m1} and ${n2} records averaging ${m2} for a ${cohort.body}`,
+        }),
         answer,
         wrong: [
           [round3((m1 + m2) / 2), "This averages the two class averages, which is correct only when the classes are the same size."],

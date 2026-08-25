@@ -3820,12 +3820,9 @@ SHAPES["triangles"] = {
       const answer = high - low - 1;
       return {
         family: "triangle-inequality-count",
-        stem: choose(variant, [
-          `Two sides of a triangle measure ${known} and ${other}. How many integer values are possible for the third side?`,
-          `A triangle has sides of length ${known} and ${other}. The third side must be an integer. How many values can it take?`,
-          `If two sides of a triangle are ${known} and ${other}, how many whole-number lengths are possible for the remaining side?`,
-          `Two sides of a triangle are ${known} and ${other} units long. How many integer lengths could the third side have?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the number of integer third-side lengths possible with triangle sides ${known} and ${other}`,
+        }),
         answer,
         wrong: [
           [answer + 1, "This counts one of the endpoints, where the three sides would lie flat instead of forming a triangle."],

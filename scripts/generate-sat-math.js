@@ -2208,6 +2208,7 @@ defineShapes({
 registerShapePhrasings("factoring", "factored-polynomial");
 registerShapePhrasings("exponent rules", "exponent-law");
 registerShapePhrasings("rational expressions", "rational-expression");
+registerShapePhrasings("quadratic equations", "quadratic-root");
 
 defineShapes({
   "factoring": {
@@ -2796,7 +2797,7 @@ defineShapes({
           explanation: `The roots sum to ${sum} and differ by ${gap}, so they are ${smaller} and ${larger}; the greater is ${larger}.`,
           steps: ["Read the sum of the roots from the middle coefficient.", "Solve the sum-and-difference system.", "Report the greater root."],
           principles: ["For x² + bx + c the roots sum to −b."],
-          verification: { kind: "mean", inputs: [sum, gap * 2 - sum + 2 * larger - gap], expected: larger },
+          verification: { kind: "linear-equation", inputs: [2, 0, sum + gap], expected: larger },
         };
       },
     ],

@@ -4672,6 +4672,7 @@ importActShapeSubskill("surface area", "surface area");
 importActShapeSubskill("volume", "volume");
 importActShapeSubskill("angle relationships", "angles");
 importActShapeSubskill("triangle geometry", "triangles");
+importActShapeSubskill("trigonometric ratios", "right-triangle trigonometry");
 
 // ---------------------------------------------------------------------------
 // Driver

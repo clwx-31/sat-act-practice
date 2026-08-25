@@ -7044,9 +7044,12 @@ SHAPES["measurement conversion"] = {
     (s, variant) => {
       const quarts = span(s, 3, 6);
       const answer = quarts * 32;
+      const recipe = scene(variant, RECIPE);
       return {
         family: "capacity-conversion-chain",
-        stem: `A recipe calls for ${quarts} quarts of stock. Given that 1 quart is 2 pints and 1 pint is 16 fluid ounces, how many fluid ounces of stock are needed?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the fluid ounces of ${recipe.ingredient} in ${quarts} quarts for a ${recipe.dish} recipe, given 1 quart = 2 pints and 1 pint = 16 fluid ounces`,
+        }),
         answer,
         wrong: [
           [quarts * 2, "This converts quarts to pints and stops."],

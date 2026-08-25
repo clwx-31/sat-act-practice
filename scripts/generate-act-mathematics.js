@@ -5284,7 +5284,9 @@ SHAPES["center and spread"] = {
       const answer = round3(newMean - oldMean);
       return {
         family: "effect-of-an-outlier-on-the-mean",
-        stem: `The values ${values.join(", ")} have a mean of ${round3(oldMean)}. A fifth value, ${addition}, is added to the set. By how much does the mean increase?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the increase in the mean of ${values.join(", ")} when a fifth value, ${addition}, is added`,
+        }),
         answer: round3(Math.round(answer * 1000) / 1000),
         wrong: [
           [round3(addition - oldMean), "This is how far the new value sits above the old mean; the mean moves only a fifth of that distance."],

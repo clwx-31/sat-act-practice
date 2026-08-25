@@ -284,10 +284,30 @@ Where this stopped, precisely, so the next session does not repeat the audit.
   underlined = 25%) and `002-snow-fence.js` (informative essay, 14 questions at
   4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%), plus `003-hose-threads.js`
   (historical account, 16 questions at 5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
-  **3 of 40 authored, 46 of 575 questions.** Running keep rate 9 of 35 = 25.7%;
-  domain and difficulty gaps are 0 on all six rows. 003 is the first passage
-  written under the whole-essay marker rule: q15 and q16 carry no marker and are
-  numbered last.
+  and `004-piano-tuning.js` (process narrative, 13 questions at 4 / 2 / 7,
+  4/6/3, 3 keeps of 11 = 27.3%), and `005-shallow-end.js` (personal essay, 15
+  questions at 5 / 2 / 8, 5/6/4, 3 keeps of 12 = 25%), and `006-stale-bread.js`
+  (informative essay, 14 questions at 4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
+  Passage 007 is `007-rural-free-delivery.js` (historical account, 16 questions
+  at 5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%) and `008-sugar-season.js` (process
+  narrative, 13 questions at 4 / 2 / 7, 4/6/3, 3 keeps of 11 = 27.3%).
+  Passage 009 is `009-the-front-of-the-sentence.js` (personal essay, 16
+  questions at 5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
+  Passage 010 is `010-lake-turnover.js` (informative essay, 14 questions at
+  4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
+  Passage 011 is `011-plimsoll-line.js` (historical account, 13 questions at
+  4 / 2 / 7, 4/5/4, 3 keeps of 11 = 27.3%).
+  Passage 012 is `012-tuning-a-bell.js` (process narrative, 14 questions at
+  4 / 2 / 8, 4/7/3, 3 keeps of 11 = 27.3%).
+  Passage 013 is `013-ninety-one-species.js` (personal essay, 16 questions at
+  5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
+  Passage 014 is `014-old-window-glass.js` (informative essay, 15 questions at
+  5 / 2 / 8, 4/6/5, 3 keeps of 11 = 27.3%).
+  **14 of 40 authored, 205 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 42 of 160 = 26.3%. Verified
+  `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
+  at 0.
+  From 003 on, whole-essay questions carry no marker and are numbered last.
   They are authored but **not yet verified by a harness** — `check-passages.js`
   still has no act-english rules, and nothing loads the file, so `npm run check`
   passing says nothing about it. Codex Task 1 in `docs/CODEX_LANE.md` is that

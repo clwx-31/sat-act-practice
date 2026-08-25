@@ -95,6 +95,77 @@ shipping is a separate step taken with the user.
 
 ---
 
+## Task 3 — rebuild ACT Mathematics and prove it
+
+Task 2 is complete: `npm run check:shapes -- act-mathematics` reports
+**232 shapes exercised over 1200 sequences: clean.** The generator can now fill
+the bank without tripping the validator's near-duplicate rule, and nothing has
+been rebuilt yet.
+
+```sh
+node scripts/generate-act-mathematics.js --rebuild
+npm run build:content
+npm run check
+npm run audit:questions 2>&1 | tail -30
+npm run check:difficulty 2>&1 | tail -20
+```
+
+`--rebuild` is required. Without it the generator only tops up to the target and
+keeps the existing items, which is the opposite of what this task is for.
+
+This task writes to `content/banks/act-mathematics.json` and
+`content/generated/act-mathematics.js`, which are shared files. That is expected
+here — say so in the commit body. **Commit both**; the bank is canonical and the
+generated file is its build product, and they must never diverge.
+
+Nothing reaches the live site from this branch. `codex-lane` is not deployed;
+GitHub Pages serves `main`, and merging is the user's decision.
+
+**Done when** `npm run check` passes, `npm run audit:questions` reports
+act-mathematics as **PASS**, and `npm run check:difficulty` counts act-mathematics
+among the sections with meaningful difficulty labels. Report all three numbers.
+
+Two things to expect rather than chase:
+
+- **Five legacy items survive `--rebuild`** — those with
+  `provenance.generator === "legacy-migration"`. They carry the old boilerplate
+  rationales. Leave them; replacing them is a separate decision.
+- **The schema requires exactly four choices.** Real ACT Mathematics uses five.
+  That is a known fidelity gap recorded in the handoff, not a bug to fix here:
+  changing it means changing the validator, the app, and the booklet renderer
+  together.
+
+If the audit does **not** reach PASS, stop and write what failed into
+`docs/QUESTION_QUALITY_HANDOFF.md` rather than loosening a gate to get past it.
+
+---
+
+## Task 4 — SAT Math shapes
+
+The largest remaining generator job: 48 subskills, none converted, roughly twice
+the size of ACT Mathematics.
+
+`scripts/generate-sat-math.js` holds an unfinished rewrite from `09dd729`. It
+exports `context`, `formatNumber`, and `mathQuestion` but **no `SHAPES`**, so
+`node scripts/check-shapes.js sat-math` throws today. That is the starting
+condition, not a bug — the harness throws on every section except
+`act-mathematics` for the same reason.
+
+Build it the way ACT Mathematics is built. `scripts/generate-act-mathematics.js`
+is the worked example and it now passes the harness, so copy its structure
+rather than inventing one. Every shape needs `family:`, difficulty-aware
+branches for all three tiers, five or six `wrong` entries with reasons of 12
+characters or more, at least two `steps` and one `principle`, U+2212 for every
+minus sign, and eight phrasings or eight `scene()` settings so reuses stay under
+the 0.90 overlap rule.
+
+Work one subskill per commit. Do not rebuild the bank in this task.
+
+**Done when** `npm run check:shapes -- sat-math` runs without throwing and
+reports zero problems across all 48 subskills.
+
+---
+
 ## Commands
 
 ```sh

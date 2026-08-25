@@ -7400,9 +7400,12 @@ SHAPES["financial contexts"] = {
       const rate = choose(s, [3, 4, 5, 6]);
       const years = span(s, 2, 4);
       const interest = round3((principal * rate * years) / 100);
+      const finance = scene(variant, FINANCE);
       return {
         family: "simple-interest",
-        stem: `${principal} is deposited in an account paying ${rate}% simple annual interest. How much interest does the account earn in ${years} years?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the interest earned when ${principal} is deposited in a ${finance.account} paying ${rate}% simple annual interest for ${years} years`,
+        }),
         answer: money(interest),
         wrong: [
           [money(round3((principal * rate) / 100)), "This is one year's interest."],

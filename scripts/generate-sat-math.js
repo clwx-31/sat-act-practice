@@ -4644,6 +4644,27 @@ defineShapes({
 
 ["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`margin of error|${tier}`));
 
+registerShapePhrasings("study design", "statistical study design");
+
+defineShapes({
+  "study design": {
+    Easy: [
+      conceptualShape("observational-study", "Researchers record participants' existing exercise habits and compare their blood pressure without assigning any behavior. What type of study is this?", "An observational study", [["A randomized experiment", "No exercise behavior was assigned at random."], ["A census", "The description does not say every population member was measured."], ["A simulation", "The researchers observed real participants rather than a model."], ["A matched pairs experiment", "No treatment was assigned within pairs."]], "The researchers observed existing behavior without imposing a treatment, so the study is observational.", "An observational study measures variables without assigning treatments."),
+      conceptualShape("experimental-treatment", "In a study testing a tutoring program, which group receives the treatment?", "The group assigned to use the tutoring program", [["The group that receives no tutoring program", "That group serves as a comparison or control."], ["Every student in the population", "Only assigned participants receive the treatment."], ["Only researchers collecting scores", "Researchers are not the experimental units receiving the program."], ["Students excluded from the study", "Excluded individuals receive no study condition."]], "The treatment is the condition being tested: use of the tutoring program.", "A treatment is the specific condition imposed on experimental units."),
+    ],
+    Medium: [
+      conceptualShape("random-assignment-causation", "Why is random assignment important in a controlled experiment?", "It helps balance lurking variables so treatment differences can support causal conclusions", [["It guarantees the sample represents the whole population", "Random assignment concerns treatment groups, not population sampling."], ["It eliminates all measurement error", "Measurement error can remain after random assignment."], ["It makes every participant receive the treatment", "Participants are assigned among different conditions."], ["It guarantees the desired result", "Randomization supports valid comparison, not a particular outcome."]], "Random assignment makes treatment groups comparable on average, isolating the treatment's effect.", "Random assignment supports causal inference by balancing confounders across treatments."),
+      conceptualShape("control-group-purpose", "What is the main purpose of a control group in an experiment?", "To provide a baseline for comparison with the treatment group", [["To ensure the treatment always works", "A control group tests rather than guarantees effectiveness."], ["To increase the population size", "The control is about comparison, not redefining the population."], ["To remove the need for random assignment", "Control groups still benefit from random assignment."], ["To receive every treatment simultaneously", "A control group receives the baseline condition."]], "The control group's outcomes show what happens without the active treatment under otherwise comparable conditions.", "A control group supplies a baseline against which treatment effects are measured."),
+    ],
+    Hard: [
+      conceptualShape("confounding-variable", "An observational study finds that people who carry umbrellas have wetter clothing. Which variable most plausibly confounds the association?", "Rainfall", [["Umbrella color", "Color does not explain both carrying an umbrella and wet clothing."], ["The number of survey questions", "Question count does not cause the observed association."], ["Participant identification numbers", "Arbitrary identifiers affect neither variable."], ["The order of names in the data file", "File order does not explain the real-world relationship."]], "Rain causes people to carry umbrellas and can also make clothing wet, explaining the association without umbrellas causing wetness.", "A confounder is related to both explanatory and response variables and can create a misleading association."),
+      conceptualShape("double-blind-design", "In a medication experiment, neither participants nor the staff evaluating outcomes know who received the medication or placebo. What feature is described?", "A double blind design", [["A convenience sample", "Convenience describes participant selection, not masking treatment identities."], ["A census", "Blinding does not mean the entire population participates."], ["An observational study", "Medication and placebo are assigned treatments."], ["A response bias survey", "The feature concerns masking in an experiment, not survey wording."]], "Both participants and outcome evaluators are unaware of assignments, which is double blinding.", "Blinding reduces expectation and evaluator effects in experiments."),
+    ],
+  },
+});
+
+["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`study design|${tier}`));
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

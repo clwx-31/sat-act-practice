@@ -6353,14 +6353,12 @@ SHAPES["proportions"] = {
       const factor = span(s, 2, 4);
       const target = serves * factor;
       const answer = cups * factor;
+      const recipe = scene(variant, RECIPE);
       return {
         family: "direct-proportion-scale-up",
-        stem: choose(variant, [
-          `A recipe that serves ${serves} people uses ${cups} cups of flour. How many cups of flour are needed to serve ${target} people, keeping the same proportions?`,
-          `${cups} cups of flour serve ${serves} people. At the same ratio, how many cups serve ${target} people?`,
-          `A batch for ${serves} people takes ${cups} cups of flour. Scaled to ${target} people, how many cups are required?`,
-          `Flour is used at ${cups} cups per ${serves} servings. How many cups are needed for ${target} servings?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the cups of ${recipe.ingredient} needed for ${target} servings of ${recipe.dish} when ${cups} cups make ${serves} servings`,
+        }),
         answer,
         wrong: [
           [cups + factor, "This adds the scale factor instead of multiplying by it."],

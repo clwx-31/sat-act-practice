@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { CHOICE_MENU, COHORT, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SOLUTION, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { CHOICE_MENU, COHORT, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SOLUTION, SURFACE, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -7607,9 +7607,12 @@ SHAPES["combined concepts"] = {
       const coverage = choose(s, [40, 50, 60, 80]);
       const area = length * height;
       const answer = Math.ceil(area / coverage);
+      const surface = scene(variant, SURFACE);
       return {
         family: "area-then-coverage-rate",
-        stem: `A wall is ${length} feet long and ${height} feet high. One can of paint covers ${coverage} square feet, and paint is sold only in whole cans. How many cans are needed to cover the wall?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the whole cans of ${surface.finish} a ${surface.worker} needs for a ${length}-foot by ${height}-foot ${surface.surface} when each can covers ${coverage} square feet`,
+        }),
         answer,
         wrong: [
           [area, "This is the wall's area in square feet, not a number of cans."],

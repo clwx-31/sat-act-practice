@@ -4665,6 +4665,10 @@ defineShapes({
 
 ["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`study design|${tier}`));
 
+/* ------------------------ Geometry and Trigonometry --------------------- */
+
+importActShapeSubskill("area", "area");
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

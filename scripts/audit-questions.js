@@ -39,15 +39,17 @@ function shapeSignature(question) {
   // signature. Without that, two sets both asking "the passage is best
   // described as" collide, and that stem is one the real ACT reuses on every
   // form; the question is which passage it is asked about.
-  const anchor = question.passageId ? `${question.passageId} ` : "";
   // Trim first: items with no stimulus would otherwise start with a space and
   // the anchored preamble pattern would never match.
-  let text = `${anchor}${stimulus} ${question.stem}`.trim();
+  let text = `${stimulus} ${question.stem}`.trim();
   text = text.replace(SCENE_PREAMBLE, "");
   text = text.replace(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*/g, " ");
   text = text.replace(/\b\d+(?:\.\d+)?\b/g, "#");
   text = normalizeText(text).replace(/\s+/g, " ").trim();
-  return `${question.sectionKey}|${question.subskill}|${text}`;
+  // Keep passageId outside number stripping: embedding p001 in `text` would
+  // turn every passage suffix into p# and erase the anchor again.
+  const passageAnchor = question.passageId ? `|${question.passageId}` : "";
+  return `${question.sectionKey}${passageAnchor}|${question.subskill}|${text}`;
 }
 
 function exactSignature(question) {

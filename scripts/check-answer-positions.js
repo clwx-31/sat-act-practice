@@ -6,10 +6,22 @@ const { loadBank, loadCatalog } = require("./lib/content");
 const MAX_POSITION_SHARE = 0.30;
 const POSITION_COUNT = 4;
 
-function tierPositionProfiles(questions) {
+function isPositionEligible(sectionKey, question) {
+  // ACT English keeps NO CHANGE in choice A. Underlined items therefore have
+  // constrained positions; only rhetorical questions have four freely
+  // arrangeable choices and can be held to the per-tier balance gate.
+  return !(
+    sectionKey === "act-english" &&
+    Array.isArray(question.tags) &&
+    question.tags.includes("underlined-edit")
+  );
+}
+
+function tierPositionProfiles(questions, sectionKey = "") {
   const profiles = new Map();
   questions.forEach((question) => {
     if (!Array.isArray(question.choices) || question.choices.length !== POSITION_COUNT) return;
+    if (!isPositionEligible(sectionKey, question)) return;
     const difficulty = question.difficulty || "Unlabelled";
     if (!profiles.has(difficulty)) profiles.set(difficulty, { counts: [0, 0, 0, 0], total: 0 });
     const profile = profiles.get(difficulty);
@@ -25,7 +37,7 @@ function tierPositionProfiles(questions) {
 
 function answerPositionProblems(sectionKey, questions, limit = MAX_POSITION_SHARE) {
   const problems = [];
-  tierPositionProfiles(questions).forEach((profile, difficulty) => {
+  tierPositionProfiles(questions, sectionKey).forEach((profile, difficulty) => {
     if (profile.invalid) {
       problems.push(`${sectionKey}/${difficulty}: invalid correctAnswer on ${profile.invalid.join(", ")}`);
     }
@@ -44,7 +56,7 @@ function answerPositionProblems(sectionKey, questions, limit = MAX_POSITION_SHAR
 }
 
 function formatProfiles(sectionKey, questions) {
-  return [...tierPositionProfiles(questions).entries()]
+  return [...tierPositionProfiles(questions, sectionKey).entries()]
     .sort(([left], [right]) => left.localeCompare(right))
     .filter(([, profile]) => profile.total > 0)
     .map(([difficulty, profile]) => {
@@ -72,4 +84,9 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { MAX_POSITION_SHARE, answerPositionProblems, tierPositionProfiles };
+module.exports = {
+  MAX_POSITION_SHARE,
+  answerPositionProblems,
+  isPositionEligible,
+  tierPositionProfiles,
+};

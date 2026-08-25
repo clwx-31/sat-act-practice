@@ -56,3 +56,28 @@ near-duplicate pair.
 
 Task 10 stopped at this blocker without starting Task 4 or changing an audit
 gate to force a pass.
+
+## Task 13 — ACT English assembly blocked on missing authored sets (2026-08-25)
+
+After merging `main` at `4c1a01e`, the authored passage gate is clean but finds
+34 passages and 492 questions, not the 40 passages and 575 questions stated in
+Task 13:
+
+```text
+34 passages, 492 questions (150 Easy / 214 Medium / 128 Hard): clean.
+Production of Writing 150/175
+Knowledge of Language 79/92
+Conventions of Standard English 263/308
+```
+
+The missing 83 questions are exactly 25 Production, 13 Knowledge, and 45
+Conventions. The local `main` worktree is clean and contains authored files only
+through `034-not-soaked-in.js`; passages 035–040 are not committed there.
+
+The assembler and its passage-aware duplicate and answer-position rules are
+implemented and `npm run check` passes 66 tests. The assembler counts authored
+questions before either canonical write and currently stops with
+`Authored sets produce 492 questions; the catalog target is 575`. No ACT English
+bank, passage JSON, generated browser bank, or catalog target has changed. The
+final catalog flip and shared outputs must wait until passages 035–040 land on
+`main`.

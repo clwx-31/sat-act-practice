@@ -7506,9 +7506,12 @@ SHAPES["financial contexts"] = {
       const [feeA, rateA, feeB, rateB] = choose(s, table);
       const answer = round3((feeA - feeB) / (rateB - rateA));
       const totalAtCross = round3(feeA + rateA * answer);
+      const finance = scene(variant, FINANCE);
       return {
         family: "two-plan-break-even",
-        stem: `Plan A charges a ${feeA} membership fee plus ${rateA} per class. Plan B charges a ${feeB} fee plus ${rateB} per class. For how many classes do the two plans cost the same amount?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of uses at which two ${finance.plan} options cost the same when Plan A charges ${feeA} plus ${rateA} per use and Plan B charges ${feeB} plus ${rateB} per use`,
+        }),
         answer,
         wrong: [
           [round3(feeA - feeB), "This is the difference of the fees; it still has to be spread across the difference in the per-class rates."],

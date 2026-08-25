@@ -23,3 +23,36 @@ check also passed, with Easy at 44/44/43/44, Medium at 62/62/63/63, and Hard at
 Task 7 stopped at the failed audit. No audit threshold was changed and no
 content rewrite was attempted to force a pass. The deterministic rebuild left
 the committed ACT Mathematics bank and generated browser bank unchanged.
+
+## Task 10 — SAT Math choice-set treatment blocked (2026-08-25)
+
+The ACT Science choice-set freshness treatment could not be exercised because
+`node scripts/generate-sat-math.js --rebuild` stopped before writing a bank:
+
+```text
+Error: No SAT Math Medium shapes for Ratios, rates, and units/unit conversion
+```
+
+That missing tier is part of the Task 4 generator rewrite, which Task 10
+explicitly excludes. The SAT Math bank and generated browser bank remain
+unchanged, the partial generator edit was removed, and no threshold changed.
+
+The unchanged bank's audit measurements are:
+
+| Metric | Result | Target |
+| --- | ---: | ---: |
+| Near-duplicate rate | 75.0% (431 items) | Under 2% |
+| Distinct shapes | 144 | Report only |
+| Largest family share | 3.1% (18 items) | At most 10% |
+| Answerable without reading | 56.5% | Under 40% |
+| Worst answer position in any tier | 25.6% | At most 30% |
+
+Among the 458 multiple-choice items, 210 still use a repeated choice set with
+the same key. The audit's near-duplicate result is not a literal stem-pair
+count: `shapeSignature` strips scene preambles, numbers, and proper nouns, then
+prefixes the subskill. It therefore collapses SAT Math's 575 items into 144
+structural signatures, while the independent stem-level measurement found one
+near-duplicate pair.
+
+Task 10 stopped at this blocker without starting Task 4 or changing an audit
+gate to force a pass.

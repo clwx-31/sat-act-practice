@@ -4,7 +4,7 @@
 const { generateSection, hashString, rotate } = require("./lib/generation");
 const { loadBank } = require("./lib/content");
 const { pose } = require("./lib/phrasing");
-const { COLLECTION, DECAY_SAMPLE, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
+const { CHOICE_MENU, COLLECTION, DECAY_SAMPLE, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PROJECTILE, RECIPE, scene, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("./lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -5737,9 +5737,12 @@ SHAPES["counting"] = {
       const second = 4 + (s % 4);
       const third = 2 + (s % 3);
       const answer = first * second * third;
+      const menu = scene(variant, CHOICE_MENU);
       return {
         family: "fundamental-counting-principle",
-        stem: `A café offers ${first} breads, ${second} fillings, and ${third} spreads. How many different sandwiches can be made by choosing one of each?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of different ${menu.product} designs made from ${first} ${menu.first}, ${second} ${menu.second}, and ${third} ${menu.third} by choosing one of each`,
+        }),
         answer,
         wrong: [
           [first + second + third, "This adds the options; independent choices multiply."],

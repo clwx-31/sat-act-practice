@@ -101,6 +101,18 @@ const RECIPE = [
   { dish: "custard", ingredient: "cream" },
 ];
 
+// A product combines one choice from each of three categories.
+const CHOICE_MENU = [
+  { product: "sandwich", first: "breads", second: "fillings", third: "spreads" },
+  { product: "meal", first: "starters", second: "mains", third: "desserts" },
+  { product: "bicycle", first: "frames", second: "gears", third: "colors" },
+  { product: "bouquet", first: "flowers", second: "ribbons", third: "vases" },
+  { product: "notebook", first: "covers", second: "papers", third: "bindings" },
+  { product: "uniform", first: "shirts", second: "trousers", third: "jackets" },
+  { product: "lamp", first: "bases", second: "shades", third: "bulbs" },
+  { product: "gift box", first: "boxes", second: "wrappings", third: "cards" },
+];
+
 // A vessel holds or transfers a fluid.
 const VESSEL = [
   { vessel: "tank", filler: "pump", fluid: "water", unit: "liters" },
@@ -272,6 +284,7 @@ const COHORT = [
 module.exports = {
   scene,
   COHORT,
+  CHOICE_MENU,
   COLLECTION,
   DECAY_SAMPLE,
   EXPONENTIAL_GROWTH,

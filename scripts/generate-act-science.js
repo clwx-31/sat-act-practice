@@ -240,12 +240,13 @@ function interpretation(context) {
     if (task.subskill === "interpolation") {
       const midpointInput = (s.levels[1] + s.levels[2]) / 2;
       const midpointOutcome = (s.outcomes[1] + s.outcomes[2]) / 2;
+      const measurement = (value) => `${Number(value).toFixed(1)} ${s.dependentUnit}`;
       return contextualItem(context, s, {
         content,
         type: "table",
         stem: `Assuming a linear relationship between the middle two rows, what ${s.dependent} is predicted at ${midpointInput} ${s.independentUnit}?`,
-        correct: String(midpointOutcome),
-        wrong: [[s.outcomes[1], "This uses the lower measured outcome without moving halfway."], [s.outcomes[2], "This uses the upper measured outcome."], [s.outcomes[0], "This uses the first row, outside the specified interval."]],
+        correct: measurement(midpointOutcome),
+        wrong: [[measurement(s.outcomes[1]), "This uses the lower measured outcome without moving halfway."], [measurement(s.outcomes[2]), "This uses the upper measured outcome."], [measurement(s.outcomes[0]), "This uses the first row, outside the specified interval."]],
         hint: "The requested input is halfway between the middle inputs.",
         explanation: `A halfway input gives the average outcome: (${s.outcomes[1]} + ${s.outcomes[2]})/2 = ${midpointOutcome}.`,
         reasoning: "Average the two neighboring outcomes for a linear midpoint estimate.",
@@ -304,8 +305,18 @@ function investigation(context) {
   if (task.skill === "Experimental design") {
     const answers = {
       variables: [`${s.independent}`, `${s.dependent}`, "container type", "starting sample size"],
-      controls: ["Using equal starting samples and identical containers", `Varying ${s.independent}`, `Measuring ${s.dependent}`, "Using four groups"],
-      procedures: [`Measure ${s.dependent} after the same duration for every group.`, "Measure each group after a different duration.", `Change both ${s.independent} and container type.`, "Use no recorded outcome."],
+      controls: [
+        "Using equal starting samples and identical containers",
+        `Varying ${s.independent} while also changing starting samples and containers among groups`,
+        `Measuring ${s.dependent} after allowing each group a different amount of time`,
+        "Using four groups whose starting samples and containers are not kept consistent",
+      ],
+      procedures: [
+        `Measure ${s.dependent} after the same duration for every group.`,
+        `Measure ${s.dependent} after a different duration for each group, so time changes too.`,
+        `Change both ${s.independent} and container type before comparing ${s.dependent}.`,
+        `Complete the trials without recording ${s.dependent} for any group.`,
+      ],
     };
     const correct = answers[task.subskill][0];
     return contextualItem(context, s, {
@@ -335,8 +346,16 @@ function investigation(context) {
         ? `${s.dependent} will likely continue to ${s.direction} over the next small increase in ${s.independent}.`
         : `Repeat the procedure with additional ${s.independent} levels and independently prepared ${s.subject}.`,
       wrong: task.subskill === "prediction"
-        ? [["The outcome must reverse immediately.", "The observed trend gives no basis for an immediate reversal."], ["The outcome will remain exactly constant.", "The tested range shows consistent change."], ["The experiment proves the trend continues without limit.", "A short measured range cannot justify unlimited extrapolation."]]
-        : [["Change every condition at once.", "Multiple simultaneous changes prevent clear interpretation."], ["Repeat only the same measurement without new samples or levels.", "This does not test broader applicability."], ["Remove the dependent-variable measurement.", "Without the outcome, the pattern cannot be tested."]],
+        ? [
+          [`${s.dependent} must reverse direction immediately after the next increase in ${s.independent}.`, "The observed trend gives no basis for an immediate reversal."],
+          [`${s.dependent} will remain exactly constant even as ${s.independent} moves beyond the tested range.`, "The tested range shows consistent change."],
+          [`The experiment proves that ${s.dependent} will continue to ${s.direction} without limit as ${s.independent} changes.`, "A short measured range cannot justify unlimited extrapolation."],
+        ]
+        : [
+          [`Change ${s.independent}, the containers, the starting samples, and the measurement schedule all at once.`, "Multiple simultaneous changes prevent clear interpretation."],
+          [`Repeat only the same ${s.dependent} measurement without adding new ${s.subject} or ${s.independent} levels.`, "This does not test broader applicability."],
+          [`Remove the ${s.dependent} measurement while testing additional ${s.independent} levels in new samples.`, "Without the outcome, the pattern cannot be tested."],
+        ],
       hint: "Extend cautiously: preserve the original design and avoid claims far beyond measured conditions.",
       explanation: "The correct choice extends the observed pattern or method by one controlled, testable step.",
       reasoning: "Use the measured direction and preserve comparability in the next test.",
@@ -345,7 +364,12 @@ function investigation(context) {
   }
   const choices = {
     precision: ["Use an instrument with finer measurement increments.", "Use fewer recorded digits than the instrument provides.", "Estimate every value without a scale.", "Change instruments for every group without calibration."],
-    limitations: [`The tested ${s.independent} range may not represent values outside that range.`, "The experiment has no independent variable.", "The measured outcome was never recorded.", "Identical containers make comparison impossible."],
+    limitations: [
+      `The tested ${s.independent} range may not represent values outside that range.`,
+      `The experiment has no independent variable even though ${s.independent} was deliberately varied among groups.`,
+      `The measured ${s.dependent} was never recorded even though the method reports those measurements.`,
+      `Using identical containers makes comparison impossible because every group must use a different container.`,
+    ],
     replication: ["Have another team repeat the same procedure with new samples.", "Have the original team rewrite its conclusion without new data.", "Combine all groups before measuring.", "Discard the method description."],
   };
   return contextualItem(context, s, {
@@ -378,7 +402,11 @@ function evaluation(context) {
         content: evidence,
         stem: "Which claim is most directly supported?",
         correct: `Within the tested range, higher ${s.independent} was associated with ${s.direction === "increase" ? "higher" : "lower"} ${s.dependent}.`,
-        wrong: [["The tested factor has no relationship with the outcome.", "The outcome changed consistently across levels."], ["The pattern must hold under every possible condition.", "The evidence covers only the tested conditions."], ["The outcome caused researchers to change the input.", "The input was deliberately varied first."]],
+        wrong: [
+          [`Within the tested range, ${s.independent} had no relationship with the measured ${s.dependent}.`, "The outcome changed consistently across levels."],
+          [`The relationship between ${s.independent} and ${s.dependent} must hold for every possible subject and condition.`, "The evidence covers only the tested conditions."],
+          [`Changes in ${s.dependent} caused researchers to alter ${s.independent} during the experiment.`, "The input was deliberately varied first."],
+        ],
         hint: "Use a qualified claim restricted to the tested range.",
         explanation: "The correct claim matches the observed direction without extending beyond the data.",
         reasoning: "Connect the varied factor and measured response while preserving scope.",
@@ -405,7 +433,11 @@ function evaluation(context) {
       correct: task.subskill === "inference"
         ? `The tested factor may help explain variation in ${s.dependent} under these conditions.`
         : `The relationship is supported for ${s.subject} over the tested ${s.independent} range.`,
-      wrong: [["The factor is the only possible influence on the outcome.", "Other factors may also matter."], ["The pattern has been proven for every organism and material.", "The study tested one defined subject."], ["The measurements show no trend.", "The evidence explicitly reports a consistent trend."]],
+      wrong: [
+        [`The tested ${s.independent} is the only possible influence on ${s.dependent} under every condition.`, "Other factors may also matter."],
+        [`The pattern between ${s.independent} and ${s.dependent} has been proven for every organism and material.`, "The study tested one defined subject."],
+        [`The measurements show no trend between ${s.independent} and ${s.dependent} in the tested ${s.subject}.`, "The evidence explicitly reports a consistent trend."],
+      ],
       hint: "Choose the conclusion with scope matching the tested subject, range, and conditions.",
       explanation: "The correct conclusion is cautious and limited to what the experiment measured.",
       reasoning: "Distinguish a supported association from an exclusive cause or universal law.",
@@ -433,7 +465,11 @@ function evaluation(context) {
     type: "conflicting-viewpoints",
     stem: "Which additional evidence would most strongly favor Scientist A over Scientist B?",
     correct: `The pattern appeared again when other conditions were controlled and only ${s.independent} was varied.`,
-    wrong: [["The original measurements were printed in a larger font.", "Presentation does not distinguish causal explanations."], ["A different outcome was measured without recording the input.", "This does not test either explanation."], ["Both scientists repeated their opinions.", "Repeated claims are not new evidence."]],
+    wrong: [
+      [`The original ${s.dependent} measurements were printed in a larger font while the procedure stayed unchanged.`, "Presentation does not distinguish causal explanations."],
+      [`A different outcome was measured in ${s.subject} without recording the corresponding ${s.independent}.`, "This does not test either explanation."],
+      [`Both scientists repeated their opinions about ${s.independent} and ${s.dependent} without collecting new evidence.`, "Repeated claims are not new evidence."],
+    ],
     hint: "Look for a controlled test that separates the two proposed causes.",
     explanation: `Reproducing the pattern while isolating ${s.independent} supports Scientist A's explanation and weakens the uncontrolled-condition account.`,
     reasoning: "Choose evidence that changes one proposed cause while controlling the rival cause.",

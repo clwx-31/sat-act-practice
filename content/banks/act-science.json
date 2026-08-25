@@ -610,10 +610,10 @@
       "expected": 28
     },
     "choices": [
-      "26",
-      "30",
-      "28",
-      "22"
+      "26.0 mm",
+      "30.0 mm",
+      "28.0 mm",
+      "22.0 mm"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -1129,10 +1129,10 @@
       "expected": 34.5
     },
     "choices": [
-      "39",
-      "34.5",
-      "30",
-      "48"
+      "39.0 %",
+      "34.5 %",
+      "30.0 %",
+      "48.0 %"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -1648,10 +1648,10 @@
       "expected": 25.5
     },
     "choices": [
-      "29",
-      "25.5",
-      "22",
-      "36"
+      "29.0 mA",
+      "25.5 mA",
+      "22.0 mA",
+      "36.0 mA"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -2167,10 +2167,10 @@
       "expected": 33.5
     },
     "choices": [
-      "33.5",
-      "31",
-      "36",
-      "26"
+      "33.5 mm",
+      "31.0 mm",
+      "36.0 mm",
+      "26.0 mm"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -2686,10 +2686,10 @@
       "expected": 27.5
     },
     "choices": [
-      "29",
-      "26",
-      "32",
-      "27.5"
+      "29.0 %",
+      "26.0 %",
+      "32.0 %",
+      "27.5 %"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -3205,10 +3205,10 @@
       "expected": 28
     },
     "choices": [
-      "32",
-      "28",
-      "24",
-      "40"
+      "32.0 mA",
+      "28.0 mA",
+      "24.0 mA",
+      "40.0 mA"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -3724,10 +3724,10 @@
       "expected": 39
     },
     "choices": [
-      "36",
-      "42",
-      "39",
-      "30"
+      "36.0 mm",
+      "42.0 mm",
+      "39.0 mm",
+      "30.0 mm"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -4243,10 +4243,10 @@
       "expected": 30
     },
     "choices": [
-      "32",
-      "28",
-      "36",
-      "30"
+      "32.0 %",
+      "28.0 %",
+      "36.0 %",
+      "30.0 %"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -4762,10 +4762,10 @@
       "expected": 39.5
     },
     "choices": [
-      "39.5",
-      "35",
-      "44",
-      "26"
+      "39.5 mL",
+      "35.0 mL",
+      "44.0 mL",
+      "26.0 mL"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -5281,10 +5281,10 @@
       "expected": 24.5
     },
     "choices": [
-      "21",
-      "28",
-      "24.5",
-      "14"
+      "21.0 mm",
+      "28.0 mm",
+      "24.5 mm",
+      "14.0 mm"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -5800,10 +5800,10 @@
       "expected": 32.5
     },
     "choices": [
-      "35",
-      "32.5",
-      "30",
-      "40"
+      "35.0 %",
+      "32.5 %",
+      "30.0 %",
+      "40.0 %"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -6319,10 +6319,10 @@
       "expected": 34.5
     },
     "choices": [
-      "33",
-      "34.5",
-      "36",
-      "30"
+      "33.0 mL",
+      "34.5 mL",
+      "36.0 mL",
+      "30.0 mL"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -6838,10 +6838,10 @@
       "expected": 30
     },
     "choices": [
-      "30",
-      "26",
-      "34",
-      "18"
+      "30.0 mm",
+      "26.0 mm",
+      "34.0 mm",
+      "18.0 mm"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -7357,10 +7357,10 @@
       "expected": 35
     },
     "choices": [
-      "38",
-      "35",
-      "32",
-      "44"
+      "38.0 %",
+      "35.0 %",
+      "32.0 %",
+      "44.0 %"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -7876,10 +7876,10 @@
       "expected": 20
     },
     "choices": [
-      "18",
-      "22",
-      "14",
-      "20"
+      "18.0 mL",
+      "22.0 mL",
+      "14.0 mL",
+      "20.0 mL"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -8395,10 +8395,10 @@
       "expected": 35.5
     },
     "choices": [
-      "31",
-      "40",
-      "22",
-      "35.5"
+      "31.0 mm",
+      "40.0 mm",
+      "22.0 mm",
+      "35.5 mm"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -8914,10 +8914,10 @@
       "expected": 37.5
     },
     "choices": [
-      "41",
-      "34",
-      "48",
-      "37.5"
+      "41.0 %",
+      "34.0 %",
+      "48.0 %",
+      "37.5 %"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -9433,10 +9433,10 @@
       "expected": 25.5
     },
     "choices": [
-      "23",
-      "28",
-      "25.5",
-      "18"
+      "23.0 mL",
+      "28.0 mL",
+      "25.5 mL",
+      "18.0 mL"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -9952,10 +9952,10 @@
       "expected": 30.5
     },
     "choices": [
-      "29",
-      "32",
-      "26",
-      "30.5"
+      "29.0 mm",
+      "32.0 mm",
+      "26.0 mm",
+      "30.5 mm"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -10471,10 +10471,10 @@
       "expected": 20
     },
     "choices": [
-      "24",
-      "20",
-      "16",
-      "32"
+      "24.0 %",
+      "20.0 %",
+      "16.0 %",
+      "32.0 %"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -10990,10 +10990,10 @@
       "expected": 31
     },
     "choices": [
-      "31",
-      "28",
-      "34",
-      "22"
+      "31.0 mL",
+      "28.0 mL",
+      "34.0 mL",
+      "22.0 mL"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -11509,10 +11509,10 @@
       "expected": 36
     },
     "choices": [
-      "34",
-      "38",
-      "30",
-      "36"
+      "34.0 mm",
+      "38.0 mm",
+      "30.0 mm",
+      "36.0 mm"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -12028,10 +12028,10 @@
       "expected": 22.5
     },
     "choices": [
-      "27",
-      "18",
-      "36",
-      "22.5"
+      "27.0 %",
+      "18.0 %",
+      "36.0 %",
+      "22.5 %"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -12547,10 +12547,10 @@
       "expected": 36.5
     },
     "choices": [
-      "33",
-      "40",
-      "26",
-      "36.5"
+      "33.0 mL",
+      "40.0 mL",
+      "26.0 mL",
+      "36.5 mL"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -13066,10 +13066,10 @@
       "expected": 21.5
     },
     "choices": [
-      "19",
-      "24",
-      "14",
-      "21.5"
+      "19.0 mm",
+      "24.0 mm",
+      "14.0 mm",
+      "21.5 mm"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -13585,10 +13585,10 @@
       "expected": 35.5
     },
     "choices": [
-      "37",
-      "34",
-      "40",
-      "35.5"
+      "37.0 %",
+      "34.0 %",
+      "40.0 %",
+      "35.5 %"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -14104,10 +14104,10 @@
       "expected": 42
     },
     "choices": [
-      "42",
-      "38",
-      "46",
-      "30"
+      "42.0 mL",
+      "38.0 mL",
+      "46.0 mL",
+      "30.0 mL"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -14623,10 +14623,10 @@
       "expected": 27
     },
     "choices": [
-      "24",
-      "30",
-      "27",
-      "18"
+      "24.0 mm",
+      "30.0 mm",
+      "27.0 mm",
+      "18.0 mm"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -15142,10 +15142,10 @@
       "expected": 38
     },
     "choices": [
-      "40",
-      "38",
-      "36",
-      "44"
+      "40.0 %",
+      "38.0 %",
+      "36.0 %",
+      "44.0 %"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -15661,10 +15661,10 @@
       "expected": 27.5
     },
     "choices": [
-      "23",
-      "32",
-      "14",
-      "27.5"
+      "23.0 mL",
+      "32.0 mL",
+      "14.0 mL",
+      "27.5 mL"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -16180,10 +16180,10 @@
       "expected": 32.5
     },
     "choices": [
-      "32.5",
-      "29",
-      "36",
-      "22"
+      "32.5 mm",
+      "29.0 mm",
+      "36.0 mm",
+      "22.0 mm"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -16629,9 +16629,9 @@
     "verification": null,
     "choices": [
       "Using equal starting samples and identical containers",
-      "Varying tube length",
-      "Measuring resonant frequency",
-      "Using four groups"
+      "Varying tube length while also changing starting samples and containers among groups",
+      "Measuring resonant frequency after allowing each group a different amount of time",
+      "Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -16692,10 +16692,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Measure each group after a different duration.",
+      "Measure germination rate after a different duration for each group, so time changes too.",
       "Measure germination rate after the same duration for every group.",
-      "Change both salt level and container type.",
-      "Use no recorded outcome."
+      "Change both salt level and container type before comparing germination rate.",
+      "Complete the trials without recording germination rate for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -16757,9 +16757,9 @@
     "verification": null,
     "choices": [
       "particle count will likely continue to decrease over the next small increase in filter passes.",
-      "The outcome must reverse immediately.",
-      "The outcome will remain exactly constant.",
-      "The experiment proves the trend continues without limit."
+      "particle count must reverse direction immediately after the next increase in filter passes.",
+      "particle count will remain exactly constant even as filter passes moves beyond the tested range.",
+      "The experiment proves that particle count will continue to decrease without limit as filter passes changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -16820,9 +16820,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Change every condition at once.",
-      "Repeat only the same measurement without new samples or levels.",
-      "Remove the dependent-variable measurement.",
+      "Change added mass, the containers, the starting samples, and the measurement schedule all at once.",
+      "Repeat only the same stretch length measurement without adding new rubber bands or added mass levels.",
+      "Remove the stretch length measurement while testing additional added mass levels in new samples.",
       "Repeat the procedure with additional added mass levels and independently prepared rubber bands."
     ],
     "correctAnswer": 3,
@@ -16948,9 +16948,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The experiment has no independent variable.",
-      "The measured outcome was never recorded.",
-      "Identical containers make comparison impossible.",
+      "The experiment has no independent variable even though carbon dioxide level was deliberately varied among groups.",
+      "The measured floating time was never recorded even though the method reports those measurements.",
+      "Using identical containers makes comparison impossible because every group must use a different container.",
       "The tested carbon dioxide level range may not represent values outside that range."
     ],
     "correctAnswer": 3,
@@ -17140,10 +17140,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Varying daily light",
-      "Measuring mean height",
+      "Varying daily light while also changing starting samples and containers among groups",
+      "Measuring mean height after allowing each group a different amount of time",
       "Using equal starting samples and identical containers",
-      "Using four groups"
+      "Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -17204,10 +17204,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Measure each group after a different duration.",
+      "Measure gas volume after a different duration for each group, so time changes too.",
       "Measure gas volume after the same duration for every group.",
-      "Change both water temperature and container type.",
-      "Use no recorded outcome."
+      "Change both water temperature and container type before comparing gas volume.",
+      "Complete the trials without recording gas volume for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -17269,9 +17269,9 @@
     "verification": null,
     "choices": [
       "electric current will likely continue to decrease over the next small increase in lamp angle.",
-      "The outcome must reverse immediately.",
-      "The outcome will remain exactly constant.",
-      "The experiment proves the trend continues without limit."
+      "electric current must reverse direction immediately after the next increase in lamp angle.",
+      "electric current will remain exactly constant even as lamp angle moves beyond the tested range.",
+      "The experiment proves that electric current will continue to decrease without limit as lamp angle changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -17333,9 +17333,9 @@
     "verification": null,
     "choices": [
       "Repeat the procedure with additional sand content levels and independently prepared soil samples.",
-      "Change every condition at once.",
-      "Repeat only the same measurement without new samples or levels.",
-      "Remove the dependent-variable measurement."
+      "Change sand content, the containers, the starting samples, and the measurement schedule all at once.",
+      "Repeat only the same drainage time measurement without adding new soil samples or sand content levels.",
+      "Remove the drainage time measurement while testing additional sand content levels in new samples."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -17460,10 +17460,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The experiment has no independent variable.",
-      "The measured outcome was never recorded.",
+      "The experiment has no independent variable even though salt concentration was deliberately varied among groups.",
+      "The measured freezing point was never recorded even though the method reports those measurements.",
       "The tested salt concentration range may not represent values outside that range.",
-      "Identical containers make comparison impossible."
+      "Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -17652,10 +17652,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Varying nutrient level",
+      "Varying nutrient level while also changing starting samples and containers among groups",
       "Using equal starting samples and identical containers",
-      "Measuring cell density",
-      "Using four groups"
+      "Measuring cell density after allowing each group a different amount of time",
+      "Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -17716,10 +17716,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Measure each group after a different duration.",
-      "Change both ramp height and container type.",
+      "Measure travel distance after a different duration for each group, so time changes too.",
+      "Change both ramp height and container type before comparing travel distance.",
       "Measure travel distance after the same duration for every group.",
-      "Use no recorded outcome."
+      "Complete the trials without recording travel distance for any group."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -17780,9 +17780,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The outcome must reverse immediately.",
-      "The outcome will remain exactly constant.",
-      "The experiment proves the trend continues without limit.",
+      "flow rate must reverse direction immediately after the next increase in gravel depth.",
+      "flow rate will remain exactly constant even as gravel depth moves beyond the tested range.",
+      "The experiment proves that flow rate will continue to decrease without limit as gravel depth changes.",
       "flow rate will likely continue to decrease over the next small increase in gravel depth."
     ],
     "correctAnswer": 3,
@@ -17845,9 +17845,9 @@
     "verification": null,
     "choices": [
       "Repeat the procedure with additional soil moisture levels and independently prepared moss patches.",
-      "Change every condition at once.",
-      "Repeat only the same measurement without new samples or levels.",
-      "Remove the dependent-variable measurement."
+      "Change soil moisture, the containers, the starting samples, and the measurement schedule all at once.",
+      "Repeat only the same covered area measurement without adding new moss patches or soil moisture levels.",
+      "Remove the covered area measurement while testing additional soil moisture levels in new samples."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -17972,10 +17972,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The experiment has no independent variable.",
-      "The measured outcome was never recorded.",
+      "The experiment has no independent variable even though number of cells was deliberately varied among groups.",
+      "The measured bulb brightness was never recorded even though the method reports those measurements.",
       "The tested number of cells range may not represent values outside that range.",
-      "Identical containers make comparison impossible."
+      "Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -18164,10 +18164,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Granite School sound tubes: Varying tube length",
+      "Granite School sound tubes: Varying tube length while also changing starting samples and containers among groups",
       "Granite School sound tubes: Using equal starting samples and identical containers",
-      "Granite School sound tubes: Measuring resonant frequency",
-      "Granite School sound tubes: Using four groups"
+      "Granite School sound tubes: Measuring resonant frequency after allowing each group a different amount of time",
+      "Granite School sound tubes: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -18228,10 +18228,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Harbor Center radish seeds: Measure each group after a different duration.",
-      "Harbor Center radish seeds: Change both salt level and container type.",
+      "Harbor Center radish seeds: Measure germination rate after a different duration for each group, so time changes too.",
+      "Harbor Center radish seeds: Change both salt level and container type before comparing germination rate.",
       "Harbor Center radish seeds: Measure germination rate after the same duration for every group.",
-      "Harbor Center radish seeds: Use no recorded outcome."
+      "Harbor Center radish seeds: Complete the trials without recording germination rate for any group."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -18293,9 +18293,9 @@
     "verification": null,
     "choices": [
       "Indigo Academy water samples: particle count will likely continue to decrease over the next small increase in filter passes.",
-      "Indigo Academy water samples: The outcome must reverse immediately.",
-      "Indigo Academy water samples: The outcome will remain exactly constant.",
-      "Indigo Academy water samples: The experiment proves the trend continues without limit."
+      "Indigo Academy water samples: particle count must reverse direction immediately after the next increase in filter passes.",
+      "Indigo Academy water samples: particle count will remain exactly constant even as filter passes moves beyond the tested range.",
+      "Indigo Academy water samples: The experiment proves that particle count will continue to decrease without limit as filter passes changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -18356,9 +18356,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Juniper Lab rubber bands: Change every condition at once.",
-      "Juniper Lab rubber bands: Repeat only the same measurement without new samples or levels.",
-      "Juniper Lab rubber bands: Remove the dependent-variable measurement.",
+      "Juniper Lab rubber bands: Change added mass, the containers, the starting samples, and the measurement schedule all at once.",
+      "Juniper Lab rubber bands: Repeat only the same stretch length measurement without adding new rubber bands or added mass levels.",
+      "Juniper Lab rubber bands: Remove the stretch length measurement while testing additional added mass levels in new samples.",
       "Juniper Lab rubber bands: Repeat the procedure with additional added mass levels and independently prepared rubber bands."
     ],
     "correctAnswer": 3,
@@ -18484,10 +18484,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Lakeshore School leaf disks: The experiment has no independent variable.",
-      "Lakeshore School leaf disks: The measured outcome was never recorded.",
+      "Lakeshore School leaf disks: The experiment has no independent variable even though carbon dioxide level was deliberately varied among groups.",
+      "Lakeshore School leaf disks: The measured floating time was never recorded even though the method reports those measurements.",
       "Lakeshore School leaf disks: The tested carbon dioxide level range may not represent values outside that range.",
-      "Lakeshore School leaf disks: Identical containers make comparison impossible."
+      "Lakeshore School leaf disks: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -18677,9 +18677,9 @@
     "verification": null,
     "choices": [
       "Oak Academy bean seedlings: Using equal starting samples and identical containers",
-      "Oak Academy bean seedlings: Varying daily light",
-      "Oak Academy bean seedlings: Measuring mean height",
-      "Oak Academy bean seedlings: Using four groups"
+      "Oak Academy bean seedlings: Varying daily light while also changing starting samples and containers among groups",
+      "Oak Academy bean seedlings: Measuring mean height after allowing each group a different amount of time",
+      "Oak Academy bean seedlings: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -18740,10 +18740,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Pine Institute yeast cultures: Measure each group after a different duration.",
+      "Pine Institute yeast cultures: Measure gas volume after a different duration for each group, so time changes too.",
       "Pine Institute yeast cultures: Measure gas volume after the same duration for every group.",
-      "Pine Institute yeast cultures: Change both water temperature and container type.",
-      "Pine Institute yeast cultures: Use no recorded outcome."
+      "Pine Institute yeast cultures: Change both water temperature and container type before comparing gas volume.",
+      "Pine Institute yeast cultures: Complete the trials without recording gas volume for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -18804,9 +18804,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Quartz School model solar panels: The outcome must reverse immediately.",
-      "Quartz School model solar panels: The outcome will remain exactly constant.",
-      "Quartz School model solar panels: The experiment proves the trend continues without limit.",
+      "Quartz School model solar panels: electric current must reverse direction immediately after the next increase in lamp angle.",
+      "Quartz School model solar panels: electric current will remain exactly constant even as lamp angle moves beyond the tested range.",
+      "Quartz School model solar panels: The experiment proves that electric current will continue to decrease without limit as lamp angle changes.",
       "Quartz School model solar panels: electric current will likely continue to decrease over the next small increase in lamp angle."
     ],
     "correctAnswer": 3,
@@ -18868,10 +18868,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "River Center soil samples: Change every condition at once.",
-      "River Center soil samples: Repeat only the same measurement without new samples or levels.",
+      "River Center soil samples: Change sand content, the containers, the starting samples, and the measurement schedule all at once.",
+      "River Center soil samples: Repeat only the same drainage time measurement without adding new soil samples or sand content levels.",
       "River Center soil samples: Repeat the procedure with additional sand content levels and independently prepared soil samples.",
-      "River Center soil samples: Remove the dependent-variable measurement."
+      "River Center soil samples: Remove the drainage time measurement while testing additional sand content levels in new samples."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -18996,9 +18996,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Timber Academy salt solutions: The experiment has no independent variable.",
-      "Timber Academy salt solutions: The measured outcome was never recorded.",
-      "Timber Academy salt solutions: Identical containers make comparison impossible.",
+      "Timber Academy salt solutions: The experiment has no independent variable even though salt concentration was deliberately varied among groups.",
+      "Timber Academy salt solutions: The measured freezing point was never recorded even though the method reports those measurements.",
+      "Timber Academy salt solutions: Using identical containers makes comparison impossible because every group must use a different container.",
       "Timber Academy salt solutions: The tested salt concentration range may not represent values outside that range."
     ],
     "correctAnswer": 3,
@@ -19188,9 +19188,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Willow Center algae cultures: Varying nutrient level",
-      "Willow Center algae cultures: Measuring cell density",
-      "Willow Center algae cultures: Using four groups",
+      "Willow Center algae cultures: Varying nutrient level while also changing starting samples and containers among groups",
+      "Willow Center algae cultures: Measuring cell density after allowing each group a different amount of time",
+      "Willow Center algae cultures: Using four groups whose starting samples and containers are not kept consistent",
       "Willow Center algae cultures: Using equal starting samples and identical containers"
     ],
     "correctAnswer": 3,
@@ -19252,10 +19252,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "York Lab toy cars: Measure each group after a different duration.",
+      "York Lab toy cars: Measure travel distance after a different duration for each group, so time changes too.",
       "York Lab toy cars: Measure travel distance after the same duration for every group.",
-      "York Lab toy cars: Change both ramp height and container type.",
-      "York Lab toy cars: Use no recorded outcome."
+      "York Lab toy cars: Change both ramp height and container type before comparing travel distance.",
+      "York Lab toy cars: Complete the trials without recording travel distance for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -19316,10 +19316,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The outcome must reverse immediately.",
-      "The outcome will remain exactly constant.",
+      "length change must reverse direction immediately after the next increase in heating time.",
+      "length change will remain exactly constant even as heating time moves beyond the tested range.",
       "length change will likely continue to increase over the next small increase in heating time.",
-      "The experiment proves the trend continues without limit."
+      "The experiment proves that length change will continue to increase without limit as heating time changes."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -19381,9 +19381,9 @@
     "verification": null,
     "choices": [
       "Alder Lab moss patches: Repeat the procedure with additional soil moisture levels and independently prepared moss patches.",
-      "Alder Lab moss patches: Change every condition at once.",
-      "Alder Lab moss patches: Repeat only the same measurement without new samples or levels.",
-      "Alder Lab moss patches: Remove the dependent-variable measurement."
+      "Alder Lab moss patches: Change soil moisture, the containers, the starting samples, and the measurement schedule all at once.",
+      "Alder Lab moss patches: Repeat only the same covered area measurement without adding new moss patches or soil moisture levels.",
+      "Alder Lab moss patches: Remove the covered area measurement while testing additional soil moisture levels in new samples."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -19508,10 +19508,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Cedar Center battery circuits: The experiment has no independent variable.",
+      "Cedar Center battery circuits: The experiment has no independent variable even though number of cells was deliberately varied among groups.",
       "Cedar Center battery circuits: The tested number of cells range may not represent values outside that range.",
-      "Cedar Center battery circuits: The measured outcome was never recorded.",
-      "Cedar Center battery circuits: Identical containers make comparison impossible."
+      "Cedar Center battery circuits: The measured bulb brightness was never recorded even though the method reports those measurements.",
+      "Cedar Center battery circuits: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -19700,10 +19700,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Foxglove Lab sound tubes: Varying tube length",
-      "Foxglove Lab sound tubes: Measuring resonant frequency",
+      "Foxglove Lab sound tubes: Varying tube length while also changing starting samples and containers among groups",
+      "Foxglove Lab sound tubes: Measuring resonant frequency after allowing each group a different amount of time",
       "Foxglove Lab sound tubes: Using equal starting samples and identical containers",
-      "Foxglove Lab sound tubes: Using four groups"
+      "Foxglove Lab sound tubes: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -19765,9 +19765,9 @@
     "verification": null,
     "choices": [
       "Granite School radish seeds: Measure germination rate after the same duration for every group.",
-      "Granite School radish seeds: Measure each group after a different duration.",
-      "Granite School radish seeds: Change both salt level and container type.",
-      "Granite School radish seeds: Use no recorded outcome."
+      "Granite School radish seeds: Measure germination rate after a different duration for each group, so time changes too.",
+      "Granite School radish seeds: Change both salt level and container type before comparing germination rate.",
+      "Granite School radish seeds: Complete the trials without recording germination rate for any group."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -19828,9 +19828,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Harbor Center water samples: The outcome must reverse immediately.",
-      "Harbor Center water samples: The outcome will remain exactly constant.",
-      "Harbor Center water samples: The experiment proves the trend continues without limit.",
+      "Harbor Center water samples: particle count must reverse direction immediately after the next increase in filter passes.",
+      "Harbor Center water samples: particle count will remain exactly constant even as filter passes moves beyond the tested range.",
+      "Harbor Center water samples: The experiment proves that particle count will continue to decrease without limit as filter passes changes.",
       "Harbor Center water samples: particle count will likely continue to decrease over the next small increase in filter passes."
     ],
     "correctAnswer": 3,
@@ -19892,10 +19892,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Indigo Academy rubber bands: Change every condition at once.",
+      "Indigo Academy rubber bands: Change added mass, the containers, the starting samples, and the measurement schedule all at once.",
       "Indigo Academy rubber bands: Repeat the procedure with additional added mass levels and independently prepared rubber bands.",
-      "Indigo Academy rubber bands: Repeat only the same measurement without new samples or levels.",
-      "Indigo Academy rubber bands: Remove the dependent-variable measurement."
+      "Indigo Academy rubber bands: Repeat only the same stretch length measurement without adding new rubber bands or added mass levels.",
+      "Indigo Academy rubber bands: Remove the stretch length measurement while testing additional added mass levels in new samples."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -20020,10 +20020,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Kestrel Institute leaf disks: The experiment has no independent variable.",
+      "Kestrel Institute leaf disks: The experiment has no independent variable even though carbon dioxide level was deliberately varied among groups.",
       "Kestrel Institute leaf disks: The tested carbon dioxide level range may not represent values outside that range.",
-      "Kestrel Institute leaf disks: The measured outcome was never recorded.",
-      "Kestrel Institute leaf disks: Identical containers make comparison impossible."
+      "Kestrel Institute leaf disks: The measured floating time was never recorded even though the method reports those measurements.",
+      "Kestrel Institute leaf disks: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -20212,10 +20212,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Northfield Lab bean seedlings: Varying daily light",
-      "Northfield Lab bean seedlings: Measuring mean height",
+      "Northfield Lab bean seedlings: Varying daily light while also changing starting samples and containers among groups",
+      "Northfield Lab bean seedlings: Measuring mean height after allowing each group a different amount of time",
       "Northfield Lab bean seedlings: Using equal starting samples and identical containers",
-      "Northfield Lab bean seedlings: Using four groups"
+      "Northfield Lab bean seedlings: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -20276,10 +20276,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Oak Academy yeast cultures: Measure each group after a different duration.",
+      "Oak Academy yeast cultures: Measure gas volume after a different duration for each group, so time changes too.",
       "Oak Academy yeast cultures: Measure gas volume after the same duration for every group.",
-      "Oak Academy yeast cultures: Change both water temperature and container type.",
-      "Oak Academy yeast cultures: Use no recorded outcome."
+      "Oak Academy yeast cultures: Change both water temperature and container type before comparing gas volume.",
+      "Oak Academy yeast cultures: Complete the trials without recording gas volume for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -20341,9 +20341,9 @@
     "verification": null,
     "choices": [
       "Pine Institute model solar panels: electric current will likely continue to decrease over the next small increase in lamp angle.",
-      "Pine Institute model solar panels: The outcome must reverse immediately.",
-      "Pine Institute model solar panels: The outcome will remain exactly constant.",
-      "Pine Institute model solar panels: The experiment proves the trend continues without limit."
+      "Pine Institute model solar panels: electric current must reverse direction immediately after the next increase in lamp angle.",
+      "Pine Institute model solar panels: electric current will remain exactly constant even as lamp angle moves beyond the tested range.",
+      "Pine Institute model solar panels: The experiment proves that electric current will continue to decrease without limit as lamp angle changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -20404,10 +20404,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Quartz School soil samples: Change every condition at once.",
-      "Quartz School soil samples: Repeat only the same measurement without new samples or levels.",
+      "Quartz School soil samples: Change sand content, the containers, the starting samples, and the measurement schedule all at once.",
+      "Quartz School soil samples: Repeat only the same drainage time measurement without adding new soil samples or sand content levels.",
       "Quartz School soil samples: Repeat the procedure with additional sand content levels and independently prepared soil samples.",
-      "Quartz School soil samples: Remove the dependent-variable measurement."
+      "Quartz School soil samples: Remove the drainage time measurement while testing additional sand content levels in new samples."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -20532,9 +20532,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Summit Lab salt solutions: The experiment has no independent variable.",
-      "Summit Lab salt solutions: The measured outcome was never recorded.",
-      "Summit Lab salt solutions: Identical containers make comparison impossible.",
+      "Summit Lab salt solutions: The experiment has no independent variable even though salt concentration was deliberately varied among groups.",
+      "Summit Lab salt solutions: The measured freezing point was never recorded even though the method reports those measurements.",
+      "Summit Lab salt solutions: Using identical containers makes comparison impossible because every group must use a different container.",
       "Summit Lab salt solutions: The tested salt concentration range may not represent values outside that range."
     ],
     "correctAnswer": 3,
@@ -20724,9 +20724,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Valley School algae cultures: Varying nutrient level",
-      "Valley School algae cultures: Measuring cell density",
-      "Valley School algae cultures: Using four groups",
+      "Valley School algae cultures: Varying nutrient level while also changing starting samples and containers among groups",
+      "Valley School algae cultures: Measuring cell density after allowing each group a different amount of time",
+      "Valley School algae cultures: Using four groups whose starting samples and containers are not kept consistent",
       "Valley School algae cultures: Using equal starting samples and identical containers"
     ],
     "correctAnswer": 3,
@@ -20789,9 +20789,9 @@
     "verification": null,
     "choices": [
       "Willow Center toy cars: Measure travel distance after the same duration for every group.",
-      "Willow Center toy cars: Measure each group after a different duration.",
-      "Willow Center toy cars: Change both ramp height and container type.",
-      "Willow Center toy cars: Use no recorded outcome."
+      "Willow Center toy cars: Measure travel distance after a different duration for each group, so time changes too.",
+      "Willow Center toy cars: Change both ramp height and container type before comparing travel distance.",
+      "Willow Center toy cars: Complete the trials without recording travel distance for any group."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -20852,10 +20852,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "York Lab metal rods: The outcome must reverse immediately.",
-      "York Lab metal rods: The outcome will remain exactly constant.",
+      "York Lab metal rods: length change must reverse direction immediately after the next increase in heating time.",
+      "York Lab metal rods: length change will remain exactly constant even as heating time moves beyond the tested range.",
       "York Lab metal rods: length change will likely continue to increase over the next small increase in heating time.",
-      "York Lab metal rods: The experiment proves the trend continues without limit."
+      "York Lab metal rods: The experiment proves that length change will continue to increase without limit as heating time changes."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -20916,10 +20916,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Change every condition at once.",
+      "Change gravel depth, the containers, the starting samples, and the measurement schedule all at once.",
       "Repeat the procedure with additional gravel depth levels and independently prepared water filters.",
-      "Repeat only the same measurement without new samples or levels.",
-      "Remove the dependent-variable measurement."
+      "Repeat only the same flow rate measurement without adding new water filters or gravel depth levels.",
+      "Remove the flow rate measurement while testing additional gravel depth levels in new samples."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -21045,9 +21045,9 @@
     "verification": null,
     "choices": [
       "Bayside School battery circuits: The tested number of cells range may not represent values outside that range.",
-      "Bayside School battery circuits: The experiment has no independent variable.",
-      "Bayside School battery circuits: The measured outcome was never recorded.",
-      "Bayside School battery circuits: Identical containers make comparison impossible."
+      "Bayside School battery circuits: The experiment has no independent variable even though number of cells was deliberately varied among groups.",
+      "Bayside School battery circuits: The measured bulb brightness was never recorded even though the method reports those measurements.",
+      "Bayside School battery circuits: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -21236,10 +21236,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Elm Institute sound tubes: Varying tube length",
+      "Elm Institute sound tubes: Varying tube length while also changing starting samples and containers among groups",
       "Elm Institute sound tubes: Using equal starting samples and identical containers",
-      "Elm Institute sound tubes: Measuring resonant frequency",
-      "Elm Institute sound tubes: Using four groups"
+      "Elm Institute sound tubes: Measuring resonant frequency after allowing each group a different amount of time",
+      "Elm Institute sound tubes: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -21301,9 +21301,9 @@
     "verification": null,
     "choices": [
       "Foxglove Lab radish seeds: Measure germination rate after the same duration for every group.",
-      "Foxglove Lab radish seeds: Measure each group after a different duration.",
-      "Foxglove Lab radish seeds: Change both salt level and container type.",
-      "Foxglove Lab radish seeds: Use no recorded outcome."
+      "Foxglove Lab radish seeds: Measure germination rate after a different duration for each group, so time changes too.",
+      "Foxglove Lab radish seeds: Change both salt level and container type before comparing germination rate.",
+      "Foxglove Lab radish seeds: Complete the trials without recording germination rate for any group."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -21364,10 +21364,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Granite School water samples: The outcome must reverse immediately.",
-      "Granite School water samples: The outcome will remain exactly constant.",
+      "Granite School water samples: particle count must reverse direction immediately after the next increase in filter passes.",
+      "Granite School water samples: particle count will remain exactly constant even as filter passes moves beyond the tested range.",
       "Granite School water samples: particle count will likely continue to decrease over the next small increase in filter passes.",
-      "Granite School water samples: The experiment proves the trend continues without limit."
+      "Granite School water samples: The experiment proves that particle count will continue to decrease without limit as filter passes changes."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -21428,10 +21428,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Harbor Center rubber bands: Change every condition at once.",
+      "Harbor Center rubber bands: Change added mass, the containers, the starting samples, and the measurement schedule all at once.",
       "Harbor Center rubber bands: Repeat the procedure with additional added mass levels and independently prepared rubber bands.",
-      "Harbor Center rubber bands: Repeat only the same measurement without new samples or levels.",
-      "Harbor Center rubber bands: Remove the dependent-variable measurement."
+      "Harbor Center rubber bands: Repeat only the same stretch length measurement without adding new rubber bands or added mass levels.",
+      "Harbor Center rubber bands: Remove the stretch length measurement while testing additional added mass levels in new samples."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -21556,10 +21556,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Juniper Lab leaf disks: The experiment has no independent variable.",
-      "Juniper Lab leaf disks: The measured outcome was never recorded.",
+      "Juniper Lab leaf disks: The experiment has no independent variable even though carbon dioxide level was deliberately varied among groups.",
+      "Juniper Lab leaf disks: The measured floating time was never recorded even though the method reports those measurements.",
       "Juniper Lab leaf disks: The tested carbon dioxide level range may not represent values outside that range.",
-      "Juniper Lab leaf disks: Identical containers make comparison impossible."
+      "Juniper Lab leaf disks: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -21749,9 +21749,9 @@
     "verification": null,
     "choices": [
       "Meadow Center bean seedlings: Using equal starting samples and identical containers",
-      "Meadow Center bean seedlings: Varying daily light",
-      "Meadow Center bean seedlings: Measuring mean height",
-      "Meadow Center bean seedlings: Using four groups"
+      "Meadow Center bean seedlings: Varying daily light while also changing starting samples and containers among groups",
+      "Meadow Center bean seedlings: Measuring mean height after allowing each group a different amount of time",
+      "Meadow Center bean seedlings: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -21812,10 +21812,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Northfield Lab yeast cultures: Measure each group after a different duration.",
+      "Northfield Lab yeast cultures: Measure gas volume after a different duration for each group, so time changes too.",
       "Northfield Lab yeast cultures: Measure gas volume after the same duration for every group.",
-      "Northfield Lab yeast cultures: Change both water temperature and container type.",
-      "Northfield Lab yeast cultures: Use no recorded outcome."
+      "Northfield Lab yeast cultures: Change both water temperature and container type before comparing gas volume.",
+      "Northfield Lab yeast cultures: Complete the trials without recording gas volume for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -21876,9 +21876,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Oak Academy model solar panels: The outcome must reverse immediately.",
-      "Oak Academy model solar panels: The outcome will remain exactly constant.",
-      "Oak Academy model solar panels: The experiment proves the trend continues without limit.",
+      "Oak Academy model solar panels: electric current must reverse direction immediately after the next increase in lamp angle.",
+      "Oak Academy model solar panels: electric current will remain exactly constant even as lamp angle moves beyond the tested range.",
+      "Oak Academy model solar panels: The experiment proves that electric current will continue to decrease without limit as lamp angle changes.",
       "Oak Academy model solar panels: electric current will likely continue to decrease over the next small increase in lamp angle."
     ],
     "correctAnswer": 3,
@@ -21940,10 +21940,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Pine Institute soil samples: Change every condition at once.",
-      "Pine Institute soil samples: Repeat only the same measurement without new samples or levels.",
+      "Pine Institute soil samples: Change sand content, the containers, the starting samples, and the measurement schedule all at once.",
+      "Pine Institute soil samples: Repeat only the same drainage time measurement without adding new soil samples or sand content levels.",
       "Pine Institute soil samples: Repeat the procedure with additional sand content levels and independently prepared soil samples.",
-      "Pine Institute soil samples: Remove the dependent-variable measurement."
+      "Pine Institute soil samples: Remove the drainage time measurement while testing additional sand content levels in new samples."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -22068,10 +22068,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "River Center salt solutions: The experiment has no independent variable.",
-      "River Center salt solutions: The measured outcome was never recorded.",
+      "River Center salt solutions: The experiment has no independent variable even though salt concentration was deliberately varied among groups.",
+      "River Center salt solutions: The measured freezing point was never recorded even though the method reports those measurements.",
       "River Center salt solutions: The tested salt concentration range may not represent values outside that range.",
-      "River Center salt solutions: Identical containers make comparison impossible."
+      "River Center salt solutions: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -22260,9 +22260,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Union Institute algae cultures: Varying nutrient level",
-      "Union Institute algae cultures: Measuring cell density",
-      "Union Institute algae cultures: Using four groups",
+      "Union Institute algae cultures: Varying nutrient level while also changing starting samples and containers among groups",
+      "Union Institute algae cultures: Measuring cell density after allowing each group a different amount of time",
+      "Union Institute algae cultures: Using four groups whose starting samples and containers are not kept consistent",
       "Union Institute algae cultures: Using equal starting samples and identical containers"
     ],
     "correctAnswer": 3,
@@ -22324,10 +22324,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Valley School toy cars: Measure each group after a different duration.",
+      "Valley School toy cars: Measure travel distance after a different duration for each group, so time changes too.",
       "Valley School toy cars: Measure travel distance after the same duration for every group.",
-      "Valley School toy cars: Change both ramp height and container type.",
-      "Valley School toy cars: Use no recorded outcome."
+      "Valley School toy cars: Change both ramp height and container type before comparing travel distance.",
+      "Valley School toy cars: Complete the trials without recording travel distance for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -22388,10 +22388,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Willow Center metal rods: The outcome must reverse immediately.",
-      "Willow Center metal rods: The outcome will remain exactly constant.",
+      "Willow Center metal rods: length change must reverse direction immediately after the next increase in heating time.",
+      "Willow Center metal rods: length change will remain exactly constant even as heating time moves beyond the tested range.",
       "Willow Center metal rods: length change will likely continue to increase over the next small increase in heating time.",
-      "Willow Center metal rods: The experiment proves the trend continues without limit."
+      "Willow Center metal rods: The experiment proves that length change will continue to increase without limit as heating time changes."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -22453,9 +22453,9 @@
     "verification": null,
     "choices": [
       "York Lab water filters: Repeat the procedure with additional gravel depth levels and independently prepared water filters.",
-      "York Lab water filters: Change every condition at once.",
-      "York Lab water filters: Repeat only the same measurement without new samples or levels.",
-      "York Lab water filters: Remove the dependent-variable measurement."
+      "York Lab water filters: Change gravel depth, the containers, the starting samples, and the measurement schedule all at once.",
+      "York Lab water filters: Repeat only the same flow rate measurement without adding new water filters or gravel depth levels.",
+      "York Lab water filters: Remove the flow rate measurement while testing additional gravel depth levels in new samples."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -22581,9 +22581,9 @@
     "verification": null,
     "choices": [
       "Alder Lab battery circuits: The tested number of cells range may not represent values outside that range.",
-      "Alder Lab battery circuits: The experiment has no independent variable.",
-      "Alder Lab battery circuits: The measured outcome was never recorded.",
-      "Alder Lab battery circuits: Identical containers make comparison impossible."
+      "Alder Lab battery circuits: The experiment has no independent variable even though number of cells was deliberately varied among groups.",
+      "Alder Lab battery circuits: The measured bulb brightness was never recorded even though the method reports those measurements.",
+      "Alder Lab battery circuits: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -22772,10 +22772,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Delta Academy sound tubes: Varying tube length",
+      "Delta Academy sound tubes: Varying tube length while also changing starting samples and containers among groups",
       "Delta Academy sound tubes: Using equal starting samples and identical containers",
-      "Delta Academy sound tubes: Measuring resonant frequency",
-      "Delta Academy sound tubes: Using four groups"
+      "Delta Academy sound tubes: Measuring resonant frequency after allowing each group a different amount of time",
+      "Delta Academy sound tubes: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -22836,9 +22836,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Elm Institute radish seeds: Measure each group after a different duration.",
-      "Elm Institute radish seeds: Change both salt level and container type.",
-      "Elm Institute radish seeds: Use no recorded outcome.",
+      "Elm Institute radish seeds: Measure germination rate after a different duration for each group, so time changes too.",
+      "Elm Institute radish seeds: Change both salt level and container type before comparing germination rate.",
+      "Elm Institute radish seeds: Complete the trials without recording germination rate for any group.",
       "Elm Institute radish seeds: Measure germination rate after the same duration for every group."
     ],
     "correctAnswer": 3,
@@ -22901,9 +22901,9 @@
     "verification": null,
     "choices": [
       "Foxglove Lab water samples: particle count will likely continue to decrease over the next small increase in filter passes.",
-      "Foxglove Lab water samples: The outcome must reverse immediately.",
-      "Foxglove Lab water samples: The outcome will remain exactly constant.",
-      "Foxglove Lab water samples: The experiment proves the trend continues without limit."
+      "Foxglove Lab water samples: particle count must reverse direction immediately after the next increase in filter passes.",
+      "Foxglove Lab water samples: particle count will remain exactly constant even as filter passes moves beyond the tested range.",
+      "Foxglove Lab water samples: The experiment proves that particle count will continue to decrease without limit as filter passes changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -22964,10 +22964,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Granite School rubber bands: Change every condition at once.",
-      "Granite School rubber bands: Repeat only the same measurement without new samples or levels.",
+      "Granite School rubber bands: Change added mass, the containers, the starting samples, and the measurement schedule all at once.",
+      "Granite School rubber bands: Repeat only the same stretch length measurement without adding new rubber bands or added mass levels.",
       "Granite School rubber bands: Repeat the procedure with additional added mass levels and independently prepared rubber bands.",
-      "Granite School rubber bands: Remove the dependent-variable measurement."
+      "Granite School rubber bands: Remove the stretch length measurement while testing additional added mass levels in new samples."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -23092,10 +23092,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Indigo Academy leaf disks: The experiment has no independent variable.",
-      "Indigo Academy leaf disks: The measured outcome was never recorded.",
+      "Indigo Academy leaf disks: The experiment has no independent variable even though carbon dioxide level was deliberately varied among groups.",
+      "Indigo Academy leaf disks: The measured floating time was never recorded even though the method reports those measurements.",
       "Indigo Academy leaf disks: The tested carbon dioxide level range may not represent values outside that range.",
-      "Indigo Academy leaf disks: Identical containers make comparison impossible."
+      "Indigo Academy leaf disks: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -23284,10 +23284,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Lakeshore School bean seedlings: Varying daily light",
+      "Lakeshore School bean seedlings: Varying daily light while also changing starting samples and containers among groups",
       "Lakeshore School bean seedlings: Using equal starting samples and identical containers",
-      "Lakeshore School bean seedlings: Measuring mean height",
-      "Lakeshore School bean seedlings: Using four groups"
+      "Lakeshore School bean seedlings: Measuring mean height after allowing each group a different amount of time",
+      "Lakeshore School bean seedlings: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -23349,9 +23349,9 @@
     "verification": null,
     "choices": [
       "Meadow Center yeast cultures: Measure gas volume after the same duration for every group.",
-      "Meadow Center yeast cultures: Measure each group after a different duration.",
-      "Meadow Center yeast cultures: Change both water temperature and container type.",
-      "Meadow Center yeast cultures: Use no recorded outcome."
+      "Meadow Center yeast cultures: Measure gas volume after a different duration for each group, so time changes too.",
+      "Meadow Center yeast cultures: Change both water temperature and container type before comparing gas volume.",
+      "Meadow Center yeast cultures: Complete the trials without recording gas volume for any group."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -23412,9 +23412,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Northfield Lab model solar panels: The outcome must reverse immediately.",
-      "Northfield Lab model solar panels: The outcome will remain exactly constant.",
-      "Northfield Lab model solar panels: The experiment proves the trend continues without limit.",
+      "Northfield Lab model solar panels: electric current must reverse direction immediately after the next increase in lamp angle.",
+      "Northfield Lab model solar panels: electric current will remain exactly constant even as lamp angle moves beyond the tested range.",
+      "Northfield Lab model solar panels: The experiment proves that electric current will continue to decrease without limit as lamp angle changes.",
       "Northfield Lab model solar panels: electric current will likely continue to decrease over the next small increase in lamp angle."
     ],
     "correctAnswer": 3,
@@ -23476,10 +23476,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Oak Academy soil samples: Change every condition at once.",
-      "Oak Academy soil samples: Repeat only the same measurement without new samples or levels.",
+      "Oak Academy soil samples: Change sand content, the containers, the starting samples, and the measurement schedule all at once.",
+      "Oak Academy soil samples: Repeat only the same drainage time measurement without adding new soil samples or sand content levels.",
       "Oak Academy soil samples: Repeat the procedure with additional sand content levels and independently prepared soil samples.",
-      "Oak Academy soil samples: Remove the dependent-variable measurement."
+      "Oak Academy soil samples: Remove the drainage time measurement while testing additional sand content levels in new samples."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -23604,10 +23604,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Quartz School salt solutions: The experiment has no independent variable.",
+      "Quartz School salt solutions: The experiment has no independent variable even though salt concentration was deliberately varied among groups.",
       "Quartz School salt solutions: The tested salt concentration range may not represent values outside that range.",
-      "Quartz School salt solutions: The measured outcome was never recorded.",
-      "Quartz School salt solutions: Identical containers make comparison impossible."
+      "Quartz School salt solutions: The measured freezing point was never recorded even though the method reports those measurements.",
+      "Quartz School salt solutions: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -23796,10 +23796,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Timber Academy algae cultures: Varying nutrient level",
-      "Timber Academy algae cultures: Measuring cell density",
+      "Timber Academy algae cultures: Varying nutrient level while also changing starting samples and containers among groups",
+      "Timber Academy algae cultures: Measuring cell density after allowing each group a different amount of time",
       "Timber Academy algae cultures: Using equal starting samples and identical containers",
-      "Timber Academy algae cultures: Using four groups"
+      "Timber Academy algae cultures: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -23860,9 +23860,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Union Institute toy cars: Measure each group after a different duration.",
-      "Union Institute toy cars: Change both ramp height and container type.",
-      "Union Institute toy cars: Use no recorded outcome.",
+      "Union Institute toy cars: Measure travel distance after a different duration for each group, so time changes too.",
+      "Union Institute toy cars: Change both ramp height and container type before comparing travel distance.",
+      "Union Institute toy cars: Complete the trials without recording travel distance for any group.",
       "Union Institute toy cars: Measure travel distance after the same duration for every group."
     ],
     "correctAnswer": 3,
@@ -23925,9 +23925,9 @@
     "verification": null,
     "choices": [
       "Valley School metal rods: length change will likely continue to increase over the next small increase in heating time.",
-      "Valley School metal rods: The outcome must reverse immediately.",
-      "Valley School metal rods: The outcome will remain exactly constant.",
-      "Valley School metal rods: The experiment proves the trend continues without limit."
+      "Valley School metal rods: length change must reverse direction immediately after the next increase in heating time.",
+      "Valley School metal rods: length change will remain exactly constant even as heating time moves beyond the tested range.",
+      "Valley School metal rods: The experiment proves that length change will continue to increase without limit as heating time changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -23988,10 +23988,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Willow Center water filters: Change every condition at once.",
+      "Willow Center water filters: Change gravel depth, the containers, the starting samples, and the measurement schedule all at once.",
       "Willow Center water filters: Repeat the procedure with additional gravel depth levels and independently prepared water filters.",
-      "Willow Center water filters: Repeat only the same measurement without new samples or levels.",
-      "Willow Center water filters: Remove the dependent-variable measurement."
+      "Willow Center water filters: Repeat only the same flow rate measurement without adding new water filters or gravel depth levels.",
+      "Willow Center water filters: Remove the flow rate measurement while testing additional gravel depth levels in new samples."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -24116,9 +24116,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The experiment has no independent variable.",
-      "The measured outcome was never recorded.",
-      "Identical containers make comparison impossible.",
+      "The experiment has no independent variable even though string length was deliberately varied among groups.",
+      "The measured swing period was never recorded even though the method reports those measurements.",
+      "Using identical containers makes comparison impossible because every group must use a different container.",
       "The tested string length range may not represent values outside that range."
     ],
     "correctAnswer": 3,
@@ -24308,10 +24308,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Cedar Center sound tubes: Varying tube length",
-      "Cedar Center sound tubes: Measuring resonant frequency",
+      "Cedar Center sound tubes: Varying tube length while also changing starting samples and containers among groups",
+      "Cedar Center sound tubes: Measuring resonant frequency after allowing each group a different amount of time",
       "Cedar Center sound tubes: Using equal starting samples and identical containers",
-      "Cedar Center sound tubes: Using four groups"
+      "Cedar Center sound tubes: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -24372,10 +24372,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Delta Academy radish seeds: Measure each group after a different duration.",
+      "Delta Academy radish seeds: Measure germination rate after a different duration for each group, so time changes too.",
       "Delta Academy radish seeds: Measure germination rate after the same duration for every group.",
-      "Delta Academy radish seeds: Change both salt level and container type.",
-      "Delta Academy radish seeds: Use no recorded outcome."
+      "Delta Academy radish seeds: Change both salt level and container type before comparing germination rate.",
+      "Delta Academy radish seeds: Complete the trials without recording germination rate for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -24437,9 +24437,9 @@
     "verification": null,
     "choices": [
       "Elm Institute water samples: particle count will likely continue to decrease over the next small increase in filter passes.",
-      "Elm Institute water samples: The outcome must reverse immediately.",
-      "Elm Institute water samples: The outcome will remain exactly constant.",
-      "Elm Institute water samples: The experiment proves the trend continues without limit."
+      "Elm Institute water samples: particle count must reverse direction immediately after the next increase in filter passes.",
+      "Elm Institute water samples: particle count will remain exactly constant even as filter passes moves beyond the tested range.",
+      "Elm Institute water samples: The experiment proves that particle count will continue to decrease without limit as filter passes changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -24500,9 +24500,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Foxglove Lab rubber bands: Change every condition at once.",
-      "Foxglove Lab rubber bands: Repeat only the same measurement without new samples or levels.",
-      "Foxglove Lab rubber bands: Remove the dependent-variable measurement.",
+      "Foxglove Lab rubber bands: Change added mass, the containers, the starting samples, and the measurement schedule all at once.",
+      "Foxglove Lab rubber bands: Repeat only the same stretch length measurement without adding new rubber bands or added mass levels.",
+      "Foxglove Lab rubber bands: Remove the stretch length measurement while testing additional added mass levels in new samples.",
       "Foxglove Lab rubber bands: Repeat the procedure with additional added mass levels and independently prepared rubber bands."
     ],
     "correctAnswer": 3,
@@ -24628,9 +24628,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Harbor Center leaf disks: The experiment has no independent variable.",
-      "Harbor Center leaf disks: The measured outcome was never recorded.",
-      "Harbor Center leaf disks: Identical containers make comparison impossible.",
+      "Harbor Center leaf disks: The experiment has no independent variable even though carbon dioxide level was deliberately varied among groups.",
+      "Harbor Center leaf disks: The measured floating time was never recorded even though the method reports those measurements.",
+      "Harbor Center leaf disks: Using identical containers makes comparison impossible because every group must use a different container.",
       "Harbor Center leaf disks: The tested carbon dioxide level range may not represent values outside that range."
     ],
     "correctAnswer": 3,
@@ -24820,9 +24820,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Kestrel Institute bean seedlings: Varying daily light",
-      "Kestrel Institute bean seedlings: Measuring mean height",
-      "Kestrel Institute bean seedlings: Using four groups",
+      "Kestrel Institute bean seedlings: Varying daily light while also changing starting samples and containers among groups",
+      "Kestrel Institute bean seedlings: Measuring mean height after allowing each group a different amount of time",
+      "Kestrel Institute bean seedlings: Using four groups whose starting samples and containers are not kept consistent",
       "Kestrel Institute bean seedlings: Using equal starting samples and identical containers"
     ],
     "correctAnswer": 3,
@@ -24885,9 +24885,9 @@
     "verification": null,
     "choices": [
       "Lakeshore School yeast cultures: Measure gas volume after the same duration for every group.",
-      "Lakeshore School yeast cultures: Measure each group after a different duration.",
-      "Lakeshore School yeast cultures: Change both water temperature and container type.",
-      "Lakeshore School yeast cultures: Use no recorded outcome."
+      "Lakeshore School yeast cultures: Measure gas volume after a different duration for each group, so time changes too.",
+      "Lakeshore School yeast cultures: Change both water temperature and container type before comparing gas volume.",
+      "Lakeshore School yeast cultures: Complete the trials without recording gas volume for any group."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -24948,10 +24948,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Meadow Center model solar panels: The outcome must reverse immediately.",
-      "Meadow Center model solar panels: The outcome will remain exactly constant.",
+      "Meadow Center model solar panels: electric current must reverse direction immediately after the next increase in lamp angle.",
+      "Meadow Center model solar panels: electric current will remain exactly constant even as lamp angle moves beyond the tested range.",
       "Meadow Center model solar panels: electric current will likely continue to decrease over the next small increase in lamp angle.",
-      "Meadow Center model solar panels: The experiment proves the trend continues without limit."
+      "Meadow Center model solar panels: The experiment proves that electric current will continue to decrease without limit as lamp angle changes."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -25012,10 +25012,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Northfield Lab soil samples: Change every condition at once.",
+      "Northfield Lab soil samples: Change sand content, the containers, the starting samples, and the measurement schedule all at once.",
       "Northfield Lab soil samples: Repeat the procedure with additional sand content levels and independently prepared soil samples.",
-      "Northfield Lab soil samples: Repeat only the same measurement without new samples or levels.",
-      "Northfield Lab soil samples: Remove the dependent-variable measurement."
+      "Northfield Lab soil samples: Repeat only the same drainage time measurement without adding new soil samples or sand content levels.",
+      "Northfield Lab soil samples: Remove the drainage time measurement while testing additional sand content levels in new samples."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -25140,9 +25140,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Pine Institute salt solutions: The experiment has no independent variable.",
-      "Pine Institute salt solutions: The measured outcome was never recorded.",
-      "Pine Institute salt solutions: Identical containers make comparison impossible.",
+      "Pine Institute salt solutions: The experiment has no independent variable even though salt concentration was deliberately varied among groups.",
+      "Pine Institute salt solutions: The measured freezing point was never recorded even though the method reports those measurements.",
+      "Pine Institute salt solutions: Using identical containers makes comparison impossible because every group must use a different container.",
       "Pine Institute salt solutions: The tested salt concentration range may not represent values outside that range."
     ],
     "correctAnswer": 3,
@@ -25332,9 +25332,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Summit Lab algae cultures: Varying nutrient level",
-      "Summit Lab algae cultures: Measuring cell density",
-      "Summit Lab algae cultures: Using four groups",
+      "Summit Lab algae cultures: Varying nutrient level while also changing starting samples and containers among groups",
+      "Summit Lab algae cultures: Measuring cell density after allowing each group a different amount of time",
+      "Summit Lab algae cultures: Using four groups whose starting samples and containers are not kept consistent",
       "Summit Lab algae cultures: Using equal starting samples and identical containers"
     ],
     "correctAnswer": 3,
@@ -25396,10 +25396,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Timber Academy toy cars: Measure each group after a different duration.",
-      "Timber Academy toy cars: Change both ramp height and container type.",
+      "Timber Academy toy cars: Measure travel distance after a different duration for each group, so time changes too.",
+      "Timber Academy toy cars: Change both ramp height and container type before comparing travel distance.",
       "Timber Academy toy cars: Measure travel distance after the same duration for every group.",
-      "Timber Academy toy cars: Use no recorded outcome."
+      "Timber Academy toy cars: Complete the trials without recording travel distance for any group."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -25461,9 +25461,9 @@
     "verification": null,
     "choices": [
       "Union Institute metal rods: length change will likely continue to increase over the next small increase in heating time.",
-      "Union Institute metal rods: The outcome must reverse immediately.",
-      "Union Institute metal rods: The outcome will remain exactly constant.",
-      "Union Institute metal rods: The experiment proves the trend continues without limit."
+      "Union Institute metal rods: length change must reverse direction immediately after the next increase in heating time.",
+      "Union Institute metal rods: length change will remain exactly constant even as heating time moves beyond the tested range.",
+      "Union Institute metal rods: The experiment proves that length change will continue to increase without limit as heating time changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -25524,10 +25524,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Valley School water filters: Change every condition at once.",
+      "Valley School water filters: Change gravel depth, the containers, the starting samples, and the measurement schedule all at once.",
       "Valley School water filters: Repeat the procedure with additional gravel depth levels and independently prepared water filters.",
-      "Valley School water filters: Repeat only the same measurement without new samples or levels.",
-      "Valley School water filters: Remove the dependent-variable measurement."
+      "Valley School water filters: Repeat only the same flow rate measurement without adding new water filters or gravel depth levels.",
+      "Valley School water filters: Remove the flow rate measurement while testing additional gravel depth levels in new samples."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -25652,10 +25652,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "York Lab pendulums: The experiment has no independent variable.",
-      "York Lab pendulums: The measured outcome was never recorded.",
+      "York Lab pendulums: The experiment has no independent variable even though string length was deliberately varied among groups.",
+      "York Lab pendulums: The measured swing period was never recorded even though the method reports those measurements.",
       "York Lab pendulums: The tested string length range may not represent values outside that range.",
-      "York Lab pendulums: Identical containers make comparison impossible."
+      "York Lab pendulums: Using identical containers makes comparison impossible because every group must use a different container."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -25844,10 +25844,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Bayside School sound tubes: Varying tube length",
-      "Bayside School sound tubes: Measuring resonant frequency",
+      "Bayside School sound tubes: Varying tube length while also changing starting samples and containers among groups",
+      "Bayside School sound tubes: Measuring resonant frequency after allowing each group a different amount of time",
       "Bayside School sound tubes: Using equal starting samples and identical containers",
-      "Bayside School sound tubes: Using four groups"
+      "Bayside School sound tubes: Using four groups whose starting samples and containers are not kept consistent"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -25908,10 +25908,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Cedar Center radish seeds: Measure each group after a different duration.",
+      "Cedar Center radish seeds: Measure germination rate after a different duration for each group, so time changes too.",
       "Cedar Center radish seeds: Measure germination rate after the same duration for every group.",
-      "Cedar Center radish seeds: Change both salt level and container type.",
-      "Cedar Center radish seeds: Use no recorded outcome."
+      "Cedar Center radish seeds: Change both salt level and container type before comparing germination rate.",
+      "Cedar Center radish seeds: Complete the trials without recording germination rate for any group."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -25973,9 +25973,9 @@
     "verification": null,
     "choices": [
       "Delta Academy water samples: particle count will likely continue to decrease over the next small increase in filter passes.",
-      "Delta Academy water samples: The outcome must reverse immediately.",
-      "Delta Academy water samples: The outcome will remain exactly constant.",
-      "Delta Academy water samples: The experiment proves the trend continues without limit."
+      "Delta Academy water samples: particle count must reverse direction immediately after the next increase in filter passes.",
+      "Delta Academy water samples: particle count will remain exactly constant even as filter passes moves beyond the tested range.",
+      "Delta Academy water samples: The experiment proves that particle count will continue to decrease without limit as filter passes changes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -26036,9 +26036,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Elm Institute rubber bands: Change every condition at once.",
-      "Elm Institute rubber bands: Repeat only the same measurement without new samples or levels.",
-      "Elm Institute rubber bands: Remove the dependent-variable measurement.",
+      "Elm Institute rubber bands: Change added mass, the containers, the starting samples, and the measurement schedule all at once.",
+      "Elm Institute rubber bands: Repeat only the same stretch length measurement without adding new rubber bands or added mass levels.",
+      "Elm Institute rubber bands: Remove the stretch length measurement while testing additional added mass levels in new samples.",
       "Elm Institute rubber bands: Repeat the procedure with additional added mass levels and independently prepared rubber bands."
     ],
     "correctAnswer": 3,
@@ -26100,10 +26100,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The factor is the only possible influence on the outcome.",
+      "The tested wind speed is the only possible influence on power output under every condition.",
       "The tested factor may help explain variation in power output under these conditions.",
-      "The pattern has been proven for every organism and material.",
-      "The measurements show no trend."
+      "The pattern between wind speed and power output has been proven for every organism and material.",
+      "The measurements show no trend between wind speed and power output in the tested miniature wind turbines."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -26164,10 +26164,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The factor is the only possible influence on the outcome.",
-      "The pattern has been proven for every organism and material.",
+      "The tested carbon dioxide level is the only possible influence on floating time under every condition.",
+      "The pattern between carbon dioxide level and floating time has been proven for every organism and material.",
       "The relationship is supported for leaf disks over the tested carbon dioxide level range.",
-      "The measurements show no trend."
+      "The measurements show no trend between carbon dioxide level and floating time in the tested leaf disks."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -26292,9 +26292,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The original measurements were printed in a larger font.",
-      "A different outcome was measured without recording the input.",
-      "Both scientists repeated their opinions.",
+      "The original oxygen level measurements were printed in a larger font while the procedure stayed unchanged.",
+      "A different outcome was measured in sealed terrariums without recording the corresponding plant count.",
+      "Both scientists repeated their opinions about plant count and oxygen level without collecting new evidence.",
       "The pattern appeared again when other conditions were controlled and only plant count was varied."
     ],
     "correctAnswer": 3,
@@ -26357,9 +26357,9 @@
     "verification": null,
     "choices": [
       "Within the tested range, higher daily light was associated with higher mean height.",
-      "The tested factor has no relationship with the outcome.",
-      "The pattern must hold under every possible condition.",
-      "The outcome caused researchers to change the input."
+      "Within the tested range, daily light had no relationship with the measured mean height.",
+      "The relationship between daily light and mean height must hold for every possible subject and condition.",
+      "Changes in mean height caused researchers to alter daily light during the experiment."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -26484,9 +26484,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The factor is the only possible influence on the outcome.",
-      "The pattern has been proven for every organism and material.",
-      "The measurements show no trend.",
+      "The tested lamp angle is the only possible influence on electric current under every condition.",
+      "The pattern between lamp angle and electric current has been proven for every organism and material.",
+      "The measurements show no trend between lamp angle and electric current in the tested model solar panels.",
       "The tested factor may help explain variation in electric current under these conditions."
     ],
     "correctAnswer": 3,
@@ -26548,10 +26548,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The factor is the only possible influence on the outcome.",
-      "The pattern has been proven for every organism and material.",
+      "The tested sand content is the only possible influence on drainage time under every condition.",
+      "The pattern between sand content and drainage time has been proven for every organism and material.",
       "The relationship is supported for soil samples over the tested sand content range.",
-      "The measurements show no trend."
+      "The measurements show no trend between sand content and drainage time in the tested soil samples."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -26676,9 +26676,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The original measurements were printed in a larger font.",
-      "A different outcome was measured without recording the input.",
-      "Both scientists repeated their opinions.",
+      "The original freezing point measurements were printed in a larger font while the procedure stayed unchanged.",
+      "A different outcome was measured in salt solutions without recording the corresponding salt concentration.",
+      "Both scientists repeated their opinions about salt concentration and freezing point without collecting new evidence.",
       "The pattern appeared again when other conditions were controlled and only salt concentration was varied."
     ],
     "correctAnswer": 3,
@@ -26740,10 +26740,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The tested factor has no relationship with the outcome.",
-      "The pattern must hold under every possible condition.",
+      "Within the tested range, air temperature had no relationship with the measured chirps per minute.",
+      "The relationship between air temperature and chirps per minute must hold for every possible subject and condition.",
       "Within the tested range, higher air temperature was associated with higher chirps per minute.",
-      "The outcome caused researchers to change the input."
+      "Changes in chirps per minute caused researchers to alter air temperature during the experiment."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -26868,10 +26868,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The factor is the only possible influence on the outcome.",
-      "The pattern has been proven for every organism and material.",
+      "The tested nutrient level is the only possible influence on cell density under every condition.",
+      "The pattern between nutrient level and cell density has been proven for every organism and material.",
       "The tested factor may help explain variation in cell density under these conditions.",
-      "The measurements show no trend."
+      "The measurements show no trend between nutrient level and cell density in the tested algae cultures."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -26932,10 +26932,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The factor is the only possible influence on the outcome.",
+      "The tested ramp height is the only possible influence on travel distance under every condition.",
       "The relationship is supported for toy cars over the tested ramp height range.",
-      "The pattern has been proven for every organism and material.",
-      "The measurements show no trend."
+      "The pattern between ramp height and travel distance has been proven for every organism and material.",
+      "The measurements show no trend between ramp height and travel distance in the tested toy cars."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -27061,9 +27061,9 @@
     "verification": null,
     "choices": [
       "The pattern appeared again when other conditions were controlled and only gravel depth was varied.",
-      "The original measurements were printed in a larger font.",
-      "A different outcome was measured without recording the input.",
-      "Both scientists repeated their opinions."
+      "The original flow rate measurements were printed in a larger font while the procedure stayed unchanged.",
+      "A different outcome was measured in water filters without recording the corresponding gravel depth.",
+      "Both scientists repeated their opinions about gravel depth and flow rate without collecting new evidence."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -27124,10 +27124,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The tested factor has no relationship with the outcome.",
-      "The pattern must hold under every possible condition.",
+      "Within the tested range, soil moisture had no relationship with the measured covered area.",
+      "The relationship between soil moisture and covered area must hold for every possible subject and condition.",
       "Within the tested range, higher soil moisture was associated with higher covered area.",
-      "The outcome caused researchers to change the input."
+      "Changes in covered area caused researchers to alter soil moisture during the experiment."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -27253,9 +27253,9 @@
     "verification": null,
     "choices": [
       "The tested factor may help explain variation in bulb brightness under these conditions.",
-      "The factor is the only possible influence on the outcome.",
-      "The pattern has been proven for every organism and material.",
-      "The measurements show no trend."
+      "The tested number of cells is the only possible influence on bulb brightness under every condition.",
+      "The pattern between number of cells and bulb brightness has been proven for every organism and material.",
+      "The measurements show no trend between number of cells and bulb brightness in the tested battery circuits."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -27317,9 +27317,9 @@
     "verification": null,
     "choices": [
       "The relationship is supported for ice cubes over the tested surface area range.",
-      "The factor is the only possible influence on the outcome.",
-      "The pattern has been proven for every organism and material.",
-      "The measurements show no trend."
+      "The tested surface area is the only possible influence on melting time under every condition.",
+      "The pattern between surface area and melting time has been proven for every organism and material.",
+      "The measurements show no trend between surface area and melting time in the tested ice cubes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -27444,10 +27444,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The original measurements were printed in a larger font.",
+      "The original germination rate measurements were printed in a larger font while the procedure stayed unchanged.",
       "The pattern appeared again when other conditions were controlled and only salt level was varied.",
-      "A different outcome was measured without recording the input.",
-      "Both scientists repeated their opinions."
+      "A different outcome was measured in radish seeds without recording the corresponding salt level.",
+      "Both scientists repeated their opinions about salt level and germination rate without collecting new evidence."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -27508,10 +27508,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The tested factor has no relationship with the outcome.",
-      "The pattern must hold under every possible condition.",
+      "Within the tested range, filter passes had no relationship with the measured particle count.",
+      "The relationship between filter passes and particle count must hold for every possible subject and condition.",
       "Within the tested range, higher filter passes was associated with lower particle count.",
-      "The outcome caused researchers to change the input."
+      "Changes in particle count caused researchers to alter filter passes during the experiment."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -27636,10 +27636,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Elm Institute miniature wind turbines: The factor is the only possible influence on the outcome.",
+      "Elm Institute miniature wind turbines: The tested wind speed is the only possible influence on power output under every condition.",
       "Elm Institute miniature wind turbines: The tested factor may help explain variation in power output under these conditions.",
-      "Elm Institute miniature wind turbines: The pattern has been proven for every organism and material.",
-      "Elm Institute miniature wind turbines: The measurements show no trend."
+      "Elm Institute miniature wind turbines: The pattern between wind speed and power output has been proven for every organism and material.",
+      "Elm Institute miniature wind turbines: The measurements show no trend between wind speed and power output in the tested miniature wind turbines."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -27700,10 +27700,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Foxglove Lab leaf disks: The factor is the only possible influence on the outcome.",
-      "Foxglove Lab leaf disks: The pattern has been proven for every organism and material.",
+      "Foxglove Lab leaf disks: The tested carbon dioxide level is the only possible influence on floating time under every condition.",
+      "Foxglove Lab leaf disks: The pattern between carbon dioxide level and floating time has been proven for every organism and material.",
       "Foxglove Lab leaf disks: The relationship is supported for leaf disks over the tested carbon dioxide level range.",
-      "Foxglove Lab leaf disks: The measurements show no trend."
+      "Foxglove Lab leaf disks: The measurements show no trend between carbon dioxide level and floating time in the tested leaf disks."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -27829,9 +27829,9 @@
     "verification": null,
     "choices": [
       "Harbor Center sealed terrariums: The pattern appeared again when other conditions were controlled and only plant count was varied.",
-      "Harbor Center sealed terrariums: The original measurements were printed in a larger font.",
-      "Harbor Center sealed terrariums: A different outcome was measured without recording the input.",
-      "Harbor Center sealed terrariums: Both scientists repeated their opinions."
+      "Harbor Center sealed terrariums: The original oxygen level measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Harbor Center sealed terrariums: A different outcome was measured in sealed terrariums without recording the corresponding plant count.",
+      "Harbor Center sealed terrariums: Both scientists repeated their opinions about plant count and oxygen level without collecting new evidence."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -27892,9 +27892,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Indigo Academy bean seedlings: The tested factor has no relationship with the outcome.",
-      "Indigo Academy bean seedlings: The pattern must hold under every possible condition.",
-      "Indigo Academy bean seedlings: The outcome caused researchers to change the input.",
+      "Indigo Academy bean seedlings: Within the tested range, daily light had no relationship with the measured mean height.",
+      "Indigo Academy bean seedlings: The relationship between daily light and mean height must hold for every possible subject and condition.",
+      "Indigo Academy bean seedlings: Changes in mean height caused researchers to alter daily light during the experiment.",
       "Indigo Academy bean seedlings: Within the tested range, higher daily light was associated with higher mean height."
     ],
     "correctAnswer": 3,
@@ -28020,9 +28020,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Kestrel Institute model solar panels: The factor is the only possible influence on the outcome.",
-      "Kestrel Institute model solar panels: The pattern has been proven for every organism and material.",
-      "Kestrel Institute model solar panels: The measurements show no trend.",
+      "Kestrel Institute model solar panels: The tested lamp angle is the only possible influence on electric current under every condition.",
+      "Kestrel Institute model solar panels: The pattern between lamp angle and electric current has been proven for every organism and material.",
+      "Kestrel Institute model solar panels: The measurements show no trend between lamp angle and electric current in the tested model solar panels.",
       "Kestrel Institute model solar panels: The tested factor may help explain variation in electric current under these conditions."
     ],
     "correctAnswer": 3,
@@ -28084,10 +28084,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Lakeshore School soil samples: The factor is the only possible influence on the outcome.",
+      "Lakeshore School soil samples: The tested sand content is the only possible influence on drainage time under every condition.",
       "Lakeshore School soil samples: The relationship is supported for soil samples over the tested sand content range.",
-      "Lakeshore School soil samples: The pattern has been proven for every organism and material.",
-      "Lakeshore School soil samples: The measurements show no trend."
+      "Lakeshore School soil samples: The pattern between sand content and drainage time has been proven for every organism and material.",
+      "Lakeshore School soil samples: The measurements show no trend between sand content and drainage time in the tested soil samples."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -28212,10 +28212,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Northfield Lab salt solutions: The original measurements were printed in a larger font.",
-      "Northfield Lab salt solutions: A different outcome was measured without recording the input.",
+      "Northfield Lab salt solutions: The original freezing point measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Northfield Lab salt solutions: A different outcome was measured in salt solutions without recording the corresponding salt concentration.",
       "Northfield Lab salt solutions: The pattern appeared again when other conditions were controlled and only salt concentration was varied.",
-      "Northfield Lab salt solutions: Both scientists repeated their opinions."
+      "Northfield Lab salt solutions: Both scientists repeated their opinions about salt concentration and freezing point without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -28276,10 +28276,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Oak Academy cricket groups: The tested factor has no relationship with the outcome.",
+      "Oak Academy cricket groups: Within the tested range, air temperature had no relationship with the measured chirps per minute.",
       "Oak Academy cricket groups: Within the tested range, higher air temperature was associated with higher chirps per minute.",
-      "Oak Academy cricket groups: The pattern must hold under every possible condition.",
-      "Oak Academy cricket groups: The outcome caused researchers to change the input."
+      "Oak Academy cricket groups: The relationship between air temperature and chirps per minute must hold for every possible subject and condition.",
+      "Oak Academy cricket groups: Changes in chirps per minute caused researchers to alter air temperature during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -28405,9 +28405,9 @@
     "verification": null,
     "choices": [
       "Quartz School algae cultures: The tested factor may help explain variation in cell density under these conditions.",
-      "Quartz School algae cultures: The factor is the only possible influence on the outcome.",
-      "Quartz School algae cultures: The pattern has been proven for every organism and material.",
-      "Quartz School algae cultures: The measurements show no trend."
+      "Quartz School algae cultures: The tested nutrient level is the only possible influence on cell density under every condition.",
+      "Quartz School algae cultures: The pattern between nutrient level and cell density has been proven for every organism and material.",
+      "Quartz School algae cultures: The measurements show no trend between nutrient level and cell density in the tested algae cultures."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -28468,10 +28468,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "River Center toy cars: The factor is the only possible influence on the outcome.",
+      "River Center toy cars: The tested ramp height is the only possible influence on travel distance under every condition.",
       "River Center toy cars: The relationship is supported for toy cars over the tested ramp height range.",
-      "River Center toy cars: The pattern has been proven for every organism and material.",
-      "River Center toy cars: The measurements show no trend."
+      "River Center toy cars: The pattern between ramp height and travel distance has been proven for every organism and material.",
+      "River Center toy cars: The measurements show no trend between ramp height and travel distance in the tested toy cars."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -28596,10 +28596,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Timber Academy water filters: The original measurements were printed in a larger font.",
-      "Timber Academy water filters: A different outcome was measured without recording the input.",
+      "Timber Academy water filters: The original flow rate measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Timber Academy water filters: A different outcome was measured in water filters without recording the corresponding gravel depth.",
       "Timber Academy water filters: The pattern appeared again when other conditions were controlled and only gravel depth was varied.",
-      "Timber Academy water filters: Both scientists repeated their opinions."
+      "Timber Academy water filters: Both scientists repeated their opinions about gravel depth and flow rate without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -28661,9 +28661,9 @@
     "verification": null,
     "choices": [
       "Union Institute moss patches: Within the tested range, higher soil moisture was associated with higher covered area.",
-      "Union Institute moss patches: The tested factor has no relationship with the outcome.",
-      "Union Institute moss patches: The pattern must hold under every possible condition.",
-      "Union Institute moss patches: The outcome caused researchers to change the input."
+      "Union Institute moss patches: Within the tested range, soil moisture had no relationship with the measured covered area.",
+      "Union Institute moss patches: The relationship between soil moisture and covered area must hold for every possible subject and condition.",
+      "Union Institute moss patches: Changes in covered area caused researchers to alter soil moisture during the experiment."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -28788,10 +28788,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Willow Center battery circuits: The factor is the only possible influence on the outcome.",
+      "Willow Center battery circuits: The tested number of cells is the only possible influence on bulb brightness under every condition.",
       "Willow Center battery circuits: The tested factor may help explain variation in bulb brightness under these conditions.",
-      "Willow Center battery circuits: The pattern has been proven for every organism and material.",
-      "Willow Center battery circuits: The measurements show no trend."
+      "Willow Center battery circuits: The pattern between number of cells and bulb brightness has been proven for every organism and material.",
+      "Willow Center battery circuits: The measurements show no trend between number of cells and bulb brightness in the tested battery circuits."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -28852,10 +28852,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "York Lab ice cubes: The factor is the only possible influence on the outcome.",
-      "York Lab ice cubes: The pattern has been proven for every organism and material.",
+      "York Lab ice cubes: The tested surface area is the only possible influence on melting time under every condition.",
+      "York Lab ice cubes: The pattern between surface area and melting time has been proven for every organism and material.",
       "York Lab ice cubes: The relationship is supported for ice cubes over the tested surface area range.",
-      "York Lab ice cubes: The measurements show no trend."
+      "York Lab ice cubes: The measurements show no trend between surface area and melting time in the tested ice cubes."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -28980,10 +28980,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Alder Lab radish seeds: The original measurements were printed in a larger font.",
+      "Alder Lab radish seeds: The original germination rate measurements were printed in a larger font while the procedure stayed unchanged.",
       "Alder Lab radish seeds: The pattern appeared again when other conditions were controlled and only salt level was varied.",
-      "Alder Lab radish seeds: A different outcome was measured without recording the input.",
-      "Alder Lab radish seeds: Both scientists repeated their opinions."
+      "Alder Lab radish seeds: A different outcome was measured in radish seeds without recording the corresponding salt level.",
+      "Alder Lab radish seeds: Both scientists repeated their opinions about salt level and germination rate without collecting new evidence."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -29044,9 +29044,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Bayside School water samples: The tested factor has no relationship with the outcome.",
-      "Bayside School water samples: The pattern must hold under every possible condition.",
-      "Bayside School water samples: The outcome caused researchers to change the input.",
+      "Bayside School water samples: Within the tested range, filter passes had no relationship with the measured particle count.",
+      "Bayside School water samples: The relationship between filter passes and particle count must hold for every possible subject and condition.",
+      "Bayside School water samples: Changes in particle count caused researchers to alter filter passes during the experiment.",
       "Bayside School water samples: Within the tested range, higher filter passes was associated with lower particle count."
     ],
     "correctAnswer": 3,
@@ -29172,10 +29172,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Delta Academy miniature wind turbines: The factor is the only possible influence on the outcome.",
+      "Delta Academy miniature wind turbines: The tested wind speed is the only possible influence on power output under every condition.",
       "Delta Academy miniature wind turbines: The tested factor may help explain variation in power output under these conditions.",
-      "Delta Academy miniature wind turbines: The pattern has been proven for every organism and material.",
-      "Delta Academy miniature wind turbines: The measurements show no trend."
+      "Delta Academy miniature wind turbines: The pattern between wind speed and power output has been proven for every organism and material.",
+      "Delta Academy miniature wind turbines: The measurements show no trend between wind speed and power output in the tested miniature wind turbines."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -29237,9 +29237,9 @@
     "verification": null,
     "choices": [
       "Elm Institute leaf disks: The relationship is supported for leaf disks over the tested carbon dioxide level range.",
-      "Elm Institute leaf disks: The factor is the only possible influence on the outcome.",
-      "Elm Institute leaf disks: The pattern has been proven for every organism and material.",
-      "Elm Institute leaf disks: The measurements show no trend."
+      "Elm Institute leaf disks: The tested carbon dioxide level is the only possible influence on floating time under every condition.",
+      "Elm Institute leaf disks: The pattern between carbon dioxide level and floating time has been proven for every organism and material.",
+      "Elm Institute leaf disks: The measurements show no trend between carbon dioxide level and floating time in the tested leaf disks."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -29365,9 +29365,9 @@
     "verification": null,
     "choices": [
       "Granite School sealed terrariums: The pattern appeared again when other conditions were controlled and only plant count was varied.",
-      "Granite School sealed terrariums: The original measurements were printed in a larger font.",
-      "Granite School sealed terrariums: A different outcome was measured without recording the input.",
-      "Granite School sealed terrariums: Both scientists repeated their opinions."
+      "Granite School sealed terrariums: The original oxygen level measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Granite School sealed terrariums: A different outcome was measured in sealed terrariums without recording the corresponding plant count.",
+      "Granite School sealed terrariums: Both scientists repeated their opinions about plant count and oxygen level without collecting new evidence."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -29428,10 +29428,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Harbor Center bean seedlings: The tested factor has no relationship with the outcome.",
-      "Harbor Center bean seedlings: The pattern must hold under every possible condition.",
+      "Harbor Center bean seedlings: Within the tested range, daily light had no relationship with the measured mean height.",
+      "Harbor Center bean seedlings: The relationship between daily light and mean height must hold for every possible subject and condition.",
       "Harbor Center bean seedlings: Within the tested range, higher daily light was associated with higher mean height.",
-      "Harbor Center bean seedlings: The outcome caused researchers to change the input."
+      "Harbor Center bean seedlings: Changes in mean height caused researchers to alter daily light during the experiment."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -29556,10 +29556,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Juniper Lab model solar panels: The factor is the only possible influence on the outcome.",
+      "Juniper Lab model solar panels: The tested lamp angle is the only possible influence on electric current under every condition.",
       "Juniper Lab model solar panels: The tested factor may help explain variation in electric current under these conditions.",
-      "Juniper Lab model solar panels: The pattern has been proven for every organism and material.",
-      "Juniper Lab model solar panels: The measurements show no trend."
+      "Juniper Lab model solar panels: The pattern between lamp angle and electric current has been proven for every organism and material.",
+      "Juniper Lab model solar panels: The measurements show no trend between lamp angle and electric current in the tested model solar panels."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -29620,9 +29620,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Kestrel Institute soil samples: The factor is the only possible influence on the outcome.",
-      "Kestrel Institute soil samples: The pattern has been proven for every organism and material.",
-      "Kestrel Institute soil samples: The measurements show no trend.",
+      "Kestrel Institute soil samples: The tested sand content is the only possible influence on drainage time under every condition.",
+      "Kestrel Institute soil samples: The pattern between sand content and drainage time has been proven for every organism and material.",
+      "Kestrel Institute soil samples: The measurements show no trend between sand content and drainage time in the tested soil samples.",
       "Kestrel Institute soil samples: The relationship is supported for soil samples over the tested sand content range."
     ],
     "correctAnswer": 3,
@@ -29748,10 +29748,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Meadow Center salt solutions: The original measurements were printed in a larger font.",
-      "Meadow Center salt solutions: A different outcome was measured without recording the input.",
+      "Meadow Center salt solutions: The original freezing point measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Meadow Center salt solutions: A different outcome was measured in salt solutions without recording the corresponding salt concentration.",
       "Meadow Center salt solutions: The pattern appeared again when other conditions were controlled and only salt concentration was varied.",
-      "Meadow Center salt solutions: Both scientists repeated their opinions."
+      "Meadow Center salt solutions: Both scientists repeated their opinions about salt concentration and freezing point without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -29813,9 +29813,9 @@
     "verification": null,
     "choices": [
       "Northfield Lab cricket groups: Within the tested range, higher air temperature was associated with higher chirps per minute.",
-      "Northfield Lab cricket groups: The tested factor has no relationship with the outcome.",
-      "Northfield Lab cricket groups: The pattern must hold under every possible condition.",
-      "Northfield Lab cricket groups: The outcome caused researchers to change the input."
+      "Northfield Lab cricket groups: Within the tested range, air temperature had no relationship with the measured chirps per minute.",
+      "Northfield Lab cricket groups: The relationship between air temperature and chirps per minute must hold for every possible subject and condition.",
+      "Northfield Lab cricket groups: Changes in chirps per minute caused researchers to alter air temperature during the experiment."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -29940,10 +29940,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Pine Institute algae cultures: The factor is the only possible influence on the outcome.",
-      "Pine Institute algae cultures: The pattern has been proven for every organism and material.",
+      "Pine Institute algae cultures: The tested nutrient level is the only possible influence on cell density under every condition.",
+      "Pine Institute algae cultures: The pattern between nutrient level and cell density has been proven for every organism and material.",
       "Pine Institute algae cultures: The tested factor may help explain variation in cell density under these conditions.",
-      "Pine Institute algae cultures: The measurements show no trend."
+      "Pine Institute algae cultures: The measurements show no trend between nutrient level and cell density in the tested algae cultures."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -30004,10 +30004,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Quartz School toy cars: The factor is the only possible influence on the outcome.",
+      "Quartz School toy cars: The tested ramp height is the only possible influence on travel distance under every condition.",
       "Quartz School toy cars: The relationship is supported for toy cars over the tested ramp height range.",
-      "Quartz School toy cars: The pattern has been proven for every organism and material.",
-      "Quartz School toy cars: The measurements show no trend."
+      "Quartz School toy cars: The pattern between ramp height and travel distance has been proven for every organism and material.",
+      "Quartz School toy cars: The measurements show no trend between ramp height and travel distance in the tested toy cars."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -30132,9 +30132,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Summit Lab water filters: The original measurements were printed in a larger font.",
-      "Summit Lab water filters: A different outcome was measured without recording the input.",
-      "Summit Lab water filters: Both scientists repeated their opinions.",
+      "Summit Lab water filters: The original flow rate measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Summit Lab water filters: A different outcome was measured in water filters without recording the corresponding gravel depth.",
+      "Summit Lab water filters: Both scientists repeated their opinions about gravel depth and flow rate without collecting new evidence.",
       "Summit Lab water filters: The pattern appeared again when other conditions were controlled and only gravel depth was varied."
     ],
     "correctAnswer": 3,
@@ -30197,9 +30197,9 @@
     "verification": null,
     "choices": [
       "Timber Academy moss patches: Within the tested range, higher soil moisture was associated with higher covered area.",
-      "Timber Academy moss patches: The tested factor has no relationship with the outcome.",
-      "Timber Academy moss patches: The pattern must hold under every possible condition.",
-      "Timber Academy moss patches: The outcome caused researchers to change the input."
+      "Timber Academy moss patches: Within the tested range, soil moisture had no relationship with the measured covered area.",
+      "Timber Academy moss patches: The relationship between soil moisture and covered area must hold for every possible subject and condition.",
+      "Timber Academy moss patches: Changes in covered area caused researchers to alter soil moisture during the experiment."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -30324,9 +30324,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Valley School battery circuits: The factor is the only possible influence on the outcome.",
-      "Valley School battery circuits: The pattern has been proven for every organism and material.",
-      "Valley School battery circuits: The measurements show no trend.",
+      "Valley School battery circuits: The tested number of cells is the only possible influence on bulb brightness under every condition.",
+      "Valley School battery circuits: The pattern between number of cells and bulb brightness has been proven for every organism and material.",
+      "Valley School battery circuits: The measurements show no trend between number of cells and bulb brightness in the tested battery circuits.",
       "Valley School battery circuits: The tested factor may help explain variation in bulb brightness under these conditions."
     ],
     "correctAnswer": 3,
@@ -30388,10 +30388,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Willow Center ice cubes: The factor is the only possible influence on the outcome.",
-      "Willow Center ice cubes: The pattern has been proven for every organism and material.",
+      "Willow Center ice cubes: The tested surface area is the only possible influence on melting time under every condition.",
+      "Willow Center ice cubes: The pattern between surface area and melting time has been proven for every organism and material.",
       "Willow Center ice cubes: The relationship is supported for ice cubes over the tested surface area range.",
-      "Willow Center ice cubes: The measurements show no trend."
+      "Willow Center ice cubes: The measurements show no trend between surface area and melting time in the tested ice cubes."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -30516,10 +30516,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The original measurements were printed in a larger font.",
-      "A different outcome was measured without recording the input.",
+      "The original resonant frequency measurements were printed in a larger font while the procedure stayed unchanged.",
+      "A different outcome was measured in sound tubes without recording the corresponding tube length.",
       "The pattern appeared again when other conditions were controlled and only tube length was varied.",
-      "Both scientists repeated their opinions."
+      "Both scientists repeated their opinions about tube length and resonant frequency without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -30580,10 +30580,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Alder Lab water samples: The tested factor has no relationship with the outcome.",
+      "Alder Lab water samples: Within the tested range, filter passes had no relationship with the measured particle count.",
       "Alder Lab water samples: Within the tested range, higher filter passes was associated with lower particle count.",
-      "Alder Lab water samples: The pattern must hold under every possible condition.",
-      "Alder Lab water samples: The outcome caused researchers to change the input."
+      "Alder Lab water samples: The relationship between filter passes and particle count must hold for every possible subject and condition.",
+      "Alder Lab water samples: Changes in particle count caused researchers to alter filter passes during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -30708,10 +30708,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Cedar Center miniature wind turbines: The factor is the only possible influence on the outcome.",
-      "Cedar Center miniature wind turbines: The pattern has been proven for every organism and material.",
+      "Cedar Center miniature wind turbines: The tested wind speed is the only possible influence on power output under every condition.",
+      "Cedar Center miniature wind turbines: The pattern between wind speed and power output has been proven for every organism and material.",
       "Cedar Center miniature wind turbines: The tested factor may help explain variation in power output under these conditions.",
-      "Cedar Center miniature wind turbines: The measurements show no trend."
+      "Cedar Center miniature wind turbines: The measurements show no trend between wind speed and power output in the tested miniature wind turbines."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -30772,10 +30772,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Delta Academy leaf disks: The factor is the only possible influence on the outcome.",
+      "Delta Academy leaf disks: The tested carbon dioxide level is the only possible influence on floating time under every condition.",
       "Delta Academy leaf disks: The relationship is supported for leaf disks over the tested carbon dioxide level range.",
-      "Delta Academy leaf disks: The pattern has been proven for every organism and material.",
-      "Delta Academy leaf disks: The measurements show no trend."
+      "Delta Academy leaf disks: The pattern between carbon dioxide level and floating time has been proven for every organism and material.",
+      "Delta Academy leaf disks: The measurements show no trend between carbon dioxide level and floating time in the tested leaf disks."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -30901,9 +30901,9 @@
     "verification": null,
     "choices": [
       "Foxglove Lab sealed terrariums: The pattern appeared again when other conditions were controlled and only plant count was varied.",
-      "Foxglove Lab sealed terrariums: The original measurements were printed in a larger font.",
-      "Foxglove Lab sealed terrariums: A different outcome was measured without recording the input.",
-      "Foxglove Lab sealed terrariums: Both scientists repeated their opinions."
+      "Foxglove Lab sealed terrariums: The original oxygen level measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Foxglove Lab sealed terrariums: A different outcome was measured in sealed terrariums without recording the corresponding plant count.",
+      "Foxglove Lab sealed terrariums: Both scientists repeated their opinions about plant count and oxygen level without collecting new evidence."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -30964,10 +30964,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Granite School bean seedlings: The tested factor has no relationship with the outcome.",
+      "Granite School bean seedlings: Within the tested range, daily light had no relationship with the measured mean height.",
       "Granite School bean seedlings: Within the tested range, higher daily light was associated with higher mean height.",
-      "Granite School bean seedlings: The pattern must hold under every possible condition.",
-      "Granite School bean seedlings: The outcome caused researchers to change the input."
+      "Granite School bean seedlings: The relationship between daily light and mean height must hold for every possible subject and condition.",
+      "Granite School bean seedlings: Changes in mean height caused researchers to alter daily light during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -31093,9 +31093,9 @@
     "verification": null,
     "choices": [
       "Indigo Academy model solar panels: The tested factor may help explain variation in electric current under these conditions.",
-      "Indigo Academy model solar panels: The factor is the only possible influence on the outcome.",
-      "Indigo Academy model solar panels: The pattern has been proven for every organism and material.",
-      "Indigo Academy model solar panels: The measurements show no trend."
+      "Indigo Academy model solar panels: The tested lamp angle is the only possible influence on electric current under every condition.",
+      "Indigo Academy model solar panels: The pattern between lamp angle and electric current has been proven for every organism and material.",
+      "Indigo Academy model solar panels: The measurements show no trend between lamp angle and electric current in the tested model solar panels."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -31157,9 +31157,9 @@
     "verification": null,
     "choices": [
       "Juniper Lab soil samples: The relationship is supported for soil samples over the tested sand content range.",
-      "Juniper Lab soil samples: The factor is the only possible influence on the outcome.",
-      "Juniper Lab soil samples: The pattern has been proven for every organism and material.",
-      "Juniper Lab soil samples: The measurements show no trend."
+      "Juniper Lab soil samples: The tested sand content is the only possible influence on drainage time under every condition.",
+      "Juniper Lab soil samples: The pattern between sand content and drainage time has been proven for every organism and material.",
+      "Juniper Lab soil samples: The measurements show no trend between sand content and drainage time in the tested soil samples."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -31284,10 +31284,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Lakeshore School salt solutions: The original measurements were printed in a larger font.",
-      "Lakeshore School salt solutions: A different outcome was measured without recording the input.",
+      "Lakeshore School salt solutions: The original freezing point measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Lakeshore School salt solutions: A different outcome was measured in salt solutions without recording the corresponding salt concentration.",
       "Lakeshore School salt solutions: The pattern appeared again when other conditions were controlled and only salt concentration was varied.",
-      "Lakeshore School salt solutions: Both scientists repeated their opinions."
+      "Lakeshore School salt solutions: Both scientists repeated their opinions about salt concentration and freezing point without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -31348,10 +31348,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Meadow Center cricket groups: The tested factor has no relationship with the outcome.",
+      "Meadow Center cricket groups: Within the tested range, air temperature had no relationship with the measured chirps per minute.",
       "Meadow Center cricket groups: Within the tested range, higher air temperature was associated with higher chirps per minute.",
-      "Meadow Center cricket groups: The pattern must hold under every possible condition.",
-      "Meadow Center cricket groups: The outcome caused researchers to change the input."
+      "Meadow Center cricket groups: The relationship between air temperature and chirps per minute must hold for every possible subject and condition.",
+      "Meadow Center cricket groups: Changes in chirps per minute caused researchers to alter air temperature during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -31477,9 +31477,9 @@
     "verification": null,
     "choices": [
       "Oak Academy algae cultures: The tested factor may help explain variation in cell density under these conditions.",
-      "Oak Academy algae cultures: The factor is the only possible influence on the outcome.",
-      "Oak Academy algae cultures: The pattern has been proven for every organism and material.",
-      "Oak Academy algae cultures: The measurements show no trend."
+      "Oak Academy algae cultures: The tested nutrient level is the only possible influence on cell density under every condition.",
+      "Oak Academy algae cultures: The pattern between nutrient level and cell density has been proven for every organism and material.",
+      "Oak Academy algae cultures: The measurements show no trend between nutrient level and cell density in the tested algae cultures."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -31540,10 +31540,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Pine Institute toy cars: The factor is the only possible influence on the outcome.",
-      "Pine Institute toy cars: The pattern has been proven for every organism and material.",
+      "Pine Institute toy cars: The tested ramp height is the only possible influence on travel distance under every condition.",
+      "Pine Institute toy cars: The pattern between ramp height and travel distance has been proven for every organism and material.",
       "Pine Institute toy cars: The relationship is supported for toy cars over the tested ramp height range.",
-      "Pine Institute toy cars: The measurements show no trend."
+      "Pine Institute toy cars: The measurements show no trend between ramp height and travel distance in the tested toy cars."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -31668,10 +31668,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "River Center water filters: The original measurements were printed in a larger font.",
+      "River Center water filters: The original flow rate measurements were printed in a larger font while the procedure stayed unchanged.",
       "River Center water filters: The pattern appeared again when other conditions were controlled and only gravel depth was varied.",
-      "River Center water filters: A different outcome was measured without recording the input.",
-      "River Center water filters: Both scientists repeated their opinions."
+      "River Center water filters: A different outcome was measured in water filters without recording the corresponding gravel depth.",
+      "River Center water filters: Both scientists repeated their opinions about gravel depth and flow rate without collecting new evidence."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -31732,10 +31732,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Summit Lab moss patches: The tested factor has no relationship with the outcome.",
-      "Summit Lab moss patches: The pattern must hold under every possible condition.",
+      "Summit Lab moss patches: Within the tested range, soil moisture had no relationship with the measured covered area.",
+      "Summit Lab moss patches: The relationship between soil moisture and covered area must hold for every possible subject and condition.",
       "Summit Lab moss patches: Within the tested range, higher soil moisture was associated with higher covered area.",
-      "Summit Lab moss patches: The outcome caused researchers to change the input."
+      "Summit Lab moss patches: Changes in covered area caused researchers to alter soil moisture during the experiment."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -31860,10 +31860,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Union Institute battery circuits: The factor is the only possible influence on the outcome.",
+      "Union Institute battery circuits: The tested number of cells is the only possible influence on bulb brightness under every condition.",
       "Union Institute battery circuits: The tested factor may help explain variation in bulb brightness under these conditions.",
-      "Union Institute battery circuits: The pattern has been proven for every organism and material.",
-      "Union Institute battery circuits: The measurements show no trend."
+      "Union Institute battery circuits: The pattern between number of cells and bulb brightness has been proven for every organism and material.",
+      "Union Institute battery circuits: The measurements show no trend between number of cells and bulb brightness in the tested battery circuits."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -31924,9 +31924,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Valley School ice cubes: The factor is the only possible influence on the outcome.",
-      "Valley School ice cubes: The pattern has been proven for every organism and material.",
-      "Valley School ice cubes: The measurements show no trend.",
+      "Valley School ice cubes: The tested surface area is the only possible influence on melting time under every condition.",
+      "Valley School ice cubes: The pattern between surface area and melting time has been proven for every organism and material.",
+      "Valley School ice cubes: The measurements show no trend between surface area and melting time in the tested ice cubes.",
       "Valley School ice cubes: The relationship is supported for ice cubes over the tested surface area range."
     ],
     "correctAnswer": 3,
@@ -32052,10 +32052,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "York Lab sound tubes: The original measurements were printed in a larger font.",
+      "York Lab sound tubes: The original resonant frequency measurements were printed in a larger font while the procedure stayed unchanged.",
       "York Lab sound tubes: The pattern appeared again when other conditions were controlled and only tube length was varied.",
-      "York Lab sound tubes: A different outcome was measured without recording the input.",
-      "York Lab sound tubes: Both scientists repeated their opinions."
+      "York Lab sound tubes: A different outcome was measured in sound tubes without recording the corresponding tube length.",
+      "York Lab sound tubes: Both scientists repeated their opinions about tube length and resonant frequency without collecting new evidence."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -32116,9 +32116,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The tested factor has no relationship with the outcome.",
-      "The pattern must hold under every possible condition.",
-      "The outcome caused researchers to change the input.",
+      "Within the tested range, salt level had no relationship with the measured germination rate.",
+      "The relationship between salt level and germination rate must hold for every possible subject and condition.",
+      "Changes in germination rate caused researchers to alter salt level during the experiment.",
       "Within the tested range, higher salt level was associated with lower germination rate."
     ],
     "correctAnswer": 3,
@@ -32244,10 +32244,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Bayside School miniature wind turbines: The factor is the only possible influence on the outcome.",
-      "Bayside School miniature wind turbines: The pattern has been proven for every organism and material.",
+      "Bayside School miniature wind turbines: The tested wind speed is the only possible influence on power output under every condition.",
+      "Bayside School miniature wind turbines: The pattern between wind speed and power output has been proven for every organism and material.",
       "Bayside School miniature wind turbines: The tested factor may help explain variation in power output under these conditions.",
-      "Bayside School miniature wind turbines: The measurements show no trend."
+      "Bayside School miniature wind turbines: The measurements show no trend between wind speed and power output in the tested miniature wind turbines."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -32308,10 +32308,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Cedar Center leaf disks: The factor is the only possible influence on the outcome.",
+      "Cedar Center leaf disks: The tested carbon dioxide level is the only possible influence on floating time under every condition.",
       "Cedar Center leaf disks: The relationship is supported for leaf disks over the tested carbon dioxide level range.",
-      "Cedar Center leaf disks: The pattern has been proven for every organism and material.",
-      "Cedar Center leaf disks: The measurements show no trend."
+      "Cedar Center leaf disks: The pattern between carbon dioxide level and floating time has been proven for every organism and material.",
+      "Cedar Center leaf disks: The measurements show no trend between carbon dioxide level and floating time in the tested leaf disks."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -32437,9 +32437,9 @@
     "verification": null,
     "choices": [
       "Elm Institute sealed terrariums: The pattern appeared again when other conditions were controlled and only plant count was varied.",
-      "Elm Institute sealed terrariums: The original measurements were printed in a larger font.",
-      "Elm Institute sealed terrariums: A different outcome was measured without recording the input.",
-      "Elm Institute sealed terrariums: Both scientists repeated their opinions."
+      "Elm Institute sealed terrariums: The original oxygen level measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Elm Institute sealed terrariums: A different outcome was measured in sealed terrariums without recording the corresponding plant count.",
+      "Elm Institute sealed terrariums: Both scientists repeated their opinions about plant count and oxygen level without collecting new evidence."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -32500,9 +32500,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Foxglove Lab bean seedlings: The tested factor has no relationship with the outcome.",
-      "Foxglove Lab bean seedlings: The pattern must hold under every possible condition.",
-      "Foxglove Lab bean seedlings: The outcome caused researchers to change the input.",
+      "Foxglove Lab bean seedlings: Within the tested range, daily light had no relationship with the measured mean height.",
+      "Foxglove Lab bean seedlings: The relationship between daily light and mean height must hold for every possible subject and condition.",
+      "Foxglove Lab bean seedlings: Changes in mean height caused researchers to alter daily light during the experiment.",
       "Foxglove Lab bean seedlings: Within the tested range, higher daily light was associated with higher mean height."
     ],
     "correctAnswer": 3,
@@ -32628,10 +32628,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Harbor Center model solar panels: The factor is the only possible influence on the outcome.",
-      "Harbor Center model solar panels: The pattern has been proven for every organism and material.",
+      "Harbor Center model solar panels: The tested lamp angle is the only possible influence on electric current under every condition.",
+      "Harbor Center model solar panels: The pattern between lamp angle and electric current has been proven for every organism and material.",
       "Harbor Center model solar panels: The tested factor may help explain variation in electric current under these conditions.",
-      "Harbor Center model solar panels: The measurements show no trend."
+      "Harbor Center model solar panels: The measurements show no trend between lamp angle and electric current in the tested model solar panels."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -32692,10 +32692,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Indigo Academy soil samples: The factor is the only possible influence on the outcome.",
+      "Indigo Academy soil samples: The tested sand content is the only possible influence on drainage time under every condition.",
       "Indigo Academy soil samples: The relationship is supported for soil samples over the tested sand content range.",
-      "Indigo Academy soil samples: The pattern has been proven for every organism and material.",
-      "Indigo Academy soil samples: The measurements show no trend."
+      "Indigo Academy soil samples: The pattern between sand content and drainage time has been proven for every organism and material.",
+      "Indigo Academy soil samples: The measurements show no trend between sand content and drainage time in the tested soil samples."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -32820,10 +32820,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Kestrel Institute salt solutions: The original measurements were printed in a larger font.",
-      "Kestrel Institute salt solutions: A different outcome was measured without recording the input.",
+      "Kestrel Institute salt solutions: The original freezing point measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Kestrel Institute salt solutions: A different outcome was measured in salt solutions without recording the corresponding salt concentration.",
       "Kestrel Institute salt solutions: The pattern appeared again when other conditions were controlled and only salt concentration was varied.",
-      "Kestrel Institute salt solutions: Both scientists repeated their opinions."
+      "Kestrel Institute salt solutions: Both scientists repeated their opinions about salt concentration and freezing point without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -32884,10 +32884,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Lakeshore School cricket groups: The tested factor has no relationship with the outcome.",
+      "Lakeshore School cricket groups: Within the tested range, air temperature had no relationship with the measured chirps per minute.",
       "Lakeshore School cricket groups: Within the tested range, higher air temperature was associated with higher chirps per minute.",
-      "Lakeshore School cricket groups: The pattern must hold under every possible condition.",
-      "Lakeshore School cricket groups: The outcome caused researchers to change the input."
+      "Lakeshore School cricket groups: The relationship between air temperature and chirps per minute must hold for every possible subject and condition.",
+      "Lakeshore School cricket groups: Changes in chirps per minute caused researchers to alter air temperature during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -33012,10 +33012,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Northfield Lab algae cultures: The factor is the only possible influence on the outcome.",
+      "Northfield Lab algae cultures: The tested nutrient level is the only possible influence on cell density under every condition.",
       "Northfield Lab algae cultures: The tested factor may help explain variation in cell density under these conditions.",
-      "Northfield Lab algae cultures: The pattern has been proven for every organism and material.",
-      "Northfield Lab algae cultures: The measurements show no trend."
+      "Northfield Lab algae cultures: The pattern between nutrient level and cell density has been proven for every organism and material.",
+      "Northfield Lab algae cultures: The measurements show no trend between nutrient level and cell density in the tested algae cultures."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -33076,10 +33076,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Oak Academy toy cars: The factor is the only possible influence on the outcome.",
-      "Oak Academy toy cars: The pattern has been proven for every organism and material.",
+      "Oak Academy toy cars: The tested ramp height is the only possible influence on travel distance under every condition.",
+      "Oak Academy toy cars: The pattern between ramp height and travel distance has been proven for every organism and material.",
       "Oak Academy toy cars: The relationship is supported for toy cars over the tested ramp height range.",
-      "Oak Academy toy cars: The measurements show no trend."
+      "Oak Academy toy cars: The measurements show no trend between ramp height and travel distance in the tested toy cars."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -33205,9 +33205,9 @@
     "verification": null,
     "choices": [
       "Quartz School water filters: The pattern appeared again when other conditions were controlled and only gravel depth was varied.",
-      "Quartz School water filters: The original measurements were printed in a larger font.",
-      "Quartz School water filters: A different outcome was measured without recording the input.",
-      "Quartz School water filters: Both scientists repeated their opinions."
+      "Quartz School water filters: The original flow rate measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Quartz School water filters: A different outcome was measured in water filters without recording the corresponding gravel depth.",
+      "Quartz School water filters: Both scientists repeated their opinions about gravel depth and flow rate without collecting new evidence."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -33268,9 +33268,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "River Center moss patches: The tested factor has no relationship with the outcome.",
-      "River Center moss patches: The pattern must hold under every possible condition.",
-      "River Center moss patches: The outcome caused researchers to change the input.",
+      "River Center moss patches: Within the tested range, soil moisture had no relationship with the measured covered area.",
+      "River Center moss patches: The relationship between soil moisture and covered area must hold for every possible subject and condition.",
+      "River Center moss patches: Changes in covered area caused researchers to alter soil moisture during the experiment.",
       "River Center moss patches: Within the tested range, higher soil moisture was associated with higher covered area."
     ],
     "correctAnswer": 3,
@@ -33396,10 +33396,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Timber Academy battery circuits: The factor is the only possible influence on the outcome.",
-      "Timber Academy battery circuits: The pattern has been proven for every organism and material.",
+      "Timber Academy battery circuits: The tested number of cells is the only possible influence on bulb brightness under every condition.",
+      "Timber Academy battery circuits: The pattern between number of cells and bulb brightness has been proven for every organism and material.",
       "Timber Academy battery circuits: The tested factor may help explain variation in bulb brightness under these conditions.",
-      "Timber Academy battery circuits: The measurements show no trend."
+      "Timber Academy battery circuits: The measurements show no trend between number of cells and bulb brightness in the tested battery circuits."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -33460,9 +33460,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Union Institute ice cubes: The factor is the only possible influence on the outcome.",
-      "Union Institute ice cubes: The pattern has been proven for every organism and material.",
-      "Union Institute ice cubes: The measurements show no trend.",
+      "Union Institute ice cubes: The tested surface area is the only possible influence on melting time under every condition.",
+      "Union Institute ice cubes: The pattern between surface area and melting time has been proven for every organism and material.",
+      "Union Institute ice cubes: The measurements show no trend between surface area and melting time in the tested ice cubes.",
       "Union Institute ice cubes: The relationship is supported for ice cubes over the tested surface area range."
     ],
     "correctAnswer": 3,
@@ -33588,9 +33588,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Willow Center sound tubes: The original measurements were printed in a larger font.",
-      "Willow Center sound tubes: A different outcome was measured without recording the input.",
-      "Willow Center sound tubes: Both scientists repeated their opinions.",
+      "Willow Center sound tubes: The original resonant frequency measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Willow Center sound tubes: A different outcome was measured in sound tubes without recording the corresponding tube length.",
+      "Willow Center sound tubes: Both scientists repeated their opinions about tube length and resonant frequency without collecting new evidence.",
       "Willow Center sound tubes: The pattern appeared again when other conditions were controlled and only tube length was varied."
     ],
     "correctAnswer": 3,
@@ -33652,10 +33652,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "York Lab radish seeds: The tested factor has no relationship with the outcome.",
-      "York Lab radish seeds: The pattern must hold under every possible condition.",
+      "York Lab radish seeds: Within the tested range, salt level had no relationship with the measured germination rate.",
+      "York Lab radish seeds: The relationship between salt level and germination rate must hold for every possible subject and condition.",
       "York Lab radish seeds: Within the tested range, higher salt level was associated with lower germination rate.",
-      "York Lab radish seeds: The outcome caused researchers to change the input."
+      "York Lab radish seeds: Changes in germination rate caused researchers to alter salt level during the experiment."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -33780,10 +33780,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Alder Lab miniature wind turbines: The factor is the only possible influence on the outcome.",
+      "Alder Lab miniature wind turbines: The tested wind speed is the only possible influence on power output under every condition.",
       "Alder Lab miniature wind turbines: The tested factor may help explain variation in power output under these conditions.",
-      "Alder Lab miniature wind turbines: The pattern has been proven for every organism and material.",
-      "Alder Lab miniature wind turbines: The measurements show no trend."
+      "Alder Lab miniature wind turbines: The pattern between wind speed and power output has been proven for every organism and material.",
+      "Alder Lab miniature wind turbines: The measurements show no trend between wind speed and power output in the tested miniature wind turbines."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -33844,10 +33844,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Bayside School leaf disks: The factor is the only possible influence on the outcome.",
-      "Bayside School leaf disks: The pattern has been proven for every organism and material.",
+      "Bayside School leaf disks: The tested carbon dioxide level is the only possible influence on floating time under every condition.",
+      "Bayside School leaf disks: The pattern between carbon dioxide level and floating time has been proven for every organism and material.",
       "Bayside School leaf disks: The relationship is supported for leaf disks over the tested carbon dioxide level range.",
-      "Bayside School leaf disks: The measurements show no trend."
+      "Bayside School leaf disks: The measurements show no trend between carbon dioxide level and floating time in the tested leaf disks."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -33972,10 +33972,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Delta Academy sealed terrariums: The original measurements were printed in a larger font.",
-      "Delta Academy sealed terrariums: A different outcome was measured without recording the input.",
+      "Delta Academy sealed terrariums: The original oxygen level measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Delta Academy sealed terrariums: A different outcome was measured in sealed terrariums without recording the corresponding plant count.",
       "Delta Academy sealed terrariums: The pattern appeared again when other conditions were controlled and only plant count was varied.",
-      "Delta Academy sealed terrariums: Both scientists repeated their opinions."
+      "Delta Academy sealed terrariums: Both scientists repeated their opinions about plant count and oxygen level without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -34036,9 +34036,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Elm Institute bean seedlings: The tested factor has no relationship with the outcome.",
-      "Elm Institute bean seedlings: The pattern must hold under every possible condition.",
-      "Elm Institute bean seedlings: The outcome caused researchers to change the input.",
+      "Elm Institute bean seedlings: Within the tested range, daily light had no relationship with the measured mean height.",
+      "Elm Institute bean seedlings: The relationship between daily light and mean height must hold for every possible subject and condition.",
+      "Elm Institute bean seedlings: Changes in mean height caused researchers to alter daily light during the experiment.",
       "Elm Institute bean seedlings: Within the tested range, higher daily light was associated with higher mean height."
     ],
     "correctAnswer": 3,
@@ -34164,10 +34164,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Granite School model solar panels: The factor is the only possible influence on the outcome.",
+      "Granite School model solar panels: The tested lamp angle is the only possible influence on electric current under every condition.",
       "Granite School model solar panels: The tested factor may help explain variation in electric current under these conditions.",
-      "Granite School model solar panels: The pattern has been proven for every organism and material.",
-      "Granite School model solar panels: The measurements show no trend."
+      "Granite School model solar panels: The pattern between lamp angle and electric current has been proven for every organism and material.",
+      "Granite School model solar panels: The measurements show no trend between lamp angle and electric current in the tested model solar panels."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -34229,9 +34229,9 @@
     "verification": null,
     "choices": [
       "Harbor Center soil samples: The relationship is supported for soil samples over the tested sand content range.",
-      "Harbor Center soil samples: The factor is the only possible influence on the outcome.",
-      "Harbor Center soil samples: The pattern has been proven for every organism and material.",
-      "Harbor Center soil samples: The measurements show no trend."
+      "Harbor Center soil samples: The tested sand content is the only possible influence on drainage time under every condition.",
+      "Harbor Center soil samples: The pattern between sand content and drainage time has been proven for every organism and material.",
+      "Harbor Center soil samples: The measurements show no trend between sand content and drainage time in the tested soil samples."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -34356,10 +34356,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Juniper Lab salt solutions: The original measurements were printed in a larger font.",
-      "Juniper Lab salt solutions: A different outcome was measured without recording the input.",
+      "Juniper Lab salt solutions: The original freezing point measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Juniper Lab salt solutions: A different outcome was measured in salt solutions without recording the corresponding salt concentration.",
       "Juniper Lab salt solutions: The pattern appeared again when other conditions were controlled and only salt concentration was varied.",
-      "Juniper Lab salt solutions: Both scientists repeated their opinions."
+      "Juniper Lab salt solutions: Both scientists repeated their opinions about salt concentration and freezing point without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -34420,10 +34420,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Kestrel Institute cricket groups: The tested factor has no relationship with the outcome.",
+      "Kestrel Institute cricket groups: Within the tested range, air temperature had no relationship with the measured chirps per minute.",
       "Kestrel Institute cricket groups: Within the tested range, higher air temperature was associated with higher chirps per minute.",
-      "Kestrel Institute cricket groups: The pattern must hold under every possible condition.",
-      "Kestrel Institute cricket groups: The outcome caused researchers to change the input."
+      "Kestrel Institute cricket groups: The relationship between air temperature and chirps per minute must hold for every possible subject and condition.",
+      "Kestrel Institute cricket groups: Changes in chirps per minute caused researchers to alter air temperature during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -34549,9 +34549,9 @@
     "verification": null,
     "choices": [
       "Meadow Center algae cultures: The tested factor may help explain variation in cell density under these conditions.",
-      "Meadow Center algae cultures: The factor is the only possible influence on the outcome.",
-      "Meadow Center algae cultures: The pattern has been proven for every organism and material.",
-      "Meadow Center algae cultures: The measurements show no trend."
+      "Meadow Center algae cultures: The tested nutrient level is the only possible influence on cell density under every condition.",
+      "Meadow Center algae cultures: The pattern between nutrient level and cell density has been proven for every organism and material.",
+      "Meadow Center algae cultures: The measurements show no trend between nutrient level and cell density in the tested algae cultures."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -34612,10 +34612,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Northfield Lab toy cars: The factor is the only possible influence on the outcome.",
-      "Northfield Lab toy cars: The pattern has been proven for every organism and material.",
+      "Northfield Lab toy cars: The tested ramp height is the only possible influence on travel distance under every condition.",
+      "Northfield Lab toy cars: The pattern between ramp height and travel distance has been proven for every organism and material.",
       "Northfield Lab toy cars: The relationship is supported for toy cars over the tested ramp height range.",
-      "Northfield Lab toy cars: The measurements show no trend."
+      "Northfield Lab toy cars: The measurements show no trend between ramp height and travel distance in the tested toy cars."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -34741,9 +34741,9 @@
     "verification": null,
     "choices": [
       "Pine Institute water filters: The pattern appeared again when other conditions were controlled and only gravel depth was varied.",
-      "Pine Institute water filters: The original measurements were printed in a larger font.",
-      "Pine Institute water filters: A different outcome was measured without recording the input.",
-      "Pine Institute water filters: Both scientists repeated their opinions."
+      "Pine Institute water filters: The original flow rate measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Pine Institute water filters: A different outcome was measured in water filters without recording the corresponding gravel depth.",
+      "Pine Institute water filters: Both scientists repeated their opinions about gravel depth and flow rate without collecting new evidence."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -34804,10 +34804,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Quartz School moss patches: The tested factor has no relationship with the outcome.",
+      "Quartz School moss patches: Within the tested range, soil moisture had no relationship with the measured covered area.",
       "Quartz School moss patches: Within the tested range, higher soil moisture was associated with higher covered area.",
-      "Quartz School moss patches: The pattern must hold under every possible condition.",
-      "Quartz School moss patches: The outcome caused researchers to change the input."
+      "Quartz School moss patches: The relationship between soil moisture and covered area must hold for every possible subject and condition.",
+      "Quartz School moss patches: Changes in covered area caused researchers to alter soil moisture during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -34932,9 +34932,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Summit Lab battery circuits: The factor is the only possible influence on the outcome.",
-      "Summit Lab battery circuits: The pattern has been proven for every organism and material.",
-      "Summit Lab battery circuits: The measurements show no trend.",
+      "Summit Lab battery circuits: The tested number of cells is the only possible influence on bulb brightness under every condition.",
+      "Summit Lab battery circuits: The pattern between number of cells and bulb brightness has been proven for every organism and material.",
+      "Summit Lab battery circuits: The measurements show no trend between number of cells and bulb brightness in the tested battery circuits.",
       "Summit Lab battery circuits: The tested factor may help explain variation in bulb brightness under these conditions."
     ],
     "correctAnswer": 3,
@@ -34996,10 +34996,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Timber Academy ice cubes: The factor is the only possible influence on the outcome.",
-      "Timber Academy ice cubes: The pattern has been proven for every organism and material.",
+      "Timber Academy ice cubes: The tested surface area is the only possible influence on melting time under every condition.",
+      "Timber Academy ice cubes: The pattern between surface area and melting time has been proven for every organism and material.",
       "Timber Academy ice cubes: The relationship is supported for ice cubes over the tested surface area range.",
-      "Timber Academy ice cubes: The measurements show no trend."
+      "Timber Academy ice cubes: The measurements show no trend between surface area and melting time in the tested ice cubes."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -35124,9 +35124,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Valley School sound tubes: The original measurements were printed in a larger font.",
-      "Valley School sound tubes: A different outcome was measured without recording the input.",
-      "Valley School sound tubes: Both scientists repeated their opinions.",
+      "Valley School sound tubes: The original resonant frequency measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Valley School sound tubes: A different outcome was measured in sound tubes without recording the corresponding tube length.",
+      "Valley School sound tubes: Both scientists repeated their opinions about tube length and resonant frequency without collecting new evidence.",
       "Valley School sound tubes: The pattern appeared again when other conditions were controlled and only tube length was varied."
     ],
     "correctAnswer": 3,
@@ -35188,10 +35188,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Willow Center radish seeds: The tested factor has no relationship with the outcome.",
+      "Willow Center radish seeds: Within the tested range, salt level had no relationship with the measured germination rate.",
       "Willow Center radish seeds: Within the tested range, higher salt level was associated with lower germination rate.",
-      "Willow Center radish seeds: The pattern must hold under every possible condition.",
-      "Willow Center radish seeds: The outcome caused researchers to change the input."
+      "Willow Center radish seeds: The relationship between salt level and germination rate must hold for every possible subject and condition.",
+      "Willow Center radish seeds: Changes in germination rate caused researchers to alter salt level during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -35316,10 +35316,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The factor is the only possible influence on the outcome.",
+      "The tested added mass is the only possible influence on stretch length under every condition.",
       "The tested factor may help explain variation in stretch length under these conditions.",
-      "The pattern has been proven for every organism and material.",
-      "The measurements show no trend."
+      "The pattern between added mass and stretch length has been proven for every organism and material.",
+      "The measurements show no trend between added mass and stretch length in the tested rubber bands."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -35380,9 +35380,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Alder Lab leaf disks: The factor is the only possible influence on the outcome.",
-      "Alder Lab leaf disks: The pattern has been proven for every organism and material.",
-      "Alder Lab leaf disks: The measurements show no trend.",
+      "Alder Lab leaf disks: The tested carbon dioxide level is the only possible influence on floating time under every condition.",
+      "Alder Lab leaf disks: The pattern between carbon dioxide level and floating time has been proven for every organism and material.",
+      "Alder Lab leaf disks: The measurements show no trend between carbon dioxide level and floating time in the tested leaf disks.",
       "Alder Lab leaf disks: The relationship is supported for leaf disks over the tested carbon dioxide level range."
     ],
     "correctAnswer": 3,
@@ -35508,10 +35508,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Cedar Center sealed terrariums: The original measurements were printed in a larger font.",
-      "Cedar Center sealed terrariums: A different outcome was measured without recording the input.",
+      "Cedar Center sealed terrariums: The original oxygen level measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Cedar Center sealed terrariums: A different outcome was measured in sealed terrariums without recording the corresponding plant count.",
       "Cedar Center sealed terrariums: The pattern appeared again when other conditions were controlled and only plant count was varied.",
-      "Cedar Center sealed terrariums: Both scientists repeated their opinions."
+      "Cedar Center sealed terrariums: Both scientists repeated their opinions about plant count and oxygen level without collecting new evidence."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -35572,10 +35572,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Delta Academy bean seedlings: The tested factor has no relationship with the outcome.",
-      "Delta Academy bean seedlings: The pattern must hold under every possible condition.",
+      "Delta Academy bean seedlings: Within the tested range, daily light had no relationship with the measured mean height.",
+      "Delta Academy bean seedlings: The relationship between daily light and mean height must hold for every possible subject and condition.",
       "Delta Academy bean seedlings: Within the tested range, higher daily light was associated with higher mean height.",
-      "Delta Academy bean seedlings: The outcome caused researchers to change the input."
+      "Delta Academy bean seedlings: Changes in mean height caused researchers to alter daily light during the experiment."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -35701,9 +35701,9 @@
     "verification": null,
     "choices": [
       "Foxglove Lab model solar panels: The tested factor may help explain variation in electric current under these conditions.",
-      "Foxglove Lab model solar panels: The factor is the only possible influence on the outcome.",
-      "Foxglove Lab model solar panels: The pattern has been proven for every organism and material.",
-      "Foxglove Lab model solar panels: The measurements show no trend."
+      "Foxglove Lab model solar panels: The tested lamp angle is the only possible influence on electric current under every condition.",
+      "Foxglove Lab model solar panels: The pattern between lamp angle and electric current has been proven for every organism and material.",
+      "Foxglove Lab model solar panels: The measurements show no trend between lamp angle and electric current in the tested model solar panels."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -35764,9 +35764,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Granite School soil samples: The factor is the only possible influence on the outcome.",
-      "Granite School soil samples: The pattern has been proven for every organism and material.",
-      "Granite School soil samples: The measurements show no trend.",
+      "Granite School soil samples: The tested sand content is the only possible influence on drainage time under every condition.",
+      "Granite School soil samples: The pattern between sand content and drainage time has been proven for every organism and material.",
+      "Granite School soil samples: The measurements show no trend between sand content and drainage time in the tested soil samples.",
       "Granite School soil samples: The relationship is supported for soil samples over the tested sand content range."
     ],
     "correctAnswer": 3,
@@ -35892,9 +35892,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Indigo Academy salt solutions: The original measurements were printed in a larger font.",
-      "Indigo Academy salt solutions: A different outcome was measured without recording the input.",
-      "Indigo Academy salt solutions: Both scientists repeated their opinions.",
+      "Indigo Academy salt solutions: The original freezing point measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Indigo Academy salt solutions: A different outcome was measured in salt solutions without recording the corresponding salt concentration.",
+      "Indigo Academy salt solutions: Both scientists repeated their opinions about salt concentration and freezing point without collecting new evidence.",
       "Indigo Academy salt solutions: The pattern appeared again when other conditions were controlled and only salt concentration was varied."
     ],
     "correctAnswer": 3,
@@ -35956,10 +35956,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Juniper Lab cricket groups: The tested factor has no relationship with the outcome.",
+      "Juniper Lab cricket groups: Within the tested range, air temperature had no relationship with the measured chirps per minute.",
       "Juniper Lab cricket groups: Within the tested range, higher air temperature was associated with higher chirps per minute.",
-      "Juniper Lab cricket groups: The pattern must hold under every possible condition.",
-      "Juniper Lab cricket groups: The outcome caused researchers to change the input."
+      "Juniper Lab cricket groups: The relationship between air temperature and chirps per minute must hold for every possible subject and condition.",
+      "Juniper Lab cricket groups: Changes in chirps per minute caused researchers to alter air temperature during the experiment."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -36084,10 +36084,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Lakeshore School algae cultures: The factor is the only possible influence on the outcome.",
-      "Lakeshore School algae cultures: The pattern has been proven for every organism and material.",
+      "Lakeshore School algae cultures: The tested nutrient level is the only possible influence on cell density under every condition.",
+      "Lakeshore School algae cultures: The pattern between nutrient level and cell density has been proven for every organism and material.",
       "Lakeshore School algae cultures: The tested factor may help explain variation in cell density under these conditions.",
-      "Lakeshore School algae cultures: The measurements show no trend."
+      "Lakeshore School algae cultures: The measurements show no trend between nutrient level and cell density in the tested algae cultures."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -36148,9 +36148,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Meadow Center toy cars: The factor is the only possible influence on the outcome.",
-      "Meadow Center toy cars: The pattern has been proven for every organism and material.",
-      "Meadow Center toy cars: The measurements show no trend.",
+      "Meadow Center toy cars: The tested ramp height is the only possible influence on travel distance under every condition.",
+      "Meadow Center toy cars: The pattern between ramp height and travel distance has been proven for every organism and material.",
+      "Meadow Center toy cars: The measurements show no trend between ramp height and travel distance in the tested toy cars.",
       "Meadow Center toy cars: The relationship is supported for toy cars over the tested ramp height range."
     ],
     "correctAnswer": 3,
@@ -36277,9 +36277,9 @@
     "verification": null,
     "choices": [
       "Oak Academy water filters: The pattern appeared again when other conditions were controlled and only gravel depth was varied.",
-      "Oak Academy water filters: The original measurements were printed in a larger font.",
-      "Oak Academy water filters: A different outcome was measured without recording the input.",
-      "Oak Academy water filters: Both scientists repeated their opinions."
+      "Oak Academy water filters: The original flow rate measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Oak Academy water filters: A different outcome was measured in water filters without recording the corresponding gravel depth.",
+      "Oak Academy water filters: Both scientists repeated their opinions about gravel depth and flow rate without collecting new evidence."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -36340,9 +36340,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Pine Institute moss patches: The tested factor has no relationship with the outcome.",
-      "Pine Institute moss patches: The pattern must hold under every possible condition.",
-      "Pine Institute moss patches: The outcome caused researchers to change the input.",
+      "Pine Institute moss patches: Within the tested range, soil moisture had no relationship with the measured covered area.",
+      "Pine Institute moss patches: The relationship between soil moisture and covered area must hold for every possible subject and condition.",
+      "Pine Institute moss patches: Changes in covered area caused researchers to alter soil moisture during the experiment.",
       "Pine Institute moss patches: Within the tested range, higher soil moisture was associated with higher covered area."
     ],
     "correctAnswer": 3,
@@ -36468,10 +36468,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "River Center battery circuits: The factor is the only possible influence on the outcome.",
-      "River Center battery circuits: The pattern has been proven for every organism and material.",
+      "River Center battery circuits: The tested number of cells is the only possible influence on bulb brightness under every condition.",
+      "River Center battery circuits: The pattern between number of cells and bulb brightness has been proven for every organism and material.",
       "River Center battery circuits: The tested factor may help explain variation in bulb brightness under these conditions.",
-      "River Center battery circuits: The measurements show no trend."
+      "River Center battery circuits: The measurements show no trend between number of cells and bulb brightness in the tested battery circuits."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -36533,9 +36533,9 @@
     "verification": null,
     "choices": [
       "Summit Lab ice cubes: The relationship is supported for ice cubes over the tested surface area range.",
-      "Summit Lab ice cubes: The factor is the only possible influence on the outcome.",
-      "Summit Lab ice cubes: The pattern has been proven for every organism and material.",
-      "Summit Lab ice cubes: The measurements show no trend."
+      "Summit Lab ice cubes: The tested surface area is the only possible influence on melting time under every condition.",
+      "Summit Lab ice cubes: The pattern between surface area and melting time has been proven for every organism and material.",
+      "Summit Lab ice cubes: The measurements show no trend between surface area and melting time in the tested ice cubes."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -36660,9 +36660,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Union Institute sound tubes: The original measurements were printed in a larger font.",
-      "Union Institute sound tubes: A different outcome was measured without recording the input.",
-      "Union Institute sound tubes: Both scientists repeated their opinions.",
+      "Union Institute sound tubes: The original resonant frequency measurements were printed in a larger font while the procedure stayed unchanged.",
+      "Union Institute sound tubes: A different outcome was measured in sound tubes without recording the corresponding tube length.",
+      "Union Institute sound tubes: Both scientists repeated their opinions about tube length and resonant frequency without collecting new evidence.",
       "Union Institute sound tubes: The pattern appeared again when other conditions were controlled and only tube length was varied."
     ],
     "correctAnswer": 3,
@@ -36724,10 +36724,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "Valley School radish seeds: The tested factor has no relationship with the outcome.",
-      "Valley School radish seeds: The pattern must hold under every possible condition.",
+      "Valley School radish seeds: Within the tested range, salt level had no relationship with the measured germination rate.",
+      "Valley School radish seeds: The relationship between salt level and germination rate must hold for every possible subject and condition.",
       "Valley School radish seeds: Within the tested range, higher salt level was associated with lower germination rate.",
-      "Valley School radish seeds: The outcome caused researchers to change the input."
+      "Valley School radish seeds: Changes in germination rate caused researchers to alter salt level during the experiment."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -36852,10 +36852,10 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "York Lab rubber bands: The factor is the only possible influence on the outcome.",
-      "York Lab rubber bands: The pattern has been proven for every organism and material.",
+      "York Lab rubber bands: The tested added mass is the only possible influence on stretch length under every condition.",
+      "York Lab rubber bands: The pattern between added mass and stretch length has been proven for every organism and material.",
       "York Lab rubber bands: The tested factor may help explain variation in stretch length under these conditions.",
-      "York Lab rubber bands: The measurements show no trend."
+      "York Lab rubber bands: The measurements show no trend between added mass and stretch length in the tested rubber bands."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -36916,9 +36916,9 @@
     "reviewStatus": "automated-verified",
     "verification": null,
     "choices": [
-      "The factor is the only possible influence on the outcome.",
-      "The pattern has been proven for every organism and material.",
-      "The measurements show no trend.",
+      "The tested wind speed is the only possible influence on power output under every condition.",
+      "The pattern between wind speed and power output has been proven for every organism and material.",
+      "The measurements show no trend between wind speed and power output in the tested miniature wind turbines.",
       "The relationship is supported for miniature wind turbines over the tested wind speed range."
     ],
     "correctAnswer": 3,

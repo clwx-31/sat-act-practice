@@ -359,8 +359,10 @@ the generated bank still reflects the previously committed canonical bank.
   5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
   Passage 032 is `032-one-thin-layer.js` (process narrative, 14 questions at
   4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
-  **32 of 40 authored, 463 of 575 questions**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 96 of 362 = 26.5%. Verified
+  Passage 033 is `033-not-in-any-of-them.js` (personal essay, 13 questions at
+  4 / 2 / 7, 4/6/3, 3 keeps of 11 = 27.3%).
+  **33 of 40 authored, 476 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 99 of 373 = 26.5%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.

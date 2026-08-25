@@ -7431,9 +7431,12 @@ SHAPES["financial contexts"] = {
       const rate = choose(s, [4, 5, 8, 10]);
       const target = base + span(s, 200, 5, 100);
       const answer = round3(((target - base) * 100) / rate);
+      const finance = scene(variant, FINANCE);
       return {
         family: "commission-to-reach-a-target",
-        stem: `A salesperson earns ${base} per week plus a ${rate}% commission on sales. What must the week's sales total be for the weekly earnings to reach ${target}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the weekly sales a ${finance.earner} needs to earn ${target} from ${base} base pay plus ${rate}% commission`,
+        }),
         answer: money(answer),
         wrong: [
           [money(target - base), "This is the commission that must be earned, not the sales that generate it."],

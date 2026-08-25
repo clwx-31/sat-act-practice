@@ -5896,7 +5896,9 @@ SHAPES["counting"] = {
       );
       return {
         family: "arrangements-with-repeated-letters",
-        stem: `How many distinguishable arrangements can be made of the letters in the word ${letters}?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the number of distinguishable arrangements of the letters in ${letters}`,
+        }),
         answer,
         wrong: [
           [factorial(letters.length), "This treats every letter as distinct; swapping two identical letters produces no new arrangement."],

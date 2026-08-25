@@ -3664,12 +3664,9 @@ SHAPES["angles"] = {
       const answer = first + second;
       return {
         family: "exterior-angle-theorem",
-        stem: choose(variant, [
-          `In a triangle, the two remote interior angles measure ${first}° and ${second}°. What is the measure of the exterior angle at the third vertex?`,
-          `A triangle has interior angles of ${first}° and ${second}° at two vertices. What is the exterior angle at the remaining vertex?`,
-          `Two angles of a triangle are ${first}° and ${second}°. The exterior angle adjacent to the third angle measures what?`,
-          `The remote interior angles of a triangle measure ${first}° and ${second}°. How large is the corresponding exterior angle?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the exterior angle of a triangle whose remote interior angles are ${first}° and ${second}°`,
+        }),
         answer: degrees(answer),
         wrong: [
           [degrees(180 - answer), "This is the third interior angle, not the exterior angle beside it."],

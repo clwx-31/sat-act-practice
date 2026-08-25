@@ -7467,9 +7467,12 @@ SHAPES["financial contexts"] = {
       const years = span(s, 2, 3);
       const compound = round3(principal * (1 + rate / 100) ** years);
       const simple = round3(principal * (1 + (rate * years) / 100));
+      const finance = scene(variant, FINANCE);
       return {
         family: "compound-interest-balance",
-        stem: `${principal} is invested at ${rate}% annual interest compounded once per year. What is the balance after ${years} years, to the nearest cent?`,
+        stem: pose(variant, "quantityOf", {
+          description: `to the nearest cent, the balance after ${years} years when ${principal} in a ${finance.account} earns ${rate}% interest compounded annually`,
+        }),
         answer: money(compound),
         wrong: [
           [money(simple), `This applies ${rate * years}% once, which is simple interest. Compounding pays interest on the interest already credited, so the balance is higher.`],

@@ -6019,7 +6019,9 @@ SHAPES["compound probability"] = {
       const answer = frac(firstNumerator * secondNumerator, firstDenominator * secondDenominator);
       return {
         family: "independent-events-both-occur",
-        stem: `Two independent events have probabilities ${firstNumerator}/${firstDenominator} and ${secondNumerator}/${secondDenominator}. What is the probability that both occur?`,
+        stem: pose(variant, "quantityOf", {
+          description: `the probability that both of two independent events occur when their probabilities are ${firstNumerator}/${firstDenominator} and ${secondNumerator}/${secondDenominator}`,
+        }),
         answer,
         wrong: [
           [frac(firstNumerator * secondDenominator + secondNumerator * firstDenominator, firstDenominator * secondDenominator), "This adds the probabilities, which answers \"at least one\" only when the events are mutually exclusive."],

@@ -4485,6 +4485,54 @@ TEXT_ANSWER.add("spread|Hard");
 importActShapeSubskill("distributions", "data displays");
 importActShapeSubskill("linear models", "regression");
 
+registerShapePhrasings("scatterplots", "scatterplot association");
+
+defineShapes({
+  "scatterplots": {
+    Easy: [
+      (t) => ({
+        family: "positive-association", stem: `In a scatterplot, the points generally rise from left to right, with larger x-values paired with larger y-values. Which association is shown?`, correct: "Positive association",
+        wrong: [["Negative association", "A negative association falls as x increases."], ["No association", "The points have a consistent upward tendency."], ["A vertical association", "Vertical alignment is not the described trend."], ["A nonlinear decrease", "The description gives an increase, not a decrease."]], explanation: `Both variables tend to increase together, so the association is positive.`, steps: ["Read the direction of the point cloud.", "Match an upward trend with positive association."], principles: ["A positive association pairs larger inputs with generally larger outputs."],
+      }),
+      (t) => ({
+        family: "negative-association", stem: `A scatterplot slopes downward overall: as x increases, y generally decreases. How should the association be described?`, correct: "Negative association",
+        wrong: [["Positive association", "A positive association rises as x increases."], ["No association", "A clear downward tendency is present."], ["Perfect equality", "Association describes a trend, not equality of coordinates."], ["Increasing curvature", "The stated direction is decreasing."]], explanation: `The variables move in opposite directions, which is a negative association.`, steps: ["Follow the point cloud from left to right.", "Classify the downward trend as negative."], principles: ["A negative association pairs larger inputs with generally smaller outputs."],
+      }),
+    ],
+    Medium: [
+      (t) => {
+        const slope = t.int(2, 8);
+        const intercept = t.int(5, 30);
+        const x = t.int(4, 15);
+        return {
+          family: "scatterplot-line-prediction", stem: `A line of best fit for a scatterplot is y = ${lin(slope, intercept)}. What y-value does the model predict when x = ${x}?`, correct: slope * x + intercept,
+          wrong: [[slope + x + intercept, "This adds x to the slope instead of multiplying."], [slope * x, "This omits the intercept."], [x + intercept, "This omits multiplication by the slope."], [slope * intercept + x, "This multiplies the coefficients rather than evaluating the model."]], explanation: `Substitute x = ${x}: y = ${slope}(${x}) + ${intercept} = ${slope * x + intercept}.`, steps: ["Substitute the given x-value into the model.", "Multiply, then add the intercept."], principles: ["A line of best fit gives a model prediction, not necessarily an observed point."], verification: { kind: "sum", inputs: [slope * x, intercept], expected: slope * x + intercept },
+        };
+      },
+      (t) => ({
+        family: "outlier-weakens-association", stem: `A scatterplot has a strong positive linear pattern except for one point far from the trend. If that point is removed, what will most likely happen to the strength of the linear association?`, correct: "It will become stronger",
+        wrong: [["It will become weaker", "Removing a point far from the trend reduces unexplained scatter."], ["It must become negative", "Removing one off-trend point does not reverse the upward pattern."], ["It will become exactly zero", "The remaining points still follow a positive pattern."], ["It cannot change", "Outliers can materially affect measures of linear association."]], explanation: `Removing a point far from the otherwise linear cloud makes the remaining points adhere more closely to a line.`, steps: ["Identify the point as inconsistent with the main trend.", "Compare the remaining cloud with a straight line."], principles: ["An outlier can weaken the measured strength of a linear association."],
+      }),
+    ],
+    Hard: [
+      (t) => ({
+        family: "correlation-not-causation", stem: `A scatterplot from an observational study shows a strong positive association between two variables. Which conclusion is justified?`, correct: "The variables are associated, but the plot alone does not establish causation",
+        wrong: [["Increasing the first variable must cause the second to increase", "Association in observational data does not by itself prove causation."], ["The second variable must cause the first", "The direction of causation is not established."], ["No third variable can affect both", "A lurking variable remains possible."], ["Every point lies exactly on one line", "Strong association does not require a perfect fit."]], explanation: `The plot supports association; without random assignment or stronger design evidence, it does not establish cause and effect.`, steps: ["Distinguish association from an intervention.", "Limit the conclusion to what observational data support."], principles: ["Correlation alone does not imply causation."],
+      }),
+      (t) => ({
+        family: "residual-pattern-diagnosis", stem: `The residual plot for a linear model forms a clear U-shaped pattern around zero. What does this indicate about the linear model?`, correct: "A nonlinear model would likely fit better",
+        wrong: [["The linear model is ideal", "A good linear fit leaves residuals randomly scattered without a pattern."], ["Every prediction is exact", "A U-shaped residual pattern includes systematic prediction errors."], ["The variables have no relationship", "A curved residual pattern suggests a relationship that is not linear."], ["The slope must equal zero", "Residual curvature does not force a zero slope."]], explanation: `A systematic curve in the residuals means the linear model misses nonlinear structure.`, steps: ["Look for a nonrandom residual pattern.", "Connect curvature in residuals with a nonlinear relationship."], principles: ["Residuals for a suitable linear model should be randomly scattered around zero."],
+      }),
+    ],
+  },
+});
+
+[
+  "scatterplots|Easy",
+  "scatterplots|Medium",
+  "scatterplots|Hard",
+].forEach((cell) => TEXT_ANSWER.add(cell));
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------

@@ -295,8 +295,10 @@ Where this stopped, precisely, so the next session does not repeat the audit.
   questions at 5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
   Passage 010 is `010-lake-turnover.js` (informative essay, 14 questions at
   4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
-  **10 of 40 authored, 147 of 575 questions — one quarter of the section**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 30 of 115 = 26.1%. Verified
+  Passage 011 is `011-plimsoll-line.js` (historical account, 13 questions at
+  4 / 2 / 7, 4/5/4, 3 keeps of 11 = 27.3%).
+  **11 of 40 authored, 160 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 33 of 126 = 26.2%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.

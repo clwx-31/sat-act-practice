@@ -275,6 +275,52 @@ Two cautions:
 - **Do not regenerate any bank.** This task permutes existing items only. If a
   generator runs, the authored content changes and the task has overreached.
 
+---
+
+## Task 7 — rebuild ACT Mathematics and ship it
+
+Everything that blocked this is now done. Verified from the other lane on
+`codex-lane` at `daeb05c`: `check:shapes` reports **232 shapes clean over 1200
+sequences**, cross-shape collision detection exists and passes,
+`check-answer-positions.js` is wired into `npm run check`, and
+`scripts/lib/generation.js` balances answer positions at generation time so a
+rebuild cannot reintroduce the per-tier skew.
+
+This is the run that has failed twice. Do it in one sitting:
+
+```sh
+git merge --no-ff main
+node scripts/generate-act-mathematics.js --rebuild
+npm run build:content
+npm run check
+npm run audit:questions 2>&1 | tail -30
+npm run check:difficulty 2>&1 | tail -20
+node scripts/check-answer-positions.js
+```
+
+`--rebuild` is required; without it the generator only tops up and keeps the old
+items.
+
+**Report five numbers:** near-duplicate rate, distinct shapes, largest family
+share, answerable-without-reading, and the worst answer position in any tier.
+The audit targets are near-dup under 2%, no family over 10%, longest-is-key
+under 40%, answerable-without-reading under 40%.
+
+**The one that may still fail is answerable-without-reading.** It measured 45.7%
+against a 40% target and is a *separate* problem from the duplicates — it means
+an item can be guessed from its choices alone. Nothing done so far addresses it.
+If everything else passes and only this fails, **stop and report**; do not
+loosen the threshold and do not start rewriting content to chase it. That is a
+content decision, not a generator one.
+
+Expect and do not chase: five `legacy-migration` items survive `--rebuild`, and
+the schema's four-choice limit against the real ACT's five is a known fidelity
+gap recorded in the handoff.
+
+**Done when** `npm run check` passes, the audit reports act-mathematics **PASS**,
+and both banks are committed together. If it passes, that is the third of seven
+sections finished and the first new one since ACT Reading.
+
 ## Where to write reports
 
 Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to

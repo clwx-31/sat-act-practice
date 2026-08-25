@@ -4161,12 +4161,9 @@ SHAPES["coordinate geometry"] = {
       const answer = round3(-intercept / slope);
       return {
         family: "x-intercept-of-a-line",
-        stem: choose(variant, [
-          `What is the x-intercept of the line y = ${slope}x + ${intercept}?`,
-          `The line y = ${slope}x + ${intercept} crosses the x-axis at which value of x?`,
-          `Find the x-intercept of y = ${slope}x + ${intercept}.`,
-          `At what x-value does the graph of y = ${slope}x + ${intercept} meet the x-axis?`,
-        ]),
+        stem: pose(variant, "quantityOf", {
+          description: `the x-intercept of y = ${slope}x + ${intercept}`,
+        }),
         answer: frac(-intercept, slope),
         wrong: [
           [frac(intercept, slope), "This drops the minus sign that comes from moving the constant across the equals sign."],

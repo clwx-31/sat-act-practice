@@ -367,8 +367,10 @@ the generated bank still reflects the previously committed canonical bank.
   4 / 2 / 7, 5/5/3, 3 keeps of 11 = 27.3%).
   Passage 036 is `036-the-burr-is-the-proof.js` (process narrative, 14 questions
   at 4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
-  **36 of 40 authored, 519 of 575 questions**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 108 of 407 = 26.5%. Verified
+  Passage 037 is `037-the-corral.js` (personal essay, 13 questions at 4 / 2 / 7,
+  4/6/3, 3 keeps of 11 = 27.3%).
+  **37 of 40 authored, 532 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 111 of 418 = 26.6%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.

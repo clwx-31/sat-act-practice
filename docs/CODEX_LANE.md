@@ -601,6 +601,42 @@ plan into `docs/CODEX_REPORTS.md` covering what the 16,900 pairs actually are �
 run the audit's `shapeSignature` and count distinct shapes, as was done for SAT
 Math — and stop there.
 
+---
+
+## Task 15 — SAT Reading & Writing: build the harness AND the assembler first
+
+**Both, before the authoring starts.** ACT English proved the failure mode: its
+harness was built up front and worked, its assembler was left to the end, and
+575 finished questions sat unreachable for two days because the one file that
+could publish them had not been written. Do not repeat that.
+
+The contract is `scripts/data/sat-reading-writing/README.md`. Read it first.
+
+**15a. Extend `scripts/check-passages.js` for sat-reading-writing.** The section
+rules are in the README. The one that matters and is not like any existing
+check: **every passage must be distinct after proper nouns and digits are
+stripped.** The shipped bank passes a plain distinctness test — all 565 stimuli
+are different strings — and fails this one, because twenty-one of them are the
+same sentence with the town and the name swapped. Use the audit's
+`shapeSignature` treatment: strip `\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*` and
+`\b\d+(?:\.\d+)?\b`, then compare.
+
+**15b. Write `scripts/generate-sat-reading-writing.js` as an assembler**, on the
+model of `generate-act-english.js`, which you have just written. Differences:
+one passage per item rather than a shared passage set, four choices with no NO
+CHANGE, so answer positions are freely balanceable across every item and the
+per-tier gate applies normally with no special case.
+
+Test both against whatever items exist in `scripts/data/sat-reading-writing/`
+when you get there — there will be a small number. The assembler should build a
+partial bank without error and refuse to overwrite the shipped bank until the
+section is complete. Do **not** rebuild `content/banks/sat-reading-writing.json`
+yet; 575 authored items do not exist.
+
+**Done when** `node scripts/check-passages.js sat-reading-writing` reports on
+the authored items without throwing, and the assembler runs end to end on a
+partial set. Report both.
+
 ## Where to write reports
 
 Write failure reports and findings to `docs/CODEX_REPORTS.md`, not to

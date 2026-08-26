@@ -630,6 +630,42 @@ Codex's blocker on the SAT Math rebuild — a Medium unit-conversion subskill wi
 no shapes — is the same fact from the other side: the generator cannot rebuild
 because the shapes were never written. SAT Math needs Task 4.
 
+### SAT Reading & Writing is the last repetitive section — 2026-08-26
+
+With ACT English authored and the other five sections passing, this is the only
+bank still built from swapped nouns. Measured with the audit's own signature:
+**410 distinct shapes across 575 items, 42.3% of items sharing a shape.**
+
+All 565 stimuli are distinct strings, which is why the shipped validator lets
+them through. Strip the proper nouns and three items from `parallel structure`
+read:
+
+```
+While documenting a lending library of games in Hazel Field, the internship
+taught Zara to catalog samples, operate a scanner, and ______.
+
+While documenting a pollinator corridor in Oak Point, the internship taught
+Greta to catalog samples, operate a scanner, and ______.
+
+While documenting a bicycle repair stand in Valley Mesa, the internship taught
+Noah to catalog samples, operate a scanner, and ______.
+```
+
+Twenty-one items are that sentence. On a section where the *sentence* is the
+thing being tested, a template with interchangeable nouns tests one sentence
+twenty-one times.
+
+**This needs authoring, not a better generator.** It is the same conclusion
+reached for ACT Reading and ACT English, and for the same reason: the answer has
+to sit in a particular sentence, and the distractors have to be plausible
+misreadings of *that* sentence. The digital SAT format helps — each item carries
+its own short passage of roughly 25 to 80 words rather than a shared long one,
+so the unit of work is small.
+
+Scale: 575 items, one passage each, median 32 words. That is comparable in total
+effort to the ACT English rebuild just completed — 575 questions either way — and
+the contract lives in `scripts/data/sat-reading-writing/README.md`.
+
 ### The next four steps, in order
 
 1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes

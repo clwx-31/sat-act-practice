@@ -36,9 +36,9 @@ Content version: 2026.1
 
 | Domain | Accepted | Target |
 | --- | ---: | ---: |
-| Production of Writing | 235 | 235 |
-| Knowledge of Language | 120 | 120 |
-| Conventions of Standard English | 220 | 220 |
+| Production of Writing | 175 | 175 |
+| Knowledge of Language | 92 | 92 |
+| Conventions of Standard English | 308 | 308 |
 
 ### ACT Math
 
@@ -82,7 +82,7 @@ Content version: 2026.1
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | SAT Reading & Writing | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
 | SAT Math | 473 | 102 | 0 | 118 | 118 | 119 | 118 |
-| ACT English | 575 | 0 | 0 | 144 | 144 | 143 | 144 |
+| ACT English | 575 | 0 | 0 | 151 | 154 | 129 | 141 |
 | ACT Math | 575 | 0 | 0 | 144 | 144 | 143 | 144 |
 | ACT Reading | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
 | ACT Science (optional) | 575 | 0 | 0 | 144 | 143 | 144 | 144 |

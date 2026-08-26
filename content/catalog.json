@@ -118,7 +118,7 @@
       "domains": [
         {
           "name": "Production of Writing",
-          "target": 235,
+          "target": 175,
           "skills": {
             "Topic Development": ["purpose", "relevance", "support"],
             "Organization, Unity, and Cohesion": ["organization", "introductions", "conclusions", "transitions"]
@@ -126,14 +126,14 @@
         },
         {
           "name": "Knowledge of Language",
-          "target": 120,
+          "target": 92,
           "skills": {
             "Effective Language Use": ["precision", "conciseness", "style and tone", "consistency"]
           }
         },
         {
           "name": "Conventions of Standard English",
-          "target": 220,
+          "target": 308,
           "skills": {
             "Sentence Structure and Formation": ["clause relationships", "modifiers", "parallelism"],
             "Usage": ["subject-verb agreement", "pronouns", "verb forms", "comparisons"],

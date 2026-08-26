@@ -6,7 +6,9 @@ module.exports = {
   title: "A Rule Nobody Wrote",
   content: `[1] The quiet car began as a complaint. In 1999 a group of commuters
 on a Philadelphia line asked whether one car might be set aside for people who
-did not want to hear anyone's telephone. The railroad agreed to try {1 it on one
+did not want to hear anyone's telephone. They were regular riders who had shared
+the same carriage every weekday morning for years, and what they wanted was
+modest and specific. The railroad agreed to try {1 it on one
 train nobody} expected it to last.
 
 [2] {2 Similarly,} the experiment had no enforcement behind it. There {3 was}
@@ -25,7 +27,8 @@ well, because a passenger enforcing a norm acts on behalf of everyone in the
 car, while a passenger citing a regulation is {9 doing something else entirely}.
 
 [5] {10} The quiet car is now standard on several American railroads and on
-services in Europe and Japan. {11 Copied from line to line without central
+services in Europe and Japan. It spread by imitation rather than by policy, one
+operator watching another and copying what appeared to work. {11 Copied from line to line without central
 direction, the same three gestures turn up wherever the car exists.} Nobody
 {12 designed} them.`,
   questions: [

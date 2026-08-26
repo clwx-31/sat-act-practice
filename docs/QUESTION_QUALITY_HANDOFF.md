@@ -371,8 +371,10 @@ the generated bank still reflects the previously committed canonical bank.
   4/6/3, 3 keeps of 11 = 27.3%).
   Passage 038 is `038-already-there.js` (informative essay, 16 questions at
   5 / 3 / 8, 5/7/4, 3 keeps of 12 = 25%).
-  **38 of 40 authored, 548 of 575 questions**; all four passage types are in use and all four size groups from
-  the build plan have a member. Running keep rate 114 of 430 = 26.5%. Verified
+  Passage 039 is `039-clintons-ditch.js` (historical account, 14 questions at
+  4 / 2 / 8, 4/6/4, 3 keeps of 11 = 27.3%).
+  **39 of 40 authored, 562 of 575 questions**; all four passage types are in use and all four size groups from
+  the build plan have a member. Running keep rate 117 of 441 = 26.5%. Verified
   `clean` by the fixed `check-passages.js`, with every domain and difficulty gap
   at 0.
   From 003 on, whole-essay questions carry no marker and are numbered last.

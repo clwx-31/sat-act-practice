@@ -404,12 +404,18 @@ function normalizeText(text) {
 
 function structuralSignature(question) {
   const stimulus = question.stimulus ? question.stimulus.content : "";
-  const anchor = question.passageId ? `${question.passageId} ` : "";
-  const normalized = normalizeText(`${anchor}${stimulus} ${question.stem}`);
+  const context = question.passageId && Array.isArray(question.choices)
+    ? question.choices.join(" ")
+    : stimulus;
+  const normalized = normalizeText(`${context} ${question.stem}`);
   const withNumbers = isQuantitative(question)
     ? normalized
     : normalized.replace(/\b\d+(?:\.\d+)?\b/g, "#");
-  return withNumbers.replace(/\b[a-z]\b/g, "@");
+  // Preserve a passage ID outside number normalization. The choices separate
+  // questions inside one set; the ID separates deliberately repeated stems
+  // and choice patterns in different passages.
+  const passageAnchor = question.passageId ? `${question.passageId}|` : "";
+  return `${passageAnchor}${withNumbers.replace(/\b[a-z]\b/g, "@")}`;
 }
 
 // What makes two questions "the same" depends on where their context lives.
@@ -484,8 +490,16 @@ function duplicateErrors(questions) {
 
   const bySection = new Map();
   questions.forEach((question) => {
-    if (!bySection.has(question.sectionKey)) bySection.set(question.sectionKey, []);
-    bySection.get(question.sectionKey).push({
+    // Passage-set questions are comparable inside their shared set. Across
+    // passages, the passage is different context even when an authentic stem
+    // or edit choice repeats. Within a set, compare like subskills so an
+    // agreement item and a tense item are not equated merely because their
+    // short edit choices happen to contain the same verbs.
+    const comparisonGroup = question.passageId
+      ? `${question.sectionKey}|${question.passageId}|${question.subskill}`
+      : question.sectionKey;
+    if (!bySection.has(comparisonGroup)) bySection.set(comparisonGroup, []);
+    bySection.get(comparisonGroup).push({
       id: question.id,
       tokens: tokenSet(question),
     });
@@ -561,12 +575,29 @@ function coverageErrors(questions, catalog = loadCatalog(), requireComplete = fa
           );
         }
       });
-      const multipleChoiceCount = sectionReport.responseTypes["multiple-choice"] || 0;
+      // Underlined ACT English items reserve choice A for NO CHANGE, so their
+      // positions are constrained by the item format. Balance the rhetorical
+      // questions that the assembler is free to arrange; the dedicated
+      // per-tier gate applies the same exception.
+      const positionItems = questions.filter((question) =>
+        question.sectionKey === section.key &&
+        question.responseType === "multiple-choice" &&
+        !(
+          section.key === "act-english" &&
+          Array.isArray(question.tags) &&
+          question.tags.includes("underlined-edit")
+        ),
+      );
+      const multipleChoiceCount = positionItems.length;
       if (multipleChoiceCount > 0) {
+        const answerPositions = countBy(
+          positionItems,
+          (question) => String(question.correctAnswer),
+        );
         const low = Math.floor(multipleChoiceCount / 4);
         const high = Math.ceil(multipleChoiceCount / 4);
         for (let position = 0; position < 4; position += 1) {
-          const count = sectionReport.answerPositions[String(position)] || 0;
+          const count = answerPositions[String(position)] || 0;
           if (count < low || count > high) {
             errors.push(
               `${section.key}/answer ${position}: expected ${low}-${high}, found ${count}`,

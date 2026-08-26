@@ -45,3 +45,25 @@ test("checks tiers separately and skips non-four-choice items", () => {
   assert.deepEqual(answerPositionProblems("sample", bank), []);
   assert.equal(tierPositionProfiles(bank).has("Hard"), false);
 });
+
+test("ACT English balances rhetorical questions without rejecting fixed underlined choices", () => {
+  const underlined = questions([8, 0, 0, 0]).map((question) => ({
+    ...question,
+    tags: ["underlined-edit"],
+  }));
+  const rhetorical = questions([1, 1, 1, 1]).map((question) => ({
+    ...question,
+    tags: ["rhetorical-question"],
+  }));
+  const bank = [...underlined, ...rhetorical];
+
+  assert.deepEqual(answerPositionProblems("act-english", bank), []);
+  assert.deepEqual(tierPositionProfiles(bank, "act-english").get("Easy"), {
+    counts: [1, 1, 1, 1],
+    total: 4,
+  });
+  assert.match(
+    answerPositionProblems("sample", bank).join("\n"),
+    /position 0 keys 9\/12/,
+  );
+});

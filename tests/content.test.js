@@ -107,6 +107,34 @@ test("duplicate detector finds exact and structural variants", () => {
   assert.match(errors, /Structural duplicate|Near duplicate/);
 });
 
+test("passage-set structural signatures include passage and choices", () => {
+  const common = {
+    stimulus: null,
+    stem: "Which choice is best for underlined portion 1?",
+  };
+  const first = validQuestion({
+    ...common,
+    id: "sat-math-0001",
+    passageId: "act-english-p001",
+    choices: ["NO CHANGE", "first", "second", "third"],
+  });
+  const second = validQuestion({
+    ...common,
+    id: "sat-math-0002",
+    passageId: "act-english-p001",
+    stem: "Which choice is best for underlined portion 2?",
+    choices: ["NO CHANGE", "fourth", "fifth", "sixth"],
+  });
+  const third = validQuestion({
+    ...common,
+    id: "sat-math-0003",
+    passageId: "act-english-p002",
+    choices: first.choices,
+  });
+
+  assert.deepEqual(duplicateErrors([first, second, third]), []);
+});
+
 test("validator independently recomputes supported math verification data", () => {
   const question = validQuestion({
     verification: {

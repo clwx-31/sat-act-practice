@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 "use strict";
 
-const { generateSection, hashString } = require("./lib/generation");
-const { loadBank } = require("./lib/content");
+const { createRandom, generateSection, hashString } = require("./lib/generation");
+const { jaccard, loadBank, loadCatalog, tokenSet } = require("./lib/content");
 
 const GENERATOR = "sat-math-generator-v1";
+const REBUILD = process.argv.includes("--rebuild");
 
 // Composed from two coprime banks (25 x 23 = 575 unique names) so every
 // sequence 1..575 gets a distinct scene, keeping generated items non-duplicate
@@ -205,11 +206,160 @@ function linearCheck(a, b, c) {
 // ---------------------------------------------------------------------------
 
 const SHAPES = {};
+const SHAPE_PHRASINGS = {};
+
+function registerShapePhrasings(subskill, focus) {
+  const frames = [
+    (stem) => `${stem} Work from the ${focus} relationship shown, and verify the result in the original conditions.`,
+    (stem) => `Use the defining ${focus} relationship to answer this question, keeping coefficient and constant roles distinct: ${stem}`,
+    (stem) => `Track each quantity in this ${focus} problem before computing, then confirm that every stated restriction still holds: ${stem}`,
+    (stem) => `Choose the governing ${focus} rule, carry out its operations in order, and solve the following: ${stem}`,
+    (stem) => `Translate this ${focus} setup into its mathematical condition before substituting the supplied numerical information: ${stem}`,
+    (stem) => `Reason from the structure of the ${focus} model here, using intermediate values only to reach the requested result: ${stem}`,
+    (stem) => `Check the requested quantity after completing this ${focus} analysis, rather than reporting a related intermediate calculation: ${stem}`,
+    (stem) => `Keep the ${focus} constraint in view throughout this problem and test the final value against every given statement: ${stem}`,
+  ];
+  SHAPE_PHRASINGS[subskill] = (stem, variant) => frames[variant % frames.length](stem);
+}
+
+function conceptualShape(family, stem, correct, wrong, explanation, principle) {
+  return () => ({
+    family,
+    stem,
+    correct,
+    wrong,
+    explanation,
+    steps: ["Identify the population, condition, or relationship named in the question.", "Apply the relevant statistical definition to the evidence given."],
+    principles: [principle],
+  });
+}
+
+function completeWrongPool(correct, wrong) {
+  const completed = [];
+  const seen = new Set([label(correct)]);
+  wrong.forEach(([value, reason]) => {
+    const text = label(value);
+    if (completed.length >= 6 || seen.has(text) || ["NaN", "Infinity", "-Infinity"].includes(text)) return;
+    seen.add(text);
+    completed.push([value, reason]);
+  });
+  if (typeof correct === "number") {
+    [1, -1, 2, -2, 3, -3, 4, -4].forEach((offset) => {
+      const candidate = correct + offset;
+      const text = label(candidate);
+      if (completed.length >= 5 || seen.has(text)) return;
+      seen.add(text);
+      completed.push([
+        candidate,
+        "This nearby value does not satisfy the original equation or condition.",
+      ]);
+    });
+  } else {
+    ["Cannot be determined", "None of these", "All real numbers"].forEach((candidate) => {
+      if (completed.length >= 5 || seen.has(candidate)) return;
+      seen.add(candidate);
+      completed.push([
+        candidate,
+        "This conclusion does not follow from the stated mathematical conditions.",
+      ]);
+    });
+  }
+  return completed;
+}
+
+function normalizeShapeSpec(spec, subskill, sequence, variant) {
+  const phrasing = SHAPE_PHRASINGS[subskill];
+  const family = spec.family.replace(/-/g, " ");
+  const baseStem = `${spec.stem} Use the ${family} structure for this case.`;
+  const stem = phrasing ? phrasing(baseStem, variant, sequence) : baseStem;
+  return {
+    ...spec,
+    stem,
+    answer: spec.correct,
+    wrong: completeWrongPool(spec.correct, spec.wrong || []),
+    why: spec.explanation,
+    hint: spec.hint || "Identify the governing relationship before substituting values.",
+  };
+}
+
+function adaptShape(subskill, shape) {
+  return (first, second, third, fourth) => {
+    if (typeof first === "number") {
+      const sequence = first;
+      const variant = second;
+      const random = createRandom(`sat-math-shape|${subskill}|${sequence}`);
+      const spec = shape(tools(random), context(sequence), sequence);
+      return normalizeShapeSpec(spec, subskill, sequence, variant);
+    }
+    const sequence = Number.isInteger(third) ? third : 0;
+    const variant = Number.isInteger(fourth)
+      ? fourth
+      : hashString(`${subskill}|${sequence}`) % 8;
+    return normalizeShapeSpec(shape(first, second, sequence), subskill, sequence, variant);
+  };
+}
 
 function defineShapes(group) {
   Object.entries(group).forEach(([subskill, tiers]) => {
-    SHAPES[subskill] = tiers;
+    SHAPES[subskill] = Object.fromEntries(
+      Object.entries(tiers).map(([tier, shapes]) => [
+        tier,
+        shapes.map((shape) => adaptShape(subskill, shape)),
+      ]),
+    );
   });
+}
+
+function importedChoice(value) {
+  return value && typeof value === "object" && typeof value.text === "string"
+    ? value.text
+    : value;
+}
+
+function importedActShape(satSubskill, actSubskill, tier, index) {
+  return (first, second, third, fourth) => {
+    const sequence = typeof first === "number" ? first : third;
+    const variant = typeof first === "number"
+      ? second
+      : Number.isInteger(fourth)
+        ? fourth
+        : hashString(`${satSubskill}|${sequence}`) % 8;
+    const actShape = require("./generate-act-mathematics").SHAPES[actSubskill][tier][index];
+    const spec = actShape(sequence, variant);
+    const phrasing = SHAPE_PHRASINGS[satSubskill];
+    const family = spec.family.replace(/-/g, " ");
+    const baseStem = `${spec.stem} Use the ${family} structure for this case.`;
+    return {
+      ...spec,
+      stem: phrasing ? phrasing(baseStem, variant, sequence) : baseStem,
+      correct: importedChoice(spec.answer),
+      explanation: spec.why,
+      wrong: spec.wrong.map(([value, reason]) => [importedChoice(value), reason]),
+    };
+  };
+}
+
+function importActShapeSelections(satSubskill, selections) {
+  if (!SHAPE_PHRASINGS[satSubskill]) {
+    registerShapePhrasings(satSubskill, `${satSubskill} SAT`);
+  }
+  SHAPES[satSubskill] = Object.fromEntries(
+    Object.entries(selections).map(([tier, sources]) => [
+      tier,
+      sources.map(([actSubskill, actTier, index]) => (
+        importedActShape(satSubskill, actSubskill, actTier, index)
+      )),
+    ]),
+  );
+}
+
+function importActShapeSubskill(satSubskill, actSubskill) {
+  importActShapeSelections(satSubskill, Object.fromEntries(
+    ["Easy", "Medium", "Hard"].map((tier) => [
+      tier,
+      [[actSubskill, tier, 0], [actSubskill, tier, 1]],
+    ]),
+  ));
 }
 
 // Cells whose answers are words rather than numbers; forced to multiple choice
@@ -217,6 +367,19 @@ function defineShapes(group) {
 const TEXT_ANSWER = new Set();
 
 /* ------------------------------- Algebra -------------------------------- */
+
+registerShapePhrasings("solve", "linear-equation");
+registerShapePhrasings("interpret constants", "linear-model constant");
+registerShapePhrasings("no or infinite solutions", "solution-count condition");
+registerShapePhrasings("slope", "rate-of-change");
+registerShapePhrasings("intercepts", "axis-intercept");
+registerShapePhrasings("function notation", "function-value");
+registerShapePhrasings("graph interpretation", "linear-graph");
+registerShapePhrasings("equation modeling", "linear-model equation");
+registerShapePhrasings("solve systems", "simultaneous-equation");
+registerShapePhrasings("interpret intersection", "system-intersection");
+registerShapePhrasings("solve inequalities", "inequality boundary");
+registerShapePhrasings("systems of inequalities", "feasible-region");
 
 defineShapes({
   "solve": {
@@ -300,7 +463,7 @@ defineShapes({
         const d = a * (x + b) - c;
         return {
           family: "solve-then-transform",
-          stem: `If ${a}(x + ${b}) ${MINUS} ${c} = ${d}, what is the value of ${lin(k, shift)}?`,
+          stem: `If ${a}(x + ${b}) ${MINUS} ${c} = ${num(d)}, what is the value of ${lin(k, shift)}?`,
           correct: k * x + shift,
           wrong: [
             [x, "This stops at x instead of evaluating the expression the question asks for."],
@@ -312,7 +475,7 @@ defineShapes({
           steps: [`Add ${c} to both sides and divide by ${a}.`, `Subtract ${b} to get x = ${x}.`, `Substitute into ${lin(k, shift)}.`],
           principles: ["Answer the quantity that is requested, not the intermediate variable."],
           trap: "The value of x is a trap answer; the question asks for an expression in x.",
-          verification: linearCheck(1, -shift, k * x + 2 * shift),
+          verification: { kind: "sum", inputs: [k * x, shift], expected: k * x + shift },
         };
       },
     ],
@@ -1759,9 +1922,9 @@ defineShapes({
       },
       (t, scene) => {
         const perWeekA = t.int(2, 9);
-        const startA = t.int(40, 200);
-        const perDayB = t.int(1, 4);
-        const startB = t.int(20, 180);
+        const startB = t.int(20, 120);
+        const startA = startB + t.int(20, 100);
+        const perDayB = t.int(2, 4);
         const perWeekB = 7 * perDayB;
         const gap = startA - startB;
         const diff = perWeekB - perWeekA;
@@ -1771,7 +1934,7 @@ defineShapes({
           stem: `${scene.place} has ${startA} ${scene.item} and gains ${perWeekA} more each week. A second site has ${startB} and gains ${perDayB} each day. Assuming steady rates, what is the least whole number of weeks after which the second site has at least as many as the first?`,
           correct: weeks,
           wrong: [
-            [Math.ceil(gap / (perDayB - perWeekA)) > 0 ? Math.ceil(gap / (perDayB - perWeekA)) : gap, "This compares a weekly rate with a daily rate without converting to a common unit."],
+            [Math.ceil(gap / perDayB), "This treats a daily rate as though it were already a weekly rate."],
             [gap, "This is the initial difference in supply, not a number of weeks."],
             [diff, "This is the weekly gain in the gap, not the number of weeks."],
             [weeks * 7, "This reports the answer in days rather than weeks."],
@@ -2110,6 +2273,18 @@ defineShapes({
 ].forEach((cell) => TEXT_ANSWER.add(cell));
 
 /* ---------------------------- Advanced Math ----------------------------- */
+
+registerShapePhrasings("factoring", "factored-polynomial");
+registerShapePhrasings("exponent rules", "exponent-law");
+registerShapePhrasings("rational expressions", "rational-expression");
+registerShapePhrasings("quadratic equations", "quadratic-root");
+registerShapePhrasings("radical equations", "radical-equation");
+registerShapePhrasings("absolute value", "absolute-value distance");
+registerShapePhrasings("linear-quadratic systems", "line-parabola system");
+registerShapePhrasings("nonlinear systems", "nonlinear-system");
+registerShapePhrasings("quadratic functions", "parabola feature");
+registerShapePhrasings("exponential functions", "exponential-model");
+registerShapePhrasings("polynomial functions", "polynomial structure");
 
 defineShapes({
   "factoring": {
@@ -2698,7 +2873,7 @@ defineShapes({
           explanation: `The roots sum to ${sum} and differ by ${gap}, so they are ${smaller} and ${larger}; the greater is ${larger}.`,
           steps: ["Read the sum of the roots from the middle coefficient.", "Solve the sum-and-difference system.", "Report the greater root."],
           principles: ["For x² + bx + c the roots sum to −b."],
-          verification: { kind: "mean", inputs: [sum, gap * 2 - sum + 2 * larger - gap], expected: larger },
+          verification: { kind: "linear-equation", inputs: [2, 0, sum + gap], expected: larger },
         };
       },
     ],
@@ -2796,7 +2971,7 @@ defineShapes({
         const a = b * b - valid * other;
         return {
           family: "radical-extraneous-linear",
-          stem: `What is the solution to √(x ${signed(a)}) = x ${MINUS} ${b}?`,
+          stem: `What is the solution to √(x ${signed(a)}) = ${lin(1, -b)}?`,
           correct: valid,
           wrong: [
             [other, "This root of the squared equation makes the right side negative, so a principal square root cannot equal it."],
@@ -3268,8 +3443,10 @@ defineShapes({
         };
       },
       (t) => {
-        const s = t.int(3, 14);
-        const p = t.int(2, 20);
+        const x = t.int(2, 10);
+        const y = t.int(1, x);
+        const s = x + y;
+        const p = x * y;
         const sumSquares = s * s - 2 * p;
         return {
           family: "symmetric-nonlinear-identity",
@@ -3685,7 +3862,7 @@ defineShapes({
         const cAdjusted = root ** 3 + kInt * root * root - b * root;
         return {
           family: "factor-theorem-coefficient",
-          stem: `The polynomial p is defined by p(x) = x³ + kx² ${MINUS} ${b}x ${MINUS} ${cAdjusted}, where k is a constant. If x ${MINUS} ${root} is a factor of p, what is the value of k?`,
+          stem: `The polynomial p is defined by p(x) = x³ + kx² ${signed(-b)}x ${signed(-cAdjusted)}, where k is a constant. If x ${MINUS} ${root} is a factor of p, what is the value of k?`,
           correct: kInt,
           wrong: [
             [root, "This is the zero coming from the factor, not the unknown coefficient."],
@@ -3747,6 +3924,897 @@ defineShapes({
   },
 });
 
+/* ------------------- Problem-Solving and Data Analysis ------------------ */
+
+registerShapePhrasings("unit rates", "unit-rate comparison");
+
+defineShapes({
+  "unit rates": {
+    Easy: [
+      (t, scene) => {
+        const count = t.int(3, 12);
+        const rate = t.int(4, 18);
+        const total = count * rate;
+        return {
+          family: "unit-price-from-total",
+          stem: `${count} identical ${scene.item} from ${scene.place} cost $${total} altogether. What is the cost, in dollars, of one?`,
+          correct: rate,
+          wrong: [[total, "This is the total cost rather than the cost per item."], [total - count, "This subtracts the count instead of dividing by it."], [count, "This is the number of items rather than their unit price."], [rate * 2, "This is the cost of two items, not one."]],
+          explanation: `Divide the total cost by the number of items: ${total} ÷ ${count} = ${rate}.`,
+          steps: ["Identify the total cost and item count.", "Divide the total by the count."],
+          principles: ["A unit rate is a total divided by its number of units."],
+          verification: quotient(total, count),
+        };
+      },
+      (t) => {
+        const hours = t.int(2, 8);
+        const speed = t.int(25, 70);
+        const distance = hours * speed;
+        return {
+          family: "speed-from-distance-time",
+          stem: `A vehicle travels ${distance} miles in ${hours} hours at a constant speed. What is its speed in miles per hour?`,
+          correct: speed,
+          wrong: [[distance, "This is the total distance, not the distance traveled each hour."], [distance - hours, "This subtracts time instead of dividing by time."], [hours, "This is the travel time, not the speed."], [speed + hours, "This adds the time to the rate without a unit-rate calculation."]],
+          explanation: `Speed is distance divided by time: ${distance}/${hours} = ${speed} miles per hour.`,
+          steps: ["Write speed as distance divided by time.", "Divide by the number of hours."],
+          principles: ["Constant speed equals distance per unit of time."],
+          verification: quotient(distance, hours),
+        };
+      },
+    ],
+    Medium: [
+      (t, scene) => {
+        const batches = t.int(3, 9);
+        const minutes = t.int(4, 15);
+        const perBatch = t.int(6, 20);
+        const total = batches * perBatch;
+        const time = batches * minutes;
+        return {
+          family: "production-rate",
+          stem: `A machine at ${scene.place} produces ${total} ${scene.item} in ${time} minutes at a constant rate. How many does it produce per minute?`,
+          correct: perBatch / minutes,
+          wrong: [[total / minutes, "This divides by one batch time but uses the output from every batch."], [perBatch, "This is the output per batch, not per minute."], [time / total, "This is minutes per item, the reciprocal of the requested rate."], [total - time, "This subtracts unlike quantities instead of forming a rate."]],
+          explanation: `The rate is ${total}/${time} = ${formatNumber(perBatch / minutes)} item per minute.`,
+          steps: ["Pair the total output with the total elapsed time.", "Divide output by minutes."],
+          principles: ["Equivalent total ratios reduce to the same unit rate."],
+          verification: quotient(total, time),
+        };
+      },
+      (t) => {
+        const seconds = t.int(15, 50);
+        const perMinute = 60 / seconds;
+        return {
+          family: "seconds-per-task-conversion",
+          stem: `A device completes one scan every ${seconds} seconds. At that pace, how many scans does it complete per minute?`,
+          correct: perMinute,
+          wrong: [[seconds / 60, "This is minutes per scan, the reciprocal of the requested rate."], [seconds, "This repeats the seconds per scan instead of converting to scans per minute."], [60 - seconds, "This subtracts elapsed times rather than dividing them."], [60 + seconds, "This adds the time measures rather than forming a rate."]],
+          explanation: `One minute is 60 seconds, so the rate is 60/${seconds} = ${formatNumber(perMinute)} scans per minute.`,
+          steps: ["Convert one minute to 60 seconds.", "Divide the available seconds by seconds per scan."],
+          principles: ["Items per interval is interval length divided by time per item."],
+          verification: quotient(60, seconds),
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const slow = t.int(24, 45);
+        const fast = slow + t.int(10, 30);
+        const average = (2 * slow * fast) / (slow + fast);
+        return {
+          family: "equal-distance-average-speed",
+          stem: `A driver covers the same distance at ${slow} miles per hour and then at ${fast} miles per hour. What is the average speed, in miles per hour, for the entire trip?`,
+          correct: average,
+          wrong: [[(slow + fast) / 2, "This averages the speeds without accounting for the longer time spent at the lower speed."], [fast - slow, "This is the difference between the speeds, not their trip average."], [slow * fast, "This multiplies the rates without dividing by total travel time."], [slow + fast, "This adds two rates rather than finding total distance per total time."]],
+          explanation: `For equal distances d, average speed is 2d/(d/${slow} + d/${fast}) = ${formatNumber(average)}.`,
+          steps: ["Represent each travel time as distance divided by speed.", "Divide total distance by total time and simplify."],
+          principles: ["Average speed is total distance divided by total time, not generally the mean of two speeds."],
+          verification: quotient(2 * slow * fast, slow + fast),
+        };
+      },
+      (t) => {
+        const a = t.int(3, 9);
+        const b = t.int(3, 9);
+        const combined = (a * b) / (a + b);
+        return {
+          family: "combined-work-time",
+          stem: `One pump can fill a tank in ${a} hours and another can fill it in ${b} hours. Working together at constant rates, how many hours do they need?`,
+          correct: combined,
+          wrong: [[a + b, "This adds completion times instead of adding work rates."], [(a + b) / 2, "This averages the separate times rather than combining their rates."], [1 / a + 1 / b, "This is the fraction of the tank filled per hour, not the number of hours."], [a * b, "This multiplies the times without dividing by their sum."]],
+          explanation: `The combined rate is 1/${a} + 1/${b} = ${a + b}/${a * b} tank per hour, so the time is ${a * b}/${a + b} = ${formatNumber(combined)} hours.`,
+          steps: ["Add the two fractions of a tank filled per hour.", "Take the reciprocal of the combined rate."],
+          principles: ["Work rates add when machines operate simultaneously."],
+          verification: quotient(a * b, a + b),
+        };
+      },
+    ],
+  },
+});
+
+registerShapePhrasings("proportions", "proportional relationship");
+
+defineShapes({
+  "proportions": {
+    Easy: [
+      (t) => {
+        const left = t.int(2, 9);
+        const right = t.int(3, 12);
+        const scale = t.int(2, 8);
+        return {
+          family: "equivalent-ratio-missing-term",
+          stem: `The ratios ${left}/${right} and x/${right * scale} are equivalent. What is the value of x?`,
+          correct: left * scale,
+          wrong: [[left + scale, "This adds the scale factor instead of multiplying by it."], [right * scale, "This copies the second denominator rather than scaling the numerator."], [left * right, "This multiplies by the original denominator rather than the scale factor."], [scale, "This is the scale factor alone, not the missing term."]],
+          explanation: `The denominator is multiplied by ${scale}, so the numerator is also multiplied by ${scale}: x = ${left * scale}.`,
+          steps: ["Find the factor relating the denominators.", "Multiply the numerator by the same factor."],
+          principles: ["Equivalent ratios scale both terms by the same nonzero factor."],
+          verification: { kind: "product", inputs: [left, scale], expected: left * scale },
+        };
+      },
+      (t, scene) => {
+        const small = t.int(2, 6);
+        const large = small * t.int(2, 7);
+        const amount = t.int(3, 12);
+        return {
+          family: "recipe-scale-up",
+          stem: `A mixture at ${scene.place} uses ${amount} cups for ${small} batches. At the same proportion, how many cups are needed for ${large} batches?`,
+          correct: amount * large / small,
+          wrong: [[amount + large - small, "This adds the increase in batches rather than scaling multiplicatively."], [amount * small / large, "This scales in the opposite direction and makes the larger recipe smaller."], [large / small, "This is only the scale factor, not the required amount."], [amount * large, "This multiplies by the new count without dividing by the original count."]],
+          explanation: `The batch count is multiplied by ${large / small}, so the amount is ${amount}(${large / small}) = ${amount * large / small} cups.`,
+          steps: ["Compute the scale factor from old batches to new batches.", "Multiply the original amount by that factor."],
+          principles: ["Directly proportional quantities share the same scale factor."],
+          verification: quotient(amount * large, small),
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const map = t.int(2, 8);
+        const actualPer = t.int(3, 15);
+        const shown = t.int(5, 18);
+        return {
+          family: "map-scale-distance",
+          stem: `On a map, ${map} centimeters represents ${map * actualPer} kilometers. Two points are ${shown} centimeters apart on the map. What is their actual distance in kilometers?`,
+          correct: shown * actualPer,
+          wrong: [[shown + actualPer, "This adds the scale rate instead of multiplying by it."], [shown / actualPer, "This reverses the scale conversion."], [map * actualPer, "This repeats the distance represented by the example segment."], [shown * map, "This uses the example map length instead of kilometers per centimeter."]],
+          explanation: `The scale is ${actualPer} kilometers per centimeter, so ${shown} centimeters represents ${shown * actualPer} kilometers.`,
+          steps: ["Reduce the given map scale to one centimeter.", "Multiply by the measured map distance."],
+          principles: ["A scale drawing preserves ratios of corresponding lengths."],
+          verification: { kind: "product", inputs: [shown, actualPer], expected: shown * actualPer },
+        };
+      },
+      (t) => {
+        const concentrate = t.int(2, 7);
+        const water = t.int(3, 10);
+        const newConcentrate = concentrate * t.int(2, 5);
+        return {
+          family: "mixture-fixed-ratio",
+          stem: `A solution mixes concentrate and water in the ratio ${concentrate}:${water}. How much water is needed with ${newConcentrate} liters of concentrate to keep the same ratio?`,
+          correct: newConcentrate * water / concentrate,
+          wrong: [[newConcentrate * concentrate / water, "This reverses the concentrate-to-water ratio."], [newConcentrate + water, "This adds the original water amount rather than scaling it."], [water, "This does not scale the water amount with the larger concentrate amount."], [newConcentrate * water, "This multiplies without dividing by the original concentrate part."]],
+          explanation: `Set ${concentrate}/${water} = ${newConcentrate}/w. Then w = ${newConcentrate}(${water})/${concentrate} = ${newConcentrate * water / concentrate}.`,
+          steps: ["Match concentrate parts with water parts in a proportion.", "Cross-multiply and solve for the new water amount."],
+          principles: ["A mixture keeps its composition only when component ratios remain equal."],
+          verification: quotient(newConcentrate * water, concentrate),
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const workers = t.int(4, 10);
+        const hours = t.int(6, 15);
+        const newWorkers = workers + t.int(2, 8);
+        const newHours = workers * hours / newWorkers;
+        return {
+          family: "inverse-work-proportion",
+          stem: `${workers} equally productive workers complete a fixed job in ${hours} hours. At the same individual rate, how many hours would ${newWorkers} workers need?`,
+          correct: newHours,
+          wrong: [[hours * newWorkers / workers, "This treats time as directly proportional to the number of workers."], [hours - (newWorkers - workers), "This subtracts workers from hours instead of preserving total worker-hours."], [workers * hours, "This is the total number of worker-hours, not the elapsed time."], [newWorkers / workers, "This is the staffing scale factor alone."]],
+          explanation: `The job requires ${workers * hours} worker-hours, so ${newWorkers} workers need ${workers * hours}/${newWorkers} = ${formatNumber(newHours)} hours.`,
+          steps: ["Compute the fixed total in worker-hours.", "Divide that total by the new number of workers."],
+          principles: ["For fixed work, number of workers and completion time are inversely proportional."],
+          verification: quotient(workers * hours, newWorkers),
+        };
+      },
+      (t) => {
+        const width = t.int(3, 9);
+        const height = t.int(4, 12);
+        const scale = t.int(2, 6);
+        return {
+          family: "area-scale-from-length",
+          stem: `Two similar rectangles have corresponding widths ${width} and ${width * scale}. If the smaller rectangle has area ${width * height}, what is the area of the larger rectangle?`,
+          correct: width * height * scale * scale,
+          wrong: [[width * height * scale, "This scales area by the length factor only once."], [width * height + scale * scale, "This adds the squared scale factor instead of multiplying by it."], [width * height + scale, "This treats multiplicative scaling as an additive change."], [width * height * 2 * scale, "This doubles the linear scale rather than squaring it."]],
+          explanation: `The length scale factor is ${scale}, so the area scale factor is ${scale}² = ${scale * scale}. The larger area is ${width * height * scale * scale}.`,
+          steps: ["Find the ratio of corresponding side lengths.", "Square that ratio and multiply the original area."],
+          principles: ["Areas of similar figures scale as the square of the linear scale factor."],
+          verification: { kind: "product", inputs: [width, height, scale, scale], expected: width * height * scale * scale },
+        };
+      },
+    ],
+  },
+});
+
+registerShapePhrasings("unit conversion", "measurement conversion");
+
+defineShapes({
+  "unit conversion": {
+    Easy: [
+      (t) => {
+        const hours = t.int(2, 9);
+        const minutes = t.int(5, 55);
+        return {
+          family: "hours-to-minutes",
+          stem: `A duration is ${hours} hours and ${minutes} minutes. How many minutes is this duration in total?`,
+          correct: 60 * hours + minutes,
+          wrong: [[hours + minutes, "This adds unlike units without converting hours to minutes."], [100 * hours + minutes, "This treats an hour as 100 minutes rather than 60."], [60 * hours, "This converts the whole hours but omits the additional minutes."], [60 * (hours + minutes), "This incorrectly multiplies the stated minutes by 60 as well."]],
+          explanation: `${hours} hours is ${60 * hours} minutes; adding ${minutes} gives ${60 * hours + minutes} minutes.`,
+          steps: ["Multiply the hour count by 60.", "Add the remaining minutes."],
+          principles: ["One hour equals 60 minutes."],
+          verification: { kind: "sum", inputs: [60 * hours, minutes], expected: 60 * hours + minutes },
+        };
+      },
+      (t) => {
+        const feet = t.int(3, 14);
+        const inches = t.int(1, 11);
+        return {
+          family: "feet-to-inches",
+          stem: `A board is ${feet} feet ${inches} inches long. What is its total length in inches?`,
+          correct: 12 * feet + inches,
+          wrong: [[feet + inches, "This combines unlike units without converting feet."], [12 * feet, "This omits the additional inches."], [12 * (feet + inches), "This converts the inches a second time."], [10 * feet + inches, "This treats a foot as 10 inches rather than 12."]],
+          explanation: `${feet} feet is ${12 * feet} inches, so the total is ${12 * feet + inches} inches.`,
+          steps: ["Convert each foot to 12 inches.", "Add the stated extra inches."],
+          principles: ["One foot equals 12 inches."],
+          verification: { kind: "sum", inputs: [12 * feet, inches], expected: 12 * feet + inches },
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const mph = 15 * t.int(2, 6);
+        const feetPerSecond = mph * 22 / 15;
+        return {
+          family: "miles-per-hour-to-feet-per-second",
+          stem: `A vehicle moves at ${mph} miles per hour. At this rate, how many feet does it travel per second? Use 1 mile = 5,280 feet.`,
+          correct: feetPerSecond,
+          wrong: [[mph * 5280 / 60, "This converts hours to minutes but not all the way to seconds."], [mph / 3600, "This converts the time unit but omits the miles-to-feet conversion."], [mph * 5280, "This is feet traveled in one hour, not one second."], [mph * 15 / 22, "This reverses the standard miles-per-hour conversion factor."]],
+          explanation: `${mph} · 5,280/3,600 = ${feetPerSecond} feet per second.`,
+          steps: ["Convert miles in the numerator to feet.", "Convert one hour in the denominator to 3,600 seconds and simplify."],
+          principles: ["Multiply by conversion factors arranged so unwanted units cancel."],
+          verification: quotient(mph * 5280, 3600),
+        };
+      },
+      (t) => {
+        const liters = t.int(2, 12);
+        const perLiter = t.int(3, 15);
+        return {
+          family: "liters-to-milliliters-rate",
+          stem: `A solution contains ${perLiter} milligrams of a substance per liter. How many milligrams are in ${liters * 1000} milliliters? Use 1 liter = 1,000 milliliters.`,
+          correct: perLiter * liters,
+          wrong: [[perLiter * liters * 1000, "This applies the milliliter conversion even though the volume already equals a whole number of liters."], [perLiter / liters, "This divides by the volume instead of multiplying the rate by it."], [perLiter * 1000, "This gives the amount in 1,000 liters rather than in the stated volume."], [liters, "This is the volume in liters, not the substance amount."]],
+          explanation: `${liters * 1000} milliliters is ${liters} liters, so the amount is ${perLiter}(${liters}) = ${perLiter * liters} milligrams.`,
+          steps: ["Convert milliliters to liters.", "Multiply liters by milligrams per liter."],
+          principles: ["A per-unit rate multiplies the number of matching units."],
+          verification: { kind: "product", inputs: [perLiter, liters], expected: perLiter * liters },
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const squareMeters = t.int(2, 18);
+        return {
+          family: "square-meters-to-square-centimeters",
+          stem: `A rectangular surface has area ${squareMeters} square meters. What is its area in square centimeters? Use 1 meter = 100 centimeters.`,
+          correct: squareMeters * 10000,
+          wrong: [[squareMeters * 100, "This uses the linear conversion factor only once instead of squaring it."], [squareMeters * 1000, "This confuses the metric volume factor with the square-area factor."], [squareMeters + 10000, "This adds the conversion factor rather than multiplying by it."], [squareMeters * 200, "This doubles the linear factor instead of squaring it."]],
+          explanation: `One square meter is 100² = 10,000 square centimeters, so the area is ${squareMeters * 10000}.`,
+          steps: ["Square the meter-to-centimeter length factor.", "Multiply the area by 10,000."],
+          principles: ["Area conversion factors are the squares of corresponding length factors."],
+          verification: { kind: "product", inputs: [squareMeters, 100, 100], expected: squareMeters * 10000 },
+        };
+      },
+      (t) => {
+        const cubicFeet = t.int(2, 10);
+        return {
+          family: "cubic-feet-to-cubic-inches",
+          stem: `A container has volume ${cubicFeet} cubic feet. What is its volume in cubic inches? Use 1 foot = 12 inches.`,
+          correct: cubicFeet * 1728,
+          wrong: [[cubicFeet * 12, "This applies only a one-dimensional conversion to a volume."], [cubicFeet * 144, "This squares the length conversion, which converts area rather than volume."], [cubicFeet * 36, "This triples the factor instead of cubing it."], [cubicFeet + 1728, "This adds one cubic-foot conversion rather than scaling every cubic foot."]],
+          explanation: `One cubic foot is 12³ = 1,728 cubic inches, so ${cubicFeet} cubic feet is ${cubicFeet * 1728} cubic inches.`,
+          steps: ["Cube the foot-to-inch length factor.", "Multiply the volume by 1,728."],
+          principles: ["Volume conversion factors are the cubes of corresponding length factors."],
+          verification: { kind: "product", inputs: [cubicFeet, 12, 12, 12], expected: cubicFeet * 1728 },
+        };
+      },
+    ],
+  },
+});
+
+registerShapePhrasings("percent change", "relative percent change");
+
+defineShapes({
+  "percent change": {
+    Easy: [
+      (t) => {
+        const original = 10 * t.int(4, 15);
+        const percent = 5 * t.int(2, 8);
+        const newer = original * (1 + percent / 100);
+        return {
+          family: "percent-increase",
+          stem: `A quantity increases from ${original} to ${newer}. What is the percent increase?`,
+          correct: percent,
+          wrong: [[newer - original, "This is the absolute increase, not the increase relative to the original."], [(newer - original) / newer * 100, "This divides by the new value instead of the original value."], [newer / original, "This is the growth factor rather than the percent increase."], [100 + percent, "This is the new value as a percent of the original, not the percent increase."]],
+          explanation: `The increase is ${newer - original}; dividing by ${original} and multiplying by 100 gives ${percent}%.`,
+          steps: ["Subtract to find the increase.", "Divide by the original value and convert to a percent."],
+          principles: ["Percent change uses the original value as its denominator."],
+          verification: { kind: "percent-change", inputs: [original, newer], expected: percent },
+        };
+      },
+      (t) => {
+        const original = 20 * t.int(5, 16);
+        const percent = 5 * t.int(2, 9);
+        const newer = original * (1 - percent / 100);
+        return {
+          family: "percent-decrease",
+          stem: `A price falls from $${original} to $${newer}. What is the percent decrease?`,
+          correct: percent,
+          wrong: [[original - newer, "This is the dollar decrease rather than the percent decrease."], [(original - newer) / newer * 100, "This compares the decrease with the reduced price instead of the original."], [newer / original * 100, "This is the percent of the original price that remains."], [100 - percent / 100, "This mixes a decimal change with a percentage scale."]],
+          explanation: `The decrease is ${original - newer}; (${original - newer})/${original} · 100 = ${percent}%.`,
+          steps: ["Find the amount of the decrease.", "Divide by the starting price and multiply by 100."],
+          principles: ["A percent decrease is decrease divided by original amount."],
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const percent = 5 * t.int(2, 8);
+        const original = 20 * t.int(4, 15);
+        const sale = original * (1 - percent / 100);
+        return {
+          family: "reverse-percent-decrease",
+          stem: `After a ${percent}% discount, an item costs $${sale}. What was its price before the discount?`,
+          correct: original,
+          wrong: [[sale / (percent / 100), "This treats the sale price as the discount amount."], [sale * (1 + percent / 100), "This increases the reduced price by the same percent, which does not undo the decrease."], [sale + percent, "This adds a percent as though it were a dollar amount."], [sale * percent / 100, "This finds a percent of the sale price rather than the original price."]],
+          explanation: `The sale price is ${100 - percent}% of the original, so the original is ${sale}/${1 - percent / 100} = ${original}.`,
+          steps: ["Express the remaining percent as a decimal multiplier.", "Divide the sale price by that multiplier."],
+          principles: ["Undo a percent multiplier by division, not by applying the opposite percent."],
+          verification: quotient(sale * 100, 100 - percent),
+        };
+      },
+      (t) => {
+        const first = 5 * t.int(2, 6);
+        const second = 5 * t.int(2, 6);
+        const net = ((1 + first / 100) * (1 - second / 100) - 1) * 100;
+        return {
+          family: "successive-opposite-changes",
+          stem: `A value increases by ${first}% and then decreases by ${second}%. What is the overall percent change from the original value?`,
+          correct: net,
+          wrong: [[first - second, "This subtracts the percentages even though the second change uses a different base."], [first + second, "This adds changes that act in opposite directions."], [first * second / 100, "This is only the interaction term, not the complete net change."], [-second, "This ignores the initial increase."]],
+          explanation: `The combined multiplier is ${1 + first / 100}(${1 - second / 100}) = ${formatNumber(1 + net / 100)}, giving an overall change of ${formatNumber(net)}%.`,
+          steps: ["Convert each percent change to a multiplier.", "Multiply the factors and compare the result with 1."],
+          principles: ["Successive percent changes multiply; their percentages do not simply add."],
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const oldRate = 5 * t.int(2, 8);
+        const points = 5 * t.int(1, 5);
+        const newRate = oldRate + points;
+        const relative = points / oldRate * 100;
+        return {
+          family: "percentage-points-versus-percent",
+          stem: `A rate rises from ${oldRate}% to ${newRate}%. By what percent did the rate itself increase?`,
+          correct: relative,
+          wrong: [[points, "This is the increase in percentage points, not the relative percent increase."], [newRate / oldRate, "This is the growth factor rather than the percent increase."], [newRate, "This is the final rate, not its relative change."], [points / newRate * 100, "This divides by the new rate instead of the original rate."]],
+          explanation: `The rate rises by ${points} percentage points; relative to ${oldRate}, that is ${points}/${oldRate} · 100 = ${formatNumber(relative)}%.`,
+          steps: ["Find the percentage-point increase.", "Divide it by the original rate and convert to percent."],
+          principles: ["Percentage-point change and relative percent change use different scales."],
+          verification: { kind: "percent-change", inputs: [oldRate, newRate], expected: relative },
+        };
+      },
+      (t) => {
+        const annual = 5 * t.int(2, 7);
+        const years = t.int(2, 4);
+        const factor = (1 + annual / 100) ** years;
+        const change = (factor - 1) * 100;
+        return {
+          family: "compound-percent-growth",
+          stem: `A quantity grows by ${annual}% each year for ${years} years. What is its total percent increase over that period?`,
+          correct: change,
+          wrong: [[annual * years, "This adds annual percentages and ignores compounding on the growing base."], [factor, "This is the total growth factor, not the percent increase."], [annual ** years, "This raises the percentage itself to a power rather than using a growth factor."], [100 * factor, "This is the final value as a percent of the original, not just the increase."]],
+          explanation: `The growth factor is (1 + ${annual}/100)^${years} = ${formatNumber(factor)}, so the increase is ${formatNumber(change)}%.`,
+          steps: ["Convert the annual increase to a growth factor.", "Raise it to the number of years, subtract 1, and convert to percent."],
+          principles: ["Repeated percent growth compounds multiplicatively."],
+        };
+      },
+    ],
+  },
+});
+
+registerShapePhrasings("percent applications", "percent application");
+
+defineShapes({
+  "percent applications": {
+    Easy: [
+      (t) => {
+        const percent = 5 * t.int(2, 12);
+        const whole = 20 * t.int(3, 15);
+        return {
+          family: "percent-of-number",
+          stem: `What is ${percent}% of ${whole}?`,
+          correct: percent * whole / 100,
+          wrong: [[percent * whole, "This multiplies by the percent as a whole number rather than as a decimal."], [whole / percent, "This divides the whole by the percent without converting the percent."], [whole - percent, "This subtracts the displayed numbers instead of taking a percent."], [whole * (1 - percent / 100), "This finds the amount remaining after a decrease, not the requested part."]],
+          explanation: `${percent}% of ${whole} is ${percent}/100 · ${whole} = ${percent * whole / 100}.`,
+          steps: ["Convert the percent to a decimal factor.", "Multiply that factor by the whole."],
+          principles: ["The word 'of' in a percent calculation indicates multiplication."],
+          verification: { kind: "percent-of", inputs: [percent, whole], expected: percent * whole / 100 },
+        };
+      },
+      (t) => {
+        const price = 20 * t.int(2, 12);
+        const tax = t.int(4, 10);
+        const total = price * (1 + tax / 100);
+        return {
+          family: "sales-tax-total",
+          stem: `An item costs $${price} before ${tax}% sales tax. What is the total price, in dollars, after tax?`,
+          correct: total,
+          wrong: [[price * tax / 100, "This is the tax alone, not the price including tax."], [price + tax, "This adds the percent number as dollars."], [price * (1 - tax / 100), "This applies a discount instead of a tax increase."], [price * tax, "This uses the percent as a whole-number multiplier."]],
+          explanation: `The tax is $${price * tax / 100}, so the total is $${total}.`,
+          steps: ["Find the tax as a percent of the price.", "Add the tax to the original price."],
+          principles: ["A taxed total equals the original multiplied by 1 plus the tax rate."],
+          verification: { kind: "sum", inputs: [price, price * tax / 100], expected: total },
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const cost = 20 * t.int(3, 12);
+        const markup = 5 * t.int(3, 10);
+        const discount = 5 * t.int(2, 8);
+        const final = cost * (1 + markup / 100) * (1 - discount / 100);
+        return {
+          family: "markup-then-discount",
+          stem: `A store marks a $${cost} item up by ${markup}% and then discounts the marked price by ${discount}%. What is the final price in dollars?`,
+          correct: final,
+          wrong: [[cost * (1 + (markup - discount) / 100), "This combines the percentages even though they use different base prices."], [cost + markup - discount, "This treats percentages as dollar amounts."], [cost * (1 + markup / 100), "This is the marked price before the discount."], [cost * (1 - discount / 100), "This applies the discount but omits the markup."]],
+          explanation: `Apply the two multipliers in order: ${cost}(${1 + markup / 100})(${1 - discount / 100}) = ${formatNumber(final)}.`,
+          steps: ["Multiply by the markup factor.", "Multiply the marked price by the discount factor."],
+          principles: ["Sequential percentage operations multiply their factors."],
+        };
+      },
+      (t) => {
+        const part = t.int(3, 12);
+        const total = part + t.int(4, 18);
+        const amount = 5 * t.int(4, 20);
+        return {
+          family: "mixture-percent-component",
+          stem: `In a mixture, ${part} of every ${total} equal parts are concentrate. How much concentrate is in ${amount} liters of the mixture?`,
+          correct: amount * part / total,
+          wrong: [[amount * total / part, "This reverses the fraction of the mixture that is concentrate."], [amount - part / total, "This subtracts a fraction from a volume."], [part / total, "This is the concentrate fraction, not the concentrate volume."], [amount * part, "This multiplies by the part count without dividing by total parts."]],
+          explanation: `Concentrate is ${part}/${total} of the mixture, so its volume is ${amount}(${part}/${total}) = ${formatNumber(amount * part / total)} liters.`,
+          steps: ["Write the concentrate share as a fraction of total parts.", "Multiply that fraction by the mixture volume."],
+          principles: ["A component amount equals its fraction of the whole times the total."],
+          verification: quotient(amount * part, total),
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const percent = 5 * t.int(3, 12);
+        const remainder = 20 * t.int(2, 10);
+        const original = remainder / (1 - percent / 100);
+        return {
+          family: "recover-whole-from-remainder",
+          stem: `After ${percent}% of a quantity is removed, ${remainder} remains. What was the original quantity?`,
+          correct: original,
+          wrong: [[remainder / (percent / 100), "This treats the remainder as the removed portion."], [remainder * (1 + percent / 100), "This increases the remainder by the removed percent instead of undoing the multiplier."], [remainder + percent, "This adds a percent as an absolute quantity."], [remainder * percent / 100, "This finds a percent of the remainder rather than the original whole."]],
+          explanation: `${100 - percent}% remains, so the original is ${remainder}/${1 - percent / 100} = ${formatNumber(original)}.`,
+          steps: ["Find the percentage that remains.", "Divide the remainder by its decimal share of the original."],
+          principles: ["Recover a whole by dividing a known part by its fractional share."],
+          verification: quotient(remainder * 100, 100 - percent),
+        };
+      },
+      (t) => {
+        const first = 5 * t.int(2, 8);
+        const secondOfRest = 5 * t.int(2, 8);
+        const selected = first + (100 - first) * secondOfRest / 100;
+        return {
+          family: "percent-of-remainder",
+          stem: `${first}% of a group is selected first. Then ${secondOfRest}% of the remaining group is selected. What percent of the original group is selected altogether?`,
+          correct: selected,
+          wrong: [[first + secondOfRest, "This applies both percentages to the original group."], [first * secondOfRest / 100, "This finds the overlap of the percentages rather than the total selected."], [secondOfRest, "This ignores the first selected portion."], [100 - selected, "This is the percentage left unselected."]],
+          explanation: `After the first selection, ${100 - first}% remains. The second selection is ${(100 - first) * secondOfRest / 100}% of the original, for ${formatNumber(selected)}% total.`,
+          steps: ["Find the percent of the original group remaining.", "Take the second percent of that remainder and add the first selection."],
+          principles: ["A percent of a remainder uses a smaller base than the original whole."],
+        };
+      },
+    ],
+  },
+});
+
+importActShapeSelections("mean and median", {
+  Easy: [["center and spread", "Easy", 0], ["center and spread", "Easy", 1]],
+  Medium: [["center and spread", "Medium", 0], ["center and spread", "Medium", 1]],
+  Hard: [["averages", "Hard", 0], ["averages", "Hard", 1]],
+});
+
+registerShapePhrasings("spread", "data-spread measure");
+
+defineShapes({
+  "spread": {
+    Easy: [
+      (t) => {
+        const low = t.int(2, 20);
+        const high = low + t.int(8, 30);
+        return {
+          family: "range-from-extremes", stem: `A data set has minimum ${low} and maximum ${high}. What is its range?`, correct: high - low,
+          wrong: [[high, "This is the maximum, not the difference between the extremes."], [low, "This is the minimum, not the range."], [high + low, "This adds the extremes instead of subtracting them."], [(high + low) / 2, "This is the midpoint of the extremes, not the range."]],
+          explanation: `Range = ${high} ${MINUS} ${low} = ${high - low}.`, steps: ["Identify the maximum and minimum.", "Subtract the minimum from the maximum."], principles: ["Range measures the distance between the extreme values."], verification: { kind: "sum", inputs: [high, -low], expected: high - low },
+        };
+      },
+      (t) => {
+        const q1 = t.int(5, 25);
+        const q3 = q1 + t.int(6, 24);
+        return {
+          family: "interquartile-range", stem: `The first quartile of a data set is ${q1}, and the third quartile is ${q3}. What is the interquartile range?`, correct: q3 - q1,
+          wrong: [[q3, "This is the third quartile alone."], [q1, "This is the first quartile alone."], [q3 + q1, "This adds the quartiles instead of finding the width between them."], [(q3 + q1) / 2, "This is the midpoint between the quartiles."]],
+          explanation: `IQR = Q3 ${MINUS} Q1 = ${q3} ${MINUS} ${q1} = ${q3 - q1}.`, steps: ["Locate Q1 and Q3.", "Subtract Q1 from Q3."], principles: ["The interquartile range covers the middle half of a data set."], verification: { kind: "sum", inputs: [q3, -q1], expected: q3 - q1 },
+        };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const range = t.int(5, 20);
+        const factor = t.int(2, 6);
+        return {
+          family: "range-under-scaling", stem: `A data set has range ${range}. Every value is multiplied by ${factor}. What is the range of the new data set?`, correct: range * factor,
+          wrong: [[range + factor, "This treats multiplication of every value as an additive change."], [range, "This would be true for adding a constant, not multiplying by a factor."], [factor, "This is the scale factor alone."], [range / factor, "This scales the range in the opposite direction."]],
+          explanation: `Multiplying every value by ${factor} multiplies both extremes and their difference by ${factor}, so the new range is ${range * factor}.`, steps: ["Track how both extremes scale.", "Multiply their original difference by the scale factor."], principles: ["Multiplying all observations by a positive factor multiplies every spread measure by that factor."], verification: { kind: "product", inputs: [range, factor], expected: range * factor },
+        };
+      },
+      (t) => {
+        const oldLow = t.int(5, 20);
+        const oldHigh = oldLow + t.int(8, 25);
+        const added = oldHigh + t.int(3, 15);
+        return {
+          family: "range-after-outlier", stem: `A data set has minimum ${oldLow} and maximum ${oldHigh}. After ${added} is added, what is the new range?`, correct: added - oldLow,
+          wrong: [[oldHigh - oldLow, "This is the old range before the new maximum is included."], [added - oldHigh, "This is only the increase in the maximum."], [added, "This is the new maximum, not the range."], [added + oldLow, "This adds the extremes instead of subtracting them."]],
+          explanation: `${added} becomes the new maximum, so the range is ${added} ${MINUS} ${oldLow} = ${added - oldLow}.`, steps: ["Recognize that the added value is the new maximum.", "Subtract the unchanged minimum."], principles: ["An outlier beyond an extreme changes the range by moving that extreme."], verification: { kind: "sum", inputs: [added, -oldLow], expected: added - oldLow },
+        };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const spreadA = t.int(2, 6);
+        const spreadB = spreadA + t.int(2, 6);
+        return {
+          family: "compare-standard-deviation", stem: `Data set A is clustered within ${spreadA} units of its mean, while equally sized data set B is clustered within ${spreadB} units of the same mean. Which set has the greater standard deviation?`, correct: "Data set B",
+          wrong: [["Data set A", "The more tightly clustered set has the smaller standard deviation."], ["The standard deviations are equal", "The sets have different distances from their common mean."], ["It cannot be determined", "The stated clustering widths are sufficient for this comparison."], ["Neither set has a standard deviation", "Both numerical data sets have defined standard deviations."]],
+          explanation: `Set B is more dispersed around the same mean, so it has the greater standard deviation.`, steps: ["Compare distances from the shared mean.", "Identify the set with greater dispersion."], principles: ["Standard deviation increases as observations spread farther from their mean."],
+        };
+      },
+      (t) => {
+        const deviation = t.int(2, 12);
+        const factor = t.int(2, 7);
+        return {
+          family: "standard-deviation-under-scaling", stem: `A data set has standard deviation ${deviation}. Every value is multiplied by ${factor} and then increased by 10. What is the new standard deviation?`, correct: deviation * factor,
+          wrong: [[deviation * factor + 10, "Adding the same constant shifts the center but does not change spread."], [deviation + factor, "This adds the scale factor rather than multiplying by it."], [deviation + 10, "This changes spread for a translation, which leaves it unchanged."], [deviation, "This ignores the multiplicative scaling of every deviation from the mean."]],
+          explanation: `Multiplication by ${factor} scales standard deviation to ${deviation * factor}; adding 10 afterward does not affect it.`, steps: ["Apply the multiplicative scale to the standard deviation.", "Ignore the common translation when measuring spread."], principles: ["Scaling changes standard deviation; translation does not."], verification: { kind: "product", inputs: [deviation, factor], expected: deviation * factor },
+        };
+      },
+    ],
+  },
+});
+
+TEXT_ANSWER.add("spread|Hard");
+
+importActShapeSubskill("distributions", "data displays");
+importActShapeSubskill("linear models", "regression");
+
+registerShapePhrasings("scatterplots", "scatterplot association");
+
+defineShapes({
+  "scatterplots": {
+    Easy: [
+      (t) => ({
+        family: "positive-association", stem: `In a scatterplot, the points generally rise from left to right, with larger x-values paired with larger y-values. Which association is shown?`, correct: "Positive association",
+        wrong: [["Negative association", "A negative association falls as x increases."], ["No association", "The points have a consistent upward tendency."], ["A vertical association", "Vertical alignment is not the described trend."], ["A nonlinear decrease", "The description gives an increase, not a decrease."]], explanation: `Both variables tend to increase together, so the association is positive.`, steps: ["Read the direction of the point cloud.", "Match an upward trend with positive association."], principles: ["A positive association pairs larger inputs with generally larger outputs."],
+      }),
+      (t) => ({
+        family: "negative-association", stem: `A scatterplot slopes downward overall: as x increases, y generally decreases. How should the association be described?`, correct: "Negative association",
+        wrong: [["Positive association", "A positive association rises as x increases."], ["No association", "A clear downward tendency is present."], ["Perfect equality", "Association describes a trend, not equality of coordinates."], ["Increasing curvature", "The stated direction is decreasing."]], explanation: `The variables move in opposite directions, which is a negative association.`, steps: ["Follow the point cloud from left to right.", "Classify the downward trend as negative."], principles: ["A negative association pairs larger inputs with generally smaller outputs."],
+      }),
+    ],
+    Medium: [
+      (t) => {
+        const slope = t.int(2, 8);
+        const intercept = t.int(5, 30);
+        const x = t.int(4, 15);
+        return {
+          family: "scatterplot-line-prediction", stem: `A line of best fit for a scatterplot is y = ${lin(slope, intercept)}. What y-value does the model predict when x = ${x}?`, correct: slope * x + intercept,
+          wrong: [[slope + x + intercept, "This adds x to the slope instead of multiplying."], [slope * x, "This omits the intercept."], [x + intercept, "This omits multiplication by the slope."], [slope * intercept + x, "This multiplies the coefficients rather than evaluating the model."]], explanation: `Substitute x = ${x}: y = ${slope}(${x}) + ${intercept} = ${slope * x + intercept}.`, steps: ["Substitute the given x-value into the model.", "Multiply, then add the intercept."], principles: ["A line of best fit gives a model prediction, not necessarily an observed point."], verification: { kind: "sum", inputs: [slope * x, intercept], expected: slope * x + intercept },
+        };
+      },
+      (t) => ({
+        family: "outlier-weakens-association", stem: `A scatterplot has a strong positive linear pattern except for one point far from the trend. If that point is removed, what will most likely happen to the strength of the linear association?`, correct: "It will become stronger",
+        wrong: [["It will become weaker", "Removing a point far from the trend reduces unexplained scatter."], ["It must become negative", "Removing one off-trend point does not reverse the upward pattern."], ["It will become exactly zero", "The remaining points still follow a positive pattern."], ["It cannot change", "Outliers can materially affect measures of linear association."]], explanation: `Removing a point far from the otherwise linear cloud makes the remaining points adhere more closely to a line.`, steps: ["Identify the point as inconsistent with the main trend.", "Compare the remaining cloud with a straight line."], principles: ["An outlier can weaken the measured strength of a linear association."],
+      }),
+    ],
+    Hard: [
+      (t) => ({
+        family: "correlation-not-causation", stem: `A scatterplot from an observational study shows a strong positive association between two variables. Which conclusion is justified?`, correct: "The variables are associated, but the plot alone does not establish causation",
+        wrong: [["Increasing the first variable must cause the second to increase", "Association in observational data does not by itself prove causation."], ["The second variable must cause the first", "The direction of causation is not established."], ["No third variable can affect both", "A lurking variable remains possible."], ["Every point lies exactly on one line", "Strong association does not require a perfect fit."]], explanation: `The plot supports association; without random assignment or stronger design evidence, it does not establish cause and effect.`, steps: ["Distinguish association from an intervention.", "Limit the conclusion to what observational data support."], principles: ["Correlation alone does not imply causation."],
+      }),
+      (t) => ({
+        family: "residual-pattern-diagnosis", stem: `The residual plot for a linear model forms a clear U-shaped pattern around zero. What does this indicate about the linear model?`, correct: "A nonlinear model would likely fit better",
+        wrong: [["The linear model is ideal", "A good linear fit leaves residuals randomly scattered without a pattern."], ["Every prediction is exact", "A U-shaped residual pattern includes systematic prediction errors."], ["The variables have no relationship", "A curved residual pattern suggests a relationship that is not linear."], ["The slope must equal zero", "Residual curvature does not force a zero slope."]], explanation: `A systematic curve in the residuals means the linear model misses nonlinear structure.`, steps: ["Look for a nonrandom residual pattern.", "Connect curvature in residuals with a nonlinear relationship."], principles: ["Residuals for a suitable linear model should be randomly scattered around zero."],
+      }),
+    ],
+  },
+});
+
+[
+  "scatterplots|Easy",
+  "scatterplots|Medium",
+  "scatterplots|Hard",
+].forEach((cell) => TEXT_ANSWER.add(cell));
+
+importActShapeSelections("basic probability", {
+  Easy: [["compound probability", "Easy", 0], ["compound probability", "Easy", 1]],
+  Medium: [["compound probability", "Medium", 1], ["counting", "Easy", 0]],
+  Hard: [["compound probability", "Hard", 0], ["compound probability", "Medium", 0]],
+});
+
+registerShapePhrasings("conditional probability", "conditional-probability");
+
+defineShapes({
+  "conditional probability": {
+    Easy: [
+      (t) => {
+        const both = t.int(3, 12); const conditionOnly = t.int(4, 15); const conditioned = both + conditionOnly;
+        return { family: "conditional-from-counts", stem: `Among ${conditioned} students who take art, ${both} also take music. If an art student is selected at random, what is the probability that the student also takes music?`, correct: both / conditioned,
+          wrong: [[both, "This is the favorable count, not a probability."], [conditioned, "This is the conditioned group size, not a probability."], [conditionOnly / conditioned, "This is the probability of art without music."], [both / (conditioned + both), "This uses a total that counts the overlap twice."]], explanation: `Restrict the sample space to the ${conditioned} art students; ${both} are also in music, so the probability is ${both}/${conditioned}.`, steps: ["Restrict the denominator to students satisfying the condition.", "Divide the overlap count by that denominator."], principles: ["P(A | B) uses only outcomes in B as its sample space."], verification: { kind: "probability", inputs: [both, conditioned], expected: both / conditioned } };
+      },
+      (t) => {
+        const red = t.int(4, 12); const blue = t.int(4, 12);
+        return { family: "second-draw-given-first", stem: `A bag contains ${red} red and ${blue} blue tokens. Given that a red token was drawn and not replaced, what is the probability the next token is red?`, correct: (red - 1) / (red + blue - 1),
+          wrong: [[red / (red + blue), "This uses the original composition before the known red draw."], [red / (red + blue - 1), "This reduces the total but not the red count."], [(red - 1) / (red + blue), "This reduces the red count but not the total."], [blue / (red + blue - 1), "This gives the probability of blue on the second draw."]], explanation: `After the known red draw, ${red - 1} red tokens remain among ${red + blue - 1} total.`, steps: ["Update both the favorable and total counts after the known draw.", "Form the new favorable-to-total ratio."], principles: ["Without replacement, a known outcome changes the next-draw sample space."], verification: { kind: "probability", inputs: [red - 1, red + blue - 1], expected: (red - 1) / (red + blue - 1) } };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const group = t.int(30, 80); const overlap = t.int(8, group - 8); const percent = overlap / group * 100;
+        return { family: "conditional-percent-table", stem: `A two-way table shows that ${group} surveyed people use public transit and ${overlap} of those people also bicycle to work. What percent of transit users bicycle to work?`, correct: percent,
+          wrong: [[overlap, "This is the overlap count, not its percentage of transit users."], [group, "This is the conditioned group size."], [100 - percent, "This is the percent of transit users who do not bicycle."], [overlap / 100, "This converts the count as if it were already a percent."]], explanation: `Use transit users as the denominator: ${overlap}/${group} · 100 = ${formatNumber(percent)}%.`, steps: ["Use the conditioned row or column as the denominator.", "Divide the overlap and convert to percent."], principles: ["A conditional table percentage is an overlap divided by the conditioned group."] };
+      },
+      (t) => {
+        const pA = t.int(2, 8) / 10; const pBgivenA = t.int(2, 8) / 10;
+        return { family: "intersection-from-conditional", stem: `For events A and B, P(A) = ${pA} and P(B | A) = ${pBgivenA}. What is P(A and B)?`, correct: pA * pBgivenA,
+          wrong: [[pA + pBgivenA, "This adds probabilities instead of using the conditional product rule."], [pBgivenA / pA, "This divides the conditional probability by the conditioning event."], [pA, "This ignores the fraction of A outcomes that also lie in B."], [pBgivenA, "This is conditional within A, not probability in the full sample space."]], explanation: `P(A and B) = P(A)P(B | A) = ${pA}(${pBgivenA}) = ${formatNumber(pA * pBgivenA)}.`, steps: ["Write the conditional multiplication rule.", "Multiply the conditioning-event probability by the conditional probability."], principles: ["P(A ∩ B) = P(A)P(B | A)."], verification: { kind: "product", inputs: [pA, pBgivenA], expected: pA * pBgivenA } };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const pA = t.int(2, 8) / 10; const pB = t.int(2, 8) / 10;
+        return { family: "independence-conditional", stem: `Events A and B are independent, with P(A) = ${pA} and P(B) = ${pB}. What is P(A | B)?`, correct: pA,
+          wrong: [[pA * pB, "This is P(A and B), not P(A given B)."], [pA / pB, "Independence does not require dividing the marginal probabilities."], [pB, "This is the probability of the conditioning event."], [pA + pB, "This adds marginal probabilities without accounting for overlap."]], explanation: `Independence means learning B does not change A, so P(A | B) = P(A) = ${pA}.`, steps: ["Use the definition of independent events.", "Replace the conditional probability with A's marginal probability."], principles: ["For independent events, P(A | B) = P(A)."], verification: { kind: "probability", inputs: [pA, 1], expected: pA } };
+      },
+      (t) => {
+        const total = 100; const a = 10 * t.int(3, 7); const overlap = t.int(5, a - 5); const b = overlap + t.int(8, 25);
+        return { family: "reverse-conditional", stem: `In a group of ${total}, ${a} satisfy A, ${b} satisfy B, and ${overlap} satisfy both. What is P(A | B)?`, correct: overlap / b,
+          wrong: [[overlap / a, "This is P(B | A), which uses A rather than B as the denominator."], [overlap / total, "This is the joint probability in the full group."], [a / b, "This uses all A outcomes, including those outside B."], [b / total, "This is P(B), not the requested conditional probability."]], explanation: `Once B is known, the sample space has ${b} outcomes, of which ${overlap} also satisfy A; P(A | B) = ${overlap}/${b}.`, steps: ["Restrict the denominator to event B.", "Count the outcomes in both A and B."], principles: ["Reversing a conditional probability changes its denominator."], verification: { kind: "probability", inputs: [overlap, b], expected: overlap / b } };
+      },
+    ],
+  },
+});
+
+registerShapePhrasings("samples and populations", "sampling inference");
+
+defineShapes({
+  "samples and populations": {
+    Easy: [
+      conceptualShape("identify-population", "A random sample of 200 students from a school is surveyed about lunch preferences. What is the population of interest?", "All students at the school", [["The 200 surveyed students", "Those students form the sample, not the full population."], ["All students in the city", "The study sampled one school and cannot automatically represent the city."], ["Only students who buy lunch", "The survey concerns all sampled students, not only one response group."], ["The survey questions", "Questions are the measurement instrument, not the population."]], "The population is the complete group the study aims to describe: all students at that school.", "A population is the entire group about which an inference is intended."),
+      conceptualShape("representative-random-sample", "Which method is most likely to produce a representative sample of voters in a town?", "Randomly select voters from the complete voter list", [["Survey visitors leaving one campaign rally", "A rally audience is systematically aligned with one campaign."], ["Ask only voters who volunteer online", "Volunteers can differ systematically from nonvolunteers."], ["Interview the first 100 people at city hall", "A convenience location excludes many town voters."], ["Choose only voters from the largest neighborhood", "One neighborhood does not represent the whole town."]], "Random selection from the complete population gives each listed voter a chance to be chosen.", "Random sampling reduces systematic selection bias."),
+    ],
+    Medium: [
+      conceptualShape("convenience-sample-bias", "A gym asks only people currently exercising in its weight room how often town residents exercise. What is the main sampling problem?", "The convenience sample likely overrepresents frequent exercisers", [["The sample is too random", "The selection is based on location, not random choice."], ["Exercise frequency cannot be measured", "It can be measured, but this sample is biased."], ["Every resident has the same chance to respond", "Residents outside the weight room have no chance in this design."], ["The population contains too many people", "Population size is not the source of this selection bias."]], "People present in a weight room are more likely than typical residents to exercise frequently.", "Convenience samples can systematically differ from the target population."),
+      conceptualShape("stratified-random-sample", "A school is 60% grades 9–10 and 40% grades 11–12. Which sampling plan best preserves this composition?", "Randomly sample within each grade band in a 60:40 ratio", [["Choose the same number from every individual grade", "Equal grade counts need not match the population's stated band proportions."], ["Survey one randomly chosen classroom", "One classroom may not represent both grade bands."], ["Ask students who arrive earliest", "Arrival time creates a convenience sample."], ["Select only grades 11–12", "This excludes most of the target population."]], "Sampling randomly inside each band while matching its population share is proportional stratified sampling.", "Stratification represents important subgroups in planned proportions."),
+    ],
+    Hard: [
+      conceptualShape("scope-of-generalization", "Researchers randomly sample adults from one county and find 62% support a proposal. To which group can the result most defensibly be generalized?", "Adults in that county", [["All adults in the country", "The sample frame covered only one county."], ["Everyone of every age in the county", "Only adults were sampled."], ["Only the sampled adults", "Random sampling supports inference beyond the sample to its source population."], ["All future county residents", "The study describes the population represented at the time of sampling."]], "The random sample represents the source population from which it was drawn: adults in that county.", "Generalization is limited to the population covered by the sampling frame."),
+      conceptualShape("nonresponse-bias", "A random survey has a very low response rate, and people with strong opinions are more likely to reply. Which concern is most important?", "Nonresponse may make respondents systematically unrepresentative", [["Random selection guarantees unbiased results regardless of response", "Random selection cannot correct systematic nonresponse after selection."], ["The sample automatically becomes a census", "A low response rate is the opposite of measuring everyone."], ["The response variable becomes categorical", "Variable type is unrelated to the response bias described."], ["The population size must be small", "Nonresponse bias can occur in populations of any size."]], "If response depends on opinion strength, the responding subset can differ systematically from all selected people.", "Nonresponse can reintroduce bias after a probability sample is drawn."),
+    ],
+  },
+});
+
+["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`samples and populations|${tier}`));
+
+registerShapePhrasings("margin of error", "confidence-interval margin");
+
+defineShapes({
+  "margin of error": {
+    Easy: [
+      (t) => {
+        const estimate = t.int(35, 75); const margin = t.int(2, 8);
+        return { family: "confidence-interval-lower-end", stem: `A survey estimate is ${estimate}% with a margin of error of ${margin} percentage points. What is the lower endpoint of the reported interval?`, correct: estimate - margin,
+          wrong: [[estimate + margin, "This is the upper endpoint."], [margin, "This is the margin alone, not an endpoint."], [estimate, "This is the point estimate at the center of the interval."], [estimate - margin / 100, "A percentage-point margin is subtracted directly, not as a decimal fraction."]], explanation: `The lower endpoint is ${estimate} ${MINUS} ${margin} = ${estimate - margin}%.`, steps: ["Identify the point estimate and margin.", "Subtract the margin from the estimate."], principles: ["A reported estimate ± margin spans from estimate minus margin to estimate plus margin."], verification: { kind: "sum", inputs: [estimate, -margin], expected: estimate - margin } };
+      },
+      conceptualShape("larger-sample-smaller-margin", "Two random samples use the same method and confidence level, but one sample is much larger. Which sample will generally have the smaller margin of error?", "The larger sample", [["The smaller sample", "Smaller samples have more sampling variability."], ["They must have equal margins", "Sample size affects sampling variability."], ["Whichever sample has the larger estimate", "The estimate's magnitude does not determine the standard sample-size effect."], ["It cannot be compared", "With method and confidence fixed, sample size gives the comparison."]], "A larger random sample generally yields a more precise estimate and a smaller margin of error.", "Increasing sample size reduces sampling variability."),
+    ],
+    Medium: [
+      (t) => {
+        const estimate = t.int(30, 70); const margin = t.int(3, 9);
+        return { family: "confidence-interval-width", stem: `An estimate is reported as ${estimate}% ± ${margin} percentage points. What is the total width, in percentage points, of the confidence interval?`, correct: 2 * margin,
+          wrong: [[margin, "This is the distance from the center to one endpoint, only half the width."], [estimate + margin, "This is the upper endpoint, not the interval width."], [estimate - margin, "This is the lower endpoint."], [2 * estimate, "The width depends on the margin, not twice the estimate."]], explanation: `The interval extends ${margin} points on each side, so its width is 2(${margin}) = ${2 * margin}.`, steps: ["Recognize that the margin applies on both sides.", "Double the margin."], principles: ["The width of estimate ± m is 2m."], verification: { kind: "product", inputs: [2, margin], expected: 2 * margin } };
+      },
+      conceptualShape("sample-size-quadrupling", "Under the usual square-root relationship, a study quadruples its random sample size while keeping the confidence level fixed. What happens approximately to the margin of error?", "It is cut in half", [["It is divided by four", "Margin scales with the square root of sample size, not sample size directly."], ["It doubles", "A larger sample decreases rather than increases sampling error."], ["It stays unchanged", "Sample size affects the standard error."], ["It becomes zero", "Finite samples retain sampling variability."]], "Margin of error is proportional to 1/√n, so multiplying n by 4 divides the margin by √4 = 2.", "Sampling error typically decreases in proportion to the reciprocal square root of sample size."),
+    ],
+    Hard: [
+      conceptualShape("confidence-level-tradeoff", "Using the same sample data, a researcher raises the confidence level from 90% to 99%. What happens to the margin of error?", "It increases", [["It decreases", "Greater confidence requires a wider interval, not a narrower one."], ["It remains exactly the same", "The critical value changes with confidence level."], ["It becomes zero", "Higher confidence does not eliminate sampling uncertainty."], ["It changes sign", "A margin of error is a nonnegative distance."]], "A higher confidence level requires a wider interval to capture the parameter more reliably, so the margin increases.", "For fixed data, greater confidence trades precision for wider intervals."),
+      conceptualShape("plausible-parameter-value", "A 95% confidence interval for a population proportion is 0.42 to 0.50. Which value is most plausible under this interval?", "0.47", [["0.35", "This lies below the reported interval."], ["0.58", "This lies above the reported interval."], ["1.20", "A proportion cannot exceed 1 and is outside the interval."], ["−0.10", "A proportion cannot be negative and is outside the interval."]], "The value 0.47 lies inside the reported confidence interval.", "Values inside a confidence interval are compatible with the estimate at its stated confidence procedure."),
+    ],
+  },
+});
+
+["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`margin of error|${tier}`));
+
+registerShapePhrasings("study design", "statistical study design");
+
+defineShapes({
+  "study design": {
+    Easy: [
+      conceptualShape("observational-study", "Researchers record participants' existing exercise habits and compare their blood pressure without assigning any behavior. What type of study is this?", "An observational study", [["A randomized experiment", "No exercise behavior was assigned at random."], ["A census", "The description does not say every population member was measured."], ["A simulation", "The researchers observed real participants rather than a model."], ["A matched pairs experiment", "No treatment was assigned within pairs."]], "The researchers observed existing behavior without imposing a treatment, so the study is observational.", "An observational study measures variables without assigning treatments."),
+      conceptualShape("experimental-treatment", "In a study testing a tutoring program, which group receives the treatment?", "The group assigned to use the tutoring program", [["The group that receives no tutoring program", "That group serves as a comparison or control."], ["Every student in the population", "Only assigned participants receive the treatment."], ["Only researchers collecting scores", "Researchers are not the experimental units receiving the program."], ["Students excluded from the study", "Excluded individuals receive no study condition."]], "The treatment is the condition being tested: use of the tutoring program.", "A treatment is the specific condition imposed on experimental units."),
+    ],
+    Medium: [
+      conceptualShape("random-assignment-causation", "Why is random assignment important in a controlled experiment?", "It helps balance lurking variables so treatment differences can support causal conclusions", [["It guarantees the sample represents the whole population", "Random assignment concerns treatment groups, not population sampling."], ["It eliminates all measurement error", "Measurement error can remain after random assignment."], ["It makes every participant receive the treatment", "Participants are assigned among different conditions."], ["It guarantees the desired result", "Randomization supports valid comparison, not a particular outcome."]], "Random assignment makes treatment groups comparable on average, isolating the treatment's effect.", "Random assignment supports causal inference by balancing confounders across treatments."),
+      conceptualShape("control-group-purpose", "What is the main purpose of a control group in an experiment?", "To provide a baseline for comparison with the treatment group", [["To ensure the treatment always works", "A control group tests rather than guarantees effectiveness."], ["To increase the population size", "The control is about comparison, not redefining the population."], ["To remove the need for random assignment", "Control groups still benefit from random assignment."], ["To receive every treatment simultaneously", "A control group receives the baseline condition."]], "The control group's outcomes show what happens without the active treatment under otherwise comparable conditions.", "A control group supplies a baseline against which treatment effects are measured."),
+    ],
+    Hard: [
+      conceptualShape("confounding-variable", "An observational study finds that people who carry umbrellas have wetter clothing. Which variable most plausibly confounds the association?", "Rainfall", [["Umbrella color", "Color does not explain both carrying an umbrella and wet clothing."], ["The number of survey questions", "Question count does not cause the observed association."], ["Participant identification numbers", "Arbitrary identifiers affect neither variable."], ["The order of names in the data file", "File order does not explain the real-world relationship."]], "Rain causes people to carry umbrellas and can also make clothing wet, explaining the association without umbrellas causing wetness.", "A confounder is related to both explanatory and response variables and can create a misleading association."),
+      conceptualShape("double-blind-design", "In a medication experiment, neither participants nor the staff evaluating outcomes know who received the medication or placebo. What feature is described?", "A double blind design", [["A convenience sample", "Convenience describes participant selection, not masking treatment identities."], ["A census", "Blinding does not mean the entire population participates."], ["An observational study", "Medication and placebo are assigned treatments."], ["A response bias survey", "The feature concerns masking in an experiment, not survey wording."]], "Both participants and outcome evaluators are unaware of assignments, which is double blinding.", "Blinding reduces expectation and evaluator effects in experiments."),
+    ],
+  },
+});
+
+["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`study design|${tier}`));
+
+/* ------------------------ Geometry and Trigonometry --------------------- */
+
+importActShapeSubskill("area", "area");
+importActShapeSubskill("surface area", "surface area");
+importActShapeSubskill("volume", "volume");
+importActShapeSubskill("angle relationships", "angles");
+importActShapeSubskill("triangle geometry", "triangles");
+importActShapeSubskill("trigonometric ratios", "right-triangle trigonometry");
+
+registerShapePhrasings("similarity", "similar-figure scale");
+
+defineShapes({
+  "similarity": {
+    Easy: [
+      importedActShape("similarity", "triangles", "Medium", 0),
+      (t) => {
+        const perimeter = t.int(12, 40); const scale = t.int(2, 6);
+        return { family: "similar-perimeter-scale", stem: `Two polygons are similar with linear scale factor ${scale} from the smaller to the larger. If the smaller perimeter is ${perimeter}, what is the larger perimeter?`, correct: perimeter * scale,
+          wrong: [[perimeter + scale, "This adds the scale factor instead of multiplying all side lengths."], [perimeter * scale * scale, "This uses the area scale factor for a perimeter."], [perimeter / scale, "This scales in the direction from larger to smaller."], [scale, "This is the scale factor alone."]], explanation: `Perimeter is a linear measure, so it scales by ${scale}: ${perimeter}(${scale}) = ${perimeter * scale}.`, steps: ["Identify the linear scale factor.", "Multiply the perimeter by that factor."], principles: ["Perimeters of similar figures scale by the linear factor."], verification: { kind: "product", inputs: [perimeter, scale], expected: perimeter * scale } };
+      },
+    ],
+    Medium: [
+      importedActShape("similarity", "area", "Medium", 1),
+      (t) => {
+        const a = t.int(3, 9); const b = a + t.int(2, 7); const side = t.int(5, 18);
+        return { family: "similar-side-from-ratio", stem: `Two similar triangles have corresponding side ratio ${a}:${b}. If the smaller corresponding side is ${side * a}, what is the larger side?`, correct: side * b,
+          wrong: [[side * a + b - a, "This adds the change in ratio parts instead of scaling."], [side * a * a / b, "This reverses the similarity ratio."], [side * a, "This repeats the smaller side."], [side * a * b, "This multiplies by the larger ratio term without dividing by the smaller term."]], explanation: `Each ratio part represents ${side}, so the larger side is ${b}(${side}) = ${side * b}.`, steps: ["Find the length represented by one ratio part.", "Multiply by the larger ratio term."], principles: ["Corresponding sides of similar triangles are proportional."], verification: { kind: "product", inputs: [side, b], expected: side * b } };
+      },
+    ],
+    Hard: [
+      importedActShape("similarity", "surface area", "Hard", 1),
+      importedActShape("similarity", "volume", "Hard", 1),
+    ],
+  },
+});
+
+registerShapePhrasings("Pythagorean theorem", "right-triangle length");
+
+defineShapes({
+  "Pythagorean theorem": {
+    Easy: [
+      importedActShape("Pythagorean theorem", "triangles", "Easy", 1),
+      importedActShape("Pythagorean theorem", "coordinate geometry", "Easy", 1),
+    ],
+    Medium: [
+      (t) => {
+        const k = t.int(2, 6); const leg = 3 * k; const other = 4 * k; const hyp = 5 * k;
+        return { family: "missing-leg", stem: `A right triangle has hypotenuse ${hyp} and one leg ${leg}. What is the length of the other leg?`, correct: other,
+          wrong: [[hyp - leg, "This subtracts lengths instead of subtracting their squares."], [Math.sqrt(hyp * hyp + leg * leg), "This treats the hypotenuse as another leg."], [hyp + leg, "This adds side lengths rather than using the Pythagorean theorem."], [leg, "This repeats the known leg."]], explanation: `The missing leg is √(${hyp}² ${MINUS} ${leg}²) = √${other * other} = ${other}.`, steps: ["Square the hypotenuse and known leg.", "Subtract and take the positive square root."], principles: ["For a right triangle, a² + b² = c² with c the hypotenuse."] };
+      },
+      (t) => {
+        const k = t.int(2, 8); const width = 5 * k; const height = 12 * k; const diagonal = 13 * k;
+        return { family: "rectangle-diagonal", stem: `A rectangle is ${width} units wide and ${height} units tall. What is the length of its diagonal?`, correct: diagonal,
+          wrong: [[width + height, "This adds the side lengths rather than using them as perpendicular legs."], [height - width, "This subtracts the side lengths."], [width * height, "This is the rectangle's area."], [(width + height) * 2, "This is the perimeter."]], explanation: `The diagonal is the hypotenuse: √(${width}² + ${height}²) = ${diagonal}.`, steps: ["Treat the width and height as perpendicular legs.", "Apply the Pythagorean theorem and take the square root."], principles: ["A rectangle's diagonal forms a right triangle with two adjacent sides."], verification: { kind: "pythagorean", inputs: [width, height], expected: diagonal } };
+      },
+    ],
+    Hard: [
+      (t) => {
+        const k = t.int(1, 5); const a = 3 * k; const b = 4 * k; const c = 12 * k; const diagonal = 13 * k;
+        return { family: "rectangular-prism-diagonal", stem: `A rectangular prism has side lengths ${a}, ${b}, and ${c}. What is the length of the segment joining opposite vertices?`, correct: diagonal,
+          wrong: [[a + b + c, "This adds three edge lengths rather than combining perpendicular components."], [a * b * c, "This is the volume."], [5 * k, `This is only the diagonal of the ${a} by ${b} face.`], [Math.sqrt(a * a + b * b), "This omits the third dimension."]], explanation: `The space diagonal is √(${a}² + ${b}² + ${c}²) = √${diagonal * diagonal} = ${diagonal}.`, steps: ["Find or represent the diagonal of one face.", "Combine that perpendicular length with the third edge using the Pythagorean theorem again."], principles: ["A rectangular-prism diagonal satisfies d² = l² + w² + h²."], verification: { kind: "pythagorean", inputs: [5 * k, c], expected: diagonal } };
+      },
+      (t) => {
+        const y = t.int(2, 9); const run = t.int(3, 10); const distance = Math.hypot(run, y);
+        return { family: "coordinate-distance-unknown", stem: `The distance between (0, 0) and (x, ${y}) is ${formatNumber(distance)}, where x is positive. What is x?`, correct: run,
+          wrong: [[distance - y, "This subtracts coordinate differences instead of their squares."], [distance + y, "This adds a coordinate difference to the distance."], [y, "This repeats the vertical coordinate difference."], [distance * distance - y * y, "This is x², before taking the positive square root."]], explanation: `x² + ${y}² = ${formatNumber(distance)}², so x² = ${run * run} and positive x = ${run}.`, steps: ["Apply the distance formula from the origin.", "Subtract the vertical square and take the positive square root."], principles: ["The distance formula is the Pythagorean theorem in coordinates."] };
+      },
+    ],
+  },
+});
+
+registerShapePhrasings("circle measures", "circle arc and angle");
+
+defineShapes({
+  "circle measures": {
+    Easy: [
+      importedActShape("circle measures", "circles", "Easy", 0),
+      importedActShape("circle measures", "circles", "Easy", 1),
+    ],
+    Medium: [
+      importedActShape("circle measures", "circles", "Medium", 0),
+      importedActShape("circle measures", "circles", "Medium", 1),
+    ],
+    Hard: [
+      importedActShape("circle measures", "circles", "Hard", 1),
+      (t) => {
+        const radius = t.int(3, 15);
+        return { family: "radius-tangent-angle", stem: `A line is tangent to a circle at point T, and O is the center of the circle. What is the measure, in degrees, of the angle between OT and the tangent line?`, correct: 90,
+          wrong: [[radius, "The radius length does not determine the angle measure."], [45, "A radius to a tangent point forms a right angle, not a 45-degree angle."], [180, "A straight angle would place the radius along the tangent."], [360, "This is a full turn, not the angle at the tangency point."]], explanation: `A radius drawn to a point of tangency is perpendicular to the tangent line, so the angle is 90°.`, steps: ["Identify OT as a radius to the tangency point.", "Apply the radius-tangent perpendicularity theorem."], principles: ["A tangent to a circle is perpendicular to the radius at the point of tangency."] };
+      },
+    ],
+  },
+});
+
+registerShapePhrasings("circle equations", "coordinate-circle equation");
+
+defineShapes({
+  "circle equations": {
+    Easy: [
+      (t) => {
+        const h = t.int(-8, 8); const k = t.int(-8, 8); const r = t.int(2, 10);
+        return { family: "center-x-from-standard-form", stem: `A circle has equation (x ${signed(-h)})² + (y ${signed(-k)})² = ${r * r}. What is the x-coordinate of its center?`, correct: h,
+          wrong: [[-h, "This reads the sign in the squared binomial without reversing it."], [k, "This is the y-coordinate of the center."], [-k, "This reverses the y-coordinate's sign and reports the wrong coordinate."], [r, "This is the radius, not a center coordinate."]], explanation: `In (x ${MINUS} h)² + (y ${MINUS} k)² = r², the center is (h, k), so the x-coordinate is ${num(h)}.`, steps: ["Match each squared binomial to standard circle form.", "Reverse the displayed x-binomial sign to read h."], principles: ["A circle centered at (h, k) has equation (x − h)² + (y − k)² = r²."] };
+      },
+      (t) => {
+        const h = t.int(-7, 7); const k = t.int(-7, 7); const r = t.int(3, 12);
+        return { family: "radius-from-standard-form", stem: `The equation (x ${signed(-h)})² + (y ${signed(-k)})² = ${r * r} represents a circle. What is its radius?`, correct: r,
+          wrong: [[r * r, "This is the squared radius on the right side."], [2 * r, "This is the diameter."], [h, "This is a center coordinate."], [Math.abs(h) + Math.abs(k), "The center coordinates do not add to give the radius."]], explanation: `The right side is r² = ${r * r}, so the positive radius is √${r * r} = ${r}.`, steps: ["Identify the squared radius on the right side.", "Take its positive square root."], principles: ["The right side of standard circle form is the square of the radius."] };
+      },
+    ],
+    Medium: [
+      (t) => {
+        const h = t.int(1, 8); const k = t.int(1, 8); const r = t.int(2, 9);
+        const answer = `(x ${MINUS} ${h})² + (y ${MINUS} ${k})² = ${r * r}`;
+        return { family: "write-standard-circle-equation", stem: `Which equation represents the circle centered at (${h}, ${k}) with radius ${r}?`, correct: answer,
+          wrong: [[`(x + ${h})² + (y + ${k})² = ${r * r}`, "This reverses both center coordinates."], [`(x ${MINUS} ${h})² + (y ${MINUS} ${k})² = ${r}`, "This uses the radius rather than its square."], [`(x ${MINUS} ${k})² + (y ${MINUS} ${h})² = ${r * r}`, "This swaps the center coordinates."], [`(x + ${h})² + (y ${MINUS} ${k})² = ${r * r}`, "This reverses only the x-coordinate."]], explanation: `Substitute h = ${h}, k = ${k}, and r = ${r} into (x ${MINUS} h)² + (y ${MINUS} k)² = r².`, steps: ["Place the center coordinates with opposite signs in the binomials.", "Square the radius on the right side."], principles: ["Standard circle form records center with opposite binomial signs."] };
+      },
+      (t) => {
+        const h = t.int(-6, 6); const k = t.int(-6, 6); const r = t.int(3, 12);
+        return { family: "vertical-point-on-circle", stem: `A circle centered at (${num(h)}, ${num(k)}) has radius ${r}. A point on the circle has x-coordinate ${num(h)}. What is the greater possible y-coordinate?`, correct: k + r,
+          wrong: [[k - r, "This is the lesser possible y-coordinate."], [r, "This is the vertical distance from the center, not the coordinate itself."], [k, "This is the center's y-coordinate, which is not on the circle at the same x-coordinate."], [h + r, "This adds the radius to the x-coordinate instead of the y-coordinate."]], explanation: `Directly above and below the center, y = ${num(k)} ± ${r}; the greater value is ${num(k + r)}.`, steps: ["Recognize that matching the center's x-coordinate gives vertical radius endpoints.", "Add the radius to the center's y-coordinate."], principles: ["Endpoints of a vertical diameter have y-coordinates k ± r."] };
+      },
+    ],
+    Hard: [
+      importedActShape("circle equations", "circles", "Hard", 0),
+      (t) => {
+        const h = t.nonzero(-9, 9); const k = t.int(-9, 9); const radiusSquared = h * h + k * k;
+        return { family: "circle-through-origin-radius-squared", stem: `A circle centered at (${num(h)}, ${num(k)}) passes through the origin. What is the square of its radius?`, correct: radiusSquared,
+          wrong: [[Math.abs(h) + Math.abs(k), "This adds coordinate distances instead of their squares."], [Math.hypot(h, k), "This is the radius, not its square."], [h * h - k * k, "This subtracts squared coordinate differences instead of adding them."], [h + k, "This adds signed coordinates rather than using distance."]], explanation: `The radius is the distance from (${num(h)}, ${num(k)}) to (0, 0), so r² = ${h}² + ${k}² = ${radiusSquared}.`, steps: ["Use the center-to-origin segment as a radius.", "Apply the squared distance formula without taking a square root."], principles: ["Squared distance between (h, k) and the origin is h² + k²."], verification: { kind: "sum", inputs: [h * h, k * k], expected: radiusSquared } };
+      },
+    ],
+  },
+});
+
+["Easy", "Medium", "Hard"].forEach((tier) => TEXT_ANSWER.add(`circle equations|${tier}`));
+
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------
@@ -3759,6 +4827,55 @@ const TIER_SECONDS = { Easy: 45, Medium: 75, Hard: 120 };
 // only way to emit numeric choices in ascending order while the planner keeps
 // key positions balanced within each difficulty tier.
 let positionMirror = null;
+const shapeUses = new Map();
+let freshness = null;
+
+function freshnessState() {
+  if (freshness) return freshness;
+  const catalog = loadCatalog();
+  const emittedStems = new Set();
+  const emittedTokenSets = [];
+  catalog.sections.forEach((section) => {
+    loadBank(section.key)
+      .filter((question) => (
+        section.key !== "sat-math" || !REBUILD || question.provenance.generator !== GENERATOR
+      ))
+      .forEach((question) => {
+        emittedStems.add(`${question.stimulus || ""}\n${question.stem}`.toLowerCase());
+        if (section.key === "sat-math") emittedTokenSets.push(tokenSet(question));
+      });
+  });
+  const emittedChoiceSets = new Set(
+    loadBank("sat-math")
+      .filter((question) => !REBUILD || question.provenance.generator !== GENERATOR)
+      .filter((question) => Array.isArray(question.choices))
+      .map((question) => question.choices.slice().sort().join("||")),
+  );
+  freshness = { emittedChoiceSets, emittedStems, emittedTokenSets };
+  return freshness;
+}
+
+function candidateFreshness(data, correctText, selection, responseType) {
+  const state = freshnessState();
+  const stem = `${data.stimulus || ""}\n${data.stem}`.toLowerCase();
+  const tokens = tokenSet({ section: "Math", stimulus: data.stimulus || null, stem: data.stem });
+  const overlap = state.emittedTokenSets.reduce(
+    (largest, seen) => Math.max(largest, jaccard(tokens, seen)),
+    0,
+  );
+  const freshStem = !state.emittedStems.has(stem) && overlap < 0.9;
+  const choiceSet = responseType === "multiple-choice"
+    ? [correctText, ...selection.chosen.map((entry) => entry.text)].sort().join("||")
+    : null;
+  return {
+    choiceSet,
+    freshChoices: !choiceSet || !state.emittedChoiceSets.has(choiceSet),
+    freshStem,
+    overlap,
+    stem,
+    tokens,
+  };
+}
 
 function nextAnswerPosition(difficulty, seedKey) {
   if (!positionMirror) {
@@ -3811,7 +4928,7 @@ function selectDistractors(correctText, wrong, target) {
     high = above.length;
     low = 3 - high;
   }
-  if (low > below.length) return null;
+  if (low > below.length) return { chosen: pool.slice(0, 3), ordered: false };
   const chosen = below.slice(below.length - low).concat(above.slice(0, high));
   return { chosen, ordered: low === target };
 }
@@ -3832,28 +4949,60 @@ function generate(parameters) {
     ? nextAnswerPosition(tier, seed)
     : null;
   const helpers = tools(random);
+  const start = sequence % shapes.length;
+  const orderedShapes = shapes.slice().sort((left, right) => {
+    const useDifference = (shapeUses.get(left) || 0) - (shapeUses.get(right) || 0);
+    if (useDifference !== 0) return useDifference;
+    const leftIndex = (shapes.indexOf(left) - start + shapes.length) % shapes.length;
+    const rightIndex = (shapes.indexOf(right) - start + shapes.length) % shapes.length;
+    return leftIndex - rightIndex;
+  });
 
-  let fallback = null;
-  for (let pass = 0; pass < 3; pass += 1) {
+  let bestRejectedOverlap = 1;
+  for (let pass = 0; pass < 8; pass += 1) {
+    let passFreshChoice = null;
+    let passRepeatedChoice = null;
+    let passOrderedRepeatedChoice = null;
     for (let offset = 0; offset < shapes.length; offset += 1) {
-      const shape = shapes[(sequence + offset) % shapes.length];
-      const data = shape(helpers, scene, sequence);
+      const shape = orderedShapes[offset];
+      const use = shapeUses.get(shape) || 0;
+      const variant = use + pass;
+      const data = shape(helpers, scene, sequence, variant);
       const correctText = label(data.correct);
       const selection = selectDistractors(correctText, data.wrong, answerPosition);
       if (!selection) continue;
-      const candidate = { data, selection };
-      if (!fallback) fallback = candidate;
-      if (selection.ordered || answerPosition === null) {
+      const fresh = candidateFreshness(data, correctText, selection, responseType);
+      if (!fresh.freshStem) {
+        bestRejectedOverlap = Math.min(bestRejectedOverlap, fresh.overlap);
+        continue;
+      }
+      const candidate = { data, selection, shape, use, variant, ...fresh };
+      if (fresh.freshChoices && !passFreshChoice) passFreshChoice = candidate;
+      if (!fresh.freshChoices && !passRepeatedChoice) passRepeatedChoice = candidate;
+      if (!fresh.freshChoices && selection.ordered && !passOrderedRepeatedChoice) {
+        passOrderedRepeatedChoice = candidate;
+      }
+      if (fresh.freshChoices && (selection.ordered || answerPosition === null)) {
         return finish(candidate, { responseType, scene, sequence, tier });
       }
     }
+    const passChoice = passOrderedRepeatedChoice || passFreshChoice || passRepeatedChoice;
+    if (passChoice) return finish(passChoice, { responseType, scene, sequence, tier });
   }
-  if (!fallback) throw new Error(`Could not build ${task.subskill}/${tier} at ${sequence}`);
-  return finish(fallback, { responseType, scene, sequence, tier });
+  throw new Error(
+    `Could not build ${task.subskill}/${tier} at ${sequence}; ` +
+    `best rejected overlap ${Math.round(bestRejectedOverlap * 100)}%; ` +
+    `shape uses ${shapes.map((shape) => shapeUses.get(shape) || 0).join(",")}`,
+  );
 }
 
 function finish(candidate, { responseType, scene, sequence, tier }) {
-  const { data, selection } = candidate;
+  const { choiceSet, data, selection, shape, stem, tokens, use } = candidate;
+  if (shape) shapeUses.set(shape, use + 1);
+  const state = freshnessState();
+  if (stem) state.emittedStems.add(stem);
+  if (tokens) state.emittedTokenSets.push(tokens);
+  if (choiceSet) state.emittedChoiceSets.add(choiceSet);
   const tags = (data.tags || []).concat([
     `templateFamily:sat-math/${data.family}/${tier.toLowerCase()}`,
   ]);
@@ -3866,19 +5015,21 @@ function finish(candidate, { responseType, scene, sequence, tier }) {
   });
 }
 
+module.exports = {
+  SHAPES,
+  context,
+  formatNumber,
+  generate,
+  mathQuestion,
+};
+
 if (require.main === module) {
   const completed = generateSection("sat-math", generate, {
     generatorName: GENERATOR,
-    regenerateGenerated: process.argv.includes("--rebuild"),
+    regenerateGenerated: REBUILD,
     finalMultipleChoiceCount: 458,
   });
   console.log(
     `SAT Math: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,
   );
 }
-
-module.exports = {
-  context,
-  formatNumber,
-  mathQuestion,
-};

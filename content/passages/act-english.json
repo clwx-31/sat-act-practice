@@ -1,0 +1,602 @@
+[
+  {
+    "id": "act-english-p001",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "The Key Counter",
+    "intro": "",
+    "content": "[1] The hardware store on Vliet Street hired me the summer I turned\n{1 sixteen, and put me} at the key counter, a narrow station between the paint\nmixer and the register. My training {2 lasted} eleven minutes. Ruth, who had\nworked there since 1988, showed me how to clamp a blank, align the shoulders,\nand let the cutting wheel do the work. Then she went back to the paint desk and\nleft me alone with a wall of four hundred blanks. {3}\n\n[2] For the first week I was certain I would ruin something. A key is an\nunforgiving object. {4 Cut it a few thousandths of an inch too deep, the pins\nwill not set,} and the customer comes back holding a key that turns halfway and\nstops. I made three bad keys my first day, and Ruth remade {5 all three of them\nover again} without a word.\n\n[3] What I did not expect was how much of the job was listening. People do not\ncome to a key counter for keys. They come because a daughter is moving home, or\na tenant left without warning, or a locksmith quoted them ninety dollars. Ruth\nand I {6 was} the only ones who heard any of it. {7} They explain all of this\nwhile the wheel is running, over the noise, and by the end of the summer I could\ntell from a {8 customers} first sentence whether they wanted a copy or {9 wanted\na witness}.\n\n[4] Ruth's phrase for the difficult ones was {10 simple, cut it twice.} She\nmeant: take a second blank and do the job again, slowly, whether or not the\nfirst one was fine. I thought this was superstition. {11 It} was not. It was a\nway of making sure the counter never became a place where I hurried.\n\n[5] {12 Consequently,} I have not cut a key in four years. But I still notice\nwhen someone behind a counter is only {13 phoning it in}, and I know exactly\nwhat that costs. What stayed with me was not {14 clamping the blank, how to\nalign the shoulders, or the wheel}. It was the eleven minutes Ruth spent, and\nthe four hundred blanks she left me alone with.",
+    "wordCount": 376,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p001",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p002",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "Where the Snow Lands",
+    "intro": "",
+    "content": "[1] Along the interstates of the northern plains, low slatted\n{1 fences, stand} in the fields, sometimes a hundred yards from the pavement.\n{2 Not to keep anything in or out.} They are snow fences, and their work is to\ndecide where snow lands.\n\n[2] The common assumption is that a snow fence blocks drifting snow. It does\nnot. A solid barrier would only move the problem, because wind piles snow\ndirectly against it and the drift creeps forward until the fence is buried and\nthe road is covered again. The gaps in a snow fence {3 are} what make it work.\n\n[3] {4} Slower air cannot carry as much snow, so the snow settles out downwind\nin a long, {5 tapering drift that gradually tapers off}. {6 Measured across its\nface, engineers find that a fence works best at about half open.} A fence that\nis too solid drifts against itself, and one that is too open never slows the\nwind enough to make it drop what it is carrying. The proportion of gap to board\n{7 — roughly half and half —} matters more than whether the slats are wood or\nplastic.\n\n[4] Placement matters {8 more than the fence}. A drift forms downwind for about\nthirty times the fence's height, so a six-foot fence belongs some two hundred\nfeet back from the road it protects, {9 farther back than you would guess}.\nHighway departments set the line by the prevailing winter wind rather than by\nthe property line, which is why a snow fence so often runs at an angle to the\npavement instead of parallel to it.\n\n[5] The design is old. Railroads in the 1880s {10 built} them out of scrap lath\nand set them along the cuts where drifts stopped trains. {11 Nevertheless,} the\nplains states have used them without interruption. {12} A snow fence costs a\nsmall fraction of what plowing the same stretch costs across one winter, and\n{13 it} works while nobody is watching.",
+    "wordCount": 333,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p002",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p003",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "The Threads Did Not Match",
+    "intro": "",
+    "content": "[1] On the morning of {1 February 7 1904 a fire} began in the\nbasement of a dry goods warehouse in downtown Baltimore. It burned for thirty\nhours. When crews finally stopped it at the Jones Falls, it {2 had taken}\nroughly eighty city blocks and some fifteen hundred buildings.\n\n[2] {3} Baltimore's own companies could not hold the fire, and the city\ntelegraphed for help. Engines came from Washington, from Philadelphia, from New\nYork and Wilmington and Harrisburg. By the end, more than twenty {4 citys}\ncrews were standing in the streets of a burning downtown. {5 They had brought\ntheir engines they could do very little with them.}\n\n[3] The problem was the threads. A fire hose ends in a brass coupling that\nscrews onto a hydrant, and in 1904 there was no agreement about {6 how that\ncoupling should be cut and shaped in terms of its threading}. Cities bought from\nlocal foundries, and the foundries used the pattern they had always used.\n{7 Cut by a local foundry to a local pattern, a visiting company found that its\ncouplings fit nothing.} Crews tried packing the joints with canvas and leather\n{8 ; the pressure blew them apart.}\n\n[4] {9 Likewise,} the argument moved from the streets to the committee rooms.\nWithin a year the National Fire Protection Association had adopted a national\nstandard for hose coupling threads. The chiefs who had argued about the cost of\nthe change found that the decision now fell to {10 they and their city\ncouncils}. Adoption {11 took a long while} anyway. {12} A city that agreed to\nthe standard had to replace {13 every hydrant, every hose, and every engine it\nowned}, and some of them were still converting in the 1920s.\n\n[5] The standard is why a strange engine can pull up to a hydrant in a city it\nhas never worked in and go straight to work. It is an unglamorous sort of\nprogress. Nobody remembers the committee, and {14 the fire is remembered\ninstead}.",
+    "wordCount": 338,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p003",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p004",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "Wrong in the Same Way",
+    "intro": "",
+    "content": "[1] {1 When a tuner opens the lid of an upright piano they see} about two\nhundred and thirty strings, not eighty-eight. Most notes are sounded by three\nstrings struck together, and the lowest bass notes by one or two. Every one of\nthem {2 has} to be brought to a pitch that agrees with all the others.\n\n[2] {3 Meanwhile,} the work begins with a single note. The tuner sets one string\nof the A above middle C against a fork or an electronic reference, {4 the rest of\nthe piano is then built outward from that one string.} Nothing later in the\nprocess returns to the fork.\n\n[3] What happens next is stranger than most people expect. A piano tuned so that\nevery interval is mathematically pure can play in only a few keys, so tuners\ndeliberately {5 make small compromises and slight adjustments to the intervals}.\nThey narrow the fifths a little and widen the thirds more than a little. The\nresult is equal temperament: every key slightly wrong, and all of them wrong in\nthe same way, so that music can move freely among {6 them}. A tuner {7 only can\nhear} this work when two strings are close enough to beat against each other,\nand the speed of that beating is the measurement.\n\n[4] With the temperament octave set, the tuner moves outward, {8 doing the rest\nof the piano} octave by octave. Each new note {9 is checked} against a note\nalready tuned, never against the fork. The unisons — the two or three strings\nthat share a single key — are harder to hear {10 than tuning an octave}, because\ntwo strings a hair apart do not sound like two pitches. They sound like one\npitch that will not sit still.\n\n[5] {11 For example,} the last step is not what a beginner would guess. Real\nstrings are stiff, so their overtones run slightly sharp of the pure harmonics,\nand a piano tuned strictly by the numbers sounds flat in the treble and sharp in\nthe bass. Tuners answer this by stretching the octaves, tuning the top a little\nsharp and the bottom a little flat, until the instrument sounds in tune even\nthough the arithmetic says it is not.",
+    "wordCount": 377,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p004",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p005",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "The Shallow End",
+    "intro": "",
+    "content": "[1] I learned to swim at fourteen, in the shallow end of a municipal\npool, in a class otherwise made up of six-year-olds. My {1 mother, who had\nsigned me up in March} did not ask me first. I resented it for about six weeks\nand {2 have been} grateful for it ever since.\n\n[2] {3 In addition,} the embarrassment was the whole problem. There {4 is} six\nof us in that shallow end, five of them still learning to count. At fourteen you\nhave already decided what kind of person you are, and being bad at something in\nfront of witnesses is not part of it. {5}\n\n[3] The {6 instructors} name was Denise, and she was perhaps twenty. She never\nonce mentioned that I was three heads taller than anyone else in the water\n{7 — a restraint I have thought about many times since,} and she never let the\nsix-year-olds mention it either. It was, though I did not see it then,\n{8 a totally clutch move}.\n\n[4] What she did instead was give me a {9 job, while} the little ones practiced\nblowing bubbles, she had me work with {10 them}. I {11 held the kickboard,\ncounted their kicks, and walked them back to the wall}. It looked like helping.\nIt was actually forty minutes a week of standing in chest-deep water until\n{12 you stopped noticing where you were standing}. {13}\n\n[5] {14 Meanwhile,} the swimming came later, and it came fast. Floating was the\nhard part, and floating is mostly a decision — you have to stop holding yourself\nup before the water will agree to do it for you. I could not make that decision\nin June. In July I made it by accident, lying back to look at the ceiling\ngirders, and the water took my weight the way Denise had been saying for two\nmonths that it would.\n\n[6] I am a mediocre swimmer and I will never be anything else. But I know what\nit is to be the worst person in a room and to stay in the room, and I do not\nknow another way I could have learned it.",
+    "wordCount": 362,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p005",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p006",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "What Staling Actually Is",
+    "intro": "",
+    "content": "[1] A loaf left on the counter for three days is {1 hard crumbly and\ndull}. Most people call this drying out, and most people are wrong. Bread sealed\nin a plastic bag, losing almost no water at all, {2 go} stale on roughly the same\nschedule.\n\n[2] {3} When dough bakes, its starch granules swell and burst. {4 The long\nmolecules inside them spreading into a loose, disordered tangle that holds water\nand feels soft.} Cooling begins to {5 undo this}. The molecules — amylopectin\nespecially — creep back toward the ordered, crystalline arrangement they held\nbefore baking, and they squeeze out the water they had been holding. {6 A dense,\nwater-repelling crystal, the tongue cannot reach that moisture once amylopectin\nhas reorganized.} The bread is not {7 losing} water to the air. It is locking it\naway.\n\n[3] {8 As a result,} the process has a temperature. Retrogradation runs fastest a\nlittle above freezing, which is very nearly the temperature inside a\nrefrigerator. A loaf in the fridge goes stale several times faster than the same\nloaf on the {9 counter, however the freezer stops the process almost entirely.}\nBelow freezing the molecules cannot move enough to reorganize {10 at all in any\nway whatsoever}.\n\n[4] The same chemistry explains why a stale loaf can be partly rescued. Heat\nabove about 140 degrees Fahrenheit melts the crystals apart again, and a stale\nloaf warmed in an oven comes out noticeably softer — for a few hours. Once the\nloaf cools, retrogradation resumes, and {11 it} runs faster the second time than\nit did the first.\n\n[5] {12} None of this makes a three-day-old loaf new. But it explains why a\nbread box on the counter beats a refrigerator, {13 why bakeries sell out by\nevening, and why the oldest advice about bread — buy less, buy more often — is\nalso the best}.",
+    "wordCount": 315,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p006",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p007",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "The Rule That Built the Roads",
+    "intro": "",
+    "content": "[1] Before 1896{1 a farmer} who wanted mail rode to town for it. The\npost office sat in a corner of a general store, it opened when the storekeeper\nfelt like opening it, and a letter {2 might have sat} in a pigeonhole for a\nmonth.\n\n[2] {3} The Post Office Department began experimenting with free delivery to\nrural addresses in West Virginia in 1896. The idea {4 were} not popular inside\nthe department. Delivery to scattered farms cost far more per letter than\ndelivery to a city {5 block, the first estimates alarmed nearly everyone who saw\nthem.}\n\n[3] What the department discovered was that the cost was not the hard part. The\nroads were. A carrier with a horse and a light wagon could not run a route over\na road that {6 turned into mud and became muddy} in April, and so the\n{7 departments} rule settled the matter: it would not establish a route where\nthe roads were impassable.\n\n[4] {8 Similarly,} the rule did what no road bill had managed to do. {9 Wanting\ndaily mail, a county's roads had to be graded, its culverts built, and its\nbridges kept standing.} Petitions for Rural Free Delivery began arriving with\nroad-improvement plans attached. By 1902 the service was {10 made a real thing},\nand by 1910 it reached most of the settled countryside.\n\n[5] The second effect was commercial. A farm on a delivery route could receive\ncatalogs, and Sears and Montgomery Ward printed {11 them} by the million. {12}\nParcel post followed in 1913, and what had once been a day's trip to town became\n{13 — for several million households —} a form and a wait.\n\n[6] Rural Free Delivery is not remembered as a road program or as a retail\nrevolution. It is remembered, {14 when it is remembered at all,} as mail.",
+    "wordCount": 310,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p007",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p008",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "Six Weeks of Cold Nights",
+    "intro": "",
+    "content": "[1] A sugar maple does not give up sap because it is spring. It gives\nup sap because the temperature crosses freezing twice a day. Cold nights draw\nwater up into the trunk, {1 warm days build pressure in the wood and a hole}\ndrilled through the bark lets it out.\n\n[2] {2 In contrast,} tapping begins when that pattern settles in, usually in late\nFebruary. The tap is a metal spout driven into a hole about an inch and a half\ndeep. One healthy tree carries one or two taps and rarely three, since the number\na trunk can support {3 depend} on its diameter, and a tap {4 does} the tree no\nlasting harm.\n\n[3] What runs out of the spout looks like water and {5 tastes faintly sweet in\nterms of its flavor}. It is about two percent sugar. Finished syrup is\nsixty-six percent. {6 With only two percent sugar, the sugarmaker must drive off\nnearly forty gallons of water for every gallon of syrup.}\n\n[4] The boiling is done in a long, shallow pan over a hot fire, because shallow\nsap concentrates faster and scorches less, and sap that scorches cannot be\nrecovered once {7 they have} caught. The finish is judged neither by the clock\nnor by eye but by {8 a thing that measures temperature}: syrup is done when it\nboils about seven degrees above the temperature at which water boils that\n{9 day, and that temperature changes with the weather.}\n\n[5] The syrup is then {10 filtered while hot, graded by color, and sealed while\nwarm}, since the fine grit called sugar sand settles out as it cools and will\ncloud a jar. {11 Meanwhile,} the run lasts exactly as long as the nights stay\ncold, which in most years is about six weeks.",
+    "wordCount": 301,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p008",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p009",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "The Front of the Sentence",
+    "intro": "",
+    "content": "[1] My grandmother came to Milwaukee in 1961 with a suitcase and a\nsister already here. She learned enough English to shop and to {1 work, and then\nstopped}, the way a person stops digging once the hole is deep enough.\n\n[2] {2} I {3 was} nine the first time I translated something that mattered. A\npharmacist was explaining a dosage. I got it right — one in the morning, one at\nnight, with food — {4 the pharmacist looked at me and not at her the whole time\nhe was saying it.}\n\n[3] That was the part nobody warned me about. The adults in those rooms\n{5 was} always looking at me. Their questions were about her, but the\n{6 adults} eyes went to whoever could answer, and she stood beside me while I\n{7 handled it}, and I did not understand until I was much older what that must\nhave cost her.\n\n[4] {8 As a result,} I was good at it. I want to say so plainly, because for a\nlong time I {9 was low-key mortified about it}. {10 Holding a whole sentence in\nmy head, the words for its beginning could be found while the rest waited.} I\nlearned which English words had no Polish that fit — deductible, copay,\nappointment window — and I learned to explain the idea rather than hunt for the\nword.\n\n[5] {11} What I could not do was translate her. Babcia was funny in Polish.\n{12 She} had timing. In English, through me, she became a polite woman with a\nlist of {13 symptoms, everything that made her herself stayed on the other\nside.}\n\n[6] She died when I was twenty-two. {14} I still {15 catch} myself translating\nin my head when I hear a sentence I know she would have said better.",
+    "wordCount": 304,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p009",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p010",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "Twice a Year the Lake Turns Over",
+    "intro": "",
+    "content": "[1] Almost everything contracts as it cools, and water does too —\ndown to a point. At about thirty-nine degrees {1 Fahrenheit four degrees} above\nfreezing, water reaches its greatest density. Cool it any further and it expands\nagain. That is why ice floats, and it is also why a deep lake spends a year\ndoing something strange.\n\n[2] {2} By August a lake in the upper Midwest is layered. The top ten or fifteen\nfeet, warmed by the sun and stirred by the wind, {3 is} relatively light.\nBeneath them {4 lies} a colder, denser mass the wind cannot reach. Between the\ntwo is a narrow band across which the temperature drops {5 sharply, that band is\na barrier:} the layers do not mix.\n\n[3] The consequences are not small. The lower layer is sealed off from the air,\nand as organic material sinks into it and decays, the layer's oxygen is\n{6 gotten rid of} and never replaced. By late summer the bottom of a productive\nlake can be nearly lifeless, and the wind that stirs the surface all afternoon\n{7 cannot reach in any useful way the water forty feet down}.\n\n[4] {8 Similarly,} autumn arrives. The surface cools, and as {9 it} approaches\nthirty-nine degrees it becomes the densest water in the lake and sinks. Water\nfrom below rises to take its place, cools, and sinks in turn. Within days the\nwhole column stands at one temperature and the wind can drive the entire lake in\na single slow circulation. Oxygen goes {10 down, nutrients come up.}\n\n[5] Winter inverts the arrangement: ice and near-freezing water on top, water\nclose to thirty-nine degrees {11 down at the very bottom part of the lake}. In\nspring the surface warms toward thirty-nine, grows dense, and the lake turns\nover a second time. {12}\n\n[6] A lake that {13 stratifies in summer, turns in fall, inverts under ice, and\nturns again in spring} is called dimictic. Most of Wisconsin's lakes are.",
+    "wordCount": 332,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p010",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p011",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "Fourteen Years of a Good Law",
+    "intro": "",
+    "content": "[1] In the {1 1860s a British sailor} who refused to board a ship he\nbelieved unseaworthy could be jailed for it. The ship sailed anyway, loaded past\nany sensible limit, and if it went down the owner collected on the policy.\n\n[2] {2 Meanwhile,} the practice already had a name in the newspapers: coffin\nships. The arithmetic behind it was simple and ugly. A vessel insured for more\nthan its worth {3 were} more valuable at the bottom of the sea than in port, and\nno law fixed how deep a loaded {4 ship's} hull was allowed to sit.\n\n[3] Samuel Plimsoll was a coal merchant who became a member of Parliament for\nDerby. In 1873 he published a book called “Our Seamen,” {5 full of names,\ntonnages, and drowned crews that the book listed}. It was {6 intemperate, partly\ninaccurate, and enormously effective}. Plimsoll was sued for libel, censured in\nthe House, and read everywhere.\n\n[4] {7 Passed in 1876, every British ship had to carry a mark on its hull.} The\nmark sat on the {8 hull, it showed the maximum depth} to which the ship could\nlegally be loaded, and it became known almost at once as the Plimsoll line.\n\n[5] {9 Consequently,} the law had a hole in it. For fourteen years the owner,\nnot the Board of Trade, decided where on the hull the mark was painted. Some\nowners painted it on the {10 deck}. Not until 1890 did the Board fix the\nposition by {11 rule, only then did the line mean what the public had believed\nall along it meant.} {12}\n\n[6] Plimsoll's name survives on the side of every merchant vessel afloat. The\nfourteen years do not.",
+    "wordCount": 286,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p011",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p012",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "You Can Only Go Down",
+    "intro": "",
+    "content": "[1] A bell is not one note. Struck {1 once it sounds} five distinct\ntones at the same time, and whether the bell is any good depends entirely on how\nthose five stand in relation to one another.\n\n[2] {2} Bell metal is bronze, roughly four parts copper to one part tin, which\n{3 are} harder and more brittle than the bronze poured for statues. The mould\n{4 is built} in two pieces: a core shaped like the inside of the bell, and an\nouter shell shaped like the outside, with the gap between them set to the exact\nthickness of the metal to come.\n\n[3] The pour takes under a {5 minute, the cooling takes days:} a large bell\nstays buried in its mould for {6 a period of time lasting most of a week}.\n{7 Left buried that long, cracking is avoided by the slow cooling.} What comes\nout is a bell that rings, and a bell that rings is not yet a bell that is in\ntune.\n\n[4] {8 Meanwhile,} the bell is laid on its side on a vertical boring machine. A\ncutting tool takes metal off the inside, and where the tool cuts determines\nwhich of the five tones {9 changes}. Metal off the waist lowers one\n{10 partial, metal near the lip lowers another,} and the tuner works around the\ninside a fraction of an inch at a time, striking the bell and listening to\n{11 it} between passes.\n\n[5] The constraint is absolute. Taking metal away can only lower a tone and\nnever raise one, so a bell is cast {12 thick, heavy, and deliberately sharp},\nand every pass of the tool spends something that cannot be put back. A bell\ntuned past its note is scrap. {13}\n\n[6] The tuning takes longer than the casting. It is also the only part of the\nwork a listener ever hears.",
+    "wordCount": 316,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p012",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p013",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "Ninety-One Species",
+    "intro": "",
+    "content": "[1] I started the list because I was bored. I had mononucleosis the\nfall of my sophomore {1 year, and missed} nine weeks of school, and for most of\nthat time the only thing I could do without getting tired {2 was} sit in the\nchair by the front window.\n\n[2] {3} My mother brought home a field guide from the {4 library, I think she\nwanted to stop me} from staring at the ceiling. The first week I wrote down four\n{5 birds} names: house sparrow, starling, crow, robin. I assumed that was the\nentire population of the yard.\n\n[3] It was not. By the end of October I had {6 eleven, by March I had thirty.}\nThe birds had not changed; I {7 was the thing that was different}. A house\nsparrow and a house finch {8 is} not remotely alike once you have looked at\nboth, and until you have looked at both they are the same brown bird.\n\n[4] {9 Nevertheless,} what the list did was make the window worth sitting at.\nThere is a difference between looking and looking for something, and the list\n{10 supplied the second one of those two things}. I started noticing the\n{11 juncos in the yard that arrive in late October and leave in the first week\nof April}.\n\n[5] I am back at school now. I still keep {12 it}. {13} Ninety-one species from\none window, which a serious birder would find unimpressive and which took me\nthree years.\n\n[6] I did not learn to love birds. I {14 learned} that a thing gets interesting\nin proportion to how long you are made to look at it, and that I found this out\nonly because I was too sick to look at anything else.",
+    "wordCount": 296,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p013",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p014",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "A Workshop, Not a Millennium",
+    "intro": "",
+    "content": "[1] Tour guides say {1 it and so do} a good many textbooks: the window\nglass in very old buildings {2 are} thicker at the bottom because glass is\nreally a liquid, and across centuries it has crept downward. It is a wonderful\nexplanation. It is also wrong.\n\n[2] {3} Glass {4 is} not a liquid in any sense a person standing in a cathedral\nwould recognize. It is an amorphous solid: its molecules sit without the regular\nrepeating pattern of a {5 crystal, this is why it fractures} the way it does.\nEstimates of how far room-temperature window glass would flow in a thousand\nyears give numbers {6 that are too small in size to be measured at all}.\n\n[3] The real explanation is in how the panes were made. Before the nineteenth\ncentury most window glass came from the crown method, in which a glassblower\n{7 gathered a blob of molten glass, spun it on the end of a rod, and cut panes\nfrom the disc it became}. {8 Spun fast enough, the glassblower opened the blob\ninto a wide flat disc.} A disc made that way is thin near its rim and\n{9 more thick as you go in}.\n\n[4] {10 Nevertheless,} a glazier setting those panes had a choice to make. Most\nof them set the heavier edge {11 down, it is steadier in the frame and easier to\nseal.} That is a workshop habit rather than a law of physics, and it shows:\nplenty of surviving panes are thicker at the top, and some of {12 them} are\nthicker along one side.\n\n[5] {13} The myth lasts because it explains something true with something\nsatisfying. The panes really are uneven. {14} The reason is a workshop, not a\nmillennium.",
+    "wordCount": 294,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p014",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p015",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "Nine Years and Four Expeditions",
+    "intro": "",
+    "content": "[1] The first attempt was made in 1857, and it {1 failed} within days.\nFour hundred miles out of Valentia {2 Bay the cable} parted under its own weight\nand went to the bottom, and the ships turned around.\n\n[2] {3} The idea was not absurd. Telegraphy on land already worked, and a wire\nacross the Atlantic {4 were} going to cut the time between London and New York\nfrom ten days to minutes. The trouble was that nobody had ever laid twenty-five\nhundred miles of anything across two miles of {5 water, the engineering had to\nbe invented} while it was being used.\n\n[3] They tried again in 1858, and that time the cable reached both shores. In\nAugust, Queen Victoria and President Buchanan exchanged {6 greetings and\nmessages of goodwill with each other}, and cities on both coasts held parades.\nThe Queen's message took sixteen hours to send. Within three weeks the cable was\ndead, {7 it's} insulation ruined. {8 Raised too far by an operator trying to\nforce signals through faster, the insulation failed under the voltage.} For\nyears afterward nobody could say with certainty whether the fault lay in the\ncable or in the way {9 it} had been used.\n\n[4] {10 Meanwhile,} the failure cost more than money. Investors had been told\nthe Atlantic was conquered and had then watched it go silent in a\n{11 month, several London papers said openly} that the whole enterprise had been\na fraud.\n\n[5] {12} The 1865 expedition broke six hundred miles short of Newfoundland. The\n1866 expedition worked, and then the same ship turned around, grappled the 1865\ncable up off the sea floor, and finished it as well. From 1866 there {13 were}\ntwo.\n\n[6] Nine years, four expeditions, and a long stretch in the middle when the only\nevidence anyone could point to was a dead wire and a great many parades.",
+    "wordCount": 317,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p015",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p016",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "The Only Step Done Blind",
+    "intro": "",
+    "content": "[1] The first part of developing black-and-white film happens in total\n{1 darkness, and has} to be done by touch. A strip of exposed film is wound onto\na spiral reel, and anyone who can see well enough to watch the winding\n{2 have} already ruined the film.\n\n[2] {3} The loaded reel {4 goes} into a light-tight tank. Once the lid is on,\nthe rest of the work can be carried out in a lit {5 room, that is why the tank\nexists:} it is the only step that has to be done {6 blind and without any light\nat all}.\n\n[3] Then comes the developer, which converts the exposed silver halide crystals\ninto metallic silver at a rate that depends on temperature. {7 Timed for\nsixty-eight degrees Fahrenheit, a difference of two degrees changes the\ndevelopment time by a noticeable fraction.} The tank is agitated for the first\nthirty seconds and then for ten seconds out of every minute, because developer\nleft to sit exhausts itself against the film and leaves streaks.\n\n[4] {8 Meanwhile,} the developer is poured off. An acid stop bath {9 deals with\ndevelopment} in a few seconds. The fixer follows, and {10 it} dissolves the\nsilver halide that was never exposed, which is what makes the image permanent\nand the film safe to carry out into daylight.\n\n[5] The wash takes longer than every other step {11 combined; fixer left in the\nemulsion will stain the negatives brown over the following decades.} It is the\none failure nobody discovers until the negatives are old.\n\n[6] Sixty-eight degrees. Thirty seconds, then ten seconds a minute. The numbers\nlook fussy written down, and each one is the difference between a negative and a\nstrip of grey plastic.",
+    "wordCount": 292,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p016",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p017",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "The Oldest Part Is Uphill",
+    "intro": "",
+    "content": "[1] The cemetery {1 hired} me the summer I was seventeen because I\nowned boots. That was the whole interview. Ray asked whether I had\n{2 boots and I} said yes, and he said be here at six thirty.\n\n[2] {3} The work was, {4 for the most part and by and large}, mowing. Forty\nacres, a zero-turn mower for the open ground, a push mower for the rows too\ntight to turn in, and {5 using a string trimmer at the base of every stone}.\nThere are eleven thousand {6 stones, I learned to hate that trimmer} in a way I\nhave never since hated a tool.\n\n[3] What I did not expect was the reading. A person cannot trim around a stone\nwithout reading it, and not on purpose either: the words {7 is} simply there, at\nthe level of your hands, for eight hours at a stretch. By August I {8 knew},\nwithout ever having tried to, {9 stuff about which decades had been hard here}.\n\n[4] {10 Similarly,} the oldest part is uphill, and it is the part people visit\nleast. The 1918 section is a row of small stones carrying the same year, and in\nthe middle of it one {11 family's} four children. {12 Trimmed every ten days all\nsummer, Ray never assigned that row to anyone else.} I did not ask {13 why, I\nhave thought since that he may have been waiting} to see whether I would.\n\n[5] {14} I do not think the job made me wiser about death. It made me specific\nabout it. Eleven thousand is a number. Four small stones in a row of small\nstones is not.\n\n[6] {15} I still know where that row is. I could walk to it in the dark.",
+    "wordCount": 297,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p017",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p018",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "Salt Does Not Melt Ice",
+    "intro": "",
+    "content": "[1] Road salt does not melt ice. The correction is short enough to\nsound like a {1 quibble and the} difference between the two descriptions\n{2 are} what decides whether a road is safe at ten degrees.\n\n[2] {3} Salt {4 lowers} the temperature at which water freezes. A film of pure\nwater turns solid at thirty-two degrees Fahrenheit. {5 Salt water staying liquid\nto twenty, to ten, in theory to about six below zero.} What a truck spreads on a\nhighway is not a substance that {6 attacks and goes after} ice. It is a\nsubstance that changes the rules ice has to obey.\n\n[3] Two consequences follow, and both are inconvenient. The first is that salt\nneeds liquid water before it can work at all. {7 Landing on dry ice at five\ndegrees, nothing happens to a salt crystal.} It cannot dissolve, and until it\ndissolves it cannot {8 do its thing}. That is why crews lay down brine ahead of\na storm rather than dry salt after it.\n\n[4] {9 Similarly,} the process costs heat. Melting ice absorbs energy, and at\nlow temperatures the pavement has very little of {10 it} to spare. In theory\nsodium chloride works down to six below {11 zero, in practice most agencies stop\nexpecting much} from it below about fifteen degrees, because by then the melting\nis slower than the next hour of snow falling on top of it.\n\n[5] {12 For example,} crews change chemicals or change goals. Calcium chloride\n{13 gives off heat as it dissolves and stays useful far colder}. Sand melts\nnothing whatever and is spread for traction alone. {14}\n\n[6] The distinction is not pedantic. A driver who believes salt melts ice\nexpects a bare road at any temperature. A driver who knows salt lowers a\nfreezing point expects sand.",
+    "wordCount": 304,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p018",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p019",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "Told to Stop Using It",
+    "intro": "",
+    "content": "[1] Charles {1 Barbier, an artillery officer} wanted his men to read\norders in the dark without striking a light. The system he {2 devised} in the\n1810s used twelve raised dots and stood for sounds rather than letters. His\nsoldiers found it too slow to be useful. He took it to a school for blind\nchildren in Paris instead.\n\n[2] {3} Louis Braille was eleven when he first handled {4 it, he had been blind}\nsince a childhood accident in his {5 father's} workshop. He understood at once\nwhat was wrong with it: twelve dots were too many for a fingertip to take in\nwithout travelling, and a phonetic system could not spell a name.\n\n[3] He cut it to six. A cell of six dots, two across and three down, fits under\none fingertip {6 without moving it or shifting it at all}, and sixty-three\ncombinations {7 is} enough for an alphabet, punctuation, and numbers.\n{8 Finished at fifteen and published at twenty, he had done the essential work.}\n\n[4] {9 Consequently,} the school did not adopt it. Sighted instructors had been\nteaching from embossed Roman letters, which a blind student could read slowly\nand could not write at all, and which a sighted teacher could {10 handle\neasily}. A later director banned the six-dot code outright and burned the books\nprinted in {11 it, students kept using it anyway} and taught it to one another\nat night.\n\n[5] {12} Braille died of tuberculosis in 1852, at forty-three. The school\nadopted his system officially two years later, and the institution that had\nburned his books {13 printed them, taught from them, and put his name on the\ncode}. It is now the standard in nearly every written language on earth.",
+    "wordCount": 292,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p019",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p020",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "Nothing in It Is Glued",
+    "intro": "",
+    "content": "[1] A dry stone wall has no mortar in it. Nothing holds it together\nbut its own weight and the friction between one stone and the {1 next and walls}\nbuilt this way across Britain and Ireland {2 have} stood for three hundred\nyears.\n\n[2] {3} The work starts below the ground. A trench {4 is dug} down to firm\nsubsoil, wide enough for two rows of foundation stones set side by {5 side, a\nwall that settles unevenly is a wall} that comes apart. The largest stones go in\nfirst, at the bottom, {6 where nobody will ever see them at any point}.\n\n[3] Above the foundation the wall rises as two faces leaning slightly in toward\neach other, and the gap between them is packed with small stones called\nhearting. The hearting is not filler. It is what stops the two faces from\nfolding inward. {7 Packed loosely into the gap, a waller ends up with a wall\nthat will bulge within ten years.}\n\n[4] {8 Similarly,} the rule governing every course is one over two and two over\none. Each stone bridges the joint beneath it, so that no vertical seam ever\n{9 goes very far}. Each stone also goes in with its length pointing into the\nwall rather than along the face, which is the opposite of what looks tidy from\noutside.\n\n[5] A waller does not force a stone. If a stone does not sit, {10 it} is the\nwrong stone, and the answer is another stone rather than a hammer.\nThrough-stones long enough to reach across both faces are set at intervals to\ntie the wall to {11 itself, a row of copestones on edge finishes} the top and\nweights down everything beneath it.\n\n[6] Nothing in it is glued. It is a heap of stones arranged carefully enough\nthat gravity holds it up.",
+    "wordCount": 310,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p020",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p021",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "Everything in the Second Drawer",
+    "intro": "",
+    "content": "[1] My uncle died in February and left me his {1 toolbox which} was\nnot a gift so much as a problem in a steel case. It {2 weighed} sixty pounds. It\ncame with no list.\n\n[2] {3} I knew roughly eleven of the tools. The rest were shapes. There\n{4 was} a thing like a flattened spoon, a thing like a pair of pliers that had\nbeen stepped on, and {5 four wooden-handled objects in the second drawer that I\ncould not have named under oath}.\n\n[3] I could have looked them all up in {6 an afternoon's time of about an hour\nor two}. I did not. Instead I left the drawer {7 shut, I used the eleven I\nalready knew}, and for most of a year the toolbox was a box with eleven tools in\nit and a locked room underneath.\n\n[4] {8 Similarly,} what changed was a broken window sash. The cord had snapped\nsomewhere inside the frame, and reaching it meant prying off a strip of moulding\nwithout splitting it, and nothing I owned would do that without leaving a scar.\nI opened the second drawer because I had run out of {9 other stuff to try}.\n{10 Bevelled thin enough to slide under a layer of paint, I found that the\nflattened spoon was a pry bar.} It took the moulding off in one {11 piece, the\ncord was replaced} in twenty minutes.\n\n[5] {12} After that I stopped looking things up and started running into them. A\ntool means nothing until you have the problem it solves. My {13 uncle's}\ntoolbox was not a set of tools. I {14 think} of it now as a set of problems he\nhad already had.\n\n[6] {15} There are still two things in that drawer I have not identified. I am\nwaiting.",
+    "wordCount": 306,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p021",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p022",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "Once Every Orbit",
+    "intro": "",
+    "content": "[1] The Moon keeps one face turned toward the Earth. It is often said\nthat this means the Moon does not {1 rotate and the} opposite is true: it\nrotates exactly once for every orbit it completes, which {2 are} the only\narrangement that keeps the same side pointed at us.\n\n[2] {3} The Earth's gravity {4 pulls} harder on the near side of the Moon than\non the far side. That difference stretches the Moon slightly along the line\nbetween the two {5 bodies, raising a bulge on each end of it on both sides}.\nRock is not perfectly {6 rigid, the bulge takes time} to form and time to\nrelax.\n\n[3] Early in its history the Moon spun faster than it orbited, so its bulge was\ncarried a little ahead of the line joining the two bodies. {7 Dragged slightly\nahead by the rotation, the Earth's pull on that offset bulge acted as a brake.}\nThe braking lasted as long as the mismatch did. It ended when the spin and the\norbit matched, because at that point the bulge stopped moving relative to the\nEarth and there was nothing left to drag against.\n\n[4] {8 Consequently,} we do not see exactly half the Moon. Its orbit is\nelliptical and {9 its} axis is tilted, so it appears to rock from side to side\nand nod up and down across a {10 while}. This libration brings about fifty-nine\npercent of the surface into view over {11 time, the rest of it went unseen} by\nanyone until 1959.\n\n[5] {12} The same process is at work on the Earth. Tides raised by the Moon are\n{13 slowing our rotation, lengthening the day by about two milliseconds a\ncentury, and pushing the Moon away by roughly four centimetres a year}.\n\n[6] Given enough time the Earth would become locked to the Moon in turn. There\nis not enough time. The Sun will interrupt first.",
+    "wordCount": 323,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p022",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p023",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "Paid by the Hour to Look",
+    "intro": "",
+    "content": "[1] The Harvard College Observatory employed women to do arithmetic.\nThey were called {1 computers which} at the time was a job title rather than a\nmachine, and between the 1880s and the 1920s several dozen of them {2 worked}\nthrough hundreds of thousands of photographic glass plates.\n\n[2] {3 Similarly,} the work was measurement. A plate {4 held} the spectrum of a\nstar as a band of light crossed by dark lines, and a computer's job was to\nrecord the positions of those lines, compare them against other plates, and file\nthe {5 result, the pay was twenty-five to fifty cents} an hour, well below what a\nman doing the same {6 work would have been paid for doing it}.\n\n[3] Williamina Fleming catalogued more than ten thousand stars. Annie Jump\nCannon built the classification system astronomy still uses. {7 Sorted by the\npattern of their lines, Cannon produced a sequence that turned out to track\ntemperature.} She is said to have classified some three hundred thousand stars\nby hand.\n\n[4] {8 Nevertheless,} Henrietta Swan Leavitt was assigned the variable stars,\nthe ones whose brightness rises and falls on a cycle. In the Small Magellanic\nCloud she found more than a thousand of {9 them}, and she noticed something in\nthe numbers: the brighter the star, the longer its cycle {10 took, the relation\nwas tight enough} to be a {11 thing you could count on}.\n\n[5] {12} A rule like that is a measuring stick. If the cycle tells you the true\nbrightness of a star, and the apparent brightness tells you how dim it looks\nfrom here, the gap between them tells you how far away it is. Within twenty\nyears the relation had been used to show that other galaxies exist and that the\nuniverse is far larger than anyone had argued.\n\n[6] The plates are still in Cambridge. So are the notebooks, in the handwriting\nof women who were paid by the hour to look at them.",
+    "wordCount": 332,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p023",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p024",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "With the Grain",
+    "intro": "",
+    "content": "[1] A sheet of paper has a grain. The fibres in it {1 lie} mostly one\n{2 way laid down} when the sheet was made, and paper folds cleanly along the\ngrain and badly across it. Everything else in bookbinding follows from that.\n\n[2] {3} The sheets {4 are folded} into signatures, usually four nested together\nto make sixteen pages. The grain has to run head to tail, parallel to the spine.\nA book gathered against the grain will not lie {5 open, the pages cockle} in\ndamp weather, and no amount of care later in the process will correct it.\n\n[3] The signatures are sewn onto tapes. A needle goes in at one station and out\nat the next, catching the tape as it passes, so that every signature is tied to\nevery other through the tapes rather than {6 to its neighbours alone and only to\nthem}. {7 Brushed on afterward, the work glue does is much less than people\nassume.}\n\n[4] {8 Similarly,} the spine is rounded and backed. Rounding gives it a convex\n{9 curve, backing splays the outermost signatures} outward with a hammer to\n{10 make a thing} on each side. The shoulder is what the boards sit against, and\n{11 it} is the reason a well-bound book opens flat instead of springing shut.\n\n[5] {12} The case is built separately: two boards and a strip of card, covered\nin cloth. Only at the very end are the {13 books} two halves brought together,\nthe endpapers pasted down, and the whole thing put under a press overnight.\n\n[6] Nothing in the sequence can be done out of order. The grain decides the\nfold, the fold decides the sewing, and the sewing decides whether the thing will\nopen at all.",
+    "wordCount": 294,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p024",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p025",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "The House at Two in the Afternoon",
+    "intro": "",
+    "content": "[1] My mother worked nights at a hospital for eleven years, which\n{1 means} that for eleven years our house ran on a {2 rule between} eight in the\nmorning and three in the afternoon, it was the middle of the night.\n\n[2] {3} We learned the floor. There {4 are} a board in the upstairs hall that\nspeaks if you put weight on the middle of it and says nothing at the {5 edge, I\ncould cross that hall} at eleven years old without a sound. My brother could\nnot, and never learned, and I have thought since that this was {6 less a matter\nof skill and more about skill not being the issue}.\n\n[3] The rule was not enforced. {7 Woken by any noise at all, my mother never\nonce came out of that room to tell us to be quiet.} She did not have to, because\nthe alternative was {8 worse, she would come down at three} with a face that had\nnot slept, and make dinner anyway, and we would understand exactly what it had\n{9 run her}.\n\n[4] {10 Similarly,} what I did not understand until much later was that she\nnever told us it was hard. Eleven years, and I cannot remember a single\ncomplaint about the hours. I took {11 that} at the time as evidence that the\nhours were fine.\n\n[5] I am not quiet by nature. I talk over people. But I still know where that\nboard is, and I have {12 never in my life let a door close behind me on its\nown}, and I never {13 will}.\n\n[6] {14} The house was sold in 2019. {15} I would still be able to cross that\nhall.",
+    "wordCount": 288,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p025",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p026",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "Three Ways Out",
+    "intro": "",
+    "content": "[1] Heat moves in three {1 ways and a} vacuum flask is built to block\nall three. Nothing about the object is complicated. What is interesting {2 are}\nhow completely each path has to be closed before the thing works at all.\n\n[2] {3} Conduction {4 is} heat travelling through a material. Convection is heat\ncarried by a moving fluid. Both need matter, so both stop when the matter is\n{5 removed, a flask is two vessels}, one inside the other, joined only at the\nneck, with the space between them pumped out.\n\n[3] The vacuum is never perfect and does not {6 need to be perfect or have to\nbe}. What remains is thin enough that the few molecules left carry almost\nnothing across. The joint at the neck is the exception, because it is solid\nglass or steel and heat conducts through it steadily. {7 Made long and thin, a\nmanufacturer is trying to turn a short conductor into a long one.}\n\n[4] {8 Similarly,} radiation needs no matter at all. A hot liquid emits\ninfrared, and infrared crosses a vacuum without difficulty. This is why the\nfacing surfaces are {9 silvered, a mirrored surface emits very little} and\n{10 does a lot with} most of what strikes it, so the two walls trade almost no\nradiation between {11 them}.\n\n[5] {12} The stopper is the last path and the crudest. A {13 flask's} weakest\npoint is the one part that has to come out: it touches the liquid, the air above\nit, and the room, and no vacuum surrounds any of it.\n\n[6] A flask does not keep anything hot. It makes things cool slowly, and it does\nthat by closing every route out except the one it cannot close.",
+    "wordCount": 293,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p026",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p027",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "The Only Large Body of Testimony",
+    "intro": "",
+    "content": "[1] Between 1936 and {1 1938 the} Federal Writers' Project sent\ninterviewers into seventeen states to record the testimony of people who had\nbeen enslaved. More than two thousand three hundred interviews {2 were}\ncollected. They remain the largest first-person record of American slavery that\nexists.\n\n[2] {3 Similarly,} the project was not designed as history. It was designed as\n{4 work, it was a relief programme} created to employ writers during the\nDepression, and the interviews {5 were} one assignment among many.\n\n[3] The limits are severe and {6 have to be stated and must be said}. Slavery\nhad ended seventy years earlier. {7 Interviewed seventy years after\nemancipation, nearly everyone's memories were of childhood.} Most of the\ninterviewers were white and were often local, and an elderly Black person in\nAlabama in 1937 had good reason to weigh what could safely be said to them. Some\ntranscripts were set down in a heavy phonetic spelling no interviewee chose.\n\n[4] {8 Consequently,} none of that makes the record worthless. It makes it a\nrecord that has to be read {9 in a certain way}, which is true of every source\nand is only more visible here. Historians read the narratives alongside\nplantation ledgers, court records, and the interviews conducted by Black\nresearchers at Fisk a few years earlier, and they weigh {10 them} against one\nanother.\n\n[5] The alternative was {11 nothing, almost every other account of American\nslavery was written} by someone who had not been enslaved. The Writers' Project,\nfor reasons that had nothing to do with history, produced the only large body of\ntestimony from the people it happened to.",
+    "wordCount": 274,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p027",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p028",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "From the Top Down",
+    "intro": "",
+    "content": "[1] A jacket is fitted from the top down. The shoulders come\n{1 first and not} because they are the hardest part to alter but because they\nare the only part that cannot {2 be altered} at all without rebuilding the\ngarment.\n\n[2] {3} The shoulder seam should end where the arm begins. If it hangs past that\npoint the sleeve collapses into folds beneath it, and if it stops short the\nwhole jacket {4 pull} across the back. A tailor checks this before touching\nanything else, because every other adjustment assumes the shoulders are already\nright.\n\n[3] After that the work is chalk. The customer stands {5 still, the tailor\npins}. A jacket is taken in at the centre back seam and at the side seams, and\n{6 both of those two are ordinary and routine}. Letting a jacket out is a\ndifferent {7 matter, it depends on how much fabric the maker left} in the seam\nallowance, and once that is gone there is {8 nothing doing}. {9 Left in the seam\nallowance by the maker, a tailor can only let a jacket out as far as that fabric\ngoes.}\n\n[4] {10 Similarly,} sleeves are shortened from the cuff, unless there are\nworking buttonholes, in which case {11 they} are shortened from the shoulder,\nwhich costs three times as much. A tailor who does not check the cuff before\nquoting {12 quoted} wrong.\n\n[5] The jacket is {13 basted, tried on again, and only then sewn}. {14} Basting\nis long loose stitching meant to be pulled out. It looks like wasted work and is\nthe opposite: it is the last point at which a mistake is still free. {15}\n\n[6] Buy the shoulders. Everything below them is negotiable.",
+    "wordCount": 290,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p028",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p029",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "The One Thing I Was Allowed to Quit",
+    "intro": "",
+    "content": "[1] My family had one rule about {1 activities and it} was not\nnegotiable: you finish the season, the term, the year. You could decline to\nstart. You could not stop.\n\n[2] {2} I {3 played} the cello for six years under that rule. I was not bad. I\nwas not good either, and the distance between those two {4 were} a thing I could\nfeel in my hands every Tuesday at four {5 o'clock, I sat} in a practice room\nthat smelled of radiator dust.\n\n[3] What I remember is not the playing. It is the arithmetic. Six years times\ntwo lessons a month times whatever the lessons cost, plus the rental, plus the\ndrive. I did that sum {6 often and did it many times}, and never once in front\nof my mother. {7 Adding it up in my head on the drive home, the number was\nsomething I never said out loud.}\n\n[4] {8 Similarly,} in the spring of my junior year she asked me, in the car,\nwhether I wanted to keep going. The question itself was the {9 thing}. I said no\nbefore I had decided anything, which is how I learned that {10 I} had decided.\n\n[5] {11} She did not argue. She said the rule had been about not letting me quit\nthings {12 because they were hard, because they were boring, or because I was\nlosing}, and that this was not {13 that, she had been waiting a while} for me to\nsay so.\n\n[6] I have not touched a cello since. I do not regret it. But I think about how\nlong I carried an argument I never had, and how the other side turned out to\nhave been ready the whole time.",
+    "wordCount": 292,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p029",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p030",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "The Air Has",
+    "intro": "",
+    "content": "[1] On a still night a train two miles {1 off is audible and} at noon\nthe same train is not. The train has not changed. The air {2 has}.\n\n[2] {3 Nevertheless,} sound travels faster through warm air than through cold.\nThat single fact explains most of what follows, because a sound wave crossing\nair of uneven temperature does not {4 travel} in a straight line: the part of\nthe wave in warmer air outruns the part in cooler {5 air, the whole front\ntilts}.\n\n[3] During the day the ground absorbs sunlight and warms the air directly above\nit, which leaves a layer near the surface warmer than the air {6 that is located\nhigher up above it}. {7 Leaving a source near the ground, the bottom of the\nwavefront moves fastest and the front tilts upward.} Within a few hundred metres\nthe sound has bent away over the listener's head, and there is a zone into which\nalmost nothing arrives.\n\n[4] {8 Similarly,} after sunset the ground radiates its heat away and cools\nfaster than the air above it. The arrangement inverts: cold at the bottom,\nwarmer higher up. Now the top of the wavefront is the fast part, the front tilts\ndownward, and sound that would have escaped upward is bent back toward the\nground, where {9 it} {10 keeps on}.\n\n[5] The night is also quieter and the wind is {11 steadier, both of those\nhelp}. But neither is why the train can be heard. It can be heard because the\nair over the field has turned into a lens.",
+    "wordCount": 265,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p030",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p031",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "The Word Was His",
+    "intro": "",
+    "content": "[1] In October {1 1859 a} steam clipper called the Royal Charter was\ndriven onto the Anglesey coast in a storm and broke apart within sight of land.\nMore than four hundred people died. The wreck {2 had been} one of about two hundred\nthat week.\n\n[2] {3} Robert FitzRoy had commanded the {4 Beagle, by 1859 he ran} the small\nmeteorological office of the Board of Trade. His department collected weather\nobservations from ships and coastal {5 stations and gathered them from those\nsources}. What it did not do {6 were} say anything about tomorrow.\n\n[3] FitzRoy proposed that it should. Telegraph lines already linked the coasts.\n{7 Falling at one station, another could be warned before the weather arrived.}\nIn 1861 his office began issuing storm {8 warnings, later that year the Times\nbegan printing} what he called {9 the things}. The word was his.\n\n[4] {10 Similarly,} the objections were immediate, and they came from two\ndirections. Shipowners disliked warnings that kept {11 their} vessels in port on\ndays that turned out fine. Scientists disliked the enterprise on principle: the\nRoyal Society held that meteorology {12 was} not yet capable of prediction, and\nthat issuing guesses under an official name damaged the whole field.\n\n[5] FitzRoy died in 1865. The warnings were suspended the following year, on the\ngrounds that they were unscientific.\n\n[6] They were restored in 1867, after two years in which the fishing fleets had\ngone on {13 keeping their own records, comparing them against the old warnings,\nand counting which had been right}. {14} The pressure had not come from the\nRoyal Society. {15}",
+    "wordCount": 271,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p031",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p032",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "One Thin Layer",
+    "intro": "",
+    "content": "[1] {1 Planted in a garden a Honeycrisp seed} will grow into an apple\ntree. It will not grow into a Honeycrisp. Apples do not come true from seed, and\nevery named apple in every orchard {2 are} a cutting from one original tree,\nkept alive by being joined to other roots for two hundred years or more.\n\n[2] {3} The joining is called grafting, and the whole operation depends on a\nsingle layer. Between the bark and the wood of a young shoot lies a band of\ndividing cells a fraction of a millimetre {4 thick and very thin indeed}, called\nthe cambium. It {5 is} what makes new wood and new bark. If the cambium of the\ncutting meets the cambium of the rootstock, the two will {6 knit, if it does\nnot, nothing happens} at all.\n\n[3] The work is done in late winter, while both pieces are dormant. A scion — a\npencil-thick length of last year's growth from the tree being copied — is cut\nwith a long sloping face. {7 Cut to match the scion, the grafter then splits\neach face partway.} The two pieces interlock and hold themselves together.\n\n[4] {8 Similarly,} the cut faces are pressed together with their edges\n{9 aligned, alignment is the entire operation}. If the scion is thinner than the\nstock, the grafter lines up one side rather than {10 doing it in the middle},\nbecause a centred scion has {11 its} cambium touching nothing.\n\n[5] {12} The joint is wrapped and sealed against drying, and then it is left\nalone. A graft that is {13 checked, unwrapped, and adjusted} is a graft that\nfails.",
+    "wordCount": 277,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p032",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p033",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "Not in Any of Them",
+    "intro": "",
+    "content": "[1] I became the family photographer at twelve because I was the one\nwho asked for the {1 camera nobody} appointed me. It simply became true, the way\njobs in families {2 become} true, which is to say by nobody objecting.\n\n[2] {3 Similarly,} I was good at it in the way a twelve-year-old is good at\nthings, which is to say relentlessly. Two hundred pictures of one birthday.\nForty of the same cousin blinking. I {4 photographed} the food, the wrapping\npaper, the dog under the table, and the dog under the table {5 again, nobody\nasked me to stop}.\n\n[3] {6 Consequently, what} I did not understand was the arithmetic. Every\npicture I took was a picture I was not in. Over eleven years that adds up to an\nabsence with a {7 shape and a definite outline}, and the shape is that of a\nperson standing three feet behind the camera. {8 Counted up one winter\nafternoon, I found the albums held four photographs of me between the ages of\ntwelve and twenty-three.}\n\n[4] In three of the four I am holding a camera. The fourth was taken by a\nstranger at a {9 place}, and I remember the moment mostly as an interruption.\nI was not {10 hiding, I had found a job} that let me be in the room without\nbeing in it.\n\n[5] My brother takes the pictures now. I have started asking him to hand me the\ncamera and step in. He finds {11 this} irritating. I find it necessary.",
+    "wordCount": 257,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p033",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p034",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "Not Soaked In",
+    "intro": "",
+    "content": "[1] A well-used cast iron pan is black and slick, and the usual\nexplanation is that decades of oil have soaked into the {1 metal the}\nexplanation is wrong. Iron {2 is} not porous in any way that would let that\nhappen.\n\n[2] {3} What sits on the surface of a seasoned pan is not oil. It {4 was}\nplastic, or near enough. Heated past its smoke point, a fat begins to break\napart, and the fragments link to one another and to the iron, forming a hard\nfilm chemically bonded to the {5 pan, this process is called polymerisation}.\n\n[3] Two consequences follow. The first is that thin coats {6 work better and are\nmore effective} than thick ones. A thick layer cannot cross-link all the way\nthrough: the outside hardens, the inside stays soft, and the surface comes away\nin sticky patches. {7 Wiped on until the pan looks almost dry, the film builds\nin layers a molecule or two deep.}\n\n[4] {8 Similarly,} the second consequence is that the film is far tougher than\nmost people treat it as being. Modern dish soap is a {9 thing that removes\ngrease}; polymerised seasoning is not grease. The lye soaps that could strip a\npan {10 went out of circulation ages ago}.\n\n[5] What does destroy seasoning is standing water, because the film is not\ncontinuous and iron rusts underneath {11 it}. A pan washed and dried at once is\n{12 fine, a pan left wet in the sink overnight is a repair job}. {13}\n\n[6] The instruction that gets passed down — never use soap — is a sound rule\nattached to the wrong reason. {14} It survives because it works, and it works\nbecause the people who avoid soap also {15 dry the pan, put it back on the heat,\nand wipe it with oil}. The soap was never the point.",
+    "wordCount": 314,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p034",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p035",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "A Rule Nobody Wrote",
+    "intro": "",
+    "content": "[1] The quiet car began as a complaint. In 1999 a group of commuters\non a Philadelphia line asked whether one car might be set aside for people who\ndid not want to hear anyone's telephone. They were regular riders who had shared\nthe same carriage every weekday morning for years, and what they wanted was\nmodest and specific. The railroad agreed to try {1 it on one\ntrain nobody} expected it to last.\n\n[2] {2 Similarly,} the experiment had no enforcement behind it. There {3 was}\nonly a sign, and beyond the {4 railroad's} sign there was nothing but whatever\nthe passengers were willing to do.\n\n[3] What happened next is the part worth recording. Passengers enforced it\nthemselves, through gestures nobody had agreed on in advance: a look, a tap on a\nseatback, a finger raised to the {5 lips, the gestures were remarkably\nconsistent} from car to car. Within a few years riders who had never met were\npolicing {6 a standard that was unwritten and not written down}.\n\n[4] {7 Consequently,} the railroad expanded the programme and other systems\ncopied it. {8 Some of them writing rules.} The written versions worked less\nwell, because a passenger enforcing a norm acts on behalf of everyone in the\ncar, while a passenger citing a regulation is {9 doing something else entirely}.\n\n[5] {10} The quiet car is now standard on several American railroads and on\nservices in Europe and Japan. It spread by imitation rather than by policy, one\noperator watching another and copying what appeared to work. {11 Copied from line to line without central\ndirection, the same three gestures turn up wherever the car exists.} Nobody\n{12 designed} them.",
+    "wordCount": 283,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p035",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p036",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "The Burr Is the Proof",
+    "intro": "",
+    "content": "[1] Sharpening is not the removal of {1 dullness it} is the removal\nof steel. An edge is the line where two ground surfaces meet, and a dull edge is\none where those surfaces no longer quite reach each other. The gap between them\n{2 are} what has to go, and the only way to close it is to grind both sides down\nuntil they meet again.\n\n[2] {3} A whetstone {4 does} that grinding, and the first requirement is an\nangle held constant. Twenty degrees a side is a common figure for a kitchen\nknife. The exact number matters much less than keeping it: a blade rocked\nthrough five degrees on every stroke produces a rounded shoulder rather than an\n{5 edge, the steel comes off the wrong places}.\n\n[3] Work begins on a coarse stone. Coarse grit cuts fast and leaves deep\nscratches, which the finer stones that follow will remove. Starting fine is the\ncommonest mistake, because a fine stone {6 takes off metal very slowly and at a\nlow rate} and will polish a dull edge into a shiny dull edge. {7 Ground away on\none side until a wire of metal folds over the other, the sharpener can feel\nprogress with a thumbnail.}\n\n[4] {8 Similarly,} that folded wire is called the burr, and it is the point of\nthe whole exercise. A burr along the entire length means the two surfaces have\nfinally met everywhere. A burr along half the blade means half the blade is\nstill {9 not there yet}. It is the only honest signal in the process, and\n{10 it} cannot be faked by polishing.\n\n[5] {11} The burr is then removed, on finer stones and finally on leather, in\nstrokes that {12 lighten with each pass, alternate sides, and end trailing away\nfrom the edge}. What is left is two flat surfaces meeting in a line too narrow\nto see.\n\n[6] A sharp knife is not a knife that has been sharpened recently. It is a knife\nwhose two sides actually {13 meet}.",
+    "wordCount": 343,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p036",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p037",
+    "sectionKey": "act-english",
+    "type": "personal-essay",
+    "title": "The Corral",
+    "intro": "",
+    "content": "[1] For two summers I collected shopping carts in a grocery lot in\n{1 Wauwatosa and the} job taught me more about people than any class I\n{2 took} that year. It is not a flattering thing to have learned.\n\n[2] {3 Similarly,} a cart left in a parking space is a decision. Somebody\nweighed a walk against the effort of not walking and chose. The lot {4 held}\nabout four hundred spaces and had six corrals, and by the end of my first month\nI could have drawn a map of where carts were abandoned without looking at the\nlot at all.\n\n[3] The map was not random. It was a set of rings around each {5 corral, carts\nwere abandoned almost nowhere within thirty feet of one}. Between thirty and\nsixty feet the abandonments began. Past a hundred feet from any corral, people\nleft carts wherever they had finished with {6 them and simply walked off and\naway}. {7 Measured out across the asphalt, I could see the whole thing was a\nquestion of distance.}\n\n[4] {8 Consequently,} the store's response was to hire more of us. What would\nhave worked was two more corrals. I said so once, to a manager, in the tone of a\nseventeen-year-old who has {9 figured something out}, and he said the corrals\ncost money and I did not, and both of {10 us} were right.\n\n[5] {11} I do not think worse of people for any of it. A person pushing a cart\na hundred feet in July heat is spending something real, and the store had\ndecided not to spend anything to prevent it.\n\n[6] I still park near a corral. I have never once thought about it as a moral\n{12 choice, it is simply where the walk is shortest}.",
+    "wordCount": 301,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p037",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p038",
+    "sectionKey": "act-english",
+    "type": "informative-essay",
+    "title": "Already There",
+    "intro": "",
+    "content": "[1] A maple leaf in October is not changing colour so much as ceasing\nto hide {1 one and the} yellows and oranges that appear in autumn {2 was}\npresent in the leaf all summer. What changes is what is covering them.\n\n[2] {3} Chlorophyll {4 is} the pigment that runs photosynthesis, and it is\ngreen, and a working leaf holds so much of it that nothing else registers.\nUnderneath sit the carotenoids, the same family of pigments that colours carrots\nand egg yolks. They are there in {5 June, nobody can see them}, because\nchlorophyll is {6 louder and drowns them out entirely}.\n\n[3] {7 Broken down faster than it is replaced as the nights lengthen, a tree\nstops rebuilding chlorophyll and the green retreats.} The carotenoids are simply\nuncovered, which is why a stand of birches goes yellow so {8 fast}: nothing has\nto be manufactured. The colour was finished and waiting.\n\n[4] {9 Similarly,} the reds are a different story. Anthocyanins are not sitting\nunder the chlorophyll waiting to be {10 revealed, a tree makes them in autumn},\nin the same weeks it is shutting the leaf down, at real metabolic cost. Why a\ntree {11 will} spend energy on {12 them} in a leaf it is about to drop is still\nargued over.\n\n[5] {13} The practical upshot is that yellow and red answer to different\nweather. A dry, bright autumn with cool nights {14 produces stronger reds,\nconcentrates the sugars, and slows the loss of the leaf}. Yellow arrives on\nschedule almost regardless.\n\n[6] {15} It is worth knowing which of the two you are looking at. One is a\ncurtain going up. The other is a performance nobody has fully explained.",
+    "wordCount": 287,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p038",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p039",
+    "sectionKey": "act-english",
+    "type": "historical-account",
+    "title": "Clinton's Ditch",
+    "intro": "",
+    "content": "[1] The proposal was to dig a channel three hundred and sixty-three\nmiles long across the state of New York, from the Hudson River to Lake Erie,\nthrough forest and swamp and a rise of nearly six hundred {1 feet it} was widely\nconsidered ridiculous. Thomas Jefferson {2 called} it little short of madness.\n\n[2] {3} The state built it anyway, beginning in 1817 and finishing in 1825.\nThere {4 was} eighty-three locks along its length, each one a masonry chamber\nraising or lowering a boat by a fixed {5 amount, the whole system was designed\nand supervised by men who had never built a canal}.\n\n[3] What the canal did to freight is the part that settled the argument. Moving\na ton of goods from Buffalo to New York City had cost about a hundred dollars\nand taken three weeks. By 1830 it cost under ten and took {6 eight days and a\nlittle over a week}. {7 Cut by nine tenths in a single decade, merchants\nreorganised their entire trade around the new figure.}\n\n[4] {8 Similarly,} the consequences ran further than freight. Wheat from Ohio\ncould now reach a seaport, which made western farmland worth {9 clearing, New York\novertook Philadelphia and Boston} as the country's busiest port and {10 stayed\nthat way}. Towns along the route grew into cities, and {11 they} exist today\nlargely where the locks were.\n\n[5] {12} The canal was called Clinton's Ditch while it was being dug, after the\ngovernor who staked his career on it. The name was meant to {13 mock him,\ndiminish the project, and warn other politicians away}. It is now the name of a\nstate historic corridor.\n\n[6] Nothing about the engineering was clever by later standards. What was\nunusual was that a government spent seven million dollars on an argument it\ncould not win in advance.",
+    "wordCount": 311,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p039",
+      "created": "2026-08-25"
+    }
+  },
+  {
+    "id": "act-english-p040",
+    "sectionKey": "act-english",
+    "type": "process-narrative",
+    "title": "The Shoe Fits the Foot",
+    "intro": "",
+    "content": "[1] A horseshoe is shaped to the {1 hoof the} hoof is never shaped to\nthe shoe. Everything a farrier does follows from that order, and the order\n{2 are} the opposite of what most people assume when they watch it done.\n\n[2] {3 Similarly,} the work begins with the old shoe coming off and the foot\nbeing cleaned. A hoof {4 grows} continuously, about a centimetre a month, so by\nsix weeks the wall has run past the shoe and the balance of the foot has\nshifted. The farrier trims it back to where it should {5 sit, this is the\ndecision the rest of the job depends on}.\n\n[3] Only then is a shoe chosen. It is heated, held against the trimmed hoof for\na second or two, and lifted away. The scorch mark shows exactly where the shoe\n{6 is making contact and touching}, and the farrier hammers the shoe, not the\nfoot, until the mark is even all the way round. {7 Held in the fire until it\nglows, the farrier can bend the steel by hand-width increments.}\n\n[4] {8 Consequently,} the nailing is the part with no margin. The outer wall of\na hoof has no nerves; the inner tissue does. Between them runs a pale band called\nthe white line, and every nail must pass through the wall outside {9 that thing}\nand emerge through the side of the hoof. A nail driven a few millimetres inside\nit draws blood and lames the animal.\n\n[5] Each nail is then {10 clenched, which means} the protruding tip is bent over\nand filed flush. Seven or eight nails hold a shoe for six weeks against a\nthousand pounds of animal, and {11 they hold by friction, sit below the surface,\nand carry no weight themselves}. {12}\n\n[6] The order is the whole craft. Trim first, fit second, nail last, and never\nin the belief that a shoe can correct a foot it was not cut to match.",
+    "wordCount": 331,
+    "provenance": {
+      "type": "original",
+      "generator": "act-english-authored-v1",
+      "seed": "act-english-p040",
+      "created": "2026-08-25"
+    }
+  }
+]

@@ -81,3 +81,7 @@ questions before either canonical write and currently stops with
 bank, passage JSON, generated browser bank, or catalog target has changed. The
 final catalog flip and shared outputs must wait until passages 035–040 land on
 `main`.
+
+Resolved 2026-08-26: `origin/main` at `e00ce1f` supplied passages 035–040. The
+passage gate then reached 40 passages and 575 questions with every domain and
+difficulty gap at zero, allowing the canonical and browser banks to be built.

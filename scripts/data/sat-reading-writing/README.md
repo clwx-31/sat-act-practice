@@ -48,9 +48,24 @@ module.exports = {
 
 ## Rules the harness enforces
 
-- **Passage 25–80 words**, and every passage in the section distinct **after
-  proper nouns and digits are stripped**. That second clause is the whole point:
-  the current bank passes a plain distinctness test and fails this one.
+- **Passage length depends on the item type**, because the real section uses
+  three shapes:
+
+  | Item type | Words |
+  | --- | --- |
+  | Standard English Conventions completion | 15–80 |
+  | Rhetorical Synthesis (student notes) | up to 130 |
+  | Cross-Text Connections (two texts) | up to 130 |
+  | Everything else | 25–80 |
+
+  A conventions item is often a single sentence with a blank, and forcing it to
+  25 words would pad the very sentence being tested. A notes item is a bullet
+  list and a cross-text item is two passages, so both run long by design.
+
+- **Every passage in the section must be distinct after proper nouns and digits
+  are stripped.** This is the rule the shipped bank fails: all 565 of its
+  stimuli are different strings, and twenty-one become the same sentence once
+  the town and the name come out.
 - Exactly three `wrong` entries, each with a reason of 25 characters or more
   naming the misconception.
 - A completion item's passage ends in `______`; a question about the passage

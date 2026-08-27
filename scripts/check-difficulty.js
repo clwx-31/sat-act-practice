@@ -42,7 +42,10 @@ function shapeSignature(question) {
   let text = `${context} ${question.stem}`.trim();
   text = text.replace(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*/g, " ");
   text = text.replace(/\b\d+(?:\.\d+)?\b/g, "#");
-  return `${question.subskill}|${normalizeText(text).replace(/\s+/g, " ").trim()}`;
+  // Preserve the passage ID outside number normalization. Otherwise p001 and
+  // p002 both become p# and repeated authentic stems collide across sets.
+  const passageAnchor = question.passageId ? `${question.passageId}|` : "";
+  return `${passageAnchor}${question.subskill}|${normalizeText(text).replace(/\s+/g, " ").trim()}`;
 }
 
 function median(values) {

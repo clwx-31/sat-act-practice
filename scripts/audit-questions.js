@@ -39,9 +39,13 @@ function shapeSignature(question) {
   // signature. Without that, two sets both asking "the passage is best
   // described as" collide, and that stem is one the real ACT reuses on every
   // form; the question is which passage it is asked about.
-  // Trim first: items with no stimulus would otherwise start with a space and
-  // the anchored preamble pattern would never match.
-  let text = `${stimulus} ${question.stem}`.trim();
+  // Passage questions are distinguished by the stem and answer set; the
+  // passage itself is shared by design. This matters especially for ACT
+  // English, whose underlined stems differ only by a number.
+  const context = question.passageId && Array.isArray(question.choices)
+    ? question.choices.join(" ")
+    : stimulus;
+  let text = `${context} ${question.stem}`.trim();
   text = text.replace(SCENE_PREAMBLE, "");
   text = text.replace(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*/g, " ");
   text = text.replace(/\b\d+(?:\.\d+)?\b/g, "#");

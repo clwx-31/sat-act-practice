@@ -35,3 +35,17 @@ test("shape signatures preserve passage IDs outside number normalization", () =>
   assert.notEqual(first, second);
   assert.match(first, /act-english-p001/);
 });
+
+test("passage shape signatures include choices that distinguish underlined edits", () => {
+  const base = {
+    sectionKey: "act-english",
+    passageId: "act-english-p001",
+    subskill: "transitions",
+    stimulus: null,
+    stem: "Which choice is best for underlined portion 3?",
+  };
+  const first = shapeSignature({ ...base, choices: ["no change", "first", "still", "thus"] });
+  const second = shapeSignature({ ...base, choices: ["no change", "next", "yet", "therefore"] });
+
+  assert.notEqual(first, second);
+});

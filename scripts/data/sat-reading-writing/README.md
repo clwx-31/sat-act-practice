@@ -56,6 +56,7 @@ module.exports = {
   | Standard English Conventions completion | 15–80 |
   | Rhetorical Synthesis (student notes) | up to 130 |
   | Cross-Text Connections (two texts) | up to 130 |
+  | Quantitative evidence (carries a table) | up to 130 |
   | Everything else | 25–80 |
 
   A conventions item is often a single sentence with a blank, and forcing it to

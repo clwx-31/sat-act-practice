@@ -188,14 +188,14 @@ Everything between them is negotiable.`,
       family: "comma-splice",
       difficulty: "Easy",
       passage: `The Antikythera mechanism was recovered from a shipwreck in 1901 and sat largely
-unexamined for decades ______ its gearing was not understood until imaging techniques could see
+unexamined for ______ gearing was not understood until imaging techniques could see
 inside the corroded mass.`,
       stem: "Which choice completes the text so that it conforms to the conventions of Standard English?",
-      key: "; ",
+      key: "decades; its",
       wrong: [
-        [", ", "A comma alone between two independent clauses is a splice."],
-        [" ", "With no punctuation at all the two clauses run together as a fused sentence."],
-        [", and, ", "The extra comma after the conjunction separates it from the clause it introduces."],
+        ["decades, its", "A comma alone between two independent clauses is a splice."],
+        ["decades its", "With no punctuation at all the two clauses run together as a fused sentence."],
+        ["decades, and, its", "The comma after the conjunction separates it from the clause it introduces."],
       ],
       why:
         "Both halves are complete sentences of equal weight — what happened to the object, and what " +

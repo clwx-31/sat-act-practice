@@ -666,6 +666,35 @@ Scale: 575 items, one passage each, median 32 words. That is comparable in total
 effort to the ACT English rebuild just completed — 575 questions either way — and
 the contract lives in `scripts/data/sat-reading-writing/README.md`.
 
+### The SAT R&W blank-position rule is too strict — 2026-08-27
+
+Codex's Task 15 harness flagged ten problems in the first authored batch. **One
+is a real defect and nine are the rule being wrong.**
+
+**The real one, now fixed:** `sat-rw-0008` offered a whitespace-only distractor.
+A punctuation item was written with bare marks as its options, so one choice
+rendered as nothing at all. Its choices now carry the surrounding words —
+`decades; its`, `decades, its`, `decades its` — which is also how the real
+section presents them.
+
+**The nine that are not defects.** The harness requires a completion passage to
+end in exactly one `______`. Measured against the shipped bank:
+
+```
+shipped items containing a blank: 210
+  blank at the very end:  48
+  blank mid-passage:     162   (77%)
+```
+
+Every `logical transition` and `sentence connection` item in the existing bank
+puts the blank mid-passage, because that is where a transition goes. So do
+conventions items testing agreement or punctuation, where the blank sits between
+the subject and its verb or at a clause boundary. Requiring the blank to fall
+last would make those item types unwritable.
+
+**The rule should be:** a completion passage contains exactly one `______`, in
+any position. The count is worth enforcing; the position is not.
+
 ### The next four steps, in order
 
 1. **Extend `scripts/check-passages.js` for act-english.** It currently hard-codes
